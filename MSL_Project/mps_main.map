@@ -1,0 +1,146 @@
+TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 22 2021  Time: 16:00:34  Page:   1
+mps_main
+
+Memory map     : 
+
+Name                        No. Start      End        Length  Type Algn Comb Mem T Group           Class             Module        
+------------------------------------------------------------------------------------------------------------------------------------
+C166_US2...................   8 00C000h    .......    000000h LDAT WORD GUSK RAM ................. CUSTACK.......... CSTART........
+C166_US1...................   7 00C000h    .......    000000h LDAT WORD GUSK RAM ................. CUSTACK.......... CSTART........
+C166_US0...................   6 00C000h    .......    000000h LDAT WORD GUSK RAM ................. CUSTACK.......... CSTART........
+C166_US....................   2 00C000h    00C039h    00003Ah LDAT WORD GUSK RAM ................. CUSTACK.......... MAIN_C........
+                                                                                                                     SCS_C.........
+                                                                                                                     CSTART........
+Internal IO area........... ... 00E000h    00EFFFh    001000h .... .... .... RAM ................. ................. ..............
+Extended SFR Area.......... ... 00F000h    00F1FFh    000200h .... .... .... RAM ................. ................. ..............
+Reserved................... ... 00F200h    00F5FFh    000400h .... .... .... ... ................. ................. ..............
+Reg. bank 0................ ... 00F600h    00F61Fh    000020h .... WORD .... RAM ................. ................. ..............
+C166_SYSSTACK..............   9 00FA00h    00FBFFh    000200h HDAT WORD SSTK RAM ................. ................. CSTART........
+SFR Area................... ... 00FE00h    00FFFFh    000200h .... .... .... RAM ................. ................. ..............
+Reserved................... ... BF0000h    BFFFFFh    010000h .... .... .... ... ................. ................. ..............
+?INTVECT................... ... C00000h    C001FFh    000200h .... .... .... ROM ................. ................. ..............
+IO_1_PR....................   0 C00200h    C00217h    000018h CODE WORD GLOB ROM ................. CPROGRAM......... IO_C..........
+MAIN_1_PR..................   1 C00218h    C0030Fh    0000F8h CODE WORD GLOB ROM ................. CPROGRAM......... MAIN_C........
+SCS_1_PR...................   3 C00310h    C00471h    000162h CODE WORD GLOB ROM ................. CPROGRAM......... SCS_C.........
+__C_INIT_PR................   4 C00472h    C005E5h    000174h CODE WORD GLOB ROM ................. C_INIT........... CSTART........
+__CSTART_PR................   5 C005E6h    C006A3h    0000BEh CODE WORD GLOB ROM ................. CPROGRAM......... CSTART........
+C166_INIT..................  10 C006A4h    C006A5h    000002h PDAT WORD GLOB ROM ................. CINITROM......... mps_main......
+C166_BSS...................  11 C006A6h    C006A7h    000002h PDAT WORD GLOB ROM ................. CINITROM......... mps_main......
+Reserved................... ... C0F000h    C0FFFFh    001000h .... .... .... ... ................. ................. ..............
+
+
+Symbol table   : io.obj(IO_C)
+
+Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
+----------------------------------------------------------------    ----------------------------------------------------------------
+ <NO NAME>................................ ... 0000000h  REG LOC    _IO_vInit.................................   0 0C00200h  FAR GLB
+
+
+
+Symbol table   : main.obj(MAIN_C)
+
+Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
+----------------------------------------------------------------    ----------------------------------------------------------------
+ <NO NAME>................................ ... 0000000h  REG LOC    _IO_vInit.................................   0 0C00200h  FAR EXT
+_MAIN_vChangeFreq.........................   1 0C002D6h  FAR GLB    _MAIN_vInit...............................   1 0C00218h  FAR GLB
+_MAIN_vLockProtecReg......................   1 0C0027Ch  FAR GLB    _MAIN_vUnlockProtecReg....................   1 0C00242h  FAR GLB
+_SCS_StartXtalOsc.........................   3 0C00372h  FAR EXT    _SCS_SwitchSystemClock....................   3 0C00392h  FAR EXT
+_SCS_SwitchToHighPrecBandgap..............   3 0C003F6h  FAR EXT    __CSTART..................................   5 0C005E6h  FAR EXT
+_main.....................................   1 0C00306h  FAR GLB    
+
+
+Symbol table   : scs.obj(SCS_C)
+
+Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
+----------------------------------------------------------------    ----------------------------------------------------------------
+ <NO NAME>................................ ... 0000000h  REG LOC    _DisableVcoBypass.........................   3 0C0034Eh  FAR GLB
+_EnableVcoBypass..........................   3 0C00336h  FAR GLB    _SCS_CountClocksWithTimer.................   3 0C00404h  FAR GLB
+_SCS_StartXtalOsc.........................   3 0C00372h  FAR GLB    _SCS_SwitchSystemClock....................   3 0C00392h  FAR GLB
+_SCS_SwitchToHighPrecBandgap..............   3 0C003F6h  FAR GLB    _SetK2....................................   3 0C00310h  FAR GLB
+_WaitForTimer13Stop.......................   3 0C00366h  FAR GLB    
+TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 22 2021  Time: 16:00:34  Page:   2
+mps_main
+
+
+
+Symbol table   : start_master.obj(CSTART)
+
+Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
+----------------------------------------------------------------    ----------------------------------------------------------------
+?BASE_DPP0................................ ABS 0400000h  WOR EXT    ?BASE_DPP1................................ ABS 0404000h  WOR EXT
+?BASE_DPP2................................ ABS 0C00000h  WOR EXT    ?C166_BSS_HEAD............................  11 0C006A6h  WOR EXT
+?C166_INIT_HEAD...........................  10 0C006A4h  WOR EXT    ?SYSSTACK_BOTTOM.......................... ABS 000FA00h  WOR EXT
+?SYSSTACK_TOP............................. ABS 000FC00h  WOR EXT    ?USRSTACK0_BOTTOM.........................   6 000C000h  WOR EXT
+?USRSTACK0_TOP............................   6 000C000h  WOR EXT    ?USRSTACK1_BOTTOM.........................   7 000C000h  WOR EXT
+?USRSTACK1_TOP............................   7 000C000h  WOR EXT    ?USRSTACK_BOTTOM..........................   2 000C000h  WOR EXT
+?USRSTACK_TOP.............................   2 000C03Ah  WOR EXT    CSTART_RBANK.............................. ... 000F600h  REG LOC
+__CSTART..................................   5 0C005E6h  FAR GLB    __CSTART_INUM............................. ... 0000000h  INT GLB
+__CSTART_TASK.............................   5 0C005E6h  TSK LOC    __C_INIT..................................   4 0C00472h  FAR GLB
+__EXIT....................................   5 0C0069Eh  FAR GLB    __IDLE....................................   5 0C0069Eh  FAR GLB
+_main.....................................   1 0C00306h  FAR EXT    
+
+
+Interrupt table: 
+
+Vector   Intno Start    Intnoname                                              Taskname                                             
+------------------------------------------------------------------------------------------------------------------------------------
+0C00000h 0000h 0C005E6h __CSTART_INUM......................................... __CSTART_TASK........................................
+
+Register banks : combination of register definitions
+
+                 Reg. bank 0
+                 0123456789ABCDEF
+                 ^               
+                 |................. CSTART_RBANK (CSTART) .................................................................... F600h
+
+
+
+Locate summary : 
+
+Class       Name          Size  Start
+<NO NAME>   ?INTVECT      00200h C00000h 
+            C166_SYSSTACK 00200h 00FA00h 
+      Total class size: 0000400h
+
+CINITROM    C166_BSS      00002h C006A6h 
+            C166_INIT     00002h C006A4h 
+      Total class size: 0000004h
+
+CPROGRAM    IO_1_PR       00018h C00200h 
+            MAIN_1_PR     000F8h C00218h 
+            SCS_1_PR      00162h C00310h 
+            __CSTART_PR   000BEh C005E6h 
+      Total class size: 0000330h
+
+CUSTACK     C166_US       0003Ah 00C000h 
+            C166_US0      00000h 00C000h 
+            C166_US1      00000h 00C000h 
+            C166_US2      00000h 00C000h 
+      Total class size: 000003Ah
+
+TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 22 2021  Time: 16:00:34  Page:   3
+mps_main
+
+C_INIT      __C_INIT_PR   00174h C00472h 
+      Total class size: 0000174h
+
+Total size:             00008E2h
+
+
+	Number of symbols		: 467
+	Number of sections		: 13
+	Number of groups		: 0
+	Number of classes		: 4
+	Number of modules		: 4
+	Total section size		: 00008E2h
+	Total memory size		: 0344A04h
+		consisting of RAM	: 0284A04h
+		              ROM	: 00C0000h
+	Total RAM filled		: 000023Ah
+	Total ROM filled		: 00006A8h
+	System stack size		: 0000200h
+	Heap size			: 0000000h
+	User stack size			: 000003Ah
+	Time spent			: 00:00:2.21
+
+Error report   : total errors: 0, warnings: 0

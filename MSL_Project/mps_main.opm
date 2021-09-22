@@ -1,0 +1,4 @@
+-G "c:\users\mikropro2021\documents\github\msl_2021\msl_project"
+-err "mps_main.err"
+-r
+-f "mps_main.mak"
