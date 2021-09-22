@@ -28,7 +28,7 @@ srcwin_autoswitch: TRUE
 srcwin_bubble_spy_size_limit: 1024
 srcwin_stepmode: 1
 srcwin_symbolic_asm: TRUE
-srcwin_viewmode: 0
+srcwin_viewmode: 1
 task_toolbar_container: 1
 task_toolbar_container.rectangle: (2,23,557,80)
 terminal: 0
@@ -81,6 +81,7 @@ window_memory0.rectangle: (715,546,902,822)
 window_memory0.start_address: 0x0
 window_memory0.toolbar_state: 2
 window_register: 1
+window_register..display_mode: hex
 window_register.display_mode: hex
 window_register.n_windows: 1
 window_register.rectangle: (940,546,1248,822)

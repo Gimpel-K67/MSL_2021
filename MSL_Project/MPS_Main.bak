@@ -1,4 +1,19 @@
 ;Codewright Project File (do not remove or modify this line)
+[ProjInit]
+ConfigSetExtMode=2
+ProjSetConfigFlags=0x04110940
+
+[State]
+SysSetCwd='C:\users\mikropro2021\documents\github\msl_2021\msl_project'
+SrchSetFlags=0x0410680a
+SrchSetAgainFlags=0x04100003,0
+SrchSetAgainFlags=0x06100003,1
+FileSortMode=0x0
+_StateView='C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\MAIN.C',26,26,790,366,-1,-1,21,43,1,1,1,'',0x0010001c,0,80,0,0,''
+_StateBuffer='C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\MAIN.C',0x0c00048e,21,43,25,'5 9','',0x0,'',1,72,1,0
+_StateHistory=FILELIST,'C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\MAIN.C'
+_StateHistory=EDITFILE,'C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\start_master'
+
 
 
 [Editor]
@@ -64,3 +79,19 @@ VCSSetCmd=VCS_CHECKDIFF_ID,'vdiff -r "%b%e"',0x8000040
 VCSSetCmd=VCS_CHECKMENU_ID,'pvcsvmwn',0x8000000
 VCSSetCmd=VCS_ADD_ID,'vcs -i -t@"%Q" "%b%e"',0x8000040
 VCSSetCmd=VCS_REMOVE_ID,'del /f "%b%{??v|___}e"',0x8000040
+
+[Files]
+.\DAvE_config.dav
+.\MPS_Main.bak
+.\MPS_Main.pjt
+.\CCU63.C
+.\CCU63.H
+.\IO.C
+.\IO.H
+.\MAIN.C
+.\MAIN.H
+.\SCS.C
+.\SCS.H
+.\XE16xREGS.H
+.\start_master.asm
+

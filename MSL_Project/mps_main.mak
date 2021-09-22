@@ -26,45 +26,55 @@ all : subproj $(PROJ).abs
 subproj :
 	@echo Warning: Infinite loop detected; Not building sub-project mps_main.pjt
 
-io.obj : io.c main.h xe16xregs.h scs.h io.h <1632319174>
+ccu63.obj : ccu63.c main.h xe16xregs.h scs.h io.h ccu63.h <1632321531>
+
+	@echo Compiling and assembling ${*F}.c
+	@"$(PRODDIR)\bin\cc166.exe" -f <<EOF -c ccu63.c
+	${separate "\n" -o $@ $(OPT_CC) }
+	EOF
+
+io.obj : io.c main.h xe16xregs.h scs.h io.h ccu63.h <1632321531>
 
 	@echo Compiling and assembling ${*F}.c
 	@"$(PRODDIR)\bin\cc166.exe" -f <<EOF -c io.c
 	${separate "\n" -o $@ $(OPT_CC) }
 	EOF
 
-main.obj : main.c main.h xe16xregs.h scs.h io.h <1632319174>
+main.obj : main.c main.h xe16xregs.h scs.h io.h ccu63.h <1632321531>
 
 	@echo Compiling and assembling ${*F}.c
 	@"$(PRODDIR)\bin\cc166.exe" -f <<EOF -c main.c
 	${separate "\n" -o $@ $(OPT_CC) }
 	EOF
 
-scs.obj : scs.c main.h xe16xregs.h scs.h io.h <1632319174>
+scs.obj : scs.c main.h xe16xregs.h scs.h io.h ccu63.h <1632321531>
 
 	@echo Compiling and assembling ${*F}.c
 	@"$(PRODDIR)\bin\cc166.exe" -f <<EOF -c scs.c
 	${separate "\n" -o $@ $(OPT_CC) }
 	EOF
 
-start_master.obj : d:\mikropro\start_master.asm "$(PRODDIR)\include\head.asm" "$(PRODDIR)\include\_c_init.asm" <1632319174>
+start_master.obj : start_master.asm "$(PRODDIR)\include\head.asm" "$(PRODDIR)\include\_c_init.asm" <1632321531>
 	@echo Preprocessing ${*F}.asm
-	@"$(PRODDIR)\bin\cc166.exe" -f <<EOF -c d:\mikropro\start_master.asm
+	@"$(PRODDIR)\bin\cc166.exe" -f <<EOF -c start_master.asm
 	${separate "\n" -o $@ $(OPT_CC) }
 	EOF
 
-$(PROJ).out : io.obj main.obj scs.obj start_master.obj _mps_main.ilo <1632319218>
+$(PROJ).out : ccu63.obj io.obj main.obj scs.obj start_master.obj _mps_main.ilo <1632321531>
 	@echo Linking and locating to ${*F}.out
 	@"$(PRODDIR)\bin\cc166.exe" $(LINKCPP) -o $@ -f <<EOF 
 	${separate "\n" $(match .obj $!) $(match .lno $!) $(match .lib $!) $(OPT_LC)}
 	EOF
 
-$(PROJ).abs : $(PROJ).out <1632319174>
+$(PROJ).abs : $(PROJ).out <1632321531>
 	@echo Converting ${*F}.out to ${*F}.abs in IEEE-695 format
 	@"$(PRODDIR)\bin\ieee166.exe" $(OPT_OPI3E) $! $@
 
 clean :
 	@echo Deleting intermediate files and output files for project '$(PROJ)'.
+	@$(exist ccu63.obj del ccu63.obj)
+	@$(exist ccu63.src del ccu63.src)
+	@$(exist ccu63.lst del ccu63.lst)
 	@$(exist io.obj del io.obj)
 	@$(exist io.src del io.src)
 	@$(exist io.lst del io.lst)

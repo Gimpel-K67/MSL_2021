@@ -1,0 +1,15 @@
+* TASKING build target information file
+*
+* Project:	mps_main.pjt
+* Toolchain:	TASKING Tools for C166/ST10 v8.7 r1
+* EDE Version:	99.9r9 (Build 150)
+*
+
+ccu63.obj|1632321531|512279673
+io.obj|1632321531|2597281717
+main.obj|1632321531|1026239922
+mps_main.abs|1632321531|2734249552
+mps_main.out|1632321531|2780947068
+scs.obj|1632321531|3067278422
+start.obj|1632321420|4272281449
+start_master.obj|1632321531|2736224453

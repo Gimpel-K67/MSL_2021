@@ -12,7 +12,7 @@
 // @Description   This file contains the project initialization function.
 //
 //----------------------------------------------------------------------------
-// @Date          22.09.2021 15:47:02
+// @Date          22.09.2021 17:20:12
 //
 //****************************************************************************
 
@@ -145,11 +145,15 @@ void MAIN_vInit(void)
   //   initializes the Parallel Ports
   IO_vInit();
 
+  //   initializes the Capture / Compare Unit 63 (CCU63)
+  CCU63_vInit();
+
 
   //   -----------------------------------------------------------------------
   //   Initialization of the Bank Select registers:
   //   -----------------------------------------------------------------------
 
+  BNKSEL1        =   0x0200;     // Bank Select Control Reg. 1
 
   // USER CODE BEGIN (Init,3)
 

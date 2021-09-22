@@ -12,7 +12,7 @@
 // @Description   This file contains functions that use the IO module.
 //
 //----------------------------------------------------------------------------
-// @Date          22.09.2021 15:47:03
+// @Date          22.09.2021 17:20:13
 //
 //****************************************************************************
 
@@ -198,7 +198,24 @@ void IO_vInit(void)
   ///  -----------------------------------------------------------------------
   ///  Configuration of Port P9:
   ///  -----------------------------------------------------------------------
-  ///  - no pin of port P9 is used
+  ///  P9.0 is used as alternate output for the CCU63 output(CC60)
+  ///  - push/pull output is selected
+  ///  P9.1 is used as alternate output for the CCU63 output(CC61)
+  ///  - push/pull output is selected
+  ///  P9.2 is used as alternate output for the CCU63 output(CC62)
+  ///  - push/pull output is selected
+  ///  P9.3 is used as alternate output for the CCU63 output(COUT60)
+  ///  - push/pull output is selected
+  ///  P9.4 is used as alternate output for the CCU63 output(COUT61)
+  ///  - push/pull output is selected
+  ///  P9.5 is used as alternate output for the CCU63 output(COUT62)
+  ///  - push/pull output is selected
+
+  ///  P9.0 - P9.3 output driver characteristic: strong driver
+  ///  P9.4 - P9.7 output driver characteristic: strong driver
+
+  ///  P9.0 - P9.3 output edge characteristic: sharp edge mode
+  ///  P9.4 - P9.7 output edge characteristic: sharp edge mode
 
 
   ///  -----------------------------------------------------------------------
