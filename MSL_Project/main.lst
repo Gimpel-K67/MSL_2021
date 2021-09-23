@@ -1,4 +1,4 @@
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:08  Page:   1
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 17:57:10  Page:   1
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -49,7 +49,7 @@ main
                     44   ; main.c     12 // @Description   This file contains the project initialization function.
                     45   ; main.c     13 //
                     46   ; main.c     14 //----------------------------------------------------------------------------
-                    47   ; main.c     15 // @Date          23.09.2021 16:17:12
+                    47   ; main.c     15 // @Date          23.09.2021 17:39:32
                     48   ; main.c     16 //
                     49   ; main.c     17 //****************************************************************************
                     50   ; main.c     18 
@@ -58,7 +58,7 @@ main
                     53   ; main.c     21 // USER CODE END
                     54   ; main.c     22 
                     55   ; main.c     23 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:08  Page:   2
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 17:57:10  Page:   2
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -118,7 +118,7 @@ main
                    108   ; main.c     41 
                    109   ; main.c     42 // USER CODE END
                    110   ; main.c     43 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:08  Page:   3
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 17:57:10  Page:   3
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -178,7 +178,7 @@ main
                    163   ; main.c     85 //****************************************************************************
                    164   ; main.c     86 
                    165   ; main.c     87 // USER CODE BEGIN (MAIN_General,8)
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:08  Page:   4
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 17:57:10  Page:   4
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -238,7 +238,7 @@ main
                    218           ?SYMB   '',010001H,7,269
                    219           ?SYMB   '',010002H,7,270
                    220           ?SYMB   '',010003H,7,271
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:08  Page:   5
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 17:57:10  Page:   5
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -298,7 +298,7 @@ main
                    273   ; main.c    139   MAIN_vUnlockProtecReg();     // unlock write security
                    274           ?LINE   139
 000C DA003C00  R   275           CALLS   SEG _MAIN_vUnlockProtecReg,_MAIN_vUnlockProtecReg
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:08  Page:   6
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 17:57:10  Page:   6
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -358,7 +358,7 @@ main
 0034 1AFD0808      328           BFLDH   R13,#08h,#08h
 0038 B8DC          329           MOV     [R12],R13
                    330   ; main.c    174 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:08  Page:   7
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 17:57:10  Page:   7
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -418,7 +418,7 @@ main
 003E E6FCAAAA      383           MOV     R12,#0AAAAh
 0042 F6FCC0F0      384           MOV     0F0C0h,R12
                    385   ; main.c    205     SCU_SLC = 0x5554;                   // command 1
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:08  Page:   8
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 17:57:10  Page:   8
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -478,7 +478,7 @@ main
                    438   ; main.c    232 //****************************************************************************
                    439   ; main.c    233 
                    440   ; main.c    234 // USER CODE BEGIN (LockProtecReg,1)
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:08  Page:   9
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 17:57:10  Page:   9
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -538,7 +538,7 @@ main
 00A6 E6FC0018      493           MOV     R12,#01800h
 00AA F6FCC0F0      494           MOV     0F0C0h,R12
                    495   ; main.c    250 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:08  Page:  10
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 17:57:10  Page:  10
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -598,7 +598,7 @@ main
                    548           PUBLIC  _MAIN_vChangeFreq
                R   549           ?SYMB   'MAIN_vChangeFreq',_MAIN_vChangeFreq,37,1
                    550           ?SYMB   '',281,8,34
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:08  Page:  11
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 17:57:10  Page:  11
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -658,7 +658,7 @@ main
 00F2 46FC0910      596           CMP     R12,#01009h
 00F6 3D02          597           JMPR    cc_NE,_8
                    598   ; main.c    302             {
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:08  Page:  12
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 17:57:10  Page:  12
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -718,7 +718,7 @@ main
                    648   ; main.c    337 //
                    649   ; main.c    338 //****************************************************************************
                    650   ; main.c    339 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:08  Page:  13
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 17:57:10  Page:  13
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -757,7 +757,7 @@ main
 0114 E6FA0040      682           MOV     R10,#04000h
 0118 E00B          683           MOV     R11,#00h
 011A DA000000  R   684           CALLS   SEG __mlf4r,__mlf4r
-011E E6FA8043      685           MOV     R10,#04380h
+011E E6FA1644      685           MOV     R10,#04416h
 0122 E00B          686           MOV     R11,#00h
 0124 DA000000  R   687           CALLS   SEG __dvf4r,__dvf4r
 0128 DA000000  R   688           CALLS   SEG __cff48r,__cff48r
@@ -778,7 +778,7 @@ main
 0140               703   _16:
                    704   ; main.c    346                 table[i] = (unsigned int)((PR/2)*(sin(stepSize * i) + 1));
                    705           ?LINE   346
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:08  Page:  14
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 17:57:10  Page:  14
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -826,7 +826,7 @@ main
 01A0 B8C0          746           MOV     [R0],R12
 01A2               747   _17:
 01A2 A8C0          748           MOV     R12,[R0]
-01A4 46FC0001      749           CMP     R12,#0100h
+01A4 46FC5802      749           CMP     R12,#0258h
 01A8 CDCB          750           JMPR    cc_SLT,_16
                    751   ; main.c    347         }
                    752   ; main.c    348 }
@@ -838,7 +838,7 @@ main
                R   758           ?SYMB   '',$,96,0
 01AE DB00          759           RETS
                    760   _generateTable  ENDP
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:08  Page:  15
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 17:57:10  Page:  15
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -898,7 +898,7 @@ main
 01C2 DB00          813           RETS
                    814   _main   ENDP
                R   815           ?SYMB   '',$,17,374
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:08  Page:  16
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 17:57:10  Page:  16
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -915,15 +915,15 @@ main
                    825   MAIN_4_NB       SECTION LDAT WORD PUBLIC 'CNEAR'
 0000               826   MAIN_4_NB_ENTRY LABEL   BYTE
 0000               827   _table  LABEL   WORD
-0000               828           DS      512
+0000               828           DS      1200
                    829           PUBLIC  _table
                    830           ?SYMB   '',011d0012H,5,284
                    831           ?SYMB   '',16,47,285
                    832           ?SYMB   '',0,30,0
-                   833           ?SYMB   '',255,49,0
+                   833           ?SYMB   '',599,49,0
                R   834           ?SYMB   'table',_table,22,284
-0200               835   _index  LABEL   WORD
-0200               836           DS      2
+04B0               835   _index  LABEL   WORD
+04B0               836           DS      2
                    837           PUBLIC  _index
                R   838           ?SYMB   'index',_index,22,18
                    839   MAIN_4_NB       ENDS
@@ -946,8 +946,8 @@ main
                    854   C166_INIT       ENDS
                    855   
                    856   C166_BSS        SECTION PDAT WORD GLOBAL 'CINITROM'
-0000 05000000  R   857           DW      05h,MAIN_4_NB_ENTRY,0202h
-0004 0202        
+0000 05000000  R   857           DW      05h,MAIN_4_NB_ENTRY,04B2h
+0004 B204        
                    858   C166_BSS        ENDS
                    859   
                    860   $FLOAT(ANSI)
@@ -958,7 +958,7 @@ main
                    865           EXTERN  _IO_vInit:FAR
                    866           EXTERN  _GPT2_vInit:FAR
                    867           EXTERN  _GPT1_vInit:FAR
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:08  Page:  17
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 17:57:10  Page:  17
 main
 
  LOC CODE        LINE   SOURCELINE

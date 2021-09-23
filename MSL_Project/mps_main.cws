@@ -94,5 +94,9 @@ window_source.rectangle: (353,39,1248,476)
 window_stack: 1
 window_stack.rectangle: (8,291,315,476)
 window_symreg: 0
+window_symreg.GPT12E_T5.bits_width: 40
+window_symreg.GPT12E_T5.description_width: 178
+window_symreg.GPT12E_T5.rectangle: (176,56,442,114)
+window_symreg.GPT12E_T5.values_width: 48
 window_trace: 0
 window_trace.rectangle: (284,322,671,463)

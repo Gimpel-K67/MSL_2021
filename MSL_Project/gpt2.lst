@@ -1,4 +1,4 @@
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:13  Page:   1
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 17:57:12  Page:   1
 gpt2
 
  LOC CODE        LINE   SOURCELINE
@@ -49,7 +49,7 @@ gpt2
                     44   ; gpt2.c     12 // @Description   This file contains functions that use the GPT2 module.
                     45   ; gpt2.c     13 //
                     46   ; gpt2.c     14 //----------------------------------------------------------------------------
-                    47   ; gpt2.c     15 // @Date          23.09.2021 16:17:13
+                    47   ; gpt2.c     15 // @Date          23.09.2021 17:39:33
                     48   ; gpt2.c     16 //
                     49   ; gpt2.c     17 //****************************************************************************
                     50   ; gpt2.c     18 
@@ -58,7 +58,7 @@ gpt2
                     53   ; gpt2.c     21 // USER CODE END
                     54   ; gpt2.c     22 
                     55   ; gpt2.c     23 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:13  Page:   2
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 17:57:12  Page:   2
 gpt2
 
  LOC CODE        LINE   SOURCELINE
@@ -118,7 +118,7 @@ gpt2
                    108   ; gpt2.c     44 
                    109   ; gpt2.c     45 //****************************************************************************
                    110   ; gpt2.c     46 // @Defines
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:13  Page:   3
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 17:57:12  Page:   3
 gpt2
 
  LOC CODE        LINE   SOURCELINE
@@ -178,7 +178,7 @@ gpt2
                    163   ; gpt2.c     99 
                    164   ; gpt2.c    100 //****************************************************************************
                    165   ; gpt2.c    101 // @Function      void GPT2_vInit(void) 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:13  Page:   4
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 17:57:12  Page:   4
 gpt2
 
  LOC CODE        LINE   SOURCELINE
@@ -238,7 +238,7 @@ gpt2
                    218           ?SYMB   'bit6',6,23,267
                    219           ?SYMB   'bit7',7,23,268
                    220           ?SYMB   'bit8',8,23,269
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:13  Page:   5
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 17:57:12  Page:   5
 gpt2
 
  LOC CODE        LINE   SOURCELINE
@@ -295,232 +295,236 @@ gpt2
                    270   ; gpt2.c    150   ///  - prescaler factor is 2
                    271   ; gpt2.c    151   ///  - up/down control bit is reset
                    272   ; gpt2.c    152   ///  - external up/down control is disabled
-                   273   ; gpt2.c    153   ///  - timer 5 remote control is disabled
-                   274   ; gpt2.c    154 
-                   275   ; gpt2.c    155   GPT12E_T5CON   =  0x0000;      // load timer 5 control register
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:13  Page:   6
+                   273   ; gpt2.c    153   ///  - timer 5 run bit is reset
+                   274   ; gpt2.c    154   ///  - timer 5 remote control is disabled
+                   275   ; gpt2.c    155 
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 17:57:12  Page:   6
 gpt2
 
  LOC CODE        LINE   SOURCELINE
 
-                   276           ?LINE   155
-000A E00C          277           MOV     R12,#00h
-000C F6FC46FF      278           MOV     0FF46h,R12
-                   279   ; gpt2.c    156   GPT12E_T5      =  0xF615;      // load timer 5 register
-                   280           ?LINE   156
-0010 E6FC15F6      281           MOV     R12,#0F615h
-0014 F6FC46FE      282           MOV     0FE46h,R12
-                   283   ; gpt2.c    157 
-                   284   ; gpt2.c    158   ///  -----------------------------------------------------------------------
-                   285   ; gpt2.c    159   ///  Configuration of the GPT2 Core Timer 6:
-                   286   ; gpt2.c    160   ///  -----------------------------------------------------------------------
-                   287   ; gpt2.c    161   ///  - timer 6 works in timer mode
-                   288   ; gpt2.c    162   ///  - prescaler factor is 2
-                   289   ; gpt2.c    163   ///  - up/down control bit is reset
-                   290   ; gpt2.c    164   ///  - external up/down control is disabled
-                   291   ; gpt2.c    165   ///  - alternate output function T6OUT (P6.2) is disabled
-                   292   ; gpt2.c    166   ///  - alternate output function T6OUT (P7.0) is disabled
-                   293   ; gpt2.c    167   ///  - timer 6 output toggle latch (T6OTL) is set to 0
-                   294   ; gpt2.c    168   ///  - timer 6 run bit is reset
-                   295   ; gpt2.c    169   ///  - timer 6 is not cleared on a capture
-                   296   ; gpt2.c    170 
-                   297   ; gpt2.c    171   GPT12E_T6CON   =  0x0800;      // load timer 6 control register
-                   298           ?LINE   171
-0018 E6FC0008      299           MOV     R12,#0800h
-001C F6FC48FF      300           MOV     0FF48h,R12
-                   301   ; gpt2.c    172   GPT12E_T6      =  0x0000;      // load timer 6 register
-                   302           ?LINE   172
-0020 E00C          303           MOV     R12,#00h
-0022 F6FC48FE      304           MOV     0FE48h,R12
-                   305   ; gpt2.c    173 
-                   306   ; gpt2.c    174   ///  -----------------------------------------------------------------------
-                   307   ; gpt2.c    175   ///  Configuration of the GPT2 CAPREL:
-                   308   ; gpt2.c    176   ///  -----------------------------------------------------------------------
-                   309   ; gpt2.c    177   ///  - capture T5 into CAPREL is disabled
-                   310   ; gpt2.c    178   ///  - capture trigger from pin CAPIN
-                   311   ; gpt2.c    179   ///  - capure is disabled
-                   312   ; gpt2.c    180   ///  - timer 5 is not cleared on a capture
-                   313   ; gpt2.c    181   ///  - timer 5 is just captured without any correction
-                   314   ; gpt2.c    182 
-                   315   ; gpt2.c    183   GPT12E_T5CON  |=  0x0000;      // load timer 5 control register
-                   316           ?LINE   183
-0026 E6FC46FF      317           MOV     R12,#0FF46h
-002A A8CC          318           MOV     R12,[R12]
-                   319   ; gpt2.c    184   GPT12E_CAPREL  =  0x0000;      // load CAPREL register
-                   320           ?LINE   184
-002C E00C          321           MOV     R12,#00h
-002E F6FC4AFE      322           MOV     0FE4Ah,R12
-                   323   ; gpt2.c    185 
-                   324   ; gpt2.c    186   ///  -----------------------------------------------------------------------
-                   325   ; gpt2.c    187   ///  Configuration of the used GPT2 Port Pins:
-                   326   ; gpt2.c    188   ///  -----------------------------------------------------------------------
-                   327   ; gpt2.c    189 
+                   276   ; gpt2.c    156   GPT12E_T5CON   =  0x0000;      // load timer 5 control register
+                   277           ?LINE   156
+000A E00C          278           MOV     R12,#00h
+000C F6FC46FF      279           MOV     0FF46h,R12
+                   280   ; gpt2.c    157   GPT12E_T5      =  0xFFFF;      // load timer 5 register
+                   281           ?LINE   157
+0010 E6FCFFFF      282           MOV     R12,#0FFFFh
+0014 F6FC46FE      283           MOV     0FE46h,R12
+                   284   ; gpt2.c    158 
+                   285   ; gpt2.c    159   ///  -----------------------------------------------------------------------
+                   286   ; gpt2.c    160   ///  Configuration of the GPT2 Core Timer 6:
+                   287   ; gpt2.c    161   ///  -----------------------------------------------------------------------
+                   288   ; gpt2.c    162   ///  - timer 6 works in timer mode
+                   289   ; gpt2.c    163   ///  - prescaler factor is 4
+                   290   ; gpt2.c    164   ///  - up/down control bit is reset
+                   291   ; gpt2.c    165   ///  - external up/down control is disabled
+                   292   ; gpt2.c    166   ///  - alternate output function T6OUT (P6.2) is disabled
+                   293   ; gpt2.c    167   ///  - alternate output function T6OUT (P7.0) is disabled
+                   294   ; gpt2.c    168   ///  - timer 6 output toggle latch (T6OTL) is set to 0
+                   295   ; gpt2.c    169   ///  - CAPREL is used as a reload register for the core timer T6
+                   296   ; gpt2.c    170   ///  - timer 6 is not cleared on a capture
+                   297   ; gpt2.c    171 
+                   298   ; gpt2.c    172   GPT12E_T6CON   =  0x8801;      // load timer 6 control register
+                   299           ?LINE   172
+0018 E6FC0188      300           MOV     R12,#08801h
+001C F6FC48FF      301           MOV     0FF48h,R12
+                   302   ; gpt2.c    173   GPT12E_T6      =  0xFEBB;      // load timer 6 register
+                   303           ?LINE   173
+0020 E6FCBBFE      304           MOV     R12,#0FEBBh
+0024 F6FC48FE      305           MOV     0FE48h,R12
+                   306   ; gpt2.c    174 
+                   307   ; gpt2.c    175   ///  -----------------------------------------------------------------------
+                   308   ; gpt2.c    176   ///  Configuration of the GPT2 CAPREL:
+                   309   ; gpt2.c    177   ///  -----------------------------------------------------------------------
+                   310   ; gpt2.c    178   ///  - capture T5 into CAPREL is disabled
+                   311   ; gpt2.c    179   ///  - capture trigger from pin CAPIN
+                   312   ; gpt2.c    180   ///  - capure is disabled
+                   313   ; gpt2.c    181   ///  - timer 5 is not cleared on a capture
+                   314   ; gpt2.c    182   ///  - timer 5 is just captured without any correction
+                   315   ; gpt2.c    183 
+                   316   ; gpt2.c    184   GPT12E_T5CON  |=  0x0000;      // load timer 5 control register
+                   317           ?LINE   184
+0028 E6FC46FF      318           MOV     R12,#0FF46h
+002C A8CC          319           MOV     R12,[R12]
+                   320   ; gpt2.c    185   GPT12E_CAPREL  =  0xFEBB;      // load CAPREL register
+                   321           ?LINE   185
+002E E6FCBBFE      322           MOV     R12,#0FEBBh
+0032 F6FC4AFE      323           MOV     0FE4Ah,R12
+                   324   ; gpt2.c    186 
+                   325   ; gpt2.c    187   ///  -----------------------------------------------------------------------
+                   326   ; gpt2.c    188   ///  Configuration of the used GPT2 Port Pins:
+                   327   ; gpt2.c    189   ///  -----------------------------------------------------------------------
                    328   ; gpt2.c    190 
-                   329   ; gpt2.c    191   ///  -----------------------------------------------------------------------
-                   330   ; gpt2.c    192   ///  Configuration of the used GPT2 Interrupts:
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:13  Page:   7
+                   329   ; gpt2.c    191 
+                   330   ; gpt2.c    192   ///  -----------------------------------------------------------------------
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 17:57:12  Page:   7
 gpt2
 
  LOC CODE        LINE   SOURCELINE
 
-                   331   ; gpt2.c    193   ///  -----------------------------------------------------------------------
-                   332   ; gpt2.c    194   ///  timer 5 service request node configuration:
-                   333   ; gpt2.c    195   ///  - timer 5 interrupt priority level (ILVL) = 11
-                   334   ; gpt2.c    196   ///  - timer 5 interrupt group level (GLVL) = 0
-                   335   ; gpt2.c    197   ///  - timer 5 group priority extension (GPX) = 0
-                   336   ; gpt2.c    198 
-                   337   ; gpt2.c    199   GPT12E_T5IC    =  0x006C;     
-                   338           ?LINE   199
-0032 E6FC6C00      339           MOV     R12,#06Ch
-0036 F6FC66FF      340           MOV     0FF66h,R12
-                   341   ; gpt2.c    200 
+                   331   ; gpt2.c    193   ///  Configuration of the used GPT2 Interrupts:
+                   332   ; gpt2.c    194   ///  -----------------------------------------------------------------------
+                   333   ; gpt2.c    195   ///  timer 6 service request node configuration:
+                   334   ; gpt2.c    196   ///  - timer 6 interrupt priority level (ILVL) = 11
+                   335   ; gpt2.c    197   ///  - timer 6 interrupt group level (GLVL) = 0
+                   336   ; gpt2.c    198   ///  - timer 6 group priority extension (GPX) = 0
+                   337   ; gpt2.c    199 
+                   338   ; gpt2.c    200   GPT12E_T6IC    =  0x006C;     
+                   339           ?LINE   200
+0036 E6FC6C00      340           MOV     R12,#06Ch
+003A F6FC68FF      341           MOV     0FF68h,R12
                    342   ; gpt2.c    201 
                    343   ; gpt2.c    202 
-                   344   ; gpt2.c    203   // USER CODE BEGIN (GPT2_Function,3)
-                   345   ; gpt2.c    204 
-                   346   ; gpt2.c    205   // USER CODE END
-                   347   ; gpt2.c    206 
-                   348   ; gpt2.c    207   GPT12E_T5CON_T5R  =  1;        // set timer 5 run bit
-                   349           ?LINE   207
-003A E6FC46FF      350           MOV     R12,#0FF46h
-003E A8DC          351           MOV     R13,[R12]
-0040 0AFD4040      352           BFLDL   R13,#040h,#040h
-0044 B8DC          353           MOV     [R12],R13
-                   354   ; gpt2.c    208 
-                   355   ; gpt2.c    209 } //  End of function GPT2_viCAPREL
-                   356           ?LINE   209
-0046 DB00          357           RETS
-                   358   _GPT2_vInit     ENDP
-               R   359           ?SYMB   '',$,17,209
-                   360   ; gpt2.c    210 
-                   361   ; gpt2.c    211 //****************************************************************************
-                   362   ; gpt2.c    212 // @Function      void GPT2_viTmr5(void) 
-                   363   ; gpt2.c    213 //
-                   364   ; gpt2.c    214 //----------------------------------------------------------------------------
-                   365   ; gpt2.c    215 // @Description   This is the interrupt service routine for the GPT2 timer 5. 
-                   366   ; gpt2.c    216 //                It is called up in the case of over or underflow of the 
-                   367   ; gpt2.c    217 //                timer 5 register.
-                   368   ; gpt2.c    218 //                
-                   369   ; gpt2.c    219 //                Please note that you have to add application specific code 
-                   370   ; gpt2.c    220 //                to this function.
-                   371   ; gpt2.c    221 //
-                   372   ; gpt2.c    222 //----------------------------------------------------------------------------
-                   373   ; gpt2.c    223 // @Returnvalue   None
-                   374   ; gpt2.c    224 //
-                   375   ; gpt2.c    225 //----------------------------------------------------------------------------
-                   376   ; gpt2.c    226 // @Parameters    None
-                   377   ; gpt2.c    227 //
-                   378   ; gpt2.c    228 //----------------------------------------------------------------------------
-                   379   ; gpt2.c    229 // @Date          23.09.2021
-                   380   ; gpt2.c    230 //
-                   381   ; gpt2.c    231 //****************************************************************************
-                   382   ; gpt2.c    232 
-                   383   ; gpt2.c    233 // USER CODE BEGIN (Tmr5,1)
-                   384   ; gpt2.c    234 
-                   385   ; gpt2.c    235 // USER CODE END
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:13  Page:   8
+                   344   ; gpt2.c    203 
+                   345   ; gpt2.c    204   // USER CODE BEGIN (GPT2_Function,3)
+                   346   ; gpt2.c    205 
+                   347   ; gpt2.c    206   // USER CODE END
+                   348   ; gpt2.c    207 
+                   349   ; gpt2.c    208   GPT12E_T6CON_T6R  =  1;        // set timer 6 run bit
+                   350           ?LINE   208
+003E E6FC48FF      351           MOV     R12,#0FF48h
+0042 A8DC          352           MOV     R13,[R12]
+0044 0AFD4040      353           BFLDL   R13,#040h,#040h
+0048 B8DC          354           MOV     [R12],R13
+                   355   ; gpt2.c    209 
+                   356   ; gpt2.c    210 } //  End of function GPT2_viCAPREL
+                   357           ?LINE   210
+004A DB00          358           RETS
+                   359   _GPT2_vInit     ENDP
+               R   360           ?SYMB   '',$,17,210
+                   361   ; gpt2.c    211 
+                   362   ; gpt2.c    212 //****************************************************************************
+                   363   ; gpt2.c    213 // @Function      void GPT2_viTmr6(void) 
+                   364   ; gpt2.c    214 //
+                   365   ; gpt2.c    215 //----------------------------------------------------------------------------
+                   366   ; gpt2.c    216 // @Description   This is the interrupt service routine for the GPT2 timer 6. 
+                   367   ; gpt2.c    217 //                It is called up in the case of over or underflow of the 
+                   368   ; gpt2.c    218 //                timer 6 register.
+                   369   ; gpt2.c    219 //                
+                   370   ; gpt2.c    220 //                Please note that you have to add application specific code 
+                   371   ; gpt2.c    221 //                to this function.
+                   372   ; gpt2.c    222 //
+                   373   ; gpt2.c    223 //----------------------------------------------------------------------------
+                   374   ; gpt2.c    224 // @Returnvalue   None
+                   375   ; gpt2.c    225 //
+                   376   ; gpt2.c    226 //----------------------------------------------------------------------------
+                   377   ; gpt2.c    227 // @Parameters    None
+                   378   ; gpt2.c    228 //
+                   379   ; gpt2.c    229 //----------------------------------------------------------------------------
+                   380   ; gpt2.c    230 // @Date          23.09.2021
+                   381   ; gpt2.c    231 //
+                   382   ; gpt2.c    232 //****************************************************************************
+                   383   ; gpt2.c    233 
+                   384   ; gpt2.c    234 // USER CODE BEGIN (Tmr6,1)
+                   385   ; gpt2.c    235 
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 17:57:12  Page:   8
 gpt2
 
  LOC CODE        LINE   SOURCELINE
 
-                   386   ; gpt2.c    236 
-                   387   ; gpt2.c    237 _interrupt(T5INT)  void GPT2_viTmr5(void)
-                   388   ; gpt2.c    238 {
-               R   389           ?SYMB   'GPT2_viTmr5',_GPT2_viTmr5,37,1
-                   390           ?SYMB   '',238,8,16
-                   391   _GPT2_viTmr5    PROC TASK GPT2_TASK INTNO GPT2_INUM = 023h
-                   392           ?LINE   238
-                   393           ?SYMB   '',00H,95,0
-0048 F6F00000  R   394           MOV     GPT2_RB,R0
-004C C6080000  R   395           SCXT    CP,#GPT2_RB
-0050 C6871000      396           SCXT    MDC,#010h
-0054 EC00          397           PUSH    DPP0
-0056 E6000000  R   398           MOV     DPP0,#PAG ?BASE_DPP0
-005A CC00          399           NOP
-005C EC02          400           PUSH    DPP2
-005E E6020000  R   401           MOV     DPP2,#PAG ?BASE_DPP2
-0062 CC00          402           NOP
-0064 EC06          403           PUSH    MDH
-0066 EC07          404           PUSH    MDL
-0068 ECEF          405           PUSH    MSW
-006A EC2E          406           PUSH    MAL
-006C EC2F          407           PUSH    MAH
-006E ECEE          408           PUSH    MCW
-0070 C6ED0000      409           SCXT    MRW,#00h
-0074 EC84          410           PUSH    IDX0
-0076 EC85          411           PUSH    IDX1
-0078 D180          412           EXTR    #01h
-007A EC00     1    413           PUSH    QX0
-007C D180          414           EXTR    #01h
-007E EC01     1    415           PUSH    QX1
-0080 D180          416           EXTR    #01h
-0082 EC02     1    417           PUSH    QR0
-0084 D180          418           EXTR    #01h
-0086 EC03     1    419           PUSH    QR1
-                   420   ; Locals:
-                   421   ; 
-                   422   ; Statics:
-                   423   ; 
-                   424   ; CSEs:
-                   425   ; 
-                   426   ; gpt2.c    239   // USER CODE BEGIN (Tmr5,2)
-                   427   ; gpt2.c    240           index++;
-                   428           ?LINE   240
-0088 F2FC0000  R   429           MOV     R12,_index
-008C 08C1          430           ADD     R12,#01h
-008E F6FC0000  R   431           MOV     _index,R12
-                   432   ; gpt2.c    241           index = index%ARRAY_SIZE;
-                   433           ?LINE   241
-0092 F2FC0000  R   434           MOV     R12,_index
-0096 66FCFF00      435           AND     R12,#0FFh
-009A F6FC0000  R   436           MOV     _index,R12
-                   437   ; gpt2.c    242   // USER CODE END
-                   438   ; gpt2.c    243 
-                   439   ; gpt2.c    244 } //  End of function GPT2_viTmr5
-                   440           ?LINE   244
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:13  Page:   9
+                   386   ; gpt2.c    236 // USER CODE END
+                   387   ; gpt2.c    237 
+                   388   ; gpt2.c    238 _interrupt(T6INT)  void GPT2_viTmr6(void)
+                   389   ; gpt2.c    239 {
+               R   390           ?SYMB   'GPT2_viTmr6',_GPT2_viTmr6,37,1
+                   391           ?SYMB   '',239,8,16
+                   392   _GPT2_viTmr6    PROC TASK GPT2_TASK INTNO GPT2_INUM = 024h
+                   393           ?LINE   239
+                   394           ?SYMB   '',00H,95,0
+004C F6F00000  R   395           MOV     GPT2_RB,R0
+0050 C6080000  R   396           SCXT    CP,#GPT2_RB
+0054 C6871000      397           SCXT    MDC,#010h
+0058 EC00          398           PUSH    DPP0
+005A E6000000  R   399           MOV     DPP0,#PAG ?BASE_DPP0
+005E CC00          400           NOP
+0060 EC02          401           PUSH    DPP2
+0062 E6020000  R   402           MOV     DPP2,#PAG ?BASE_DPP2
+0066 CC00          403           NOP
+0068 EC06          404           PUSH    MDH
+006A EC07          405           PUSH    MDL
+006C ECEF          406           PUSH    MSW
+006E EC2E          407           PUSH    MAL
+0070 EC2F          408           PUSH    MAH
+0072 ECEE          409           PUSH    MCW
+0074 C6ED0000      410           SCXT    MRW,#00h
+0078 EC84          411           PUSH    IDX0
+007A EC85          412           PUSH    IDX1
+007C D180          413           EXTR    #01h
+007E EC00     1    414           PUSH    QX0
+0080 D180          415           EXTR    #01h
+0082 EC01     1    416           PUSH    QX1
+0084 D180          417           EXTR    #01h
+0086 EC02     1    418           PUSH    QR0
+0088 D180          419           EXTR    #01h
+008A EC03     1    420           PUSH    QR1
+                   421   ; Locals:
+                   422   ; 
+                   423   ; Statics:
+                   424   ; 
+                   425   ; CSEs:
+                   426   ; 
+                   427   ; gpt2.c    240   // USER CODE BEGIN (Tmr6,2)
+                   428   ; gpt2.c    241            index++;
+                   429           ?LINE   241
+008C F2FC0000  R   430           MOV     R12,_index
+0090 08C1          431           ADD     R12,#01h
+0092 F6FC0000  R   432           MOV     _index,R12
+                   433   ; gpt2.c    242            index = index%ARRAY_SIZE;
+                   434           ?LINE   242
+0096 F2FC0000  R   435           MOV     R12,_index
+009A E6FD5802      436           MOV     R13,#0258h
+009E F6FC0EFE      437           MOV     MDL,R12
+00A2 5BDD          438           DIVU    R13
+00A4 F2FC0CFE      439           MOV     R12,MDH
+00A8 F6FC0000  R   440           MOV     _index,R12
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 17:57:12  Page:   9
 gpt2
 
  LOC CODE        LINE   SOURCELINE
 
-009E D180          441           EXTR    #01h
-00A0 FC03     1    442           POP     QR1
-00A2 D180          443           EXTR    #01h
-00A4 FC02     1    444           POP     QR0
-00A6 D180          445           EXTR    #01h
-00A8 FC01     1    446           POP     QX1
-00AA D180          447           EXTR    #01h
-00AC FC00     1    448           POP     QX0
-00AE FC85          449           POP     IDX1
-00B0 FC84          450           POP     IDX0
-00B2 FCED          451           POP     MRW
-00B4 FCEE          452           POP     MCW
-00B6 FC2F          453           POP     MAH
-00B8 FC2E          454           POP     MAL
-00BA FCEF          455           POP     MSW
-00BC FC07          456           POP     MDL
-00BE FC06          457           POP     MDH
-00C0 FC02          458           POP     DPP2
-00C2 FC00          459           POP     DPP0
-00C4 FC87          460           POP     MDC
-00C6 FC08          461           POP     CP
-                   462           ?LINE   244
-00C8 FB88          463           RETI
-                   464   _GPT2_viTmr5    ENDP
-               R   465           ?SYMB   '',$,17,244
-                   466   ; gpt2.c    245 
-                   467   ; gpt2.c    246 
-                   468   ; gpt2.c    247 
-                   469   ; gpt2.c    248 
-                   470   ; gpt2.c    249 // USER CODE BEGIN (GPT2_General,10)
-                   471   ; gpt2.c    250 
-                   472   ; gpt2.c    251 // USER CODE END
-                   473   ; gpt2.c    252 
-                   474   GPT2_1_PR       ENDS
-                   475   
-                   476           EXTERN  _index:WORD
-                   477   GPT2_RB REGDEF  R0-R15
-                   478           END
+                   441   ; gpt2.c    243   // USER CODE END
+                   442   ; gpt2.c    244 
+                   443   ; gpt2.c    245 } //  End of function GPT2_viTmr6
+                   444           ?LINE   245
+00AC D180          445           EXTR    #01h
+00AE FC03     1    446           POP     QR1
+00B0 D180          447           EXTR    #01h
+00B2 FC02     1    448           POP     QR0
+00B4 D180          449           EXTR    #01h
+00B6 FC01     1    450           POP     QX1
+00B8 D180          451           EXTR    #01h
+00BA FC00     1    452           POP     QX0
+00BC FC85          453           POP     IDX1
+00BE FC84          454           POP     IDX0
+00C0 FCED          455           POP     MRW
+00C2 FCEE          456           POP     MCW
+00C4 FC2F          457           POP     MAH
+00C6 FC2E          458           POP     MAL
+00C8 FCEF          459           POP     MSW
+00CA FC07          460           POP     MDL
+00CC FC06          461           POP     MDH
+00CE FC02          462           POP     DPP2
+00D0 FC00          463           POP     DPP0
+00D2 FC87          464           POP     MDC
+00D4 FC08          465           POP     CP
+                   466           ?LINE   245
+00D6 FB88          467           RETI
+                   468   _GPT2_viTmr6    ENDP
+               R   469           ?SYMB   '',$,17,245
+                   470   ; gpt2.c    246 
+                   471   ; gpt2.c    247 
+                   472   ; gpt2.c    248 
+                   473   ; gpt2.c    249 
+                   474   ; gpt2.c    250 // USER CODE BEGIN (GPT2_General,10)
+                   475   ; gpt2.c    251 
+                   476   ; gpt2.c    252 // USER CODE END
+                   477   ; gpt2.c    253 
+                   478   GPT2_1_PR       ENDS
+                   479   
+                   480           EXTERN  _index:WORD
+                   481   GPT2_RB REGDEF  R0-R15
+                   482           END
 
 total errors: 0, warnings: 0
 

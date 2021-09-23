@@ -1,4 +1,4 @@
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:11  Page:   1
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 17:57:10  Page:   1
 io
 
  LOC CODE        LINE   SOURCELINE
@@ -49,7 +49,7 @@ io
                     44   ; io.c       12 // @Description   This file contains functions that use the IO module.
                     45   ; io.c       13 //
                     46   ; io.c       14 //----------------------------------------------------------------------------
-                    47   ; io.c       15 // @Date          23.09.2021 16:17:13
+                    47   ; io.c       15 // @Date          23.09.2021 17:39:33
                     48   ; io.c       16 //
                     49   ; io.c       17 //****************************************************************************
                     50   ; io.c       18 
@@ -58,7 +58,7 @@ io
                     53   ; io.c       21 // USER CODE END
                     54   ; io.c       22 
                     55   ; io.c       23 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:11  Page:   2
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 17:57:10  Page:   2
 io
 
  LOC CODE        LINE   SOURCELINE
@@ -118,7 +118,7 @@ io
                    108   ; io.c       44 
                    109   ; io.c       45 //****************************************************************************
                    110   ; io.c       46 // @Defines
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:11  Page:   3
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 17:57:10  Page:   3
 io
 
  LOC CODE        LINE   SOURCELINE
@@ -178,7 +178,7 @@ io
                    163   ; io.c       99 //****************************************************************************
                    164   ; io.c      100 // @Function      void IO_vInit(void) 
                    165   ; io.c      101 //
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:11  Page:   4
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 17:57:10  Page:   4
 io
 
  LOC CODE        LINE   SOURCELINE
@@ -238,7 +238,7 @@ io
                    218   ; io.c      140 
                    219   ; io.c      141   ///  -----------------------------------------------------------------------
                    220   ; io.c      142   ///  Configuration of Port P2:
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:11  Page:   5
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 17:57:10  Page:   5
 io
 
  LOC CODE        LINE   SOURCELINE
@@ -298,7 +298,7 @@ io
                    273           ?LINE   194
 0000 E6FC8000      274           MOV     R12,#080h
 0004 F6FC00E9      275           MOV     0E900h,R12
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:11  Page:   6
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 17:57:10  Page:   6
 io
 
  LOC CODE        LINE   SOURCELINE
@@ -358,7 +358,7 @@ io
                    328   ; io.c      241   // USER CODE BEGIN (IO_Function,3)
                    329   ; io.c      242 
                    330   ; io.c      243   // USER CODE END
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:11  Page:   7
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 17:57:10  Page:   7
 io
 
  LOC CODE        LINE   SOURCELINE

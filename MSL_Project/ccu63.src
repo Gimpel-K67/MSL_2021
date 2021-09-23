@@ -44,7 +44,7 @@ $MODEL(SMALL)
 ; ccu63.c    12	// @Description   This file contains functions that use the CCU63 module.
 ; ccu63.c    13	//
 ; ccu63.c    14	//----------------------------------------------------------------------------
-; ccu63.c    15	// @Date          23.09.2021 16:17:13
+; ccu63.c    15	// @Date          23.09.2021 17:39:33
 ; ccu63.c    16	//
 ; ccu63.c    17	//****************************************************************************
 ; ccu63.c    18	
@@ -616,27 +616,50 @@ _5:
 ; ccu63.c   401	    // Timer T12 period match detection
 ; ccu63.c   402	
 ; ccu63.c   403	    // USER CODE BEGIN (NodeI0,19)
-; ccu63.c   404		   CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_0, table[index + 0]);
+; ccu63.c   404		   	CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_0, table[index + 0]);
 	?LINE	404
 	MOV	R12,_index
 	SHL	R12,#01h
 	MOV	R13,[R12+#_table]
 	MOV	0EBA0h,R13
-; ccu63.c   405	    // USER CODE END
-; ccu63.c   406	
-; ccu63.c   407	    CCU63_ISR |= 0x0080;  // clear flag CCU63_IS_T12PM
-	?LINE	407
+; ccu63.c   405		   	CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_1, table[(index + 200)%ARRAY_SIZE]);
+	?LINE	405
+	MOV	R12,_index
+	ADD	R12,#0C8h
+	MOV	R13,#0258h
+	MOV	MDL,R12
+	DIVU	R13
+	MOV	R12,MDH
+	SHL	R12,#01h
+	MOV	R13,[R12+#_table]
+	MOV	0EBA2h,R13
+; ccu63.c   406	  		CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_2, table[(index + 400)%ARRAY_SIZE]);
+	?LINE	406
+	MOV	R12,_index
+	ADD	R12,#0190h
+	MOV	R13,#0258h
+	MOV	MDL,R12
+	DIVU	R13
+	MOV	R12,MDH
+	SHL	R12,#01h
+	MOV	R13,[R12+#_table]
+	MOV	0EBA4h,R13
+; ccu63.c   407	
+; ccu63.c   408	    // USER CODE END
+; ccu63.c   409	
+; ccu63.c   410	    CCU63_ISR |= 0x0080;  // clear flag CCU63_IS_T12PM
+	?LINE	410
 	MOV	R12,#0EBD4h
 	MOV	R13,[R12]
 	BSET	R13.7
 	MOV	[R12],R13
-; ccu63.c   408	  }
-	?LINE	408
-_6:
-; ccu63.c   409	
-; ccu63.c   410	
-; ccu63.c   411	} //  End of function CCU63_viNodeI0
+; ccu63.c   411	  }
 	?LINE	411
+_6:
+; ccu63.c   412	
+; ccu63.c   413	
+; ccu63.c   414	} //  End of function CCU63_viNodeI0
+	?LINE	414
 	EXTR	#01h
 	POP	QR1
 	EXTR	#01h
@@ -657,25 +680,25 @@ _6:
 	POP	DPP2
 	POP	DPP0
 	POP	MDC
-	?LINE	411
+	?LINE	414
 	RETI
 _CCU63_viNodeI0	ENDP
-	?SYMB	'',$,17,411
-; ccu63.c   412	
-; ccu63.c   413	
-; ccu63.c   414	
+	?SYMB	'',$,17,414
 ; ccu63.c   415	
-; ccu63.c   416	// USER CODE BEGIN (CCU63_General,10)
+; ccu63.c   416	
 ; ccu63.c   417	
-; ccu63.c   418	// USER CODE END
-; ccu63.c   419	
+; ccu63.c   418	
+; ccu63.c   419	// USER CODE BEGIN (CCU63_General,10)
+; ccu63.c   420	
+; ccu63.c   421	// USER CODE END
+; ccu63.c   422	
 CCU63_1_PR	ENDS
 
 	EXTERN	_table:WORD
 	?SYMB	'',01070012H,5,262
 	?SYMB	'',16,47,263
 	?SYMB	'',0,30,0
-	?SYMB	'',255,49,0
+	?SYMB	'',599,49,0
 	EXTERN	_index:WORD
 	REGDEF	R0-R15
 	END

@@ -12,7 +12,7 @@
 // @Description   This file contains functions that use the CCU63 module.
 //
 //----------------------------------------------------------------------------
-// @Date          23.09.2021 16:17:13
+// @Date          23.09.2021 17:39:33
 //
 //****************************************************************************
 
@@ -401,7 +401,10 @@ _interrupt(CCU63_NodeI0_INT) _localbank(-1) void CCU63_viNodeI0(void)
     // Timer T12 period match detection
 
     // USER CODE BEGIN (NodeI0,19)
-	   CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_0, table[index + 0]);
+	   	CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_0, table[index + 0]);
+	   	CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_1, table[(index + 200)%ARRAY_SIZE]);
+  		CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_2, table[(index + 400)%ARRAY_SIZE]);
+
     // USER CODE END
 
     CCU63_ISR |= 0x0080;  // clear flag CCU63_IS_T12PM

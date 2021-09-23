@@ -1,4 +1,4 @@
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:12  Page:   1
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 17:57:12  Page:   1
 gpt1
 
  LOC CODE        LINE   SOURCELINE
@@ -49,7 +49,7 @@ gpt1
                     44   ; gpt1.c     12 // @Description   This file contains functions that use the GPT1 module.
                     45   ; gpt1.c     13 //
                     46   ; gpt1.c     14 //----------------------------------------------------------------------------
-                    47   ; gpt1.c     15 // @Date          23.09.2021 16:17:13
+                    47   ; gpt1.c     15 // @Date          23.09.2021 17:39:33
                     48   ; gpt1.c     16 //
                     49   ; gpt1.c     17 //****************************************************************************
                     50   ; gpt1.c     18 
@@ -58,7 +58,7 @@ gpt1
                     53   ; gpt1.c     21 // USER CODE END
                     54   ; gpt1.c     22 
                     55   ; gpt1.c     23 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:12  Page:   2
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 17:57:12  Page:   2
 gpt1
 
  LOC CODE        LINE   SOURCELINE
@@ -118,7 +118,7 @@ gpt1
                    108   ; gpt1.c     44 
                    109   ; gpt1.c     45 //****************************************************************************
                    110   ; gpt1.c     46 // @Defines
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:12  Page:   3
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 17:57:12  Page:   3
 gpt1
 
  LOC CODE        LINE   SOURCELINE
@@ -178,7 +178,7 @@ gpt1
                    163   ; gpt1.c     99 //****************************************************************************
                    164   ; gpt1.c    100 // @Function      void GPT1_vInit(void) 
                    165   ; gpt1.c    101 //
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:12  Page:   4
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 17:57:12  Page:   4
 gpt1
 
  LOC CODE        LINE   SOURCELINE
@@ -238,7 +238,7 @@ gpt1
                    218           ?LINE   134
 0008 CC00          219           NOP
                    220   ; gpt1.c    135 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:12  Page:   5
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 17:57:12  Page:   5
 gpt1
 
  LOC CODE        LINE   SOURCELINE
@@ -298,7 +298,7 @@ gpt1
                    273   ; gpt1.c    176   ///  - external up/down control is disabled
                    274   ; gpt1.c    177   ///  - prescaler factor is 4
                    275   ; gpt1.c    178   ///  - up/down control bit is reset
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:12  Page:   6
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 17:57:12  Page:   6
 gpt1
 
  LOC CODE        LINE   SOURCELINE

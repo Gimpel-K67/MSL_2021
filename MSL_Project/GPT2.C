@@ -12,7 +12,7 @@
 // @Description   This file contains functions that use the GPT2 module.
 //
 //----------------------------------------------------------------------------
-// @Date          23.09.2021 16:17:13
+// @Date          23.09.2021 17:39:33
 //
 //****************************************************************************
 
@@ -150,26 +150,27 @@ void GPT2_vInit(void)
   ///  - prescaler factor is 2
   ///  - up/down control bit is reset
   ///  - external up/down control is disabled
+  ///  - timer 5 run bit is reset
   ///  - timer 5 remote control is disabled
 
   GPT12E_T5CON   =  0x0000;      // load timer 5 control register
-  GPT12E_T5      =  0xF615;      // load timer 5 register
+  GPT12E_T5      =  0xFFFF;      // load timer 5 register
 
   ///  -----------------------------------------------------------------------
   ///  Configuration of the GPT2 Core Timer 6:
   ///  -----------------------------------------------------------------------
   ///  - timer 6 works in timer mode
-  ///  - prescaler factor is 2
+  ///  - prescaler factor is 4
   ///  - up/down control bit is reset
   ///  - external up/down control is disabled
   ///  - alternate output function T6OUT (P6.2) is disabled
   ///  - alternate output function T6OUT (P7.0) is disabled
   ///  - timer 6 output toggle latch (T6OTL) is set to 0
-  ///  - timer 6 run bit is reset
+  ///  - CAPREL is used as a reload register for the core timer T6
   ///  - timer 6 is not cleared on a capture
 
-  GPT12E_T6CON   =  0x0800;      // load timer 6 control register
-  GPT12E_T6      =  0x0000;      // load timer 6 register
+  GPT12E_T6CON   =  0x8801;      // load timer 6 control register
+  GPT12E_T6      =  0xFEBB;      // load timer 6 register
 
   ///  -----------------------------------------------------------------------
   ///  Configuration of the GPT2 CAPREL:
@@ -181,7 +182,7 @@ void GPT2_vInit(void)
   ///  - timer 5 is just captured without any correction
 
   GPT12E_T5CON  |=  0x0000;      // load timer 5 control register
-  GPT12E_CAPREL  =  0x0000;      // load CAPREL register
+  GPT12E_CAPREL  =  0xFEBB;      // load CAPREL register
 
   ///  -----------------------------------------------------------------------
   ///  Configuration of the used GPT2 Port Pins:
@@ -191,12 +192,12 @@ void GPT2_vInit(void)
   ///  -----------------------------------------------------------------------
   ///  Configuration of the used GPT2 Interrupts:
   ///  -----------------------------------------------------------------------
-  ///  timer 5 service request node configuration:
-  ///  - timer 5 interrupt priority level (ILVL) = 11
-  ///  - timer 5 interrupt group level (GLVL) = 0
-  ///  - timer 5 group priority extension (GPX) = 0
+  ///  timer 6 service request node configuration:
+  ///  - timer 6 interrupt priority level (ILVL) = 11
+  ///  - timer 6 interrupt group level (GLVL) = 0
+  ///  - timer 6 group priority extension (GPX) = 0
 
-  GPT12E_T5IC    =  0x006C;     
+  GPT12E_T6IC    =  0x006C;     
 
 
 
@@ -204,17 +205,17 @@ void GPT2_vInit(void)
 
   // USER CODE END
 
-  GPT12E_T5CON_T5R  =  1;        // set timer 5 run bit
+  GPT12E_T6CON_T6R  =  1;        // set timer 6 run bit
 
 } //  End of function GPT2_viCAPREL
 
 //****************************************************************************
-// @Function      void GPT2_viTmr5(void) 
+// @Function      void GPT2_viTmr6(void) 
 //
 //----------------------------------------------------------------------------
-// @Description   This is the interrupt service routine for the GPT2 timer 5. 
+// @Description   This is the interrupt service routine for the GPT2 timer 6. 
 //                It is called up in the case of over or underflow of the 
-//                timer 5 register.
+//                timer 6 register.
 //                
 //                Please note that you have to add application specific code 
 //                to this function.
@@ -230,18 +231,18 @@ void GPT2_vInit(void)
 //
 //****************************************************************************
 
-// USER CODE BEGIN (Tmr5,1)
+// USER CODE BEGIN (Tmr6,1)
 
 // USER CODE END
 
-_interrupt(T5INT)  void GPT2_viTmr5(void)
+_interrupt(T6INT)  void GPT2_viTmr6(void)
 {
-  // USER CODE BEGIN (Tmr5,2)
-	  index++;
-	  index = index%ARRAY_SIZE;
+  // USER CODE BEGIN (Tmr6,2)
+	   index++;
+	   index = index%ARRAY_SIZE;
   // USER CODE END
 
-} //  End of function GPT2_viTmr5
+} //  End of function GPT2_viTmr6
 
 
 
