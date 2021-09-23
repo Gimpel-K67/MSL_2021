@@ -12,7 +12,7 @@
 // @Description   This file contains the project initialization function.
 //
 //----------------------------------------------------------------------------
-// @Date          23.09.2021 10:42:54
+// @Date          23.09.2021 16:17:12
 //
 //****************************************************************************
 
@@ -74,9 +74,9 @@
 //****************************************************************************
 
 // USER CODE BEGIN (MAIN_General,7)
-const unsigned int size = 100;
-unsigned int table[size];
-float pi = 3.14159265359;
+	unsigned int table[ARRAY_SIZE];
+	unsigned int index;
+	float pi = 3.14159265359;
 // USER CODE END
 
 
@@ -147,6 +147,12 @@ void MAIN_vInit(void)
   //   initializes the Parallel Ports
   IO_vInit();
 
+  //   initializes the General Purpose Timer Unit (GPT1)
+  GPT1_vInit();
+
+  //   initializes the General Purpose Timer Unit (GPT2)
+  GPT2_vInit();
+
   //   initializes the Capture / Compare Unit 63 (CCU63)
   CCU63_vInit();
 
@@ -155,7 +161,7 @@ void MAIN_vInit(void)
   //   Initialization of the Bank Select registers:
   //   -----------------------------------------------------------------------
 
-  BNKSEL1        =   0x0200;     // Bank Select Control Reg. 1
+  BNKSEL0        =   0x0002;     // Bank Select Control Reg. 0
 
   // USER CODE BEGIN (Init,3)
 
@@ -334,9 +340,9 @@ void MAIN_vChangeFreq(void)
 // USER CODE BEGIN (Main,1)
 void generateTable(){
 	unsigned int PR = CCU63_T12PR;
-	double stepSize = (2*pi)/(size);
+	double stepSize = (2*pi)/(ARRAY_SIZE);
 	int i;
-	for (i = 0; i < size; i++){ 
+	for (i = 0; i < ARRAY_SIZE; i++){ 
 		table[i] = (unsigned int)((PR/2)*(sin(stepSize * i) + 1));
 	}
 }
@@ -352,8 +358,8 @@ void main(void)
   MAIN_vInit();
 
   // USER CODE BEGIN (Main,3)
-  generateTable();
-
+ 	generateTable();
+	IO_vSetPin(LED_DBG);
     // USER CODE END
 
   while(1)

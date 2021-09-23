@@ -8,7 +8,7 @@
 \par \plain\f4\fs22\cf0 Compiler: \tab\tab\b Tasking Classic
 \par \plain\f4\fs22\cf0 Memory Model: \tab\b SMALL
 \par 
-\par \plain\f4\fs22\cf0 Date: \tab\tab\tab\b 23.09.2021 10:42:55
+\par \plain\f4\fs22\cf0 Date: \tab\tab\tab\b 23.09.2021 16:17:13
 \par 
 \par 
 \par \plain\f4\fs22\cf2\b Please read this document carefully and note
@@ -27,6 +27,10 @@
 \par \tab\tab\tab XE16XREGS.H
 \par \tab\tab\tab IO.H
 \par \tab\tab\tab IO.C
+\par \tab\tab\tab GPT1.H
+\par \tab\tab\tab GPT1.C
+\par \tab\tab\tab GPT2.H
+\par \tab\tab\tab GPT2.C
 \par \tab\tab\tab CCU63.H
 \par \tab\tab\tab CCU63.C
 \par \tab\tab\tab DAVE_CONFIG.ASM
@@ -327,6 +331,78 @@
 \par \plain\f4\fs28\cf0\ul Parallel Ports
 \par
 \par \plain\f4\fs24\cf0 Macros:\f4\fs20\cf0
+\par
+\par
+\par \plain\f4\fs20\cf0 \tab Macro:
+\par \plain\f4\fs20\cf0\b \tab \tab IO_vSetPin(PinName)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This macro sets the chosen portpin to '1'.
+
+\par \tab \tab Note:
+
+\par \tab \tab See the 'Defines for the parameter PinName' section in this
+
+\par \tab \tab header file for the available definitions for the parameter
+
+\par \tab \tab PinName.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab PinName:
+
+\par \tab \tab Pin to be set to '1'
+
+\par
+\par
+\par \plain\f4\fs20\cf0 \tab Macro:
+\par \plain\f4\fs20\cf0\b \tab \tab IO_vResetPin(PinName)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This macro sets the chosen portpin to '0'.
+
+\par \tab \tab Note:
+
+\par \tab \tab See the 'Defines for the parameter PinName' section in this
+
+\par \tab \tab header file for the available definitions for the parameter
+
+\par \tab \tab PinName.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab PinName:
+
+\par \tab \tab Pin to be set to '0'
+
+\par
+\par
+\par \plain\f4\fs20\cf0 \tab Macro:
+\par \plain\f4\fs20\cf0\b \tab \tab IO_vTogglePin(PinName)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This marco toggles the chosen portpin.
+
+\par \tab \tab Note:
+
+\par \tab \tab See the 'Defines for the parameter PinName' section in this
+
+\par \tab \tab header file for the available definitions for the parameter
+
+\par \tab \tab PinName.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab PinName:
+
+\par \tab \tab Pin to be toggled
+
 \par \plain\f4\fs24\cf0 Functions:\f4\fs20\cf0
 \par
 \par \plain\f4\fs20\cf0 \tab Function:
@@ -417,6 +493,385 @@
 \tab Configuration of Port P15:\par 
 \tab - no pin of port P15 is used\par 
 \tab - Port15 Data register P15(Read only)\par 
+\par 
+
+\par \plain\f4\fs20\cf0
+\par \plain\f4\fs28\cf0\ul General Purpose Timer Unit (GPT1)
+\par
+\par \plain\f4\fs24\cf0 Macros:\f4\fs20\cf0
+\par
+\par
+\par \plain\f4\fs20\cf0 \tab Macro:
+\par \plain\f4\fs20\cf0\b \tab \tab GPT1_vStartTmr(TimerNr)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This macro starts the selected GPT1 timer. The timer
+
+\par \tab \tab continues to count from where it had stopped. The following
+
+\par \tab \tab definitions are available for TimerNr:
+
+\par \tab \tab GPT1_TIMER_2
+
+\par \tab \tab GPT1_TIMER_3
+
+\par \tab \tab GPT1_TIMER_4
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab TimerNr:
+
+\par \tab \tab the name of the timer to be started
+
+\par
+\par
+\par \plain\f4\fs20\cf0 \tab Macro:
+\par \plain\f4\fs20\cf0\b \tab \tab GPT1_vStopTmr(TimerNr)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This macro stops the selected GPT1 timer. The contents of
+
+\par \tab \tab the timer register remain unchanged. The remote control of
+
+\par \tab \tab the selected timer is cleared. The following definitions
+
+\par \tab \tab are available for TimerNr:
+
+\par \tab \tab GPT1_TIMER_2
+
+\par \tab \tab GPT1_TIMER_3
+
+\par \tab \tab GPT1_TIMER_4
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab TimerNr:
+
+\par \tab \tab The name of the timer to be stopped
+
+\par
+\par
+\par \plain\f4\fs20\cf0 \tab Macro:
+\par \plain\f4\fs20\cf0\b \tab \tab GPT1_vClearTmr(TimerNr)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This macro stops the selected GPT1 timer and sets the timer
+
+\par \tab \tab register to 0. The remote control of the selected timer is
+
+\par \tab \tab cleared. The following definitions are available for
+
+\par \tab \tab TimerNr:
+
+\par \tab \tab GPT1_TIMER_2
+
+\par \tab \tab GPT1_TIMER_3
+
+\par \tab \tab GPT1_TIMER_4
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab TimerNr:
+
+\par \tab \tab The name of the timer to be cleared
+
+\par \plain\f4\fs24\cf0 Functions:\f4\fs20\cf0
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab void GPT1_vInit(void)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This is the initialization function of the GPT1 function
+
+\par \tab \tab library. It is assumed that the SFRs used by this library
+
+\par \tab \tab are in reset state.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab None
+
+\par
+\par \plain\f4\fs24\cf0 Initialization:
+\par \plain\f4\fs20\cf0\b
+\par
+\tab Configuration of Timer Block Prescaler 1:\par 
+\par 
+\tab Configuration of Timer Block Prescaler 1:\par 
+\tab - prescaler for timer block 1 is 4\par 
+\par 
+\tab Configuration of the GPT1 Core Timer 3:\par 
+\tab - timer 3 works in timer mode\par 
+\tab - external up/down control is disabled\par 
+\tab - prescaler factor is 4\par 
+\tab - up/down control bit is reset\par 
+\tab - alternate output function T3OUT (P7.0) is disabled\par 
+\tab - timer 3 output toggle latch (T3OTL) is set to 0\par 
+\tab - timer 3 run bit is reset\par 
+\par 
+\tab - prescaler for timer block 1 is 4\par 
+\par 
+\tab Configuration of the GPT1 Auxiliary Timer 2:\par 
+\tab - timer 2 works in timer mode\par 
+\tab - external up/down control is disabled\par 
+\tab - prescaler factor is 4\par 
+\tab - up/down control bit is reset\par 
+\tab - timer 2 run bit is reset\par 
+\par 
+\tab - prescaler for timer block 1 is 4\par 
+\par 
+\tab Configuration of the GPT1 Auxiliary Timer 4:\par 
+\tab - timer 4 works in timer mode\par 
+\tab - external up/down control is disabled\par 
+\tab - prescaler factor is 4\par 
+\tab - up/down control bit is reset\par 
+\tab - timer 4 run bit is reset\par 
+\par 
+\tab - prescaler for timer block 1 is 4\par 
+\par 
+\tab Configuration of the used GPT1 Port Pins:\par 
+\par 
+\tab Configuration of the used GPT1 Interrupts:\par 
+\par 
+
+\par \plain\f4\fs20\cf0
+\par \plain\f4\fs28\cf0\ul General Purpose Timer Unit (GPT2)
+\par
+\par \plain\f4\fs24\cf0 Macros:\f4\fs20\cf0
+\par
+\par
+\par \plain\f4\fs20\cf0 \tab Macro:
+\par \plain\f4\fs20\cf0\b \tab \tab GPT2_vStartTmr(TimerNr)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This macro starts the selected GPT2 timer. The timer
+
+\par \tab \tab continues to count from where it had stopped. The following
+
+\par \tab \tab definitions are available for TimerNr:
+
+\par \tab \tab GPT2_TIMER_5
+
+\par \tab \tab GPT2_TIMER_6
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab TimerNr:
+
+\par \tab \tab The name of the timer to be started
+
+\par
+\par
+\par \plain\f4\fs20\cf0 \tab Macro:
+\par \plain\f4\fs20\cf0\b \tab \tab GPT2_vStopTmr(TimerNr)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This macro stops the selected GPT2 timer. The contents of
+
+\par \tab \tab the timer register remain unchanged. The remote control of
+
+\par \tab \tab the selected timer is cleared. The following definitions
+
+\par \tab \tab are available for TimerNr:
+
+\par \tab \tab GPT2_TIMER_5
+
+\par \tab \tab GPT2_TIMER_6
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab TimerNr:
+
+\par \tab \tab The name of the timer to be stopped
+
+\par
+\par
+\par \plain\f4\fs20\cf0 \tab Macro:
+\par \plain\f4\fs20\cf0\b \tab \tab GPT2_uwReadTmr(TimerNr)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This macro returns the contents of the selected GPT2 timer.
+
+\par \tab \tab The timer is not stopped. Access of the CPU to the
+
+\par \tab \tab registers of the timer is of higher priority than a timer
+
+\par \tab \tab increment, a reload or a capture event. The following
+
+\par \tab \tab definitions are available for TimerNr:
+
+\par \tab \tab GPT2_TIMER_5
+
+\par \tab \tab GPT2_TIMER_6
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b Current 16-bit value of the timer\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab TimerNr:
+
+\par \tab \tab The name of the timer to be readed
+
+\par
+\par
+\par \plain\f4\fs20\cf0 \tab Macro:
+\par \plain\f4\fs20\cf0\b \tab \tab GPT2_uwReadCAPREL()\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This macro returns the content of the GPT12E_CAPREL
+
+\par \tab \tab register. This can be the capture value of timer 5 or the
+
+\par \tab \tab reload value of timer 6.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b Current 16-bit value of the GPT12E_CAPREL register\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab None
+
+\par
+\par
+\par \plain\f4\fs20\cf0 \tab Macro:
+\par \plain\f4\fs20\cf0\b \tab \tab GPT2_vLoadTmr(TimerNr, Value)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This macro loads the selected GPT2 timer with the forwarded
+
+\par \tab \tab value. The timer is not stopped. The access of the CPU to
+
+\par \tab \tab the registers of the timers is of higher priority than a
+
+\par \tab \tab timer increment, a reload or a capture event. The following
+
+\par \tab \tab definitions are available for TimerNr:
+
+\par \tab \tab GPT2_TIMER_5
+
+\par \tab \tab GPT2_TIMER_6
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab TimerNr:
+
+\par \tab \tab The name of the timer to be loaded
+
+\par \tab \tab Value:
+
+\par \tab \tab 16-bit value to be loaded
+
+\par
+\par
+\par \plain\f4\fs20\cf0 \tab Macro:
+\par \plain\f4\fs20\cf0\b \tab \tab GPT2_vLoadCAPREL(Value)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This macro loads the GPT12E_CAPREL register with the
+
+\par \tab \tab forwarded value.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab Value:
+
+\par \tab \tab 16-bit value to loaded in the GPT12E_CAPREL register
+
+\par \plain\f4\fs24\cf0 Functions:\f4\fs20\cf0
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab void GPT2_vInit(void)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This is the initialization function of the GPT2 function
+
+\par \tab \tab library. It is assumed that the SFRs used by this library
+
+\par \tab \tab are in reset state.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab None
+
+\par
+\par \plain\f4\fs20\cf0 \tab Function:
+\par \plain\f4\fs20\cf0\b \tab \tab void GPT2_viTmr5(void)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This is the interrupt service routine for the GPT2 timer 5.
+
+\par \tab \tab It is called up in the case of over or underflow of the
+
+\par \tab \tab timer 5 register.
+
+\par \tab \tab Please note that you have to add application specific code
+
+\par \tab \tab to this function.
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab None
+
+\par
+\par \plain\f4\fs24\cf0 Initialization:
+\par \plain\f4\fs20\cf0\b
+\par
+\tab Configuration of Timer Block Prescaler 1:\par 
+\par 
+\tab Configuration of Timer Block Prescaler 2:\par 
+\tab - prescaler for timer block 2 is 2\par 
+\par 
+\tab Configuration of the GPT2 Core Timer 5:\par 
+\tab - timer 5 works in timer mode\par 
+\tab - prescaler factor is 2\par 
+\tab - up/down control bit is reset\par 
+\tab - external up/down control is disabled\par 
+\tab - timer 5 remote control is disabled\par 
+\par 
+\tab Configuration of the GPT2 Core Timer 6:\par 
+\tab - timer 6 works in timer mode\par 
+\tab - prescaler factor is 2\par 
+\tab - up/down control bit is reset\par 
+\tab - external up/down control is disabled\par 
+\tab - alternate output function T6OUT (P6.2) is disabled\par 
+\tab - alternate output function T6OUT (P7.0) is disabled\par 
+\tab - timer 6 output toggle latch (T6OTL) is set to 0\par 
+\tab - timer 6 run bit is reset\par 
+\tab - timer 6 is not cleared on a capture\par 
+\par 
+\tab Configuration of the GPT2 CAPREL:\par 
+\tab - capture T5 into CAPREL is disabled\par 
+\tab - capture trigger from pin CAPIN\par 
+\tab - capure is disabled\par 
+\tab - timer 5 is not cleared on a capture\par 
+\tab - timer 5 is just captured without any correction\par 
+\par 
+\tab Configuration of the used GPT2 Port Pins:\par 
+\par 
+\tab Configuration of the used GPT2 Interrupts:\par 
+\tab timer 5 service request node configuration:\par 
+\tab - timer 5 interrupt priority level (ILVL) = 11\par 
+\tab - timer 5 interrupt group level (GLVL) = 0\par 
+\tab - timer 5 group priority extension (GPX) = 0\par 
 \par 
 
 \par \plain\f4\fs20\cf0
@@ -587,7 +1042,7 @@
 \tab - Timer 12 run bit is set\par 
 \tab - Single shot mode is disabled\par 
 \tab - Timer 12 works in center aligned mode\par 
-\tab - Interrupt on period match is disabled\par 
+\tab - Interrupt on period match is enabled\par 
 \tab - Interrupt on one match is enabled\par 
 \tab - No External run selection is selected.\par 
 \tab - Timer mode is selected.\par 

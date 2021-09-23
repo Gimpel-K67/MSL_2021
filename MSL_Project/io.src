@@ -44,7 +44,7 @@ $MODEL(SMALL)
 ; io.c       12	// @Description   This file contains functions that use the IO module.
 ; io.c       13	//
 ; io.c       14	//----------------------------------------------------------------------------
-; io.c       15	// @Date          23.09.2021 10:42:55
+; io.c       15	// @Date          23.09.2021 16:17:13
 ; io.c       16	//
 ; io.c       17	//****************************************************************************
 ; io.c       18	
@@ -79,6 +79,12 @@ $MODEL(SMALL)
 	?SYMB	'SCS_EXTCLK_Type',257,13,258
 	?SYMB	'',0,86,2
 	?SYMB	'IO.H',0,29,3
+	?SYMB	'',0,86,3
+	?SYMB	'',0,86,2
+	?SYMB	'GPT1.H',0,29,3
+	?SYMB	'',0,86,3
+	?SYMB	'',0,86,2
+	?SYMB	'GPT2.H',0,29,3
 	?SYMB	'',0,86,3
 	?SYMB	'',0,86,2
 	?SYMB	'CCU63.H',0,29,3

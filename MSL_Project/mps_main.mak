@@ -26,28 +26,28 @@ all : subproj $(PROJ).abs
 subproj :
 	@echo Warning: Infinite loop detected; Not building sub-project mps_main.pjt
 
-ccu63.obj : ccu63.c main.h xe16xregs.h scs.h io.h ccu63.h <1632321531>
+ccu63.obj : ccu63.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h ccu63.h <1632399382>
 
 	@echo Compiling and assembling ${*F}.c
 	@"$(PRODDIR)\bin\cc166.exe" -f <<EOF -c ccu63.c
 	${separate "\n" -o $@ $(OPT_CC) }
 	EOF
 
-io.obj : io.c main.h xe16xregs.h scs.h io.h ccu63.h <1632321531>
+io.obj : io.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h ccu63.h <1632399382>
 
 	@echo Compiling and assembling ${*F}.c
 	@"$(PRODDIR)\bin\cc166.exe" -f <<EOF -c io.c
 	${separate "\n" -o $@ $(OPT_CC) }
 	EOF
 
-main.obj : main.c main.h xe16xregs.h scs.h io.h ccu63.h <1632321531>
+main.obj : main.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h ccu63.h <1632399382>
 
 	@echo Compiling and assembling ${*F}.c
 	@"$(PRODDIR)\bin\cc166.exe" -f <<EOF -c main.c
 	${separate "\n" -o $@ $(OPT_CC) }
 	EOF
 
-scs.obj : scs.c main.h xe16xregs.h scs.h io.h ccu63.h <1632321531>
+scs.obj : scs.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h ccu63.h <1632399382>
 
 	@echo Compiling and assembling ${*F}.c
 	@"$(PRODDIR)\bin\cc166.exe" -f <<EOF -c scs.c
@@ -60,7 +60,22 @@ start_master.obj : start_master.asm "$(PRODDIR)\include\head.asm" "$(PRODDIR)\in
 	${separate "\n" -o $@ $(OPT_CC) }
 	EOF
 
-$(PROJ).out : ccu63.obj io.obj main.obj scs.obj start_master.obj _mps_main.ilo <1632321531>
+gpt1.obj : gpt1.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h ccu63.h <1632399382>
+
+	@echo Compiling and assembling ${*F}.c
+	@"$(PRODDIR)\bin\cc166.exe" -f <<EOF -c gpt1.c
+	${separate "\n" -o $@ $(OPT_CC) }
+	EOF
+
+gpt2.obj : gpt2.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h ccu63.h <1632399382>
+
+	@echo Compiling and assembling ${*F}.c
+	@"$(PRODDIR)\bin\cc166.exe" -f <<EOF -c gpt2.c
+	${separate "\n" -o $@ $(OPT_CC) }
+	EOF
+
+$(PROJ).out : ccu63.obj io.obj main.obj scs.obj start_master.obj gpt1.obj gpt2.obj
+$(PROJ).out : _mps_main.ilo <1632399382>
 	@echo Linking and locating to ${*F}.out
 	@"$(PRODDIR)\bin\cc166.exe" $(LINKCPP) -o $@ -f <<EOF 
 	${separate "\n" $(match .obj $!) $(match .lno $!) $(match .lib $!) $(OPT_LC)}
@@ -87,6 +102,12 @@ clean :
 	@$(exist start_master.obj del start_master.obj)
 	@$(exist start_master.src del start_master.src)
 	@$(exist start_master.lst del start_master.lst)
+	@$(exist gpt1.obj del gpt1.obj)
+	@$(exist gpt1.src del gpt1.src)
+	@$(exist gpt1.lst del gpt1.lst)
+	@$(exist gpt2.obj del gpt2.obj)
+	@$(exist gpt2.src del gpt2.src)
+	@$(exist gpt2.lst del gpt2.lst)
 	@$(exist $(PROJ).out del $(PROJ).out)
 	@$(exist mps_main.map del mps_main.map)
 	@$(exist $(PROJ).abs del $(PROJ).abs)

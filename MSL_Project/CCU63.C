@@ -12,7 +12,7 @@
 // @Description   This file contains functions that use the CCU63 module.
 //
 //----------------------------------------------------------------------------
-// @Date          23.09.2021 10:42:55
+// @Date          23.09.2021 16:17:13
 //
 //****************************************************************************
 
@@ -65,7 +65,8 @@
 //****************************************************************************
 
 // USER CODE BEGIN (CCU63_General,6)
-
+	extern unsigned int table[ARRAY_SIZE];
+	extern	unsigned int index;
 // USER CODE END
 
 
@@ -150,7 +151,7 @@ void CCU63_vInit(void)
   ///  - Timer 12 run bit is set
   ///  - Single shot mode is disabled
   ///  - Timer 12 works in center aligned mode
-  ///  - Interrupt on period match is disabled
+  ///  - Interrupt on period match is enabled
   ///  - Interrupt on one match is enabled
   ///  - No External run selection is selected.
   ///  - Timer mode is selected.
@@ -300,7 +301,7 @@ void CCU63_vInit(void)
   CCU63_INP      =  0x0000;      // Load CCU63 capture/compare interrupt node 
                                  // pointer register
 
-  CCU63_IEN      =  0x0040;      // Load CCU63 capture/compare interrupt 
+  CCU63_IEN      =  0x00C0;      // Load CCU63 capture/compare interrupt 
                                  // enable register
 
 
@@ -378,7 +379,7 @@ void CCU63_vInit(void)
 
 // USER CODE END
 
-_interrupt(CCU63_NodeI0_INT)  void CCU63_viNodeI0(void)
+_interrupt(CCU63_NodeI0_INT) _localbank(-1) void CCU63_viNodeI0(void)
 {
   // USER CODE BEGIN (NodeI0,2)
 
@@ -389,10 +390,21 @@ _interrupt(CCU63_NodeI0_INT)  void CCU63_viNodeI0(void)
     // Timer T12 one match detection
 
     // USER CODE BEGIN (NodeI0,20)
-
+	   CCU63_vEnableShadowTransfer(CCU63_TIMER_12);
     // USER CODE END
 
     CCU63_ISR |= 0x0040;  // clear flag CCU63_IS_T12OM
+  }
+
+  if(CCU63_IS & 0x0080)  // if CCU63_IS_T12PM
+  {
+    // Timer T12 period match detection
+
+    // USER CODE BEGIN (NodeI0,19)
+	   CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_0, table[index + 0]);
+    // USER CODE END
+
+    CCU63_ISR |= 0x0080;  // clear flag CCU63_IS_T12PM
   }
 
 

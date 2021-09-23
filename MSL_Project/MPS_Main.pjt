@@ -94,7 +94,10 @@ VCSSetCmd=VCS_REMOVE_ID,'del /f "%b%{??v|___}e"',0x8000040
 .\SCS.H
 .\XE16xREGS.H
 .\start_master.asm
-
+.\GPT1.C
+.\GPT1.H
+.\GPT2.C
+.\GPT2.H
 
 [Ede]
 Toolchain=d:\programme\tasking\c166 v8.7r1\etc\c166.dol

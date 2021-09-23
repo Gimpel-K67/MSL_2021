@@ -1,0 +1,350 @@
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:12  Page:   1
+gpt1
+
+ LOC CODE        LINE   SOURCELINE
+
+                     1   ; TASKING C166/ST10 C compiler v8.7r1 Build 775
+                     2   ; options: -e -Id:\programme\tasking\c166 v8.7r1\include -x2 -Bhoeufmknladij -OB
+                     3   ;          -OE -zswitch_tabmem_default -zautobitastruct-4 -zautobita-0 -FSC -A1
+                     4   ;          -zvolatile_union -O0 -g -newerr -s -i0 -Ms
+                     5   $DEBUG
+                     6   $NOLOCALS
+                     7   $EXTEND2
+                     8   $NOMOD166
+                     9   $STDNAMES(regsuper10bo.def)
+                    10   $EXTMAC
+                    11   $CASE
+                    12   $NOEXPANDREGBANK
+                    13   $MODEL(SMALL)
+                    14           NAME    GPT1_C
+                    15           ?SYMB   'gpt1.c',32,80,16
+                    16           ?SYMB   '',1,82,0
+                    17           ?SYMB   '80166',0,84,0
+                    18           ?SYMB   '',0,81,0
+                    19           ?SYMB   'void',00H,45,1
+                    20           ?SYMB   'char',080000H,45,2
+                    21           ?SYMB   'unsigned char',080000H,45,3
+                    22           ?SYMB   'short',0100000H,45,4
+                    23           ?SYMB   'unsigned short',0100000H,45,5
+                    24           ?SYMB   'long',0200000H,45,6
+                    25           ?SYMB   'unsigned long',0200000H,45,7
+                    26           ?SYMB   'float',0200000H,45,10
+                    27           ?SYMB   'double',0400000H,45,11
+                    28           ?SYMB   'int',0100000H,45,16
+                    29           ?SYMB   'unsigned int',0100000H,45,18
+                    30           ?SYMB   'bit',010000H,7,256
+                    31           ?SYMB   'gpt1.c',0,29,1
+                    32           ?SYMB   '',0,86,1
+                    33   ; gpt1.c      1 //****************************************************************************
+                    34   ; gpt1.c      2 // @Module        General Purpose Timer Unit (GPT1)
+                    35   ; gpt1.c      3 // @Filename      GPT1.C
+                    36   ; gpt1.c      4 // @Project       DAvE_config.dav
+                    37   ; gpt1.c      5 //----------------------------------------------------------------------------
+                    38   ; gpt1.c      6 // @Controller    Infineon XE167F-96F66
+                    39   ; gpt1.c      7 //
+                    40   ; gpt1.c      8 // @Compiler      Tasking Classic
+                    41   ; gpt1.c      9 //
+                    42   ; gpt1.c     10 // @Codegenerator 2.2
+                    43   ; gpt1.c     11 //
+                    44   ; gpt1.c     12 // @Description   This file contains functions that use the GPT1 module.
+                    45   ; gpt1.c     13 //
+                    46   ; gpt1.c     14 //----------------------------------------------------------------------------
+                    47   ; gpt1.c     15 // @Date          23.09.2021 16:17:13
+                    48   ; gpt1.c     16 //
+                    49   ; gpt1.c     17 //****************************************************************************
+                    50   ; gpt1.c     18 
+                    51   ; gpt1.c     19 // USER CODE BEGIN (GPT1_General,1)
+                    52   ; gpt1.c     20 
+                    53   ; gpt1.c     21 // USER CODE END
+                    54   ; gpt1.c     22 
+                    55   ; gpt1.c     23 
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:12  Page:   2
+gpt1
+
+ LOC CODE        LINE   SOURCELINE
+
+                    56   ; gpt1.c     24 
+                    57   ; gpt1.c     25 //****************************************************************************
+                    58   ; gpt1.c     26 // @Project Includes
+                    59   ; gpt1.c     27 //****************************************************************************
+                    60   ; gpt1.c     28 
+                    61   ; gpt1.c     29 #include "MAIN.H"
+                    62           ?SYMB   'MAIN.H',0,29,2
+                    63           ?SYMB   '',0,86,2
+                    64           ?SYMB   'XE16xREGS.H',0,29,3
+                    65           ?SYMB   '',0,86,3
+                    66           ?SYMB   '',0,86,2
+                    67           ?SYMB   'SCS.H',0,29,3
+                    68           ?SYMB   '',0,86,3
+                    69           ?SYMB   'T$2',0,14,257
+                    70           ?SYMB   'SCS_EXTCLK_F_SYS',0,33,257
+                    71           ?SYMB   'SCS_EXTCLK_F_OUT',1,33,257
+                    72           ?SYMB   'SCS_EXTCLK_F_PLL',2,33,257
+                    73           ?SYMB   'SCS_EXTCLK_F_OSC',3,33,257
+                    74           ?SYMB   'SCS_EXTCLK_F_WU',4,33,257
+                    75           ?SYMB   'SCS_EXTCLK_F_TCK',5,33,257
+                    76           ?SYMB   'SCS_EXTCLK_F_OSC_FL',6,33,257
+                    77           ?SYMB   'SCS_EXTCLK_F_RTC',8,33,257
+                    78           ?SYMB   '',16,16,0
+                    79           ?SYMB   'SCS_EXTCLK_Type',257,13,258
+                    80           ?SYMB   '',0,86,2
+                    81           ?SYMB   'IO.H',0,29,3
+                    82           ?SYMB   '',0,86,3
+                    83           ?SYMB   '',0,86,2
+                    84           ?SYMB   'GPT1.H',0,29,3
+                    85           ?SYMB   '',0,86,3
+                    86           ?SYMB   '',0,86,2
+                    87           ?SYMB   'GPT2.H',0,29,3
+                    88           ?SYMB   '',0,86,3
+                    89           ?SYMB   '',0,86,2
+                    90           ?SYMB   'CCU63.H',0,29,3
+                    91           ?SYMB   '',0,86,3
+                    92           ?SYMB   '',0,86,2
+                    93           ?SYMB   '',0,86,1
+                    94   ; gpt1.c     30 
+                    95   ; gpt1.c     31 // USER CODE BEGIN (GPT1_General,2)
+                    96   ; gpt1.c     32 
+                    97   ; gpt1.c     33 // USER CODE END
+                    98   ; gpt1.c     34 
+                    99   ; gpt1.c     35 
+                   100   ; gpt1.c     36 //****************************************************************************
+                   101   ; gpt1.c     37 // @Macros
+                   102   ; gpt1.c     38 //****************************************************************************
+                   103   ; gpt1.c     39 
+                   104   ; gpt1.c     40 // USER CODE BEGIN (GPT1_General,3)
+                   105   ; gpt1.c     41 
+                   106   ; gpt1.c     42 // USER CODE END
+                   107   ; gpt1.c     43 
+                   108   ; gpt1.c     44 
+                   109   ; gpt1.c     45 //****************************************************************************
+                   110   ; gpt1.c     46 // @Defines
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:12  Page:   3
+gpt1
+
+ LOC CODE        LINE   SOURCELINE
+
+                   111   ; gpt1.c     47 //****************************************************************************
+                   112   ; gpt1.c     48 
+                   113   ; gpt1.c     49 // USER CODE BEGIN (GPT1_General,4)
+                   114   ; gpt1.c     50 
+                   115   ; gpt1.c     51 // USER CODE END
+                   116   ; gpt1.c     52 
+                   117   ; gpt1.c     53 
+                   118   ; gpt1.c     54 //****************************************************************************
+                   119   ; gpt1.c     55 // @Typedefs
+                   120   ; gpt1.c     56 //****************************************************************************
+                   121   ; gpt1.c     57 
+                   122   ; gpt1.c     58 // USER CODE BEGIN (GPT1_General,5)
+                   123   ; gpt1.c     59 
+                   124   ; gpt1.c     60 // USER CODE END
+                   125   ; gpt1.c     61 
+                   126   ; gpt1.c     62 
+                   127   ; gpt1.c     63 //****************************************************************************
+                   128   ; gpt1.c     64 // @Imported Global Variables
+                   129   ; gpt1.c     65 //****************************************************************************
+                   130   ; gpt1.c     66 
+                   131   ; gpt1.c     67 // USER CODE BEGIN (GPT1_General,6)
+                   132   ; gpt1.c     68 
+                   133   ; gpt1.c     69 // USER CODE END
+                   134   ; gpt1.c     70 
+                   135   ; gpt1.c     71 
+                   136   ; gpt1.c     72 //****************************************************************************
+                   137   ; gpt1.c     73 // @Global Variables
+                   138   ; gpt1.c     74 //****************************************************************************
+                   139   ; gpt1.c     75 
+                   140   ; gpt1.c     76 // USER CODE BEGIN (GPT1_General,7)
+                   141   ; gpt1.c     77 
+                   142   ; gpt1.c     78 // USER CODE END
+                   143   ; gpt1.c     79 
+                   144   ; gpt1.c     80 
+                   145   ; gpt1.c     81 //****************************************************************************
+                   146   ; gpt1.c     82 // @External Prototypes
+                   147   ; gpt1.c     83 //****************************************************************************
+                   148   ; gpt1.c     84 
+                   149   ; gpt1.c     85 // USER CODE BEGIN (GPT1_General,8)
+                   150   ; gpt1.c     86 
+                   151   ; gpt1.c     87 // USER CODE END
+                   152   ; gpt1.c     88 
+                   153   ; gpt1.c     89 
+                   154   ; gpt1.c     90 //****************************************************************************
+                   155   ; gpt1.c     91 // @Prototypes Of Local Functions
+                   156   ; gpt1.c     92 //****************************************************************************
+                   157   ; gpt1.c     93 
+                   158   ; gpt1.c     94 // USER CODE BEGIN (GPT1_General,9)
+                   159   ; gpt1.c     95 
+                   160   ; gpt1.c     96 // USER CODE END
+                   161   ; gpt1.c     97 
+                   162   ; gpt1.c     98 
+                   163   ; gpt1.c     99 //****************************************************************************
+                   164   ; gpt1.c    100 // @Function      void GPT1_vInit(void) 
+                   165   ; gpt1.c    101 //
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:12  Page:   4
+gpt1
+
+ LOC CODE        LINE   SOURCELINE
+
+                   166   ; gpt1.c    102 //----------------------------------------------------------------------------
+                   167   ; gpt1.c    103 // @Description   This is the initialization function of the GPT1 function 
+                   168   ; gpt1.c    104 //                library. It is assumed that the SFRs used by this library 
+                   169   ; gpt1.c    105 //                are in reset state. 
+                   170   ; gpt1.c    106 //
+                   171   ; gpt1.c    107 //----------------------------------------------------------------------------
+                   172   ; gpt1.c    108 // @Returnvalue   None
+                   173   ; gpt1.c    109 //
+                   174   ; gpt1.c    110 //----------------------------------------------------------------------------
+                   175   ; gpt1.c    111 // @Parameters    None
+                   176   ; gpt1.c    112 //
+                   177   ; gpt1.c    113 //----------------------------------------------------------------------------
+                   178   ; gpt1.c    114 // @Date          23.09.2021
+                   179   ; gpt1.c    115 //
+                   180   ; gpt1.c    116 //****************************************************************************
+                   181   ; gpt1.c    117 
+                   182   ; gpt1.c    118 // USER CODE BEGIN (Init,1)
+                   183   ; gpt1.c    119 
+                   184   ; gpt1.c    120 // USER CODE END
+                   185   ; gpt1.c    121 
+                   186   ; gpt1.c    122 void GPT1_vInit(void)
+                   187   ; gpt1.c    123 {
+                   188   GPT1_1_PR       SECTION CODE WORD PUBLIC 'CPROGRAM'
+                   189           ?LINE   123
+                   190           PUBLIC  _GPT1_vInit
+               R   191           ?SYMB   'GPT1_vInit',_GPT1_vInit,37,1
+                   192           ?SYMB   '',123,8,34
+                   193           ?SYMB   'uword',18,13,260
+                   194   _GPT1_vInit     PROC    FAR
+                   195           ?SYMB   '',00H,95,0
+                   196   ; Locals:
+                   197   ; 
+                   198   ; Statics:
+                   199   ; 
+                   200   ; CSEs:
+                   201   ; 
+                   202   ; gpt1.c    124   // USER CODE BEGIN (Init,2)
+                   203   ; gpt1.c    125 
+                   204   ; gpt1.c    126   // USER CODE END
+                   205   ; gpt1.c    127   ///  -----------------------------------------------------------------------
+                   206   ; gpt1.c    128   ///  Configuration of Timer Block Prescaler 1:
+                   207   ; gpt1.c    129   ///  -----------------------------------------------------------------------
+                   208   ; gpt1.c    130   GPT12E_KSCCFG  =  0x0003;      // Module Enable
+                   209           ?LINE   130
+0000 E03C          210           MOV     R12,#03h
+0002 F6FC1CFE      211           MOV     0FE1Ch,R12
+                   212   ; gpt1.c    131 
+                   213   ; gpt1.c    132   _nop();  // one cycle delay 
+                   214           ?LINE   132
+0006 CC00          215           NOP
+                   216   ; gpt1.c    133 
+                   217   ; gpt1.c    134   _nop();  // one cycle delay 
+                   218           ?LINE   134
+0008 CC00          219           NOP
+                   220   ; gpt1.c    135 
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:12  Page:   5
+gpt1
+
+ LOC CODE        LINE   SOURCELINE
+
+                   221   ; gpt1.c    136 
+                   222   ; gpt1.c    137 
+                   223   ; gpt1.c    138   ///  -----------------------------------------------------------------------
+                   224   ; gpt1.c    139   ///  Configuration of Timer Block Prescaler 1:
+                   225   ; gpt1.c    140   ///  -----------------------------------------------------------------------
+                   226   ; gpt1.c    141   ///  - prescaler for timer block 1 is 4
+                   227   ; gpt1.c    142 
+                   228   ; gpt1.c    143 
+                   229   ; gpt1.c    144   ///  -----------------------------------------------------------------------
+                   230   ; gpt1.c    145   ///  Configuration of the GPT1 Core Timer 3:
+                   231   ; gpt1.c    146   ///  -----------------------------------------------------------------------
+                   232   ; gpt1.c    147   ///  - timer 3 works in timer mode
+                   233   ; gpt1.c    148   ///  - external up/down control is disabled
+                   234   ; gpt1.c    149   ///  - prescaler factor is 4
+                   235   ; gpt1.c    150   ///  - up/down control bit is reset
+                   236   ; gpt1.c    151   ///  - alternate output function T3OUT (P7.0) is disabled
+                   237   ; gpt1.c    152   ///  - timer 3 output toggle latch (T3OTL) is set to 0
+                   238   ; gpt1.c    153   ///  - timer 3 run bit is reset
+                   239   ; gpt1.c    154 
+                   240   ; gpt1.c    155   GPT12E_T3CON   =  0x0800;      // load timer 3 control register
+                   241           ?LINE   155
+000A E6FC0008      242           MOV     R12,#0800h
+000E F6FC42FF      243           MOV     0FF42h,R12
+                   244   ; gpt1.c    156   GPT12E_T3      =  0x0000;      // load timer 3 register
+                   245           ?LINE   156
+0012 E00C          246           MOV     R12,#00h
+0014 F6FC42FE      247           MOV     0FE42h,R12
+                   248   ; gpt1.c    157   ///  - prescaler for timer block 1 is 4
+                   249   ; gpt1.c    158 
+                   250   ; gpt1.c    159   ///  -----------------------------------------------------------------------
+                   251   ; gpt1.c    160   ///  Configuration of the GPT1 Auxiliary Timer 2:
+                   252   ; gpt1.c    161   ///  -----------------------------------------------------------------------
+                   253   ; gpt1.c    162   ///  - timer 2 works in timer mode
+                   254   ; gpt1.c    163   ///  - external up/down control is disabled
+                   255   ; gpt1.c    164   ///  - prescaler factor is 4
+                   256   ; gpt1.c    165   ///  - up/down control bit is reset
+                   257   ; gpt1.c    166   ///  - timer 2 run bit is reset
+                   258   ; gpt1.c    167 
+                   259   ; gpt1.c    168   GPT12E_T2CON   =  0x0000;      // load timer 2 control register
+                   260           ?LINE   168
+0018 E00C          261           MOV     R12,#00h
+001A F6FC40FF      262           MOV     0FF40h,R12
+                   263   ; gpt1.c    169   GPT12E_T2      =  0x0000;      // load timer 2 register
+                   264           ?LINE   169
+001E E00C          265           MOV     R12,#00h
+0020 F6FC40FE      266           MOV     0FE40h,R12
+                   267   ; gpt1.c    170   ///  - prescaler for timer block 1 is 4
+                   268   ; gpt1.c    171 
+                   269   ; gpt1.c    172   ///  -----------------------------------------------------------------------
+                   270   ; gpt1.c    173   ///  Configuration of the GPT1 Auxiliary Timer 4:
+                   271   ; gpt1.c    174   ///  -----------------------------------------------------------------------
+                   272   ; gpt1.c    175   ///  - timer 4 works in timer mode
+                   273   ; gpt1.c    176   ///  - external up/down control is disabled
+                   274   ; gpt1.c    177   ///  - prescaler factor is 4
+                   275   ; gpt1.c    178   ///  - up/down control bit is reset
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 16:51:12  Page:   6
+gpt1
+
+ LOC CODE        LINE   SOURCELINE
+
+                   276   ; gpt1.c    179   ///  - timer 4 run bit is reset
+                   277   ; gpt1.c    180 
+                   278   ; gpt1.c    181   GPT12E_T4CON   =  0x0000;      // load timer 4 control register
+                   279           ?LINE   181
+0024 E00C          280           MOV     R12,#00h
+0026 F6FC44FF      281           MOV     0FF44h,R12
+                   282   ; gpt1.c    182   GPT12E_T4      =  0x0000;      // load timer 4 register
+                   283           ?LINE   182
+002A E00C          284           MOV     R12,#00h
+002C F6FC44FE      285           MOV     0FE44h,R12
+                   286   ; gpt1.c    183   ///  - prescaler for timer block 1 is 4
+                   287   ; gpt1.c    184 
+                   288   ; gpt1.c    185   ///  -----------------------------------------------------------------------
+                   289   ; gpt1.c    186   ///  Configuration of the used GPT1 Port Pins:
+                   290   ; gpt1.c    187   ///  -----------------------------------------------------------------------
+                   291   ; gpt1.c    188 
+                   292   ; gpt1.c    189 
+                   293   ; gpt1.c    190   ///  -----------------------------------------------------------------------
+                   294   ; gpt1.c    191   ///  Configuration of the used GPT1 Interrupts:
+                   295   ; gpt1.c    192   ///  -----------------------------------------------------------------------
+                   296   ; gpt1.c    193 
+                   297   ; gpt1.c    194   // USER CODE BEGIN (GPT1_Function,3)
+                   298   ; gpt1.c    195 
+                   299   ; gpt1.c    196   // USER CODE END
+                   300   ; gpt1.c    197 
+                   301   ; gpt1.c    198 } //  End of function GPT1_viTmr4
+                   302           ?LINE   198
+0030 DB00          303           RETS
+                   304   _GPT1_vInit     ENDP
+               R   305           ?SYMB   '',$,17,198
+                   306   ; gpt1.c    199 
+                   307   ; gpt1.c    200 
+                   308   ; gpt1.c    201 
+                   309   ; gpt1.c    202 
+                   310   ; gpt1.c    203 // USER CODE BEGIN (GPT1_General,10)
+                   311   ; gpt1.c    204 
+                   312   ; gpt1.c    205 // USER CODE END
+                   313   ; gpt1.c    206 
+                   314   GPT1_1_PR       ENDS
+                   315   
+                   316           REGDEF  R0-R15
+                   317           END
+
+total errors: 0, warnings: 0
+
