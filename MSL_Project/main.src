@@ -87,8 +87,8 @@ $MODEL(SMALL)
 	?SYMB	'',0,86,1
 ; main.c     30	
 ; main.c     31	// USER CODE BEGIN (MAIN_General,2)
-; main.c     32	#include "CCU63.H"
-	?SYMB	'CCU63.H',0,29,2
+; main.c     32	#include <math.h>
+	?SYMB	'd:\programme\tasking\c166 v8.7r1\include\math.h',0,29,2
 	?SYMB	'',0,86,2
 	?SYMB	'',0,86,1
 ; main.c     33	// USER CODE END
@@ -135,56 +135,78 @@ $MODEL(SMALL)
 ; main.c     74	//****************************************************************************
 ; main.c     75	
 ; main.c     76	// USER CODE BEGIN (MAIN_General,7)
-; main.c     77	
-; main.c     78	// USER CODE END
-; main.c     79	
-; main.c     80	
-; main.c     81	//****************************************************************************
-; main.c     82	// @External Prototypes
+; main.c     77	const unsigned int size = 10;
+MAIN_1_NC	SECTION	LDAT WORD PUBLIC 'CNEARROM'
+_size	LABEL	WORD
+	DW	0Ah
+	PUBLIC	_size
+	?SYMB	'size',_size,22,18
+; main.c     78	unsigned int table[size];
+; main.c     79	float pi = 3.14159265359;
+MAIN_1_NC	ENDS
+
+MAIN_IR_NB	SECTION	PDAT WORD PUBLIC 'CINITROM'
+MAIN_IR_NB_ENTRY	LABEL	BYTE
+	DW	04049h,0FDBh
+MAIN_IR_NB	ENDS
+
+MAIN_ID_NB	SECTION	LDAT WORD PUBLIC 'CINITIRAM'
+MAIN_ID_NB_ENTRY	LABEL	BYTE
+_pi	LABEL	WORD
+	DS	4
+	PUBLIC	_pi
+	?SYMB	'pi',_pi,22,10
+; main.c     80	// USER CODE END
+; main.c     81	
+; main.c     82	
 ; main.c     83	//****************************************************************************
-; main.c     84	
-; main.c     85	// USER CODE BEGIN (MAIN_General,8)
+; main.c     84	// @External Prototypes
+; main.c     85	//****************************************************************************
 ; main.c     86	
-; main.c     87	// USER CODE END
+; main.c     87	// USER CODE BEGIN (MAIN_General,8)
 ; main.c     88	
-; main.c     89	
-; main.c     90	//****************************************************************************
-; main.c     91	// @Prototypes Of Local Functions
+; main.c     89	// USER CODE END
+; main.c     90	
+; main.c     91	
 ; main.c     92	//****************************************************************************
-; main.c     93	
-; main.c     94	// USER CODE BEGIN (MAIN_General,9)
+; main.c     93	// @Prototypes Of Local Functions
+; main.c     94	//****************************************************************************
 ; main.c     95	
-; main.c     96	// USER CODE END
-; main.c     97	
-; main.c     98	
-; main.c     99	//****************************************************************************
-; main.c    100	// @Function      void MAIN_vInit(void) 
-; main.c    101	//
-; main.c    102	//----------------------------------------------------------------------------
-; main.c    103	// @Description   This function initializes the microcontroller.
-; main.c    104	//
-; main.c    105	//----------------------------------------------------------------------------
-; main.c    106	// @Returnvalue   None
-; main.c    107	//
-; main.c    108	//----------------------------------------------------------------------------
-; main.c    109	// @Parameters    None
-; main.c    110	//
-; main.c    111	//----------------------------------------------------------------------------
-; main.c    112	// @Date          23.09.2021
-; main.c    113	//
-; main.c    114	//****************************************************************************
-; main.c    115	
-; main.c    116	// USER CODE BEGIN (Init,1)
+; main.c     96	// USER CODE BEGIN (MAIN_General,9)
+; main.c     97	void generateTable();
+; main.c     98	// USER CODE END
+; main.c     99	
+; main.c    100	
+; main.c    101	//****************************************************************************
+; main.c    102	// @Function      void MAIN_vInit(void) 
+; main.c    103	//
+; main.c    104	//----------------------------------------------------------------------------
+; main.c    105	// @Description   This function initializes the microcontroller.
+; main.c    106	//
+; main.c    107	//----------------------------------------------------------------------------
+; main.c    108	// @Returnvalue   None
+; main.c    109	//
+; main.c    110	//----------------------------------------------------------------------------
+; main.c    111	// @Parameters    None
+; main.c    112	//
+; main.c    113	//----------------------------------------------------------------------------
+; main.c    114	// @Date          23.09.2021
+; main.c    115	//
+; main.c    116	//****************************************************************************
 ; main.c    117	
-; main.c    118	// USER CODE END
+; main.c    118	// USER CODE BEGIN (Init,1)
 ; main.c    119	
-; main.c    120	void MAIN_vInit(void)
-; main.c    121	{
-MAIN_1_PR	SECTION	CODE WORD PUBLIC 'CPROGRAM'
-	?LINE	121
+; main.c    120	// USER CODE END
+; main.c    121	
+; main.c    122	void MAIN_vInit(void)
+; main.c    123	{
+MAIN_ID_NB	ENDS
+
+MAIN_4_PR	SECTION	CODE WORD PUBLIC 'CPROGRAM'
+	?LINE	123
 	PUBLIC	_MAIN_vInit
 	?SYMB	'MAIN_vInit',_MAIN_vInit,37,1
-	?SYMB	'',121,8,34
+	?SYMB	'',123,8,34
 	?SYMB	'',010000H,7,260
 	?SYMB	'',010001H,7,261
 	?SYMB	'',010002H,7,262
@@ -229,109 +251,109 @@ _MAIN_vInit	PROC	FAR
 ; 
 ; CSEs:
 ; 
-; main.c    122	  // USER CODE BEGIN (Init,2)
-; main.c    123	
-; main.c    124	  // USER CODE END
+; main.c    124	  // USER CODE BEGIN (Init,2)
 ; main.c    125	
-; main.c    126	  //   globally disable interrupts
-; main.c    127	  PSW_IEN        =  0;          
-	?LINE	127
+; main.c    126	  // USER CODE END
+; main.c    127	
+; main.c    128	  //   globally disable interrupts
+; main.c    129	  PSW_IEN        =  0;          
+	?LINE	129
 	MOV	R12,#0FF10h
 	MOV	R13,[R12]
 	AND	R13,#0F7FFh
 	MOV	[R12],R13
-; main.c    128	
-; main.c    129	
-; main.c    130	  ///  -----------------------------------------------------------------------
-; main.c    131	  ///  Configuration of the System Clock:
+; main.c    130	
+; main.c    131	
 ; main.c    132	  ///  -----------------------------------------------------------------------
-; main.c    133	  ///  - VCO clock used, input clock is connected
-; main.c    134	  ///  - input frequency is 10,00 MHz
-; main.c    135	  ///  - configured system frequency is 66,00 MHz
-; main.c    136	
-; main.c    137	  MAIN_vUnlockProtecReg();     // unlock write security
-	?LINE	137
-	CALLS	SEG _MAIN_vUnlockProtecReg,_MAIN_vUnlockProtecReg
+; main.c    133	  ///  Configuration of the System Clock:
+; main.c    134	  ///  -----------------------------------------------------------------------
+; main.c    135	  ///  - VCO clock used, input clock is connected
+; main.c    136	  ///  - input frequency is 10,00 MHz
+; main.c    137	  ///  - configured system frequency is 66,00 MHz
 ; main.c    138	
-; main.c    139	  MAIN_vChangeFreq();          // load PLL control register
+; main.c    139	  MAIN_vUnlockProtecReg();     // unlock write security
 	?LINE	139
-	CALLS	SEG _MAIN_vChangeFreq,_MAIN_vChangeFreq
+	CALLS	SEG _MAIN_vUnlockProtecReg,_MAIN_vUnlockProtecReg
 ; main.c    140	
-; main.c    141	  //   -----------------------------------------------------------------------
-; main.c    142	  //   Initialization of the Peripherals:
+; main.c    141	  MAIN_vChangeFreq();          // load PLL control register
+	?LINE	141
+	CALLS	SEG _MAIN_vChangeFreq,_MAIN_vChangeFreq
+; main.c    142	
 ; main.c    143	  //   -----------------------------------------------------------------------
-; main.c    144	
-; main.c    145	  //   initializes the Parallel Ports
-; main.c    146	  IO_vInit();
-	?LINE	146
+; main.c    144	  //   Initialization of the Peripherals:
+; main.c    145	  //   -----------------------------------------------------------------------
+; main.c    146	
+; main.c    147	  //   initializes the Parallel Ports
+; main.c    148	  IO_vInit();
+	?LINE	148
 	CALLS	SEG _IO_vInit,_IO_vInit
-; main.c    147	
-; main.c    148	  //   initializes the Capture / Compare Unit 63 (CCU63)
-; main.c    149	  CCU63_vInit();
-	?LINE	149
+; main.c    149	
+; main.c    150	  //   initializes the Capture / Compare Unit 63 (CCU63)
+; main.c    151	  CCU63_vInit();
+	?LINE	151
 	CALLS	SEG _CCU63_vInit,_CCU63_vInit
-; main.c    150	
-; main.c    151	
-; main.c    152	  //   -----------------------------------------------------------------------
-; main.c    153	  //   Initialization of the Bank Select registers:
+; main.c    152	
+; main.c    153	
 ; main.c    154	  //   -----------------------------------------------------------------------
-; main.c    155	
-; main.c    156	  BNKSEL1        =   0x0200;     // Bank Select Control Reg. 1
-	?LINE	156
+; main.c    155	  //   Initialization of the Bank Select registers:
+; main.c    156	  //   -----------------------------------------------------------------------
+; main.c    157	
+; main.c    158	  BNKSEL1        =   0x0200;     // Bank Select Control Reg. 1
+	?LINE	158
 	MOV	R12,#0200h
 	MOV	0EC22h,R12
-; main.c    157	
-; main.c    158	  // USER CODE BEGIN (Init,3)
 ; main.c    159	
-; main.c    160	  // USER CODE END
+; main.c    160	  // USER CODE BEGIN (Init,3)
 ; main.c    161	
-; main.c    162	  MAIN_vLockProtecReg();       // lock write security
-	?LINE	162
-	CALLS	SEG _MAIN_vLockProtecReg,_MAIN_vLockProtecReg
+; main.c    162	  // USER CODE END
 ; main.c    163	
-; main.c    164	  //   globally enable interrupts
-; main.c    165	  PSW_IEN        =  1;          
-	?LINE	165
+; main.c    164	  MAIN_vLockProtecReg();       // lock write security
+	?LINE	164
+	CALLS	SEG _MAIN_vLockProtecReg,_MAIN_vLockProtecReg
+; main.c    165	
+; main.c    166	  //   globally enable interrupts
+; main.c    167	  PSW_IEN        =  1;          
+	?LINE	167
 	MOV	R12,#0FF10h
 	MOV	R13,[R12]
 	BFLDH	R13,#08h,#08h
 	MOV	[R12],R13
-; main.c    166	
-; main.c    167	} //  End of function MAIN_vInit
-	?LINE	167
+; main.c    168	
+; main.c    169	} //  End of function MAIN_vInit
+	?LINE	169
 	RETS
 _MAIN_vInit	ENDP
-	?SYMB	'',$,17,167
-; main.c    168	
-; main.c    169	
-; main.c    170	//****************************************************************************
-; main.c    171	// @Function      void MAIN_vUnlockProtecReg(void) 
-; main.c    172	//
-; main.c    173	//----------------------------------------------------------------------------
-; main.c    174	// @Description   This function makes it possible to write one protected 
-; main.c    175	//                register.
-; main.c    176	//
-; main.c    177	//----------------------------------------------------------------------------
-; main.c    178	// @Returnvalue   None
-; main.c    179	//
-; main.c    180	//----------------------------------------------------------------------------
-; main.c    181	// @Parameters    None
-; main.c    182	//
-; main.c    183	//----------------------------------------------------------------------------
-; main.c    184	// @Date          23.09.2021
-; main.c    185	//
-; main.c    186	//****************************************************************************
-; main.c    187	
-; main.c    188	// USER CODE BEGIN (UnlockProtecReg,1)
+	?SYMB	'',$,17,169
+; main.c    170	
+; main.c    171	
+; main.c    172	//****************************************************************************
+; main.c    173	// @Function      void MAIN_vUnlockProtecReg(void) 
+; main.c    174	//
+; main.c    175	//----------------------------------------------------------------------------
+; main.c    176	// @Description   This function makes it possible to write one protected 
+; main.c    177	//                register.
+; main.c    178	//
+; main.c    179	//----------------------------------------------------------------------------
+; main.c    180	// @Returnvalue   None
+; main.c    181	//
+; main.c    182	//----------------------------------------------------------------------------
+; main.c    183	// @Parameters    None
+; main.c    184	//
+; main.c    185	//----------------------------------------------------------------------------
+; main.c    186	// @Date          23.09.2021
+; main.c    187	//
+; main.c    188	//****************************************************************************
 ; main.c    189	
-; main.c    190	// USER CODE END
+; main.c    190	// USER CODE BEGIN (UnlockProtecReg,1)
 ; main.c    191	
-; main.c    192	void MAIN_vUnlockProtecReg(void)
-; main.c    193	{
-	?LINE	193
+; main.c    192	// USER CODE END
+; main.c    193	
+; main.c    194	void MAIN_vUnlockProtecReg(void)
+; main.c    195	{
+	?LINE	195
 	PUBLIC	_MAIN_vUnlockProtecReg
 	?SYMB	'MAIN_vUnlockProtecReg',_MAIN_vUnlockProtecReg,37,1
-	?SYMB	'',193,8,34
+	?SYMB	'',195,8,34
 _MAIN_vUnlockProtecReg	PROC	FAR
 	?SYMB	'',00H,95,0
 	SUB	R0,#02h
@@ -343,79 +365,79 @@ _MAIN_vUnlockProtecReg	PROC	FAR
 ; 
 ; CSEs:
 ; 
-; main.c    194	  uword uwPASSWORD;
+; main.c    196	  uword uwPASSWORD;
 	?SYMB	'uwPASSWORD',1,98,278
 	?SYMB	'-2',$,101,1
-; main.c    195	
-; main.c    196	    SCU_SLC = 0xAAAA;                   // command 0
-	?LINE	196
+; main.c    197	
+; main.c    198	    SCU_SLC = 0xAAAA;                   // command 0
+	?LINE	198
 	MOV	R12,#0AAAAh
 	MOV	0F0C0h,R12
-; main.c    197	    SCU_SLC = 0x5554;                   // command 1
-	?LINE	197
+; main.c    199	    SCU_SLC = 0x5554;                   // command 1
+	?LINE	199
 	MOV	R12,#05554h
 	MOV	0F0C0h,R12
-; main.c    198	
-; main.c    199	    uwPASSWORD = SCU_SLS & 0x00FF;
-	?LINE	199
+; main.c    200	
+; main.c    201	    uwPASSWORD = SCU_SLS & 0x00FF;
+	?LINE	201
 	MOV	R12,0F0C2h
 	AND	R12,#0FFh
 	MOV	[R0],R12
-; main.c    200	    uwPASSWORD = (~uwPASSWORD) & 0x00FF;
-	?LINE	200
+; main.c    202	    uwPASSWORD = (~uwPASSWORD) & 0x00FF;
+	?LINE	202
 	MOV	R12,[R0]
 	CPL	R12
 	AND	R12,#0FFh
 	MOV	[R0],R12
-; main.c    201	
-; main.c    202	    SCU_SLC = 0x9600 | uwPASSWORD;      // command 2
-	?LINE	202
+; main.c    203	
+; main.c    204	    SCU_SLC = 0x9600 | uwPASSWORD;      // command 2
+	?LINE	204
 	MOV	R12,[R0]
 	OR	R12,#09600h
 	MOV	0F0C0h,R12
-; main.c    203	    SCU_SLC = 0x0000;                   // command 3
-	?LINE	203
+; main.c    205	    SCU_SLC = 0x0000;                   // command 3
+	?LINE	205
 	MOV	R12,#00h
 	MOV	0F0C0h,R12
-; main.c    204	
-; main.c    205	} //  End of function MAIN_vUnlockProtecReg
+; main.c    206	
+; main.c    207	} //  End of function MAIN_vUnlockProtecReg
 	?SYMB	'',$,102,1
-	?LINE	205
+	?LINE	207
 	ADD	R0,#02h
 	?SYMB	'',$,96,0
 	RETS
 _MAIN_vUnlockProtecReg	ENDP
-	?SYMB	'',$,17,205
-; main.c    206	
-; main.c    207	
-; main.c    208	//****************************************************************************
-; main.c    209	// @Function      void MAIN_vLockProtecReg(void) 
-; main.c    210	//
-; main.c    211	//----------------------------------------------------------------------------
-; main.c    212	// @Description   This function makes it possible to lock one protected 
-; main.c    213	//                register.
-; main.c    214	//
-; main.c    215	//----------------------------------------------------------------------------
-; main.c    216	// @Returnvalue   None
-; main.c    217	//
-; main.c    218	//----------------------------------------------------------------------------
-; main.c    219	// @Parameters    None
-; main.c    220	//
-; main.c    221	//----------------------------------------------------------------------------
-; main.c    222	// @Date          23.09.2021
-; main.c    223	//
-; main.c    224	//****************************************************************************
-; main.c    225	
-; main.c    226	// USER CODE BEGIN (LockProtecReg,1)
+	?SYMB	'',$,17,207
+; main.c    208	
+; main.c    209	
+; main.c    210	//****************************************************************************
+; main.c    211	// @Function      void MAIN_vLockProtecReg(void) 
+; main.c    212	//
+; main.c    213	//----------------------------------------------------------------------------
+; main.c    214	// @Description   This function makes it possible to lock one protected 
+; main.c    215	//                register.
+; main.c    216	//
+; main.c    217	//----------------------------------------------------------------------------
+; main.c    218	// @Returnvalue   None
+; main.c    219	//
+; main.c    220	//----------------------------------------------------------------------------
+; main.c    221	// @Parameters    None
+; main.c    222	//
+; main.c    223	//----------------------------------------------------------------------------
+; main.c    224	// @Date          23.09.2021
+; main.c    225	//
+; main.c    226	//****************************************************************************
 ; main.c    227	
-; main.c    228	// USER CODE END
+; main.c    228	// USER CODE BEGIN (LockProtecReg,1)
 ; main.c    229	
-; main.c    230	void MAIN_vLockProtecReg(void)
-; main.c    231	{
-	?LINE	231
+; main.c    230	// USER CODE END
+; main.c    231	
+; main.c    232	void MAIN_vLockProtecReg(void)
+; main.c    233	{
+	?LINE	233
 	PUBLIC	_MAIN_vLockProtecReg
 	?SYMB	'MAIN_vLockProtecReg',_MAIN_vLockProtecReg,37,1
-	?SYMB	'',231,8,34
+	?SYMB	'',233,8,34
 _MAIN_vLockProtecReg	PROC	FAR
 	?SYMB	'',00H,95,0
 	SUB	R0,#02h
@@ -427,96 +449,96 @@ _MAIN_vLockProtecReg	PROC	FAR
 ; 
 ; CSEs:
 ; 
-; main.c    232	  uword uwPASSWORD;
+; main.c    234	  uword uwPASSWORD;
 	?SYMB	'uwPASSWORD',1,98,278
 	?SYMB	'-2',$,101,1
-; main.c    233	
-; main.c    234	    SCU_SLC = 0xAAAA;                   // command 0
-	?LINE	234
+; main.c    235	
+; main.c    236	    SCU_SLC = 0xAAAA;                   // command 0
+	?LINE	236
 	MOV	R12,#0AAAAh
 	MOV	0F0C0h,R12
-; main.c    235	    SCU_SLC = 0x5554;                   // command 1
-	?LINE	235
+; main.c    237	    SCU_SLC = 0x5554;                   // command 1
+	?LINE	237
 	MOV	R12,#05554h
 	MOV	0F0C0h,R12
-; main.c    236	
-; main.c    237	    uwPASSWORD = SCU_SLS & 0x00FF;
-	?LINE	237
+; main.c    238	
+; main.c    239	    uwPASSWORD = SCU_SLS & 0x00FF;
+	?LINE	239
 	MOV	R12,0F0C2h
 	AND	R12,#0FFh
 	MOV	[R0],R12
-; main.c    238	    uwPASSWORD = (~uwPASSWORD) & 0x00FF;
-	?LINE	238
+; main.c    240	    uwPASSWORD = (~uwPASSWORD) & 0x00FF;
+	?LINE	240
 	MOV	R12,[R0]
 	CPL	R12
 	AND	R12,#0FFh
 	MOV	[R0],R12
-; main.c    239	
-; main.c    240	    SCU_SLC = 0x9600 | uwPASSWORD;      // command 2
-	?LINE	240
+; main.c    241	
+; main.c    242	    SCU_SLC = 0x9600 | uwPASSWORD;      // command 2
+	?LINE	242
 	MOV	R12,[R0]
 	OR	R12,#09600h
 	MOV	0F0C0h,R12
-; main.c    241	    SCU_SLC = 0x1800;                   // command 3; new PASSWOR is 0x00
-	?LINE	241
+; main.c    243	    SCU_SLC = 0x1800;                   // command 3; new PASSWOR is 0x00
+	?LINE	243
 	MOV	R12,#01800h
 	MOV	0F0C0h,R12
-; main.c    242	
-; main.c    243	    uwPASSWORD = SCU_SLS & 0x00FF;
-	?LINE	243
+; main.c    244	
+; main.c    245	    uwPASSWORD = SCU_SLS & 0x00FF;
+	?LINE	245
 	MOV	R12,0F0C2h
 	AND	R12,#0FFh
 	MOV	[R0],R12
-; main.c    244	    uwPASSWORD = (~uwPASSWORD) & 0x00FF;
-	?LINE	244
+; main.c    246	    uwPASSWORD = (~uwPASSWORD) & 0x00FF;
+	?LINE	246
 	MOV	R12,[R0]
 	CPL	R12
 	AND	R12,#0FFh
 	MOV	[R0],R12
-; main.c    245	    SCU_SLC = 0x8E00 | uwPASSWORD;      // command 4
-	?LINE	245
+; main.c    247	    SCU_SLC = 0x8E00 | uwPASSWORD;      // command 4
+	?LINE	247
 	MOV	R12,[R0]
 	OR	R12,#08E00h
 	MOV	0F0C0h,R12
-; main.c    246	
-; main.c    247	} //  End of function MAIN_vLockProtecReg
+; main.c    248	
+; main.c    249	} //  End of function MAIN_vLockProtecReg
 	?SYMB	'',$,102,1
-	?LINE	247
+	?LINE	249
 	ADD	R0,#02h
 	?SYMB	'',$,96,0
 	RETS
 _MAIN_vLockProtecReg	ENDP
-	?SYMB	'',$,17,247
-; main.c    248	
-; main.c    249	
-; main.c    250	//****************************************************************************
-; main.c    251	// @Function      void MAIN_vChangeFreq(void) 
-; main.c    252	//
-; main.c    253	//----------------------------------------------------------------------------
-; main.c    254	// @Description   This function is used to select the external crystal and
-; main.c    255	//                configure the system frequency to 80Mhz/66Mhz.
-; main.c    256	//
-; main.c    257	//----------------------------------------------------------------------------
-; main.c    258	// @Returnvalue   None
-; main.c    259	//
-; main.c    260	//----------------------------------------------------------------------------
-; main.c    261	// @Parameters    None
-; main.c    262	//
-; main.c    263	//----------------------------------------------------------------------------
-; main.c    264	// @Date          23.09.2021
-; main.c    265	//
-; main.c    266	//****************************************************************************
-; main.c    267	
-; main.c    268	// USER CODE BEGIN (ChangeFreq,1)
+	?SYMB	'',$,17,249
+; main.c    250	
+; main.c    251	
+; main.c    252	//****************************************************************************
+; main.c    253	// @Function      void MAIN_vChangeFreq(void) 
+; main.c    254	//
+; main.c    255	//----------------------------------------------------------------------------
+; main.c    256	// @Description   This function is used to select the external crystal and
+; main.c    257	//                configure the system frequency to 80Mhz/66Mhz.
+; main.c    258	//
+; main.c    259	//----------------------------------------------------------------------------
+; main.c    260	// @Returnvalue   None
+; main.c    261	//
+; main.c    262	//----------------------------------------------------------------------------
+; main.c    263	// @Parameters    None
+; main.c    264	//
+; main.c    265	//----------------------------------------------------------------------------
+; main.c    266	// @Date          23.09.2021
+; main.c    267	//
+; main.c    268	//****************************************************************************
 ; main.c    269	
-; main.c    270	// USER CODE END
+; main.c    270	// USER CODE BEGIN (ChangeFreq,1)
 ; main.c    271	
-; main.c    272	void MAIN_vChangeFreq(void)
-; main.c    273	{
-	?LINE	273
+; main.c    272	// USER CODE END
+; main.c    273	
+; main.c    274	void MAIN_vChangeFreq(void)
+; main.c    275	{
+	?LINE	275
 	PUBLIC	_MAIN_vChangeFreq
 	?SYMB	'MAIN_vChangeFreq',_MAIN_vChangeFreq,37,1
-	?SYMB	'',273,8,34
+	?SYMB	'',275,8,34
 _MAIN_vChangeFreq	PROC	FAR
 	?SYMB	'',00H,95,0
 ; Locals:
@@ -525,193 +547,218 @@ _MAIN_vChangeFreq	PROC	FAR
 ; 
 ; CSEs:
 ; 
-; main.c    274	  SCS_SwitchToHighPrecBandgap();
-	?LINE	274
+; main.c    276	  SCS_SwitchToHighPrecBandgap();
+	?LINE	276
 	CALLS	SEG _SCS_SwitchToHighPrecBandgap,_SCS_SwitchToHighPrecBandgap
-; main.c    275	
-; main.c    276	  //For application and internal application resets, the complete PLL configuration could be avoided
-; main.c    277	  //The entry from application resets and internal application reset is covered in the following differentiation
-; main.c    278	  //in int/ext clock in lock/unlocked state.
-; main.c    279	
-; main.c    280	  if  ((SCU_PLLSTAT & 0x0004) == 0x0004)             // fR derived from Internal clock
-	?LINE	280
+; main.c    277	
+; main.c    278	  //For application and internal application resets, the complete PLL configuration could be avoided
+; main.c    279	  //The entry from application resets and internal application reset is covered in the following differentiation
+; main.c    280	  //in int/ext clock in lock/unlocked state.
+; main.c    281	
+; main.c    282	  if  ((SCU_PLLSTAT & 0x0004) == 0x0004)             // fR derived from Internal clock
+	?LINE	282
 	MOV	R12,0F0BCh
 	JNB	R12.2,_7
-; main.c    281	        {
-; main.c    282	            //Normal startup state during boot and the clock
-; main.c    283	            //has to be in the next step configured on the external crystal
-; main.c    284	            //use XTAL/VCO, count XTAL clock
-; main.c    285	
-; main.c    286	            SCS_StartXtalOsc(1);                     // Starts the crystal oscillator
-	?LINE	286
+; main.c    283	        {
+; main.c    284	            //Normal startup state during boot and the clock
+; main.c    285	            //has to be in the next step configured on the external crystal
+; main.c    286	            //use XTAL/VCO, count XTAL clock
+; main.c    287	
+; main.c    288	            SCS_StartXtalOsc(1);                     // Starts the crystal oscillator
+	?LINE	288
 	MOV	R12,#01h
 	CALLS	SEG _SCS_StartXtalOsc,_SCS_StartXtalOsc
-; main.c    287	            SCS_SwitchSystemClock(1);                // System clock is increased to target speed (80/66 MHz)
-	?LINE	287
+; main.c    289	            SCS_SwitchSystemClock(1);                // System clock is increased to target speed (80/66 MHz)
+	?LINE	289
 	MOV	R12,#01h
 	CALLS	SEG _SCS_SwitchSystemClock,_SCS_SwitchSystemClock
-; main.c    288	
-; main.c    289	        }
-	?LINE	289
+; main.c    290	
+; main.c    291	        }
+	?LINE	291
 	RETS
 _7:
-; main.c    290	
-; main.c    291	  else                                               // fR derived from external crystal clock
-; main.c    292	        {
-; main.c    293	            if ((SCU_PLLSTAT & 0x1009) == 0x1009)    // fR derived from external crystal clock + VCO is locked
-	?LINE	293
+; main.c    292	
+; main.c    293	  else                                               // fR derived from external crystal clock
+; main.c    294	        {
+; main.c    295	            if ((SCU_PLLSTAT & 0x1009) == 0x1009)    // fR derived from external crystal clock + VCO is locked
+	?LINE	295
 	MOV	R12,0F0BCh
 	AND	R12,#01009h
 	CMP	R12,#01009h
 	JMPR	cc_NE,_8
-; main.c    294	            {
-; main.c    295	               //usually after an application reset where clock need not be configured again.
-; main.c    296	               //check K2/P/N values and decide whether these values have to be adapted based on application needs.
-; main.c    297	               NOP();
-	?LINE	297
-	NOP
-; main.c    298	               //usually the PLL losss of Lock TRAP schould be enabled here.
-; main.c    299	            }
+; main.c    296	            {
+; main.c    297	               //usually after an application reset where clock need not be configured again.
+; main.c    298	               //check K2/P/N values and decide whether these values have to be adapted based on application needs.
+; main.c    299	               NOP();
 	?LINE	299
+	NOP
+; main.c    300	               //usually the PLL losss of Lock TRAP schould be enabled here.
+; main.c    301	            }
+	?LINE	301
 	JMPR	cc_UC,_9
 _8:
-; main.c    300	            else                                     //fR derived from external crystal clock + VCO is not locked
-; main.c    301	
-; main.c    302	            {
-; main.c    303	               //estimate the K1 value and the current frequency
-; main.c    304	               //reduce K2/P/N values in steps so that the frequency
-; main.c    305	               //jumps is limited to 20MHz or factor of 5 whichever is minimum
-; main.c    306	               NOP();
-	?LINE	306
+; main.c    302	            else                                     //fR derived from external crystal clock + VCO is not locked
+; main.c    303	
+; main.c    304	            {
+; main.c    305	               //estimate the K1 value and the current frequency
+; main.c    306	               //reduce K2/P/N values in steps so that the frequency
+; main.c    307	               //jumps is limited to 20MHz or factor of 5 whichever is minimum
+; main.c    308	               NOP();
+	?LINE	308
 	NOP
-; main.c    307	            }
-	?LINE	307
+; main.c    309	            }
+	?LINE	309
 _9:
-; main.c    308	
-; main.c    309	
-; main.c    310	        }
-	?LINE	310
-_10:
+; main.c    310	
 ; main.c    311	
-; main.c    312	} //  End of function MAIN_vChangeFreq
+; main.c    312	        }
 	?LINE	312
+_10:
+; main.c    313	
+; main.c    314	} //  End of function MAIN_vChangeFreq
+	?LINE	314
 	RETS
 _MAIN_vChangeFreq	ENDP
-	?SYMB	'',$,17,312
-; main.c    313	
-; main.c    314	
-; main.c    315	//****************************************************************************
-; main.c    316	// @Function      void main(void) 
-; main.c    317	//
-; main.c    318	//----------------------------------------------------------------------------
-; main.c    319	// @Description   This is the main function.
-; main.c    320	//
-; main.c    321	//----------------------------------------------------------------------------
-; main.c    322	// @Returnvalue   None
-; main.c    323	//
-; main.c    324	//----------------------------------------------------------------------------
-; main.c    325	// @Parameters    None
-; main.c    326	//
-; main.c    327	//----------------------------------------------------------------------------
-; main.c    328	// @Date          23.09.2021
-; main.c    329	//
-; main.c    330	//****************************************************************************
-; main.c    331	
-; main.c    332	// USER CODE BEGIN (Main,1)
-; main.c    333	void sixStepSequence(){
-	?LINE	333
-	PUBLIC	_sixStepSequence
-	?SYMB	'sixStepSequence',_sixStepSequence,37,1
-	?SYMB	'',333,8,34
-_sixStepSequence	PROC	FAR
+	?SYMB	'',$,17,314
+; main.c    315	
+; main.c    316	
+; main.c    317	//****************************************************************************
+; main.c    318	// @Function      void main(void) 
+; main.c    319	//
+; main.c    320	//----------------------------------------------------------------------------
+; main.c    321	// @Description   This is the main function.
+; main.c    322	//
+; main.c    323	//----------------------------------------------------------------------------
+; main.c    324	// @Returnvalue   None
+; main.c    325	//
+; main.c    326	//----------------------------------------------------------------------------
+; main.c    327	// @Parameters    None
+; main.c    328	//
+; main.c    329	//----------------------------------------------------------------------------
+; main.c    330	// @Date          23.09.2021
+; main.c    331	//
+; main.c    332	//****************************************************************************
+; main.c    333	
+; main.c    334	// USER CODE BEGIN (Main,1)
+; main.c    335	void generateTable(){
+	?LINE	335
+	PUBLIC	_generateTable
+	?SYMB	'generateTable',_generateTable,37,1
+	?SYMB	'',335,8,34
+_generateTable	PROC	FAR
 	?SYMB	'',00H,95,0
+	SUB	R0,#0Ch
+	?SYMB	'',$,96,12
 ; Locals:
+;     i = offset 0
+;     stepSize = offset 2
+;     PR = offset 10
 ; 
 ; Statics:
 ; 
 ; CSEs:
 ; 
-; main.c    334		CCU63_CC60SR = 0x0000;
-	?LINE	334
-	MOV	R12,#00h
-	MOV	0EBA0h,R12
-; main.c    335		CCU63_CC61SR = 0x0FDF;
-	?LINE	335
-	MOV	R12,#0FDFh
-	MOV	0EBA2h,R12
-; main.c    336		CCU63_CC62SR = 0x0FDF;	//100
+; main.c    336		unsigned int PR = CCU63_T12PR;
+	?SYMB	'PR',3,98,18
+	?SYMB	'-2',$,101,3
 	?LINE	336
-	MOV	R12,#0FDFh
-	MOV	0EBA4h,R12
-; main.c    337	   	CCU63_vEnableShadowTransfer(CCU63_TIMER_12);
+	MOV	R12,0EB92h
+	MOV	[R0+#0AH],R12
+; main.c    337		double stepSize = (2*pi)/(size);
+	?SYMB	'stepSize',2,98,11
+	?SYMB	'-a',$,101,2
 	?LINE	337
-	MOV	R12,#0EBA6h
-	MOV	R13,[R12]
-	BSET	R13.6
-	MOV	[R12],R13
-; main.c    338		CCU63_CC61SR = 0x0000;	//110
-	?LINE	338
-	MOV	R12,#00h
-	MOV	0EBA2h,R12
-; main.c    339		CCU63_vEnableShadowTransfer(CCU63_TIMER_12);
+	MOV	R4,_pi
+	MOV	R5,(_pi+2)
+	MOV	R10,#04000h
+	MOV	R11,#00h
+	CALLS	SEG __mlf4r,__mlf4r
+	MOV	R10,#04120h
+	MOV	R11,#00h
+	CALLS	SEG __dvf4r,__dvf4r
+	CALLS	SEG __cff48r,__cff48r
+	?SYMB	'',$,96,20
+	MOV	R4,R0
+	ADD	R4,#0Ah
+	CALLS	SEG __store8n,__store8n
+	ADD	R0,#08h
+	?SYMB	'',$,96,12
+; main.c    338		int i;
+	?SYMB	'i',1,98,16
+	?SYMB	'-c',$,101,1
+; main.c    339		for (i = 0; i < size; i++){ 
 	?LINE	339
-	MOV	R12,#0EBA6h
-	MOV	R13,[R12]
-	BSET	R13.6
-	MOV	[R12],R13
-; main.c    340		CCU63_CC60SR = 0x0FDF;	//010
+	MOV	R12,#00h
+	MOV	[R0],R12
+	JMPR	cc_UC,_17
+_16:
+; main.c    340			table[i] = (unsigned int)((PR/2)*(sin(stepSize * i) + 1));
 	?LINE	340
-	MOV	R12,#0FDFh
-	MOV	0EBA0h,R12
-; main.c    341		CCU63_vEnableShadowTransfer(CCU63_TIMER_12);
-	?LINE	341
-	MOV	R12,#0EBA6h
-	MOV	R13,[R12]
-	BSET	R13.6
-	MOV	[R12],R13
-; main.c    342		CCU63_CC62SR = 0x0000;	//011
+	SUB	R0,#08h
+	?SYMB	'',$,96,20
+	MOV	R4,#0Ah
+	ADD	R4,R0
+	CALLS	SEG __load8n,__load8n
+	?SYMB	'',$,96,28
+	MOV	R11,[R0+#010H]
+	MOV	R4,R11
+	MOV	R12,R10
+	CALLS	SEG __cif28r,__cif28r
+	?SYMB	'',$,96,36
+	MOV	R11,R10
+	MOV	R10,R12
+	CALLS	SEG __mlf8r,__mlf8r
+	ADD	R0,#08h
+	?SYMB	'',$,96,28
+	CALLS	SEG _sin,_sin
+	ADD	R0,#08h
+	?SYMB	'',$,96,20
+	MOV	R11,R4
+	MOV	R4,#_13
+	CALLS	SEG __load8n,__load8n
+	?SYMB	'',$,96,28
+	CALLS	SEG __adf8r,__adf8r
+	MOV	R11,R10
+	MOV	R10,[R0+#01AH]
+	SHR	R10,#01h
+	MOV	R4,R10
+	CALLS	SEG __cuf28r,__cuf28r
+	?SYMB	'',$,96,36
+	CALLS	SEG __mlf8r,__mlf8r
+	CALLS	SEG __cfu82r,__cfu82r
+	ADD	R0,#018h
+	?SYMB	'',$,96,12
+	MOV	R12,[R0]
+	SHL	R12,#01h
+	MOV	[R12+#_table],R4
+	?LINE	339
+	MOV	R12,[R0]
+	ADD	R12,#01h
+	MOV	[R0],R12
+_17:
+	MOV	R12,[R0]
+	CMP	R12,#0Ah
+	JMPR	cc_ULT,_16
+; main.c    341		}
+; main.c    342	}
+	?SYMB	'',$,102,1
+	?SYMB	'',$,102,2
+	?SYMB	'',$,102,3
 	?LINE	342
-	MOV	R12,#00h
-	MOV	0EBA4h,R12
-; main.c    343		CCU63_vEnableShadowTransfer(CCU63_TIMER_12);
-	?LINE	343
-	MOV	R12,#0EBA6h
-	MOV	R13,[R12]
-	BSET	R13.6
-	MOV	[R12],R13
-; main.c    344		CCU63_CC61SR = 0x0FDF;	//001
-	?LINE	344
-	MOV	R12,#0FDFh
-	MOV	0EBA2h,R12
-; main.c    345		CCU63_vEnableShadowTransfer(CCU63_TIMER_12);
-	?LINE	345
-	MOV	R12,#0EBA6h
-	MOV	R13,[R12]
-	BSET	R13.6
-	MOV	[R12],R13
-; main.c    346		CCU63_CC60SR = 0x0000;	//101
-	?LINE	346
-	MOV	R12,#00h
-	MOV	0EBA0h,R12
-; main.c    347		CCU63_vEnableShadowTransfer(CCU63_TIMER_12);
-	?LINE	347
-	MOV	R12,#0EBA6h
-	MOV	R13,[R12]
-	BSET	R13.6
-	MOV	[R12],R13
-; main.c    348	   }
-	?LINE	348
+	ADD	R0,#0Ch
+	?SYMB	'',$,96,0
 	RETS
-_sixStepSequence	ENDP
-	?SYMB	'',$,17,348
-; main.c    349	// USER CODE END
-; main.c    350	
-; main.c    351	void main(void)
-; main.c    352	{
-	?LINE	352
+_generateTable	ENDP
+	?SYMB	'',$,17,342
+; main.c    343	
+; main.c    344	// USER CODE END
+; main.c    345	
+; main.c    346	void main(void)
+; main.c    347	{
+	?LINE	347
 	PUBLIC	_main
 	?SYMB	'main',_main,37,1
-	?SYMB	'',352,8,34
+	?SYMB	'',347,8,34
 _main	PROC	FAR
 	?SYMB	'',00H,95,0
 ; Locals:
@@ -720,57 +767,96 @@ _main	PROC	FAR
 ; 
 ; CSEs:
 ; 
-; main.c    353	  // USER CODE BEGIN (Main,2)
-; main.c    354	
-; main.c    355	  // USER CODE END
-; main.c    356	
-; main.c    357	  MAIN_vInit();
-	?LINE	357
+; main.c    348	  // USER CODE BEGIN (Main,2)
+; main.c    349	
+; main.c    350	  // USER CODE END
+; main.c    351	
+; main.c    352	  MAIN_vInit();
+	?LINE	352
 	CALLS	SEG _MAIN_vInit,_MAIN_vInit
-; main.c    358	
-; main.c    359	  // USER CODE BEGIN (Main,3)
-; main.c    360	  sixStepSequence();
-	?LINE	360
-	CALLS	SEG _sixStepSequence,_sixStepSequence
-; main.c    361	  // USER CODE END
+; main.c    353	
+; main.c    354	  // USER CODE BEGIN (Main,3)
+; main.c    355	  generateTable();
+	?LINE	355
+	CALLS	SEG _generateTable,_generateTable
+; main.c    356	    // USER CODE END
+; main.c    357	
+; main.c    358	  while(1)
+	?LINE	358
+	JMPR	cc_UC,_20
+_20:
+_21:
+	JMPR	cc_UC,_21
+; main.c    359	  {
+; main.c    360	
+; main.c    361	   // USER CODE BEGIN (Main,4)
 ; main.c    362	
-; main.c    363	  while(1)
-	?LINE	363
-	JMPR	cc_UC,_13
-_13:
-_14:
-	JMPR	cc_UC,_14
-; main.c    364	  {
-; main.c    365	
-; main.c    366	   // USER CODE BEGIN (Main,4)
-; main.c    367	
-; main.c    368	   // USER CODE END
-; main.c    369	
-; main.c    370	  }
-; main.c    371	
-; main.c    372	} //  End of function main
-	?LINE	372
+; main.c    363	   // USER CODE END
+; main.c    364	
+; main.c    365	  }
+; main.c    366	
+; main.c    367	} //  End of function main
+	?LINE	367
 	RETS
 _main	ENDP
-	?SYMB	'',$,17,372
-; main.c    373	
+	?SYMB	'',$,17,367
+; main.c    368	
+; main.c    369	
+; main.c    370	
+; main.c    371	// USER CODE BEGIN (MAIN_General,10)
+; main.c    372	
+; main.c    373	// USER CODE END
 ; main.c    374	
-; main.c    375	
-; main.c    376	// USER CODE BEGIN (MAIN_General,10)
-; main.c    377	
-; main.c    378	// USER CODE END
-; main.c    379	
-MAIN_1_PR	ENDS
+MAIN_4_PR	ENDS
+
+MAIN_5_NB	SECTION	LDAT WORD PUBLIC 'CNEAR'
+MAIN_5_NB_ENTRY	LABEL	BYTE
+_table	LABEL	WORD
+	DS	20
+	PUBLIC	_table
+	?SYMB	'',011d0012H,5,284
+	?SYMB	'',16,47,285
+	?SYMB	'',0,30,0
+	?SYMB	'',9,49,0
+	?SYMB	'table',_table,22,284
+MAIN_5_NB	ENDS
+
+MAIN_6_CO	SECTION	LDAT WORD PUBLIC 'CROM'
+_13	LABEL	WORD
+	DW	03FF0h,00h,00h,00h
+MAIN_6_CO	ENDS
 
 C166_US	SECTION	LDAT WORD GLBUSRSTACK 'CUSTACK'
-	DS	4
+	DS	40
 C166_US	ENDS
 
+C166_INIT	SECTION	PDAT WORD GLOBAL 'CINITROM'
+	DW	06h
+	DPPTR	MAIN_ID_NB_ENTRY,MAIN_IR_NB_ENTRY
+	DW	04h
+C166_INIT	ENDS
+
+C166_BSS	SECTION	PDAT WORD GLOBAL 'CINITROM'
+	DW	05h,MAIN_5_NB_ENTRY,014h
+C166_BSS	ENDS
+
+$FLOAT(ANSI)
 	EXTERN	_CCU63_vInit:FAR
+	EXTERN	_sin:FAR
 	EXTERN	_SCS_SwitchToHighPrecBandgap:FAR
 	EXTERN	_SCS_StartXtalOsc:FAR
 	EXTERN	_IO_vInit:FAR
 	EXTERN	_SCS_SwitchSystemClock:FAR
+	EXTERN	__mlf4r:FAR
+	EXTERN	__dvf4r:FAR
+	EXTERN	__cff48r:FAR
+	EXTERN	__store8n:FAR
+	EXTERN	__load8n:FAR
+	EXTERN	__cif28r:FAR
+	EXTERN	__mlf8r:FAR
+	EXTERN	__adf8r:FAR
+	EXTERN	__cuf28r:FAR
+	EXTERN	__cfu82r:FAR
 	EXTERN	__CSTART:FAR
 	REGDEF	R0-R15
 	END

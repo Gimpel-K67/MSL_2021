@@ -29,7 +29,7 @@
 #include "MAIN.H"
 
 // USER CODE BEGIN (MAIN_General,2)
-#include "CCU63.H"
+#include <math.h>
 // USER CODE END
 
 
@@ -74,7 +74,9 @@
 //****************************************************************************
 
 // USER CODE BEGIN (MAIN_General,7)
-
+const unsigned int size = 10;
+unsigned int table[size];
+float pi = 3.14159265359;
 // USER CODE END
 
 
@@ -92,7 +94,7 @@
 //****************************************************************************
 
 // USER CODE BEGIN (MAIN_General,9)
-
+void generateTable();
 // USER CODE END
 
 
@@ -330,22 +332,15 @@ void MAIN_vChangeFreq(void)
 //****************************************************************************
 
 // USER CODE BEGIN (Main,1)
-void sixStepSequence(){
-	CCU63_CC60SR = 0x0000;
-	CCU63_CC61SR = 0x0FDF;
-	CCU63_CC62SR = 0x0FDF;	\\100
-   	CCU63_vEnableShadowTransfer(CCU63_TIMER_12);
-	CCU63_CC61SR = 0x0000;	\\110
-	CCU63_vEnableShadowTransfer(CCU63_TIMER_12);
-	CCU63_CC60SR = 0x0FDF;	\\010
-	CCU63_vEnableShadowTransfer(CCU63_TIMER_12);
-	CCU63_CC62SR = 0x0000;	\\011
-	CCU63_vEnableShadowTransfer(CCU63_TIMER_12);
-	CCU63_CC61SR = 0x0FDF;	\\001
-	CCU63_vEnableShadowTransfer(CCU63_TIMER_12);
-	CCU63_CC60SR = 0x0000;	\\101
-	CCU63_vEnableShadowTransfer(CCU63_TIMER_12);
-   }
+void generateTable(){
+	unsigned int PR = CCU63_T12PR;
+	double stepSize = (2*pi)/(size);
+	int i;
+	for (i = 0; i < size; i++){ 
+		table[i] = (unsigned int)((PR/2)*(sin(stepSize * i) + 1));
+	}
+}
+
 // USER CODE END
 
 void main(void)
@@ -357,8 +352,8 @@ void main(void)
   MAIN_vInit();
 
   // USER CODE BEGIN (Main,3)
-  sixStepSequence();
-  // USER CODE END
+  generateTable();
+    // USER CODE END
 
   while(1)
   {

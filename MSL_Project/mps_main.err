@@ -3,20 +3,20 @@ Warning: Infinite loop detected; Not building sub-project mps_main.pjt
 Linking and locating to mps_main.out
 Trial version.  13 day(s) remaining
 
-	Number of symbols		: 601
-	Number of sections		: 14
+	Number of symbols		: 818
+	Number of sections		: 26
 	Number of groups		: 0
-	Number of classes		: 4
-	Number of modules		: 5
-	Total section size		: 0000AA8h
+	Number of classes		: 10
+	Number of modules		: 28
+	Total section size		: 0001C9Ah
 	Total memory size		: 0344A04h
 		consisting of RAM	: 0284A04h
 		              ROM	: 00C0000h
-	Total RAM filled		: 000023Ah
-	Total ROM filled		: 000086Eh
+	Total RAM filled		: 000034Eh
+	Total ROM filled		: 000194Ch
 	System stack size		: 0000200h
 	Heap size			: 0000000h
-	User stack size			: 000003Ah
+	User stack size			: 0000126h
 	Time spent			: 00:00:2.20
 Converting mps_main.out to mps_main.abs in IEEE-695 format
 Trial version.  13 day(s) remaining
