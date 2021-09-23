@@ -28,7 +28,7 @@ srcwin_autoswitch: TRUE
 srcwin_bubble_spy_size_limit: 1024
 srcwin_stepmode: 1
 srcwin_symbolic_asm: TRUE
-srcwin_viewmode: 1
+srcwin_viewmode: 0
 task_toolbar_container: 1
 task_toolbar_container.rectangle: (2,23,557,80)
 terminal: 0

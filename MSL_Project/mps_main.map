@@ -1,4 +1,4 @@
-TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 22 2021  Time: 17:20:22  Page:   1
+TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 23 2021  Time: 11:06:25  Page:   1
 mps_main
 
 Memory map     : 
@@ -20,14 +20,14 @@ C166_SYSSTACK..............  10 00FA00h    00FBFFh    000200h HDAT WORD SSTK RAM
 SFR Area................... ... 00FE00h    00FFFFh    000200h .... .... .... RAM ................. ................. ..............
 Reserved................... ... BF0000h    BFFFFFh    010000h .... .... .... ... ................. ................. ..............
 ?INTVECT................... ... C00000h    C001FFh    000200h .... .... .... ROM ................. ................. ..............
-CCU63_1_PR.................   0 C00200h    C0033Dh    00013Eh CODE WORD GLOB ROM ................. CPROGRAM......... CCU63_C.......
-IO_1_PR....................   1 C0033Eh    C00355h    000018h CODE WORD GLOB ROM ................. CPROGRAM......... IO_C..........
-MAIN_1_PR..................   2 C00356h    C00459h    000104h CODE WORD GLOB ROM ................. CPROGRAM......... MAIN_C........
-SCS_1_PR...................   4 C0045Ah    C005BBh    000162h CODE WORD GLOB ROM ................. CPROGRAM......... SCS_C.........
-__C_INIT_PR................   5 C005BCh    C0072Fh    000174h CODE WORD GLOB ROM ................. C_INIT........... CSTART........
-__CSTART_PR................   6 C00730h    C007EDh    0000BEh CODE WORD GLOB ROM ................. CPROGRAM......... CSTART........
-C166_INIT..................  11 C007EEh    C007EFh    000002h PDAT WORD GLOB ROM ................. CINITROM......... mps_main......
-C166_BSS...................  12 C007F0h    C007F1h    000002h PDAT WORD GLOB ROM ................. CINITROM......... mps_main......
+CCU63_1_PR.................   0 C00200h    C0033Fh    000140h CODE WORD GLOB ROM ................. CPROGRAM......... CCU63_C.......
+IO_1_PR....................   1 C00340h    C00357h    000018h CODE WORD GLOB ROM ................. CPROGRAM......... IO_C..........
+MAIN_1_PR..................   2 C00358h    C004D5h    00017Eh CODE WORD GLOB ROM ................. CPROGRAM......... MAIN_C........
+SCS_1_PR...................   4 C004D6h    C00637h    000162h CODE WORD GLOB ROM ................. CPROGRAM......... SCS_C.........
+__C_INIT_PR................   5 C00638h    C007ABh    000174h CODE WORD GLOB ROM ................. C_INIT........... CSTART........
+__CSTART_PR................   6 C007ACh    C00869h    0000BEh CODE WORD GLOB ROM ................. CPROGRAM......... CSTART........
+C166_INIT..................  11 C0086Ah    C0086Bh    000002h PDAT WORD GLOB ROM ................. CINITROM......... mps_main......
+C166_BSS...................  12 C0086Ch    C0086Dh    000002h PDAT WORD GLOB ROM ................. CINITROM......... mps_main......
 Reserved................... ... C0F000h    C0FFFFh    001000h .... .... .... ... ................. ................. ..............
 
 
@@ -37,15 +37,15 @@ Symbol                                     No. Value     Type       Symbol      
 ----------------------------------------------------------------    ----------------------------------------------------------------
 ?BASE_DPP0................................ ABS 0400000h  WOR EXT    ?BASE_DPP2................................ ABS 0C00000h  WOR EXT
 CCU63_INUM................................ ... 000003Ch  INT GLB    CCU63_RB.................................. ... 000F600h  REG LOC
-CCU63_TASK................................   0 0C002C0h  TSK LOC    _CCU63_vInit..............................   0 0C00200h  FAR GLB
-_CCU63_viNodeI0...........................   0 0C002C0h  FAR GLB    
+CCU63_TASK................................   0 0C002C2h  TSK LOC    _CCU63_vInit..............................   0 0C00200h  FAR GLB
+_CCU63_viNodeI0...........................   0 0C002C2h  FAR GLB    
 
 
 Symbol table   : io.obj(IO_C)
 
 Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
 ----------------------------------------------------------------    ----------------------------------------------------------------
- <NO NAME>................................ ... 0000000h  REG LOC    _IO_vInit.................................   1 0C0033Eh  FAR GLB
+ <NO NAME>................................ ... 0000000h  REG LOC    _IO_vInit.................................   1 0C00340h  FAR GLB
 
 
 
@@ -54,26 +54,26 @@ Symbol table   : main.obj(MAIN_C)
 Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
 ----------------------------------------------------------------    ----------------------------------------------------------------
  <NO NAME>................................ ... 0000000h  REG LOC    _CCU63_vInit..............................   0 0C00200h  FAR EXT
-_IO_vInit.................................   1 0C0033Eh  FAR EXT    _MAIN_vChangeFreq.........................   2 0C00420h  FAR GLB
-_MAIN_vInit...............................   2 0C00356h  FAR GLB    _MAIN_vLockProtecReg......................   2 0C003C6h  FAR GLB
-_MAIN_vUnlockProtecReg....................   2 0C0038Ch  FAR GLB    _SCS_StartXtalOsc.........................   4 0C004BCh  FAR EXT
-_SCS_SwitchSystemClock....................   4 0C004DCh  FAR EXT    _SCS_SwitchToHighPrecBandgap..............   4 0C00540h  FAR EXT
-TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 22 2021  Time: 17:20:22  Page:   2
+_IO_vInit.................................   1 0C00340h  FAR EXT    _MAIN_vChangeFreq.........................   2 0C00422h  FAR GLB
+_MAIN_vInit...............................   2 0C00358h  FAR GLB    _MAIN_vLockProtecReg......................   2 0C003C8h  FAR GLB
+_MAIN_vUnlockProtecReg....................   2 0C0038Eh  FAR GLB    _SCS_StartXtalOsc.........................   4 0C00538h  FAR EXT
+_SCS_SwitchSystemClock....................   4 0C00558h  FAR EXT    _SCS_SwitchToHighPrecBandgap..............   4 0C005BCh  FAR EXT
+TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 23 2021  Time: 11:06:25  Page:   2
 mps_main
 
-__CSTART..................................   6 0C00730h  FAR EXT    _main.....................................   2 0C00450h  FAR GLB
-
+__CSTART..................................   6 0C007ACh  FAR EXT    _main.....................................   2 0C004C8h  FAR GLB
+_sixStepSequence..........................   2 0C00452h  FAR GLB    
 
 
 Symbol table   : scs.obj(SCS_C)
 
 Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
 ----------------------------------------------------------------    ----------------------------------------------------------------
- <NO NAME>................................ ... 0000000h  REG LOC    _DisableVcoBypass.........................   4 0C00498h  FAR GLB
-_EnableVcoBypass..........................   4 0C00480h  FAR GLB    _SCS_CountClocksWithTimer.................   4 0C0054Eh  FAR GLB
-_SCS_StartXtalOsc.........................   4 0C004BCh  FAR GLB    _SCS_SwitchSystemClock....................   4 0C004DCh  FAR GLB
-_SCS_SwitchToHighPrecBandgap..............   4 0C00540h  FAR GLB    _SetK2....................................   4 0C0045Ah  FAR GLB
-_WaitForTimer13Stop.......................   4 0C004B0h  FAR GLB    
+ <NO NAME>................................ ... 0000000h  REG LOC    _DisableVcoBypass.........................   4 0C00514h  FAR GLB
+_EnableVcoBypass..........................   4 0C004FCh  FAR GLB    _SCS_CountClocksWithTimer.................   4 0C005CAh  FAR GLB
+_SCS_StartXtalOsc.........................   4 0C00538h  FAR GLB    _SCS_SwitchSystemClock....................   4 0C00558h  FAR GLB
+_SCS_SwitchToHighPrecBandgap..............   4 0C005BCh  FAR GLB    _SetK2....................................   4 0C004D6h  FAR GLB
+_WaitForTimer13Stop.......................   4 0C0052Ch  FAR GLB    
 
 
 Symbol table   : start_master.obj(CSTART)
@@ -81,24 +81,24 @@ Symbol table   : start_master.obj(CSTART)
 Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
 ----------------------------------------------------------------    ----------------------------------------------------------------
 ?BASE_DPP0................................ ABS 0400000h  WOR EXT    ?BASE_DPP1................................ ABS 0404000h  WOR EXT
-?BASE_DPP2................................ ABS 0C00000h  WOR EXT    ?C166_BSS_HEAD............................  12 0C007F0h  WOR EXT
-?C166_INIT_HEAD...........................  11 0C007EEh  WOR EXT    ?SYSSTACK_BOTTOM.......................... ABS 000FA00h  WOR EXT
+?BASE_DPP2................................ ABS 0C00000h  WOR EXT    ?C166_BSS_HEAD............................  12 0C0086Ch  WOR EXT
+?C166_INIT_HEAD...........................  11 0C0086Ah  WOR EXT    ?SYSSTACK_BOTTOM.......................... ABS 000FA00h  WOR EXT
 ?SYSSTACK_TOP............................. ABS 000FC00h  WOR EXT    ?USRSTACK0_BOTTOM.........................   7 000C000h  WOR EXT
 ?USRSTACK0_TOP............................   7 000C000h  WOR EXT    ?USRSTACK1_BOTTOM.........................   8 000C000h  WOR EXT
 ?USRSTACK1_TOP............................   8 000C000h  WOR EXT    ?USRSTACK_BOTTOM..........................   3 000C000h  WOR EXT
 ?USRSTACK_TOP.............................   3 000C03Ah  WOR EXT    CSTART_RBANK.............................. ... 000F620h  REG LOC
-__CSTART..................................   6 0C00730h  FAR GLB    __CSTART_INUM............................. ... 0000000h  INT GLB
-__CSTART_TASK.............................   6 0C00730h  TSK LOC    __C_INIT..................................   5 0C005BCh  FAR GLB
-__EXIT....................................   6 0C007E8h  FAR GLB    __IDLE....................................   6 0C007E8h  FAR GLB
-_main.....................................   2 0C00450h  FAR EXT    
+__CSTART..................................   6 0C007ACh  FAR GLB    __CSTART_INUM............................. ... 0000000h  INT GLB
+__CSTART_TASK.............................   6 0C007ACh  TSK LOC    __C_INIT..................................   5 0C00638h  FAR GLB
+__EXIT....................................   6 0C00864h  FAR GLB    __IDLE....................................   6 0C00864h  FAR GLB
+_main.....................................   2 0C004C8h  FAR EXT    
 
 
 Interrupt table: 
 
 Vector   Intno Start    Intnoname                                              Taskname                                             
 ------------------------------------------------------------------------------------------------------------------------------------
-0C00000h 0000h 0C00730h __CSTART_INUM......................................... __CSTART_TASK........................................
-0C000F0h 003Ch 0C002C0h CCU63_INUM............................................ CCU63_TASK...........................................
+0C00000h 0000h 0C007ACh __CSTART_INUM......................................... __CSTART_TASK........................................
+0C000F0h 003Ch 0C002C2h CCU63_INUM............................................ CCU63_TASK...........................................
 
 Register banks : combination of register definitions
 
@@ -118,23 +118,23 @@ Register banks : combination of register definitions
 Locate summary : 
 
 Class       Name          Size  Start
-TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 22 2021  Time: 17:20:22  Page:   3
+TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 23 2021  Time: 11:06:25  Page:   3
 mps_main
 
 <NO NAME>   ?INTVECT      00200h C00000h 
             C166_SYSSTACK 00200h 00FA00h 
       Total class size: 0000400h
 
-CINITROM    C166_BSS      00002h C007F0h 
-            C166_INIT     00002h C007EEh 
+CINITROM    C166_BSS      00002h C0086Ch 
+            C166_INIT     00002h C0086Ah 
       Total class size: 0000004h
 
-CPROGRAM    CCU63_1_PR    0013Eh C00200h 
-            IO_1_PR       00018h C0033Eh 
-            MAIN_1_PR     00104h C00356h 
-            SCS_1_PR      00162h C0045Ah 
-            __CSTART_PR   000BEh C00730h 
-      Total class size: 000047Ah
+CPROGRAM    CCU63_1_PR    00140h C00200h 
+            IO_1_PR       00018h C00340h 
+            MAIN_1_PR     0017Eh C00358h 
+            SCS_1_PR      00162h C004D6h 
+            __CSTART_PR   000BEh C007ACh 
+      Total class size: 00004F6h
 
 CUSTACK     C166_US1      00000h 00C000h 
             C166_US2      00000h 00C000h 
@@ -142,23 +142,23 @@ CUSTACK     C166_US1      00000h 00C000h
             C166_US0      00000h 00C000h 
       Total class size: 000003Ah
 
-C_INIT      __C_INIT_PR   00174h C005BCh 
+C_INIT      __C_INIT_PR   00174h C00638h 
       Total class size: 0000174h
 
-Total size:             0000A2Ch
+Total size:             0000AA8h
 
 
-	Number of symbols		: 576
+	Number of symbols		: 601
 	Number of sections		: 14
 	Number of groups		: 0
 	Number of classes		: 4
 	Number of modules		: 5
-	Total section size		: 0000A2Ch
+	Total section size		: 0000AA8h
 	Total memory size		: 0344A04h
 		consisting of RAM	: 0284A04h
 		              ROM	: 00C0000h
 	Total RAM filled		: 000023Ah
-	Total ROM filled		: 00007F2h
+	Total ROM filled		: 000086Eh
 	System stack size		: 0000200h
 	Heap size			: 0000000h
 	User stack size			: 000003Ah

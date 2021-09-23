@@ -207,7 +207,7 @@ void CCU63_vInit(void)
   ///  - Generation interrupt on flag ICC60R is disabled
   ///  - Generation interrupt on flag ICC60F is disabled
 
-  CCU63_CC60SR   =  0x0FDF;      // Load CCU63 capture/compare shadow 
+  CCU63_CC60SR   =  0x0000;      // Load CCU63 capture/compare shadow 
                                  // register for channel 0
 
   ///  -----------------------------------------------------------------------

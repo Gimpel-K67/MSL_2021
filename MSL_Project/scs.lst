@@ -1,4 +1,4 @@
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 22 2021  Time: 17:20:21  Page:   1
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 10:43:05  Page:   1
 scs
 
  LOC CODE        LINE   SOURCELINE
@@ -53,12 +53,12 @@ scs
                     48   ; scs.c      16 //                the user.
                     49   ; scs.c      17 //
                     50   ; scs.c      18 //----------------------------------------------------------------------------
-                    51   ; scs.c      19 // @Date          22.09.2021 17:20:12
+                    51   ; scs.c      19 // @Date          23.09.2021 10:42:54
                     52   ; scs.c      20 //
                     53   ; scs.c      21 //****************************************************************************
                     54   ; scs.c      22 
                     55   ; scs.c      23 // USER CODE BEGIN (SCS_General,1)
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 22 2021  Time: 17:20:21  Page:   2
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 10:43:05  Page:   2
 scs
 
  LOC CODE        LINE   SOURCELINE
@@ -118,7 +118,7 @@ scs
                    108   ; scs.c      50 
                    109   ; scs.c      51 // USER CODE END
                    110   ; scs.c      52 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 22 2021  Time: 17:20:21  Page:   3
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 10:43:05  Page:   3
 scs
 
  LOC CODE        LINE   SOURCELINE
@@ -178,7 +178,7 @@ scs
                    163   ; scs.c     105 #  endif
                    164   ; scs.c     106 #endif
                    165   ; scs.c     107 // Check K2 K2 divider and additional K2 divider steps for switch to/from WU if
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 22 2021  Time: 17:20:21  Page:   4
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 10:43:05  Page:   4
 scs
 
  LOC CODE        LINE   SOURCELINE
@@ -238,7 +238,7 @@ scs
                    217   ; scs.c     159 
                    218   ; scs.c     160 
                    219   ; scs.c     161 //****************************************************************************
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 22 2021  Time: 17:20:21  Page:   5
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 10:43:05  Page:   5
 scs
 
  LOC CODE        LINE   SOURCELINE
@@ -277,7 +277,7 @@ scs
                    251   ; scs.c     193 // @Parameters    K2: K2 divider
                    252   ; scs.c     194 //
                    253   ; scs.c     195 //-----------------------------------------------------------------------------
-                   254   ; scs.c     196 // @Date          22.09.2021
+                   254   ; scs.c     196 // @Date          23.09.2021
                    255   ; scs.c     197 //
                    256   ; scs.c     198 //-----------------------------------------------------------------------------
                    257   ; scs.c     199 
@@ -298,7 +298,7 @@ scs
                    272           ?SYMB   '',010002H,7,263
                    273           ?SYMB   '',010003H,7,264
                    274           ?SYMB   '',010004H,7,265
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 22 2021  Time: 17:20:21  Page:   6
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 10:43:05  Page:   6
 scs
 
  LOC CODE        LINE   SOURCELINE
@@ -358,7 +358,7 @@ scs
 0008 F6FCBEF1      327           MOV     0F1BEh,R12
                    328   ; scs.c     211                      // Provides acknowledge to K2RDY
                    329   ; scs.c     212      // restart VCO lock detection
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 22 2021  Time: 17:20:21  Page:   7
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 10:43:05  Page:   7
 scs
 
  LOC CODE        LINE   SOURCELINE
@@ -418,7 +418,7 @@ scs
                    378   ; scs.c     242 //
                    379   ; scs.c     243 //-----------------------------------------------------------------------------
                    380   ; scs.c     244 // @Returnvalue   None
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 22 2021  Time: 17:20:21  Page:   8
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 10:43:05  Page:   8
 scs
 
  LOC CODE        LINE   SOURCELINE
@@ -428,7 +428,7 @@ scs
                    383   ; scs.c     247 // @Parameters    None
                    384   ; scs.c     248 //
                    385   ; scs.c     249 //-----------------------------------------------------------------------------
-                   386   ; scs.c     250 // @Date          22.09.2021
+                   386   ; scs.c     250 // @Date          23.09.2021
                    387   ; scs.c     251 //
                    388   ; scs.c     252 //-----------------------------------------------------------------------------
                    389   ; scs.c     253 
@@ -478,7 +478,7 @@ scs
                    432   ; scs.c     277      (0U    <<12U)))// REGSTAT PLL Power Regulator Status powered (operation po
                          ssible) (rh)
                    433           ?LINE   277
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 22 2021  Time: 17:20:21  Page:   9
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 10:43:05  Page:   9
 scs
 
  LOC CODE        LINE   SOURCELINE
@@ -511,7 +511,7 @@ scs
                    458   ; scs.c     294 // @Parameters    None
                    459   ; scs.c     295 //
                    460   ; scs.c     296 //-----------------------------------------------------------------------------
-                   461   ; scs.c     297 // @Date          22.09.2021
+                   461   ; scs.c     297 // @Date          23.09.2021
                    462   ; scs.c     298 //
                    463   ; scs.c     299 //-----------------------------------------------------------------------------
                    464   ; scs.c     300 
@@ -538,7 +538,7 @@ scs
                    485           ?LINE   308
 003E E6FCB8F1      486           MOV     R12,#0F1B8h
 0042 A8DC          487           MOV     R13,[R12]
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 22 2021  Time: 17:20:21  Page:  10
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 10:43:05  Page:  10
 scs
 
  LOC CODE        LINE   SOURCELINE
@@ -596,9 +596,9 @@ scs
                    535   ; scs.c     343 // @Parameters    None
                    536   ; scs.c     344 //
                    537   ; scs.c     345 //-----------------------------------------------------------------------------
-                   538   ; scs.c     346 // @Date          22.09.2021
+                   538   ; scs.c     346 // @Date          23.09.2021
                    539   ; scs.c     347 //
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 22 2021  Time: 17:20:21  Page:  11
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 10:43:05  Page:  11
 scs
 
  LOC CODE        LINE   SOURCELINE
@@ -658,7 +658,7 @@ scs
                    591   ; scs.c     376 //                and sets EXTCLK for counting XTAL clocks; if required, PLL 
                    592   ; scs.c     377 //                frequency will be increased for synchronization purposes.
                    593   ; scs.c     378 //                
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 22 2021  Time: 17:20:21  Page:  12
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 10:43:05  Page:  12
 scs
 
  LOC CODE        LINE   SOURCELINE
@@ -679,7 +679,7 @@ scs
                    606   ; scs.c     391 //                via T13
                    607   ; scs.c     392 //
                    608   ; scs.c     393 //-----------------------------------------------------------------------------
-                   609   ; scs.c     394 // @Date          22.09.2021
+                   609   ; scs.c     394 // @Date          23.09.2021
                    610   ; scs.c     395 //
                    611   ; scs.c     396 //-----------------------------------------------------------------------------
                    612   ; scs.c     397 
@@ -718,7 +718,7 @@ scs
                    645   ; scs.c     413                     // 3 : OSC_HP disabled, osc. power-saving mode
                    646   ; scs.c     414      (0U    <<7U) | // X1DEN XTAL1 Data Enable
                    647   ; scs.c     415                     // 0 : 0 Bit X1D is not updated
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 22 2021  Time: 17:20:21  Page:  13
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 10:43:05  Page:  13
 scs
 
  LOC CODE        LINE   SOURCELINE
@@ -778,7 +778,7 @@ scs
                    697   _SCS_StartXtalOsc       ENDP
                R   698           ?SYMB   '',$,17,444
                    699   ; scs.c     445 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 22 2021  Time: 17:20:21  Page:  14
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 10:43:05  Page:  14
 scs
 
  LOC CODE        LINE   SOURCELINE
@@ -811,7 +811,7 @@ scs
                    724   ; scs.c     470 //                via T13
                    725   ; scs.c     471 //
                    726   ; scs.c     472 //-----------------------------------------------------------------------------
-                   727   ; scs.c     473 // @Date          22.09.2021
+                   727   ; scs.c     473 // @Date          23.09.2021
                    728   ; scs.c     474 //
                    729   ; scs.c     475 //-----------------------------------------------------------------------------
                    730   ; scs.c     476 
@@ -838,7 +838,7 @@ scs
                    751   ; 
                    752           ?SYMB   'UseTimer',1,99,18
                R   753           ?SYMB   '-2',$,101,1
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 22 2021  Time: 17:20:21  Page:  15
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 10:43:05  Page:  15
 scs
 
  LOC CODE        LINE   SOURCELINE
@@ -898,7 +898,7 @@ scs
                    805   ; scs.c     519                     // 0 : PLL external oscillator is selected asynchronously
                    806   ; scs.c     520                     // 1 : PLL internal oscillator is selected asynchronously
                    807   ; scs.c     521      (0U    <<5U) | // EMCLKEN VCOLCK Emergency System Clock Source Select Enab
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 22 2021  Time: 17:20:21  Page:  16
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 10:43:05  Page:  16
 scs
 
  LOC CODE        LINE   SOURCELINE
@@ -958,7 +958,7 @@ scs
                    856   ; scs.c     561           DisableVcoBypass();
                    857           ?LINE   561
 00B4 DA003E00  R   858           CALLS   SEG _DisableVcoBypass,_DisableVcoBypass
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 22 2021  Time: 17:20:21  Page:  17
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 10:43:05  Page:  17
 scs
 
  LOC CODE        LINE   SOURCELINE
@@ -1018,7 +1018,7 @@ scs
                    911   ; scs.c     593 } // end of function SCS_SwitchSystemClock
                R   912           ?SYMB   '',$,102,1
                    913           ?LINE   593
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 22 2021  Time: 17:20:21  Page:  18
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 10:43:05  Page:  18
 scs
 
  LOC CODE        LINE   SOURCELINE
@@ -1049,7 +1049,7 @@ scs
                    937   ; scs.c     612 // @Parameters    None
                    938   ; scs.c     613 //
                    939   ; scs.c     614 //-----------------------------------------------------------------------------
-                   940   ; scs.c     615 // @Date          22.09.2021
+                   940   ; scs.c     615 // @Date          23.09.2021
                    941   ; scs.c     616 //
                    942   ; scs.c     617 //-----------------------------------------------------------------------------
                    943   ; scs.c     618 
@@ -1078,7 +1078,7 @@ scs
                    966   ; scs.c     629                      // 1 : 1.0 V with low power bandgap selected
                    967   ; scs.c     630                      // 2 : 1.2 V with low power bandgap selected
                    968   ; scs.c     631                      // 3 : 1.5 V with low power bandgap selected
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 22 2021  Time: 17:20:21  Page:  19
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 10:43:05  Page:  19
 scs
 
  LOC CODE        LINE   SOURCELINE
@@ -1138,7 +1138,7 @@ scs
 00EA A8DC         1010           MOV     R13,[R12]
 00EC 66FDC7FF     1011           AND     R13,#0FFC7h
 00F0 B8DC         1012           MOV     [R12],R13
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 22 2021  Time: 17:20:21  Page:  20
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 10:43:05  Page:  20
 scs
 
  LOC CODE        LINE   SOURCELINE
@@ -1182,7 +1182,7 @@ scs
                   1048   ; scs.c     702 //                 Clocks: Number of clocks to count, 1...65535
                   1049   ; scs.c     703 //
                   1050   ; scs.c     704 //-----------------------------------------------------------------------------
-                  1051   ; scs.c     705 // @Date          22.09.2021
+                  1051   ; scs.c     705 // @Date          23.09.2021
                   1052   ; scs.c     706 //
                   1053   ; scs.c     707 //-----------------------------------------------------------------------------
                   1054   ; scs.c     708 
@@ -1198,7 +1198,7 @@ scs
                   1064           ?SYMB   '',714,8,34
                   1065   _SCS_CountClocksWithTimer       PROC    FAR
                   1066           ?SYMB   '',00H,95,0
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 22 2021  Time: 17:20:21  Page:  21
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 10:43:05  Page:  21
 scs
 
  LOC CODE        LINE   SOURCELINE
@@ -1258,7 +1258,7 @@ scs
                   1118           ?LINE   736
 010A E6FC0CEA     1119           MOV     R12,#0EA0Ch
 010E A8DC         1120           MOV     R13,[R12]
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 22 2021  Time: 17:20:21  Page:  22
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 10:43:05  Page:  22
 scs
 
  LOC CODE        LINE   SOURCELINE
@@ -1318,7 +1318,7 @@ scs
                   1173   ; scs.c     777     (0U    <<2U) | // T13TEC T13 Trigger Event Control to start T13
                   1174   ; scs.c     778                    // 0: No action
                   1175   ; scs.c     779                    // 1: T13R set on T12 compare event on channel 0
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 22 2021  Time: 17:20:21  Page:  23
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 10:43:05  Page:  23
 scs
 
  LOC CODE        LINE   SOURCELINE
@@ -1378,7 +1378,7 @@ scs
                   1226   ; scs.c     820       ((unsigned int)Source
                   1227   ; scs.c     821              <<1U) | // SEL External Clock Select
                   1228   ; scs.c     822                      // 0 : fSYS is selected
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 22 2021  Time: 17:20:21  Page:  24
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 10:43:05  Page:  24
 scs
 
  LOC CODE        LINE   SOURCELINE
@@ -1438,7 +1438,7 @@ scs
                   1281   
                   1282   C166_US SECTION LDAT WORD GLBUSRSTACK 'CUSTACK'
 0000              1283           DS      12
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 22 2021  Time: 17:20:21  Page:  25
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 23 2021  Time: 10:43:05  Page:  25
 scs
 
  LOC CODE        LINE   SOURCELINE
