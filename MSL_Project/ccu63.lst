@@ -1,4 +1,4 @@
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 09:32:55  Page:   1
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 10:14:16  Page:   1
 ccu63
 
  LOC CODE        LINE   SOURCELINE
@@ -49,7 +49,7 @@ ccu63
                     44   ; ccu63.c    12 // @Description   This file contains functions that use the CCU63 module.
                     45   ; ccu63.c    13 //
                     46   ; ccu63.c    14 //----------------------------------------------------------------------------
-                    47   ; ccu63.c    15 // @Date          24.09.2021 09:32:48
+                    47   ; ccu63.c    15 // @Date          24.09.2021 10:14:08
                     48   ; ccu63.c    16 //
                     49   ; ccu63.c    17 //****************************************************************************
                     50   ; ccu63.c    18 
@@ -58,7 +58,7 @@ ccu63
                     53   ; ccu63.c    21 // USER CODE END
                     54   ; ccu63.c    22 
                     55   ; ccu63.c    23 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 09:32:55  Page:   2
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 10:14:16  Page:   2
 ccu63
 
  LOC CODE        LINE   SOURCELINE
@@ -118,7 +118,7 @@ ccu63
                    108   ; ccu63.c    41 
                    109   ; ccu63.c    42 // USER CODE END
                    110   ; ccu63.c    43 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 09:32:55  Page:   3
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 10:14:16  Page:   3
 ccu63
 
  LOC CODE        LINE   SOURCELINE
@@ -178,7 +178,7 @@ ccu63
                    163   ; ccu63.c    96 
                    164   ; ccu63.c    97 // USER CODE END
                    165   ; ccu63.c    98 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 09:32:55  Page:   4
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 10:14:16  Page:   4
 ccu63
 
  LOC CODE        LINE   SOURCELINE
@@ -238,7 +238,7 @@ ccu63
                    218   ; ccu63.c   137 
                    219   ; ccu63.c   138   CCU63_KSCFG    =  0x0003;      // Kernel State Configuration Register
                    220           ?LINE   138
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 09:32:55  Page:   5
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 10:14:16  Page:   5
 ccu63
 
  LOC CODE        LINE   SOURCELINE
@@ -274,9 +274,9 @@ ccu63
                    249   ; ccu63.c   157   ///  - Timer mode is selected.
                    250   ; ccu63.c   158   ///  - 
                    251   ; ccu63.c   159 
-                   252   ; ccu63.c   160   CCU63_T12PR    =  0x0FDE;      // load CCU63 T12 period register
+                   252   ; ccu63.c   160   CCU63_T12PR    =  0x1963;      // load CCU63 T12 period register
                    253           ?LINE   160
-000E E6FCDE0F      254           MOV     R12,#0FDEh
+000E E6FC6319      254           MOV     R12,#01963h
 0012 F6FC92EB      255           MOV     0EB92h,R12
                    256   ; ccu63.c   161 
                    257   ; ccu63.c   162   ///  -----------------------------------------------------------------------
@@ -298,7 +298,7 @@ ccu63
                    273   ; ccu63.c   178   ///  - Interrupt on period match is disabled
                    274   ; ccu63.c   179   ///  - Interrupt on compare match is disabled
                    275   ; ccu63.c   180 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 09:32:55  Page:   6
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 10:14:16  Page:   6
 ccu63
 
  LOC CODE        LINE   SOURCELINE
@@ -342,9 +342,9 @@ ccu63
                    312   ; ccu63.c   208   ///  - Generation interrupt on flag ICC60R is disabled
                    313   ; ccu63.c   209   ///  - Generation interrupt on flag ICC60F is disabled
                    314   ; ccu63.c   210 
-                   315   ; ccu63.c   211   CCU63_CC60SR   =  0x0FDF;      // Load CCU63 capture/compare shadow 
+                   315   ; ccu63.c   211   CCU63_CC60SR   =  0x1964;      // Load CCU63 capture/compare shadow 
                    316           ?LINE   211
-002C E6FCDF0F      317           MOV     R12,#0FDFh
+002C E6FC6419      317           MOV     R12,#01964h
 0030 F6FCA0EB      318           MOV     0EBA0h,R12
                    319   ; ccu63.c   212                                  // register for channel 0
                    320   ; ccu63.c   213 
@@ -358,7 +358,7 @@ ccu63
                    328   ; ccu63.c   221   ///  - The compare output CC61 drives passive level while CC61ST is '0'
                    329   ; ccu63.c   222   ///  - The passive level of the output CC61 is '0'
                    330   ; ccu63.c   223   ///  - T12 modulation for output COUT61 is enabled
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 09:32:55  Page:   7
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 10:14:16  Page:   7
 ccu63
 
  LOC CODE        LINE   SOURCELINE
@@ -372,9 +372,9 @@ ccu63
                    337   ; ccu63.c   230   ///  - Generation interrupt on flag ICC61R is disabled
                    338   ; ccu63.c   231   ///  - Generation interrupt on flag ICC61F is disabled
                    339   ; ccu63.c   232 
-                   340   ; ccu63.c   233   CCU63_CC61SR   =  0x0FDF;      // Load CCU63 capture/compare shadow 
+                   340   ; ccu63.c   233   CCU63_CC61SR   =  0x1964;      // Load CCU63 capture/compare shadow 
                    341           ?LINE   233
-0034 E6FCDF0F      342           MOV     R12,#0FDFh
+0034 E6FC6419      342           MOV     R12,#01964h
 0038 F6FCA2EB      343           MOV     0EBA2h,R12
                    344   ; ccu63.c   234                                  // register for channel 1
                    345   ; ccu63.c   235 
@@ -397,9 +397,9 @@ ccu63
                    362   ; ccu63.c   252   ///  - Generation interrupt on flag ICC62R is disabled
                    363   ; ccu63.c   253   ///  - Generation interrupt on flag ICC62F is disabled
                    364   ; ccu63.c   254 
-                   365   ; ccu63.c   255   CCU63_CC62SR   =  0x0FDF;      // Load CCU63 capture/compare shadow 
+                   365   ; ccu63.c   255   CCU63_CC62SR   =  0x1964;      // Load CCU63 capture/compare shadow 
                    366           ?LINE   255
-003C E6FCDF0F      367           MOV     R12,#0FDFh
+003C E6FC6419      367           MOV     R12,#01964h
 0040 F6FCA4EB      368           MOV     0EBA4h,R12
                    369   ; ccu63.c   256                                  // register for channel 2
                    370   ; ccu63.c   257 
@@ -418,7 +418,7 @@ ccu63
                    383   ; ccu63.c   267 
                    384   ; ccu63.c   268   CCU63_T12DTC   =  0x0762;      // load CCU63 dead time control register for 
                    385           ?LINE   268
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 09:32:55  Page:   8
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 10:14:16  Page:   8
 ccu63
 
  LOC CODE        LINE   SOURCELINE
@@ -478,7 +478,7 @@ ccu63
 0074 F6FCD8EB      438           MOV     0EBD8h,R12
                    439   ; ccu63.c   305                                  // enable register
                    440   ; ccu63.c   306 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 09:32:55  Page:   9
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 10:14:16  Page:   9
 ccu63
 
  LOC CODE        LINE   SOURCELINE
@@ -538,7 +538,7 @@ ccu63
 00B4 F6FC78F1      493           MOV     0F178h,R12
                    494   ; ccu63.c   336 
                    495   ; ccu63.c   337 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 09:32:55  Page:  10
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 10:14:16  Page:  10
 ccu63
 
  LOC CODE        LINE   SOURCELINE
@@ -598,7 +598,7 @@ ccu63
                    548   ; ccu63.c   383 {
                R   549           ?SYMB   'CCU63_viNodeI0',_CCU63_viNodeI0,37,1
                    550           ?SYMB   '',383,8,16
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 09:32:55  Page:  11
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 10:14:16  Page:  11
 ccu63
 
  LOC CODE        LINE   SOURCELINE
@@ -658,7 +658,7 @@ ccu63
                    603   ; ccu63.c   395 
                    604   ; ccu63.c   396     CCU63_ISR |= 0x0040;  // clear flag CCU63_IS_T12OM
                    605           ?LINE   396
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 09:32:55  Page:  12
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 10:14:16  Page:  12
 ccu63
 
  LOC CODE        LINE   SOURCELINE
@@ -718,7 +718,7 @@ ccu63
 016C E6FCD4EB      655           MOV     R12,#0EBD4h
 0170 A8DC          656           MOV     R13,[R12]
 0172 7FFD          657           BSET    R13.7
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 09:32:55  Page:  13
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 10:14:16  Page:  13
 ccu63
 
  LOC CODE        LINE   SOURCELINE

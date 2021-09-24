@@ -1,5 +1,8 @@
 TASKING program builder v8.7r1 Build 088
 Warning: Infinite loop detected; Not building sub-project mps_main.pjt
+Compiling and assembling ccu63.c
+Trial version.  12 day(s) remaining
+Trial version.  12 day(s) remaining
 Compiling and assembling io.c
 Trial version.  12 day(s) remaining
 Trial version.  12 day(s) remaining
@@ -32,6 +35,6 @@ Trial version.  12 day(s) remaining
 	System stack size		: 0000200h
 	Heap size			: 0000000h
 	User stack size			: 0000126h
-	Time spent			: 00:00:2.21
+	Time spent			: 00:00:2.20
 Converting mps_main.out to mps_main.abs in IEEE-695 format
 Trial version.  12 day(s) remaining

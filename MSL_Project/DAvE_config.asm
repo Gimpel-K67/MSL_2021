@@ -9,7 +9,7 @@
 ;                PLEASE DO NOT MODIFY THIS FILE !
 ;
 ;----------------------------------------------------------------------------
-; Date          24.09.2021 09:32:48
+; Date          24.09.2021 10:14:08
 ;
 ;****************************************************************************
 
@@ -13836,19 +13836,19 @@ CCU63_3IC_IR	SET	0
 CCU63_CC60R_CCV	SET	0
 
 ; Capture/Compare Shadow Reg. for Channel CC60
-CCU63_CC60SR_CCS	SET	4063
+CCU63_CC60SR_CCS	SET	6500
 
 ; Capture/Compare Register for Channel CC61
 CCU63_CC61R_CCV	SET	0
 
 ; Capture/Compare Shadow Reg. for Channel CC61
-CCU63_CC61SR_CCS	SET	4063
+CCU63_CC61SR_CCS	SET	6500
 
 ; Capture/Compare Register for Channel CC62
 CCU63_CC62R_CCV	SET	0
 
 ; Capture/Compare Shadow Reg. for Channel CC62
-CCU63_CC62SR_CCS	SET	4063
+CCU63_CC62SR_CCS	SET	6500
 
 ; Compare Register for T13
 CCU63_CC63R_CCV	SET	0
@@ -14043,7 +14043,7 @@ CCU63_T12MSEL_MSEL61	SET	1
 CCU63_T12MSEL_MSEL62	SET	1
 
 ; Timer 12 Period Register
-CCU63_T12PR_T12PV	SET	4062
+CCU63_T12PR_T12PV	SET	6499
 
 ; Timer T12 Counter Register
 CCU63_T12_T12CV	SET	0

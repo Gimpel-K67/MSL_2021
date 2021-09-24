@@ -44,7 +44,7 @@ $MODEL(SMALL)
 ; ccu63.c    12	// @Description   This file contains functions that use the CCU63 module.
 ; ccu63.c    13	//
 ; ccu63.c    14	//----------------------------------------------------------------------------
-; ccu63.c    15	// @Date          24.09.2021 09:32:48
+; ccu63.c    15	// @Date          24.09.2021 10:14:08
 ; ccu63.c    16	//
 ; ccu63.c    17	//****************************************************************************
 ; ccu63.c    18	
@@ -249,9 +249,9 @@ _CCU63_vInit	PROC	FAR
 ; ccu63.c   157	  ///  - Timer mode is selected.
 ; ccu63.c   158	  ///  - 
 ; ccu63.c   159	
-; ccu63.c   160	  CCU63_T12PR    =  0x0FDE;      // load CCU63 T12 period register
+; ccu63.c   160	  CCU63_T12PR    =  0x1963;      // load CCU63 T12 period register
 	?LINE	160
-	MOV	R12,#0FDEh
+	MOV	R12,#01963h
 	MOV	0EB92h,R12
 ; ccu63.c   161	
 ; ccu63.c   162	  ///  -----------------------------------------------------------------------
@@ -312,9 +312,9 @@ _CCU63_vInit	PROC	FAR
 ; ccu63.c   208	  ///  - Generation interrupt on flag ICC60R is disabled
 ; ccu63.c   209	  ///  - Generation interrupt on flag ICC60F is disabled
 ; ccu63.c   210	
-; ccu63.c   211	  CCU63_CC60SR   =  0x0FDF;      // Load CCU63 capture/compare shadow 
+; ccu63.c   211	  CCU63_CC60SR   =  0x1964;      // Load CCU63 capture/compare shadow 
 	?LINE	211
-	MOV	R12,#0FDFh
+	MOV	R12,#01964h
 	MOV	0EBA0h,R12
 ; ccu63.c   212	                                 // register for channel 0
 ; ccu63.c   213	
@@ -337,9 +337,9 @@ _CCU63_vInit	PROC	FAR
 ; ccu63.c   230	  ///  - Generation interrupt on flag ICC61R is disabled
 ; ccu63.c   231	  ///  - Generation interrupt on flag ICC61F is disabled
 ; ccu63.c   232	
-; ccu63.c   233	  CCU63_CC61SR   =  0x0FDF;      // Load CCU63 capture/compare shadow 
+; ccu63.c   233	  CCU63_CC61SR   =  0x1964;      // Load CCU63 capture/compare shadow 
 	?LINE	233
-	MOV	R12,#0FDFh
+	MOV	R12,#01964h
 	MOV	0EBA2h,R12
 ; ccu63.c   234	                                 // register for channel 1
 ; ccu63.c   235	
@@ -362,9 +362,9 @@ _CCU63_vInit	PROC	FAR
 ; ccu63.c   252	  ///  - Generation interrupt on flag ICC62R is disabled
 ; ccu63.c   253	  ///  - Generation interrupt on flag ICC62F is disabled
 ; ccu63.c   254	
-; ccu63.c   255	  CCU63_CC62SR   =  0x0FDF;      // Load CCU63 capture/compare shadow 
+; ccu63.c   255	  CCU63_CC62SR   =  0x1964;      // Load CCU63 capture/compare shadow 
 	?LINE	255
-	MOV	R12,#0FDFh
+	MOV	R12,#01964h
 	MOV	0EBA4h,R12
 ; ccu63.c   256	                                 // register for channel 2
 ; ccu63.c   257	

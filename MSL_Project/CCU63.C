@@ -12,7 +12,7 @@
 // @Description   This file contains functions that use the CCU63 module.
 //
 //----------------------------------------------------------------------------
-// @Date          24.09.2021 09:32:48
+// @Date          24.09.2021 10:14:08
 //
 //****************************************************************************
 
@@ -157,7 +157,7 @@ void CCU63_vInit(void)
   ///  - Timer mode is selected.
   ///  - 
 
-  CCU63_T12PR    =  0x0FDE;      // load CCU63 T12 period register
+  CCU63_T12PR    =  0x1963;      // load CCU63 T12 period register
 
   ///  -----------------------------------------------------------------------
   ///  Configuration of T13HR Signal:
@@ -208,7 +208,7 @@ void CCU63_vInit(void)
   ///  - Generation interrupt on flag ICC60R is disabled
   ///  - Generation interrupt on flag ICC60F is disabled
 
-  CCU63_CC60SR   =  0x0FDF;      // Load CCU63 capture/compare shadow 
+  CCU63_CC60SR   =  0x1964;      // Load CCU63 capture/compare shadow 
                                  // register for channel 0
 
   ///  -----------------------------------------------------------------------
@@ -230,7 +230,7 @@ void CCU63_vInit(void)
   ///  - Generation interrupt on flag ICC61R is disabled
   ///  - Generation interrupt on flag ICC61F is disabled
 
-  CCU63_CC61SR   =  0x0FDF;      // Load CCU63 capture/compare shadow 
+  CCU63_CC61SR   =  0x1964;      // Load CCU63 capture/compare shadow 
                                  // register for channel 1
 
   ///  -----------------------------------------------------------------------
@@ -252,7 +252,7 @@ void CCU63_vInit(void)
   ///  - Generation interrupt on flag ICC62R is disabled
   ///  - Generation interrupt on flag ICC62F is disabled
 
-  CCU63_CC62SR   =  0x0FDF;      // Load CCU63 capture/compare shadow 
+  CCU63_CC62SR   =  0x1964;      // Load CCU63 capture/compare shadow 
                                  // register for channel 2
 
   ///  -----------------------------------------------------------------------
