@@ -44,7 +44,7 @@ $MODEL(SMALL)
 ; gpt2.c     12	// @Description   This file contains functions that use the GPT2 module.
 ; gpt2.c     13	//
 ; gpt2.c     14	//----------------------------------------------------------------------------
-; gpt2.c     15	// @Date          23.09.2021 17:39:33
+; gpt2.c     15	// @Date          24.09.2021 09:32:48
 ; gpt2.c     16	//
 ; gpt2.c     17	//****************************************************************************
 ; gpt2.c     18	
@@ -85,6 +85,9 @@ $MODEL(SMALL)
 	?SYMB	'',0,86,3
 	?SYMB	'',0,86,2
 	?SYMB	'GPT2.H',0,29,3
+	?SYMB	'',0,86,3
+	?SYMB	'',0,86,2
+	?SYMB	'CC2.H',0,29,3
 	?SYMB	'',0,86,3
 	?SYMB	'',0,86,2
 	?SYMB	'CCU63.H',0,29,3
@@ -176,7 +179,7 @@ $MODEL(SMALL)
 ; gpt2.c    112	// @Parameters    None
 ; gpt2.c    113	//
 ; gpt2.c    114	//----------------------------------------------------------------------------
-; gpt2.c    115	// @Date          23.09.2021
+; gpt2.c    115	// @Date          24.09.2021
 ; gpt2.c    116	//
 ; gpt2.c    117	//****************************************************************************
 ; gpt2.c    118	
@@ -286,7 +289,7 @@ _GPT2_vInit	PROC	FAR
 ; gpt2.c    160	  ///  Configuration of the GPT2 Core Timer 6:
 ; gpt2.c    161	  ///  -----------------------------------------------------------------------
 ; gpt2.c    162	  ///  - timer 6 works in timer mode
-; gpt2.c    163	  ///  - prescaler factor is 4
+; gpt2.c    163	  ///  - prescaler factor is 16
 ; gpt2.c    164	  ///  - up/down control bit is reset
 ; gpt2.c    165	  ///  - external up/down control is disabled
 ; gpt2.c    166	  ///  - alternate output function T6OUT (P6.2) is disabled
@@ -295,13 +298,13 @@ _GPT2_vInit	PROC	FAR
 ; gpt2.c    169	  ///  - CAPREL is used as a reload register for the core timer T6
 ; gpt2.c    170	  ///  - timer 6 is not cleared on a capture
 ; gpt2.c    171	
-; gpt2.c    172	  GPT12E_T6CON   =  0x8801;      // load timer 6 control register
+; gpt2.c    172	  GPT12E_T6CON   =  0x8803;      // load timer 6 control register
 	?LINE	172
-	MOV	R12,#08801h
+	MOV	R12,#08803h
 	MOV	0FF48h,R12
-; gpt2.c    173	  GPT12E_T6      =  0xFEBB;      // load timer 6 register
+; gpt2.c    173	  GPT12E_T6      =  0xFD5E;      // load timer 6 register
 	?LINE	173
-	MOV	R12,#0FEBBh
+	MOV	R12,#0FD5Eh
 	MOV	0FE48h,R12
 ; gpt2.c    174	
 ; gpt2.c    175	  ///  -----------------------------------------------------------------------
@@ -317,9 +320,9 @@ _GPT2_vInit	PROC	FAR
 	?LINE	184
 	MOV	R12,#0FF46h
 	MOV	R12,[R12]
-; gpt2.c    185	  GPT12E_CAPREL  =  0xFEBB;      // load CAPREL register
+; gpt2.c    185	  GPT12E_CAPREL  =  0xFD5E;      // load CAPREL register
 	?LINE	185
-	MOV	R12,#0FEBBh
+	MOV	R12,#0FD5Eh
 	MOV	0FE4Ah,R12
 ; gpt2.c    186	
 ; gpt2.c    187	  ///  -----------------------------------------------------------------------
@@ -377,7 +380,7 @@ _GPT2_vInit	ENDP
 ; gpt2.c    227	// @Parameters    None
 ; gpt2.c    228	//
 ; gpt2.c    229	//----------------------------------------------------------------------------
-; gpt2.c    230	// @Date          23.09.2021
+; gpt2.c    230	// @Date          24.09.2021
 ; gpt2.c    231	//
 ; gpt2.c    232	//****************************************************************************
 ; gpt2.c    233	

@@ -6,15 +6,36 @@ ProjSetConfigFlags=0x04110940
 [State]
 SysSetCwd='C:\users\mikropro2021\documents\github\msl_2021\msl_project'
 SrchSetFlags=0x0410680a
-SrchSetAgainFlags=0x04100003,0
+SrchSetAgainFlags=0x00006002,0
 SrchSetAgainFlags=0x06100003,1
 FileSortMode=0x0
-_StateView='C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\MAIN.C',26,26,790,366,-1,-1,21,43,1,1,1,'',0x0010001c,0,80,0,0,''
-_StateBuffer='C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\MAIN.C',0x0c00048e,21,43,25,'5 9','',0x0,'',1,72,1,0
-_StateHistory=FILELIST,'C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\MAIN.C'
+_StateView='C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\MAIN.C',0,520,160,28,0,520,68,35,36,1,10,'',0x0010002c,0,80,0,0,''
+_StateView='C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\IO.C',78,78,790,366,-1,-1,84,1,66,1,11,'',0x0010000c,0,80,0,0,''
+_StateView='C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\GPT2.C',14,94,790,366,-1,-1,172,27,144,1,2,'',0x0010000c,0,80,0,0,''
+_StateView='C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\GPT1.C',52,52,790,366,-1,-1,1,1,1,1,3,'',0x0010000c,0,80,0,0,''
+_StateView='C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\MAIN.H',182,182,790,366,-1,-1,80,28,61,1,4,'',0x0010000c,0,80,0,0,''
+_StateView='C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\CCU63.H',130,130,790,366,160,520,33,1,1,1,9,'',0x0010002c,0,80,0,0,''
+_StateView='C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\GPT1.H',104,104,790,366,-1,-1,181,1,181,1,8,'',0x0010000c,0,80,0,0,''
+_StateView='C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\GPT2.H',130,130,790,366,-1,-1,253,1,253,1,7,'',0x0010000c,0,80,0,0,''
+_StateView='C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\SCS.H',156,156,790,366,-1,-1,33,1,1,1,6,'',0x0010000c,0,80,0,0,''
+_StateView='C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\SCS.C',182,182,790,366,-1,-1,33,1,1,1,5,'',0x0010000c,0,80,0,0,''
+_StateView='C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\CCU63.C',78,78,790,366,320,520,396,73,386,1,1,'',0x0010001c,0,80,0,0,''
+_StateBuffer='C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\MAIN.C',0x0c00048e,68,35,25,'5 9','',0x0,'',1,72,0,0
+_StateBuffer='C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\IO.C',0x0400048e,84,1,25,'5 9','',0x0,'',1,72,0,0
+_StateBuffer='C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\GPT2.C',0x0400048e,172,27,25,'5 9','',0x0,'',1,72,0,0
+_StateBuffer='C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\GPT1.C',0x0000048e,1,1,25,'5 9','',0x0,'',1,72,0,0
+_StateBuffer='C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\MAIN.H',0x0400048e,80,28,25,'5 9','',0x0,'',1,72,0,0
+_StateBuffer='C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\CCU63.H',0x0400048e,33,1,25,'5 9','',0x0,'',1,72,0,0
+_StateBuffer='C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\GPT1.H',0x0400048e,181,1,25,'5 9','',0x0,'',1,72,0,0
+_StateBuffer='C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\GPT2.H',0x0400048e,253,1,25,'5 9','',0x0,'',1,72,0,0
+_StateBuffer='C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\SCS.H',0x0400048e,33,1,25,'5 9','',0x0,'',1,72,0,0
+_StateBuffer='C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\SCS.C',0x0400048e,33,1,25,'5 9','',0x0,'',1,72,0,0
+_StateBuffer='C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\CCU63.C',0x0c00048e,396,73,25,'5 9','',0x0,'',1,72,1,0
+_StateHistory=FILELIST,'C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\CCU63.H','C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\GPT2.C','C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\MAIN.H','C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\GPT1.C','C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\IO.C','C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\GPT1.H','C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\GPT2.H','C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\SCS.H','C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\SCS.C'
+_StateHistory=SEARCH,'size'
 _StateHistory=EDITFILE,'C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\start_master'
-
-
+_StateHistory=DOCUMENTVISIT,'33          29          C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\MAIN.H','33          1           C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\CCU63.H','181         1           C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\GPT1.H','253         1           C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\GPT2.H','33          1           C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\SCS.H','33          1           C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\SCS.C','359         76          C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\CCU63.C','80          28          C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\MAIN.H','1           1           C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\GPT1.C','172         27          C:\Users\MikroPro2021\Documents\GitHub\MSL_2021\MSL_Project\GPT2.C'
+_StateDocumentVisit=10
 
 [Editor]
 VCSProject=''
@@ -98,6 +119,8 @@ VCSSetCmd=VCS_REMOVE_ID,'del /f "%b%{??v|___}e"',0x8000040
 .\GPT1.H
 .\GPT2.C
 .\GPT2.H
+.\CC2.C
+.\CC2.H
 
 [Ede]
 Toolchain=d:\programme\tasking\c166 v8.7r1\etc\c166.dol

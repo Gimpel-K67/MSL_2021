@@ -3,13 +3,6 @@ Warning: Infinite loop detected; Not building sub-project mps_main.pjt
 Compiling and assembling io.c
 Trial version.  12 day(s) remaining
 Trial version.  12 day(s) remaining
-Compiling and assembling main.c
-Trial version.  12 day(s) remaining
-main.c:
-   341: void generateTable(){
-W  91: no prototype for function "generateTable"
-total errors: 0, warnings: 1
-Trial version.  12 day(s) remaining
 Compiling and assembling scs.c
 Trial version.  12 day(s) remaining
 Trial version.  12 day(s) remaining
@@ -19,23 +12,26 @@ Trial version.  12 day(s) remaining
 Compiling and assembling gpt2.c
 Trial version.  12 day(s) remaining
 Trial version.  12 day(s) remaining
+Compiling and assembling cc2.c
+Trial version.  12 day(s) remaining
+Trial version.  12 day(s) remaining
 Linking and locating to mps_main.out
 Trial version.  12 day(s) remaining
 
-	Number of symbols		: 1046
-	Number of sections		: 27
+	Number of symbols		: 1174
+	Number of sections		: 28
 	Number of groups		: 0
 	Number of classes		: 9
-	Number of modules		: 30
-	Total section size		: 00022ACh
+	Number of modules		: 31
+	Total section size		: 00022E6h
 	Total memory size		: 0344A04h
 		consisting of RAM	: 0284A04h
 		              ROM	: 00C0000h
 	Total RAM filled		: 00007ECh
-	Total ROM filled		: 0001AC0h
+	Total ROM filled		: 0001AFAh
 	System stack size		: 0000200h
 	Heap size			: 0000000h
 	User stack size			: 0000126h
-	Time spent			: 00:00:2.20
+	Time spent			: 00:00:2.21
 Converting mps_main.out to mps_main.abs in IEEE-695 format
 Trial version.  12 day(s) remaining

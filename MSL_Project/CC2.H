@@ -1,6 +1,6 @@
 //****************************************************************************
-// @Module        Project Settings
-// @Filename      MAIN.H
+// @Module        Capture / Compare Unit 2 (CAPCOM2)
+// @Filename      CC2.H
 // @Project       DAvE_config.dav
 //----------------------------------------------------------------------------
 // @Controller    Infineon XE167F-96F66
@@ -10,27 +10,27 @@
 // @Codegenerator 2.2
 //
 // @Description   This file contains all function prototypes and macros for 
-//                the MAIN module.
+//                the CC2 module.
 //
 //----------------------------------------------------------------------------
-// @Date          24.09.2021 09:32:47
+// @Date          24.09.2021 09:32:48
 //
 //****************************************************************************
 
-// USER CODE BEGIN (MAIN_Header,1)
+// USER CODE BEGIN (CC2_Header,1)
 
 // USER CODE END
 
 
 
-#ifndef _MAIN_H_
-#define _MAIN_H_
+#ifndef _CC2_H_
+#define _CC2_H_
 
 //****************************************************************************
 // @Project Includes
 //****************************************************************************
 
-// USER CODE BEGIN (MAIN_Header,2)
+// USER CODE BEGIN (CC2_Header,2)
 
 // USER CODE END
 
@@ -39,7 +39,7 @@
 // @Macros
 //****************************************************************************
 
-// USER CODE BEGIN (MAIN_Header,3)
+// USER CODE BEGIN (CC2_Header,3)
 
 // USER CODE END
 
@@ -47,9 +47,15 @@
 //****************************************************************************
 // @Defines
 //****************************************************************************
-#define TASKING_CLASSIC
 
-// USER CODE BEGIN (MAIN_Header,4)
+//   This parameter identifies CAPCOM2 timer 7
+#define CC2_TIMER_7 7
+
+//   This parameter identifies CAPCOM2 timer 8
+#define CC2_TIMER_8 8
+
+
+// USER CODE BEGIN (CC2_Header,4)
 
 // USER CODE END
 
@@ -58,7 +64,7 @@
 // @Typedefs
 //****************************************************************************
 
-// USER CODE BEGIN (MAIN_Header,5)
+// USER CODE BEGIN (CC2_Header,5)
 
 // USER CODE END
 
@@ -67,8 +73,8 @@
 // @Imported Global Variables
 //****************************************************************************
 
-// USER CODE BEGIN (MAIN_Header,6)
-	
+// USER CODE BEGIN (CC2_Header,6)
+
 // USER CODE END
 
 
@@ -76,8 +82,8 @@
 // @Global Variables
 //****************************************************************************
 
-// USER CODE BEGIN (MAIN_Header,7)
-	#define ARRAY_SIZE (600)
+// USER CODE BEGIN (CC2_Header,7)
+
 // USER CODE END
 
 
@@ -85,14 +91,10 @@
 // @Prototypes Of Global Functions
 //****************************************************************************
 
+void CC2_vInit(void);
 
-void MAIN_vUnlockProtecReg(void);
 
-void MAIN_vLockProtecReg(void);
-
-void MAIN_vChangeFreq(void);
-
-// USER CODE BEGIN (MAIN_Header,8)
+// USER CODE BEGIN (CC2_Header,8)
 
 // USER CODE END
 
@@ -101,28 +103,11 @@ void MAIN_vChangeFreq(void);
 // @Interrupt Vectors
 //****************************************************************************
 
-// USER CODE BEGIN (MAIN_Header,9)
+
+
+// USER CODE BEGIN (CC2_Header,8)
 
 // USER CODE END
 
 
-//****************************************************************************
-// @Project Includes
-//****************************************************************************
-
-
-#include  "XE16xREGS.H"
-#include  "SCS.H"
-
-#include  "IO.H"
-#include  "GPT1.H"
-#include  "GPT2.H"
-#include  "CC2.H"
-#include  "CCU63.H"
-
-// USER CODE BEGIN (MAIN_Header,10)
-
-// USER CODE END
-
-
-#endif  // ifndef _MAIN_H_
+#endif  // ifndef _CC2_H_
