@@ -12,7 +12,7 @@
 // @Description   This file contains functions that use the CCU63 module.
 //
 //----------------------------------------------------------------------------
-// @Date          23.09.2021 17:39:33
+// @Date          24.09.2021 15:34:16
 //
 //****************************************************************************
 
@@ -65,8 +65,11 @@
 //****************************************************************************
 
 // USER CODE BEGIN (CCU63_General,6)
-	extern unsigned int table[ARRAY_SIZE];
+	extern const unsigned int ARRAY_SIZE;
+	extern unsigned int table[];
 	extern	unsigned int index;
+	extern const unsigned int OFFSET_L2 = ARRAY_SIZE/3;
+	extern const unsigned int OFFSET_L3 = (2*ARRAY_SIZE)/3;
 // USER CODE END
 
 
@@ -112,7 +115,7 @@
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          23.09.2021
+// @Date          24.09.2021
 //
 //****************************************************************************
 
@@ -148,16 +151,16 @@ void CCU63_vInit(void)
   ///  -----------------------------------------------------------------------
   ///  - Timer 12 Input clock factor (T12CLK) is 0
   ///  - prescaler factor is 0
-  ///  - Timer 12 run bit is set
+  ///  - Timer 12 run bit is reset
   ///  - Single shot mode is disabled
   ///  - Timer 12 works in center aligned mode
-  ///  - Interrupt on period match is enabled
+  ///  - Interrupt on period match is disabled
   ///  - Interrupt on one match is enabled
   ///  - No External run selection is selected.
   ///  - Timer mode is selected.
   ///  - 
 
-  CCU63_T12PR    =  0x0FDE;      // load CCU63 T12 period register
+  CCU63_T12PR    =  0x070B;      // load CCU63 T12 period register
 
   ///  -----------------------------------------------------------------------
   ///  Configuration of T13HR Signal:
@@ -208,7 +211,7 @@ void CCU63_vInit(void)
   ///  - Generation interrupt on flag ICC60R is disabled
   ///  - Generation interrupt on flag ICC60F is disabled
 
-  CCU63_CC60SR   =  0x0FDF;      // Load CCU63 capture/compare shadow 
+  CCU63_CC60SR   =  0x070C;      // Load CCU63 capture/compare shadow 
                                  // register for channel 0
 
   ///  -----------------------------------------------------------------------
@@ -230,7 +233,7 @@ void CCU63_vInit(void)
   ///  - Generation interrupt on flag ICC61R is disabled
   ///  - Generation interrupt on flag ICC61F is disabled
 
-  CCU63_CC61SR   =  0x0FDF;      // Load CCU63 capture/compare shadow 
+  CCU63_CC61SR   =  0x070C;      // Load CCU63 capture/compare shadow 
                                  // register for channel 1
 
   ///  -----------------------------------------------------------------------
@@ -252,7 +255,7 @@ void CCU63_vInit(void)
   ///  - Generation interrupt on flag ICC62R is disabled
   ///  - Generation interrupt on flag ICC62F is disabled
 
-  CCU63_CC62SR   =  0x0FDF;      // Load CCU63 capture/compare shadow 
+  CCU63_CC62SR   =  0x070C;      // Load CCU63 capture/compare shadow 
                                  // register for channel 2
 
   ///  -----------------------------------------------------------------------
@@ -265,7 +268,7 @@ void CCU63_vInit(void)
                                  // register for channel 3
 
 
-  CCU63_T12DTC   =  0x0762;      // load CCU63 dead time control register for 
+  CCU63_T12DTC   =  0x0741;      // load CCU63 dead time control register for 
                                  // timer T12
 
   CCU63_T12MSEL  =  0x0111;      // load CCU63 T12 campture/compare mode 
@@ -301,7 +304,7 @@ void CCU63_vInit(void)
   CCU63_INP      =  0x0000;      // Load CCU63 capture/compare interrupt node 
                                  // pointer register
 
-  CCU63_IEN      =  0x00C0;      // Load CCU63 capture/compare interrupt 
+  CCU63_IEN      =  0x0040;      // Load CCU63 capture/compare interrupt 
                                  // enable register
 
 
@@ -339,9 +342,9 @@ void CCU63_vInit(void)
   ///  Configuration of T12, T13 ---- CCU63_TCTR4 Register:
   ///  -----------------------------------------------------------------------
   ///  - Enable shadow transfer of T12 and T13
-  ///  - Timer 12 run bit is set
+  ///  - Timer 12 run bit is reset
   ///  - Timer 13 run bit is reset
-  CCU63_TCTR4    =  0x4042;      // load CCU63 timer control register 4
+  CCU63_TCTR4    =  0x4040;      // load CCU63 timer control register 4
 
 
   // USER CODE BEGIN (NodeI3,3)
@@ -371,7 +374,7 @@ void CCU63_vInit(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          23.09.2021
+// @Date          24.09.2021
 //
 //****************************************************************************
 
@@ -379,7 +382,7 @@ void CCU63_vInit(void)
 
 // USER CODE END
 
-_interrupt(CCU63_NodeI0_INT) _localbank(-1) void CCU63_viNodeI0(void)
+_interrupt(CCU63_NodeI0_INT)  void CCU63_viNodeI0(void)
 {
   // USER CODE BEGIN (NodeI0,2)
 
@@ -390,24 +393,13 @@ _interrupt(CCU63_NodeI0_INT) _localbank(-1) void CCU63_viNodeI0(void)
     // Timer T12 one match detection
 
     // USER CODE BEGIN (NodeI0,20)
-	   CCU63_vEnableShadowTransfer(CCU63_TIMER_12);
+		CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_0, table[index + 0]);
+	   	CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_1, table[(index + OFFSET_L2)%ARRAY_SIZE]);
+  		CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_2, table[(index + OFFSET_L3)%ARRAY_SIZE]);
+		CCU63_vEnableShadowTransfer(CCU63_TIMER_12);
     // USER CODE END
 
     CCU63_ISR |= 0x0040;  // clear flag CCU63_IS_T12OM
-  }
-
-  if(CCU63_IS & 0x0080)  // if CCU63_IS_T12PM
-  {
-    // Timer T12 period match detection
-
-    // USER CODE BEGIN (NodeI0,19)
-	   	CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_0, table[index + 0]);
-	   	CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_1, table[index + 200]);
-  		CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_2, table[index + 400]);
-
-    // USER CODE END
-
-    CCU63_ISR |= 0x0080;  // clear flag CCU63_IS_T12PM
   }
 
 

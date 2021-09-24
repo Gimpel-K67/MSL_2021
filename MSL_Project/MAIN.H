@@ -13,7 +13,7 @@
 //                the MAIN module.
 //
 //----------------------------------------------------------------------------
-// @Date          24.09.2021 10:14:07
+// @Date          24.09.2021 15:34:14
 //
 //****************************************************************************
 
@@ -77,7 +77,7 @@
 //****************************************************************************
 
 // USER CODE BEGIN (MAIN_Header,7)
-	#define ARRAY_SIZE (600)
+
 // USER CODE END
 
 
@@ -118,6 +118,7 @@ void MAIN_vChangeFreq(void);
 #include  "GPT1.H"
 #include  "GPT2.H"
 #include  "CC2.H"
+#include  "CCU62.H"
 #include  "CCU63.H"
 
 // USER CODE BEGIN (MAIN_Header,10)

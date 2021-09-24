@@ -12,7 +12,7 @@
 // @Description   This file contains functions that use the GPT2 module.
 //
 //----------------------------------------------------------------------------
-// @Date          24.09.2021 08:23:37
+// @Date          24.09.2021 10:14:08
 //
 //****************************************************************************
 
@@ -160,7 +160,7 @@ void GPT2_vInit(void)
   ///  Configuration of the GPT2 Core Timer 6:
   ///  -----------------------------------------------------------------------
   ///  - timer 6 works in timer mode
-  ///  - prescaler factor is 4
+  ///  - prescaler factor is 16
   ///  - up/down control bit is reset
   ///  - external up/down control is disabled
   ///  - alternate output function T6OUT (P6.2) is disabled
@@ -169,8 +169,8 @@ void GPT2_vInit(void)
   ///  - CAPREL is used as a reload register for the core timer T6
   ///  - timer 6 is not cleared on a capture
 
-  GPT12E_T6CON   =  0x8801;      // load timer 6 control register
-  GPT12E_T6      =  0xC086;      // load timer 6 register
+  GPT12E_T6CON   =  0x8803;      // load timer 6 control register
+  GPT12E_T6      =  0xFD5E;      // load timer 6 register
 
   ///  -----------------------------------------------------------------------
   ///  Configuration of the GPT2 CAPREL:
@@ -182,7 +182,7 @@ void GPT2_vInit(void)
   ///  - timer 5 is just captured without any correction
 
   GPT12E_T5CON  |=  0x0000;      // load timer 5 control register
-  GPT12E_CAPREL  =  0xFEBB;      // load CAPREL register
+  GPT12E_CAPREL  =  0xFD5E;      // load CAPREL register
 
   ///  -----------------------------------------------------------------------
   ///  Configuration of the used GPT2 Port Pins:

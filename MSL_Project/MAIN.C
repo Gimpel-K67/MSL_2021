@@ -12,7 +12,7 @@
 // @Description   This file contains the project initialization function.
 //
 //----------------------------------------------------------------------------
-// @Date          24.09.2021 10:14:07
+// @Date          24.09.2021 15:34:14
 //
 //****************************************************************************
 
@@ -74,6 +74,9 @@
 //****************************************************************************
 
 // USER CODE BEGIN (MAIN_General,7)
+	const unsigned int ARRAY_SIZE = 600;
+	const unsigned int OFFSET_L2 = ARRAY_SIZE/3;
+	const unsigned int OFFSET_L3 = (2*ARRAY_SIZE)/3;
 	unsigned int table[ARRAY_SIZE];
 	unsigned int index;
 	float pi = 3.14159265359;
@@ -156,6 +159,9 @@ void MAIN_vInit(void)
   //   initializes the Capture / Compare Unit 2 (CAPCOM2)
   CC2_vInit();
 
+  //   initializes the Capture / Compare Unit 62 (CCU62)
+  CCU62_vInit();
+
   //   initializes the Capture / Compare Unit 63 (CCU63)
   CCU63_vInit();
 
@@ -164,7 +170,6 @@ void MAIN_vInit(void)
   //   Initialization of the Bank Select registers:
   //   -----------------------------------------------------------------------
 
-  BNKSEL0        =   0x0002;     // Bank Select Control Reg. 0
 
   // USER CODE BEGIN (Init,3)
 
@@ -341,14 +346,6 @@ void MAIN_vChangeFreq(void)
 //****************************************************************************
 
 // USER CODE BEGIN (Main,1)
-void generateTable(){
-	unsigned int PR = CCU63_T12PR;
-	double stepSize = (2*pi)/(ARRAY_SIZE);
-	int i;
-	for (i = 0; i < ARRAY_SIZE; i++){ 
-		table[i] = (unsigned int)((PR/2)*(sin(stepSize * i) + 1));
-	}
-}
 
 // USER CODE END
 
@@ -362,8 +359,12 @@ void main(void)
 
   // USER CODE BEGIN (Main,3)
  	generateTable();
+	CCU63_vStartTmr(CCU63_TIMER_12);
+	CCU62_vStartTmr(CCU62_TIMER_12);
 	IO_vSetPin(LED_DBG);
-    // USER CODE END
+	CCU62_vSetTmrPeriod(CCU62_TIMER_12, 0xFDE7);
+	CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
+  // USER CODE END
 
   while(1)
   {
@@ -379,6 +380,12 @@ void main(void)
 
 
 // USER CODE BEGIN (MAIN_General,10)
-
+void generateTable(){
+	double stepSize = (2*pi)/(ARRAY_SIZE);
+	int i;
+	for (i = 0; i < ARRAY_SIZE; i++){ 
+		table[i] = (unsigned int)((double)(CCU63_T12PR/2)*(sin(stepSize * i) + 1) + 0.5);
+	}
+}
 // USER CODE END
 

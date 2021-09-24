@@ -1,4 +1,4 @@
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 10:14:16  Page:   1
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 15:36:18  Page:   1
 io
 
  LOC CODE        LINE   SOURCELINE
@@ -49,7 +49,7 @@ io
                     44   ; io.c       12 // @Description   This file contains functions that use the IO module.
                     45   ; io.c       13 //
                     46   ; io.c       14 //----------------------------------------------------------------------------
-                    47   ; io.c       15 // @Date          24.09.2021 10:14:08
+                    47   ; io.c       15 // @Date          24.09.2021 15:34:15
                     48   ; io.c       16 //
                     49   ; io.c       17 //****************************************************************************
                     50   ; io.c       18 
@@ -58,7 +58,7 @@ io
                     53   ; io.c       21 // USER CODE END
                     54   ; io.c       22 
                     55   ; io.c       23 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 10:14:16  Page:   2
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 15:36:18  Page:   2
 io
 
  LOC CODE        LINE   SOURCELINE
@@ -100,290 +100,293 @@ io
                     90           ?SYMB   'CC2.H',0,29,3
                     91           ?SYMB   '',0,86,3
                     92           ?SYMB   '',0,86,2
-                    93           ?SYMB   'CCU63.H',0,29,3
+                    93           ?SYMB   'CCU62.H',0,29,3
                     94           ?SYMB   '',0,86,3
                     95           ?SYMB   '',0,86,2
-                    96           ?SYMB   '',0,86,1
-                    97   ; io.c       30 
-                    98   ; io.c       31 // USER CODE BEGIN (IO_General,2)
-                    99   ; io.c       32 
-                   100   ; io.c       33 // USER CODE END
-                   101   ; io.c       34 
-                   102   ; io.c       35 
-                   103   ; io.c       36 //****************************************************************************
-                   104   ; io.c       37 // @Macros
-                   105   ; io.c       38 //****************************************************************************
-                   106   ; io.c       39 
-                   107   ; io.c       40 // USER CODE BEGIN (IO_General,3)
-                   108   ; io.c       41 
-                   109   ; io.c       42 // USER CODE END
-                   110   ; io.c       43 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 10:14:16  Page:   3
+                    96           ?SYMB   'CCU63.H',0,29,3
+                    97           ?SYMB   '',0,86,3
+                    98           ?SYMB   '',0,86,2
+                    99           ?SYMB   '',0,86,1
+                   100   ; io.c       30 
+                   101   ; io.c       31 // USER CODE BEGIN (IO_General,2)
+                   102   ; io.c       32 
+                   103   ; io.c       33 // USER CODE END
+                   104   ; io.c       34 
+                   105   ; io.c       35 
+                   106   ; io.c       36 //****************************************************************************
+                   107   ; io.c       37 // @Macros
+                   108   ; io.c       38 //****************************************************************************
+                   109   ; io.c       39 
+                   110   ; io.c       40 // USER CODE BEGIN (IO_General,3)
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 15:36:18  Page:   3
 io
 
  LOC CODE        LINE   SOURCELINE
 
-                   111   ; io.c       44 
-                   112   ; io.c       45 //****************************************************************************
-                   113   ; io.c       46 // @Defines
-                   114   ; io.c       47 //****************************************************************************
-                   115   ; io.c       48 
-                   116   ; io.c       49 // USER CODE BEGIN (IO_General,4)
-                   117   ; io.c       50 
-                   118   ; io.c       51 // USER CODE END
-                   119   ; io.c       52 
-                   120   ; io.c       53 
-                   121   ; io.c       54 //****************************************************************************
-                   122   ; io.c       55 // @Typedefs
-                   123   ; io.c       56 //****************************************************************************
-                   124   ; io.c       57 
-                   125   ; io.c       58 // USER CODE BEGIN (IO_General,5)
-                   126   ; io.c       59 
-                   127   ; io.c       60 // USER CODE END
-                   128   ; io.c       61 
-                   129   ; io.c       62 
-                   130   ; io.c       63 //****************************************************************************
-                   131   ; io.c       64 // @Imported Global Variables
-                   132   ; io.c       65 //****************************************************************************
-                   133   ; io.c       66 
-                   134   ; io.c       67 // USER CODE BEGIN (IO_General,6)
-                   135   ; io.c       68 
-                   136   ; io.c       69 // USER CODE END
-                   137   ; io.c       70 
-                   138   ; io.c       71 
-                   139   ; io.c       72 //****************************************************************************
-                   140   ; io.c       73 // @Global Variables
-                   141   ; io.c       74 //****************************************************************************
-                   142   ; io.c       75 
-                   143   ; io.c       76 // USER CODE BEGIN (IO_General,7)
-                   144   ; io.c       77 
-                   145   ; io.c       78 // USER CODE END
-                   146   ; io.c       79 
-                   147   ; io.c       80 
-                   148   ; io.c       81 //****************************************************************************
-                   149   ; io.c       82 // @External Prototypes
-                   150   ; io.c       83 //****************************************************************************
-                   151   ; io.c       84 
-                   152   ; io.c       85 // USER CODE BEGIN (IO_General,8)
-                   153   ; io.c       86 
-                   154   ; io.c       87 // USER CODE END
-                   155   ; io.c       88 
-                   156   ; io.c       89 
-                   157   ; io.c       90 //****************************************************************************
-                   158   ; io.c       91 // @Prototypes Of Local Functions
-                   159   ; io.c       92 //****************************************************************************
-                   160   ; io.c       93 
-                   161   ; io.c       94 // USER CODE BEGIN (IO_General,9)
-                   162   ; io.c       95 
-                   163   ; io.c       96 // USER CODE END
-                   164   ; io.c       97 
-                   165   ; io.c       98 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 10:14:16  Page:   4
+                   111   ; io.c       41 
+                   112   ; io.c       42 // USER CODE END
+                   113   ; io.c       43 
+                   114   ; io.c       44 
+                   115   ; io.c       45 //****************************************************************************
+                   116   ; io.c       46 // @Defines
+                   117   ; io.c       47 //****************************************************************************
+                   118   ; io.c       48 
+                   119   ; io.c       49 // USER CODE BEGIN (IO_General,4)
+                   120   ; io.c       50 
+                   121   ; io.c       51 // USER CODE END
+                   122   ; io.c       52 
+                   123   ; io.c       53 
+                   124   ; io.c       54 //****************************************************************************
+                   125   ; io.c       55 // @Typedefs
+                   126   ; io.c       56 //****************************************************************************
+                   127   ; io.c       57 
+                   128   ; io.c       58 // USER CODE BEGIN (IO_General,5)
+                   129   ; io.c       59 
+                   130   ; io.c       60 // USER CODE END
+                   131   ; io.c       61 
+                   132   ; io.c       62 
+                   133   ; io.c       63 //****************************************************************************
+                   134   ; io.c       64 // @Imported Global Variables
+                   135   ; io.c       65 //****************************************************************************
+                   136   ; io.c       66 
+                   137   ; io.c       67 // USER CODE BEGIN (IO_General,6)
+                   138   ; io.c       68 
+                   139   ; io.c       69 // USER CODE END
+                   140   ; io.c       70 
+                   141   ; io.c       71 
+                   142   ; io.c       72 //****************************************************************************
+                   143   ; io.c       73 // @Global Variables
+                   144   ; io.c       74 //****************************************************************************
+                   145   ; io.c       75 
+                   146   ; io.c       76 // USER CODE BEGIN (IO_General,7)
+                   147   ; io.c       77 
+                   148   ; io.c       78 // USER CODE END
+                   149   ; io.c       79 
+                   150   ; io.c       80 
+                   151   ; io.c       81 //****************************************************************************
+                   152   ; io.c       82 // @External Prototypes
+                   153   ; io.c       83 //****************************************************************************
+                   154   ; io.c       84 
+                   155   ; io.c       85 // USER CODE BEGIN (IO_General,8)
+                   156   ; io.c       86 
+                   157   ; io.c       87 // USER CODE END
+                   158   ; io.c       88 
+                   159   ; io.c       89 
+                   160   ; io.c       90 //****************************************************************************
+                   161   ; io.c       91 // @Prototypes Of Local Functions
+                   162   ; io.c       92 //****************************************************************************
+                   163   ; io.c       93 
+                   164   ; io.c       94 // USER CODE BEGIN (IO_General,9)
+                   165   ; io.c       95 
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 15:36:18  Page:   4
 io
 
  LOC CODE        LINE   SOURCELINE
 
-                   166   ; io.c       99 //****************************************************************************
-                   167   ; io.c      100 // @Function      void IO_vInit(void) 
-                   168   ; io.c      101 //
-                   169   ; io.c      102 //----------------------------------------------------------------------------
-                   170   ; io.c      103 // @Description   This is the initialization function of the IO function 
-                   171   ; io.c      104 //                library. It is assumed that the SFRs used by this library 
-                   172   ; io.c      105 //                are in reset state. 
-                   173   ; io.c      106 //
-                   174   ; io.c      107 //----------------------------------------------------------------------------
-                   175   ; io.c      108 // @Returnvalue   None
-                   176   ; io.c      109 //
-                   177   ; io.c      110 //----------------------------------------------------------------------------
-                   178   ; io.c      111 // @Parameters    None
-                   179   ; io.c      112 //
-                   180   ; io.c      113 //----------------------------------------------------------------------------
-                   181   ; io.c      114 // @Date          24.09.2021
-                   182   ; io.c      115 //
-                   183   ; io.c      116 //****************************************************************************
-                   184   ; io.c      117 
-                   185   ; io.c      118 // USER CODE BEGIN (IO_Function,1)
-                   186   ; io.c      119 
-                   187   ; io.c      120 // USER CODE END
-                   188   ; io.c      121 
-                   189   ; io.c      122 void IO_vInit(void)
-                   190   ; io.c      123 {
-                   191   IO_1_PR SECTION CODE WORD PUBLIC 'CPROGRAM'
-                   192           ?LINE   123
-                   193           PUBLIC  _IO_vInit
-               R   194           ?SYMB   'IO_vInit',_IO_vInit,37,1
-                   195           ?SYMB   '',123,8,34
-                   196           ?SYMB   'uword',18,13,260
-                   197   _IO_vInit       PROC    FAR
-                   198           ?SYMB   '',00H,95,0
-                   199   ; Locals:
-                   200   ; 
-                   201   ; Statics:
-                   202   ; 
-                   203   ; CSEs:
-                   204   ; 
-                   205   ; io.c      124   // USER CODE BEGIN (IO_Function,2)
-                   206   ; io.c      125 
-                   207   ; io.c      126   // USER CODE END
-                   208   ; io.c      127 
-                   209   ; io.c      128 
-                   210   ; io.c      129   ///  -----------------------------------------------------------------------
-                   211   ; io.c      130   ///  Configuration of Port P0:
-                   212   ; io.c      131   ///  -----------------------------------------------------------------------
-                   213   ; io.c      132   ///  - no pin of port P0 is used
-                   214   ; io.c      133 
-                   215   ; io.c      134 
-                   216   ; io.c      135   ///  -----------------------------------------------------------------------
-                   217   ; io.c      136   ///  Configuration of Port P1:
-                   218   ; io.c      137   ///  -----------------------------------------------------------------------
-                   219   ; io.c      138   ///  - no pin of port P1 is used
-                   220   ; io.c      139 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 10:14:16  Page:   5
+                   166   ; io.c       96 // USER CODE END
+                   167   ; io.c       97 
+                   168   ; io.c       98 
+                   169   ; io.c       99 //****************************************************************************
+                   170   ; io.c      100 // @Function      void IO_vInit(void) 
+                   171   ; io.c      101 //
+                   172   ; io.c      102 //----------------------------------------------------------------------------
+                   173   ; io.c      103 // @Description   This is the initialization function of the IO function 
+                   174   ; io.c      104 //                library. It is assumed that the SFRs used by this library 
+                   175   ; io.c      105 //                are in reset state. 
+                   176   ; io.c      106 //
+                   177   ; io.c      107 //----------------------------------------------------------------------------
+                   178   ; io.c      108 // @Returnvalue   None
+                   179   ; io.c      109 //
+                   180   ; io.c      110 //----------------------------------------------------------------------------
+                   181   ; io.c      111 // @Parameters    None
+                   182   ; io.c      112 //
+                   183   ; io.c      113 //----------------------------------------------------------------------------
+                   184   ; io.c      114 // @Date          24.09.2021
+                   185   ; io.c      115 //
+                   186   ; io.c      116 //****************************************************************************
+                   187   ; io.c      117 
+                   188   ; io.c      118 // USER CODE BEGIN (IO_Function,1)
+                   189   ; io.c      119 
+                   190   ; io.c      120 // USER CODE END
+                   191   ; io.c      121 
+                   192   ; io.c      122 void IO_vInit(void)
+                   193   ; io.c      123 {
+                   194   IO_1_PR SECTION CODE WORD PUBLIC 'CPROGRAM'
+                   195           ?LINE   123
+                   196           PUBLIC  _IO_vInit
+               R   197           ?SYMB   'IO_vInit',_IO_vInit,37,1
+                   198           ?SYMB   '',123,8,34
+                   199           ?SYMB   'uword',18,13,260
+                   200   _IO_vInit       PROC    FAR
+                   201           ?SYMB   '',00H,95,0
+                   202   ; Locals:
+                   203   ; 
+                   204   ; Statics:
+                   205   ; 
+                   206   ; CSEs:
+                   207   ; 
+                   208   ; io.c      124   // USER CODE BEGIN (IO_Function,2)
+                   209   ; io.c      125 
+                   210   ; io.c      126   // USER CODE END
+                   211   ; io.c      127 
+                   212   ; io.c      128 
+                   213   ; io.c      129   ///  -----------------------------------------------------------------------
+                   214   ; io.c      130   ///  Configuration of Port P0:
+                   215   ; io.c      131   ///  -----------------------------------------------------------------------
+                   216   ; io.c      132   ///  - no pin of port P0 is used
+                   217   ; io.c      133 
+                   218   ; io.c      134 
+                   219   ; io.c      135   ///  -----------------------------------------------------------------------
+                   220   ; io.c      136   ///  Configuration of Port P1:
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 15:36:18  Page:   5
 io
 
  LOC CODE        LINE   SOURCELINE
 
-                   221   ; io.c      140 
-                   222   ; io.c      141   ///  -----------------------------------------------------------------------
-                   223   ; io.c      142   ///  Configuration of Port P2:
-                   224   ; io.c      143   ///  -----------------------------------------------------------------------
-                   225   ; io.c      144   ///  - no pin of port P2 is used
-                   226   ; io.c      145 
-                   227   ; io.c      146 
-                   228   ; io.c      147   ///  -----------------------------------------------------------------------
-                   229   ; io.c      148   ///  Configuration of Port P3:
-                   230   ; io.c      149   ///  -----------------------------------------------------------------------
-                   231   ; io.c      150   ///  - no pin of port P3 is used
-                   232   ; io.c      151 
-                   233   ; io.c      152 
-                   234   ; io.c      153   ///  -----------------------------------------------------------------------
-                   235   ; io.c      154   ///  Configuration of Port P4:
-                   236   ; io.c      155   ///  -----------------------------------------------------------------------
-                   237   ; io.c      156   ///  - no pin of port P4 is used
-                   238   ; io.c      157 
-                   239   ; io.c      158 
-                   240   ; io.c      159   ///  -----------------------------------------------------------------------
-                   241   ; io.c      160   ///  Configuration of Port P5:
-                   242   ; io.c      161   ///  -----------------------------------------------------------------------
-                   243   ; io.c      162   ///  - no pin of port P5 is used
-                   244   ; io.c      163   ///  - Port5 Data register P5(Read only)
-                   245   ; io.c      164 
-                   246   ; io.c      165 
-                   247   ; io.c      166   ///  -----------------------------------------------------------------------
-                   248   ; io.c      167   ///  Configuration of Port P6:
-                   249   ; io.c      168   ///  -----------------------------------------------------------------------
-                   250   ; io.c      169   ///  - no pin of port P6 is used
-                   251   ; io.c      170 
-                   252   ; io.c      171 
-                   253   ; io.c      172   ///  -----------------------------------------------------------------------
-                   254   ; io.c      173   ///  Configuration of Port P7:
-                   255   ; io.c      174   ///  -----------------------------------------------------------------------
-                   256   ; io.c      175   ///  - no pin of port P7 is used
-                   257   ; io.c      176 
-                   258   ; io.c      177 
-                   259   ; io.c      178   ///  -----------------------------------------------------------------------
-                   260   ; io.c      179   ///  Configuration of Port P8:
-                   261   ; io.c      180   ///  -----------------------------------------------------------------------
-                   262   ; io.c      181   ///  P8.0 is used as general purpose output
-                   263   ; io.c      182   ///  - push/pull output is selected
-                   264   ; io.c      183   ///  - the pin status is low level
-                   265   ; io.c      184   ///  P8.1 is used as general purpose output
-                   266   ; io.c      185   ///  - push/pull output is selected
-                   267   ; io.c      186   ///  - the pin status is low level
-                   268   ; io.c      187 
-                   269   ; io.c      188   ///  P8.0 - P8.3 output driver characteristic: strong driver
-                   270   ; io.c      189   ///  P8.4 - P8.6 output driver characteristic: strong driver
-                   271   ; io.c      190 
-                   272   ; io.c      191   ///  P8.0 - P8.3 output edge characteristic: soft edge mode
-                   273   ; io.c      192   ///  P8.4 - P8.6 output edge characteristic: sharp edge mode
-                   274   ; io.c      193 
-                   275   ; io.c      194   P8_IOCR00      =  0x0080;      // load port control register 0
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 10:14:16  Page:   6
+                   221   ; io.c      137   ///  -----------------------------------------------------------------------
+                   222   ; io.c      138   ///  - no pin of port P1 is used
+                   223   ; io.c      139 
+                   224   ; io.c      140 
+                   225   ; io.c      141   ///  -----------------------------------------------------------------------
+                   226   ; io.c      142   ///  Configuration of Port P2:
+                   227   ; io.c      143   ///  -----------------------------------------------------------------------
+                   228   ; io.c      144   ///  - no pin of port P2 is used
+                   229   ; io.c      145 
+                   230   ; io.c      146 
+                   231   ; io.c      147   ///  -----------------------------------------------------------------------
+                   232   ; io.c      148   ///  Configuration of Port P3:
+                   233   ; io.c      149   ///  -----------------------------------------------------------------------
+                   234   ; io.c      150   ///  - no pin of port P3 is used
+                   235   ; io.c      151 
+                   236   ; io.c      152 
+                   237   ; io.c      153   ///  -----------------------------------------------------------------------
+                   238   ; io.c      154   ///  Configuration of Port P4:
+                   239   ; io.c      155   ///  -----------------------------------------------------------------------
+                   240   ; io.c      156   ///  - no pin of port P4 is used
+                   241   ; io.c      157 
+                   242   ; io.c      158 
+                   243   ; io.c      159   ///  -----------------------------------------------------------------------
+                   244   ; io.c      160   ///  Configuration of Port P5:
+                   245   ; io.c      161   ///  -----------------------------------------------------------------------
+                   246   ; io.c      162   ///  - no pin of port P5 is used
+                   247   ; io.c      163   ///  - Port5 Data register P5(Read only)
+                   248   ; io.c      164 
+                   249   ; io.c      165 
+                   250   ; io.c      166   ///  -----------------------------------------------------------------------
+                   251   ; io.c      167   ///  Configuration of Port P6:
+                   252   ; io.c      168   ///  -----------------------------------------------------------------------
+                   253   ; io.c      169   ///  - no pin of port P6 is used
+                   254   ; io.c      170 
+                   255   ; io.c      171 
+                   256   ; io.c      172   ///  -----------------------------------------------------------------------
+                   257   ; io.c      173   ///  Configuration of Port P7:
+                   258   ; io.c      174   ///  -----------------------------------------------------------------------
+                   259   ; io.c      175   ///  - no pin of port P7 is used
+                   260   ; io.c      176 
+                   261   ; io.c      177 
+                   262   ; io.c      178   ///  -----------------------------------------------------------------------
+                   263   ; io.c      179   ///  Configuration of Port P8:
+                   264   ; io.c      180   ///  -----------------------------------------------------------------------
+                   265   ; io.c      181   ///  P8.0 is used as general purpose output
+                   266   ; io.c      182   ///  - push/pull output is selected
+                   267   ; io.c      183   ///  - the pin status is low level
+                   268   ; io.c      184   ///  P8.1 is used as general purpose output
+                   269   ; io.c      185   ///  - push/pull output is selected
+                   270   ; io.c      186   ///  - the pin status is low level
+                   271   ; io.c      187 
+                   272   ; io.c      188   ///  P8.0 - P8.3 output driver characteristic: strong driver
+                   273   ; io.c      189   ///  P8.4 - P8.6 output driver characteristic: strong driver
+                   274   ; io.c      190 
+                   275   ; io.c      191   ///  P8.0 - P8.3 output edge characteristic: soft edge mode
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 15:36:18  Page:   6
 io
 
  LOC CODE        LINE   SOURCELINE
 
-                   276           ?LINE   194
-0000 E6FC8000      277           MOV     R12,#080h
-0004 F6FC00E9      278           MOV     0E900h,R12
-                   279   ; io.c      195   P8_IOCR01      =  0x0080;      // load port control register 1
-                   280           ?LINE   195
-0008 E6FC8000      281           MOV     R12,#080h
-000C F6FC02E9      282           MOV     0E902h,R12
-                   283   ; io.c      196   P8_POCON       =  0x0002;      // load output control register
-                   284           ?LINE   196
-0010 E02C          285           MOV     R12,#02h
-0012 F6FCB0E8      286           MOV     0E8B0h,R12
-                   287   ; io.c      197 
-                   288   ; io.c      198   ///  -----------------------------------------------------------------------
-                   289   ; io.c      199   ///  Configuration of Port P9:
-                   290   ; io.c      200   ///  -----------------------------------------------------------------------
-                   291   ; io.c      201   ///  P9.0 is used as alternate output for the CCU63 output(CC60)
-                   292   ; io.c      202   ///  - push/pull output is selected
-                   293   ; io.c      203   ///  P9.1 is used as alternate output for the CCU63 output(CC61)
-                   294   ; io.c      204   ///  - push/pull output is selected
-                   295   ; io.c      205   ///  P9.2 is used as alternate output for the CCU63 output(CC62)
-                   296   ; io.c      206   ///  - push/pull output is selected
-                   297   ; io.c      207   ///  P9.3 is used as alternate output for the CCU63 output(COUT60)
-                   298   ; io.c      208   ///  - push/pull output is selected
-                   299   ; io.c      209   ///  P9.4 is used as alternate output for the CCU63 output(COUT61)
-                   300   ; io.c      210   ///  - push/pull output is selected
-                   301   ; io.c      211   ///  P9.5 is used as alternate output for the CCU63 output(COUT62)
-                   302   ; io.c      212   ///  - push/pull output is selected
-                   303   ; io.c      213 
-                   304   ; io.c      214   ///  P9.0 - P9.3 output driver characteristic: strong driver
-                   305   ; io.c      215   ///  P9.4 - P9.7 output driver characteristic: strong driver
-                   306   ; io.c      216 
-                   307   ; io.c      217   ///  P9.0 - P9.3 output edge characteristic: sharp edge mode
-                   308   ; io.c      218   ///  P9.4 - P9.7 output edge characteristic: sharp edge mode
-                   309   ; io.c      219 
-                   310   ; io.c      220 
-                   311   ; io.c      221   ///  -----------------------------------------------------------------------
-                   312   ; io.c      222   ///  Configuration of Port P10:
-                   313   ; io.c      223   ///  -----------------------------------------------------------------------
-                   314   ; io.c      224   ///  - no pin of port P10 is used
-                   315   ; io.c      225 
-                   316   ; io.c      226 
-                   317   ; io.c      227   ///  -----------------------------------------------------------------------
-                   318   ; io.c      228   ///  Configuration of Port P11:
-                   319   ; io.c      229   ///  -----------------------------------------------------------------------
-                   320   ; io.c      230   ///  - no pin of port P11 is used
-                   321   ; io.c      231 
-                   322   ; io.c      232 
-                   323   ; io.c      233   ///  -----------------------------------------------------------------------
-                   324   ; io.c      234   ///  Configuration of Port P15:
-                   325   ; io.c      235   ///  -----------------------------------------------------------------------
-                   326   ; io.c      236   ///  - no pin of port P15 is used
-                   327   ; io.c      237   ///  - Port15 Data register P15(Read only)
-                   328   ; io.c      238 
-                   329   ; io.c      239 
-                   330   ; io.c      240 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 10:14:16  Page:   7
+                   276   ; io.c      192   ///  P8.4 - P8.6 output edge characteristic: sharp edge mode
+                   277   ; io.c      193 
+                   278   ; io.c      194   P8_IOCR00      =  0x0080;      // load port control register 0
+                   279           ?LINE   194
+0000 E6FC8000      280           MOV     R12,#080h
+0004 F6FC00E9      281           MOV     0E900h,R12
+                   282   ; io.c      195   P8_IOCR01      =  0x0080;      // load port control register 1
+                   283           ?LINE   195
+0008 E6FC8000      284           MOV     R12,#080h
+000C F6FC02E9      285           MOV     0E902h,R12
+                   286   ; io.c      196   P8_POCON       =  0x0002;      // load output control register
+                   287           ?LINE   196
+0010 E02C          288           MOV     R12,#02h
+0012 F6FCB0E8      289           MOV     0E8B0h,R12
+                   290   ; io.c      197 
+                   291   ; io.c      198   ///  -----------------------------------------------------------------------
+                   292   ; io.c      199   ///  Configuration of Port P9:
+                   293   ; io.c      200   ///  -----------------------------------------------------------------------
+                   294   ; io.c      201   ///  P9.0 is used as alternate output for the CCU63 output(CC60)
+                   295   ; io.c      202   ///  - push/pull output is selected
+                   296   ; io.c      203   ///  P9.1 is used as alternate output for the CCU63 output(CC61)
+                   297   ; io.c      204   ///  - push/pull output is selected
+                   298   ; io.c      205   ///  P9.2 is used as alternate output for the CCU63 output(CC62)
+                   299   ; io.c      206   ///  - push/pull output is selected
+                   300   ; io.c      207   ///  P9.3 is used as alternate output for the CCU63 output(COUT60)
+                   301   ; io.c      208   ///  - push/pull output is selected
+                   302   ; io.c      209   ///  P9.4 is used as alternate output for the CCU63 output(COUT61)
+                   303   ; io.c      210   ///  - push/pull output is selected
+                   304   ; io.c      211   ///  P9.5 is used as alternate output for the CCU63 output(COUT62)
+                   305   ; io.c      212   ///  - push/pull output is selected
+                   306   ; io.c      213 
+                   307   ; io.c      214   ///  P9.0 - P9.3 output driver characteristic: strong driver
+                   308   ; io.c      215   ///  P9.4 - P9.7 output driver characteristic: strong driver
+                   309   ; io.c      216 
+                   310   ; io.c      217   ///  P9.0 - P9.3 output edge characteristic: sharp edge mode
+                   311   ; io.c      218   ///  P9.4 - P9.7 output edge characteristic: sharp edge mode
+                   312   ; io.c      219 
+                   313   ; io.c      220 
+                   314   ; io.c      221   ///  -----------------------------------------------------------------------
+                   315   ; io.c      222   ///  Configuration of Port P10:
+                   316   ; io.c      223   ///  -----------------------------------------------------------------------
+                   317   ; io.c      224   ///  - no pin of port P10 is used
+                   318   ; io.c      225 
+                   319   ; io.c      226 
+                   320   ; io.c      227   ///  -----------------------------------------------------------------------
+                   321   ; io.c      228   ///  Configuration of Port P11:
+                   322   ; io.c      229   ///  -----------------------------------------------------------------------
+                   323   ; io.c      230   ///  - no pin of port P11 is used
+                   324   ; io.c      231 
+                   325   ; io.c      232 
+                   326   ; io.c      233   ///  -----------------------------------------------------------------------
+                   327   ; io.c      234   ///  Configuration of Port P15:
+                   328   ; io.c      235   ///  -----------------------------------------------------------------------
+                   329   ; io.c      236   ///  - no pin of port P15 is used
+                   330   ; io.c      237   ///  - Port15 Data register P15(Read only)
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 15:36:18  Page:   7
 io
 
  LOC CODE        LINE   SOURCELINE
 
-                   331   ; io.c      241   // USER CODE BEGIN (IO_Function,3)
-                   332   ; io.c      242 
-                   333   ; io.c      243   // USER CODE END
-                   334   ; io.c      244 
-                   335   ; io.c      245 } //  End of function IO_vInit
-                   336           ?LINE   245
-0016 DB00          337           RETS
-                   338   _IO_vInit       ENDP
-               R   339           ?SYMB   '',$,17,245
-                   340   ; io.c      246 
-                   341   ; io.c      247 
-                   342   ; io.c      248 
-                   343   ; io.c      249 
-                   344   ; io.c      250 // USER CODE BEGIN (IO_General,10)
-                   345   ; io.c      251 
-                   346   ; io.c      252 // USER CODE END
-                   347   ; io.c      253 
-                   348   IO_1_PR ENDS
-                   349   
-                   350           REGDEF  R0-R15
-                   351           END
+                   331   ; io.c      238 
+                   332   ; io.c      239 
+                   333   ; io.c      240 
+                   334   ; io.c      241   // USER CODE BEGIN (IO_Function,3)
+                   335   ; io.c      242 
+                   336   ; io.c      243   // USER CODE END
+                   337   ; io.c      244 
+                   338   ; io.c      245 } //  End of function IO_vInit
+                   339           ?LINE   245
+0016 DB00          340           RETS
+                   341   _IO_vInit       ENDP
+               R   342           ?SYMB   '',$,17,245
+                   343   ; io.c      246 
+                   344   ; io.c      247 
+                   345   ; io.c      248 
+                   346   ; io.c      249 
+                   347   ; io.c      250 // USER CODE BEGIN (IO_General,10)
+                   348   ; io.c      251 
+                   349   ; io.c      252 // USER CODE END
+                   350   ; io.c      253 
+                   351   IO_1_PR ENDS
+                   352   
+                   353           REGDEF  R0-R15
+                   354           END
 
 total errors: 0, warnings: 0
 

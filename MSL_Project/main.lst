@@ -1,4 +1,4 @@
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 10:14:13  Page:   1
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 15:48:39  Page:   1
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -49,7 +49,7 @@ main
                     44   ; main.c     12 // @Description   This file contains the project initialization function.
                     45   ; main.c     13 //
                     46   ; main.c     14 //----------------------------------------------------------------------------
-                    47   ; main.c     15 // @Date          24.09.2021 10:14:07
+                    47   ; main.c     15 // @Date          24.09.2021 15:34:14
                     48   ; main.c     16 //
                     49   ; main.c     17 //****************************************************************************
                     50   ; main.c     18 
@@ -58,7 +58,7 @@ main
                     53   ; main.c     21 // USER CODE END
                     54   ; main.c     22 
                     55   ; main.c     23 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 10:14:13  Page:   2
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 15:48:39  Page:   2
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -100,892 +100,942 @@ main
                     90           ?SYMB   'CC2.H',0,29,3
                     91           ?SYMB   '',0,86,3
                     92           ?SYMB   '',0,86,2
-                    93           ?SYMB   'CCU63.H',0,29,3
+                    93           ?SYMB   'CCU62.H',0,29,3
                     94           ?SYMB   '',0,86,3
                     95           ?SYMB   '',0,86,2
-                    96           ?SYMB   '',0,86,1
-                    97   ; main.c     30 
-                    98   ; main.c     31 // USER CODE BEGIN (MAIN_General,2)
-                    99   ; main.c     32 #include <math.h>
-                   100           ?SYMB   'd:\programme\tasking\c166 v8.7r1\include\math.h',0,29,2
-                   101           ?SYMB   '',0,86,2
-                   102           ?SYMB   '',0,86,1
-                   103   ; main.c     33 // USER CODE END
-                   104   ; main.c     34 
-                   105   ; main.c     35 
-                   106   ; main.c     36 //****************************************************************************
-                   107   ; main.c     37 // @Macros
-                   108   ; main.c     38 //****************************************************************************
-                   109   ; main.c     39 
-                   110   ; main.c     40 // USER CODE BEGIN (MAIN_General,3)
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 10:14:13  Page:   3
+                    96           ?SYMB   'CCU63.H',0,29,3
+                    97           ?SYMB   '',0,86,3
+                    98           ?SYMB   '',0,86,2
+                    99           ?SYMB   '',0,86,1
+                   100   ; main.c     30 
+                   101   ; main.c     31 // USER CODE BEGIN (MAIN_General,2)
+                   102   ; main.c     32 #include <math.h>
+                   103           ?SYMB   'd:\programme\tasking\c166 v8.7r1\include\math.h',0,29,2
+                   104           ?SYMB   '',0,86,2
+                   105           ?SYMB   '',0,86,1
+                   106   ; main.c     33 // USER CODE END
+                   107   ; main.c     34 
+                   108   ; main.c     35 
+                   109   ; main.c     36 //****************************************************************************
+                   110   ; main.c     37 // @Macros
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 15:48:39  Page:   3
 main
 
  LOC CODE        LINE   SOURCELINE
 
-                   111   ; main.c     41 
-                   112   ; main.c     42 // USER CODE END
-                   113   ; main.c     43 
-                   114   ; main.c     44 
-                   115   ; main.c     45 //****************************************************************************
-                   116   ; main.c     46 // @Defines
-                   117   ; main.c     47 //****************************************************************************
-                   118   ; main.c     48 
-                   119   ; main.c     49 // USER CODE BEGIN (MAIN_General,4)
-                   120   ; main.c     50 
-                   121   ; main.c     51 // USER CODE END
-                   122   ; main.c     52 
-                   123   ; main.c     53 
-                   124   ; main.c     54 //****************************************************************************
-                   125   ; main.c     55 // @Typedefs
-                   126   ; main.c     56 //****************************************************************************
-                   127   ; main.c     57 
-                   128   ; main.c     58 // USER CODE BEGIN (MAIN_General,5)
-                   129   ; main.c     59 
-                   130   ; main.c     60 // USER CODE END
-                   131   ; main.c     61 
-                   132   ; main.c     62 
-                   133   ; main.c     63 //****************************************************************************
-                   134   ; main.c     64 // @Imported Global Variables
-                   135   ; main.c     65 //****************************************************************************
-                   136   ; main.c     66 
-                   137   ; main.c     67 // USER CODE BEGIN (MAIN_General,6)
-                   138   ; main.c     68 
-                   139   ; main.c     69 // USER CODE END
-                   140   ; main.c     70 
-                   141   ; main.c     71 
-                   142   ; main.c     72 //****************************************************************************
-                   143   ; main.c     73 // @Global Variables
-                   144   ; main.c     74 //****************************************************************************
-                   145   ; main.c     75 
-                   146   ; main.c     76 // USER CODE BEGIN (MAIN_General,7)
-                   147   ; main.c     77         unsigned int table[ARRAY_SIZE];
-                   148   ; main.c     78         unsigned int index;
-                   149   ; main.c     79         float pi = 3.14159265359;
-                   150   MAIN_IR_NB      SECTION PDAT WORD PUBLIC 'CINITROM'
-0000               151   MAIN_IR_NB_ENTRY        LABEL   BYTE
-0000 4940DB0F      152           DW      04049h,0FDBh
-                   153   MAIN_IR_NB      ENDS
-                   154   
-                   155   MAIN_ID_NB      SECTION LDAT WORD PUBLIC 'CINITIRAM'
-0000               156   MAIN_ID_NB_ENTRY        LABEL   BYTE
-0000               157   _pi     LABEL   WORD
-0000               158           DS      4
-                   159           PUBLIC  _pi
-               R   160           ?SYMB   'pi',_pi,22,10
-                   161   ; main.c     80 // USER CODE END
-                   162   ; main.c     81 
-                   163   ; main.c     82 
-                   164   ; main.c     83 //****************************************************************************
-                   165   ; main.c     84 // @External Prototypes
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 10:14:13  Page:   4
+                   111   ; main.c     38 //****************************************************************************
+                   112   ; main.c     39 
+                   113   ; main.c     40 // USER CODE BEGIN (MAIN_General,3)
+                   114   ; main.c     41 
+                   115   ; main.c     42 // USER CODE END
+                   116   ; main.c     43 
+                   117   ; main.c     44 
+                   118   ; main.c     45 //****************************************************************************
+                   119   ; main.c     46 // @Defines
+                   120   ; main.c     47 //****************************************************************************
+                   121   ; main.c     48 
+                   122   ; main.c     49 // USER CODE BEGIN (MAIN_General,4)
+                   123   ; main.c     50 
+                   124   ; main.c     51 // USER CODE END
+                   125   ; main.c     52 
+                   126   ; main.c     53 
+                   127   ; main.c     54 //****************************************************************************
+                   128   ; main.c     55 // @Typedefs
+                   129   ; main.c     56 //****************************************************************************
+                   130   ; main.c     57 
+                   131   ; main.c     58 // USER CODE BEGIN (MAIN_General,5)
+                   132   ; main.c     59 
+                   133   ; main.c     60 // USER CODE END
+                   134   ; main.c     61 
+                   135   ; main.c     62 
+                   136   ; main.c     63 //****************************************************************************
+                   137   ; main.c     64 // @Imported Global Variables
+                   138   ; main.c     65 //****************************************************************************
+                   139   ; main.c     66 
+                   140   ; main.c     67 // USER CODE BEGIN (MAIN_General,6)
+                   141   ; main.c     68 
+                   142   ; main.c     69 // USER CODE END
+                   143   ; main.c     70 
+                   144   ; main.c     71 
+                   145   ; main.c     72 //****************************************************************************
+                   146   ; main.c     73 // @Global Variables
+                   147   ; main.c     74 //****************************************************************************
+                   148   ; main.c     75 
+                   149   ; main.c     76 // USER CODE BEGIN (MAIN_General,7)
+                   150   ; main.c     77         const unsigned int ARRAY_SIZE = 600;
+                   151   MAIN_1_NC       SECTION LDAT WORD PUBLIC 'CNEARROM'
+0000               152   _ARRAY_SIZE     LABEL   WORD
+0000 5802          153           DW      0258h
+                   154           PUBLIC  _ARRAY_SIZE
+               R   155           ?SYMB   'ARRAY_SIZE',_ARRAY_SIZE,22,18
+                   156   ; main.c     78         const unsigned int OFFSET_L2 = ARRAY_SIZE/3;
+0002               157   _OFFSET_L2      LABEL   WORD
+0002 C800          158           DW      0C8h
+                   159           PUBLIC  _OFFSET_L2
+               R   160           ?SYMB   'OFFSET_L2',_OFFSET_L2,22,18
+                   161   ; main.c     79         const unsigned int OFFSET_L3 = (2*ARRAY_SIZE)/3;
+0004               162   _OFFSET_L3      LABEL   WORD
+0004 9001          163           DW      0190h
+                   164           PUBLIC  _OFFSET_L3
+               R   165           ?SYMB   'OFFSET_L3',_OFFSET_L3,22,18
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 15:48:39  Page:   4
 main
 
  LOC CODE        LINE   SOURCELINE
 
-                   166   ; main.c     85 //****************************************************************************
-                   167   ; main.c     86 
-                   168   ; main.c     87 // USER CODE BEGIN (MAIN_General,8)
-                   169   ; main.c     88 
-                   170   ; main.c     89 // USER CODE END
-                   171   ; main.c     90 
-                   172   ; main.c     91 
-                   173   ; main.c     92 //****************************************************************************
-                   174   ; main.c     93 // @Prototypes Of Local Functions
-                   175   ; main.c     94 //****************************************************************************
-                   176   ; main.c     95 
-                   177   ; main.c     96 // USER CODE BEGIN (MAIN_General,9)
-                   178   ; main.c     97 void generateTable();
-                   179   ; main.c     98 // USER CODE END
-                   180   ; main.c     99 
-                   181   ; main.c    100 
-                   182   ; main.c    101 //****************************************************************************
-                   183   ; main.c    102 // @Function      void MAIN_vInit(void) 
-                   184   ; main.c    103 //
-                   185   ; main.c    104 //----------------------------------------------------------------------------
-                   186   ; main.c    105 // @Description   This function initializes the microcontroller.
-                   187   ; main.c    106 //
-                   188   ; main.c    107 //----------------------------------------------------------------------------
-                   189   ; main.c    108 // @Returnvalue   None
-                   190   ; main.c    109 //
-                   191   ; main.c    110 //----------------------------------------------------------------------------
-                   192   ; main.c    111 // @Parameters    None
-                   193   ; main.c    112 //
-                   194   ; main.c    113 //----------------------------------------------------------------------------
-                   195   ; main.c    114 // @Date          24.09.2021
-                   196   ; main.c    115 //
-                   197   ; main.c    116 //****************************************************************************
-                   198   ; main.c    117 
-                   199   ; main.c    118 // USER CODE BEGIN (Init,1)
-                   200   ; main.c    119 
-                   201   ; main.c    120 // USER CODE END
-                   202   ; main.c    121 
-                   203   ; main.c    122 void MAIN_vInit(void)
-                   204   ; main.c    123 {
-                   205   MAIN_ID_NB      ENDS
-                   206   
-                   207   MAIN_3_PR       SECTION CODE WORD PUBLIC 'CPROGRAM'
-                   208           ?LINE   123
-                   209           PUBLIC  _MAIN_vInit
-               R   210           ?SYMB   'MAIN_vInit',_MAIN_vInit,37,1
-                   211           ?SYMB   '',123,8,34
-                   212           ?SYMB   '',010000H,7,260
-                   213           ?SYMB   '',010001H,7,261
-                   214           ?SYMB   '',010002H,7,262
-                   215           ?SYMB   '',010003H,7,263
-                   216           ?SYMB   '',010004H,7,264
-                   217           ?SYMB   '',010005H,7,265
-                   218           ?SYMB   '',010006H,7,266
-                   219           ?SYMB   '',010007H,7,267
-                   220           ?SYMB   '',010000H,7,268
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 10:14:13  Page:   5
+                   166   ; main.c     80         unsigned int table[ARRAY_SIZE];
+                   167   ; main.c     81         unsigned int index;
+                   168   ; main.c     82         float pi = 3.14159265359;
+                   169   MAIN_1_NC       ENDS
+                   170   
+                   171   MAIN_IR_NB      SECTION PDAT WORD PUBLIC 'CINITROM'
+0000               172   MAIN_IR_NB_ENTRY        LABEL   BYTE
+0000 4940DB0F      173           DW      04049h,0FDBh
+                   174   MAIN_IR_NB      ENDS
+                   175   
+                   176   MAIN_ID_NB      SECTION LDAT WORD PUBLIC 'CINITIRAM'
+0000               177   MAIN_ID_NB_ENTRY        LABEL   BYTE
+0000               178   _pi     LABEL   WORD
+0000               179           DS      4
+                   180           PUBLIC  _pi
+               R   181           ?SYMB   'pi',_pi,22,10
+                   182   ; main.c     83 // USER CODE END
+                   183   ; main.c     84 
+                   184   ; main.c     85 
+                   185   ; main.c     86 //****************************************************************************
+                   186   ; main.c     87 // @External Prototypes
+                   187   ; main.c     88 //****************************************************************************
+                   188   ; main.c     89 
+                   189   ; main.c     90 // USER CODE BEGIN (MAIN_General,8)
+                   190   ; main.c     91 
+                   191   ; main.c     92 // USER CODE END
+                   192   ; main.c     93 
+                   193   ; main.c     94 
+                   194   ; main.c     95 //****************************************************************************
+                   195   ; main.c     96 // @Prototypes Of Local Functions
+                   196   ; main.c     97 //****************************************************************************
+                   197   ; main.c     98 
+                   198   ; main.c     99 // USER CODE BEGIN (MAIN_General,9)
+                   199   ; main.c    100 void generateTable();
+                   200   ; main.c    101 // USER CODE END
+                   201   ; main.c    102 
+                   202   ; main.c    103 
+                   203   ; main.c    104 //****************************************************************************
+                   204   ; main.c    105 // @Function      void MAIN_vInit(void) 
+                   205   ; main.c    106 //
+                   206   ; main.c    107 //----------------------------------------------------------------------------
+                   207   ; main.c    108 // @Description   This function initializes the microcontroller.
+                   208   ; main.c    109 //
+                   209   ; main.c    110 //----------------------------------------------------------------------------
+                   210   ; main.c    111 // @Returnvalue   None
+                   211   ; main.c    112 //
+                   212   ; main.c    113 //----------------------------------------------------------------------------
+                   213   ; main.c    114 // @Parameters    None
+                   214   ; main.c    115 //
+                   215   ; main.c    116 //----------------------------------------------------------------------------
+                   216   ; main.c    117 // @Date          24.09.2021
+                   217   ; main.c    118 //
+                   218   ; main.c    119 //****************************************************************************
+                   219   ; main.c    120 
+                   220   ; main.c    121 // USER CODE BEGIN (Init,1)
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 15:48:39  Page:   5
 main
 
  LOC CODE        LINE   SOURCELINE
 
-                   221           ?SYMB   '',010001H,7,269
-                   222           ?SYMB   '',010002H,7,270
-                   223           ?SYMB   '',010003H,7,271
-                   224           ?SYMB   '',010004H,7,272
-                   225           ?SYMB   '',010005H,7,273
-                   226           ?SYMB   '',010006H,7,274
-                   227           ?SYMB   '',010007H,7,275
-                   228           ?SYMB   'T$1',0,40,276
-                   229           ?SYMB   'bit0',0,23,260
-                   230           ?SYMB   'bit1',1,23,261
-                   231           ?SYMB   'bit2',2,23,262
-                   232           ?SYMB   'bit3',3,23,263
-                   233           ?SYMB   'bit4',4,23,264
-                   234           ?SYMB   'bit5',5,23,265
-                   235           ?SYMB   'bit6',6,23,266
-                   236           ?SYMB   'bit7',7,23,267
-                   237           ?SYMB   'bit8',8,23,268
-                   238           ?SYMB   'bit9',9,23,269
-                   239           ?SYMB   'bit10',10,23,270
-                   240           ?SYMB   'bit11',11,23,271
-                   241           ?SYMB   'bit12',12,23,272
-                   242           ?SYMB   'bit13',13,23,273
-                   243           ?SYMB   'bit14',14,23,274
-                   244           ?SYMB   'bit15',15,23,275
-                   245           ?SYMB   '',16,18,0
-                   246           ?SYMB   'T_Reg16',276,13,277
-                   247           ?SYMB   'uword',18,13,278
-                   248   _MAIN_vInit     PROC    FAR
-                   249           ?SYMB   '',00H,95,0
-                   250   ; Locals:
-                   251   ; 
-                   252   ; Statics:
-                   253   ; 
-                   254   ; CSEs:
-                   255   ; 
-                   256   ; main.c    124   // USER CODE BEGIN (Init,2)
-                   257   ; main.c    125 
-                   258   ; main.c    126   // USER CODE END
-                   259   ; main.c    127 
-                   260   ; main.c    128   //   globally disable interrupts
-                   261   ; main.c    129   PSW_IEN        =  0;          
-                   262           ?LINE   129
-0000 E6FC10FF      263           MOV     R12,#0FF10h
-0004 A8DC          264           MOV     R13,[R12]
-0006 66FDFFF7      265           AND     R13,#0F7FFh
-000A B8DC          266           MOV     [R12],R13
-                   267   ; main.c    130 
-                   268   ; main.c    131 
-                   269   ; main.c    132   ///  -----------------------------------------------------------------------
-                   270   ; main.c    133   ///  Configuration of the System Clock:
-                   271   ; main.c    134   ///  -----------------------------------------------------------------------
-                   272   ; main.c    135   ///  - VCO clock used, input clock is connected
-                   273   ; main.c    136   ///  - input frequency is 10,00 MHz
-                   274   ; main.c    137   ///  - configured system frequency is 66,00 MHz
-                   275   ; main.c    138 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 10:14:13  Page:   6
+                   221   ; main.c    122 
+                   222   ; main.c    123 // USER CODE END
+                   223   ; main.c    124 
+                   224   ; main.c    125 void MAIN_vInit(void)
+                   225   ; main.c    126 {
+                   226   MAIN_ID_NB      ENDS
+                   227   
+                   228   MAIN_4_PR       SECTION CODE WORD PUBLIC 'CPROGRAM'
+                   229           ?LINE   126
+                   230           PUBLIC  _MAIN_vInit
+               R   231           ?SYMB   'MAIN_vInit',_MAIN_vInit,37,1
+                   232           ?SYMB   '',126,8,34
+                   233           ?SYMB   '',010000H,7,260
+                   234           ?SYMB   '',010001H,7,261
+                   235           ?SYMB   '',010002H,7,262
+                   236           ?SYMB   '',010003H,7,263
+                   237           ?SYMB   '',010004H,7,264
+                   238           ?SYMB   '',010005H,7,265
+                   239           ?SYMB   '',010006H,7,266
+                   240           ?SYMB   '',010007H,7,267
+                   241           ?SYMB   '',010000H,7,268
+                   242           ?SYMB   '',010001H,7,269
+                   243           ?SYMB   '',010002H,7,270
+                   244           ?SYMB   '',010003H,7,271
+                   245           ?SYMB   '',010004H,7,272
+                   246           ?SYMB   '',010005H,7,273
+                   247           ?SYMB   '',010006H,7,274
+                   248           ?SYMB   '',010007H,7,275
+                   249           ?SYMB   'T$1',0,40,276
+                   250           ?SYMB   'bit0',0,23,260
+                   251           ?SYMB   'bit1',1,23,261
+                   252           ?SYMB   'bit2',2,23,262
+                   253           ?SYMB   'bit3',3,23,263
+                   254           ?SYMB   'bit4',4,23,264
+                   255           ?SYMB   'bit5',5,23,265
+                   256           ?SYMB   'bit6',6,23,266
+                   257           ?SYMB   'bit7',7,23,267
+                   258           ?SYMB   'bit8',8,23,268
+                   259           ?SYMB   'bit9',9,23,269
+                   260           ?SYMB   'bit10',10,23,270
+                   261           ?SYMB   'bit11',11,23,271
+                   262           ?SYMB   'bit12',12,23,272
+                   263           ?SYMB   'bit13',13,23,273
+                   264           ?SYMB   'bit14',14,23,274
+                   265           ?SYMB   'bit15',15,23,275
+                   266           ?SYMB   '',16,18,0
+                   267           ?SYMB   'T_Reg16',276,13,277
+                   268   _MAIN_vInit     PROC    FAR
+                   269           ?SYMB   '',00H,95,0
+                   270   ; Locals:
+                   271   ; 
+                   272   ; Statics:
+                   273   ; 
+                   274   ; CSEs:
+                   275   ; 
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 15:48:39  Page:   6
 main
 
  LOC CODE        LINE   SOURCELINE
 
-                   276   ; main.c    139   MAIN_vUnlockProtecReg();     // unlock write security
-                   277           ?LINE   139
-000C DA004000  R   278           CALLS   SEG _MAIN_vUnlockProtecReg,_MAIN_vUnlockProtecReg
-                   279   ; main.c    140 
-                   280   ; main.c    141   MAIN_vChangeFreq();          // load PLL control register
-                   281           ?LINE   141
-0010 DA00D400  R   282           CALLS   SEG _MAIN_vChangeFreq,_MAIN_vChangeFreq
-                   283   ; main.c    142 
-                   284   ; main.c    143   //   -----------------------------------------------------------------------
-                   285   ; main.c    144   //   Initialization of the Peripherals:
-                   286   ; main.c    145   //   -----------------------------------------------------------------------
-                   287   ; main.c    146 
-                   288   ; main.c    147   //   initializes the Parallel Ports
-                   289   ; main.c    148   IO_vInit();
-                   290           ?LINE   148
-0014 DA000000  R   291           CALLS   SEG _IO_vInit,_IO_vInit
-                   292   ; main.c    149 
-                   293   ; main.c    150   //   initializes the General Purpose Timer Unit (GPT1)
-                   294   ; main.c    151   GPT1_vInit();
-                   295           ?LINE   151
-0018 DA000000  R   296           CALLS   SEG _GPT1_vInit,_GPT1_vInit
-                   297   ; main.c    152 
-                   298   ; main.c    153   //   initializes the General Purpose Timer Unit (GPT2)
-                   299   ; main.c    154   GPT2_vInit();
-                   300           ?LINE   154
-001C DA000000  R   301           CALLS   SEG _GPT2_vInit,_GPT2_vInit
-                   302   ; main.c    155 
-                   303   ; main.c    156   //   initializes the Capture / Compare Unit 2 (CAPCOM2)
-                   304   ; main.c    157   CC2_vInit();
-                   305           ?LINE   157
-0020 DA000000  R   306           CALLS   SEG _CC2_vInit,_CC2_vInit
-                   307   ; main.c    158 
-                   308   ; main.c    159   //   initializes the Capture / Compare Unit 63 (CCU63)
-                   309   ; main.c    160   CCU63_vInit();
-                   310           ?LINE   160
-0024 DA000000  R   311           CALLS   SEG _CCU63_vInit,_CCU63_vInit
-                   312   ; main.c    161 
-                   313   ; main.c    162 
-                   314   ; main.c    163   //   -----------------------------------------------------------------------
-                   315   ; main.c    164   //   Initialization of the Bank Select registers:
-                   316   ; main.c    165   //   -----------------------------------------------------------------------
-                   317   ; main.c    166 
-                   318   ; main.c    167   BNKSEL0        =   0x0002;     // Bank Select Control Reg. 0
-                   319           ?LINE   167
-0028 E02C          320           MOV     R12,#02h
-002A F6FC20EC      321           MOV     0EC20h,R12
-                   322   ; main.c    168 
-                   323   ; main.c    169   // USER CODE BEGIN (Init,3)
-                   324   ; main.c    170 
-                   325   ; main.c    171   // USER CODE END
-                   326   ; main.c    172 
-                   327   ; main.c    173   MAIN_vLockProtecReg();       // lock write security
-                   328           ?LINE   173
-002E DA007A00  R   329           CALLS   SEG _MAIN_vLockProtecReg,_MAIN_vLockProtecReg
-                   330   ; main.c    174 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 10:14:13  Page:   7
+                   276   ; main.c    127   // USER CODE BEGIN (Init,2)
+                   277   ; main.c    128 
+                   278   ; main.c    129   // USER CODE END
+                   279   ; main.c    130 
+                   280   ; main.c    131   //   globally disable interrupts
+                   281   ; main.c    132   PSW_IEN        =  0;          
+                   282           ?LINE   132
+0000 E6FC10FF      283           MOV     R12,#0FF10h
+0004 A8DC          284           MOV     R13,[R12]
+0006 66FDFFF7      285           AND     R13,#0F7FFh
+000A B8DC          286           MOV     [R12],R13
+                   287   ; main.c    133 
+                   288   ; main.c    134 
+                   289   ; main.c    135   ///  -----------------------------------------------------------------------
+                   290   ; main.c    136   ///  Configuration of the System Clock:
+                   291   ; main.c    137   ///  -----------------------------------------------------------------------
+                   292   ; main.c    138   ///  - VCO clock used, input clock is connected
+                   293   ; main.c    139   ///  - input frequency is 10,00 MHz
+                   294   ; main.c    140   ///  - configured system frequency is 66,00 MHz
+                   295   ; main.c    141 
+                   296   ; main.c    142   MAIN_vUnlockProtecReg();     // unlock write security
+                   297           ?LINE   142
+000C DA003E00  R   298           CALLS   SEG _MAIN_vUnlockProtecReg,_MAIN_vUnlockProtecReg
+                   299   ; main.c    143 
+                   300   ; main.c    144   MAIN_vChangeFreq();          // load PLL control register
+                   301           ?LINE   144
+0010 DA00D200  R   302           CALLS   SEG _MAIN_vChangeFreq,_MAIN_vChangeFreq
+                   303   ; main.c    145 
+                   304   ; main.c    146   //   -----------------------------------------------------------------------
+                   305   ; main.c    147   //   Initialization of the Peripherals:
+                   306   ; main.c    148   //   -----------------------------------------------------------------------
+                   307   ; main.c    149 
+                   308   ; main.c    150   //   initializes the Parallel Ports
+                   309   ; main.c    151   IO_vInit();
+                   310           ?LINE   151
+0014 DA000000  R   311           CALLS   SEG _IO_vInit,_IO_vInit
+                   312   ; main.c    152 
+                   313   ; main.c    153   //   initializes the General Purpose Timer Unit (GPT1)
+                   314   ; main.c    154   GPT1_vInit();
+                   315           ?LINE   154
+0018 DA000000  R   316           CALLS   SEG _GPT1_vInit,_GPT1_vInit
+                   317   ; main.c    155 
+                   318   ; main.c    156   //   initializes the General Purpose Timer Unit (GPT2)
+                   319   ; main.c    157   GPT2_vInit();
+                   320           ?LINE   157
+001C DA000000  R   321           CALLS   SEG _GPT2_vInit,_GPT2_vInit
+                   322   ; main.c    158 
+                   323   ; main.c    159   //   initializes the Capture / Compare Unit 2 (CAPCOM2)
+                   324   ; main.c    160   CC2_vInit();
+                   325           ?LINE   160
+0020 DA000000  R   326           CALLS   SEG _CC2_vInit,_CC2_vInit
+                   327   ; main.c    161 
+                   328   ; main.c    162   //   initializes the Capture / Compare Unit 62 (CCU62)
+                   329   ; main.c    163   CCU62_vInit();
+                   330           ?LINE   163
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 15:48:39  Page:   7
 main
 
  LOC CODE        LINE   SOURCELINE
 
-                   331   ; main.c    175   //   globally enable interrupts
-                   332   ; main.c    176   PSW_IEN        =  1;          
-                   333           ?LINE   176
-0032 E6FC10FF      334           MOV     R12,#0FF10h
-0036 A8DC          335           MOV     R13,[R12]
-0038 1AFD0808      336           BFLDH   R13,#08h,#08h
-003C B8DC          337           MOV     [R12],R13
-                   338   ; main.c    177 
-                   339   ; main.c    178 } //  End of function MAIN_vInit
-                   340           ?LINE   178
-003E DB00          341           RETS
-                   342   _MAIN_vInit     ENDP
-               R   343           ?SYMB   '',$,17,178
-                   344   ; main.c    179 
-                   345   ; main.c    180 
-                   346   ; main.c    181 //****************************************************************************
-                   347   ; main.c    182 // @Function      void MAIN_vUnlockProtecReg(void) 
-                   348   ; main.c    183 //
-                   349   ; main.c    184 //----------------------------------------------------------------------------
-                   350   ; main.c    185 // @Description   This function makes it possible to write one protected 
-                   351   ; main.c    186 //                register.
-                   352   ; main.c    187 //
-                   353   ; main.c    188 //----------------------------------------------------------------------------
-                   354   ; main.c    189 // @Returnvalue   None
-                   355   ; main.c    190 //
-                   356   ; main.c    191 //----------------------------------------------------------------------------
-                   357   ; main.c    192 // @Parameters    None
-                   358   ; main.c    193 //
-                   359   ; main.c    194 //----------------------------------------------------------------------------
-                   360   ; main.c    195 // @Date          24.09.2021
-                   361   ; main.c    196 //
-                   362   ; main.c    197 //****************************************************************************
-                   363   ; main.c    198 
-                   364   ; main.c    199 // USER CODE BEGIN (UnlockProtecReg,1)
-                   365   ; main.c    200 
-                   366   ; main.c    201 // USER CODE END
-                   367   ; main.c    202 
-                   368   ; main.c    203 void MAIN_vUnlockProtecReg(void)
-                   369   ; main.c    204 {
-                   370           ?LINE   204
-                   371           PUBLIC  _MAIN_vUnlockProtecReg
-               R   372           ?SYMB   'MAIN_vUnlockProtecReg',_MAIN_vUnlockProtecReg,37,1
-                   373           ?SYMB   '',204,8,34
-                   374   _MAIN_vUnlockProtecReg  PROC    FAR
-                   375           ?SYMB   '',00H,95,0
-0040 2802          376           SUB     R0,#02h
-               R   377           ?SYMB   '',$,96,2
-                   378   ; Locals:
-                   379   ;     uwPASSWORD = offset 0
-                   380   ; 
-                   381   ; Statics:
-                   382   ; 
-                   383   ; CSEs:
-                   384   ; 
-                   385   ; main.c    205   uword uwPASSWORD;
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 10:14:13  Page:   8
+0024 DA000000  R   331           CALLS   SEG _CCU62_vInit,_CCU62_vInit
+                   332   ; main.c    164 
+                   333   ; main.c    165   //   initializes the Capture / Compare Unit 63 (CCU63)
+                   334   ; main.c    166   CCU63_vInit();
+                   335           ?LINE   166
+0028 DA000000  R   336           CALLS   SEG _CCU63_vInit,_CCU63_vInit
+                   337   ; main.c    167 
+                   338   ; main.c    168 
+                   339   ; main.c    169   //   -----------------------------------------------------------------------
+                   340   ; main.c    170   //   Initialization of the Bank Select registers:
+                   341   ; main.c    171   //   -----------------------------------------------------------------------
+                   342   ; main.c    172 
+                   343   ; main.c    173 
+                   344   ; main.c    174   // USER CODE BEGIN (Init,3)
+                   345   ; main.c    175 
+                   346   ; main.c    176   // USER CODE END
+                   347   ; main.c    177 
+                   348   ; main.c    178   MAIN_vLockProtecReg();       // lock write security
+                   349           ?LINE   178
+002C DA007800  R   350           CALLS   SEG _MAIN_vLockProtecReg,_MAIN_vLockProtecReg
+                   351   ; main.c    179 
+                   352   ; main.c    180   //   globally enable interrupts
+                   353   ; main.c    181   PSW_IEN        =  1;          
+                   354           ?LINE   181
+0030 E6FC10FF      355           MOV     R12,#0FF10h
+0034 A8DC          356           MOV     R13,[R12]
+0036 1AFD0808      357           BFLDH   R13,#08h,#08h
+003A B8DC          358           MOV     [R12],R13
+                   359   ; main.c    182 
+                   360   ; main.c    183 } //  End of function MAIN_vInit
+                   361           ?LINE   183
+003C DB00          362           RETS
+                   363   _MAIN_vInit     ENDP
+               R   364           ?SYMB   '',$,17,183
+                   365   ; main.c    184 
+                   366   ; main.c    185 
+                   367   ; main.c    186 //****************************************************************************
+                   368   ; main.c    187 // @Function      void MAIN_vUnlockProtecReg(void) 
+                   369   ; main.c    188 //
+                   370   ; main.c    189 //----------------------------------------------------------------------------
+                   371   ; main.c    190 // @Description   This function makes it possible to write one protected 
+                   372   ; main.c    191 //                register.
+                   373   ; main.c    192 //
+                   374   ; main.c    193 //----------------------------------------------------------------------------
+                   375   ; main.c    194 // @Returnvalue   None
+                   376   ; main.c    195 //
+                   377   ; main.c    196 //----------------------------------------------------------------------------
+                   378   ; main.c    197 // @Parameters    None
+                   379   ; main.c    198 //
+                   380   ; main.c    199 //----------------------------------------------------------------------------
+                   381   ; main.c    200 // @Date          24.09.2021
+                   382   ; main.c    201 //
+                   383   ; main.c    202 //****************************************************************************
+                   384   ; main.c    203 
+                   385   ; main.c    204 // USER CODE BEGIN (UnlockProtecReg,1)
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 15:48:39  Page:   8
 main
 
  LOC CODE        LINE   SOURCELINE
 
-                   386           ?SYMB   'uwPASSWORD',1,98,278
-               R   387           ?SYMB   '-2',$,101,1
-                   388   ; main.c    206 
-                   389   ; main.c    207     SCU_SLC = 0xAAAA;                   // command 0
-                   390           ?LINE   207
-0042 E6FCAAAA      391           MOV     R12,#0AAAAh
-0046 F6FCC0F0      392           MOV     0F0C0h,R12
-                   393   ; main.c    208     SCU_SLC = 0x5554;                   // command 1
-                   394           ?LINE   208
-004A E6FC5455      395           MOV     R12,#05554h
-004E F6FCC0F0      396           MOV     0F0C0h,R12
-                   397   ; main.c    209 
-                   398   ; main.c    210     uwPASSWORD = SCU_SLS & 0x00FF;
-                   399           ?LINE   210
-0052 F2FCC2F0      400           MOV     R12,0F0C2h
-0056 66FCFF00      401           AND     R12,#0FFh
-005A B8C0          402           MOV     [R0],R12
-                   403   ; main.c    211     uwPASSWORD = (~uwPASSWORD) & 0x00FF;
-                   404           ?LINE   211
-005C A8C0          405           MOV     R12,[R0]
-005E 91C0          406           CPL     R12
-0060 66FCFF00      407           AND     R12,#0FFh
-0064 B8C0          408           MOV     [R0],R12
-                   409   ; main.c    212 
-                   410   ; main.c    213     SCU_SLC = 0x9600 | uwPASSWORD;      // command 2
-                   411           ?LINE   213
-0066 A8C0          412           MOV     R12,[R0]
-0068 76FC0096      413           OR      R12,#09600h
-006C F6FCC0F0      414           MOV     0F0C0h,R12
-                   415   ; main.c    214     SCU_SLC = 0x0000;                   // command 3
-                   416           ?LINE   214
-0070 E00C          417           MOV     R12,#00h
-0072 F6FCC0F0      418           MOV     0F0C0h,R12
-                   419   ; main.c    215 
-                   420   ; main.c    216 } //  End of function MAIN_vUnlockProtecReg
-               R   421           ?SYMB   '',$,102,1
-                   422           ?LINE   216
-0076 0802          423           ADD     R0,#02h
-               R   424           ?SYMB   '',$,96,0
-0078 DB00          425           RETS
-                   426   _MAIN_vUnlockProtecReg  ENDP
-               R   427           ?SYMB   '',$,17,216
-                   428   ; main.c    217 
-                   429   ; main.c    218 
-                   430   ; main.c    219 //****************************************************************************
-                   431   ; main.c    220 // @Function      void MAIN_vLockProtecReg(void) 
-                   432   ; main.c    221 //
-                   433   ; main.c    222 //----------------------------------------------------------------------------
-                   434   ; main.c    223 // @Description   This function makes it possible to lock one protected 
-                   435   ; main.c    224 //                register.
-                   436   ; main.c    225 //
-                   437   ; main.c    226 //----------------------------------------------------------------------------
-                   438   ; main.c    227 // @Returnvalue   None
-                   439   ; main.c    228 //
-                   440   ; main.c    229 //----------------------------------------------------------------------------
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 10:14:13  Page:   9
+                   386   ; main.c    205 
+                   387   ; main.c    206 // USER CODE END
+                   388   ; main.c    207 
+                   389   ; main.c    208 void MAIN_vUnlockProtecReg(void)
+                   390   ; main.c    209 {
+                   391           ?LINE   209
+                   392           PUBLIC  _MAIN_vUnlockProtecReg
+               R   393           ?SYMB   'MAIN_vUnlockProtecReg',_MAIN_vUnlockProtecReg,37,1
+                   394           ?SYMB   '',209,8,34
+                   395           ?SYMB   'uword',18,13,279
+                   396   _MAIN_vUnlockProtecReg  PROC    FAR
+                   397           ?SYMB   '',00H,95,0
+003E 2802          398           SUB     R0,#02h
+               R   399           ?SYMB   '',$,96,2
+                   400   ; Locals:
+                   401   ;     uwPASSWORD = offset 0
+                   402   ; 
+                   403   ; Statics:
+                   404   ; 
+                   405   ; CSEs:
+                   406   ; 
+                   407   ; main.c    210   uword uwPASSWORD;
+                   408           ?SYMB   'uwPASSWORD',1,98,279
+               R   409           ?SYMB   '-2',$,101,1
+                   410   ; main.c    211 
+                   411   ; main.c    212     SCU_SLC = 0xAAAA;                   // command 0
+                   412           ?LINE   212
+0040 E6FCAAAA      413           MOV     R12,#0AAAAh
+0044 F6FCC0F0      414           MOV     0F0C0h,R12
+                   415   ; main.c    213     SCU_SLC = 0x5554;                   // command 1
+                   416           ?LINE   213
+0048 E6FC5455      417           MOV     R12,#05554h
+004C F6FCC0F0      418           MOV     0F0C0h,R12
+                   419   ; main.c    214 
+                   420   ; main.c    215     uwPASSWORD = SCU_SLS & 0x00FF;
+                   421           ?LINE   215
+0050 F2FCC2F0      422           MOV     R12,0F0C2h
+0054 66FCFF00      423           AND     R12,#0FFh
+0058 B8C0          424           MOV     [R0],R12
+                   425   ; main.c    216     uwPASSWORD = (~uwPASSWORD) & 0x00FF;
+                   426           ?LINE   216
+005A A8C0          427           MOV     R12,[R0]
+005C 91C0          428           CPL     R12
+005E 66FCFF00      429           AND     R12,#0FFh
+0062 B8C0          430           MOV     [R0],R12
+                   431   ; main.c    217 
+                   432   ; main.c    218     SCU_SLC = 0x9600 | uwPASSWORD;      // command 2
+                   433           ?LINE   218
+0064 A8C0          434           MOV     R12,[R0]
+0066 76FC0096      435           OR      R12,#09600h
+006A F6FCC0F0      436           MOV     0F0C0h,R12
+                   437   ; main.c    219     SCU_SLC = 0x0000;                   // command 3
+                   438           ?LINE   219
+006E E00C          439           MOV     R12,#00h
+0070 F6FCC0F0      440           MOV     0F0C0h,R12
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 15:48:39  Page:   9
 main
 
  LOC CODE        LINE   SOURCELINE
 
-                   441   ; main.c    230 // @Parameters    None
-                   442   ; main.c    231 //
-                   443   ; main.c    232 //----------------------------------------------------------------------------
-                   444   ; main.c    233 // @Date          24.09.2021
-                   445   ; main.c    234 //
-                   446   ; main.c    235 //****************************************************************************
-                   447   ; main.c    236 
-                   448   ; main.c    237 // USER CODE BEGIN (LockProtecReg,1)
-                   449   ; main.c    238 
-                   450   ; main.c    239 // USER CODE END
-                   451   ; main.c    240 
-                   452   ; main.c    241 void MAIN_vLockProtecReg(void)
-                   453   ; main.c    242 {
-                   454           ?LINE   242
-                   455           PUBLIC  _MAIN_vLockProtecReg
-               R   456           ?SYMB   'MAIN_vLockProtecReg',_MAIN_vLockProtecReg,37,1
-                   457           ?SYMB   '',242,8,34
-                   458   _MAIN_vLockProtecReg    PROC    FAR
-                   459           ?SYMB   '',00H,95,0
-007A 2802          460           SUB     R0,#02h
-               R   461           ?SYMB   '',$,96,2
-                   462   ; Locals:
-                   463   ;     uwPASSWORD = offset 0
-                   464   ; 
-                   465   ; Statics:
-                   466   ; 
-                   467   ; CSEs:
-                   468   ; 
-                   469   ; main.c    243   uword uwPASSWORD;
-                   470           ?SYMB   'uwPASSWORD',1,98,278
-               R   471           ?SYMB   '-2',$,101,1
-                   472   ; main.c    244 
-                   473   ; main.c    245     SCU_SLC = 0xAAAA;                   // command 0
-                   474           ?LINE   245
-007C E6FCAAAA      475           MOV     R12,#0AAAAh
-0080 F6FCC0F0      476           MOV     0F0C0h,R12
-                   477   ; main.c    246     SCU_SLC = 0x5554;                   // command 1
-                   478           ?LINE   246
-0084 E6FC5455      479           MOV     R12,#05554h
-0088 F6FCC0F0      480           MOV     0F0C0h,R12
-                   481   ; main.c    247 
-                   482   ; main.c    248     uwPASSWORD = SCU_SLS & 0x00FF;
-                   483           ?LINE   248
-008C F2FCC2F0      484           MOV     R12,0F0C2h
-0090 66FCFF00      485           AND     R12,#0FFh
-0094 B8C0          486           MOV     [R0],R12
-                   487   ; main.c    249     uwPASSWORD = (~uwPASSWORD) & 0x00FF;
-                   488           ?LINE   249
-0096 A8C0          489           MOV     R12,[R0]
-0098 91C0          490           CPL     R12
-009A 66FCFF00      491           AND     R12,#0FFh
-009E B8C0          492           MOV     [R0],R12
-                   493   ; main.c    250 
-                   494   ; main.c    251     SCU_SLC = 0x9600 | uwPASSWORD;      // command 2
-                   495           ?LINE   251
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 10:14:13  Page:  10
+                   441   ; main.c    220 
+                   442   ; main.c    221 } //  End of function MAIN_vUnlockProtecReg
+               R   443           ?SYMB   '',$,102,1
+                   444           ?LINE   221
+0074 0802          445           ADD     R0,#02h
+               R   446           ?SYMB   '',$,96,0
+0076 DB00          447           RETS
+                   448   _MAIN_vUnlockProtecReg  ENDP
+               R   449           ?SYMB   '',$,17,221
+                   450   ; main.c    222 
+                   451   ; main.c    223 
+                   452   ; main.c    224 //****************************************************************************
+                   453   ; main.c    225 // @Function      void MAIN_vLockProtecReg(void) 
+                   454   ; main.c    226 //
+                   455   ; main.c    227 //----------------------------------------------------------------------------
+                   456   ; main.c    228 // @Description   This function makes it possible to lock one protected 
+                   457   ; main.c    229 //                register.
+                   458   ; main.c    230 //
+                   459   ; main.c    231 //----------------------------------------------------------------------------
+                   460   ; main.c    232 // @Returnvalue   None
+                   461   ; main.c    233 //
+                   462   ; main.c    234 //----------------------------------------------------------------------------
+                   463   ; main.c    235 // @Parameters    None
+                   464   ; main.c    236 //
+                   465   ; main.c    237 //----------------------------------------------------------------------------
+                   466   ; main.c    238 // @Date          24.09.2021
+                   467   ; main.c    239 //
+                   468   ; main.c    240 //****************************************************************************
+                   469   ; main.c    241 
+                   470   ; main.c    242 // USER CODE BEGIN (LockProtecReg,1)
+                   471   ; main.c    243 
+                   472   ; main.c    244 // USER CODE END
+                   473   ; main.c    245 
+                   474   ; main.c    246 void MAIN_vLockProtecReg(void)
+                   475   ; main.c    247 {
+                   476           ?LINE   247
+                   477           PUBLIC  _MAIN_vLockProtecReg
+               R   478           ?SYMB   'MAIN_vLockProtecReg',_MAIN_vLockProtecReg,37,1
+                   479           ?SYMB   '',247,8,34
+                   480   _MAIN_vLockProtecReg    PROC    FAR
+                   481           ?SYMB   '',00H,95,0
+0078 2802          482           SUB     R0,#02h
+               R   483           ?SYMB   '',$,96,2
+                   484   ; Locals:
+                   485   ;     uwPASSWORD = offset 0
+                   486   ; 
+                   487   ; Statics:
+                   488   ; 
+                   489   ; CSEs:
+                   490   ; 
+                   491   ; main.c    248   uword uwPASSWORD;
+                   492           ?SYMB   'uwPASSWORD',1,98,279
+               R   493           ?SYMB   '-2',$,101,1
+                   494   ; main.c    249 
+                   495   ; main.c    250     SCU_SLC = 0xAAAA;                   // command 0
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 15:48:39  Page:  10
 main
 
  LOC CODE        LINE   SOURCELINE
 
-00A0 A8C0          496           MOV     R12,[R0]
-00A2 76FC0096      497           OR      R12,#09600h
-00A6 F6FCC0F0      498           MOV     0F0C0h,R12
-                   499   ; main.c    252     SCU_SLC = 0x1800;                   // command 3; new PASSWOR is 0x00
-                   500           ?LINE   252
-00AA E6FC0018      501           MOV     R12,#01800h
-00AE F6FCC0F0      502           MOV     0F0C0h,R12
-                   503   ; main.c    253 
-                   504   ; main.c    254     uwPASSWORD = SCU_SLS & 0x00FF;
-                   505           ?LINE   254
-00B2 F2FCC2F0      506           MOV     R12,0F0C2h
-00B6 66FCFF00      507           AND     R12,#0FFh
-00BA B8C0          508           MOV     [R0],R12
-                   509   ; main.c    255     uwPASSWORD = (~uwPASSWORD) & 0x00FF;
-                   510           ?LINE   255
-00BC A8C0          511           MOV     R12,[R0]
-00BE 91C0          512           CPL     R12
-00C0 66FCFF00      513           AND     R12,#0FFh
-00C4 B8C0          514           MOV     [R0],R12
-                   515   ; main.c    256     SCU_SLC = 0x8E00 | uwPASSWORD;      // command 4
-                   516           ?LINE   256
-00C6 A8C0          517           MOV     R12,[R0]
-00C8 76FC008E      518           OR      R12,#08E00h
-00CC F6FCC0F0      519           MOV     0F0C0h,R12
-                   520   ; main.c    257 
-                   521   ; main.c    258 } //  End of function MAIN_vLockProtecReg
-               R   522           ?SYMB   '',$,102,1
-                   523           ?LINE   258
-00D0 0802          524           ADD     R0,#02h
-               R   525           ?SYMB   '',$,96,0
-00D2 DB00          526           RETS
-                   527   _MAIN_vLockProtecReg    ENDP
-               R   528           ?SYMB   '',$,17,258
-                   529   ; main.c    259 
-                   530   ; main.c    260 
-                   531   ; main.c    261 //****************************************************************************
-                   532   ; main.c    262 // @Function      void MAIN_vChangeFreq(void) 
-                   533   ; main.c    263 //
-                   534   ; main.c    264 //----------------------------------------------------------------------------
-                   535   ; main.c    265 // @Description   This function is used to select the external crystal and
-                   536   ; main.c    266 //                configure the system frequency to 80Mhz/66Mhz.
-                   537   ; main.c    267 //
-                   538   ; main.c    268 //----------------------------------------------------------------------------
-                   539   ; main.c    269 // @Returnvalue   None
-                   540   ; main.c    270 //
-                   541   ; main.c    271 //----------------------------------------------------------------------------
-                   542   ; main.c    272 // @Parameters    None
-                   543   ; main.c    273 //
-                   544   ; main.c    274 //----------------------------------------------------------------------------
-                   545   ; main.c    275 // @Date          24.09.2021
-                   546   ; main.c    276 //
-                   547   ; main.c    277 //****************************************************************************
-                   548   ; main.c    278 
-                   549   ; main.c    279 // USER CODE BEGIN (ChangeFreq,1)
-                   550   ; main.c    280 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 10:14:13  Page:  11
+                   496           ?LINE   250
+007A E6FCAAAA      497           MOV     R12,#0AAAAh
+007E F6FCC0F0      498           MOV     0F0C0h,R12
+                   499   ; main.c    251     SCU_SLC = 0x5554;                   // command 1
+                   500           ?LINE   251
+0082 E6FC5455      501           MOV     R12,#05554h
+0086 F6FCC0F0      502           MOV     0F0C0h,R12
+                   503   ; main.c    252 
+                   504   ; main.c    253     uwPASSWORD = SCU_SLS & 0x00FF;
+                   505           ?LINE   253
+008A F2FCC2F0      506           MOV     R12,0F0C2h
+008E 66FCFF00      507           AND     R12,#0FFh
+0092 B8C0          508           MOV     [R0],R12
+                   509   ; main.c    254     uwPASSWORD = (~uwPASSWORD) & 0x00FF;
+                   510           ?LINE   254
+0094 A8C0          511           MOV     R12,[R0]
+0096 91C0          512           CPL     R12
+0098 66FCFF00      513           AND     R12,#0FFh
+009C B8C0          514           MOV     [R0],R12
+                   515   ; main.c    255 
+                   516   ; main.c    256     SCU_SLC = 0x9600 | uwPASSWORD;      // command 2
+                   517           ?LINE   256
+009E A8C0          518           MOV     R12,[R0]
+00A0 76FC0096      519           OR      R12,#09600h
+00A4 F6FCC0F0      520           MOV     0F0C0h,R12
+                   521   ; main.c    257     SCU_SLC = 0x1800;                   // command 3; new PASSWOR is 0x00
+                   522           ?LINE   257
+00A8 E6FC0018      523           MOV     R12,#01800h
+00AC F6FCC0F0      524           MOV     0F0C0h,R12
+                   525   ; main.c    258 
+                   526   ; main.c    259     uwPASSWORD = SCU_SLS & 0x00FF;
+                   527           ?LINE   259
+00B0 F2FCC2F0      528           MOV     R12,0F0C2h
+00B4 66FCFF00      529           AND     R12,#0FFh
+00B8 B8C0          530           MOV     [R0],R12
+                   531   ; main.c    260     uwPASSWORD = (~uwPASSWORD) & 0x00FF;
+                   532           ?LINE   260
+00BA A8C0          533           MOV     R12,[R0]
+00BC 91C0          534           CPL     R12
+00BE 66FCFF00      535           AND     R12,#0FFh
+00C2 B8C0          536           MOV     [R0],R12
+                   537   ; main.c    261     SCU_SLC = 0x8E00 | uwPASSWORD;      // command 4
+                   538           ?LINE   261
+00C4 A8C0          539           MOV     R12,[R0]
+00C6 76FC008E      540           OR      R12,#08E00h
+00CA F6FCC0F0      541           MOV     0F0C0h,R12
+                   542   ; main.c    262 
+                   543   ; main.c    263 } //  End of function MAIN_vLockProtecReg
+               R   544           ?SYMB   '',$,102,1
+                   545           ?LINE   263
+00CE 0802          546           ADD     R0,#02h
+               R   547           ?SYMB   '',$,96,0
+00D0 DB00          548           RETS
+                   549   _MAIN_vLockProtecReg    ENDP
+               R   550           ?SYMB   '',$,17,263
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 15:48:39  Page:  11
 main
 
  LOC CODE        LINE   SOURCELINE
 
-                   551   ; main.c    281 // USER CODE END
-                   552   ; main.c    282 
-                   553   ; main.c    283 void MAIN_vChangeFreq(void)
-                   554   ; main.c    284 {
-                   555           ?LINE   284
-                   556           PUBLIC  _MAIN_vChangeFreq
-               R   557           ?SYMB   'MAIN_vChangeFreq',_MAIN_vChangeFreq,37,1
-                   558           ?SYMB   '',284,8,34
-                   559   _MAIN_vChangeFreq       PROC    FAR
-                   560           ?SYMB   '',00H,95,0
-                   561   ; Locals:
-                   562   ; 
-                   563   ; Statics:
-                   564   ; 
-                   565   ; CSEs:
-                   566   ; 
-                   567   ; main.c    285   SCS_SwitchToHighPrecBandgap();
-                   568           ?LINE   285
-00D4 DA000000  R   569           CALLS   SEG _SCS_SwitchToHighPrecBandgap,_SCS_SwitchToHighPrecBandgap
-                   570   ; main.c    286 
-                   571   ; main.c    287   //For application and internal application resets, the complete PLL configura
+                   551   ; main.c    264 
+                   552   ; main.c    265 
+                   553   ; main.c    266 //****************************************************************************
+                   554   ; main.c    267 // @Function      void MAIN_vChangeFreq(void) 
+                   555   ; main.c    268 //
+                   556   ; main.c    269 //----------------------------------------------------------------------------
+                   557   ; main.c    270 // @Description   This function is used to select the external crystal and
+                   558   ; main.c    271 //                configure the system frequency to 80Mhz/66Mhz.
+                   559   ; main.c    272 //
+                   560   ; main.c    273 //----------------------------------------------------------------------------
+                   561   ; main.c    274 // @Returnvalue   None
+                   562   ; main.c    275 //
+                   563   ; main.c    276 //----------------------------------------------------------------------------
+                   564   ; main.c    277 // @Parameters    None
+                   565   ; main.c    278 //
+                   566   ; main.c    279 //----------------------------------------------------------------------------
+                   567   ; main.c    280 // @Date          24.09.2021
+                   568   ; main.c    281 //
+                   569   ; main.c    282 //****************************************************************************
+                   570   ; main.c    283 
+                   571   ; main.c    284 // USER CODE BEGIN (ChangeFreq,1)
+                   572   ; main.c    285 
+                   573   ; main.c    286 // USER CODE END
+                   574   ; main.c    287 
+                   575   ; main.c    288 void MAIN_vChangeFreq(void)
+                   576   ; main.c    289 {
+                   577           ?LINE   289
+                   578           PUBLIC  _MAIN_vChangeFreq
+               R   579           ?SYMB   'MAIN_vChangeFreq',_MAIN_vChangeFreq,37,1
+                   580           ?SYMB   '',289,8,34
+                   581   _MAIN_vChangeFreq       PROC    FAR
+                   582           ?SYMB   '',00H,95,0
+                   583   ; Locals:
+                   584   ; 
+                   585   ; Statics:
+                   586   ; 
+                   587   ; CSEs:
+                   588   ; 
+                   589   ; main.c    290   SCS_SwitchToHighPrecBandgap();
+                   590           ?LINE   290
+00D2 DA000000  R   591           CALLS   SEG _SCS_SwitchToHighPrecBandgap,_SCS_SwitchToHighPrecBandgap
+                   592   ; main.c    291 
+                   593   ; main.c    292   //For application and internal application resets, the complete PLL configura
                          tion could be avoided
-                   572   ; main.c    288   //The entry from application resets and internal application reset is covered
+                   594   ; main.c    293   //The entry from application resets and internal application reset is covered
                           in the following differentiation
-                   573   ; main.c    289   //in int/ext clock in lock/unlocked state.
-                   574   ; main.c    290 
-                   575   ; main.c    291   if  ((SCU_PLLSTAT & 0x0004) == 0x0004)             // fR derived from Interna
+                   595   ; main.c    294   //in int/ext clock in lock/unlocked state.
+                   596   ; main.c    295 
+                   597   ; main.c    296   if  ((SCU_PLLSTAT & 0x0004) == 0x0004)             // fR derived from Interna
                          l clock
-                   576           ?LINE   291
-00D8 F2FCBCF0      577           MOV     R12,0F0BCh
-00DC 9AFC0720      578           JNB     R12.2,_7
-                   579   ; main.c    292         {
-                   580   ; main.c    293             //Normal startup state during boot and the clock
-                   581   ; main.c    294             //has to be in the next step configured on the external crystal
-                   582   ; main.c    295             //use XTAL/VCO, count XTAL clock
-                   583   ; main.c    296 
-                   584   ; main.c    297             SCS_StartXtalOsc(1);                     // Starts the crystal osci
+                   598           ?LINE   296
+00D6 F2FCBCF0      599           MOV     R12,0F0BCh
+00DA 9AFC0720      600           JNB     R12.2,_7
+                   601   ; main.c    297         {
+                   602   ; main.c    298             //Normal startup state during boot and the clock
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 15:48:39  Page:  12
+main
+
+ LOC CODE        LINE   SOURCELINE
+
+                   603   ; main.c    299             //has to be in the next step configured on the external crystal
+                   604   ; main.c    300             //use XTAL/VCO, count XTAL clock
+                   605   ; main.c    301 
+                   606   ; main.c    302             SCS_StartXtalOsc(1);                     // Starts the crystal osci
                          llator
-                   585           ?LINE   297
-00E0 E01C          586           MOV     R12,#01h
-00E2 DA000000  R   587           CALLS   SEG _SCS_StartXtalOsc,_SCS_StartXtalOsc
-                   588   ; main.c    298             SCS_SwitchSystemClock(1);                // System clock is increas
+                   607           ?LINE   302
+00DE E01C          608           MOV     R12,#01h
+00E0 DA000000  R   609           CALLS   SEG _SCS_StartXtalOsc,_SCS_StartXtalOsc
+                   610   ; main.c    303             SCS_SwitchSystemClock(1);                // System clock is increas
                          ed to target speed (80/66 MHz)
-                   589           ?LINE   298
-00E6 E01C          590           MOV     R12,#01h
-00E8 DA000000  R   591           CALLS   SEG _SCS_SwitchSystemClock,_SCS_SwitchSystemClock
-                   592   ; main.c    299 
-                   593   ; main.c    300         }
-                   594           ?LINE   300
-00EC DB00          595           RETS
-00EE               596   _7:
-                   597   ; main.c    301 
-                   598   ; main.c    302   else                                               // fR derived from externa
+                   611           ?LINE   303
+00E4 E01C          612           MOV     R12,#01h
+00E6 DA000000  R   613           CALLS   SEG _SCS_SwitchSystemClock,_SCS_SwitchSystemClock
+                   614   ; main.c    304 
+                   615   ; main.c    305         }
+                   616           ?LINE   305
+00EA DB00          617           RETS
+00EC               618   _7:
+                   619   ; main.c    306 
+                   620   ; main.c    307   else                                               // fR derived from externa
                          l crystal clock
-                   599   ; main.c    303         {
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 10:14:13  Page:  12
-main
-
- LOC CODE        LINE   SOURCELINE
-
-                   600   ; main.c    304             if ((SCU_PLLSTAT & 0x1009) == 0x1009)    // fR derived from externa
+                   621   ; main.c    308         {
+                   622   ; main.c    309             if ((SCU_PLLSTAT & 0x1009) == 0x1009)    // fR derived from externa
                          l crystal clock + VCO is locked
-                   601           ?LINE   304
-00EE F2FCBCF0      602           MOV     R12,0F0BCh
-00F2 66FC0910      603           AND     R12,#01009h
-00F6 46FC0910      604           CMP     R12,#01009h
-00FA 3D02          605           JMPR    cc_NE,_8
-                   606   ; main.c    305             {
-                   607   ; main.c    306                //usually after an application reset where clock need not be con
+                   623           ?LINE   309
+00EC F2FCBCF0      624           MOV     R12,0F0BCh
+00F0 66FC0910      625           AND     R12,#01009h
+00F4 46FC0910      626           CMP     R12,#01009h
+00F8 3D02          627           JMPR    cc_NE,_8
+                   628   ; main.c    310             {
+                   629   ; main.c    311                //usually after an application reset where clock need not be con
                          figured again.
-                   608   ; main.c    307                //check K2/P/N values and decide whether these values have to be
+                   630   ; main.c    312                //check K2/P/N values and decide whether these values have to be
                           adapted based on application needs.
-                   609   ; main.c    308                NOP();
-                   610           ?LINE   308
-00FC CC00          611           NOP
-                   612   ; main.c    309                //usually the PLL losss of Lock TRAP schould be enabled here.
-                   613   ; main.c    310             }
-                   614           ?LINE   310
-00FE 0D01          615           JMPR    cc_UC,_9
-0100               616   _8:
-                   617   ; main.c    311             else                                     //fR derived from external
+                   631   ; main.c    313                NOP();
+                   632           ?LINE   313
+00FA CC00          633           NOP
+                   634   ; main.c    314                //usually the PLL losss of Lock TRAP schould be enabled here.
+                   635   ; main.c    315             }
+                   636           ?LINE   315
+00FC 0D01          637           JMPR    cc_UC,_9
+00FE               638   _8:
+                   639   ; main.c    316             else                                     //fR derived from external
                           crystal clock + VCO is not locked
-                   618   ; main.c    312 
-                   619   ; main.c    313             {
-                   620   ; main.c    314                //estimate the K1 value and the current frequency
-                   621   ; main.c    315                //reduce K2/P/N values in steps so that the frequency
-                   622   ; main.c    316                //jumps is limited to 20MHz or factor of 5 whichever is minimum
-                   623   ; main.c    317                NOP();
-                   624           ?LINE   317
-0100 CC00          625           NOP
-                   626   ; main.c    318             }
-                   627           ?LINE   318
-0102               628   _9:
-                   629   ; main.c    319 
-                   630   ; main.c    320 
-                   631   ; main.c    321         }
-                   632           ?LINE   321
-0102               633   _10:
-                   634   ; main.c    322 
-                   635   ; main.c    323 } //  End of function MAIN_vChangeFreq
-                   636           ?LINE   323
-0102 DB00          637           RETS
-                   638   _MAIN_vChangeFreq       ENDP
-               R   639           ?SYMB   '',$,17,323
-                   640   ; main.c    324 
-                   641   ; main.c    325 
-                   642   ; main.c    326 //****************************************************************************
-                   643   ; main.c    327 // @Function      void main(void) 
-                   644   ; main.c    328 //
-                   645   ; main.c    329 //----------------------------------------------------------------------------
-                   646   ; main.c    330 // @Description   This is the main function.
-                   647   ; main.c    331 //
-                   648   ; main.c    332 //----------------------------------------------------------------------------
-                   649   ; main.c    333 // @Returnvalue   None
-                   650   ; main.c    334 //
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 10:14:13  Page:  13
+                   640   ; main.c    317 
+                   641   ; main.c    318             {
+                   642   ; main.c    319                //estimate the K1 value and the current frequency
+                   643   ; main.c    320                //reduce K2/P/N values in steps so that the frequency
+                   644   ; main.c    321                //jumps is limited to 20MHz or factor of 5 whichever is minimum
+                   645   ; main.c    322                NOP();
+                   646           ?LINE   322
+00FE CC00          647           NOP
+                   648   ; main.c    323             }
+                   649           ?LINE   323
+0100               650   _9:
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 15:48:39  Page:  13
 main
 
  LOC CODE        LINE   SOURCELINE
 
-                   651   ; main.c    335 //----------------------------------------------------------------------------
-                   652   ; main.c    336 // @Parameters    None
-                   653   ; main.c    337 //
-                   654   ; main.c    338 //----------------------------------------------------------------------------
-                   655   ; main.c    339 // @Date          24.09.2021
-                   656   ; main.c    340 //
-                   657   ; main.c    341 //****************************************************************************
-                   658   ; main.c    342 
-                   659   ; main.c    343 // USER CODE BEGIN (Main,1)
-                   660   ; main.c    344 void generateTable(){
-                   661           ?LINE   344
-                   662           PUBLIC  _generateTable
-               R   663           ?SYMB   'generateTable',_generateTable,37,1
-                   664           ?SYMB   '',344,8,34
-                   665   _generateTable  PROC    FAR
-                   666           ?SYMB   '',00H,95,0
-0104 26F00C00      667           SUB     R0,#0Ch
-               R   668           ?SYMB   '',$,96,12
-                   669   ; Locals:
-                   670   ;     i = offset 0
-                   671   ;     stepSize = offset 2
-                   672   ;     PR = offset 10
-                   673   ; 
-                   674   ; Statics:
-                   675   ; 
-                   676   ; CSEs:
-                   677   ; 
-                   678   ; main.c    345         unsigned int PR = CCU63_T12PR;
-                   679           ?SYMB   'PR',3,98,18
-               R   680           ?SYMB   '-2',$,101,3
-                   681           ?LINE   345
-0108 F2FC92EB      682           MOV     R12,0EB92h
-010C C4C00A00      683           MOV     [R0+#0AH],R12
-                   684   ; main.c    346         double stepSize = (2*pi)/(ARRAY_SIZE);
-                   685           ?SYMB   'stepSize',2,98,11
-               R   686           ?SYMB   '-a',$,101,2
-                   687           ?LINE   346
-0110 F2F40000  R   688           MOV     R4,_pi
-0114 F2F50000  R   689           MOV     R5,(_pi+2)
-0118 E6FA0040      690           MOV     R10,#04000h
-011C E00B          691           MOV     R11,#00h
-011E DA000000  R   692           CALLS   SEG __mlf4r,__mlf4r
-0122 E6FA1644      693           MOV     R10,#04416h
-0126 E00B          694           MOV     R11,#00h
-0128 DA000000  R   695           CALLS   SEG __dvf4r,__dvf4r
-012C DA000000  R   696           CALLS   SEG __cff48r,__cff48r
-               R   697           ?SYMB   '',$,96,20
-0130 F040          698           MOV     R4,R0
-0132 06F40A00      699           ADD     R4,#0Ah
-0136 DA000000  R   700           CALLS   SEG __store8n,__store8n
-013A 06F00800      701           ADD     R0,#08h
-               R   702           ?SYMB   '',$,96,12
-                   703   ; main.c    347         int i;
-                   704           ?SYMB   'i',1,98,16
-               R   705           ?SYMB   '-c',$,101,1
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 10:14:13  Page:  14
+                   651   ; main.c    324 
+                   652   ; main.c    325 
+                   653   ; main.c    326         }
+                   654           ?LINE   326
+0100               655   _10:
+                   656   ; main.c    327 
+                   657   ; main.c    328 } //  End of function MAIN_vChangeFreq
+                   658           ?LINE   328
+0100 DB00          659           RETS
+                   660   _MAIN_vChangeFreq       ENDP
+               R   661           ?SYMB   '',$,17,328
+                   662   ; main.c    329 
+                   663   ; main.c    330 
+                   664   ; main.c    331 //****************************************************************************
+                   665   ; main.c    332 // @Function      void main(void) 
+                   666   ; main.c    333 //
+                   667   ; main.c    334 //----------------------------------------------------------------------------
+                   668   ; main.c    335 // @Description   This is the main function.
+                   669   ; main.c    336 //
+                   670   ; main.c    337 //----------------------------------------------------------------------------
+                   671   ; main.c    338 // @Returnvalue   None
+                   672   ; main.c    339 //
+                   673   ; main.c    340 //----------------------------------------------------------------------------
+                   674   ; main.c    341 // @Parameters    None
+                   675   ; main.c    342 //
+                   676   ; main.c    343 //----------------------------------------------------------------------------
+                   677   ; main.c    344 // @Date          24.09.2021
+                   678   ; main.c    345 //
+                   679   ; main.c    346 //****************************************************************************
+                   680   ; main.c    347 
+                   681   ; main.c    348 // USER CODE BEGIN (Main,1)
+                   682   ; main.c    349 
+                   683   ; main.c    350 // USER CODE END
+                   684   ; main.c    351 
+                   685   ; main.c    352 void main(void)
+                   686   ; main.c    353 {
+                   687           ?LINE   353
+                   688           PUBLIC  _main
+               R   689           ?SYMB   'main',_main,37,1
+                   690           ?SYMB   '',353,8,34
+                   691   _main   PROC    FAR
+                   692           ?SYMB   '',00H,95,0
+                   693   ; Locals:
+                   694   ; 
+                   695   ; Statics:
+                   696   ; 
+                   697   ; CSEs:
+                   698   ; 
+                   699   ; main.c    354   // USER CODE BEGIN (Main,2)
+                   700   ; main.c    355 
+                   701   ; main.c    356   // USER CODE END
+                   702   ; main.c    357 
+                   703   ; main.c    358   MAIN_vInit();
+                   704           ?LINE   358
+0102 DA000000  R   705           CALLS   SEG _MAIN_vInit,_MAIN_vInit
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 15:48:39  Page:  14
 main
 
  LOC CODE        LINE   SOURCELINE
 
-                   706   ; main.c    348         for (i = 0; i < ARRAY_SIZE; i++){ 
-                   707           ?LINE   348
-013E E00C          708           MOV     R12,#00h
-0140 B8C0          709           MOV     [R0],R12
-0142 0D31          710           JMPR    cc_UC,_17
-0144               711   _16:
-                   712   ; main.c    349                 table[i] = (unsigned int)((PR/2)*(sin(stepSize * i) + 1));
-                   713           ?LINE   349
-0144 26F00800      714           SUB     R0,#08h
-               R   715           ?SYMB   '',$,96,20
-0148 E0A4          716           MOV     R4,#0Ah
-014A 0040          717           ADD     R4,R0
-014C DA000000  R   718           CALLS   SEG __load8n,__load8n
-               R   719           ?SYMB   '',$,96,28
-0150 D4B01000      720           MOV     R11,[R0+#010H]
-0154 F04B          721           MOV     R4,R11
-0156 F0CA          722           MOV     R12,R10
-0158 DA000000  R   723           CALLS   SEG __cif28r,__cif28r
-               R   724           ?SYMB   '',$,96,36
-015C F0BA          725           MOV     R11,R10
-015E F0AC          726           MOV     R10,R12
-0160 DA000000  R   727           CALLS   SEG __mlf8r,__mlf8r
-0164 06F00800      728           ADD     R0,#08h
-               R   729           ?SYMB   '',$,96,28
-0168 DA000000  R   730           CALLS   SEG _sin,_sin
-016C 06F00800      731           ADD     R0,#08h
-               R   732           ?SYMB   '',$,96,20
-0170 F0B4          733           MOV     R11,R4
-0172 E6F40000  R   734           MOV     R4,#_13
-0176 DA000000  R   735           CALLS   SEG __load8n,__load8n
-               R   736           ?SYMB   '',$,96,28
-017A DA000000  R   737           CALLS   SEG __adf8r,__adf8r
-017E F0BA          738           MOV     R11,R10
-0180 D4A01A00      739           MOV     R10,[R0+#01AH]
-0184 7C1A          740           SHR     R10,#01h
-0186 F04A          741           MOV     R4,R10
-0188 DA000000  R   742           CALLS   SEG __cuf28r,__cuf28r
-               R   743           ?SYMB   '',$,96,36
-018C DA000000  R   744           CALLS   SEG __mlf8r,__mlf8r
-0190 DA000000  R   745           CALLS   SEG __cfu82r,__cfu82r
-0194 06F01800      746           ADD     R0,#018h
-               R   747           ?SYMB   '',$,96,12
-0198 A8C0          748           MOV     R12,[R0]
-019A 5C1C          749           SHL     R12,#01h
-019C C44C0000  R   750           MOV     [R12+#_table],R4
-                   751           ?LINE   348
-01A0 A8C0          752           MOV     R12,[R0]
-01A2 08C1          753           ADD     R12,#01h
-01A4 B8C0          754           MOV     [R0],R12
-01A6               755   _17:
-01A6 A8C0          756           MOV     R12,[R0]
-01A8 46FC5802      757           CMP     R12,#0258h
-01AC CDCB          758           JMPR    cc_SLT,_16
-                   759   ; main.c    350         }
-                   760   ; main.c    351 }
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 10:14:13  Page:  15
+                   706   ; main.c    359 
+                   707   ; main.c    360   // USER CODE BEGIN (Main,3)
+                   708   ; main.c    361         generateTable();
+                   709           ?LINE   361
+0106 DA003C01  R   710           CALLS   SEG _generateTable,_generateTable
+                   711   ; main.c    362         CCU63_vStartTmr(CCU63_TIMER_12);
+                   712           ?LINE   362
+010A E6FCA6EB      713           MOV     R12,#0EBA6h
+010E A8DC          714           MOV     R13,[R12]
+0110 1FFD          715           BSET    R13.1
+0112 B8DC          716           MOV     [R12],R13
+                   717   ; main.c    363         CCU62_vStartTmr(CCU62_TIMER_12);
+                   718           ?LINE   363
+0114 E6FC26EB      719           MOV     R12,#0EB26h
+0118 A8DC          720           MOV     R13,[R12]
+011A 1FFD          721           BSET    R13.1
+011C B8DC          722           MOV     [R12],R13
+                   723   ; main.c    364         IO_vSetPin(LED_DBG);
+                   724           ?LINE   364
+011E E01C          725           MOV     R12,#01h
+0120 F6FCE0E9      726           MOV     0E9E0h,R12
+                   727   ; main.c    365         CCU62_vSetTmrPeriod(CCU62_TIMER_12, 0xFDE7);
+                   728           ?LINE   365
+0124 E6FCE7FD      729           MOV     R12,#0FDE7h
+0128 F6FC12EB      730           MOV     0EB12h,R12
+                   731   ; main.c    366         CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
+                   732           ?LINE   366
+012C E6FC26EB      733           MOV     R12,#0EB26h
+0130 A8DC          734           MOV     R13,[R12]
+0132 6FFD          735           BSET    R13.6
+0134 B8DC          736           MOV     [R12],R13
+                   737   ; main.c    367   // USER CODE END
+                   738   ; main.c    368 
+                   739   ; main.c    369   while(1)
+                   740           ?LINE   369
+0136 0D00          741           JMPR    cc_UC,_13
+0138               742   _13:
+0138               743   _14:
+0138 0DFF          744           JMPR    cc_UC,_14
+                   745   ; main.c    370   {
+                   746   ; main.c    371 
+                   747   ; main.c    372    // USER CODE BEGIN (Main,4)
+                   748   ; main.c    373 
+                   749   ; main.c    374    // USER CODE END
+                   750   ; main.c    375 
+                   751   ; main.c    376   }
+                   752   ; main.c    377 
+                   753   ; main.c    378 } //  End of function main
+                   754           ?LINE   378
+013A DB00          755           RETS
+                   756   _main   ENDP
+               R   757           ?SYMB   '',$,17,378
+                   758   ; main.c    379 
+                   759   ; main.c    380 
+                   760   ; main.c    381 
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 15:48:39  Page:  15
 main
 
  LOC CODE        LINE   SOURCELINE
 
-               R   761           ?SYMB   '',$,102,1
-               R   762           ?SYMB   '',$,102,2
-               R   763           ?SYMB   '',$,102,3
-                   764           ?LINE   351
-01AE 06F00C00      765           ADD     R0,#0Ch
-               R   766           ?SYMB   '',$,96,0
-01B2 DB00          767           RETS
-                   768   _generateTable  ENDP
-               R   769           ?SYMB   '',$,17,351
-                   770   ; main.c    352 
-                   771   ; main.c    353 // USER CODE END
-                   772   ; main.c    354 
-                   773   ; main.c    355 void main(void)
-                   774   ; main.c    356 {
-                   775           ?LINE   356
-                   776           PUBLIC  _main
-               R   777           ?SYMB   'main',_main,37,1
-                   778           ?SYMB   '',356,8,34
-                   779   _main   PROC    FAR
-                   780           ?SYMB   '',00H,95,0
-                   781   ; Locals:
-                   782   ; 
-                   783   ; Statics:
-                   784   ; 
-                   785   ; CSEs:
-                   786   ; 
-                   787   ; main.c    357   // USER CODE BEGIN (Main,2)
-                   788   ; main.c    358 
-                   789   ; main.c    359   // USER CODE END
-                   790   ; main.c    360 
-                   791   ; main.c    361   MAIN_vInit();
-                   792           ?LINE   361
-01B4 DA000000  R   793           CALLS   SEG _MAIN_vInit,_MAIN_vInit
-                   794   ; main.c    362 
-                   795   ; main.c    363   // USER CODE BEGIN (Main,3)
-                   796   ; main.c    364         generateTable();
-                   797           ?LINE   364
-01B8 DA000401  R   798           CALLS   SEG _generateTable,_generateTable
-                   799   ; main.c    365         IO_vSetPin(LED_DBG);
-                   800           ?LINE   365
-01BC E01C          801           MOV     R12,#01h
-01BE F6FCE0E9      802           MOV     0E9E0h,R12
-                   803   ; main.c    366     // USER CODE END
-                   804   ; main.c    367 
-                   805   ; main.c    368   while(1)
-                   806           ?LINE   368
-01C2 0D00          807           JMPR    cc_UC,_20
-01C4               808   _20:
-01C4               809   _21:
-01C4 0DFF          810           JMPR    cc_UC,_21
-                   811   ; main.c    369   {
-                   812   ; main.c    370 
-                   813   ; main.c    371    // USER CODE BEGIN (Main,4)
-                   814   ; main.c    372 
-                   815   ; main.c    373    // USER CODE END
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 10:14:13  Page:  16
+                   761   ; main.c    382 // USER CODE BEGIN (MAIN_General,10)
+                   762   ; main.c    383 void generateTable(){
+                   763           ?LINE   383
+                   764           PUBLIC  _generateTable
+               R   765           ?SYMB   'generateTable',_generateTable,37,1
+                   766           ?SYMB   '',383,8,34
+                   767   _generateTable  PROC    FAR
+                   768           ?SYMB   '',00H,95,0
+013C 26F00A00      769           SUB     R0,#0Ah
+               R   770           ?SYMB   '',$,96,10
+                   771   ; Locals:
+                   772   ;     i = offset 0
+                   773   ;     stepSize = offset 2
+                   774   ; 
+                   775   ; Statics:
+                   776   ; 
+                   777   ; CSEs:
+                   778   ; 
+                   779   ; main.c    384         double stepSize = (2*pi)/(ARRAY_SIZE);
+                   780           ?SYMB   'stepSize',2,98,11
+               R   781           ?SYMB   '-8',$,101,2
+                   782           ?LINE   384
+0140 F2F40000  R   783           MOV     R4,_pi
+0144 F2F50000  R   784           MOV     R5,(_pi+2)
+0148 E6FA0040      785           MOV     R10,#04000h
+014C E00B          786           MOV     R11,#00h
+014E DA000000  R   787           CALLS   SEG __mlf4r,__mlf4r
+0152 E6FA1644      788           MOV     R10,#04416h
+0156 E00B          789           MOV     R11,#00h
+0158 DA000000  R   790           CALLS   SEG __dvf4r,__dvf4r
+015C DA000000  R   791           CALLS   SEG __cff48r,__cff48r
+               R   792           ?SYMB   '',$,96,18
+0160 F040          793           MOV     R4,R0
+0162 06F40A00      794           ADD     R4,#0Ah
+0166 DA000000  R   795           CALLS   SEG __store8n,__store8n
+016A 06F00800      796           ADD     R0,#08h
+               R   797           ?SYMB   '',$,96,10
+                   798   ; main.c    385         int i;
+                   799           ?SYMB   'i',1,98,16
+               R   800           ?SYMB   '-a',$,101,1
+                   801   ; main.c    386         for (i = 0; i < ARRAY_SIZE; i++){ 
+                   802           ?LINE   386
+016E E00C          803           MOV     R12,#00h
+0170 B8C0          804           MOV     [R0],R12
+0172 0D38          805           JMPR    cc_UC,_22
+0174               806   _21:
+                   807   ; main.c    387                 table[i] = (unsigned int)((double)(CCU63_T12PR/2)*(sin(stepSize
+                          * i) + 1) + 0.5);
+                   808           ?LINE   387
+0174 26F00800      809           SUB     R0,#08h
+               R   810           ?SYMB   '',$,96,18
+0178 E0A4          811           MOV     R4,#0Ah
+017A 0040          812           ADD     R4,R0
+017C DA000000  R   813           CALLS   SEG __load8n,__load8n
+               R   814           ?SYMB   '',$,96,26
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 15:48:39  Page:  16
 main
 
  LOC CODE        LINE   SOURCELINE
 
-                   816   ; main.c    374 
-                   817   ; main.c    375   }
-                   818   ; main.c    376 
-                   819   ; main.c    377 } //  End of function main
-                   820           ?LINE   377
-01C6 DB00          821           RETS
-                   822   _main   ENDP
-               R   823           ?SYMB   '',$,17,377
-                   824   ; main.c    378 
-                   825   ; main.c    379 
-                   826   ; main.c    380 
-                   827   ; main.c    381 // USER CODE BEGIN (MAIN_General,10)
-                   828   ; main.c    382 
-                   829   ; main.c    383 // USER CODE END
-                   830   ; main.c    384 
-                   831   MAIN_3_PR       ENDS
-                   832   
-                   833   MAIN_4_NB       SECTION LDAT WORD PUBLIC 'CNEAR'
-0000               834   MAIN_4_NB_ENTRY LABEL   BYTE
-0000               835   _table  LABEL   WORD
-0000               836           DS      1200
-                   837           PUBLIC  _table
-                   838           ?SYMB   '',011d0012H,5,284
-                   839           ?SYMB   '',16,47,285
-                   840           ?SYMB   '',0,30,0
-                   841           ?SYMB   '',599,49,0
-               R   842           ?SYMB   'table',_table,22,284
-04B0               843   _index  LABEL   WORD
-04B0               844           DS      2
-                   845           PUBLIC  _index
-               R   846           ?SYMB   'index',_index,22,18
-                   847   MAIN_4_NB       ENDS
-                   848   
-                   849   MAIN_5_CO       SECTION LDAT WORD PUBLIC 'CROM'
-0000               850   _13     LABEL   WORD
-0000 F03F0000      851           DW      03FF0h,00h,00h,00h
+0180 D4B01000      815           MOV     R11,[R0+#010H]
+0184 F04B          816           MOV     R4,R11
+0186 F0CA          817           MOV     R12,R10
+0188 DA000000  R   818           CALLS   SEG __cif28r,__cif28r
+               R   819           ?SYMB   '',$,96,34
+018C F0BA          820           MOV     R11,R10
+018E F0AC          821           MOV     R10,R12
+0190 DA000000  R   822           CALLS   SEG __mlf8r,__mlf8r
+0194 06F00800      823           ADD     R0,#08h
+               R   824           ?SYMB   '',$,96,26
+0198 DA000000  R   825           CALLS   SEG _sin,_sin
+019C 06F00800      826           ADD     R0,#08h
+               R   827           ?SYMB   '',$,96,18
+01A0 F0B4          828           MOV     R11,R4
+01A2 E6F40000  R   829           MOV     R4,#_18
+01A6 DA000000  R   830           CALLS   SEG __load8n,__load8n
+               R   831           ?SYMB   '',$,96,26
+01AA DA000000  R   832           CALLS   SEG __adf8r,__adf8r
+01AE F0BA          833           MOV     R11,R10
+01B0 F2FA92EB      834           MOV     R10,0EB92h
+01B4 7C1A          835           SHR     R10,#01h
+01B6 F04A          836           MOV     R4,R10
+01B8 DA000000  R   837           CALLS   SEG __cuf28r,__cuf28r
+               R   838           ?SYMB   '',$,96,34
+01BC DA000000  R   839           CALLS   SEG __mlf8r,__mlf8r
+01C0 F0BA          840           MOV     R11,R10
+01C2 E6F40000  R   841           MOV     R4,#_17
+01C6 DA000000  R   842           CALLS   SEG __load8n,__load8n
+               R   843           ?SYMB   '',$,96,42
+01CA DA000000  R   844           CALLS   SEG __adf8r,__adf8r
+01CE DA000000  R   845           CALLS   SEG __cfu82r,__cfu82r
+01D2 06F02000      846           ADD     R0,#020h
+               R   847           ?SYMB   '',$,96,10
+01D6 A8C0          848           MOV     R12,[R0]
+01D8 5C1C          849           SHL     R12,#01h
+01DA C44C0000  R   850           MOV     [R12+#_table],R4
+                   851           ?LINE   386
+01DE A8C0          852           MOV     R12,[R0]
+01E0 08C1          853           ADD     R12,#01h
+01E2 B8C0          854           MOV     [R0],R12
+01E4               855   _22:
+01E4 A8C0          856           MOV     R12,[R0]
+01E6 46FC5802      857           CMP     R12,#0258h
+01EA 8DC4          858           JMPR    cc_ULT,_21
+                   859   ; main.c    388         }
+                   860   ; main.c    389 }
+               R   861           ?SYMB   '',$,102,1
+               R   862           ?SYMB   '',$,102,2
+                   863           ?LINE   389
+01EC 06F00A00      864           ADD     R0,#0Ah
+               R   865           ?SYMB   '',$,96,0
+01F0 DB00          866           RETS
+                   867   _generateTable  ENDP
+               R   868           ?SYMB   '',$,17,389
+                   869   ; main.c    390 // USER CODE END
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 15:48:39  Page:  17
+main
+
+ LOC CODE        LINE   SOURCELINE
+
+                   870   ; main.c    391 
+                   871   MAIN_4_PR       ENDS
+                   872   
+                   873   MAIN_5_NB       SECTION LDAT WORD PUBLIC 'CNEAR'
+0000               874   MAIN_5_NB_ENTRY LABEL   BYTE
+0000               875   _table  LABEL   WORD
+0000               876           DS      1200
+                   877           PUBLIC  _table
+                   878           ?SYMB   '',011d0012H,5,284
+                   879           ?SYMB   '',16,47,285
+                   880           ?SYMB   '',0,30,0
+                   881           ?SYMB   '',599,49,0
+               R   882           ?SYMB   'table',_table,22,284
+04B0               883   _index  LABEL   WORD
+04B0               884           DS      2
+                   885           PUBLIC  _index
+               R   886           ?SYMB   'index',_index,22,18
+                   887   MAIN_5_NB       ENDS
+                   888   
+                   889   MAIN_6_CO       SECTION LDAT WORD PUBLIC 'CROM'
+0000               890   _18     LABEL   WORD
+0000 F03F0000      891           DW      03FF0h,00h,00h,00h
 0004 00000000    
-                   852   MAIN_5_CO       ENDS
-                   853   
-                   854   C166_US SECTION LDAT WORD GLBUSRSTACK 'CUSTACK'
-0000               855           DS      40
-                   856   C166_US ENDS
-                   857   
-                   858   C166_INIT       SECTION PDAT WORD GLOBAL 'CINITROM'
-0000 0600          859           DW      06h
-0002 00000000  R   860           DPPTR   MAIN_ID_NB_ENTRY,MAIN_IR_NB_ENTRY
+0008               892   _17     LABEL   WORD
+0008 E03F0000      893           DW      03FE0h,00h,00h,00h
+000C 00000000    
+                   894   MAIN_6_CO       ENDS
+                   895   
+                   896   C166_US SECTION LDAT WORD GLBUSRSTACK 'CUSTACK'
+0000               897           DS      46
+                   898   C166_US ENDS
+                   899   
+                   900   C166_INIT       SECTION PDAT WORD GLOBAL 'CINITROM'
+0000 0600          901           DW      06h
+0002 00000000  R   902           DPPTR   MAIN_ID_NB_ENTRY,MAIN_IR_NB_ENTRY
 0006 00000000    
-000A 0400          861           DW      04h
-                   862   C166_INIT       ENDS
-                   863   
-                   864   C166_BSS        SECTION PDAT WORD GLOBAL 'CINITROM'
-0000 05000000  R   865           DW      05h,MAIN_4_NB_ENTRY,04B2h
+000A 0400          903           DW      04h
+                   904   C166_INIT       ENDS
+                   905   
+                   906   C166_BSS        SECTION PDAT WORD GLOBAL 'CINITROM'
+0000 05000000  R   907           DW      05h,MAIN_5_NB_ENTRY,04B2h
 0004 B204        
-                   866   C166_BSS        ENDS
-                   867   
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 10:14:13  Page:  17
+                   908   C166_BSS        ENDS
+                   909   
+                   910   $FLOAT(ANSI)
+                   911           EXTERN  _CCU62_vInit:FAR
+                   912           EXTERN  _CC2_vInit:FAR
+                   913           EXTERN  _CCU63_vInit:FAR
+                   914           EXTERN  _sin:FAR
+                   915           EXTERN  _SCS_SwitchToHighPrecBandgap:FAR
+                   916           EXTERN  _SCS_StartXtalOsc:FAR
+                   917           EXTERN  _IO_vInit:FAR
+                   918           EXTERN  _GPT2_vInit:FAR
+                   919           EXTERN  _GPT1_vInit:FAR
+                   920           EXTERN  _SCS_SwitchSystemClock:FAR
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 15:48:39  Page:  18
 main
 
  LOC CODE        LINE   SOURCELINE
 
-                   868   $FLOAT(ANSI)
-                   869           EXTERN  _CC2_vInit:FAR
-                   870           EXTERN  _CCU63_vInit:FAR
-                   871           EXTERN  _sin:FAR
-                   872           EXTERN  _SCS_SwitchToHighPrecBandgap:FAR
-                   873           EXTERN  _SCS_StartXtalOsc:FAR
-                   874           EXTERN  _IO_vInit:FAR
-                   875           EXTERN  _GPT2_vInit:FAR
-                   876           EXTERN  _GPT1_vInit:FAR
-                   877           EXTERN  _SCS_SwitchSystemClock:FAR
-                   878           EXTERN  __mlf4r:FAR
-                   879           EXTERN  __dvf4r:FAR
-                   880           EXTERN  __cff48r:FAR
-                   881           EXTERN  __store8n:FAR
-                   882           EXTERN  __load8n:FAR
-                   883           EXTERN  __cif28r:FAR
-                   884           EXTERN  __mlf8r:FAR
-                   885           EXTERN  __adf8r:FAR
-                   886           EXTERN  __cuf28r:FAR
-                   887           EXTERN  __cfu82r:FAR
-                   888           EXTERN  __CSTART:FAR
-                   889           REGDEF  R0-R15
-                   890           END
+                   921           EXTERN  __mlf4r:FAR
+                   922           EXTERN  __dvf4r:FAR
+                   923           EXTERN  __cff48r:FAR
+                   924           EXTERN  __store8n:FAR
+                   925           EXTERN  __load8n:FAR
+                   926           EXTERN  __cif28r:FAR
+                   927           EXTERN  __mlf8r:FAR
+                   928           EXTERN  __adf8r:FAR
+                   929           EXTERN  __cuf28r:FAR
+                   930           EXTERN  __cfu82r:FAR
+                   931           EXTERN  __CSTART:FAR
+                   932           REGDEF  R0-R15
+                   933           END
 
 total errors: 0, warnings: 0
 

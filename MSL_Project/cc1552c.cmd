@@ -1,0 +1,1 @@
+main.src TO main.obj NOPR PR(main.lst) PL(60) PW(120) TA(8) WA(1) NOM166 SN(regxe167f.def) EXTEND2 
