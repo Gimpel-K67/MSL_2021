@@ -58,8 +58,9 @@ window_data.rectangle: (5,23,197,129)
 window_data0: 1
 window_data0.autolocals: FALSE
 window_data0.expression.0: S:table/n
+window_data0.expression.1: W:ccu62_pr/n
 window_data0.hex_display: FALSE
-window_data0.nr_of_expressions: 1
+window_data0.nr_of_expressions: 2
 window_data0.rectangle: (8,39,315,220)
 window_memory.defaults.base_type: unsigned char
 window_memory.defaults.display_mode: x

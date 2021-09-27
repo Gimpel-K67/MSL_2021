@@ -12,7 +12,7 @@
 // @Description   This file contains the project initialization function.
 //
 //----------------------------------------------------------------------------
-// @Date          24.09.2021 15:34:14
+// @Date          27.09.2021 10:03:54
 //
 //****************************************************************************
 
@@ -74,12 +74,14 @@
 //****************************************************************************
 
 // USER CODE BEGIN (MAIN_General,7)
-	const unsigned int ARRAY_SIZE = 300;
+	const unsigned int frequency = 40;
+	const unsigned int ARRAY_SIZE = 1200;
 	const unsigned int OFFSET_L2 = ARRAY_SIZE/3;
 	const unsigned int OFFSET_L3 = (2*ARRAY_SIZE)/3;
 	unsigned int table[ARRAY_SIZE];
 	unsigned int index;
 	float pi = 3.14159265359;
+	unsigned int ccu62_pr = 1/(frequency * ARRAY_SIZE*0.000000015);
 // USER CODE END
 
 
@@ -114,7 +116,7 @@ void generateTable();
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          24.09.2021
+// @Date          27.09.2021
 //
 //****************************************************************************
 
@@ -197,7 +199,7 @@ void MAIN_vInit(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          24.09.2021
+// @Date          27.09.2021
 //
 //****************************************************************************
 
@@ -235,7 +237,7 @@ void MAIN_vUnlockProtecReg(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          24.09.2021
+// @Date          27.09.2021
 //
 //****************************************************************************
 
@@ -277,7 +279,7 @@ void MAIN_vLockProtecReg(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          24.09.2021
+// @Date          27.09.2021
 //
 //****************************************************************************
 
@@ -341,7 +343,7 @@ void MAIN_vChangeFreq(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          24.09.2021
+// @Date          27.09.2021
 //
 //****************************************************************************
 
@@ -362,7 +364,7 @@ void main(void)
 	CCU63_vStartTmr(CCU63_TIMER_12);
 	CCU62_vStartTmr(CCU62_TIMER_12);
 	IO_vSetPin(LED_DBG);
-	CCU62_vSetTmrPeriod(CCU62_TIMER_12, 0xFDE7);
+	CCU62_vSetTmrPeriod(CCU62_TIMER_12, ccu62_pr);
 	CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
   // USER CODE END
 
@@ -384,7 +386,7 @@ void generateTable(){
 	double stepSize = (2*pi)/(ARRAY_SIZE);
 	int i;
 	for (i = 0; i < ARRAY_SIZE; i++){ 
-		table[i] = (unsigned int)((double)(CCU63_T12PR/2)*(sin(stepSize * i) + 1) + 0.5);
+		table[i] = (unsigned int)((double)((CCU63_T12PR - 140)/2)*sin(stepSize * i) + (CCU63_T12PR/2));
 	}
 }
 // USER CODE END

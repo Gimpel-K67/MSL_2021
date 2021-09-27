@@ -1,22 +1,22 @@
 TASKING program builder v8.7r1 Build 088
 Warning: Infinite loop detected; Not building sub-project mps_main.pjt
 Linking and locating to mps_main.out
-Trial version.  12 day(s) remaining
+Trial version.  11 day(s) remaining
 
-	Number of symbols		: 1253
-	Number of sections		: 30
+	Number of symbols		: 1256
+	Number of sections		: 29
 	Number of groups		: 0
 	Number of classes		: 10
 	Number of modules		: 32
-	Total section size		: 000238Ch
+	Total section size		: 0002836h
 	Total memory size		: 0344A04h
 		consisting of RAM	: 0284A04h
 		              ROM	: 00C0000h
-	Total RAM filled		: 00007F2h
+	Total RAM filled		: 0000C9Ch
 	Total ROM filled		: 0001B9Ah
 	System stack size		: 0000200h
 	Heap size			: 0000000h
-	User stack size			: 000012Ch
+	User stack size			: 0000124h
 	Time spent			: 00:00:2.20
 Converting mps_main.out to mps_main.abs in IEEE-695 format
-Trial version.  12 day(s) remaining
+Trial version.  11 day(s) remaining

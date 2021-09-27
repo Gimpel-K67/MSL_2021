@@ -9,7 +9,7 @@
 '                PLEASE DO NOT MODIFY THIS FILE !
 '
 '----------------------------------------------------------------------------
-; Date          24.09.2021 15:34:16
+; Date          27.09.2021 10:03:56
 '
 '****************************************************************************
 
@@ -9982,7 +9982,7 @@ CCU63_IEN_ENCHE=0
 CCU63_IEN_ENIDLE=0
 CCU63_IEN_ENSTR=0
 CCU63_IEN_ENT12OM=1
-CCU63_IEN_ENT12PM=0
+CCU63_IEN_ENT12PM=1
 CCU63_IEN_ENT13CM=0
 CCU63_IEN_ENT13PM=0
 CCU63_IEN_ENTRPF=0

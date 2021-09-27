@@ -1,4 +1,4 @@
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 15:34:28  Page:   1
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 10:04:07  Page:   1
 cc2
 
  LOC CODE        LINE   SOURCELINE
@@ -49,7 +49,7 @@ cc2
                     44   ; cc2.c      12 // @Description   This file contains functions that use the CC2 module.
                     45   ; cc2.c      13 //
                     46   ; cc2.c      14 //----------------------------------------------------------------------------
-                    47   ; cc2.c      15 // @Date          24.09.2021 15:34:16
+                    47   ; cc2.c      15 // @Date          27.09.2021 10:03:55
                     48   ; cc2.c      16 //
                     49   ; cc2.c      17 //****************************************************************************
                     50   ; cc2.c      18 
@@ -58,7 +58,7 @@ cc2
                     53   ; cc2.c      21 // USER CODE END
                     54   ; cc2.c      22 
                     55   ; cc2.c      23 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 15:34:28  Page:   2
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 10:04:07  Page:   2
 cc2
 
  LOC CODE        LINE   SOURCELINE
@@ -118,7 +118,7 @@ cc2
                    108   ; cc2.c      38 //****************************************************************************
                    109   ; cc2.c      39 
                    110   ; cc2.c      40 // USER CODE BEGIN (CC2_General,3)
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 15:34:28  Page:   3
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 10:04:07  Page:   3
 cc2
 
  LOC CODE        LINE   SOURCELINE
@@ -178,7 +178,7 @@ cc2
                    163   ; cc2.c      93 
                    164   ; cc2.c      94 // USER CODE BEGIN (CC2_General,9)
                    165   ; cc2.c      95 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 15:34:28  Page:   4
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 10:04:07  Page:   4
 cc2
 
  LOC CODE        LINE   SOURCELINE
@@ -201,7 +201,7 @@ cc2
                    181   ; cc2.c     111 // @Parameters    None
                    182   ; cc2.c     112 //
                    183   ; cc2.c     113 //----------------------------------------------------------------------------
-                   184   ; cc2.c     114 // @Date          24.09.2021
+                   184   ; cc2.c     114 // @Date          27.09.2021
                    185   ; cc2.c     115 //
                    186   ; cc2.c     116 //****************************************************************************
                    187   ; cc2.c     117 
@@ -238,7 +238,7 @@ cc2
                    218           ?SYMB   'bit1',1,23,262
                    219           ?SYMB   'bit2',2,23,263
                    220           ?SYMB   'bit3',3,23,264
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 15:34:28  Page:   5
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 10:04:07  Page:   5
 cc2
 
  LOC CODE        LINE   SOURCELINE
@@ -298,7 +298,7 @@ cc2
                    273   ; cc2.c     147   ////   unit. Use the macro CC2_vPortUnlock() for unlock the port.
                    274   ; cc2.c     148 
                    275   ; cc2.c     149   CC2_IOC        =  0x0002;      // load CAPCOM2 I/O control register
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 15:34:28  Page:   6
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 10:04:07  Page:   6
 cc2
 
  LOC CODE        LINE   SOURCELINE
@@ -358,7 +358,7 @@ cc2
                    328   ; cc2.c     190 
                    329   ; cc2.c     191   ///  -----------------------------------------------------------------------
                    330   ; cc2.c     192   ///  Configuration of the used CAPCOM2 Channel 17:
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 15:34:28  Page:   7
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 10:04:07  Page:   7
 cc2
 
  LOC CODE        LINE   SOURCELINE
@@ -418,7 +418,7 @@ cc2
                    383   ; cc2.c     245 
                    384   ; cc2.c     246   ///  -----------------------------------------------------------------------
                    385   ; cc2.c     247   ///  Configuration of the used CAPCOM2 Channel 28:
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 15:34:28  Page:   8
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 10:04:07  Page:   8
 cc2
 
  LOC CODE        LINE   SOURCELINE
@@ -478,7 +478,7 @@ cc2
                    438   ; cc2.c     291 
                    439   CC2_1_PR        ENDS
                    440   
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 24 2021  Time: 15:34:28  Page:   9
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 10:04:07  Page:   9
 cc2
 
  LOC CODE        LINE   SOURCELINE

@@ -12,7 +12,7 @@
 // @Description   This file contains functions that use the CCU63 module.
 //
 //----------------------------------------------------------------------------
-// @Date          24.09.2021 15:34:16
+// @Date          27.09.2021 10:03:55
 //
 //****************************************************************************
 
@@ -115,7 +115,7 @@
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          24.09.2021
+// @Date          27.09.2021
 //
 //****************************************************************************
 
@@ -154,7 +154,7 @@ void CCU63_vInit(void)
   ///  - Timer 12 run bit is reset
   ///  - Single shot mode is disabled
   ///  - Timer 12 works in center aligned mode
-  ///  - Interrupt on period match is disabled
+  ///  - Interrupt on period match is enabled
   ///  - Interrupt on one match is enabled
   ///  - No External run selection is selected.
   ///  - Timer mode is selected.
@@ -304,7 +304,7 @@ void CCU63_vInit(void)
   CCU63_INP      =  0x0000;      // Load CCU63 capture/compare interrupt node 
                                  // pointer register
 
-  CCU63_IEN      =  0x0040;      // Load CCU63 capture/compare interrupt 
+  CCU63_IEN      =  0x00C0;      // Load CCU63 capture/compare interrupt 
                                  // enable register
 
 
@@ -374,7 +374,7 @@ void CCU63_vInit(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          24.09.2021
+// @Date          27.09.2021
 //
 //****************************************************************************
 
@@ -400,6 +400,16 @@ _interrupt(CCU63_NodeI0_INT)  void CCU63_viNodeI0(void)
     // USER CODE END
 
     CCU63_ISR |= 0x0040;  // clear flag CCU63_IS_T12OM
+  }
+
+  if(CCU63_IS & 0x0080)  // if CCU63_IS_T12PM
+  {
+    // Timer T12 period match detection
+
+    // USER CODE BEGIN (NodeI0,19)
+    // USER CODE END
+
+    CCU63_ISR |= 0x0080;  // clear flag CCU63_IS_T12PM
   }
 
 

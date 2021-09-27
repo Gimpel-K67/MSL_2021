@@ -44,7 +44,7 @@ $MODEL(SMALL)
 ; ccu63.c    12	// @Description   This file contains functions that use the CCU63 module.
 ; ccu63.c    13	//
 ; ccu63.c    14	//----------------------------------------------------------------------------
-; ccu63.c    15	// @Date          24.09.2021 15:34:16
+; ccu63.c    15	// @Date          27.09.2021 10:03:55
 ; ccu63.c    16	//
 ; ccu63.c    17	//****************************************************************************
 ; ccu63.c    18	
@@ -185,7 +185,7 @@ $MODEL(SMALL)
 ; ccu63.c   115	// @Parameters    None
 ; ccu63.c   116	//
 ; ccu63.c   117	//----------------------------------------------------------------------------
-; ccu63.c   118	// @Date          24.09.2021
+; ccu63.c   118	// @Date          27.09.2021
 ; ccu63.c   119	//
 ; ccu63.c   120	//****************************************************************************
 ; ccu63.c   121	
@@ -249,7 +249,7 @@ _CCU63_vInit	PROC	FAR
 ; ccu63.c   154	  ///  - Timer 12 run bit is reset
 ; ccu63.c   155	  ///  - Single shot mode is disabled
 ; ccu63.c   156	  ///  - Timer 12 works in center aligned mode
-; ccu63.c   157	  ///  - Interrupt on period match is disabled
+; ccu63.c   157	  ///  - Interrupt on period match is enabled
 ; ccu63.c   158	  ///  - Interrupt on one match is enabled
 ; ccu63.c   159	  ///  - No External run selection is selected.
 ; ccu63.c   160	  ///  - Timer mode is selected.
@@ -438,9 +438,9 @@ _CCU63_vInit	PROC	FAR
 	MOV	0EBD6h,R12
 ; ccu63.c   305	                                 // pointer register
 ; ccu63.c   306	
-; ccu63.c   307	  CCU63_IEN      =  0x0040;      // Load CCU63 capture/compare interrupt 
+; ccu63.c   307	  CCU63_IEN      =  0x00C0;      // Load CCU63 capture/compare interrupt 
 	?LINE	307
-	MOV	R12,#040h
+	MOV	R12,#0C0h
 	MOV	0EBD8h,R12
 ; ccu63.c   308	                                 // enable register
 ; ccu63.c   309	
@@ -542,7 +542,7 @@ _CCU63_vInit	ENDP
 ; ccu63.c   374	// @Parameters    None
 ; ccu63.c   375	//
 ; ccu63.c   376	//----------------------------------------------------------------------------
-; ccu63.c   377	// @Date          24.09.2021
+; ccu63.c   377	// @Date          27.09.2021
 ; ccu63.c   378	//
 ; ccu63.c   379	//****************************************************************************
 ; ccu63.c   380	
@@ -596,7 +596,7 @@ _CCU63_viNodeI0	PROC TASK CCU63_TASK INTNO CCU63_INUM = 03Ch
 ; ccu63.c   391	  if(CCU63_IS & 0x0040)  // if CCU63_IS_T12OM
 	?LINE	391
 	MOV	R12,0EBD0h
-	JNB	R12.6,_4
+	JNB	R12.6,_5
 ; ccu63.c   392	  {
 ; ccu63.c   393	    // Timer T12 one match detection
 ; ccu63.c   394	
@@ -645,11 +645,31 @@ _CCU63_viNodeI0	PROC TASK CCU63_TASK INTNO CCU63_INUM = 03Ch
 	MOV	[R12],R13
 ; ccu63.c   403	  }
 	?LINE	403
-_4:
+_5:
 ; ccu63.c   404	
-; ccu63.c   405	
-; ccu63.c   406	} //  End of function CCU63_viNodeI0
-	?LINE	406
+; ccu63.c   405	  if(CCU63_IS & 0x0080)  // if CCU63_IS_T12PM
+	?LINE	405
+	MOV	R12,0EBD0h
+	JNB	R12.7,_6
+; ccu63.c   406	  {
+; ccu63.c   407	    // Timer T12 period match detection
+; ccu63.c   408	
+; ccu63.c   409	    // USER CODE BEGIN (NodeI0,19)
+; ccu63.c   410	    // USER CODE END
+; ccu63.c   411	
+; ccu63.c   412	    CCU63_ISR |= 0x0080;  // clear flag CCU63_IS_T12PM
+	?LINE	412
+	MOV	R12,#0EBD4h
+	MOV	R13,[R12]
+	BSET	R13.7
+	MOV	[R12],R13
+; ccu63.c   413	  }
+	?LINE	413
+_6:
+; ccu63.c   414	
+; ccu63.c   415	
+; ccu63.c   416	} //  End of function CCU63_viNodeI0
+	?LINE	416
 	EXTR	#01h
 	POP	QR1
 	EXTR	#01h
@@ -671,18 +691,18 @@ _4:
 	POP	DPP0
 	POP	MDC
 	POP	CP
-	?LINE	406
+	?LINE	416
 	RETI
 _CCU63_viNodeI0	ENDP
-	?SYMB	'',$,17,406
-; ccu63.c   407	
-; ccu63.c   408	
-; ccu63.c   409	
-; ccu63.c   410	
-; ccu63.c   411	// USER CODE BEGIN (CCU63_General,10)
-; ccu63.c   412	
-; ccu63.c   413	// USER CODE END
-; ccu63.c   414	
+	?SYMB	'',$,17,416
+; ccu63.c   417	
+; ccu63.c   418	
+; ccu63.c   419	
+; ccu63.c   420	
+; ccu63.c   421	// USER CODE BEGIN (CCU63_General,10)
+; ccu63.c   422	
+; ccu63.c   423	// USER CODE END
+; ccu63.c   424	
 CCU63_1_PR	ENDS
 
 	EXTERN	_table:WORD
