@@ -12,7 +12,7 @@
 // @Description   This file contains functions that use the CCU62 module.
 //
 //----------------------------------------------------------------------------
-// @Date          27.09.2021 10:03:55
+// @Date          27.09.2021 18:18:20
 //
 //****************************************************************************
 
@@ -158,7 +158,7 @@ void CCU62_vInit(void)
   ///  - Timer mode is selected.
   ///  - 
 
-  CCU62_T12PR    =  0x1657;      // load CCU62 T12 period register
+  CCU62_T12PR    =  0x0595;      // load CCU62 T12 period register
 
   ///  -----------------------------------------------------------------------
   ///  Configuration of T13HR Signal:

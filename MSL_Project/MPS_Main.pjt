@@ -117,6 +117,8 @@ VCSSetCmd=VCS_REMOVE_ID,'del /f "%b%{??v|___}e"',0x8000040
 .\CC2.H
 .\CCU62.C
 .\CCU62.H
+.\ADC0.C
+.\ADC0.H
 
 [Ede]
 Toolchain=d:\programme\tasking\c166 v8.7r1\etc\c166.dol

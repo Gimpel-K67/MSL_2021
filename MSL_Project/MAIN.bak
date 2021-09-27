@@ -12,7 +12,7 @@
 // @Description   This file contains the project initialization function.
 //
 //----------------------------------------------------------------------------
-// @Date          27.09.2021 10:03:54
+// @Date          27.09.2021 17:55:13
 //
 //****************************************************************************
 
@@ -74,14 +74,16 @@
 //****************************************************************************
 
 // USER CODE BEGIN (MAIN_General,7)
-	const unsigned int frequency = 40;
+	unsigned int frequency = 0;
 	const unsigned int ARRAY_SIZE = 1200;
 	const unsigned int OFFSET_L2 = ARRAY_SIZE/3;
 	const unsigned int OFFSET_L3 = (2*ARRAY_SIZE)/3;
 	unsigned int table[ARRAY_SIZE];
 	unsigned int index;
 	float pi = 3.14159265359;
-	unsigned int ccu62_pr = 1/(frequency * ARRAY_SIZE*0.000000015);
+	volatile unsigned int rampIndex;
+	//unsigned int ccu62_pr = 1/(frequency * ARRAY_SIZE*0.000000015);
+
 // USER CODE END
 
 
@@ -100,6 +102,7 @@
 
 // USER CODE BEGIN (MAIN_General,9)
 void generateTable();
+unsigned int calculateMotorFrequency (int frequency);
 // USER CODE END
 
 
@@ -166,6 +169,9 @@ void MAIN_vInit(void)
 
   //   initializes the Capture / Compare Unit 63 (CCU63)
   CCU63_vInit();
+
+  //   initializes the Analog / Digital Converter  (ADC0)
+  ADC0_vInit();
 
 
   //   -----------------------------------------------------------------------
@@ -361,18 +367,43 @@ void main(void)
 
   // USER CODE BEGIN (Main,3)
  	generateTable();
+	ADC0_vInit();
+	ADC0_vStartSeq0ReqChNum(0,0,1,6);
 	CCU63_vStartTmr(CCU63_TIMER_12);
 	CCU62_vStartTmr(CCU62_TIMER_12);
-	IO_vSetPin(LED_DBG);
-	CCU62_vSetTmrPeriod(CCU62_TIMER_12, ccu62_pr);
-	CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
-  // USER CODE END
+	//IO_vSetPin(LED_DBG);
+	GPT2_vStartTmr(GPT2_TIMER_6);
+    // USER CODE END
 
   while(1)
   {
 
    // USER CODE BEGIN (Main,4)
+   if (rampIndex > 150){
+   		unsigned long raw;
+		raw = ADC0_uwGetResultData(RESULT_REG_0);
+		frequency = ((50*raw)/4096);
+	   	CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
+		CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
+	}
+	if(rampIndex < 50){
+		frequency = rampIndex;
+		CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
+		CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
+		IO_vTogglePin(LED_DBG);
+	} 
+	
+	if(rampIndex < 100 || rampIndex > 50){
+		frequency = 50;
+		CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
+		CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
+	}
 
+	if(rampIndex < 150 || rampIndex > 100){
+		frequency = (150 - rampIndex);
+		CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
+		CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
+	}
    // USER CODE END
 
   }
@@ -389,5 +420,18 @@ void generateTable(){
 		table[i] = (unsigned int)((double)((CCU63_T12PR - 140)/2)*sin(stepSize * i) + (CCU63_T12PR/2));
 	}
 }
+
+unsigned int calculateMotorFrequency (int _frequency){
+if (_frequency < 5){
+	//CCU63_vStopTmr(CCU63_TIMER_12);
+	//CCU63_vResetTmr(CCU63_TIMER_12);
+	frequency = 5;
+	return (0x2B67);
+}
+else {
+	return (1/(_frequency * ARRAY_SIZE*0.000000015));
+}
+}
+
 // USER CODE END
 

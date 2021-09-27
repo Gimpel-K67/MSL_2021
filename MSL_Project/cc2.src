@@ -44,7 +44,7 @@ $MODEL(SMALL)
 ; cc2.c      12	// @Description   This file contains functions that use the CC2 module.
 ; cc2.c      13	//
 ; cc2.c      14	//----------------------------------------------------------------------------
-; cc2.c      15	// @Date          27.09.2021 10:03:55
+; cc2.c      15	// @Date          27.09.2021 18:18:20
 ; cc2.c      16	//
 ; cc2.c      17	//****************************************************************************
 ; cc2.c      18	
@@ -95,6 +95,10 @@ $MODEL(SMALL)
 	?SYMB	'',0,86,2
 	?SYMB	'CCU63.H',0,29,3
 	?SYMB	'',0,86,3
+	?SYMB	'',0,86,2
+	?SYMB	'ADC0.H',0,29,3
+	?SYMB	'',0,86,3
+	?SYMB	'ubyte',3,13,259
 	?SYMB	'',0,86,2
 	?SYMB	'',0,86,1
 ; cc2.c      30	
@@ -196,42 +200,42 @@ CC2_1_PR	SECTION	CODE WORD PUBLIC 'CPROGRAM'
 	PUBLIC	_CC2_vInit
 	?SYMB	'CC2_vInit',_CC2_vInit,37,1
 	?SYMB	'',123,8,34
-	?SYMB	'uword',18,13,260
-	?SYMB	'',010000H,7,261
-	?SYMB	'',010001H,7,262
-	?SYMB	'',010002H,7,263
-	?SYMB	'',010003H,7,264
-	?SYMB	'',010004H,7,265
-	?SYMB	'',010005H,7,266
-	?SYMB	'',010006H,7,267
-	?SYMB	'',010007H,7,268
-	?SYMB	'',010000H,7,269
-	?SYMB	'',010001H,7,270
-	?SYMB	'',010002H,7,271
-	?SYMB	'',010003H,7,272
-	?SYMB	'',010004H,7,273
-	?SYMB	'',010005H,7,274
-	?SYMB	'',010006H,7,275
-	?SYMB	'',010007H,7,276
-	?SYMB	'T$1',0,40,277
-	?SYMB	'bit0',0,23,261
-	?SYMB	'bit1',1,23,262
-	?SYMB	'bit2',2,23,263
-	?SYMB	'bit3',3,23,264
-	?SYMB	'bit4',4,23,265
-	?SYMB	'bit5',5,23,266
-	?SYMB	'bit6',6,23,267
-	?SYMB	'bit7',7,23,268
-	?SYMB	'bit8',8,23,269
-	?SYMB	'bit9',9,23,270
-	?SYMB	'bit10',10,23,271
-	?SYMB	'bit11',11,23,272
-	?SYMB	'bit12',12,23,273
-	?SYMB	'bit13',13,23,274
-	?SYMB	'bit14',14,23,275
-	?SYMB	'bit15',15,23,276
+	?SYMB	'uword',18,13,261
+	?SYMB	'',010000H,7,262
+	?SYMB	'',010001H,7,263
+	?SYMB	'',010002H,7,264
+	?SYMB	'',010003H,7,265
+	?SYMB	'',010004H,7,266
+	?SYMB	'',010005H,7,267
+	?SYMB	'',010006H,7,268
+	?SYMB	'',010007H,7,269
+	?SYMB	'',010000H,7,270
+	?SYMB	'',010001H,7,271
+	?SYMB	'',010002H,7,272
+	?SYMB	'',010003H,7,273
+	?SYMB	'',010004H,7,274
+	?SYMB	'',010005H,7,275
+	?SYMB	'',010006H,7,276
+	?SYMB	'',010007H,7,277
+	?SYMB	'T$1',0,40,278
+	?SYMB	'bit0',0,23,262
+	?SYMB	'bit1',1,23,263
+	?SYMB	'bit2',2,23,264
+	?SYMB	'bit3',3,23,265
+	?SYMB	'bit4',4,23,266
+	?SYMB	'bit5',5,23,267
+	?SYMB	'bit6',6,23,268
+	?SYMB	'bit7',7,23,269
+	?SYMB	'bit8',8,23,270
+	?SYMB	'bit9',9,23,271
+	?SYMB	'bit10',10,23,272
+	?SYMB	'bit11',11,23,273
+	?SYMB	'bit12',12,23,274
+	?SYMB	'bit13',13,23,275
+	?SYMB	'bit14',14,23,276
+	?SYMB	'bit15',15,23,277
 	?SYMB	'',16,18,0
-	?SYMB	'T_Reg16',277,13,278
+	?SYMB	'T_Reg16',278,13,279
 _CC2_vInit	PROC	FAR
 	?SYMB	'',00H,95,0
 ; Locals:

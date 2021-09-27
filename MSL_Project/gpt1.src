@@ -44,7 +44,7 @@ $MODEL(SMALL)
 ; gpt1.c     12	// @Description   This file contains functions that use the GPT1 module.
 ; gpt1.c     13	//
 ; gpt1.c     14	//----------------------------------------------------------------------------
-; gpt1.c     15	// @Date          27.09.2021 10:03:55
+; gpt1.c     15	// @Date          27.09.2021 18:18:20
 ; gpt1.c     16	//
 ; gpt1.c     17	//****************************************************************************
 ; gpt1.c     18	
@@ -95,6 +95,10 @@ $MODEL(SMALL)
 	?SYMB	'',0,86,2
 	?SYMB	'CCU63.H',0,29,3
 	?SYMB	'',0,86,3
+	?SYMB	'',0,86,2
+	?SYMB	'ADC0.H',0,29,3
+	?SYMB	'',0,86,3
+	?SYMB	'ubyte',3,13,259
 	?SYMB	'',0,86,2
 	?SYMB	'',0,86,1
 ; gpt1.c     30	
@@ -196,7 +200,7 @@ GPT1_1_PR	SECTION	CODE WORD PUBLIC 'CPROGRAM'
 	PUBLIC	_GPT1_vInit
 	?SYMB	'GPT1_vInit',_GPT1_vInit,37,1
 	?SYMB	'',123,8,34
-	?SYMB	'uword',18,13,260
+	?SYMB	'uword',18,13,261
 _GPT1_vInit	PROC	FAR
 	?SYMB	'',00H,95,0
 ; Locals:

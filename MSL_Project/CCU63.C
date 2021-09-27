@@ -12,7 +12,7 @@
 // @Description   This file contains functions that use the CCU63 module.
 //
 //----------------------------------------------------------------------------
-// @Date          27.09.2021 10:03:55
+// @Date          27.09.2021 18:18:20
 //
 //****************************************************************************
 
@@ -70,6 +70,7 @@
 	extern	unsigned int index;
 	extern const unsigned int OFFSET_L2;
 	extern const unsigned int OFFSET_L3;
+	extern const unsigned int frequency;
 // USER CODE END
 
 
@@ -393,9 +394,9 @@ _interrupt(CCU63_NodeI0_INT)  void CCU63_viNodeI0(void)
     // Timer T12 one match detection
 
     // USER CODE BEGIN (NodeI0,20)
-		CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_0, table[index + 0]);
-	   	CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_1, table[(index + OFFSET_L2)%ARRAY_SIZE]);
-  		CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_2, table[(index + OFFSET_L3)%ARRAY_SIZE]);
+		CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_0, table[index + 0]*(0.018*frequency+0.1));
+	   	CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_1, table[(index + OFFSET_L2)%ARRAY_SIZE]*(0.018*frequency+0.1));
+  		CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_2, table[(index + OFFSET_L3)%ARRAY_SIZE]*(0.018*frequency+0.1));
 		CCU63_vEnableShadowTransfer(CCU63_TIMER_12);
     // USER CODE END
 

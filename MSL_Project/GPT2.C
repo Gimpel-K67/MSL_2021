@@ -12,7 +12,7 @@
 // @Description   This file contains functions that use the GPT2 module.
 //
 //----------------------------------------------------------------------------
-// @Date          27.09.2021 10:03:55
+// @Date          27.09.2021 18:18:20
 //
 //****************************************************************************
 
@@ -66,7 +66,8 @@
 
 // USER CODE BEGIN (GPT2_General,6)
 	extern const unsigned int ARRAY_SIZE;
-	extern	unsigned int index;
+	extern	unsigned int rampIndex;
+	
 // USER CODE END
 
 
@@ -161,7 +162,7 @@ void GPT2_vInit(void)
   ///  Configuration of the GPT2 Core Timer 6:
   ///  -----------------------------------------------------------------------
   ///  - timer 6 works in timer mode
-  ///  - prescaler factor is 2
+  ///  - prescaler factor is 256
   ///  - up/down control bit is reset
   ///  - external up/down control is disabled
   ///  - alternate output function T6OUT (P6.2) is disabled
@@ -170,8 +171,8 @@ void GPT2_vInit(void)
   ///  - timer 6 run bit is reset
   ///  - timer 6 is not cleared on a capture
 
-  GPT12E_T6CON   =  0x0800;      // load timer 6 control register
-  GPT12E_T6      =  0xE3C1;      // load timer 6 register
+  GPT12E_T6CON   =  0x0807;      // load timer 6 control register
+  GPT12E_T6      =  0xF419;      // load timer 6 register
 
   ///  -----------------------------------------------------------------------
   ///  Configuration of the GPT2 CAPREL:
@@ -183,7 +184,7 @@ void GPT2_vInit(void)
   ///  - timer 5 is just captured without any correction
 
   GPT12E_T5CON  |=  0x0000;      // load timer 5 control register
-  GPT12E_CAPREL  =  0xE3C1;      // load CAPREL register
+  GPT12E_CAPREL  =  0xF419;      // load CAPREL register
 
   ///  -----------------------------------------------------------------------
   ///  Configuration of the used GPT2 Port Pins:
@@ -193,6 +194,13 @@ void GPT2_vInit(void)
   ///  -----------------------------------------------------------------------
   ///  Configuration of the used GPT2 Interrupts:
   ///  -----------------------------------------------------------------------
+  ///  timer 6 service request node configuration:
+  ///  - timer 6 interrupt priority level (ILVL) = 10
+  ///  - timer 6 interrupt group level (GLVL) = 0
+  ///  - timer 6 group priority extension (GPX) = 0
+
+  GPT12E_T6IC    =  0x0068;     
+
 
 
   // USER CODE BEGIN (GPT2_Function,3)
@@ -200,6 +208,41 @@ void GPT2_vInit(void)
   // USER CODE END
 
 } //  End of function GPT2_viCAPREL
+
+//****************************************************************************
+// @Function      void GPT2_viTmr6(void) 
+//
+//----------------------------------------------------------------------------
+// @Description   This is the interrupt service routine for the GPT2 timer 6. 
+//                It is called up in the case of over or underflow of the 
+//                timer 6 register.
+//                
+//                Please note that you have to add application specific code 
+//                to this function.
+//
+//----------------------------------------------------------------------------
+// @Returnvalue   None
+//
+//----------------------------------------------------------------------------
+// @Parameters    None
+//
+//----------------------------------------------------------------------------
+// @Date          27.09.2021
+//
+//****************************************************************************
+
+// USER CODE BEGIN (Tmr6,1)
+
+// USER CODE END
+
+_interrupt(T6INT)  void GPT2_viTmr6(void)
+{
+  // USER CODE BEGIN (Tmr6,2)
+	 rampIndex++;	
+  // USER CODE END
+
+} //  End of function GPT2_viTmr6
+
 
 
 

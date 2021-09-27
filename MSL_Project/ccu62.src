@@ -44,7 +44,7 @@ $MODEL(SMALL)
 ; ccu62.c    12	// @Description   This file contains functions that use the CCU62 module.
 ; ccu62.c    13	//
 ; ccu62.c    14	//----------------------------------------------------------------------------
-; ccu62.c    15	// @Date          27.09.2021 10:03:55
+; ccu62.c    15	// @Date          27.09.2021 18:18:20
 ; ccu62.c    16	//
 ; ccu62.c    17	//****************************************************************************
 ; ccu62.c    18	
@@ -95,6 +95,10 @@ $MODEL(SMALL)
 	?SYMB	'',0,86,2
 	?SYMB	'CCU63.H',0,29,3
 	?SYMB	'',0,86,3
+	?SYMB	'',0,86,2
+	?SYMB	'ADC0.H',0,29,3
+	?SYMB	'',0,86,3
+	?SYMB	'ubyte',3,13,259
 	?SYMB	'',0,86,2
 	?SYMB	'',0,86,1
 ; ccu62.c    30	
@@ -198,7 +202,7 @@ CCU62_1_PR	SECTION	CODE WORD PUBLIC 'CPROGRAM'
 	PUBLIC	_CCU62_vInit
 	?SYMB	'CCU62_vInit',_CCU62_vInit,37,1
 	?SYMB	'',125,8,34
-	?SYMB	'uword',18,13,260
+	?SYMB	'uword',18,13,261
 _CCU62_vInit	PROC	FAR
 	?SYMB	'',00H,95,0
 ; Locals:
@@ -253,9 +257,9 @@ _CCU62_vInit	PROC	FAR
 ; ccu62.c   158	  ///  - Timer mode is selected.
 ; ccu62.c   159	  ///  - 
 ; ccu62.c   160	
-; ccu62.c   161	  CCU62_T12PR    =  0x1657;      // load CCU62 T12 period register
+; ccu62.c   161	  CCU62_T12PR    =  0x0595;      // load CCU62 T12 period register
 	?LINE	161
-	MOV	R12,#01657h
+	MOV	R12,#0595h
 	MOV	0EB12h,R12
 ; ccu62.c   162	
 ; ccu62.c   163	  ///  -----------------------------------------------------------------------

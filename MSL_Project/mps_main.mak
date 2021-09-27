@@ -26,28 +26,31 @@ all : subproj $(PROJ).abs
 subproj :
 	@echo Warning: Infinite loop detected; Not building sub-project mps_main.pjt
 
-ccu63.obj : ccu63.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h cc2.h ccu62.h ccu63.h <1632487595>
+ccu63.obj : ccu63.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h cc2.h ccu62.h ccu63.h
+ccu63.obj : adc0.h <1632742349>
 
 	@echo Compiling and assembling ${*F}.c
 	@"$(PRODDIR)\bin\cc166.exe" -f <<EOF -c ccu63.c
 	${separate "\n" -o $@ $(OPT_CC) }
 	EOF
 
-io.obj : io.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h cc2.h ccu62.h ccu63.h <1632487595>
+io.obj : io.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h cc2.h ccu62.h ccu63.h adc0.h <1632742349>
 
 	@echo Compiling and assembling ${*F}.c
 	@"$(PRODDIR)\bin\cc166.exe" -f <<EOF -c io.c
 	${separate "\n" -o $@ $(OPT_CC) }
 	EOF
 
-main.obj : main.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h cc2.h ccu62.h ccu63.h <1632487595>
+main.obj : main.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h cc2.h ccu62.h ccu63.h
+main.obj : adc0.h <1632742349>
 
 	@echo Compiling and assembling ${*F}.c
 	@"$(PRODDIR)\bin\cc166.exe" -f <<EOF -c main.c
 	${separate "\n" -o $@ $(OPT_CC) }
 	EOF
 
-scs.obj : scs.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h cc2.h ccu62.h ccu63.h <1632487595>
+scs.obj : scs.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h cc2.h ccu62.h ccu63.h
+scs.obj : adc0.h <1632742349>
 
 	@echo Compiling and assembling ${*F}.c
 	@"$(PRODDIR)\bin\cc166.exe" -f <<EOF -c scs.c
@@ -60,36 +63,48 @@ start_master.obj : start_master.asm "$(PRODDIR)\include\head.asm" "$(PRODDIR)\in
 	${separate "\n" -o $@ $(OPT_CC) }
 	EOF
 
-gpt1.obj : gpt1.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h cc2.h ccu62.h ccu63.h <1632487595>
+gpt1.obj : gpt1.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h cc2.h ccu62.h ccu63.h
+gpt1.obj : adc0.h <1632742349>
 
 	@echo Compiling and assembling ${*F}.c
 	@"$(PRODDIR)\bin\cc166.exe" -f <<EOF -c gpt1.c
 	${separate "\n" -o $@ $(OPT_CC) }
 	EOF
 
-gpt2.obj : gpt2.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h cc2.h ccu62.h ccu63.h <1632487595>
+gpt2.obj : gpt2.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h cc2.h ccu62.h ccu63.h
+gpt2.obj : adc0.h <1632742349>
 
 	@echo Compiling and assembling ${*F}.c
 	@"$(PRODDIR)\bin\cc166.exe" -f <<EOF -c gpt2.c
 	${separate "\n" -o $@ $(OPT_CC) }
 	EOF
 
-cc2.obj : cc2.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h cc2.h ccu62.h ccu63.h <1632487595>
+cc2.obj : cc2.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h cc2.h ccu62.h ccu63.h
+cc2.obj : adc0.h <1632742349>
 
 	@echo Compiling and assembling ${*F}.c
 	@"$(PRODDIR)\bin\cc166.exe" -f <<EOF -c cc2.c
 	${separate "\n" -o $@ $(OPT_CC) }
 	EOF
 
-ccu62.obj : ccu62.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h cc2.h ccu62.h ccu63.h <1632487595>
+ccu62.obj : ccu62.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h cc2.h ccu62.h ccu63.h
+ccu62.obj : adc0.h <1632742349>
 
 	@echo Compiling and assembling ${*F}.c
 	@"$(PRODDIR)\bin\cc166.exe" -f <<EOF -c ccu62.c
 	${separate "\n" -o $@ $(OPT_CC) }
 	EOF
 
+adc0.obj : adc0.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h cc2.h ccu62.h ccu63.h
+adc0.obj : adc0.h <1632742349>
+
+	@echo Compiling and assembling ${*F}.c
+	@"$(PRODDIR)\bin\cc166.exe" -f <<EOF -c adc0.c
+	${separate "\n" -o $@ $(OPT_CC) }
+	EOF
+
 $(PROJ).out : ccu63.obj io.obj main.obj scs.obj start_master.obj gpt1.obj gpt2.obj
-$(PROJ).out : cc2.obj ccu62.obj _mps_main.ilo <1632487595>
+$(PROJ).out : cc2.obj ccu62.obj adc0.obj _mps_main.ilo <1632742349>
 	@echo Linking and locating to ${*F}.out
 	@"$(PRODDIR)\bin\cc166.exe" $(LINKCPP) -o $@ -f <<EOF 
 	${separate "\n" $(match .obj $!) $(match .lno $!) $(match .lib $!) $(OPT_LC)}
@@ -128,6 +143,9 @@ clean :
 	@$(exist ccu62.obj del ccu62.obj)
 	@$(exist ccu62.src del ccu62.src)
 	@$(exist ccu62.lst del ccu62.lst)
+	@$(exist adc0.obj del adc0.obj)
+	@$(exist adc0.src del adc0.src)
+	@$(exist adc0.lst del adc0.lst)
 	@$(exist $(PROJ).out del $(PROJ).out)
 	@$(exist mps_main.map del mps_main.map)
 	@$(exist $(PROJ).abs del $(PROJ).abs)

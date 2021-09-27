@@ -59,8 +59,12 @@ window_data0: 1
 window_data0.autolocals: FALSE
 window_data0.expression.0: S:table/n
 window_data0.expression.1: W:ccu62_pr/n
+window_data0.expression.2: S:frequency/n
+window_data0.expression.3: W:frequency/n
+window_data0.expression.4: W:raw/n
+window_data0.expression.5: W:rampIndex/n
 window_data0.hex_display: FALSE
-window_data0.nr_of_expressions: 2
+window_data0.nr_of_expressions: 6
 window_data0.rectangle: (8,39,315,220)
 window_memory.defaults.base_type: unsigned char
 window_memory.defaults.display_mode: x
@@ -86,7 +90,7 @@ window_register: 1
 window_register..display_mode: hex
 window_register.display_mode: hex
 window_register.n_windows: 1
-window_register.rectangle: (940,546,1248,822)
+window_register.rectangle: (940,546,1248,847)
 window_register0: 1
 window_register0.data: 
 window_register0.group: FALSE

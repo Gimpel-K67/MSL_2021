@@ -1,4 +1,4 @@
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 10:04:06  Page:   1
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 18:18:33  Page:   1
 gpt2
 
  LOC CODE        LINE   SOURCELINE
@@ -49,7 +49,7 @@ gpt2
                     44   ; gpt2.c     12 // @Description   This file contains functions that use the GPT2 module.
                     45   ; gpt2.c     13 //
                     46   ; gpt2.c     14 //----------------------------------------------------------------------------
-                    47   ; gpt2.c     15 // @Date          27.09.2021 10:03:55
+                    47   ; gpt2.c     15 // @Date          27.09.2021 18:18:20
                     48   ; gpt2.c     16 //
                     49   ; gpt2.c     17 //****************************************************************************
                     50   ; gpt2.c     18 
@@ -58,7 +58,7 @@ gpt2
                     53   ; gpt2.c     21 // USER CODE END
                     54   ; gpt2.c     22 
                     55   ; gpt2.c     23 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 10:04:06  Page:   2
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 18:18:33  Page:   2
 gpt2
 
  LOC CODE        LINE   SOURCELINE
@@ -106,254 +106,387 @@ gpt2
                     96           ?SYMB   'CCU63.H',0,29,3
                     97           ?SYMB   '',0,86,3
                     98           ?SYMB   '',0,86,2
-                    99           ?SYMB   '',0,86,1
-                   100   ; gpt2.c     30 
-                   101   ; gpt2.c     31 // USER CODE BEGIN (GPT2_General,2)
-                   102   ; gpt2.c     32 
-                   103   ; gpt2.c     33 // USER CODE END
-                   104   ; gpt2.c     34 
-                   105   ; gpt2.c     35 
-                   106   ; gpt2.c     36 //****************************************************************************
-                   107   ; gpt2.c     37 // @Macros
-                   108   ; gpt2.c     38 //****************************************************************************
-                   109   ; gpt2.c     39 
-                   110   ; gpt2.c     40 // USER CODE BEGIN (GPT2_General,3)
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 10:04:06  Page:   3
+                    99           ?SYMB   'ADC0.H',0,29,3
+                   100           ?SYMB   '',0,86,3
+                   101           ?SYMB   'ubyte',3,13,259
+                   102           ?SYMB   '',0,86,2
+                   103           ?SYMB   '',0,86,1
+                   104   ; gpt2.c     30 
+                   105   ; gpt2.c     31 // USER CODE BEGIN (GPT2_General,2)
+                   106   ; gpt2.c     32 
+                   107   ; gpt2.c     33 // USER CODE END
+                   108   ; gpt2.c     34 
+                   109   ; gpt2.c     35 
+                   110   ; gpt2.c     36 //****************************************************************************
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 18:18:33  Page:   3
 gpt2
 
  LOC CODE        LINE   SOURCELINE
 
-                   111   ; gpt2.c     41 
-                   112   ; gpt2.c     42 // USER CODE END
-                   113   ; gpt2.c     43 
-                   114   ; gpt2.c     44 
-                   115   ; gpt2.c     45 //****************************************************************************
-                   116   ; gpt2.c     46 // @Defines
-                   117   ; gpt2.c     47 //****************************************************************************
-                   118   ; gpt2.c     48 
-                   119   ; gpt2.c     49 // USER CODE BEGIN (GPT2_General,4)
-                   120   ; gpt2.c     50 
-                   121   ; gpt2.c     51 // USER CODE END
-                   122   ; gpt2.c     52 
-                   123   ; gpt2.c     53 
-                   124   ; gpt2.c     54 //****************************************************************************
-                   125   ; gpt2.c     55 // @Typedefs
-                   126   ; gpt2.c     56 //****************************************************************************
-                   127   ; gpt2.c     57 
-                   128   ; gpt2.c     58 // USER CODE BEGIN (GPT2_General,5)
-                   129   ; gpt2.c     59 
-                   130   ; gpt2.c     60 // USER CODE END
-                   131   ; gpt2.c     61 
-                   132   ; gpt2.c     62 
-                   133   ; gpt2.c     63 //****************************************************************************
-                   134   ; gpt2.c     64 // @Imported Global Variables
-                   135   ; gpt2.c     65 //****************************************************************************
-                   136   ; gpt2.c     66 
-                   137   ; gpt2.c     67 // USER CODE BEGIN (GPT2_General,6)
-                   138   ; gpt2.c     68         extern const unsigned int ARRAY_SIZE;
-                   139   ; gpt2.c     69         extern  unsigned int index;
-                   140   ; gpt2.c     70 // USER CODE END
-                   141   ; gpt2.c     71 
-                   142   ; gpt2.c     72 
-                   143   ; gpt2.c     73 //****************************************************************************
-                   144   ; gpt2.c     74 // @Global Variables
-                   145   ; gpt2.c     75 //****************************************************************************
-                   146   ; gpt2.c     76 
-                   147   ; gpt2.c     77 // USER CODE BEGIN (GPT2_General,7)
-                   148   ; gpt2.c     78 
-                   149   ; gpt2.c     79 // USER CODE END
-                   150   ; gpt2.c     80 
-                   151   ; gpt2.c     81 
-                   152   ; gpt2.c     82 //****************************************************************************
-                   153   ; gpt2.c     83 // @External Prototypes
-                   154   ; gpt2.c     84 //****************************************************************************
-                   155   ; gpt2.c     85 
-                   156   ; gpt2.c     86 // USER CODE BEGIN (GPT2_General,8)
-                   157   ; gpt2.c     87 
-                   158   ; gpt2.c     88 // USER CODE END
-                   159   ; gpt2.c     89 
-                   160   ; gpt2.c     90 
-                   161   ; gpt2.c     91 
-                   162   ; gpt2.c     92 //****************************************************************************
-                   163   ; gpt2.c     93 // @Prototypes Of Local Functions
-                   164   ; gpt2.c     94 //****************************************************************************
-                   165   ; gpt2.c     95 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 10:04:06  Page:   4
+                   111   ; gpt2.c     37 // @Macros
+                   112   ; gpt2.c     38 //****************************************************************************
+                   113   ; gpt2.c     39 
+                   114   ; gpt2.c     40 // USER CODE BEGIN (GPT2_General,3)
+                   115   ; gpt2.c     41 
+                   116   ; gpt2.c     42 // USER CODE END
+                   117   ; gpt2.c     43 
+                   118   ; gpt2.c     44 
+                   119   ; gpt2.c     45 //****************************************************************************
+                   120   ; gpt2.c     46 // @Defines
+                   121   ; gpt2.c     47 //****************************************************************************
+                   122   ; gpt2.c     48 
+                   123   ; gpt2.c     49 // USER CODE BEGIN (GPT2_General,4)
+                   124   ; gpt2.c     50 
+                   125   ; gpt2.c     51 // USER CODE END
+                   126   ; gpt2.c     52 
+                   127   ; gpt2.c     53 
+                   128   ; gpt2.c     54 //****************************************************************************
+                   129   ; gpt2.c     55 // @Typedefs
+                   130   ; gpt2.c     56 //****************************************************************************
+                   131   ; gpt2.c     57 
+                   132   ; gpt2.c     58 // USER CODE BEGIN (GPT2_General,5)
+                   133   ; gpt2.c     59 
+                   134   ; gpt2.c     60 // USER CODE END
+                   135   ; gpt2.c     61 
+                   136   ; gpt2.c     62 
+                   137   ; gpt2.c     63 //****************************************************************************
+                   138   ; gpt2.c     64 // @Imported Global Variables
+                   139   ; gpt2.c     65 //****************************************************************************
+                   140   ; gpt2.c     66 
+                   141   ; gpt2.c     67 // USER CODE BEGIN (GPT2_General,6)
+                   142   ; gpt2.c     68         extern const unsigned int ARRAY_SIZE;
+                   143   ; gpt2.c     69         extern  unsigned int rampIndex;
+                   144   ; gpt2.c     70         
+                   145   ; gpt2.c     71 // USER CODE END
+                   146   ; gpt2.c     72 
+                   147   ; gpt2.c     73 
+                   148   ; gpt2.c     74 //****************************************************************************
+                   149   ; gpt2.c     75 // @Global Variables
+                   150   ; gpt2.c     76 //****************************************************************************
+                   151   ; gpt2.c     77 
+                   152   ; gpt2.c     78 // USER CODE BEGIN (GPT2_General,7)
+                   153   ; gpt2.c     79 
+                   154   ; gpt2.c     80 // USER CODE END
+                   155   ; gpt2.c     81 
+                   156   ; gpt2.c     82 
+                   157   ; gpt2.c     83 //****************************************************************************
+                   158   ; gpt2.c     84 // @External Prototypes
+                   159   ; gpt2.c     85 //****************************************************************************
+                   160   ; gpt2.c     86 
+                   161   ; gpt2.c     87 // USER CODE BEGIN (GPT2_General,8)
+                   162   ; gpt2.c     88 
+                   163   ; gpt2.c     89 // USER CODE END
+                   164   ; gpt2.c     90 
+                   165   ; gpt2.c     91 
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 18:18:33  Page:   4
 gpt2
 
  LOC CODE        LINE   SOURCELINE
 
-                   166   ; gpt2.c     96 // USER CODE BEGIN (GPT2_General,9)
-                   167   ; gpt2.c     97 
-                   168   ; gpt2.c     98 // USER CODE END
-                   169   ; gpt2.c     99 
-                   170   ; gpt2.c    100 
-                   171   ; gpt2.c    101 //****************************************************************************
-                   172   ; gpt2.c    102 // @Function      void GPT2_vInit(void) 
-                   173   ; gpt2.c    103 //
-                   174   ; gpt2.c    104 //----------------------------------------------------------------------------
-                   175   ; gpt2.c    105 // @Description   This is the initialization function of the GPT2 function 
-                   176   ; gpt2.c    106 //                library. It is assumed that the SFRs used by this library 
-                   177   ; gpt2.c    107 //                are in reset state. 
-                   178   ; gpt2.c    108 //
-                   179   ; gpt2.c    109 //----------------------------------------------------------------------------
-                   180   ; gpt2.c    110 // @Returnvalue   None
-                   181   ; gpt2.c    111 //
-                   182   ; gpt2.c    112 //----------------------------------------------------------------------------
-                   183   ; gpt2.c    113 // @Parameters    None
-                   184   ; gpt2.c    114 //
-                   185   ; gpt2.c    115 //----------------------------------------------------------------------------
-                   186   ; gpt2.c    116 // @Date          27.09.2021
-                   187   ; gpt2.c    117 //
-                   188   ; gpt2.c    118 //****************************************************************************
-                   189   ; gpt2.c    119 
-                   190   ; gpt2.c    120 // USER CODE BEGIN (Init,1)
-                   191   ; gpt2.c    121 
-                   192   ; gpt2.c    122 // USER CODE END
-                   193   ; gpt2.c    123 
-                   194   ; gpt2.c    124 void GPT2_vInit(void)
-                   195   ; gpt2.c    125 {
-                   196   GPT2_1_PR       SECTION CODE WORD PUBLIC 'CPROGRAM'
-                   197           ?LINE   125
-                   198           PUBLIC  _GPT2_vInit
-               R   199           ?SYMB   'GPT2_vInit',_GPT2_vInit,37,1
-                   200           ?SYMB   '',125,8,34
-                   201           ?SYMB   'uword',18,13,260
-                   202   _GPT2_vInit     PROC    FAR
-                   203           ?SYMB   '',00H,95,0
-                   204   ; Locals:
-                   205   ; 
-                   206   ; Statics:
-                   207   ; 
-                   208   ; CSEs:
-                   209   ; 
-                   210   ; gpt2.c    126 
-                   211   ; gpt2.c    127   // USER CODE BEGIN (Init,2)
-                   212   ; gpt2.c    128 
-                   213   ; gpt2.c    129   // USER CODE END
-                   214   ; gpt2.c    130   ///  -----------------------------------------------------------------------
-                   215   ; gpt2.c    131   ///  Configuration of Timer Block Prescaler 1:
-                   216   ; gpt2.c    132   ///  -----------------------------------------------------------------------
-                   217   ; gpt2.c    133   GPT12E_KSCCFG  =  0x0003;      // Module Enable
-                   218           ?LINE   133
-0000 E03C          219           MOV     R12,#03h
-0002 F6FC1CFE      220           MOV     0FE1Ch,R12
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 10:04:06  Page:   5
+                   166   ; gpt2.c     92 
+                   167   ; gpt2.c     93 //****************************************************************************
+                   168   ; gpt2.c     94 // @Prototypes Of Local Functions
+                   169   ; gpt2.c     95 //****************************************************************************
+                   170   ; gpt2.c     96 
+                   171   ; gpt2.c     97 // USER CODE BEGIN (GPT2_General,9)
+                   172   ; gpt2.c     98 
+                   173   ; gpt2.c     99 // USER CODE END
+                   174   ; gpt2.c    100 
+                   175   ; gpt2.c    101 
+                   176   ; gpt2.c    102 //****************************************************************************
+                   177   ; gpt2.c    103 // @Function      void GPT2_vInit(void) 
+                   178   ; gpt2.c    104 //
+                   179   ; gpt2.c    105 //----------------------------------------------------------------------------
+                   180   ; gpt2.c    106 // @Description   This is the initialization function of the GPT2 function 
+                   181   ; gpt2.c    107 //                library. It is assumed that the SFRs used by this library 
+                   182   ; gpt2.c    108 //                are in reset state. 
+                   183   ; gpt2.c    109 //
+                   184   ; gpt2.c    110 //----------------------------------------------------------------------------
+                   185   ; gpt2.c    111 // @Returnvalue   None
+                   186   ; gpt2.c    112 //
+                   187   ; gpt2.c    113 //----------------------------------------------------------------------------
+                   188   ; gpt2.c    114 // @Parameters    None
+                   189   ; gpt2.c    115 //
+                   190   ; gpt2.c    116 //----------------------------------------------------------------------------
+                   191   ; gpt2.c    117 // @Date          27.09.2021
+                   192   ; gpt2.c    118 //
+                   193   ; gpt2.c    119 //****************************************************************************
+                   194   ; gpt2.c    120 
+                   195   ; gpt2.c    121 // USER CODE BEGIN (Init,1)
+                   196   ; gpt2.c    122 
+                   197   ; gpt2.c    123 // USER CODE END
+                   198   ; gpt2.c    124 
+                   199   ; gpt2.c    125 void GPT2_vInit(void)
+                   200   ; gpt2.c    126 {
+                   201   GPT2_1_PR       SECTION CODE WORD PUBLIC 'CPROGRAM'
+                   202           ?LINE   126
+                   203           PUBLIC  _GPT2_vInit
+               R   204           ?SYMB   'GPT2_vInit',_GPT2_vInit,37,1
+                   205           ?SYMB   '',126,8,34
+                   206           ?SYMB   'uword',18,13,261
+                   207   _GPT2_vInit     PROC    FAR
+                   208           ?SYMB   '',00H,95,0
+                   209   ; Locals:
+                   210   ; 
+                   211   ; Statics:
+                   212   ; 
+                   213   ; CSEs:
+                   214   ; 
+                   215   ; gpt2.c    127 
+                   216   ; gpt2.c    128   // USER CODE BEGIN (Init,2)
+                   217   ; gpt2.c    129 
+                   218   ; gpt2.c    130   // USER CODE END
+                   219   ; gpt2.c    131   ///  -----------------------------------------------------------------------
+                   220   ; gpt2.c    132   ///  Configuration of Timer Block Prescaler 1:
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 18:18:33  Page:   5
 gpt2
 
  LOC CODE        LINE   SOURCELINE
 
-                   221   ; gpt2.c    134 
-                   222   ; gpt2.c    135 
-                   223   ; gpt2.c    136   _nop();  // one cycle delay 
-                   224           ?LINE   136
-0006 CC00          225           NOP
-                   226   ; gpt2.c    137 
-                   227   ; gpt2.c    138   _nop();  // one cycle delay 
-                   228           ?LINE   138
-0008 CC00          229           NOP
-                   230   ; gpt2.c    139 
-                   231   ; gpt2.c    140 
-                   232   ; gpt2.c    141   ///  -----------------------------------------------------------------------
-                   233   ; gpt2.c    142   ///  Configuration of Timer Block Prescaler 2:
-                   234   ; gpt2.c    143   ///  -----------------------------------------------------------------------
-                   235   ; gpt2.c    144   ///  - prescaler for timer block 2 is 2
-                   236   ; gpt2.c    145 
-                   237   ; gpt2.c    146 
-                   238   ; gpt2.c    147   ///  -----------------------------------------------------------------------
-                   239   ; gpt2.c    148   ///  Configuration of the GPT2 Core Timer 5:
-                   240   ; gpt2.c    149   ///  -----------------------------------------------------------------------
-                   241   ; gpt2.c    150   ///  - timer 5 works in timer mode
-                   242   ; gpt2.c    151   ///  - prescaler factor is 2
-                   243   ; gpt2.c    152   ///  - up/down control bit is reset
-                   244   ; gpt2.c    153   ///  - external up/down control is disabled
-                   245   ; gpt2.c    154   ///  - timer 5 run bit is reset
-                   246   ; gpt2.c    155   ///  - timer 5 remote control is disabled
-                   247   ; gpt2.c    156 
-                   248   ; gpt2.c    157   GPT12E_T5CON   =  0x0000;      // load timer 5 control register
-                   249           ?LINE   157
-000A E00C          250           MOV     R12,#00h
-000C F6FC46FF      251           MOV     0FF46h,R12
-                   252   ; gpt2.c    158   GPT12E_T5      =  0xFFFF;      // load timer 5 register
-                   253           ?LINE   158
-0010 E6FCFFFF      254           MOV     R12,#0FFFFh
-0014 F6FC46FE      255           MOV     0FE46h,R12
-                   256   ; gpt2.c    159 
-                   257   ; gpt2.c    160   ///  -----------------------------------------------------------------------
-                   258   ; gpt2.c    161   ///  Configuration of the GPT2 Core Timer 6:
-                   259   ; gpt2.c    162   ///  -----------------------------------------------------------------------
-                   260   ; gpt2.c    163   ///  - timer 6 works in timer mode
-                   261   ; gpt2.c    164   ///  - prescaler factor is 2
-                   262   ; gpt2.c    165   ///  - up/down control bit is reset
-                   263   ; gpt2.c    166   ///  - external up/down control is disabled
-                   264   ; gpt2.c    167   ///  - alternate output function T6OUT (P6.2) is disabled
-                   265   ; gpt2.c    168   ///  - alternate output function T6OUT (P7.0) is disabled
-                   266   ; gpt2.c    169   ///  - timer 6 output toggle latch (T6OTL) is set to 0
-                   267   ; gpt2.c    170   ///  - timer 6 run bit is reset
-                   268   ; gpt2.c    171   ///  - timer 6 is not cleared on a capture
-                   269   ; gpt2.c    172 
-                   270   ; gpt2.c    173   GPT12E_T6CON   =  0x0800;      // load timer 6 control register
-                   271           ?LINE   173
-0018 E6FC0008      272           MOV     R12,#0800h
-001C F6FC48FF      273           MOV     0FF48h,R12
-                   274   ; gpt2.c    174   GPT12E_T6      =  0xE3C1;      // load timer 6 register
-                   275           ?LINE   174
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 10:04:06  Page:   6
+                   221   ; gpt2.c    133   ///  -----------------------------------------------------------------------
+                   222   ; gpt2.c    134   GPT12E_KSCCFG  =  0x0003;      // Module Enable
+                   223           ?LINE   134
+0000 E03C          224           MOV     R12,#03h
+0002 F6FC1CFE      225           MOV     0FE1Ch,R12
+                   226   ; gpt2.c    135 
+                   227   ; gpt2.c    136 
+                   228   ; gpt2.c    137   _nop();  // one cycle delay 
+                   229           ?LINE   137
+0006 CC00          230           NOP
+                   231   ; gpt2.c    138 
+                   232   ; gpt2.c    139   _nop();  // one cycle delay 
+                   233           ?LINE   139
+0008 CC00          234           NOP
+                   235   ; gpt2.c    140 
+                   236   ; gpt2.c    141 
+                   237   ; gpt2.c    142   ///  -----------------------------------------------------------------------
+                   238   ; gpt2.c    143   ///  Configuration of Timer Block Prescaler 2:
+                   239   ; gpt2.c    144   ///  -----------------------------------------------------------------------
+                   240   ; gpt2.c    145   ///  - prescaler for timer block 2 is 2
+                   241   ; gpt2.c    146 
+                   242   ; gpt2.c    147 
+                   243   ; gpt2.c    148   ///  -----------------------------------------------------------------------
+                   244   ; gpt2.c    149   ///  Configuration of the GPT2 Core Timer 5:
+                   245   ; gpt2.c    150   ///  -----------------------------------------------------------------------
+                   246   ; gpt2.c    151   ///  - timer 5 works in timer mode
+                   247   ; gpt2.c    152   ///  - prescaler factor is 2
+                   248   ; gpt2.c    153   ///  - up/down control bit is reset
+                   249   ; gpt2.c    154   ///  - external up/down control is disabled
+                   250   ; gpt2.c    155   ///  - timer 5 run bit is reset
+                   251   ; gpt2.c    156   ///  - timer 5 remote control is disabled
+                   252   ; gpt2.c    157 
+                   253   ; gpt2.c    158   GPT12E_T5CON   =  0x0000;      // load timer 5 control register
+                   254           ?LINE   158
+000A E00C          255           MOV     R12,#00h
+000C F6FC46FF      256           MOV     0FF46h,R12
+                   257   ; gpt2.c    159   GPT12E_T5      =  0xFFFF;      // load timer 5 register
+                   258           ?LINE   159
+0010 E6FCFFFF      259           MOV     R12,#0FFFFh
+0014 F6FC46FE      260           MOV     0FE46h,R12
+                   261   ; gpt2.c    160 
+                   262   ; gpt2.c    161   ///  -----------------------------------------------------------------------
+                   263   ; gpt2.c    162   ///  Configuration of the GPT2 Core Timer 6:
+                   264   ; gpt2.c    163   ///  -----------------------------------------------------------------------
+                   265   ; gpt2.c    164   ///  - timer 6 works in timer mode
+                   266   ; gpt2.c    165   ///  - prescaler factor is 256
+                   267   ; gpt2.c    166   ///  - up/down control bit is reset
+                   268   ; gpt2.c    167   ///  - external up/down control is disabled
+                   269   ; gpt2.c    168   ///  - alternate output function T6OUT (P6.2) is disabled
+                   270   ; gpt2.c    169   ///  - alternate output function T6OUT (P7.0) is disabled
+                   271   ; gpt2.c    170   ///  - timer 6 output toggle latch (T6OTL) is set to 0
+                   272   ; gpt2.c    171   ///  - timer 6 run bit is reset
+                   273   ; gpt2.c    172   ///  - timer 6 is not cleared on a capture
+                   274   ; gpt2.c    173 
+                   275   ; gpt2.c    174   GPT12E_T6CON   =  0x0807;      // load timer 6 control register
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 18:18:33  Page:   6
 gpt2
 
  LOC CODE        LINE   SOURCELINE
 
-0020 E6FCC1E3      276           MOV     R12,#0E3C1h
-0024 F6FC48FE      277           MOV     0FE48h,R12
-                   278   ; gpt2.c    175 
-                   279   ; gpt2.c    176   ///  -----------------------------------------------------------------------
-                   280   ; gpt2.c    177   ///  Configuration of the GPT2 CAPREL:
-                   281   ; gpt2.c    178   ///  -----------------------------------------------------------------------
-                   282   ; gpt2.c    179   ///  - capture T5 into CAPREL is disabled
-                   283   ; gpt2.c    180   ///  - capture trigger from pin CAPIN
-                   284   ; gpt2.c    181   ///  - capure is disabled
-                   285   ; gpt2.c    182   ///  - timer 5 is not cleared on a capture
-                   286   ; gpt2.c    183   ///  - timer 5 is just captured without any correction
-                   287   ; gpt2.c    184 
-                   288   ; gpt2.c    185   GPT12E_T5CON  |=  0x0000;      // load timer 5 control register
-                   289           ?LINE   185
-0028 E6FC46FF      290           MOV     R12,#0FF46h
-002C A8CC          291           MOV     R12,[R12]
-                   292   ; gpt2.c    186   GPT12E_CAPREL  =  0xE3C1;      // load CAPREL register
-                   293           ?LINE   186
-002E E6FCC1E3      294           MOV     R12,#0E3C1h
-0032 F6FC4AFE      295           MOV     0FE4Ah,R12
-                   296   ; gpt2.c    187 
-                   297   ; gpt2.c    188   ///  -----------------------------------------------------------------------
-                   298   ; gpt2.c    189   ///  Configuration of the used GPT2 Port Pins:
-                   299   ; gpt2.c    190   ///  -----------------------------------------------------------------------
-                   300   ; gpt2.c    191 
-                   301   ; gpt2.c    192 
-                   302   ; gpt2.c    193   ///  -----------------------------------------------------------------------
-                   303   ; gpt2.c    194   ///  Configuration of the used GPT2 Interrupts:
-                   304   ; gpt2.c    195   ///  -----------------------------------------------------------------------
-                   305   ; gpt2.c    196 
-                   306   ; gpt2.c    197 
-                   307   ; gpt2.c    198   // USER CODE BEGIN (GPT2_Function,3)
-                   308   ; gpt2.c    199 
-                   309   ; gpt2.c    200   // USER CODE END
-                   310   ; gpt2.c    201 
-                   311   ; gpt2.c    202 } //  End of function GPT2_viCAPREL
-                   312           ?LINE   202
-0036 DB00          313           RETS
-                   314   _GPT2_vInit     ENDP
-               R   315           ?SYMB   '',$,17,202
-                   316   ; gpt2.c    203 
-                   317   ; gpt2.c    204 
-                   318   ; gpt2.c    205 
-                   319   ; gpt2.c    206 // USER CODE BEGIN (GPT2_General,10)
-                   320   ; gpt2.c    207 
-                   321   ; gpt2.c    208 // USER CODE END
-                   322   ; gpt2.c    209 
-                   323   GPT2_1_PR       ENDS
-                   324   
-                   325           REGDEF  R0-R15
-                   326           END
+                   276           ?LINE   174
+0018 E6FC0708      277           MOV     R12,#0807h
+001C F6FC48FF      278           MOV     0FF48h,R12
+                   279   ; gpt2.c    175   GPT12E_T6      =  0xF419;      // load timer 6 register
+                   280           ?LINE   175
+0020 E6FC19F4      281           MOV     R12,#0F419h
+0024 F6FC48FE      282           MOV     0FE48h,R12
+                   283   ; gpt2.c    176 
+                   284   ; gpt2.c    177   ///  -----------------------------------------------------------------------
+                   285   ; gpt2.c    178   ///  Configuration of the GPT2 CAPREL:
+                   286   ; gpt2.c    179   ///  -----------------------------------------------------------------------
+                   287   ; gpt2.c    180   ///  - capture T5 into CAPREL is disabled
+                   288   ; gpt2.c    181   ///  - capture trigger from pin CAPIN
+                   289   ; gpt2.c    182   ///  - capure is disabled
+                   290   ; gpt2.c    183   ///  - timer 5 is not cleared on a capture
+                   291   ; gpt2.c    184   ///  - timer 5 is just captured without any correction
+                   292   ; gpt2.c    185 
+                   293   ; gpt2.c    186   GPT12E_T5CON  |=  0x0000;      // load timer 5 control register
+                   294           ?LINE   186
+0028 E6FC46FF      295           MOV     R12,#0FF46h
+002C A8CC          296           MOV     R12,[R12]
+                   297   ; gpt2.c    187   GPT12E_CAPREL  =  0xF419;      // load CAPREL register
+                   298           ?LINE   187
+002E E6FC19F4      299           MOV     R12,#0F419h
+0032 F6FC4AFE      300           MOV     0FE4Ah,R12
+                   301   ; gpt2.c    188 
+                   302   ; gpt2.c    189   ///  -----------------------------------------------------------------------
+                   303   ; gpt2.c    190   ///  Configuration of the used GPT2 Port Pins:
+                   304   ; gpt2.c    191   ///  -----------------------------------------------------------------------
+                   305   ; gpt2.c    192 
+                   306   ; gpt2.c    193 
+                   307   ; gpt2.c    194   ///  -----------------------------------------------------------------------
+                   308   ; gpt2.c    195   ///  Configuration of the used GPT2 Interrupts:
+                   309   ; gpt2.c    196   ///  -----------------------------------------------------------------------
+                   310   ; gpt2.c    197   ///  timer 6 service request node configuration:
+                   311   ; gpt2.c    198   ///  - timer 6 interrupt priority level (ILVL) = 10
+                   312   ; gpt2.c    199   ///  - timer 6 interrupt group level (GLVL) = 0
+                   313   ; gpt2.c    200   ///  - timer 6 group priority extension (GPX) = 0
+                   314   ; gpt2.c    201 
+                   315   ; gpt2.c    202   GPT12E_T6IC    =  0x0068;     
+                   316           ?LINE   202
+0036 E6FC6800      317           MOV     R12,#068h
+003A F6FC68FF      318           MOV     0FF68h,R12
+                   319   ; gpt2.c    203 
+                   320   ; gpt2.c    204 
+                   321   ; gpt2.c    205 
+                   322   ; gpt2.c    206   // USER CODE BEGIN (GPT2_Function,3)
+                   323   ; gpt2.c    207 
+                   324   ; gpt2.c    208   // USER CODE END
+                   325   ; gpt2.c    209 
+                   326   ; gpt2.c    210 } //  End of function GPT2_viCAPREL
+                   327           ?LINE   210
+003E DB00          328           RETS
+                   329   _GPT2_vInit     ENDP
+               R   330           ?SYMB   '',$,17,210
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 18:18:33  Page:   7
+gpt2
+
+ LOC CODE        LINE   SOURCELINE
+
+                   331   ; gpt2.c    211 
+                   332   ; gpt2.c    212 //****************************************************************************
+                   333   ; gpt2.c    213 // @Function      void GPT2_viTmr6(void) 
+                   334   ; gpt2.c    214 //
+                   335   ; gpt2.c    215 //----------------------------------------------------------------------------
+                   336   ; gpt2.c    216 // @Description   This is the interrupt service routine for the GPT2 timer 6. 
+                   337   ; gpt2.c    217 //                It is called up in the case of over or underflow of the 
+                   338   ; gpt2.c    218 //                timer 6 register.
+                   339   ; gpt2.c    219 //                
+                   340   ; gpt2.c    220 //                Please note that you have to add application specific code 
+                   341   ; gpt2.c    221 //                to this function.
+                   342   ; gpt2.c    222 //
+                   343   ; gpt2.c    223 //----------------------------------------------------------------------------
+                   344   ; gpt2.c    224 // @Returnvalue   None
+                   345   ; gpt2.c    225 //
+                   346   ; gpt2.c    226 //----------------------------------------------------------------------------
+                   347   ; gpt2.c    227 // @Parameters    None
+                   348   ; gpt2.c    228 //
+                   349   ; gpt2.c    229 //----------------------------------------------------------------------------
+                   350   ; gpt2.c    230 // @Date          27.09.2021
+                   351   ; gpt2.c    231 //
+                   352   ; gpt2.c    232 //****************************************************************************
+                   353   ; gpt2.c    233 
+                   354   ; gpt2.c    234 // USER CODE BEGIN (Tmr6,1)
+                   355   ; gpt2.c    235 
+                   356   ; gpt2.c    236 // USER CODE END
+                   357   ; gpt2.c    237 
+                   358   ; gpt2.c    238 _interrupt(T6INT)  void GPT2_viTmr6(void)
+                   359   ; gpt2.c    239 {
+               R   360           ?SYMB   'GPT2_viTmr6',_GPT2_viTmr6,37,1
+                   361           ?SYMB   '',239,8,16
+                   362   _GPT2_viTmr6    PROC TASK GPT2_TASK INTNO GPT2_INUM = 024h
+                   363           ?LINE   239
+                   364           ?SYMB   '',00H,95,0
+0040 F6F00000  R   365           MOV     GPT2_RB,R0
+0044 C6080000  R   366           SCXT    CP,#GPT2_RB
+0048 C6871000      367           SCXT    MDC,#010h
+004C EC00          368           PUSH    DPP0
+004E E6000000  R   369           MOV     DPP0,#PAG ?BASE_DPP0
+0052 CC00          370           NOP
+0054 EC02          371           PUSH    DPP2
+0056 E6020000  R   372           MOV     DPP2,#PAG ?BASE_DPP2
+005A CC00          373           NOP
+005C EC06          374           PUSH    MDH
+005E EC07          375           PUSH    MDL
+0060 ECEF          376           PUSH    MSW
+0062 EC2E          377           PUSH    MAL
+0064 EC2F          378           PUSH    MAH
+0066 ECEE          379           PUSH    MCW
+0068 C6ED0000      380           SCXT    MRW,#00h
+006C EC84          381           PUSH    IDX0
+006E EC85          382           PUSH    IDX1
+0070 D180          383           EXTR    #01h
+0072 EC00     1    384           PUSH    QX0
+0074 D180          385           EXTR    #01h
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 18:18:33  Page:   8
+gpt2
+
+ LOC CODE        LINE   SOURCELINE
+
+0076 EC01     1    386           PUSH    QX1
+0078 D180          387           EXTR    #01h
+007A EC02     1    388           PUSH    QR0
+007C D180          389           EXTR    #01h
+007E EC03     1    390           PUSH    QR1
+                   391   ; Locals:
+                   392   ; 
+                   393   ; Statics:
+                   394   ; 
+                   395   ; CSEs:
+                   396   ; 
+                   397   ; gpt2.c    240   // USER CODE BEGIN (Tmr6,2)
+                   398   ; gpt2.c    241          rampIndex++;   
+                   399           ?LINE   241
+0080 F2FC0000  R   400           MOV     R12,_rampIndex
+0084 08C1          401           ADD     R12,#01h
+0086 F6FC0000  R   402           MOV     _rampIndex,R12
+                   403   ; gpt2.c    242   // USER CODE END
+                   404   ; gpt2.c    243 
+                   405   ; gpt2.c    244 } //  End of function GPT2_viTmr6
+                   406           ?LINE   244
+008A D180          407           EXTR    #01h
+008C FC03     1    408           POP     QR1
+008E D180          409           EXTR    #01h
+0090 FC02     1    410           POP     QR0
+0092 D180          411           EXTR    #01h
+0094 FC01     1    412           POP     QX1
+0096 D180          413           EXTR    #01h
+0098 FC00     1    414           POP     QX0
+009A FC85          415           POP     IDX1
+009C FC84          416           POP     IDX0
+009E FCED          417           POP     MRW
+00A0 FCEE          418           POP     MCW
+00A2 FC2F          419           POP     MAH
+00A4 FC2E          420           POP     MAL
+00A6 FCEF          421           POP     MSW
+00A8 FC07          422           POP     MDL
+00AA FC06          423           POP     MDH
+00AC FC02          424           POP     DPP2
+00AE FC00          425           POP     DPP0
+00B0 FC87          426           POP     MDC
+00B2 FC08          427           POP     CP
+                   428           ?LINE   244
+00B4 FB88          429           RETI
+                   430   _GPT2_viTmr6    ENDP
+               R   431           ?SYMB   '',$,17,244
+                   432   ; gpt2.c    245 
+                   433   ; gpt2.c    246 
+                   434   ; gpt2.c    247 
+                   435   ; gpt2.c    248 
+                   436   ; gpt2.c    249 // USER CODE BEGIN (GPT2_General,10)
+                   437   ; gpt2.c    250 
+                   438   ; gpt2.c    251 // USER CODE END
+                   439   ; gpt2.c    252 
+                   440   GPT2_1_PR       ENDS
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 18:18:33  Page:   9
+gpt2
+
+ LOC CODE        LINE   SOURCELINE
+
+                   441   
+                   442           EXTERN  _rampIndex:WORD
+                   443   GPT2_RB REGDEF  R0-R15
+                   444           END
 
 total errors: 0, warnings: 0
 

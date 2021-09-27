@@ -1,4 +1,4 @@
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 10:04:08  Page:   1
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 18:18:35  Page:   1
 ccu62
 
  LOC CODE        LINE   SOURCELINE
@@ -49,7 +49,7 @@ ccu62
                     44   ; ccu62.c    12 // @Description   This file contains functions that use the CCU62 module.
                     45   ; ccu62.c    13 //
                     46   ; ccu62.c    14 //----------------------------------------------------------------------------
-                    47   ; ccu62.c    15 // @Date          27.09.2021 10:03:55
+                    47   ; ccu62.c    15 // @Date          27.09.2021 18:18:20
                     48   ; ccu62.c    16 //
                     49   ; ccu62.c    17 //****************************************************************************
                     50   ; ccu62.c    18 
@@ -58,7 +58,7 @@ ccu62
                     53   ; ccu62.c    21 // USER CODE END
                     54   ; ccu62.c    22 
                     55   ; ccu62.c    23 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 10:04:08  Page:   2
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 18:18:35  Page:   2
 ccu62
 
  LOC CODE        LINE   SOURCELINE
@@ -106,552 +106,556 @@ ccu62
                     96           ?SYMB   'CCU63.H',0,29,3
                     97           ?SYMB   '',0,86,3
                     98           ?SYMB   '',0,86,2
-                    99           ?SYMB   '',0,86,1
-                   100   ; ccu62.c    30 
-                   101   ; ccu62.c    31 // USER CODE BEGIN (CCU62_General,2)
-                   102   ; ccu62.c    32 
-                   103   ; ccu62.c    33 // USER CODE END
-                   104   ; ccu62.c    34 
-                   105   ; ccu62.c    35 
-                   106   ; ccu62.c    36 //****************************************************************************
-                   107   ; ccu62.c    37 // @Macros
-                   108   ; ccu62.c    38 //****************************************************************************
-                   109   ; ccu62.c    39 
-                   110   ; ccu62.c    40 // USER CODE BEGIN (CCU62_General,3)
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 10:04:08  Page:   3
+                    99           ?SYMB   'ADC0.H',0,29,3
+                   100           ?SYMB   '',0,86,3
+                   101           ?SYMB   'ubyte',3,13,259
+                   102           ?SYMB   '',0,86,2
+                   103           ?SYMB   '',0,86,1
+                   104   ; ccu62.c    30 
+                   105   ; ccu62.c    31 // USER CODE BEGIN (CCU62_General,2)
+                   106   ; ccu62.c    32 
+                   107   ; ccu62.c    33 // USER CODE END
+                   108   ; ccu62.c    34 
+                   109   ; ccu62.c    35 
+                   110   ; ccu62.c    36 //****************************************************************************
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 18:18:35  Page:   3
 ccu62
 
  LOC CODE        LINE   SOURCELINE
 
-                   111   ; ccu62.c    41 
-                   112   ; ccu62.c    42 // USER CODE END
-                   113   ; ccu62.c    43 
-                   114   ; ccu62.c    44 
-                   115   ; ccu62.c    45 //****************************************************************************
-                   116   ; ccu62.c    46 // @Defines
-                   117   ; ccu62.c    47 //****************************************************************************
-                   118   ; ccu62.c    48 
-                   119   ; ccu62.c    49 // USER CODE BEGIN (CCU62_General,4)
-                   120   ; ccu62.c    50 
-                   121   ; ccu62.c    51 // USER CODE END
-                   122   ; ccu62.c    52 
-                   123   ; ccu62.c    53 
-                   124   ; ccu62.c    54 //****************************************************************************
-                   125   ; ccu62.c    55 // @Typedefs
-                   126   ; ccu62.c    56 //****************************************************************************
-                   127   ; ccu62.c    57 
-                   128   ; ccu62.c    58 // USER CODE BEGIN (CCU62_General,5)
-                   129   ; ccu62.c    59 
-                   130   ; ccu62.c    60 // USER CODE END
-                   131   ; ccu62.c    61 
-                   132   ; ccu62.c    62 
-                   133   ; ccu62.c    63 //****************************************************************************
-                   134   ; ccu62.c    64 // @Imported Global Variables
-                   135   ; ccu62.c    65 //****************************************************************************
-                   136   ; ccu62.c    66 
-                   137   ; ccu62.c    67 // USER CODE BEGIN (CCU62_General,6)
-                   138   ; ccu62.c    68         extern const unsigned int ARRAY_SIZE;
-                   139   ; ccu62.c    69         extern  unsigned int index;
-                   140   ; ccu62.c    70 
-                   141   ; ccu62.c    71 // USER CODE END
-                   142   ; ccu62.c    72 
-                   143   ; ccu62.c    73 
-                   144   ; ccu62.c    74 //****************************************************************************
-                   145   ; ccu62.c    75 // @Global Variables
-                   146   ; ccu62.c    76 //****************************************************************************
-                   147   ; ccu62.c    77 
-                   148   ; ccu62.c    78 // USER CODE BEGIN (CCU62_General,7)
-                   149   ; ccu62.c    79 
-                   150   ; ccu62.c    80 // USER CODE END
-                   151   ; ccu62.c    81 
-                   152   ; ccu62.c    82 
-                   153   ; ccu62.c    83 //****************************************************************************
-                   154   ; ccu62.c    84 // @External Prototypes
-                   155   ; ccu62.c    85 //****************************************************************************
-                   156   ; ccu62.c    86 
-                   157   ; ccu62.c    87 // USER CODE BEGIN (CCU62_General,8)
-                   158   ; ccu62.c    88 
-                   159   ; ccu62.c    89 // USER CODE END
-                   160   ; ccu62.c    90 
-                   161   ; ccu62.c    91 
-                   162   ; ccu62.c    92 //****************************************************************************
-                   163   ; ccu62.c    93 // @Prototypes Of Local Functions
-                   164   ; ccu62.c    94 //****************************************************************************
-                   165   ; ccu62.c    95 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 10:04:08  Page:   4
+                   111   ; ccu62.c    37 // @Macros
+                   112   ; ccu62.c    38 //****************************************************************************
+                   113   ; ccu62.c    39 
+                   114   ; ccu62.c    40 // USER CODE BEGIN (CCU62_General,3)
+                   115   ; ccu62.c    41 
+                   116   ; ccu62.c    42 // USER CODE END
+                   117   ; ccu62.c    43 
+                   118   ; ccu62.c    44 
+                   119   ; ccu62.c    45 //****************************************************************************
+                   120   ; ccu62.c    46 // @Defines
+                   121   ; ccu62.c    47 //****************************************************************************
+                   122   ; ccu62.c    48 
+                   123   ; ccu62.c    49 // USER CODE BEGIN (CCU62_General,4)
+                   124   ; ccu62.c    50 
+                   125   ; ccu62.c    51 // USER CODE END
+                   126   ; ccu62.c    52 
+                   127   ; ccu62.c    53 
+                   128   ; ccu62.c    54 //****************************************************************************
+                   129   ; ccu62.c    55 // @Typedefs
+                   130   ; ccu62.c    56 //****************************************************************************
+                   131   ; ccu62.c    57 
+                   132   ; ccu62.c    58 // USER CODE BEGIN (CCU62_General,5)
+                   133   ; ccu62.c    59 
+                   134   ; ccu62.c    60 // USER CODE END
+                   135   ; ccu62.c    61 
+                   136   ; ccu62.c    62 
+                   137   ; ccu62.c    63 //****************************************************************************
+                   138   ; ccu62.c    64 // @Imported Global Variables
+                   139   ; ccu62.c    65 //****************************************************************************
+                   140   ; ccu62.c    66 
+                   141   ; ccu62.c    67 // USER CODE BEGIN (CCU62_General,6)
+                   142   ; ccu62.c    68         extern const unsigned int ARRAY_SIZE;
+                   143   ; ccu62.c    69         extern  unsigned int index;
+                   144   ; ccu62.c    70 
+                   145   ; ccu62.c    71 // USER CODE END
+                   146   ; ccu62.c    72 
+                   147   ; ccu62.c    73 
+                   148   ; ccu62.c    74 //****************************************************************************
+                   149   ; ccu62.c    75 // @Global Variables
+                   150   ; ccu62.c    76 //****************************************************************************
+                   151   ; ccu62.c    77 
+                   152   ; ccu62.c    78 // USER CODE BEGIN (CCU62_General,7)
+                   153   ; ccu62.c    79 
+                   154   ; ccu62.c    80 // USER CODE END
+                   155   ; ccu62.c    81 
+                   156   ; ccu62.c    82 
+                   157   ; ccu62.c    83 //****************************************************************************
+                   158   ; ccu62.c    84 // @External Prototypes
+                   159   ; ccu62.c    85 //****************************************************************************
+                   160   ; ccu62.c    86 
+                   161   ; ccu62.c    87 // USER CODE BEGIN (CCU62_General,8)
+                   162   ; ccu62.c    88 
+                   163   ; ccu62.c    89 // USER CODE END
+                   164   ; ccu62.c    90 
+                   165   ; ccu62.c    91 
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 18:18:35  Page:   4
 ccu62
 
  LOC CODE        LINE   SOURCELINE
 
-                   166   ; ccu62.c    96 // USER CODE BEGIN (CCU62_General,9)
-                   167   ; ccu62.c    97 
-                   168   ; ccu62.c    98 // USER CODE END
-                   169   ; ccu62.c    99 
-                   170   ; ccu62.c   100 
-                   171   ; ccu62.c   101 //****************************************************************************
-                   172   ; ccu62.c   102 // @Function      void CCU62_vInit(void) 
-                   173   ; ccu62.c   103 //
-                   174   ; ccu62.c   104 //----------------------------------------------------------------------------
-                   175   ; ccu62.c   105 // @Description   This is the initialization function of the CCU62 function 
-                   176   ; ccu62.c   106 //                library. It is assumed that the SFRs used by this library 
-                   177   ; ccu62.c   107 //                are in reset state. 
-                   178   ; ccu62.c   108 //
-                   179   ; ccu62.c   109 //----------------------------------------------------------------------------
-                   180   ; ccu62.c   110 // @Returnvalue   None
-                   181   ; ccu62.c   111 //
-                   182   ; ccu62.c   112 //----------------------------------------------------------------------------
-                   183   ; ccu62.c   113 // @Parameters    None
-                   184   ; ccu62.c   114 //
-                   185   ; ccu62.c   115 //----------------------------------------------------------------------------
-                   186   ; ccu62.c   116 // @Date          27.09.2021
-                   187   ; ccu62.c   117 //
-                   188   ; ccu62.c   118 //****************************************************************************
-                   189   ; ccu62.c   119 
-                   190   ; ccu62.c   120 // USER CODE BEGIN (Init,1)
-                   191   ; ccu62.c   121 
-                   192   ; ccu62.c   122 // USER CODE END
-                   193   ; ccu62.c   123 
-                   194   ; ccu62.c   124 void CCU62_vInit(void)
-                   195   ; ccu62.c   125 {
-                   196   CCU62_1_PR      SECTION CODE WORD PUBLIC 'CPROGRAM'
-                   197           ?LINE   125
-                   198           PUBLIC  _CCU62_vInit
-               R   199           ?SYMB   'CCU62_vInit',_CCU62_vInit,37,1
-                   200           ?SYMB   '',125,8,34
-                   201           ?SYMB   'uword',18,13,260
-                   202   _CCU62_vInit    PROC    FAR
-                   203           ?SYMB   '',00H,95,0
-                   204   ; Locals:
-                   205   ; 
-                   206   ; Statics:
-                   207   ; 
-                   208   ; CSEs:
+                   166   ; ccu62.c    92 //****************************************************************************
+                   167   ; ccu62.c    93 // @Prototypes Of Local Functions
+                   168   ; ccu62.c    94 //****************************************************************************
+                   169   ; ccu62.c    95 
+                   170   ; ccu62.c    96 // USER CODE BEGIN (CCU62_General,9)
+                   171   ; ccu62.c    97 
+                   172   ; ccu62.c    98 // USER CODE END
+                   173   ; ccu62.c    99 
+                   174   ; ccu62.c   100 
+                   175   ; ccu62.c   101 //****************************************************************************
+                   176   ; ccu62.c   102 // @Function      void CCU62_vInit(void) 
+                   177   ; ccu62.c   103 //
+                   178   ; ccu62.c   104 //----------------------------------------------------------------------------
+                   179   ; ccu62.c   105 // @Description   This is the initialization function of the CCU62 function 
+                   180   ; ccu62.c   106 //                library. It is assumed that the SFRs used by this library 
+                   181   ; ccu62.c   107 //                are in reset state. 
+                   182   ; ccu62.c   108 //
+                   183   ; ccu62.c   109 //----------------------------------------------------------------------------
+                   184   ; ccu62.c   110 // @Returnvalue   None
+                   185   ; ccu62.c   111 //
+                   186   ; ccu62.c   112 //----------------------------------------------------------------------------
+                   187   ; ccu62.c   113 // @Parameters    None
+                   188   ; ccu62.c   114 //
+                   189   ; ccu62.c   115 //----------------------------------------------------------------------------
+                   190   ; ccu62.c   116 // @Date          27.09.2021
+                   191   ; ccu62.c   117 //
+                   192   ; ccu62.c   118 //****************************************************************************
+                   193   ; ccu62.c   119 
+                   194   ; ccu62.c   120 // USER CODE BEGIN (Init,1)
+                   195   ; ccu62.c   121 
+                   196   ; ccu62.c   122 // USER CODE END
+                   197   ; ccu62.c   123 
+                   198   ; ccu62.c   124 void CCU62_vInit(void)
+                   199   ; ccu62.c   125 {
+                   200   CCU62_1_PR      SECTION CODE WORD PUBLIC 'CPROGRAM'
+                   201           ?LINE   125
+                   202           PUBLIC  _CCU62_vInit
+               R   203           ?SYMB   'CCU62_vInit',_CCU62_vInit,37,1
+                   204           ?SYMB   '',125,8,34
+                   205           ?SYMB   'uword',18,13,261
+                   206   _CCU62_vInit    PROC    FAR
+                   207           ?SYMB   '',00H,95,0
+                   208   ; Locals:
                    209   ; 
-                   210   ; ccu62.c   126   // USER CODE BEGIN (Init,2)
-                   211   ; ccu62.c   127 
-                   212   ; ccu62.c   128   // USER CODE END
-                   213   ; ccu62.c   129 
-                   214   ; ccu62.c   130   ///  -----------------------------------------------------------------------
-                   215   ; ccu62.c   131   ///  Configuration of KERNEL REGISTERS :
-                   216   ; ccu62.c   132   ///  -----------------------------------------------------------------------
-                   217   ; ccu62.c   133   ///  - CCU62 Module is enabled.
-                   218   ; ccu62.c   134   ///  - The CCU62 module clock = 65,000 MHz. 
-                   219   ; ccu62.c   135   ///  - T12 is enabled.
-                   220   ; ccu62.c   136   ///  - T13 is enabled.
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 10:04:08  Page:   5
+                   210   ; Statics:
+                   211   ; 
+                   212   ; CSEs:
+                   213   ; 
+                   214   ; ccu62.c   126   // USER CODE BEGIN (Init,2)
+                   215   ; ccu62.c   127 
+                   216   ; ccu62.c   128   // USER CODE END
+                   217   ; ccu62.c   129 
+                   218   ; ccu62.c   130   ///  -----------------------------------------------------------------------
+                   219   ; ccu62.c   131   ///  Configuration of KERNEL REGISTERS :
+                   220   ; ccu62.c   132   ///  -----------------------------------------------------------------------
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 18:18:35  Page:   5
 ccu62
 
  LOC CODE        LINE   SOURCELINE
 
-                   221   ; ccu62.c   137   ///  - MCM is enabled.
-                   222   ; ccu62.c   138 
-                   223   ; ccu62.c   139   CCU62_KSCFG    =  0x0003;      // Kernel State Configuration Register
-                   224           ?LINE   139
-0000 E03C          225           MOV     R12,#03h
-0002 F6FC00EB      226           MOV     0EB00h,R12
-                   227   ; ccu62.c   140 
-                   228   ; ccu62.c   141 
-                   229   ; ccu62.c   142   _nop();    //No operation function as Delay
-                   230           ?LINE   142
-0006 CC00          231           NOP
-                   232   ; ccu62.c   143   _nop();    //No operation function as Delay
-                   233           ?LINE   143
-0008 CC00          234           NOP
-                   235   ; ccu62.c   144   _nop();    //No operation function as Delay
-                   236           ?LINE   144
-000A CC00          237           NOP
-                   238   ; ccu62.c   145   _nop();    //No operation function as Delay
-                   239           ?LINE   145
-000C CC00          240           NOP
-                   241   ; ccu62.c   146 
-                   242   ; ccu62.c   147   ///  -----------------------------------------------------------------------
-                   243   ; ccu62.c   148   ///  Configuration of CCU62 Timer 12:
-                   244   ; ccu62.c   149   ///  -----------------------------------------------------------------------
-                   245   ; ccu62.c   150   ///  - Timer 12 Input clock factor (T12CLK) is 0
-                   246   ; ccu62.c   151   ///  - prescaler factor is 0
-                   247   ; ccu62.c   152   ///  - Timer 12 run bit is reset
-                   248   ; ccu62.c   153   ///  - Single shot mode is disabled
-                   249   ; ccu62.c   154   ///  - Timer 12 works in edge aligned mode
-                   250   ; ccu62.c   155   ///  - Interrupt on period match is enabled
-                   251   ; ccu62.c   156   ///  - Interrupt on one match is disabled
-                   252   ; ccu62.c   157   ///  - No External run selection is selected.
-                   253   ; ccu62.c   158   ///  - Timer mode is selected.
-                   254   ; ccu62.c   159   ///  - 
-                   255   ; ccu62.c   160 
-                   256   ; ccu62.c   161   CCU62_T12PR    =  0x1657;      // load CCU62 T12 period register
-                   257           ?LINE   161
-000E E6FC5716      258           MOV     R12,#01657h
-0012 F6FC12EB      259           MOV     0EB12h,R12
-                   260   ; ccu62.c   162 
-                   261   ; ccu62.c   163   ///  -----------------------------------------------------------------------
-                   262   ; ccu62.c   164   ///  Configuration of T13HR Signal:
-                   263   ; ccu62.c   165   ///  -----------------------------------------------------------------------
-                   264   ; ccu62.c   166   ///  - Signal T13HRB is selected as Input
-                   265   ; ccu62.c   167   CCU62_PISELH   =  0x0021;      // Load CCU62 Port Input Selection register
-                   266           ?LINE   167
-0016 E6FC2100      267           MOV     R12,#021h
-001A F6FC06EB      268           MOV     0EB06h,R12
-                   269   ; ccu62.c   168 
-                   270   ; ccu62.c   169 
-                   271   ; ccu62.c   170   ///  -----------------------------------------------------------------------
-                   272   ; ccu62.c   171   ///  Configuration of CCU62 Timer 13:
-                   273   ; ccu62.c   172   ///  -----------------------------------------------------------------------
-                   274   ; ccu62.c   173   ///  - Timer 13 Input Clock factor (T13CLK) is 0
-                   275   ; ccu62.c   174   ///  - prescaler factor is 0
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 10:04:08  Page:   6
+                   221   ; ccu62.c   133   ///  - CCU62 Module is enabled.
+                   222   ; ccu62.c   134   ///  - The CCU62 module clock = 65,000 MHz. 
+                   223   ; ccu62.c   135   ///  - T12 is enabled.
+                   224   ; ccu62.c   136   ///  - T13 is enabled.
+                   225   ; ccu62.c   137   ///  - MCM is enabled.
+                   226   ; ccu62.c   138 
+                   227   ; ccu62.c   139   CCU62_KSCFG    =  0x0003;      // Kernel State Configuration Register
+                   228           ?LINE   139
+0000 E03C          229           MOV     R12,#03h
+0002 F6FC00EB      230           MOV     0EB00h,R12
+                   231   ; ccu62.c   140 
+                   232   ; ccu62.c   141 
+                   233   ; ccu62.c   142   _nop();    //No operation function as Delay
+                   234           ?LINE   142
+0006 CC00          235           NOP
+                   236   ; ccu62.c   143   _nop();    //No operation function as Delay
+                   237           ?LINE   143
+0008 CC00          238           NOP
+                   239   ; ccu62.c   144   _nop();    //No operation function as Delay
+                   240           ?LINE   144
+000A CC00          241           NOP
+                   242   ; ccu62.c   145   _nop();    //No operation function as Delay
+                   243           ?LINE   145
+000C CC00          244           NOP
+                   245   ; ccu62.c   146 
+                   246   ; ccu62.c   147   ///  -----------------------------------------------------------------------
+                   247   ; ccu62.c   148   ///  Configuration of CCU62 Timer 12:
+                   248   ; ccu62.c   149   ///  -----------------------------------------------------------------------
+                   249   ; ccu62.c   150   ///  - Timer 12 Input clock factor (T12CLK) is 0
+                   250   ; ccu62.c   151   ///  - prescaler factor is 0
+                   251   ; ccu62.c   152   ///  - Timer 12 run bit is reset
+                   252   ; ccu62.c   153   ///  - Single shot mode is disabled
+                   253   ; ccu62.c   154   ///  - Timer 12 works in edge aligned mode
+                   254   ; ccu62.c   155   ///  - Interrupt on period match is enabled
+                   255   ; ccu62.c   156   ///  - Interrupt on one match is disabled
+                   256   ; ccu62.c   157   ///  - No External run selection is selected.
+                   257   ; ccu62.c   158   ///  - Timer mode is selected.
+                   258   ; ccu62.c   159   ///  - 
+                   259   ; ccu62.c   160 
+                   260   ; ccu62.c   161   CCU62_T12PR    =  0x0595;      // load CCU62 T12 period register
+                   261           ?LINE   161
+000E E6FC9505      262           MOV     R12,#0595h
+0012 F6FC12EB      263           MOV     0EB12h,R12
+                   264   ; ccu62.c   162 
+                   265   ; ccu62.c   163   ///  -----------------------------------------------------------------------
+                   266   ; ccu62.c   164   ///  Configuration of T13HR Signal:
+                   267   ; ccu62.c   165   ///  -----------------------------------------------------------------------
+                   268   ; ccu62.c   166   ///  - Signal T13HRB is selected as Input
+                   269   ; ccu62.c   167   CCU62_PISELH   =  0x0021;      // Load CCU62 Port Input Selection register
+                   270           ?LINE   167
+0016 E6FC2100      271           MOV     R12,#021h
+001A F6FC06EB      272           MOV     0EB06h,R12
+                   273   ; ccu62.c   168 
+                   274   ; ccu62.c   169 
+                   275   ; ccu62.c   170   ///  -----------------------------------------------------------------------
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 18:18:35  Page:   6
 ccu62
 
  LOC CODE        LINE   SOURCELINE
 
-                   276   ; ccu62.c   175   ///  - Timer 13 run bit is reset
-                   277   ; ccu62.c   176   ///  - Trigger control is disabled
-                   278   ; ccu62.c   177   ///  - No External run selection is selected.
-                   279   ; ccu62.c   178   ///  - Counter mode is selected.
-                   280   ; ccu62.c   179   ///  - Counter mode Counts the rising edges at the input T13HR.
-                   281   ; ccu62.c   180   ///  - Single shot mode is disabled
-                   282   ; ccu62.c   181   ///  - Interrupt on period match is disabled
-                   283   ; ccu62.c   182   ///  - Interrupt on compare match is disabled
-                   284   ; ccu62.c   183 
-                   285   ; ccu62.c   184   CCU62_T13PR    =  0x0001;      // load CCU62 T13 period register
-                   286           ?LINE   184
-001E E01C          287           MOV     R12,#01h
-0020 F6FC32EB      288           MOV     0EB32h,R12
-                   289   ; ccu62.c   185 
-                   290   ; ccu62.c   186   CCU62_TCTR2    =  0x0020;      // load CCU62 timer control register 2
-                   291           ?LINE   186
-0024 E6FC2000      292           MOV     R12,#020h
-0028 F6FC2EEB      293           MOV     0EB2Eh,R12
-                   294   ; ccu62.c   187 
-                   295   ; ccu62.c   188   ///  -----------------------------------------------------------------------
-                   296   ; ccu62.c   189   ///  Configuration of Multi Channel Mode:
-                   297   ; ccu62.c   190   ///  -----------------------------------------------------------------------
-                   298   ; ccu62.c   191   ///  - Multi channel mode is disabled
-                   299   ; ccu62.c   192 
-                   300   ; ccu62.c   193 
-                   301   ; ccu62.c   194   ///  -----------------------------------------------------------------------
-                   302   ; ccu62.c   195   ///  Configuration of CCU62 Channel 0:
-                   303   ; ccu62.c   196   ///  -----------------------------------------------------------------------
-                   304   ; ccu62.c   197   ///  - Channel 0 is disabled
-                   305   ; ccu62.c   198   ///  - T12 modulation for output CC60 is disabled
-                   306   ; ccu62.c   199   ///  - T13 modulation for output CC60 is disabled
-                   307   ; ccu62.c   200   ///  - T13 modulation for output CC60 is disabled
-                   308   ; ccu62.c   201 
-                   309   ; ccu62.c   202   ///  - Generation interrupt on flag ICC60R is disabled
-                   310   ; ccu62.c   203   ///  - Generation interrupt on flag ICC60F is disabled
-                   311   ; ccu62.c   204 
-                   312   ; ccu62.c   205   CCU62_CC60SR   =  0x0000;      // Load CCU62 capture/compare shadow 
-                   313           ?LINE   205
-002C E00C          314           MOV     R12,#00h
-002E F6FC20EB      315           MOV     0EB20h,R12
-                   316   ; ccu62.c   206                                  // register for channel 0
-                   317   ; ccu62.c   207 
-                   318   ; ccu62.c   208   ///  -----------------------------------------------------------------------
-                   319   ; ccu62.c   209   ///  Configuration of CCU62 Channel 1:
-                   320   ; ccu62.c   210   ///  -----------------------------------------------------------------------
-                   321   ; ccu62.c   211   ///  - Channel 1 is disabled
-                   322   ; ccu62.c   212   ///  - T12 modulation for output CC61 is disabled
-                   323   ; ccu62.c   213   ///  - T13 modulation for output CC61 is disabled
-                   324   ; ccu62.c   214   ///  - T13 modulation for output CC61 is disabled
-                   325   ; ccu62.c   215 
-                   326   ; ccu62.c   216   ///  - Generation interrupt on flag ICC61R is disabled
-                   327   ; ccu62.c   217   ///  - Generation interrupt on flag ICC61F is disabled
-                   328   ; ccu62.c   218 
-                   329   ; ccu62.c   219   CCU62_CC61SR   =  0x0000;      // Load CCU62 capture/compare shadow 
-                   330           ?LINE   219
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 10:04:08  Page:   7
+                   276   ; ccu62.c   171   ///  Configuration of CCU62 Timer 13:
+                   277   ; ccu62.c   172   ///  -----------------------------------------------------------------------
+                   278   ; ccu62.c   173   ///  - Timer 13 Input Clock factor (T13CLK) is 0
+                   279   ; ccu62.c   174   ///  - prescaler factor is 0
+                   280   ; ccu62.c   175   ///  - Timer 13 run bit is reset
+                   281   ; ccu62.c   176   ///  - Trigger control is disabled
+                   282   ; ccu62.c   177   ///  - No External run selection is selected.
+                   283   ; ccu62.c   178   ///  - Counter mode is selected.
+                   284   ; ccu62.c   179   ///  - Counter mode Counts the rising edges at the input T13HR.
+                   285   ; ccu62.c   180   ///  - Single shot mode is disabled
+                   286   ; ccu62.c   181   ///  - Interrupt on period match is disabled
+                   287   ; ccu62.c   182   ///  - Interrupt on compare match is disabled
+                   288   ; ccu62.c   183 
+                   289   ; ccu62.c   184   CCU62_T13PR    =  0x0001;      // load CCU62 T13 period register
+                   290           ?LINE   184
+001E E01C          291           MOV     R12,#01h
+0020 F6FC32EB      292           MOV     0EB32h,R12
+                   293   ; ccu62.c   185 
+                   294   ; ccu62.c   186   CCU62_TCTR2    =  0x0020;      // load CCU62 timer control register 2
+                   295           ?LINE   186
+0024 E6FC2000      296           MOV     R12,#020h
+0028 F6FC2EEB      297           MOV     0EB2Eh,R12
+                   298   ; ccu62.c   187 
+                   299   ; ccu62.c   188   ///  -----------------------------------------------------------------------
+                   300   ; ccu62.c   189   ///  Configuration of Multi Channel Mode:
+                   301   ; ccu62.c   190   ///  -----------------------------------------------------------------------
+                   302   ; ccu62.c   191   ///  - Multi channel mode is disabled
+                   303   ; ccu62.c   192 
+                   304   ; ccu62.c   193 
+                   305   ; ccu62.c   194   ///  -----------------------------------------------------------------------
+                   306   ; ccu62.c   195   ///  Configuration of CCU62 Channel 0:
+                   307   ; ccu62.c   196   ///  -----------------------------------------------------------------------
+                   308   ; ccu62.c   197   ///  - Channel 0 is disabled
+                   309   ; ccu62.c   198   ///  - T12 modulation for output CC60 is disabled
+                   310   ; ccu62.c   199   ///  - T13 modulation for output CC60 is disabled
+                   311   ; ccu62.c   200   ///  - T13 modulation for output CC60 is disabled
+                   312   ; ccu62.c   201 
+                   313   ; ccu62.c   202   ///  - Generation interrupt on flag ICC60R is disabled
+                   314   ; ccu62.c   203   ///  - Generation interrupt on flag ICC60F is disabled
+                   315   ; ccu62.c   204 
+                   316   ; ccu62.c   205   CCU62_CC60SR   =  0x0000;      // Load CCU62 capture/compare shadow 
+                   317           ?LINE   205
+002C E00C          318           MOV     R12,#00h
+002E F6FC20EB      319           MOV     0EB20h,R12
+                   320   ; ccu62.c   206                                  // register for channel 0
+                   321   ; ccu62.c   207 
+                   322   ; ccu62.c   208   ///  -----------------------------------------------------------------------
+                   323   ; ccu62.c   209   ///  Configuration of CCU62 Channel 1:
+                   324   ; ccu62.c   210   ///  -----------------------------------------------------------------------
+                   325   ; ccu62.c   211   ///  - Channel 1 is disabled
+                   326   ; ccu62.c   212   ///  - T12 modulation for output CC61 is disabled
+                   327   ; ccu62.c   213   ///  - T13 modulation for output CC61 is disabled
+                   328   ; ccu62.c   214   ///  - T13 modulation for output CC61 is disabled
+                   329   ; ccu62.c   215 
+                   330   ; ccu62.c   216   ///  - Generation interrupt on flag ICC61R is disabled
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 18:18:35  Page:   7
 ccu62
 
  LOC CODE        LINE   SOURCELINE
 
-0032 E00C          331           MOV     R12,#00h
-0034 F6FC22EB      332           MOV     0EB22h,R12
-                   333   ; ccu62.c   220                                  // register for channel 1
-                   334   ; ccu62.c   221 
-                   335   ; ccu62.c   222   ///  -----------------------------------------------------------------------
-                   336   ; ccu62.c   223   ///  Configuration of CCU62 Channel 2:
-                   337   ; ccu62.c   224   ///  -----------------------------------------------------------------------
-                   338   ; ccu62.c   225   ///  - Channel 2 is disabled
-                   339   ; ccu62.c   226   ///  - T12 modulation for output CC62 is disabled
-                   340   ; ccu62.c   227   ///  - T13 modulation for output CC62 is disabled
-                   341   ; ccu62.c   228   ///  - T13 modulation for output CC62 is disabled
-                   342   ; ccu62.c   229 
-                   343   ; ccu62.c   230   ///  - Generation interrupt on flag ICC62R is disabled
-                   344   ; ccu62.c   231   ///  - Generation interrupt on flag ICC62F is disabled
-                   345   ; ccu62.c   232 
-                   346   ; ccu62.c   233   CCU62_CC62SR   =  0x0000;      // Load CCU62 capture/compare shadow 
-                   347           ?LINE   233
-0038 E00C          348           MOV     R12,#00h
-003A F6FC24EB      349           MOV     0EB24h,R12
-                   350   ; ccu62.c   234                                  // register for channel 2
-                   351   ; ccu62.c   235 
-                   352   ; ccu62.c   236   ///  -----------------------------------------------------------------------
-                   353   ; ccu62.c   237   ///  Configuration of CCU62 Channel 3:
-                   354   ; ccu62.c   238   ///  -----------------------------------------------------------------------
-                   355   ; ccu62.c   239   ///  - T13 output is not inverted
-                   356   ; ccu62.c   240 
-                   357   ; ccu62.c   241 
-                   358   ; ccu62.c   242   CCU62_CC63SR   =  0x0000;      // load CCU62 capture/compare shadow 
-                   359           ?LINE   242
-003E E00C          360           MOV     R12,#00h
-0040 F6FC36EB      361           MOV     0EB36h,R12
-                   362   ; ccu62.c   243                                  // register for channel 3
-                   363   ; ccu62.c   244 
-                   364   ; ccu62.c   245 
-                   365   ; ccu62.c   246   CCU62_T12DTC   =  0x0001;      // load CCU62 dead time control register for 
-                   366           ?LINE   246
-0044 E01C          367           MOV     R12,#01h
-0046 F6FC14EB      368           MOV     0EB14h,R12
-                   369   ; ccu62.c   247                                  // timer T12
-                   370   ; ccu62.c   248 
-                   371   ; ccu62.c   249   ///  -----------------------------------------------------------------------
-                   372   ; ccu62.c   250   ///  Configuration of CCU62 trap control:
-                   373   ; ccu62.c   251   ///  -----------------------------------------------------------------------
-                   374   ; ccu62.c   252   ///  - Trap can only be generated by SW by setting the bit TRPF
-                   375   ; ccu62.c   253   ///  - The trap state is left when a zero-match of T12 (while counting up) 
-                   376   ; ccu62.c   254   ///    is detected (synchronization to T12)
-                   377   ; ccu62.c   255   ///  - Bit TRPF is automatically cleared by HW (according to TRPPEN, TRPM0 
-                   378   ; ccu62.c   256   ///    and TRPM1)
-                   379   ; ccu62.c   257   ///  - Trap interrupt is disabled
-                   380   ; ccu62.c   258 
-                   381   ; ccu62.c   259 
-                   382   ; ccu62.c   260   ///  -----------------------------------------------------------------------
-                   383   ; ccu62.c   261   ///  Configuration of CCU62 interrupt control:
-                   384   ; ccu62.c   262   ///  -----------------------------------------------------------------------
-                   385   ; ccu62.c   263   ///  - For channel 0 interrupts is node I0 selected
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 10:04:08  Page:   8
+                   331   ; ccu62.c   217   ///  - Generation interrupt on flag ICC61F is disabled
+                   332   ; ccu62.c   218 
+                   333   ; ccu62.c   219   CCU62_CC61SR   =  0x0000;      // Load CCU62 capture/compare shadow 
+                   334           ?LINE   219
+0032 E00C          335           MOV     R12,#00h
+0034 F6FC22EB      336           MOV     0EB22h,R12
+                   337   ; ccu62.c   220                                  // register for channel 1
+                   338   ; ccu62.c   221 
+                   339   ; ccu62.c   222   ///  -----------------------------------------------------------------------
+                   340   ; ccu62.c   223   ///  Configuration of CCU62 Channel 2:
+                   341   ; ccu62.c   224   ///  -----------------------------------------------------------------------
+                   342   ; ccu62.c   225   ///  - Channel 2 is disabled
+                   343   ; ccu62.c   226   ///  - T12 modulation for output CC62 is disabled
+                   344   ; ccu62.c   227   ///  - T13 modulation for output CC62 is disabled
+                   345   ; ccu62.c   228   ///  - T13 modulation for output CC62 is disabled
+                   346   ; ccu62.c   229 
+                   347   ; ccu62.c   230   ///  - Generation interrupt on flag ICC62R is disabled
+                   348   ; ccu62.c   231   ///  - Generation interrupt on flag ICC62F is disabled
+                   349   ; ccu62.c   232 
+                   350   ; ccu62.c   233   CCU62_CC62SR   =  0x0000;      // Load CCU62 capture/compare shadow 
+                   351           ?LINE   233
+0038 E00C          352           MOV     R12,#00h
+003A F6FC24EB      353           MOV     0EB24h,R12
+                   354   ; ccu62.c   234                                  // register for channel 2
+                   355   ; ccu62.c   235 
+                   356   ; ccu62.c   236   ///  -----------------------------------------------------------------------
+                   357   ; ccu62.c   237   ///  Configuration of CCU62 Channel 3:
+                   358   ; ccu62.c   238   ///  -----------------------------------------------------------------------
+                   359   ; ccu62.c   239   ///  - T13 output is not inverted
+                   360   ; ccu62.c   240 
+                   361   ; ccu62.c   241 
+                   362   ; ccu62.c   242   CCU62_CC63SR   =  0x0000;      // load CCU62 capture/compare shadow 
+                   363           ?LINE   242
+003E E00C          364           MOV     R12,#00h
+0040 F6FC36EB      365           MOV     0EB36h,R12
+                   366   ; ccu62.c   243                                  // register for channel 3
+                   367   ; ccu62.c   244 
+                   368   ; ccu62.c   245 
+                   369   ; ccu62.c   246   CCU62_T12DTC   =  0x0001;      // load CCU62 dead time control register for 
+                   370           ?LINE   246
+0044 E01C          371           MOV     R12,#01h
+0046 F6FC14EB      372           MOV     0EB14h,R12
+                   373   ; ccu62.c   247                                  // timer T12
+                   374   ; ccu62.c   248 
+                   375   ; ccu62.c   249   ///  -----------------------------------------------------------------------
+                   376   ; ccu62.c   250   ///  Configuration of CCU62 trap control:
+                   377   ; ccu62.c   251   ///  -----------------------------------------------------------------------
+                   378   ; ccu62.c   252   ///  - Trap can only be generated by SW by setting the bit TRPF
+                   379   ; ccu62.c   253   ///  - The trap state is left when a zero-match of T12 (while counting up) 
+                   380   ; ccu62.c   254   ///    is detected (synchronization to T12)
+                   381   ; ccu62.c   255   ///  - Bit TRPF is automatically cleared by HW (according to TRPPEN, TRPM0 
+                   382   ; ccu62.c   256   ///    and TRPM1)
+                   383   ; ccu62.c   257   ///  - Trap interrupt is disabled
+                   384   ; ccu62.c   258 
+                   385   ; ccu62.c   259 
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 18:18:35  Page:   8
 ccu62
 
  LOC CODE        LINE   SOURCELINE
 
-                   386   ; ccu62.c   264   ///  - For channel 1 interrupts is node I0 selected
-                   387   ; ccu62.c   265   ///  - For channel 2 interrupts is node I0 selected
-                   388   ; ccu62.c   266   ///  - For correct hall event interrupt is node I0 selected
-                   389   ; ccu62.c   267   ///  - For error interrupts is node I0 selected
-                   390   ; ccu62.c   268   ///  - For T12 interrupts is node I0 selected
-                   391   ; ccu62.c   269   ///  - For T13 interrupts is node I0 selected
-                   392   ; ccu62.c   270 
-                   393   ; ccu62.c   271 
-                   394   ; ccu62.c   272   CCU62_INP      =  0x0000;      // Load CCU62 capture/compare interrupt node 
-                   395           ?LINE   272
-004A E00C          396           MOV     R12,#00h
-004C F6FC56EB      397           MOV     0EB56h,R12
-                   398   ; ccu62.c   273                                  // pointer register
-                   399   ; ccu62.c   274 
-                   400   ; ccu62.c   275   CCU62_IEN      =  0x0080;      // Load CCU62 capture/compare interrupt 
-                   401           ?LINE   275
-0050 E6FC8000      402           MOV     R12,#080h
-0054 F6FC58EB      403           MOV     0EB58h,R12
-                   404   ; ccu62.c   276                                  // enable register
-                   405   ; ccu62.c   277 
-                   406   ; ccu62.c   278 
-                   407   ; ccu62.c   279   ///  -----------------------------------------------------------------------
-                   408   ; ccu62.c   280   ///  Configuration of the used CCU62 Channel Port Pins:
-                   409   ; ccu62.c   281   ///  -----------------------------------------------------------------------
-                   410   ; ccu62.c   282 
-                   411   ; ccu62.c   283 
-                   412   ; ccu62.c   284   CCU62_PISELL   =  0x3FC0;      // Load CCU62 Port Input Selection register
-                   413           ?LINE   284
-0058 E6FCC03F      414           MOV     R12,#03FC0h
-005C F6FC04EB      415           MOV     0EB04h,R12
-                   416   ; ccu62.c   285 
-                   417   ; ccu62.c   286   ///  -----------------------------------------------------------------------
-                   418   ; ccu62.c   287   ///  Configuration of the used CCU62 Channels Interrupts:
-                   419   ; ccu62.c   288   ///  -----------------------------------------------------------------------
-                   420   ; ccu62.c   289   ///  NodeI0 service request node configuration:
-                   421   ; ccu62.c   290   ///  - NodeI0 interrupt priority level (ILVL) = 13
-                   422   ; ccu62.c   291   ///  - NodeI0 interrupt group level (GLVL) = 0
-                   423   ; ccu62.c   292   ///  - NodeI0 group priority extension (GPX) = 0
-                   424   ; ccu62.c   293 
-                   425   ; ccu62.c   294   CCU62_0IC      =  0x0074;     
-                   426           ?LINE   294
-0060 E6FC7400      427           MOV     R12,#074h
-0064 F6FC70F1      428           MOV     0F170h,R12
-                   429   ; ccu62.c   295 
-                   430   ; ccu62.c   296 
-                   431   ; ccu62.c   297   ///  -----------------------------------------------------------------------
-                   432   ; ccu62.c   298   ///  Configuration of T12, T13 ---- CCU62_TCTR4 Register:
-                   433   ; ccu62.c   299   ///  -----------------------------------------------------------------------
-                   434   ; ccu62.c   300   ///  - Enable shadow transfer of T12 and T13
-                   435   ; ccu62.c   301   ///  - Timer 12 run bit is reset
-                   436   ; ccu62.c   302   ///  - Timer 13 run bit is reset
-                   437   ; ccu62.c   303   CCU62_TCTR4    =  0x4040;      // load CCU62 timer control register 4
-                   438           ?LINE   303
-0068 E6FC4040      439           MOV     R12,#04040h
-006C F6FC26EB      440           MOV     0EB26h,R12
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 10:04:08  Page:   9
+                   386   ; ccu62.c   260   ///  -----------------------------------------------------------------------
+                   387   ; ccu62.c   261   ///  Configuration of CCU62 interrupt control:
+                   388   ; ccu62.c   262   ///  -----------------------------------------------------------------------
+                   389   ; ccu62.c   263   ///  - For channel 0 interrupts is node I0 selected
+                   390   ; ccu62.c   264   ///  - For channel 1 interrupts is node I0 selected
+                   391   ; ccu62.c   265   ///  - For channel 2 interrupts is node I0 selected
+                   392   ; ccu62.c   266   ///  - For correct hall event interrupt is node I0 selected
+                   393   ; ccu62.c   267   ///  - For error interrupts is node I0 selected
+                   394   ; ccu62.c   268   ///  - For T12 interrupts is node I0 selected
+                   395   ; ccu62.c   269   ///  - For T13 interrupts is node I0 selected
+                   396   ; ccu62.c   270 
+                   397   ; ccu62.c   271 
+                   398   ; ccu62.c   272   CCU62_INP      =  0x0000;      // Load CCU62 capture/compare interrupt node 
+                   399           ?LINE   272
+004A E00C          400           MOV     R12,#00h
+004C F6FC56EB      401           MOV     0EB56h,R12
+                   402   ; ccu62.c   273                                  // pointer register
+                   403   ; ccu62.c   274 
+                   404   ; ccu62.c   275   CCU62_IEN      =  0x0080;      // Load CCU62 capture/compare interrupt 
+                   405           ?LINE   275
+0050 E6FC8000      406           MOV     R12,#080h
+0054 F6FC58EB      407           MOV     0EB58h,R12
+                   408   ; ccu62.c   276                                  // enable register
+                   409   ; ccu62.c   277 
+                   410   ; ccu62.c   278 
+                   411   ; ccu62.c   279   ///  -----------------------------------------------------------------------
+                   412   ; ccu62.c   280   ///  Configuration of the used CCU62 Channel Port Pins:
+                   413   ; ccu62.c   281   ///  -----------------------------------------------------------------------
+                   414   ; ccu62.c   282 
+                   415   ; ccu62.c   283 
+                   416   ; ccu62.c   284   CCU62_PISELL   =  0x3FC0;      // Load CCU62 Port Input Selection register
+                   417           ?LINE   284
+0058 E6FCC03F      418           MOV     R12,#03FC0h
+005C F6FC04EB      419           MOV     0EB04h,R12
+                   420   ; ccu62.c   285 
+                   421   ; ccu62.c   286   ///  -----------------------------------------------------------------------
+                   422   ; ccu62.c   287   ///  Configuration of the used CCU62 Channels Interrupts:
+                   423   ; ccu62.c   288   ///  -----------------------------------------------------------------------
+                   424   ; ccu62.c   289   ///  NodeI0 service request node configuration:
+                   425   ; ccu62.c   290   ///  - NodeI0 interrupt priority level (ILVL) = 13
+                   426   ; ccu62.c   291   ///  - NodeI0 interrupt group level (GLVL) = 0
+                   427   ; ccu62.c   292   ///  - NodeI0 group priority extension (GPX) = 0
+                   428   ; ccu62.c   293 
+                   429   ; ccu62.c   294   CCU62_0IC      =  0x0074;     
+                   430           ?LINE   294
+0060 E6FC7400      431           MOV     R12,#074h
+0064 F6FC70F1      432           MOV     0F170h,R12
+                   433   ; ccu62.c   295 
+                   434   ; ccu62.c   296 
+                   435   ; ccu62.c   297   ///  -----------------------------------------------------------------------
+                   436   ; ccu62.c   298   ///  Configuration of T12, T13 ---- CCU62_TCTR4 Register:
+                   437   ; ccu62.c   299   ///  -----------------------------------------------------------------------
+                   438   ; ccu62.c   300   ///  - Enable shadow transfer of T12 and T13
+                   439   ; ccu62.c   301   ///  - Timer 12 run bit is reset
+                   440   ; ccu62.c   302   ///  - Timer 13 run bit is reset
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 18:18:35  Page:   9
 ccu62
 
  LOC CODE        LINE   SOURCELINE
 
-                   441   ; ccu62.c   304 
-                   442   ; ccu62.c   305 
-                   443   ; ccu62.c   306   // USER CODE BEGIN (NodeI3,3)
-                   444   ; ccu62.c   307 
-                   445   ; ccu62.c   308   // USER CODE END
-                   446   ; ccu62.c   309 
-                   447   ; ccu62.c   310 } //  End of function CCU62_vInit
-                   448           ?LINE   310
-0070 DB00          449           RETS
-                   450   _CCU62_vInit    ENDP
-               R   451           ?SYMB   '',$,17,310
-                   452   ; ccu62.c   311 
-                   453   ; ccu62.c   312 
-                   454   ; ccu62.c   313 //****************************************************************************
-                   455   ; ccu62.c   314 // @Function      void CCU62_viNodeI0(void) 
-                   456   ; ccu62.c   315 //
-                   457   ; ccu62.c   316 //----------------------------------------------------------------------------
-                   458   ; ccu62.c   317 // @Description   This is the interrupt service routine for the CCU62 node 
-                   459   ; ccu62.c   318 //                I0. If the content of the corresponding compare timer 
-                   460   ; ccu62.c   319 //                (configurable) equals the content of the capture/compare 
-                   461   ; ccu62.c   320 //                register or if a capture event occurs at the associated 
-                   462   ; ccu62.c   321 //                port pin, the interrupt request flag is set and an 
-                   463   ; ccu62.c   322 //                interrupt is triggered (only if enabled).
-                   464   ; ccu62.c   323 //                Please note that you have to add application specific code 
-                   465   ; ccu62.c   324 //                to this function.
-                   466   ; ccu62.c   325 //
-                   467   ; ccu62.c   326 //----------------------------------------------------------------------------
-                   468   ; ccu62.c   327 // @Returnvalue   None
-                   469   ; ccu62.c   328 //
-                   470   ; ccu62.c   329 //----------------------------------------------------------------------------
-                   471   ; ccu62.c   330 // @Parameters    None
-                   472   ; ccu62.c   331 //
-                   473   ; ccu62.c   332 //----------------------------------------------------------------------------
-                   474   ; ccu62.c   333 // @Date          27.09.2021
-                   475   ; ccu62.c   334 //
-                   476   ; ccu62.c   335 //****************************************************************************
-                   477   ; ccu62.c   336 
-                   478   ; ccu62.c   337 // USER CODE BEGIN (NodeI0,1)
-                   479   ; ccu62.c   338 
-                   480   ; ccu62.c   339 // USER CODE END
-                   481   ; ccu62.c   340 
-                   482   ; ccu62.c   341 _interrupt(CCU62_NodeI0_INT)  void CCU62_viNodeI0(void)
-                   483   ; ccu62.c   342 {
-               R   484           ?SYMB   'CCU62_viNodeI0',_CCU62_viNodeI0,37,1
-                   485           ?SYMB   '',342,8,16
-                   486   _CCU62_viNodeI0 PROC TASK CCU62_TASK INTNO CCU62_INUM = 038h
-                   487           ?LINE   342
-                   488           ?SYMB   '',00H,95,0
-0072 F6F00000  R   489           MOV     CCU62_RB,R0
-0076 C6080000  R   490           SCXT    CP,#CCU62_RB
-007A C6871000      491           SCXT    MDC,#010h
-007E EC00          492           PUSH    DPP0
-0080 E6000000  R   493           MOV     DPP0,#PAG ?BASE_DPP0
-0084 CC00          494           NOP
-0086 EC02          495           PUSH    DPP2
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 10:04:08  Page:  10
+                   441   ; ccu62.c   303   CCU62_TCTR4    =  0x4040;      // load CCU62 timer control register 4
+                   442           ?LINE   303
+0068 E6FC4040      443           MOV     R12,#04040h
+006C F6FC26EB      444           MOV     0EB26h,R12
+                   445   ; ccu62.c   304 
+                   446   ; ccu62.c   305 
+                   447   ; ccu62.c   306   // USER CODE BEGIN (NodeI3,3)
+                   448   ; ccu62.c   307 
+                   449   ; ccu62.c   308   // USER CODE END
+                   450   ; ccu62.c   309 
+                   451   ; ccu62.c   310 } //  End of function CCU62_vInit
+                   452           ?LINE   310
+0070 DB00          453           RETS
+                   454   _CCU62_vInit    ENDP
+               R   455           ?SYMB   '',$,17,310
+                   456   ; ccu62.c   311 
+                   457   ; ccu62.c   312 
+                   458   ; ccu62.c   313 //****************************************************************************
+                   459   ; ccu62.c   314 // @Function      void CCU62_viNodeI0(void) 
+                   460   ; ccu62.c   315 //
+                   461   ; ccu62.c   316 //----------------------------------------------------------------------------
+                   462   ; ccu62.c   317 // @Description   This is the interrupt service routine for the CCU62 node 
+                   463   ; ccu62.c   318 //                I0. If the content of the corresponding compare timer 
+                   464   ; ccu62.c   319 //                (configurable) equals the content of the capture/compare 
+                   465   ; ccu62.c   320 //                register or if a capture event occurs at the associated 
+                   466   ; ccu62.c   321 //                port pin, the interrupt request flag is set and an 
+                   467   ; ccu62.c   322 //                interrupt is triggered (only if enabled).
+                   468   ; ccu62.c   323 //                Please note that you have to add application specific code 
+                   469   ; ccu62.c   324 //                to this function.
+                   470   ; ccu62.c   325 //
+                   471   ; ccu62.c   326 //----------------------------------------------------------------------------
+                   472   ; ccu62.c   327 // @Returnvalue   None
+                   473   ; ccu62.c   328 //
+                   474   ; ccu62.c   329 //----------------------------------------------------------------------------
+                   475   ; ccu62.c   330 // @Parameters    None
+                   476   ; ccu62.c   331 //
+                   477   ; ccu62.c   332 //----------------------------------------------------------------------------
+                   478   ; ccu62.c   333 // @Date          27.09.2021
+                   479   ; ccu62.c   334 //
+                   480   ; ccu62.c   335 //****************************************************************************
+                   481   ; ccu62.c   336 
+                   482   ; ccu62.c   337 // USER CODE BEGIN (NodeI0,1)
+                   483   ; ccu62.c   338 
+                   484   ; ccu62.c   339 // USER CODE END
+                   485   ; ccu62.c   340 
+                   486   ; ccu62.c   341 _interrupt(CCU62_NodeI0_INT)  void CCU62_viNodeI0(void)
+                   487   ; ccu62.c   342 {
+               R   488           ?SYMB   'CCU62_viNodeI0',_CCU62_viNodeI0,37,1
+                   489           ?SYMB   '',342,8,16
+                   490   _CCU62_viNodeI0 PROC TASK CCU62_TASK INTNO CCU62_INUM = 038h
+                   491           ?LINE   342
+                   492           ?SYMB   '',00H,95,0
+0072 F6F00000  R   493           MOV     CCU62_RB,R0
+0076 C6080000  R   494           SCXT    CP,#CCU62_RB
+007A C6871000      495           SCXT    MDC,#010h
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 18:18:35  Page:  10
 ccu62
 
  LOC CODE        LINE   SOURCELINE
 
-0088 E6020000  R   496           MOV     DPP2,#PAG ?BASE_DPP2
-008C CC00          497           NOP
-008E EC06          498           PUSH    MDH
-0090 EC07          499           PUSH    MDL
-0092 ECEF          500           PUSH    MSW
-0094 EC2E          501           PUSH    MAL
-0096 EC2F          502           PUSH    MAH
-0098 ECEE          503           PUSH    MCW
-009A C6ED0000      504           SCXT    MRW,#00h
-009E EC84          505           PUSH    IDX0
-00A0 EC85          506           PUSH    IDX1
-00A2 D180          507           EXTR    #01h
-00A4 EC00     1    508           PUSH    QX0
-00A6 D180          509           EXTR    #01h
-00A8 EC01     1    510           PUSH    QX1
-00AA D180          511           EXTR    #01h
-00AC EC02     1    512           PUSH    QR0
-00AE D180          513           EXTR    #01h
-00B0 EC03     1    514           PUSH    QR1
-                   515   ; Locals:
-                   516   ; 
-                   517   ; Statics:
-                   518   ; 
-                   519   ; CSEs:
+007E EC00          496           PUSH    DPP0
+0080 E6000000  R   497           MOV     DPP0,#PAG ?BASE_DPP0
+0084 CC00          498           NOP
+0086 EC02          499           PUSH    DPP2
+0088 E6020000  R   500           MOV     DPP2,#PAG ?BASE_DPP2
+008C CC00          501           NOP
+008E EC06          502           PUSH    MDH
+0090 EC07          503           PUSH    MDL
+0092 ECEF          504           PUSH    MSW
+0094 EC2E          505           PUSH    MAL
+0096 EC2F          506           PUSH    MAH
+0098 ECEE          507           PUSH    MCW
+009A C6ED0000      508           SCXT    MRW,#00h
+009E EC84          509           PUSH    IDX0
+00A0 EC85          510           PUSH    IDX1
+00A2 D180          511           EXTR    #01h
+00A4 EC00     1    512           PUSH    QX0
+00A6 D180          513           EXTR    #01h
+00A8 EC01     1    514           PUSH    QX1
+00AA D180          515           EXTR    #01h
+00AC EC02     1    516           PUSH    QR0
+00AE D180          517           EXTR    #01h
+00B0 EC03     1    518           PUSH    QR1
+                   519   ; Locals:
                    520   ; 
-                   521   ; ccu62.c   343   // USER CODE BEGIN (NodeI0,2)
-                   522   ; ccu62.c   344 
-                   523   ; ccu62.c   345   // USER CODE END
-                   524   ; ccu62.c   346 
-                   525   ; ccu62.c   347   if(CCU62_IS & 0x0080)  // if CCU62_IS_T12PM
-                   526           ?LINE   347
-00B2 F2FC50EB      527           MOV     R12,0EB50h
-00B6 9AFC1570      528           JNB     R12.7,_4
-                   529   ; ccu62.c   348   {
-                   530   ; ccu62.c   349     // Timer T12 period match detection
-                   531   ; ccu62.c   350 
-                   532   ; ccu62.c   351     // USER CODE BEGIN (NodeI0,19)
-                   533   ; ccu62.c   352           index++;
-                   534           ?LINE   352
-00BA F2FC0000  R   535           MOV     R12,_index
-00BE 08C1          536           ADD     R12,#01h
-00C0 F6FC0000  R   537           MOV     _index,R12
-                   538   ; ccu62.c   353           index = index%ARRAY_SIZE;
-                   539           ?LINE   353
-00C4 F2FC0000  R   540           MOV     R12,_index
-00C8 F2FD0000  R   541           MOV     R13,_ARRAY_SIZE
-00CC F6FC0EFE      542           MOV     MDL,R12
-00D0 5BDD          543           DIVU    R13
-00D2 F2FC0CFE      544           MOV     R12,MDH
-00D6 F6FC0000  R   545           MOV     _index,R12
-                   546   ; ccu62.c   354     // USER CODE END
-                   547   ; ccu62.c   355 
-                   548   ; ccu62.c   356     CCU62_ISR |= 0x0080;  // clear flag CCU62_IS_T12PM
-                   549           ?LINE   356
-00DA E6FC54EB      550           MOV     R12,#0EB54h
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 10:04:08  Page:  11
+                   521   ; Statics:
+                   522   ; 
+                   523   ; CSEs:
+                   524   ; 
+                   525   ; ccu62.c   343   // USER CODE BEGIN (NodeI0,2)
+                   526   ; ccu62.c   344 
+                   527   ; ccu62.c   345   // USER CODE END
+                   528   ; ccu62.c   346 
+                   529   ; ccu62.c   347   if(CCU62_IS & 0x0080)  // if CCU62_IS_T12PM
+                   530           ?LINE   347
+00B2 F2FC50EB      531           MOV     R12,0EB50h
+00B6 9AFC1570      532           JNB     R12.7,_4
+                   533   ; ccu62.c   348   {
+                   534   ; ccu62.c   349     // Timer T12 period match detection
+                   535   ; ccu62.c   350 
+                   536   ; ccu62.c   351     // USER CODE BEGIN (NodeI0,19)
+                   537   ; ccu62.c   352           index++;
+                   538           ?LINE   352
+00BA F2FC0000  R   539           MOV     R12,_index
+00BE 08C1          540           ADD     R12,#01h
+00C0 F6FC0000  R   541           MOV     _index,R12
+                   542   ; ccu62.c   353           index = index%ARRAY_SIZE;
+                   543           ?LINE   353
+00C4 F2FC0000  R   544           MOV     R12,_index
+00C8 F2FD0000  R   545           MOV     R13,_ARRAY_SIZE
+00CC F6FC0EFE      546           MOV     MDL,R12
+00D0 5BDD          547           DIVU    R13
+00D2 F2FC0CFE      548           MOV     R12,MDH
+00D6 F6FC0000  R   549           MOV     _index,R12
+                   550   ; ccu62.c   354     // USER CODE END
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 18:18:35  Page:  11
 ccu62
 
  LOC CODE        LINE   SOURCELINE
 
-00DE A8DC          551           MOV     R13,[R12]
-00E0 7FFD          552           BSET    R13.7
-00E2 B8DC          553           MOV     [R12],R13
-                   554   ; ccu62.c   357   }
-                   555           ?LINE   357
-00E4               556   _4:
-                   557   ; ccu62.c   358 
-                   558   ; ccu62.c   359 
-                   559   ; ccu62.c   360 } //  End of function CCU62_viNodeI0
-                   560           ?LINE   360
-00E4 D180          561           EXTR    #01h
-00E6 FC03     1    562           POP     QR1
-00E8 D180          563           EXTR    #01h
-00EA FC02     1    564           POP     QR0
-00EC D180          565           EXTR    #01h
-00EE FC01     1    566           POP     QX1
-00F0 D180          567           EXTR    #01h
-00F2 FC00     1    568           POP     QX0
-00F4 FC85          569           POP     IDX1
-00F6 FC84          570           POP     IDX0
-00F8 FCED          571           POP     MRW
-00FA FCEE          572           POP     MCW
-00FC FC2F          573           POP     MAH
-00FE FC2E          574           POP     MAL
-0100 FCEF          575           POP     MSW
-0102 FC07          576           POP     MDL
-0104 FC06          577           POP     MDH
-0106 FC02          578           POP     DPP2
-0108 FC00          579           POP     DPP0
-010A FC87          580           POP     MDC
-010C FC08          581           POP     CP
-                   582           ?LINE   360
-010E FB88          583           RETI
-                   584   _CCU62_viNodeI0 ENDP
-               R   585           ?SYMB   '',$,17,360
-                   586   ; ccu62.c   361 
-                   587   ; ccu62.c   362 
-                   588   ; ccu62.c   363 
-                   589   ; ccu62.c   364 
-                   590   ; ccu62.c   365 // USER CODE BEGIN (CCU62_General,10)
-                   591   ; ccu62.c   366 
-                   592   ; ccu62.c   367 // USER CODE END
-                   593   ; ccu62.c   368 
-                   594   CCU62_1_PR      ENDS
-                   595   
-                   596           EXTERN  _ARRAY_SIZE:WORD
-                   597           EXTERN  _index:WORD
-                   598   CCU62_RB        REGDEF  R0-R15
-                   599           END
+                   551   ; ccu62.c   355 
+                   552   ; ccu62.c   356     CCU62_ISR |= 0x0080;  // clear flag CCU62_IS_T12PM
+                   553           ?LINE   356
+00DA E6FC54EB      554           MOV     R12,#0EB54h
+00DE A8DC          555           MOV     R13,[R12]
+00E0 7FFD          556           BSET    R13.7
+00E2 B8DC          557           MOV     [R12],R13
+                   558   ; ccu62.c   357   }
+                   559           ?LINE   357
+00E4               560   _4:
+                   561   ; ccu62.c   358 
+                   562   ; ccu62.c   359 
+                   563   ; ccu62.c   360 } //  End of function CCU62_viNodeI0
+                   564           ?LINE   360
+00E4 D180          565           EXTR    #01h
+00E6 FC03     1    566           POP     QR1
+00E8 D180          567           EXTR    #01h
+00EA FC02     1    568           POP     QR0
+00EC D180          569           EXTR    #01h
+00EE FC01     1    570           POP     QX1
+00F0 D180          571           EXTR    #01h
+00F2 FC00     1    572           POP     QX0
+00F4 FC85          573           POP     IDX1
+00F6 FC84          574           POP     IDX0
+00F8 FCED          575           POP     MRW
+00FA FCEE          576           POP     MCW
+00FC FC2F          577           POP     MAH
+00FE FC2E          578           POP     MAL
+0100 FCEF          579           POP     MSW
+0102 FC07          580           POP     MDL
+0104 FC06          581           POP     MDH
+0106 FC02          582           POP     DPP2
+0108 FC00          583           POP     DPP0
+010A FC87          584           POP     MDC
+010C FC08          585           POP     CP
+                   586           ?LINE   360
+010E FB88          587           RETI
+                   588   _CCU62_viNodeI0 ENDP
+               R   589           ?SYMB   '',$,17,360
+                   590   ; ccu62.c   361 
+                   591   ; ccu62.c   362 
+                   592   ; ccu62.c   363 
+                   593   ; ccu62.c   364 
+                   594   ; ccu62.c   365 // USER CODE BEGIN (CCU62_General,10)
+                   595   ; ccu62.c   366 
+                   596   ; ccu62.c   367 // USER CODE END
+                   597   ; ccu62.c   368 
+                   598   CCU62_1_PR      ENDS
+                   599   
+                   600           EXTERN  _ARRAY_SIZE:WORD
+                   601           EXTERN  _index:WORD
+                   602   CCU62_RB        REGDEF  R0-R15
+                   603           END
 
 total errors: 0, warnings: 0
 
