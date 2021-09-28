@@ -765,16 +765,16 @@ _main	PROC	FAR
 ; main.c    381	
 ; main.c    382	  while(1)
 	?LINE	382
-	JMPA+	cc_UC,_46
-_29:
+	JMPA+	cc_UC,_48
+_30:
 ; main.c    383	  {
 ; main.c    384	
 ; main.c    385	   // USER CODE BEGIN (Main,4)
-; main.c    386	   if (rampIndex > 350){
+; main.c    386	   if (rampIndex > 351){
 	?LINE	386
 	MOV	R12,_rampIndex
-	CMP	R12,#015Eh
-	JMPR	cc_ULE,_30
+	CMP	R12,#015Fh
+	JMPR	cc_ULE,_31
 ; main.c    387	   		unsigned long raw;
 	?SYMB	'',$,9,387
 	?SYMB	'raw',1,98,7
@@ -782,16 +782,16 @@ _29:
 ; main.c    388			raw = ADC0_uwGetResultData(RESULT_REG_0);
 	?LINE	388
 	MOV	R12,0E0B0h
-	JNB	R12.12,_47
-	JMPR	cc_UC,_48
-_48:
+	JNB	R12.12,_49
+	JMPR	cc_UC,_50
+_50:
 	MOV	R12,0E050h
 	AND	R12,#03FFFh
 	SHR	R12,#02h
-	JMPR	cc_UC,_49
-_47:
-	MOV	R12,#00h
+	JMPR	cc_UC,_51
 _49:
+	MOV	R12,#00h
+_51:
 	MOV	R13,#00h
 	MOV	[R0],R12
 	MOV	[R0+#02H],R13
@@ -823,23 +823,23 @@ _49:
 	?SYMB	'',$,102,1
 	?SYMB	'',$,15,392
 	?LINE	392
-_30:
+_31:
 ; main.c    393		if (rampIndex == 0){
 	?LINE	393
 	MOV	R12,_rampIndex
-	JMPR	cc_NZ,_31
+	JMPR	cc_NZ,_32
 ; main.c    394			setPhaseChange(clockwise);
 	?LINE	394
 	MOV	R12,#00h
 	CALLS	SEG _setPhaseChange,_setPhaseChange
 ; main.c    395		}
 	?LINE	395
-_31:
+_32:
 ; main.c    396		if(rampIndex < 50){
 	?LINE	396
 	MOV	R12,_rampIndex
 	CMP	R12,#032h
-	JMPR	cc_UGE,_32
+	JMPR	cc_UGE,_33
 ; main.c    397			frequency = rampIndex;
 	?LINE	397
 	MOV	R12,_rampIndex
@@ -861,16 +861,16 @@ _31:
 	MOV	0E9E0h,R12
 ; main.c    401		} 
 	?LINE	401
-_32:
+_33:
 ; main.c    402		
 ; main.c    403		if(rampIndex < 100 && rampIndex > 50){
 	?LINE	403
 	MOV	R12,_rampIndex
 	CMP	R12,#064h
-	JMPR	cc_UGE,_33
+	JMPR	cc_UGE,_34
 	MOV	R12,_rampIndex
 	CMP	R12,#032h
-	JMPR	cc_ULE,_34
+	JMPR	cc_ULE,_35
 ; main.c    404			frequency = 50;
 	?LINE	404
 	MOV	R12,#032h
@@ -888,17 +888,17 @@ _32:
 	MOV	[R12],R13
 ; main.c    407		}
 	?LINE	407
-_33:
 _34:
+_35:
 ; main.c    408	
 ; main.c    409		if(rampIndex < 150 && rampIndex > 100){
 	?LINE	409
 	MOV	R12,_rampIndex
 	CMP	R12,#096h
-	JMPR	cc_UGE,_35
+	JMPR	cc_UGE,_36
 	MOV	R12,_rampIndex
 	CMP	R12,#064h
-	JMPR	cc_ULE,_36
+	JMPR	cc_ULE,_37
 ; main.c    410			frequency = (150 - rampIndex);
 	?LINE	410
 	MOV	R12,#096h
@@ -917,28 +917,28 @@ _34:
 	MOV	[R12],R13
 ; main.c    413		}
 	?LINE	413
-_35:
 _36:
+_37:
 ; main.c    414		if (rampIndex == 151){
 	?LINE	414
 	MOV	R12,_rampIndex
 	CMP	R12,#097h
-	JMPR	cc_NE,_37
+	JMPR	cc_NE,_38
 ; main.c    415			setPhaseChange(counterclockwise);
 	?LINE	415
 	MOV	R12,#01h
 	CALLS	SEG _setPhaseChange,_setPhaseChange
 ; main.c    416		}
 	?LINE	416
-_37:
+_38:
 ; main.c    417		if(rampIndex < 200 && rampIndex > 151){
 	?LINE	417
 	MOV	R12,_rampIndex
 	CMP	R12,#0C8h
-	JMPR	cc_UGE,_38
+	JMPR	cc_UGE,_39
 	MOV	R12,_rampIndex
 	CMP	R12,#097h
-	JMPR	cc_ULE,_39
+	JMPR	cc_ULE,_40
 ; main.c    418			frequency = (rampIndex-150);
 	?LINE	418
 	MOV	R12,_rampIndex
@@ -957,16 +957,16 @@ _37:
 	MOV	[R12],R13
 ; main.c    421		}
 	?LINE	421
-_38:
 _39:
+_40:
 ; main.c    422		if(rampIndex < 250 && rampIndex > 200){
 	?LINE	422
 	MOV	R12,_rampIndex
 	CMP	R12,#0FAh
-	JMPR	cc_UGE,_40
+	JMPR	cc_UGE,_41
 	MOV	R12,_rampIndex
 	CMP	R12,#0C8h
-	JMPR	cc_ULE,_41
+	JMPR	cc_ULE,_42
 ; main.c    423			frequency = 50;
 	?LINE	423
 	MOV	R12,#032h
@@ -984,16 +984,16 @@ _39:
 	MOV	[R12],R13
 ; main.c    426		}
 	?LINE	426
-_40:
 _41:
+_42:
 ; main.c    427		if(rampIndex < 300 && rampIndex > 250){
 	?LINE	427
 	MOV	R12,_rampIndex
 	CMP	R12,#012Ch
-	JMPR	cc_UGE,_42
+	JMPR	cc_UGE,_43
 	MOV	R12,_rampIndex
 	CMP	R12,#0FAh
-	JMPR	cc_ULE,_43
+	JMPR	cc_ULE,_44
 ; main.c    428			frequency = (300 - rampIndex);
 	?LINE	428
 	MOV	R12,#012Ch
@@ -1012,16 +1012,16 @@ _41:
 	MOV	[R12],R13
 ; main.c    431		}
 	?LINE	431
-_42:
 _43:
+_44:
 ; main.c    432		if(rampIndex < 350 && rampIndex > 300){
 	?LINE	432
 	MOV	R12,_rampIndex
 	CMP	R12,#015Eh
-	JMPR	cc_UGE,_44
+	JMPR	cc_UGE,_45
 	MOV	R12,_rampIndex
 	CMP	R12,#012Ch
-	JMPR	cc_ULE,_45
+	JMPR	cc_ULE,_46
 ; main.c    433			frequency = 50;
 	?LINE	433
 	MOV	R12,#032h
@@ -1039,33 +1039,56 @@ _43:
 	MOV	[R12],R13
 ; main.c    436		}
 	?LINE	436
-_44:
 _45:
-	?LINE	382
 _46:
-	JMPA+	cc_UC,_29
-; main.c    437	
-; main.c    438	
-; main.c    439	   // USER CODE END
-; main.c    440	
-; main.c    441	  }
+; main.c    437		if(rampIndex == 350){
+	?LINE	437
+	MOV	R12,_rampIndex
+	CMP	R12,#015Eh
+	JMPR	cc_NE,_47
+; main.c    438			frequency = 0;
+	?LINE	438
+	MOV	_frequency,ZEROS
+; main.c    439			CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
+	?LINE	439
+	MOV	R12,_frequency
+	CALLS	SEG _calculateMotorFrequency,_calculateMotorFrequency
+	MOV	0EB12h,R4
+; main.c    440			CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
+	?LINE	440
+	MOV	R12,#0EB26h
+	MOV	R13,[R12]
+	BSET	R13.6
+	MOV	[R12],R13
+; main.c    441		}
+	?LINE	441
+_47:
+	?LINE	382
+_48:
+	JMPA+	cc_UC,_30
 ; main.c    442	
-; main.c    443	} //  End of function main
-	?LINE	443
+; main.c    443	
+; main.c    444	
+; main.c    445	   // USER CODE END
+; main.c    446	
+; main.c    447	  }
+; main.c    448	
+; main.c    449	} //  End of function main
+	?LINE	449
 	ADD	R0,#04h
 	?SYMB	'',$,96,0
 	RETS
 _main	ENDP
-	?SYMB	'',$,17,443
-; main.c    444	
-; main.c    445	
-; main.c    446	
-; main.c    447	// USER CODE BEGIN (MAIN_General,10)
-; main.c    448	void generateTable(){
-	?LINE	448
+	?SYMB	'',$,17,449
+; main.c    450	
+; main.c    451	
+; main.c    452	
+; main.c    453	// USER CODE BEGIN (MAIN_General,10)
+; main.c    454	void generateTable(){
+	?LINE	454
 	PUBLIC	_generateTable
 	?SYMB	'generateTable',_generateTable,37,1
-	?SYMB	'',448,8,34
+	?SYMB	'',454,8,34
 _generateTable	PROC	FAR
 	?SYMB	'',00H,95,0
 	SUB	R0,#0Ah
@@ -1078,10 +1101,10 @@ _generateTable	PROC	FAR
 ; 
 ; CSEs:
 ; 
-; main.c    449		double stepSize = (2*pi)/(ARRAY_SIZE);
+; main.c    455		double stepSize = (2*pi)/(ARRAY_SIZE);
 	?SYMB	'stepSize',2,98,11
 	?SYMB	'-8',$,101,2
-	?LINE	449
+	?LINE	455
 	MOV	R4,_pi
 	MOV	R5,(_pi+2)
 	MOV	R10,#04000h
@@ -1097,17 +1120,17 @@ _generateTable	PROC	FAR
 	CALLS	SEG __store8n,__store8n
 	ADD	R0,#08h
 	?SYMB	'',$,96,10
-; main.c    450		int i;
+; main.c    456		int i;
 	?SYMB	'i',1,98,16
 	?SYMB	'-a',$,101,1
-; main.c    451		for (i = 0; i < ARRAY_SIZE; i++){ 
-	?LINE	451
+; main.c    457		for (i = 0; i < ARRAY_SIZE; i++){ 
+	?LINE	457
 	MOV	R12,#00h
 	MOV	[R0],R12
-	JMPR	cc_UC,_55
-_54:
-; main.c    452			table[i] = (unsigned int)((double)((CCU63_T12PR - 140)/2)*sin(stepSize * i) + (CCU63_T12PR/2));
-	?LINE	452
+	JMPR	cc_UC,_57
+_56:
+; main.c    458			table[i] = (unsigned int)((double)((CCU63_T12PR - 140)/2)*sin(stepSize * i) + (CCU63_T12PR/2));
+	?LINE	458
 	SUB	R0,#08h
 	?SYMB	'',$,96,18
 	MOV	R4,#0Ah
@@ -1148,30 +1171,30 @@ _54:
 	MOV	R12,[R0]
 	SHL	R12,#01h
 	MOV	[R12+#_table],R4
-	?LINE	451
+	?LINE	457
 	MOV	R12,[R0]
 	ADD	R12,#01h
 	MOV	[R0],R12
-_55:
+_57:
 	MOV	R12,[R0]
 	CMP	R12,#04B0h
-	JMPR	cc_ULT,_54
-; main.c    453		}
-; main.c    454	}
+	JMPR	cc_ULT,_56
+; main.c    459		}
+; main.c    460	}
 	?SYMB	'',$,102,1
 	?SYMB	'',$,102,2
-	?LINE	454
+	?LINE	460
 	ADD	R0,#0Ah
 	?SYMB	'',$,96,0
 	RETS
 _generateTable	ENDP
-	?SYMB	'',$,17,454
-; main.c    455	
-; main.c    456	unsigned int calculateMotorFrequency (int _frequency){
-	?LINE	456
+	?SYMB	'',$,17,460
+; main.c    461	
+; main.c    462	unsigned int calculateMotorFrequency (int _frequency){
+	?LINE	462
 	PUBLIC	_calculateMotorFrequency
 	?SYMB	'calculateMotorFrequency',_calculateMotorFrequency,37,18
-	?SYMB	'',456,8,34
+	?SYMB	'',462,8,34
 _calculateMotorFrequency	PROC	FAR
 	?SYMB	'',00H,95,0
 	MOV	[-R0],R12
@@ -1185,25 +1208,25 @@ _calculateMotorFrequency	PROC	FAR
 ; 
 	?SYMB	'_frequency',1,99,16
 	?SYMB	'-2',$,101,1
-; main.c    457		if (_frequency < 2){
-	?LINE	457
+; main.c    463		if (_frequency < 2){
+	?LINE	463
 	MOV	R12,[R0]
 	CMP	R12,#02h
-	JMPR	cc_SGE,_60
-; main.c    458			frequency = 1;
-	?LINE	458
+	JMPR	cc_SGE,_62
+; main.c    464			frequency = 1;
+	?LINE	464
 	MOV	R12,#01h
 	MOV	_frequency,R12
-; main.c    459			return (0xD903);
-	?LINE	459
+; main.c    465			return (0xD903);
+	?LINE	465
 	MOV	R4,#0D903h
-	JMPR	cc_UC,_61
-; main.c    460		}
-	?LINE	460
-_60:
-; main.c    461		else {
-; main.c    462			return (1/(_frequency * ARRAY_SIZE*0.000000015));
-	?LINE	462
+	JMPR	cc_UC,_63
+; main.c    466		}
+	?LINE	466
+_62:
+; main.c    467		else {
+; main.c    468			return (1/(_frequency * ARRAY_SIZE*0.000000015));
+	?LINE	468
 	MOV	R12,[R0]
 	MOV	R13,#04B0h
 	MULU	R12,R13
@@ -1212,34 +1235,34 @@ _60:
 	CALLS	SEG __cuf28r,__cuf28r
 	?SYMB	'',$,96,10
 	MOV	R11,R10
-	MOV	R4,#_56
+	MOV	R4,#_58
 	CALLS	SEG __load8n,__load8n
 	?SYMB	'',$,96,18
 	CALLS	SEG __mlf8r,__mlf8r
 	MOV	R11,R10
-	MOV	R4,#_57
+	MOV	R4,#_59
 	CALLS	SEG __load8n,__load8n
 	?SYMB	'',$,96,26
 	CALLS	SEG __dvf8r,__dvf8r
 	CALLS	SEG __cfu82r,__cfu82r
 	ADD	R0,#018h
 	?SYMB	'',$,96,2
-; main.c    463		}
-; main.c    464	}
-	?LINE	464
-_61:
+; main.c    469		}
+; main.c    470	}
+	?LINE	470
+_63:
 	?SYMB	'',$,102,1
 	ADD	R0,#02h
 	?SYMB	'',$,96,0
 	RETS
 _calculateMotorFrequency	ENDP
-	?SYMB	'',$,17,464
-; main.c    465	
-; main.c    466	void setPhaseChange(int dir){
-	?LINE	466
+	?SYMB	'',$,17,470
+; main.c    471	
+; main.c    472	void setPhaseChange(int dir){
+	?LINE	472
 	PUBLIC	_setPhaseChange
 	?SYMB	'setPhaseChange',_setPhaseChange,37,1
-	?SYMB	'',466,8,34
+	?SYMB	'',472,8,34
 _setPhaseChange	PROC	FAR
 	?SYMB	'',00H,95,0
 	MOV	[-R0],R12
@@ -1253,55 +1276,55 @@ _setPhaseChange	PROC	FAR
 ; 
 	?SYMB	'dir',1,99,16
 	?SYMB	'-2',$,101,1
-; main.c    467		if(dir == clockwise){
-	?LINE	467
-	MOV	R12,[R0]
-	JMPR	cc_NZ,_64
-; main.c    468			OFFSET_L1 = 0;
-	?LINE	468
-	MOV	_OFFSET_L1,ZEROS
-; main.c    469			OFFSET_L2 = (2*ARRAY_SIZE)/3;
-	?LINE	469
-	MOV	R12,#0320h
-	MOV	_OFFSET_L2,R12
-; main.c    470			OFFSET_L3 = ARRAY_SIZE/3;
-	?LINE	470
-	MOV	R12,#0190h
-	MOV	_OFFSET_L3,R12
-; main.c    471		}
-	?LINE	471
-_64:
-; main.c    472		if(dir == counterclockwise){
-	?LINE	472
-	MOV	R12,[R0]
-	CMP	R12,#01h
-	JMPR	cc_NE,_65
-; main.c    473			OFFSET_L1 = 0;
+; main.c    473		if(dir == clockwise){
 	?LINE	473
-	MOV	_OFFSET_L1,ZEROS
-; main.c    474			OFFSET_L2 = ARRAY_SIZE/3;
+	MOV	R12,[R0]
+	JMPR	cc_NZ,_66
+; main.c    474			OFFSET_L1 = 0;
 	?LINE	474
-	MOV	R12,#0190h
-	MOV	_OFFSET_L2,R12
-; main.c    475			OFFSET_L3 = (2*ARRAY_SIZE)/3;
+	MOV	_OFFSET_L1,ZEROS
+; main.c    475			OFFSET_L2 = (2*ARRAY_SIZE)/3;
 	?LINE	475
 	MOV	R12,#0320h
-	MOV	_OFFSET_L3,R12
-; main.c    476		}  
+	MOV	_OFFSET_L2,R12
+; main.c    476			OFFSET_L3 = ARRAY_SIZE/3;
 	?LINE	476
-_65:
-; main.c    477	}
-	?SYMB	'',$,102,1
+	MOV	R12,#0190h
+	MOV	_OFFSET_L3,R12
+; main.c    477		}
 	?LINE	477
+_66:
+; main.c    478		if(dir == counterclockwise){
+	?LINE	478
+	MOV	R12,[R0]
+	CMP	R12,#01h
+	JMPR	cc_NE,_67
+; main.c    479			OFFSET_L1 = 0;
+	?LINE	479
+	MOV	_OFFSET_L1,ZEROS
+; main.c    480			OFFSET_L2 = ARRAY_SIZE/3;
+	?LINE	480
+	MOV	R12,#0190h
+	MOV	_OFFSET_L2,R12
+; main.c    481			OFFSET_L3 = (2*ARRAY_SIZE)/3;
+	?LINE	481
+	MOV	R12,#0320h
+	MOV	_OFFSET_L3,R12
+; main.c    482		}  
+	?LINE	482
+_67:
+; main.c    483	}
+	?SYMB	'',$,102,1
+	?LINE	483
 	ADD	R0,#02h
 	?SYMB	'',$,96,0
 	RETS
 _setPhaseChange	ENDP
-	?SYMB	'',$,17,477
-; main.c    478	
-; main.c    479	
-; main.c    480	// USER CODE END
-; main.c    481	
+	?SYMB	'',$,17,483
+; main.c    484	
+; main.c    485	
+; main.c    486	// USER CODE END
+; main.c    487	
 MAIN_4_PR	ENDS
 
 MAIN_5_NB	SECTION	LDAT WORD PUBLIC 'CNEAR'
@@ -1337,9 +1360,9 @@ _OFFSET_L2	LABEL	WORD
 MAIN_5_NB	ENDS
 
 MAIN_6_CO	SECTION	LDAT WORD PUBLIC 'CROM'
-_56	LABEL	WORD
+_58	LABEL	WORD
 	DW	03E50h,01B2Bh,029A4h,0692Bh
-_57	LABEL	WORD
+_59	LABEL	WORD
 	DW	03FF0h,00h,00h,00h
 MAIN_6_CO	ENDS
 

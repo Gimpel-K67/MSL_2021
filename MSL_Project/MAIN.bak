@@ -430,7 +430,8 @@ void main(void)
 		CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
 	}
 	if(rampIndex < 350 && rampIndex > 300){
-		CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(50));
+		frequency = 50;
+		CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
 		CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
 	}
 

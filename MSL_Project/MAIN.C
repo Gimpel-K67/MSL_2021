@@ -383,7 +383,7 @@ void main(void)
   {
 
    // USER CODE BEGIN (Main,4)
-   if (rampIndex > 350){
+   if (rampIndex > 351){
    		unsigned long raw;
 		raw = ADC0_uwGetResultData(RESULT_REG_0);
 		frequency = ((50*raw)/4096);
@@ -434,6 +434,12 @@ void main(void)
 		CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
 		CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
 	}
+	if(rampIndex == 350){
+		frequency = 0;
+		CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
+		CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
+	}
+
 
 
    // USER CODE END
