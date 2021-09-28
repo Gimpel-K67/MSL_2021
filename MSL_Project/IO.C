@@ -12,7 +12,7 @@
 // @Description   This file contains functions that use the IO module.
 //
 //----------------------------------------------------------------------------
-// @Date          27.09.2021 18:18:19
+// @Date          28.09.2021 15:41:39
 //
 //****************************************************************************
 
@@ -111,7 +111,7 @@
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          27.09.2021
+// @Date          28.09.2021
 //
 //****************************************************************************
 
@@ -153,12 +153,20 @@ void IO_vInit(void)
   ///  -----------------------------------------------------------------------
   ///  Configuration of Port P4:
   ///  -----------------------------------------------------------------------
-  ///  - no pin of port P4 is used
+  ///  P4.6 is used as alternate input for the GPT12E  timer4Count input(T4IN)
+
+  ///  P4.0 - P4.3 output driver characteristic: strong driver
+  ///  P4.4 - P4.7 output driver characteristic: strong driver
+
+  ///  P4.0 - P4.3 output edge characteristic: sharp edge mode
+  ///  P4.4 - P4.7 output edge characteristic: sharp edge mode
 
 
   ///  -----------------------------------------------------------------------
   ///  Configuration of Port P5:
   ///  -----------------------------------------------------------------------
+  ///  P5.3 is used as alternate input for the  GPT12E Timer2 Count 
+  ///  input(T3IN)
   ///  P5.6 is used as alternate input for the  Analog Input Pin (AN56)
 
 

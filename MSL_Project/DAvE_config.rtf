@@ -8,7 +8,7 @@
 \par \plain\f4\fs22\cf0 Compiler: \tab\tab\b Tasking Classic
 \par \plain\f4\fs22\cf0 Memory Model: \tab\b SMALL
 \par 
-\par \plain\f4\fs22\cf0 Date: \tab\tab\tab\b 27.09.2021 18:18:20
+\par \plain\f4\fs22\cf0 Date: \tab\tab\tab\b 28.09.2021 15:41:39
 \par 
 \par 
 \par \plain\f4\fs22\cf2\b Please read this document carefully and note
@@ -31,8 +31,6 @@
 \par \tab\tab\tab GPT1.C
 \par \tab\tab\tab GPT2.H
 \par \tab\tab\tab GPT2.C
-\par \tab\tab\tab CC2.H
-\par \tab\tab\tab CC2.C
 \par \tab\tab\tab CCU62.H
 \par \tab\tab\tab CCU62.C
 \par \tab\tab\tab CCU63.H
@@ -444,9 +442,17 @@
 \tab - no pin of port P3 is used\par 
 \par 
 \tab Configuration of Port P4:\par 
-\tab - no pin of port P4 is used\par 
+\tab P4.6 is used as alternate input for the GPT12E  timer4Count input(T4IN)\par 
+\par 
+\tab P4.0 - P4.3 output driver characteristic: strong driver\par 
+\tab P4.4 - P4.7 output driver characteristic: strong driver\par 
+\par 
+\tab P4.0 - P4.3 output edge characteristic: sharp edge mode\par 
+\tab P4.4 - P4.7 output edge characteristic: sharp edge mode\par 
 \par 
 \tab Configuration of Port P5:\par 
+\tab P5.3 is used as alternate input for the  GPT12E Timer2 Count\par 
+\tab input(T3IN)\par 
 \tab P5.6 is used as alternate input for the  Analog Input Pin (AN56)\par 
 \par 
 \tab Configuration of Port P6:\par 
@@ -586,6 +592,36 @@
 
 \par \tab \tab The name of the timer to be cleared
 
+\par
+\par
+\par \plain\f4\fs20\cf0 \tab Macro:
+\par \plain\f4\fs20\cf0\b \tab \tab GPT1_uwReadTmr(TimerNr)\plain\f4\fs20\cf0
+\par \tab Description:
+\par \plain\f4\fs20\cf0\i
+\tab \tab This macro returns the contents of the selected GPT1 timer.
+
+\par \tab \tab The timer is not stopped. Access of the CPU to the
+
+\par \tab \tab registers of the timer is of higher priority than a timer
+
+\par \tab \tab increment, a reload or a capture event. The following
+
+\par \tab \tab definitions are available for TimerNr:
+
+\par \tab \tab GPT1_TIMER_2
+
+\par \tab \tab GPT1_TIMER_3
+
+\par \tab \tab GPT1_TIMER_4
+
+\par \plain\f4\fs20\cf0 \tab Returnvalue:
+\par \tab \tab \plain\f4\fs20\cf0\b Current 16-bit value of the timer\plain\f4\fs20\cf0
+\par \plain\f4\fs20\cf0 \tab Parameters:
+\par \plain\f4\fs20\cf0\b 
+\tab \tab TimerNr:
+
+\par \tab \tab The name of the timer to be readed
+
 \par \plain\f4\fs24\cf0 Functions:\f4\fs20\cf0
 \par
 \par \plain\f4\fs20\cf0 \tab Function:
@@ -614,7 +650,7 @@
 \tab - prescaler for timer block 1 is 4\par 
 \par 
 \tab Configuration of the GPT1 Core Timer 3:\par 
-\tab - timer 3 works in timer mode\par 
+\tab - timer 3 works as gated timer with gate active high via T3IN ()\par 
 \tab - external up/down control is disabled\par 
 \tab - prescaler factor is 4\par 
 \tab - up/down control bit is reset\par 
@@ -627,22 +663,23 @@
 \tab Configuration of the GPT1 Auxiliary Timer 2:\par 
 \tab - timer 2 works in timer mode\par 
 \tab - external up/down control is disabled\par 
-\tab - prescaler factor is 4\par 
+\tab - prescaler factor is 32\par 
 \tab - up/down control bit is reset\par 
 \tab - timer 2 run bit is reset\par 
 \par 
 \tab - prescaler for timer block 1 is 4\par 
 \par 
 \tab Configuration of the GPT1 Auxiliary Timer 4:\par 
-\tab - timer 4 works in timer mode\par 
+\tab - timer 4 works in counter mode\par 
 \tab - external up/down control is disabled\par 
-\tab - prescaler factor is 4\par 
+\tab - timer 4 is clocked by any transition on T4IN ()\par 
 \tab - up/down control bit is reset\par 
-\tab - timer 4 run bit is reset\par 
 \par 
 \tab - prescaler for timer block 1 is 4\par 
 \par 
 \tab Configuration of the used GPT1 Port Pins:\par 
+\tab - P5.3 is used for  GPT12E Timer2 Count input(T3IN)\par 
+\tab - P4.6 is used for GPT12E  timer4Count input(T4IN)\par 
 \par 
 \tab Configuration of the used GPT1 Interrupts:\par 
 \par 
@@ -855,7 +892,7 @@
 \par 
 \tab Configuration of the GPT2 Core Timer 6:\par 
 \tab - timer 6 works in timer mode\par 
-\tab - prescaler factor is 256\par 
+\tab - prescaler factor is 8\par 
 \tab - up/down control bit is reset\par 
 \tab - external up/down control is disabled\par 
 \tab - alternate output function T6OUT (P6.2) is disabled\par 
@@ -872,117 +909,13 @@
 \tab - timer 5 is just captured without any correction\par 
 \par 
 \tab Configuration of the used GPT2 Port Pins:\par 
+\tab - P5.3 is used for  GPT12E Timer2 Count input(T3IN)\par 
 \par 
 \tab Configuration of the used GPT2 Interrupts:\par 
 \tab timer 6 service request node configuration:\par 
 \tab - timer 6 interrupt priority level (ILVL) = 10\par 
 \tab - timer 6 interrupt group level (GLVL) = 0\par 
 \tab - timer 6 group priority extension (GPX) = 0\par 
-\par 
-
-\par \plain\f4\fs20\cf0
-\par \plain\f4\fs28\cf0\ul Capture / Compare Unit 2 (CAPCOM2)
-\par
-\par \plain\f4\fs24\cf0 Macros:\f4\fs20\cf0
-\par \plain\f4\fs24\cf0 Functions:\f4\fs20\cf0
-\par
-\par \plain\f4\fs20\cf0 \tab Function:
-\par \plain\f4\fs20\cf0\b \tab \tab void CC2_vInit(void)\plain\f4\fs20\cf0
-\par \tab Description:
-\par \plain\f4\fs20\cf0\i
-\tab \tab This is the initialization function of the CAPCOM2 function
-
-\par \tab \tab library. It is assumed that the SFRs used by this library
-
-\par \tab \tab are in reset state.
-
-\par \plain\f4\fs20\cf0 \tab Returnvalue:
-\par \tab \tab \plain\f4\fs20\cf0\b None\plain\f4\fs20\cf0
-\par \plain\f4\fs20\cf0 \tab Parameters:
-\par \plain\f4\fs20\cf0\b 
-\tab \tab None
-
-\par
-\par \plain\f4\fs24\cf0 Initialization:
-\par \plain\f4\fs20\cf0\b
-\par
-\tab Configuration of  Kernel state configuration Control:\par 
-\tab - the Peripheral is supplied with clock signal for CAPCOM2 unit\par 
-\tab - the CC2 module clock = 65,00 MHz\par 
-\par 
-\tab Configuration of CAPCOM2 Control:\par 
-\tab - the contents of the CC2_OUT register is visble at output port\par 
-\tab \cf2- the contents of the port register is not changed by the CAPCOM2\cf0\par 
-\tab \cf2unit. Use the macro CC2_vPortUnlock() for unlock the port.\cf0\par 
-\par 
-\tab Configuration of CAPCOM2 Timer 7:\par 
-\tab - timer 7 works in timer mode\par 
-\tab - prescaler factor is 8\par 
-\tab - timer 7 run bit is set\par 
-\par 
-\tab Configuration of CAPCOM2 Timer 8:\par 
-\tab - timer 8 works in timer mode\par 
-\tab - prescaler factor is 8\par 
-\tab - timer 8 run bit is reset\par 
-\par 
-\tab Configuration of the used CAPCOM2 Timer Port Pins:\par 
-\par 
-\tab Configuration of the used CAPCOM2 Timer Interrupts:\par 
-\tab Tmr7 service request node configuration:\par 
-\tab \cf2- Tmr7 interrupt is enabled but NO INTERRUPT WILL BE GENERATED because\cf0\par 
-\tab \cf2priority level is 0\cf0\par 
-\par 
-\tab Configuration of the used CAPCOM2 Channel 16:\par 
-\tab - channel 16 is disabled\par 
-\par 
-\tab Configuration of the used CAPCOM2 Channel 17:\par 
-\tab - channel 17 is disabled\par 
-\par 
-\tab Configuration of the used CAPCOM2 Channel 18:\par 
-\tab - channel 18 is disabled\par 
-\par 
-\tab Configuration of the used CAPCOM2 Channel 19:\par 
-\tab - channel 19 is disabled\par 
-\par 
-\tab Configuration of the used CAPCOM2 Channel 20:\par 
-\tab - channel 20 is disabled\par 
-\par 
-\tab Configuration of the used CAPCOM2 Channel 21:\par 
-\tab - channel 21 is disabled\par 
-\par 
-\tab Configuration of the used CAPCOM2 Channel 22:\par 
-\tab - channel 22 is disabled\par 
-\par 
-\tab Configuration of the used CAPCOM2 Channel 23:\par 
-\tab - channel 23 is disabled\par 
-\par 
-\tab Configuration of the used CAPCOM2 Channel 24:\par 
-\tab - channel 24 is disabled\par 
-\par 
-\tab Configuration of the used CAPCOM2 Channel 25:\par 
-\tab - channel 25 is disabled\par 
-\par 
-\tab Configuration of the used CAPCOM2 Channel 26:\par 
-\tab - channel 26 is disabled\par 
-\par 
-\tab Configuration of the used CAPCOM2 Channel 27:\par 
-\tab - channel 27 is disabled\par 
-\par 
-\tab Configuration of the used CAPCOM2 Channel 28:\par 
-\tab - channel 28 is disabled\par 
-\par 
-\tab Configuration of the used CAPCOM2 Channel 29:\par 
-\tab - channel 29 is disabled\par 
-\par 
-\tab Configuration of the used CAPCOM2 Channel 30:\par 
-\tab - channel 30 is disabled\par 
-\par 
-\tab Configuration of the used CAPCOM2 Channel 31:\par 
-\tab - channel 31 is disabled\par 
-\par 
-\tab Configuration of the used CAPCOM2 Channel Port Pins:\par 
-\par 
-\tab Configuration of the used CAPCOM2 Channels Interrupts:\par 
 \par 
 
 \par \plain\f4\fs20\cf0

@@ -44,7 +44,7 @@ $MODEL(SMALL)
 ; gpt1.c     12	// @Description   This file contains functions that use the GPT1 module.
 ; gpt1.c     13	//
 ; gpt1.c     14	//----------------------------------------------------------------------------
-; gpt1.c     15	// @Date          27.09.2021 18:18:20
+; gpt1.c     15	// @Date          28.09.2021 15:41:39
 ; gpt1.c     16	//
 ; gpt1.c     17	//****************************************************************************
 ; gpt1.c     18	
@@ -85,9 +85,6 @@ $MODEL(SMALL)
 	?SYMB	'',0,86,3
 	?SYMB	'',0,86,2
 	?SYMB	'GPT2.H',0,29,3
-	?SYMB	'',0,86,3
-	?SYMB	'',0,86,2
-	?SYMB	'CC2.H',0,29,3
 	?SYMB	'',0,86,3
 	?SYMB	'',0,86,2
 	?SYMB	'CCU62.H',0,29,3
@@ -185,7 +182,7 @@ $MODEL(SMALL)
 ; gpt1.c    111	// @Parameters    None
 ; gpt1.c    112	//
 ; gpt1.c    113	//----------------------------------------------------------------------------
-; gpt1.c    114	// @Date          27.09.2021
+; gpt1.c    114	// @Date          28.09.2021
 ; gpt1.c    115	//
 ; gpt1.c    116	//****************************************************************************
 ; gpt1.c    117	
@@ -201,6 +198,41 @@ GPT1_1_PR	SECTION	CODE WORD PUBLIC 'CPROGRAM'
 	?SYMB	'GPT1_vInit',_GPT1_vInit,37,1
 	?SYMB	'',123,8,34
 	?SYMB	'uword',18,13,261
+	?SYMB	'',010000H,7,262
+	?SYMB	'',010001H,7,263
+	?SYMB	'',010002H,7,264
+	?SYMB	'',010003H,7,265
+	?SYMB	'',010004H,7,266
+	?SYMB	'',010005H,7,267
+	?SYMB	'',010006H,7,268
+	?SYMB	'',010007H,7,269
+	?SYMB	'',010000H,7,270
+	?SYMB	'',010001H,7,271
+	?SYMB	'',010002H,7,272
+	?SYMB	'',010003H,7,273
+	?SYMB	'',010004H,7,274
+	?SYMB	'',010005H,7,275
+	?SYMB	'',010006H,7,276
+	?SYMB	'',010007H,7,277
+	?SYMB	'T$1',0,40,278
+	?SYMB	'bit0',0,23,262
+	?SYMB	'bit1',1,23,263
+	?SYMB	'bit2',2,23,264
+	?SYMB	'bit3',3,23,265
+	?SYMB	'bit4',4,23,266
+	?SYMB	'bit5',5,23,267
+	?SYMB	'bit6',6,23,268
+	?SYMB	'bit7',7,23,269
+	?SYMB	'bit8',8,23,270
+	?SYMB	'bit9',9,23,271
+	?SYMB	'bit10',10,23,272
+	?SYMB	'bit11',11,23,273
+	?SYMB	'bit12',12,23,274
+	?SYMB	'bit13',13,23,275
+	?SYMB	'bit14',14,23,276
+	?SYMB	'bit15',15,23,277
+	?SYMB	'',16,18,0
+	?SYMB	'T_Reg16',278,13,279
 _GPT1_vInit	PROC	FAR
 	?SYMB	'',00H,95,0
 ; Locals:
@@ -239,7 +271,7 @@ _GPT1_vInit	PROC	FAR
 ; gpt1.c    144	  ///  -----------------------------------------------------------------------
 ; gpt1.c    145	  ///  Configuration of the GPT1 Core Timer 3:
 ; gpt1.c    146	  ///  -----------------------------------------------------------------------
-; gpt1.c    147	  ///  - timer 3 works in timer mode
+; gpt1.c    147	  ///  - timer 3 works as gated timer with gate active high via T3IN ()
 ; gpt1.c    148	  ///  - external up/down control is disabled
 ; gpt1.c    149	  ///  - prescaler factor is 4
 ; gpt1.c    150	  ///  - up/down control bit is reset
@@ -247,9 +279,9 @@ _GPT1_vInit	PROC	FAR
 ; gpt1.c    152	  ///  - timer 3 output toggle latch (T3OTL) is set to 0
 ; gpt1.c    153	  ///  - timer 3 run bit is reset
 ; gpt1.c    154	
-; gpt1.c    155	  GPT12E_T3CON   =  0x0800;      // load timer 3 control register
+; gpt1.c    155	  GPT12E_T3CON   =  0x0818;      // load timer 3 control register
 	?LINE	155
-	MOV	R12,#0800h
+	MOV	R12,#0818h
 	MOV	0FF42h,R12
 ; gpt1.c    156	  GPT12E_T3      =  0x0000;      // load timer 3 register
 	?LINE	156
@@ -262,13 +294,13 @@ _GPT1_vInit	PROC	FAR
 ; gpt1.c    161	  ///  -----------------------------------------------------------------------
 ; gpt1.c    162	  ///  - timer 2 works in timer mode
 ; gpt1.c    163	  ///  - external up/down control is disabled
-; gpt1.c    164	  ///  - prescaler factor is 4
+; gpt1.c    164	  ///  - prescaler factor is 32
 ; gpt1.c    165	  ///  - up/down control bit is reset
 ; gpt1.c    166	  ///  - timer 2 run bit is reset
 ; gpt1.c    167	
-; gpt1.c    168	  GPT12E_T2CON   =  0x0000;      // load timer 2 control register
+; gpt1.c    168	  GPT12E_T2CON   =  0x0003;      // load timer 2 control register
 	?LINE	168
-	MOV	R12,#00h
+	MOV	R12,#03h
 	MOV	0FF40h,R12
 ; gpt1.c    169	  GPT12E_T2      =  0x0000;      // load timer 2 register
 	?LINE	169
@@ -279,48 +311,56 @@ _GPT1_vInit	PROC	FAR
 ; gpt1.c    172	  ///  -----------------------------------------------------------------------
 ; gpt1.c    173	  ///  Configuration of the GPT1 Auxiliary Timer 4:
 ; gpt1.c    174	  ///  -----------------------------------------------------------------------
-; gpt1.c    175	  ///  - timer 4 works in timer mode
+; gpt1.c    175	  ///  - timer 4 works in counter mode
 ; gpt1.c    176	  ///  - external up/down control is disabled
-; gpt1.c    177	  ///  - prescaler factor is 4
+; gpt1.c    177	  ///  - timer 4 is clocked by any transition on T4IN ()
 ; gpt1.c    178	  ///  - up/down control bit is reset
-; gpt1.c    179	  ///  - timer 4 run bit is reset
-; gpt1.c    180	
-; gpt1.c    181	  GPT12E_T4CON   =  0x0000;      // load timer 4 control register
+; gpt1.c    179	
+; gpt1.c    180	  GPT12E_T4CON   =  0x000B;      // load timer 4 control register
+	?LINE	180
+	MOV	R12,#0Bh
+	MOV	0FF44h,R12
+; gpt1.c    181	  GPT12E_T4      =  0x0000;      // load timer 4 register
 	?LINE	181
 	MOV	R12,#00h
-	MOV	0FF44h,R12
-; gpt1.c    182	  GPT12E_T4      =  0x0000;      // load timer 4 register
-	?LINE	182
-	MOV	R12,#00h
 	MOV	0FE44h,R12
-; gpt1.c    183	  ///  - prescaler for timer block 1 is 4
-; gpt1.c    184	
-; gpt1.c    185	  ///  -----------------------------------------------------------------------
-; gpt1.c    186	  ///  Configuration of the used GPT1 Port Pins:
-; gpt1.c    187	  ///  -----------------------------------------------------------------------
-; gpt1.c    188	
+; gpt1.c    182	  ///  - prescaler for timer block 1 is 4
+; gpt1.c    183	
+; gpt1.c    184	  ///  -----------------------------------------------------------------------
+; gpt1.c    185	  ///  Configuration of the used GPT1 Port Pins:
+; gpt1.c    186	  ///  -----------------------------------------------------------------------
+; gpt1.c    187	  ///  - P5.3 is used for  GPT12E Timer2 Count input(T3IN)
+; gpt1.c    188	  ///  - P4.6 is used for GPT12E  timer4Count input(T4IN)
 ; gpt1.c    189	
-; gpt1.c    190	  ///  -----------------------------------------------------------------------
-; gpt1.c    191	  ///  Configuration of the used GPT1 Interrupts:
-; gpt1.c    192	  ///  -----------------------------------------------------------------------
-; gpt1.c    193	
-; gpt1.c    194	  // USER CODE BEGIN (GPT1_Function,3)
-; gpt1.c    195	
-; gpt1.c    196	  // USER CODE END
-; gpt1.c    197	
-; gpt1.c    198	} //  End of function GPT1_viTmr4
-	?LINE	198
+; gpt1.c    190	
+; gpt1.c    191	  ///  -----------------------------------------------------------------------
+; gpt1.c    192	  ///  Configuration of the used GPT1 Interrupts:
+; gpt1.c    193	  ///  -----------------------------------------------------------------------
+; gpt1.c    194	
+; gpt1.c    195	  // USER CODE BEGIN (GPT1_Function,3)
+; gpt1.c    196	
+; gpt1.c    197	  // USER CODE END
+; gpt1.c    198	
+; gpt1.c    199	  GPT12E_T4CON_T4R  =  1;        // set timer 4 run bit
+	?LINE	199
+	MOV	R12,#0FF44h
+	MOV	R13,[R12]
+	BFLDL	R13,#040h,#040h
+	MOV	[R12],R13
+; gpt1.c    200	
+; gpt1.c    201	} //  End of function GPT1_viTmr4
+	?LINE	201
 	RETS
 _GPT1_vInit	ENDP
-	?SYMB	'',$,17,198
-; gpt1.c    199	
-; gpt1.c    200	
-; gpt1.c    201	
+	?SYMB	'',$,17,201
 ; gpt1.c    202	
-; gpt1.c    203	// USER CODE BEGIN (GPT1_General,10)
+; gpt1.c    203	
 ; gpt1.c    204	
-; gpt1.c    205	// USER CODE END
-; gpt1.c    206	
+; gpt1.c    205	
+; gpt1.c    206	// USER CODE BEGIN (GPT1_General,10)
+; gpt1.c    207	
+; gpt1.c    208	// USER CODE END
+; gpt1.c    209	
 GPT1_1_PR	ENDS
 
 	REGDEF	R0-R15

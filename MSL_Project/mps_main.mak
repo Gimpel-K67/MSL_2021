@@ -26,31 +26,28 @@ all : subproj $(PROJ).abs
 subproj :
 	@echo Warning: Infinite loop detected; Not building sub-project mps_main.pjt
 
-ccu63.obj : ccu63.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h cc2.h ccu62.h ccu63.h
-ccu63.obj : adc0.h <1632742349>
+ccu63.obj : ccu63.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h ccu62.h ccu63.h adc0.h <1632830551>
 
 	@echo Compiling and assembling ${*F}.c
 	@"$(PRODDIR)\bin\cc166.exe" -f <<EOF -c ccu63.c
 	${separate "\n" -o $@ $(OPT_CC) }
 	EOF
 
-io.obj : io.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h cc2.h ccu62.h ccu63.h adc0.h <1632742349>
+io.obj : io.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h ccu62.h ccu63.h adc0.h <1632830551>
 
 	@echo Compiling and assembling ${*F}.c
 	@"$(PRODDIR)\bin\cc166.exe" -f <<EOF -c io.c
 	${separate "\n" -o $@ $(OPT_CC) }
 	EOF
 
-main.obj : main.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h cc2.h ccu62.h ccu63.h
-main.obj : adc0.h <1632742349>
+main.obj : main.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h ccu62.h ccu63.h adc0.h <1632830551>
 
 	@echo Compiling and assembling ${*F}.c
 	@"$(PRODDIR)\bin\cc166.exe" -f <<EOF -c main.c
 	${separate "\n" -o $@ $(OPT_CC) }
 	EOF
 
-scs.obj : scs.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h cc2.h ccu62.h ccu63.h
-scs.obj : adc0.h <1632742349>
+scs.obj : scs.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h ccu62.h ccu63.h adc0.h <1632830551>
 
 	@echo Compiling and assembling ${*F}.c
 	@"$(PRODDIR)\bin\cc166.exe" -f <<EOF -c scs.c
@@ -63,40 +60,35 @@ start_master.obj : start_master.asm "$(PRODDIR)\include\head.asm" "$(PRODDIR)\in
 	${separate "\n" -o $@ $(OPT_CC) }
 	EOF
 
-gpt1.obj : gpt1.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h cc2.h ccu62.h ccu63.h
-gpt1.obj : adc0.h <1632742349>
+gpt1.obj : gpt1.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h ccu62.h ccu63.h adc0.h <1632830551>
 
 	@echo Compiling and assembling ${*F}.c
 	@"$(PRODDIR)\bin\cc166.exe" -f <<EOF -c gpt1.c
 	${separate "\n" -o $@ $(OPT_CC) }
 	EOF
 
-gpt2.obj : gpt2.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h cc2.h ccu62.h ccu63.h
-gpt2.obj : adc0.h <1632742349>
+gpt2.obj : gpt2.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h ccu62.h ccu63.h adc0.h <1632830551>
 
 	@echo Compiling and assembling ${*F}.c
 	@"$(PRODDIR)\bin\cc166.exe" -f <<EOF -c gpt2.c
 	${separate "\n" -o $@ $(OPT_CC) }
 	EOF
 
-cc2.obj : cc2.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h cc2.h ccu62.h ccu63.h
-cc2.obj : adc0.h <1632742349>
+cc2.obj : cc2.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h ccu62.h ccu63.h adc0.h <1632830551>
 
 	@echo Compiling and assembling ${*F}.c
 	@"$(PRODDIR)\bin\cc166.exe" -f <<EOF -c cc2.c
 	${separate "\n" -o $@ $(OPT_CC) }
 	EOF
 
-ccu62.obj : ccu62.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h cc2.h ccu62.h ccu63.h
-ccu62.obj : adc0.h <1632742349>
+ccu62.obj : ccu62.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h ccu62.h ccu63.h adc0.h <1632830551>
 
 	@echo Compiling and assembling ${*F}.c
 	@"$(PRODDIR)\bin\cc166.exe" -f <<EOF -c ccu62.c
 	${separate "\n" -o $@ $(OPT_CC) }
 	EOF
 
-adc0.obj : adc0.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h cc2.h ccu62.h ccu63.h
-adc0.obj : adc0.h <1632742349>
+adc0.obj : adc0.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h ccu62.h ccu63.h adc0.h <1632830551>
 
 	@echo Compiling and assembling ${*F}.c
 	@"$(PRODDIR)\bin\cc166.exe" -f <<EOF -c adc0.c

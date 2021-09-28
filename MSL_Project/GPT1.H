@@ -13,7 +13,7 @@
 //                the GPT1 module.
 //
 //----------------------------------------------------------------------------
-// @Date          27.09.2021 18:18:20
+// @Date          28.09.2021 15:41:39
 //
 //****************************************************************************
 
@@ -121,7 +121,7 @@ void GPT1_vInit(void);
 //                the name of the timer to be started
 //
 //----------------------------------------------------------------------------
-// @Date          27.09.2021
+// @Date          28.09.2021
 //
 //****************************************************************************
 
@@ -151,7 +151,7 @@ void GPT1_vInit(void);
 //                The name of the timer to be stopped
 //
 //----------------------------------------------------------------------------
-// @Date          27.09.2021
+// @Date          28.09.2021
 //
 //****************************************************************************
 
@@ -181,7 +181,7 @@ void GPT1_vInit(void);
 //                The name of the timer to be cleared
 //
 //----------------------------------------------------------------------------
-// @Date          27.09.2021
+// @Date          28.09.2021
 //
 //****************************************************************************
 
@@ -189,6 +189,37 @@ void GPT1_vInit(void);
 #define GPT1_vClearTmr_GPT1_TIMER_2() GPT12E_T2CON_T2R = 0; GPT12E_T2 = 0x0000; GPT12E_T2CON_T2RC = 0
 #define GPT1_vClearTmr_GPT1_TIMER_3() GPT12E_T3CON_T3R = 0; GPT12E_T3 = 0x0000
 #define GPT1_vClearTmr_GPT1_TIMER_4() GPT12E_T4CON_T4R = 0; GPT12E_T4 = 0x0000; GPT12E_T4CON_T4RC = 0
+
+
+//****************************************************************************
+// @Macro         GPT1_uwReadTmr(TimerNr) 
+//
+//----------------------------------------------------------------------------
+// @Description   This macro returns the contents of the selected GPT1 timer. 
+//                The timer is not stopped. Access of the CPU to the 
+//                registers of the timer is of higher priority than a timer 
+//                increment, a reload or a capture event. The following 
+//                definitions are available for TimerNr:
+//                GPT1_TIMER_2
+//                GPT1_TIMER_3
+//                GPT1_TIMER_4
+//
+//----------------------------------------------------------------------------
+// @Returnvalue   Current 16-bit value of the timer
+//
+//----------------------------------------------------------------------------
+// @Parameters    TimerNr: 
+//                The name of the timer to be readed
+//
+//----------------------------------------------------------------------------
+// @Date          28.09.2021
+//
+//****************************************************************************
+
+#define GPT1_uwReadTmr(TimerNr) GPT1_uwReadTmr_##TimerNr()
+#define GPT1_uwReadTmr_GPT1_TIMER_2() GPT12E_T2
+#define GPT1_uwReadTmr_GPT1_TIMER_3() GPT12E_T3
+#define GPT1_uwReadTmr_GPT1_TIMER_4() GPT12E_T4
 
 
 //****************************************************************************

@@ -12,7 +12,7 @@
 // @Description   This file contains the project initialization function.
 //
 //----------------------------------------------------------------------------
-// @Date          27.09.2021 18:18:18
+// @Date          28.09.2021 15:41:38
 //
 //****************************************************************************
 
@@ -85,7 +85,8 @@
 	unsigned int index;
 	float pi = 3.14159265359;
 	volatile unsigned int rampIndex;
-   
+   	volatile float velocity;
+	volatile float rpm;
 	//unsigned int ccu62_pr = 1/(frequency * ARRAY_SIZE*0.000000015);
 
 // USER CODE END
@@ -124,7 +125,7 @@ void setPhaseChange(int dir);
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          27.09.2021
+// @Date          28.09.2021
 //
 //****************************************************************************
 
@@ -165,9 +166,6 @@ void MAIN_vInit(void)
 
   //   initializes the General Purpose Timer Unit (GPT2)
   GPT2_vInit();
-
-  //   initializes the Capture / Compare Unit 2 (CAPCOM2)
-  CC2_vInit();
 
   //   initializes the Capture / Compare Unit 62 (CCU62)
   CCU62_vInit();
@@ -210,7 +208,7 @@ void MAIN_vInit(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          27.09.2021
+// @Date          28.09.2021
 //
 //****************************************************************************
 
@@ -248,7 +246,7 @@ void MAIN_vUnlockProtecReg(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          27.09.2021
+// @Date          28.09.2021
 //
 //****************************************************************************
 
@@ -290,7 +288,7 @@ void MAIN_vLockProtecReg(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          27.09.2021
+// @Date          28.09.2021
 //
 //****************************************************************************
 
@@ -354,7 +352,7 @@ void MAIN_vChangeFreq(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          27.09.2021
+// @Date          28.09.2021
 //
 //****************************************************************************
 
@@ -383,7 +381,9 @@ void main(void)
   {
 
    // USER CODE BEGIN (Main,4)
-   if (rampIndex > 351){
+   
+   
+   if (rampIndex > 0){
    		unsigned long raw;
 		raw = ADC0_uwGetResultData(RESULT_REG_0);
 		frequency = ((50*raw)/4096);
@@ -393,6 +393,7 @@ void main(void)
 	if (rampIndex == 0){
 		setPhaseChange(clockwise);
 	}
+	/*
 	if(rampIndex < 50){
 		frequency = rampIndex;
 		CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
@@ -441,7 +442,7 @@ void main(void)
 	}
 
 
-
+	*/
    // USER CODE END
 
   }
