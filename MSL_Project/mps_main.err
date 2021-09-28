@@ -1,46 +1,22 @@
 TASKING program builder v8.7r1 Build 088
 Warning: Infinite loop detected; Not building sub-project mps_main.pjt
-Compiling and assembling ccu63.c
-Trial version.  11 day(s) remaining
-Trial version.  11 day(s) remaining
-Compiling and assembling io.c
-Trial version.  11 day(s) remaining
-Trial version.  11 day(s) remaining
-Compiling and assembling scs.c
-Trial version.  11 day(s) remaining
-Trial version.  11 day(s) remaining
-Compiling and assembling gpt1.c
-Trial version.  11 day(s) remaining
-Trial version.  11 day(s) remaining
-Compiling and assembling gpt2.c
-Trial version.  11 day(s) remaining
-Trial version.  11 day(s) remaining
-Compiling and assembling cc2.c
-Trial version.  11 day(s) remaining
-Trial version.  11 day(s) remaining
-Compiling and assembling ccu62.c
-Trial version.  11 day(s) remaining
-Trial version.  11 day(s) remaining
-Compiling and assembling adc0.c
-Trial version.  11 day(s) remaining
-Trial version.  11 day(s) remaining
 Linking and locating to mps_main.out
-Trial version.  11 day(s) remaining
+Trial version.  10 day(s) remaining
 
-	Number of symbols		: 1545
+	Number of symbols		: 1598
 	Number of sections		: 33
 	Number of groups		: 0
 	Number of classes		: 11
 	Number of modules		: 34
-	Total section size		: 0002CFAh
+	Total section size		: 0002E4Eh
 	Total memory size		: 0344A04h
 		consisting of RAM	: 0284A04h
 		              ROM	: 00C0000h
-	Total RAM filled		: 0000CE6h
-	Total ROM filled		: 0002014h
+	Total RAM filled		: 0000CEEh
+	Total ROM filled		: 0002160h
 	System stack size		: 0000200h
 	Heap size			: 0000000h
-	User stack size			: 000016Ch
+	User stack size			: 000016Eh
 	Time spent			: 00:00:2.20
 Converting mps_main.out to mps_main.abs in IEEE-695 format
-Trial version.  11 day(s) remaining
+Trial version.  10 day(s) remaining

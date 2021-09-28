@@ -67,7 +67,7 @@
 // USER CODE BEGIN (CCU62_General,6)
 	extern const unsigned int ARRAY_SIZE;
 	extern	unsigned int index;
-
+	extern volatile unsigned int rampIndex;
 // USER CODE END
 
 
@@ -349,8 +349,12 @@ _interrupt(CCU62_NodeI0_INT)  void CCU62_viNodeI0(void)
     // Timer T12 period match detection
 
     // USER CODE BEGIN (NodeI0,19)
+	  if(rampIndex < 350 && rampIndex > 300){
+	  }
+	  else{
 	  index++;
 	  index = index%ARRAY_SIZE;
+	  }
     // USER CODE END
 
     CCU62_ISR |= 0x0080;  // clear flag CCU62_IS_T12PM

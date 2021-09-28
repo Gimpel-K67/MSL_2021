@@ -141,7 +141,7 @@ $MODEL(SMALL)
 ; ccu62.c    67	// USER CODE BEGIN (CCU62_General,6)
 ; ccu62.c    68		extern const unsigned int ARRAY_SIZE;
 ; ccu62.c    69		extern	unsigned int index;
-; ccu62.c    70	
+; ccu62.c    70		extern volatile unsigned int rampIndex;
 ; ccu62.c    71	// USER CODE END
 ; ccu62.c    72	
 ; ccu62.c    73	
@@ -529,39 +529,56 @@ _CCU62_viNodeI0	PROC TASK CCU62_TASK INTNO CCU62_INUM = 038h
 ; ccu62.c   347	  if(CCU62_IS & 0x0080)  // if CCU62_IS_T12PM
 	?LINE	347
 	MOV	R12,0EB50h
-	JNB	R12.7,_4
+	JNB	R12.7,_10
 ; ccu62.c   348	  {
 ; ccu62.c   349	    // Timer T12 period match detection
 ; ccu62.c   350	
 ; ccu62.c   351	    // USER CODE BEGIN (NodeI0,19)
-; ccu62.c   352		  index++;
+; ccu62.c   352		  if(rampIndex < 350 && rampIndex > 300){
 	?LINE	352
+	MOV	R12,_rampIndex
+	CMP	R12,#015Eh
+	JMPR	cc_UGE,_7
+	MOV	R12,_rampIndex
+	CMP	R12,#012Ch
+	JMPR	cc_ULE,_8
+; ccu62.c   353		  }
+	?LINE	353
+	JMPR	cc_UC,_9
+_7:
+_8:
+; ccu62.c   354		  else{
+; ccu62.c   355		  index++;
+	?LINE	355
 	MOV	R12,_index
 	ADD	R12,#01h
 	MOV	_index,R12
-; ccu62.c   353		  index = index%ARRAY_SIZE;
-	?LINE	353
+; ccu62.c   356		  index = index%ARRAY_SIZE;
+	?LINE	356
 	MOV	R12,_index
 	MOV	R13,_ARRAY_SIZE
 	MOV	MDL,R12
 	DIVU	R13
 	MOV	R12,MDH
 	MOV	_index,R12
-; ccu62.c   354	    // USER CODE END
-; ccu62.c   355	
-; ccu62.c   356	    CCU62_ISR |= 0x0080;  // clear flag CCU62_IS_T12PM
-	?LINE	356
+; ccu62.c   357		  }
+	?LINE	357
+_9:
+; ccu62.c   358	    // USER CODE END
+; ccu62.c   359	
+; ccu62.c   360	    CCU62_ISR |= 0x0080;  // clear flag CCU62_IS_T12PM
+	?LINE	360
 	MOV	R12,#0EB54h
 	MOV	R13,[R12]
 	BSET	R13.7
 	MOV	[R12],R13
-; ccu62.c   357	  }
-	?LINE	357
-_4:
-; ccu62.c   358	
-; ccu62.c   359	
-; ccu62.c   360	} //  End of function CCU62_viNodeI0
-	?LINE	360
+; ccu62.c   361	  }
+	?LINE	361
+_10:
+; ccu62.c   362	
+; ccu62.c   363	
+; ccu62.c   364	} //  End of function CCU62_viNodeI0
+	?LINE	364
 	EXTR	#01h
 	POP	QR1
 	EXTR	#01h
@@ -583,20 +600,21 @@ _4:
 	POP	DPP0
 	POP	MDC
 	POP	CP
-	?LINE	360
+	?LINE	364
 	RETI
 _CCU62_viNodeI0	ENDP
-	?SYMB	'',$,17,360
-; ccu62.c   361	
-; ccu62.c   362	
-; ccu62.c   363	
-; ccu62.c   364	
-; ccu62.c   365	// USER CODE BEGIN (CCU62_General,10)
+	?SYMB	'',$,17,364
+; ccu62.c   365	
 ; ccu62.c   366	
-; ccu62.c   367	// USER CODE END
+; ccu62.c   367	
 ; ccu62.c   368	
+; ccu62.c   369	// USER CODE BEGIN (CCU62_General,10)
+; ccu62.c   370	
+; ccu62.c   371	// USER CODE END
+; ccu62.c   372	
 CCU62_1_PR	ENDS
 
+	EXTERN	_rampIndex:WORD
 	EXTERN	_ARRAY_SIZE:WORD
 	EXTERN	_index:WORD
 CCU62_RB	REGDEF	R0-R15

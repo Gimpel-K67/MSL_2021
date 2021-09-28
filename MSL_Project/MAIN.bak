@@ -12,7 +12,7 @@
 // @Description   This file contains the project initialization function.
 //
 //----------------------------------------------------------------------------
-// @Date          27.09.2021 17:55:13
+// @Date          27.09.2021 18:18:18
 //
 //****************************************************************************
 
@@ -47,7 +47,9 @@
 //****************************************************************************
 
 // USER CODE BEGIN (MAIN_General,4)
-
+	// clockwise=rechtslauf, counterclockwise=linkslauf
+  	#define clockwise (0)
+  	#define counterclockwise (1)
 // USER CODE END
 
 
@@ -76,12 +78,14 @@
 // USER CODE BEGIN (MAIN_General,7)
 	unsigned int frequency = 0;
 	const unsigned int ARRAY_SIZE = 1200;
-	const unsigned int OFFSET_L2 = ARRAY_SIZE/3;
-	const unsigned int OFFSET_L3 = (2*ARRAY_SIZE)/3;
+	unsigned int OFFSET_L1;
+	unsigned int OFFSET_L2;
+	unsigned int OFFSET_L3;
 	unsigned int table[ARRAY_SIZE];
 	unsigned int index;
 	float pi = 3.14159265359;
 	volatile unsigned int rampIndex;
+   
 	//unsigned int ccu62_pr = 1/(frequency * ARRAY_SIZE*0.000000015);
 
 // USER CODE END
@@ -103,6 +107,7 @@
 // USER CODE BEGIN (MAIN_General,9)
 void generateTable();
 unsigned int calculateMotorFrequency (int frequency);
+void setPhaseChange(int dir);
 // USER CODE END
 
 
@@ -371,7 +376,6 @@ void main(void)
 	ADC0_vStartSeq0ReqChNum(0,0,1,6);
 	CCU63_vStartTmr(CCU63_TIMER_12);
 	CCU62_vStartTmr(CCU62_TIMER_12);
-	//IO_vSetPin(LED_DBG);
 	GPT2_vStartTmr(GPT2_TIMER_6);
     // USER CODE END
 
@@ -379,12 +383,15 @@ void main(void)
   {
 
    // USER CODE BEGIN (Main,4)
-   if (rampIndex > 150){
+   if (rampIndex > 350){
    		unsigned long raw;
 		raw = ADC0_uwGetResultData(RESULT_REG_0);
 		frequency = ((50*raw)/4096);
 	   	CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
 		CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
+	}
+	if (rampIndex == 0){
+		setPhaseChange(clockwise);
 	}
 	if(rampIndex < 50){
 		frequency = rampIndex;
@@ -393,17 +400,41 @@ void main(void)
 		IO_vTogglePin(LED_DBG);
 	} 
 	
-	if(rampIndex < 100 || rampIndex > 50){
+	if(rampIndex < 100 && rampIndex > 50){
 		frequency = 50;
 		CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
 		CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
 	}
 
-	if(rampIndex < 150 || rampIndex > 100){
+	if(rampIndex < 150 && rampIndex > 100){
 		frequency = (150 - rampIndex);
 		CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
 		CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
 	}
+	if (rampIndex == 151){
+		setPhaseChange(counterclockwise);
+	}
+	if(rampIndex < 200 && rampIndex > 151){
+		frequency = (rampIndex-150);
+		CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
+		CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
+	}
+	if(rampIndex < 250 && rampIndex > 200){
+		frequency = 50;
+		CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
+		CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
+	}
+	if(rampIndex < 300 && rampIndex > 250){
+		frequency = (300 - rampIndex);
+		CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
+		CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
+	}
+	if(rampIndex < 350 && rampIndex > 300){
+		CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(50));
+		CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
+	}
+
+
    // USER CODE END
 
   }
@@ -422,16 +453,28 @@ void generateTable(){
 }
 
 unsigned int calculateMotorFrequency (int _frequency){
-if (_frequency < 5){
-	//CCU63_vStopTmr(CCU63_TIMER_12);
-	//CCU63_vResetTmr(CCU63_TIMER_12);
-	frequency = 5;
-	return (0x2B67);
+	if (_frequency < 2){
+		frequency = 1;
+		return (0xD903);
+	}
+	else {
+		return (1/(_frequency * ARRAY_SIZE*0.000000015));
+	}
 }
-else {
-	return (1/(_frequency * ARRAY_SIZE*0.000000015));
+
+void setPhaseChange(int dir){
+	if(dir == clockwise){
+		OFFSET_L1 = 0;
+		OFFSET_L2 = (2*ARRAY_SIZE)/3;
+		OFFSET_L3 = ARRAY_SIZE/3;
+	}
+	if(dir == counterclockwise){
+		OFFSET_L1 = 0;
+		OFFSET_L2 = ARRAY_SIZE/3;
+		OFFSET_L3 = (2*ARRAY_SIZE)/3;
+	}  
 }
-}
+
 
 // USER CODE END
 

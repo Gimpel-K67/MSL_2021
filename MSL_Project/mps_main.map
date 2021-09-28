@@ -1,4 +1,4 @@
-TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 27 2021  Time: 18:18:36  Page:   1
+TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 28 2021  Time: 11:18:17  Page:   1
 mps_main
 
 Memory map     : 
@@ -8,7 +8,7 @@ Name                        No. Start      End        Length  Type Algn Comb Mem
 C166_US2...................  17 00C000h    .......    000000h LDAT WORD GUSK RAM ................. CUSTACK.......... CSTART........
 C166_US1...................  16 00C000h    .......    000000h LDAT WORD GUSK RAM ................. CUSTACK.......... CSTART........
 C166_US0...................  15 00C000h    .......    000000h LDAT WORD GUSK RAM ................. CUSTACK.......... CSTART........
-C166_US....................   2 00C000h    00C16Bh    00016Ch LDAT WORD GUSK RAM ................. CUSTACK.......... CCU63_C.......
+C166_US....................   2 00C000h    00C16Dh    00016Eh LDAT WORD GUSK RAM ................. CUSTACK.......... CCU63_C.......
                                                                                                                      MAIN_C........
                                                                                                                      SCS_C.........
                                                                                                                      CSTART........
@@ -22,9 +22,9 @@ C166_US....................   2 00C000h    00C16Bh    00016Ch LDAT WORD GUSK RAM
                                                                                                                      dvf8..........
                                                                                                                      trpf8.........
                                                                                                                      load8n........
-MAIN_ID_NB.................   5 00C16Ch    00C171h    000006h LDAT WORD GLOB RAM ................. CINITIRAM........ MAIN_C........
-MAIN_5_NB..................   8 00C172h    00CAD5h    000964h LDAT WORD GLOB RAM ................. CNEAR............ MAIN_C........
-__FP_ENV_BUF...............  29 00CAD6h    00CAE5h    000010h LDAT WORD GLOB RAM ................. CNEAR............ trap..........
+MAIN_ID_NB.................   5 00C16Eh    00C173h    000006h LDAT WORD GLOB RAM ................. CINITIRAM........ MAIN_C........
+MAIN_5_NB..................   8 00C174h    00CADDh    00096Ah LDAT WORD GLOB RAM ................. CNEAR............ MAIN_C........
+__FP_ENV_BUF...............  29 00CADEh    00CAEDh    000010h LDAT WORD GLOB RAM ................. CNEAR............ trap..........
 Internal IO area........... ... 00E000h    00EFFFh    001000h .... .... .... RAM ................. ................. ..............
 Extended SFR Area.......... ... 00F000h    00F1FFh    000200h .... .... .... RAM ................. ................. ..............
 Reserved................... ... 00F200h    00F5FFh    000400h .... .... .... ... ................. ................. ..............
@@ -38,31 +38,31 @@ SFR Area................... ... 00FE00h    00FFFFh    000200h .... .... .... RAM
 Reserved................... ... BF0000h    BFFFFFh    010000h .... .... .... ... ................. ................. ..............
 ?INTVECT................... ... C00000h    C001FFh    000200h .... .... .... ROM ................. ................. ..............
 CCU63_2_CO.................   1 C00200h    C0020Fh    000010h LDAT WORD GLOB ROM ................. CROM............. CCU63_C.......
-MAIN_3_NC..................   6 C00210h    C00215h    000006h LDAT WORD GLOB ROM ................. CNEARROM......... MAIN_C........
-MAIN_6_CO..................   9 C00216h    C00225h    000010h LDAT WORD GLOB ROM ................. CROM............. MAIN_C........
-_SINUS_2_CO................  26 C00226h    C00295h    000070h LDAT WORD GLOB ROM ................. CROM............. _SINUS_C......
-CCU63_1_PR.................   0 C00296h    C004F7h    000262h CODE WORD GLOB ROM ................. CPROGRAM......... CCU63_C.......
-IO_1_PR....................   3 C004F8h    C0050Fh    000018h CODE WORD GLOB ROM ................. CPROGRAM......... IO_C..........
-MAIN_IR_NB.................   4 C00510h    C00515h    000006h PDAT WORD GLOB ROM ................. CINITROM......... MAIN_C........
-MAIN_4_PR..................   7 C00516h    C00851h    00033Ch CODE WORD GLOB ROM ................. CPROGRAM......... MAIN_C........
-C166_INIT..................  10 C00852h    C0085Fh    00000Eh PDAT WORD GLOB ROM ................. CINITROM......... MAIN_C........
-C166_BSS...................  11 C00860h    C0086Fh    000010h PDAT WORD GLOB ROM ................. CINITROM......... MAIN_C........
+MAIN_3_NC..................   6 C00210h    C00211h    000002h LDAT WORD GLOB ROM ................. CNEARROM......... MAIN_C........
+MAIN_6_CO..................   9 C00212h    C00221h    000010h LDAT WORD GLOB ROM ................. CROM............. MAIN_C........
+_SINUS_2_CO................  26 C00222h    C00291h    000070h LDAT WORD GLOB ROM ................. CROM............. _SINUS_C......
+CCU63_1_PR.................   0 C00292h    C00505h    000274h CODE WORD GLOB ROM ................. CPROGRAM......... CCU63_C.......
+IO_1_PR....................   3 C00506h    C0051Dh    000018h CODE WORD GLOB ROM ................. CPROGRAM......... IO_C..........
+MAIN_IR_NB.................   4 C0051Eh    C00523h    000006h PDAT WORD GLOB ROM ................. CINITROM......... MAIN_C........
+MAIN_4_PR..................   7 C00524h    C00987h    000464h CODE WORD GLOB ROM ................. CPROGRAM......... MAIN_C........
+C166_INIT..................  10 C00988h    C00995h    00000Eh PDAT WORD GLOB ROM ................. CINITROM......... MAIN_C........
+C166_BSS...................  11 C00996h    C009A5h    000010h PDAT WORD GLOB ROM ................. CINITROM......... MAIN_C........
                                                                                                                      trap..........
-SCS_1_PR...................  12 C00870h    C009D1h    000162h CODE WORD GLOB ROM ................. CPROGRAM......... SCS_C.........
-__C_INIT_PR................  13 C009D2h    C00B45h    000174h CODE WORD GLOB ROM ................. C_INIT........... CSTART........
-__CSTART_PR................  14 C00B46h    C00C03h    0000BEh CODE WORD GLOB ROM ................. CPROGRAM......... CSTART........
-GPT1_1_PR..................  19 C00C04h    C00C35h    000032h CODE WORD GLOB ROM ................. CPROGRAM......... GPT1_C........
-GPT2_1_PR..................  20 C00C36h    C00CEBh    0000B6h CODE WORD GLOB ROM ................. CPROGRAM......... GPT2_C........
-CC2_1_PR...................  21 C00CECh    C00D21h    000036h CODE WORD GLOB ROM ................. CPROGRAM......... CC2_C.........
-CCU62_1_PR.................  22 C00D22h    C00E31h    000110h CODE WORD GLOB ROM ................. CPROGRAM......... CCU62_C.......
-ADC0_1_PR..................  23 C00E32h    C00FEFh    0001BEh CODE WORD GLOB ROM ................. CPROGRAM......... ADC0_C........
-SIN_1_PR...................  24 C00FF0h    C0102Fh    000040h CODE WORD GLOB ROM ................. CLIBRARY......... SIN_C.........
-_SINUS_1_PR................  25 C01030h    C0138Dh    00035Eh CODE WORD GLOB ROM ................. CLIBRARY......... _SINUS_C......
-TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 27 2021  Time: 18:18:36  Page:   2
+SCS_1_PR...................  12 C009A6h    C00B07h    000162h CODE WORD GLOB ROM ................. CPROGRAM......... SCS_C.........
+__C_INIT_PR................  13 C00B08h    C00C7Bh    000174h CODE WORD GLOB ROM ................. C_INIT........... CSTART........
+__CSTART_PR................  14 C00C7Ch    C00D39h    0000BEh CODE WORD GLOB ROM ................. CPROGRAM......... CSTART........
+GPT1_1_PR..................  19 C00D3Ah    C00D6Bh    000032h CODE WORD GLOB ROM ................. CPROGRAM......... GPT1_C........
+GPT2_1_PR..................  20 C00D6Ch    C00E21h    0000B6h CODE WORD GLOB ROM ................. CPROGRAM......... GPT2_C........
+CC2_1_PR...................  21 C00E22h    C00E57h    000036h CODE WORD GLOB ROM ................. CPROGRAM......... CC2_C.........
+CCU62_1_PR.................  22 C00E58h    C00F7Dh    000126h CODE WORD GLOB ROM ................. CPROGRAM......... CCU62_C.......
+ADC0_1_PR..................  23 C00F7Eh    C0113Bh    0001BEh CODE WORD GLOB ROM ................. CPROGRAM......... ADC0_C........
+SIN_1_PR...................  24 C0113Ch    C0117Bh    000040h CODE WORD GLOB ROM ................. CLIBRARY......... SIN_C.........
+_SINUS_1_PR................  25 C0117Ch    C014D9h    00035Eh CODE WORD GLOB ROM ................. CLIBRARY......... _SINUS_C......
+TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 28 2021  Time: 11:18:17  Page:   2
 mps_main
 
-__MODF.....................  27 C0138Eh    C014FDh    000170h CODE WORD GLOB ROM ................. RTLIBRARY........ MODF..........
-__FPCODE...................  28 C014FEh    C01FD9h    000ADCh CODE WORD GLOB ROM ................. CPROGRAM......... adf8..........
+__MODF.....................  27 C014DAh    C01649h    000170h CODE WORD GLOB ROM ................. RTLIBRARY........ MODF..........
+__FPCODE...................  28 C0164Ah    C02125h    000ADCh CODE WORD GLOB ROM ................. CPROGRAM......... adf8..........
                                                                                                                      cff48.........
                                                                                                                      cfi82.........
                                                                                                                      cfu82.........
@@ -81,8 +81,8 @@ __FPCODE...................  28 C014FEh    C01FD9h    000ADCh CODE WORD GLOB ROM
                                                                                                                      trpf8.........
                                                                                                                      load8n........
                                                                                                                      trap..........
-__MUL......................  30 C01FDAh    C01FF1h    000018h CODE WORD COMM ROM ................. SHAREDRTLIB...... MUL...........
-__LONGJMP..................  31 C01FF2h    C02013h    000022h CODE WORD GLOB ROM ................. RTLIBRARY........ LONGJMP.......
+__MUL......................  30 C02126h    C0213Dh    000018h CODE WORD COMM ROM ................. SHAREDRTLIB...... MUL...........
+__LONGJMP..................  31 C0213Eh    C0215Fh    000022h CODE WORD GLOB ROM ................. RTLIBRARY........ LONGJMP.......
 Reserved................... ... C0F000h    C0FFFFh    001000h .... .... .... ... ................. ................. ..............
 
 
@@ -92,21 +92,21 @@ Symbol                                     No. Value     Type       Symbol      
 ----------------------------------------------------------------    ----------------------------------------------------------------
 ?BASE_DPP0................................ ABS 0400000h  WOR EXT    ?BASE_DPP2................................ ABS 0C00000h  WOR EXT
 CCU63_INUM................................ ... 000003Ch  INT GLB    CCU63_RB.................................. ... 000F600h  REG LOC
-CCU63_TASK................................   0 0C00358h  TSK LOC    _ARRAY_SIZE...............................   6 0C00210h  WOR EXT
-_CCU63_vInit..............................   0 0C00296h  FAR GLB    _CCU63_viNodeI0...........................   0 0C00358h  FAR GLB
-_OFFSET_L2................................   6 0C00212h  WOR EXT    _OFFSET_L3................................   6 0C00214h  WOR EXT
-__adf8r...................................  28 0C01548h  FAR EXT    __cfu82r..................................  28 0C0173Eh  FAR EXT
-__cuf28r..................................  28 0C01790h  FAR EXT    __load8n..................................  28 0C01F9Ah  FAR EXT
-__mlf8r...................................  28 0C0195Ch  FAR EXT    _frequency................................   5 000C16Ch  WOR EXT
-_index....................................   8 000CAD4h  WOR EXT    _table....................................   8 000C172h  WOR EXT
-
+CCU63_TASK................................   0 0C00354h  TSK LOC    _ARRAY_SIZE...............................   6 0C00210h  WOR EXT
+_CCU63_vInit..............................   0 0C00292h  FAR GLB    _CCU63_viNodeI0...........................   0 0C00354h  FAR GLB
+_OFFSET_L1................................   8 000CAD8h  WOR EXT    _OFFSET_L2................................   8 000CADCh  WOR EXT
+_OFFSET_L3................................   8 000CADAh  WOR EXT    __adf8r...................................  28 0C01694h  FAR EXT
+__cfu82r..................................  28 0C0188Ah  FAR EXT    __cuf28r..................................  28 0C018DCh  FAR EXT
+__load8n..................................  28 0C020E6h  FAR EXT    __mlf8r...................................  28 0C01AA8h  FAR EXT
+_frequency................................   5 000C16Eh  WOR EXT    _index....................................   8 000CAD6h  WOR EXT
+_table....................................   8 000C174h  WOR EXT    
 
 
 Symbol table   : io.obj(IO_C)
 
 Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
 ----------------------------------------------------------------    ----------------------------------------------------------------
- <NO NAME>................................ ... 0000000h  REG LOC    _IO_vInit.................................   3 0C004F8h  FAR GLB
+ <NO NAME>................................ ... 0000000h  REG LOC    _IO_vInit.................................   3 0C00506h  FAR GLB
 
 
 
@@ -114,41 +114,42 @@ Symbol table   : main.obj(MAIN_C)
 
 Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
 ----------------------------------------------------------------    ----------------------------------------------------------------
- <NO NAME>................................ ... 0000000h  REG LOC    _ADC0_vInit...............................  23 0C00E32h  FAR EXT
-_ADC0_vStartSeq0ReqChNum..................  23 0C00F1Eh  FAR EXT    _ARRAY_SIZE...............................   6 0C00210h  WOR GLB
-_CC2_vInit................................  21 0C00CECh  FAR EXT    _CCU62_vInit..............................  22 0C00D22h  FAR EXT
-_CCU63_vInit..............................   0 0C00296h  FAR EXT    _GPT1_vInit...............................  19 0C00C04h  FAR EXT
-TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 27 2021  Time: 18:18:36  Page:   3
+ <NO NAME>................................ ... 0000000h  REG LOC    _ADC0_vInit...............................  23 0C00F7Eh  FAR EXT
+_ADC0_vStartSeq0ReqChNum..................  23 0C0106Ah  FAR EXT    _ARRAY_SIZE...............................   6 0C00210h  WOR GLB
+_CC2_vInit................................  21 0C00E22h  FAR EXT    _CCU62_vInit..............................  22 0C00E58h  FAR EXT
+_CCU63_vInit..............................   0 0C00292h  FAR EXT    _GPT1_vInit...............................  19 0C00D3Ah  FAR EXT
+TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 28 2021  Time: 11:18:17  Page:   3
 mps_main
 
-_GPT2_vInit...............................  20 0C00C36h  FAR EXT    _IO_vInit.................................   3 0C004F8h  FAR EXT
-_MAIN_vChangeFreq.........................   7 0C005ECh  FAR GLB    _MAIN_vInit...............................   7 0C00516h  FAR GLB
-_MAIN_vLockProtecReg......................   7 0C00592h  FAR GLB    _MAIN_vUnlockProtecReg....................   7 0C00558h  FAR GLB
-_OFFSET_L2................................   6 0C00212h  WOR GLB    _OFFSET_L3................................   6 0C00214h  WOR GLB
-_SCS_StartXtalOsc.........................  12 0C008D2h  FAR EXT    _SCS_SwitchSystemClock....................  12 0C008F2h  FAR EXT
-_SCS_SwitchToHighPrecBandgap..............  12 0C00956h  FAR EXT    __CSTART..................................  14 0C00B46h  FAR EXT
-__adf8r...................................  28 0C01548h  FAR EXT    __cff48r..................................  28 0C0167Ch  FAR EXT
-__cfu82r..................................  28 0C0173Eh  FAR EXT    __cif28r..................................  28 0C01776h  FAR EXT
-__cuf28r..................................  28 0C01790h  FAR EXT    __dvf4r...................................  28 0C01ABEh  FAR EXT
-__dvf8r...................................  28 0C01BC2h  FAR EXT    __load8n..................................  28 0C01F9Ah  FAR EXT
-__mlf4r...................................  28 0C01898h  FAR EXT    __mlf8r...................................  28 0C0195Ch  FAR EXT
-__mul.....................................  30 0C01FDAh  FAR EXT    __store8n.................................  28 0C01FB2h  FAR EXT
-_calculateMotorFrequency..................   7 0C00804h  FAR GLB    _frequency................................   5 000C16Ch  WOR GLB
-_generateTable............................   7 0C00754h  FAR GLB    _index....................................   8 000CAD4h  WOR GLB
-_main.....................................   7 0C0061Ch  FAR GLB    _pi.......................................   5 000C16Eh  WOR GLB
-_rampIndex................................   8 000CAD2h  WOR GLB    _sin......................................  24 0C00FF0h  FAR EXT
-_table....................................   8 000C172h  WOR GLB    
+_GPT2_vInit...............................  20 0C00D6Ch  FAR EXT    _IO_vInit.................................   3 0C00506h  FAR EXT
+_MAIN_vChangeFreq.........................   7 0C005FAh  FAR GLB    _MAIN_vInit...............................   7 0C00524h  FAR GLB
+_MAIN_vLockProtecReg......................   7 0C005A0h  FAR GLB    _MAIN_vUnlockProtecReg....................   7 0C00566h  FAR GLB
+_OFFSET_L1................................   8 000CAD8h  WOR GLB    _OFFSET_L2................................   8 000CADCh  WOR GLB
+_OFFSET_L3................................   8 000CADAh  WOR GLB    _SCS_StartXtalOsc.........................  12 0C00A08h  FAR EXT
+_SCS_SwitchSystemClock....................  12 0C00A28h  FAR EXT    _SCS_SwitchToHighPrecBandgap..............  12 0C00A8Ch  FAR EXT
+__CSTART..................................  14 0C00C7Ch  FAR EXT    __adf8r...................................  28 0C01694h  FAR EXT
+__cff48r..................................  28 0C017C8h  FAR EXT    __cfu82r..................................  28 0C0188Ah  FAR EXT
+__cif28r..................................  28 0C018C2h  FAR EXT    __cuf28r..................................  28 0C018DCh  FAR EXT
+__dvf4r...................................  28 0C01C0Ah  FAR EXT    __dvf8r...................................  28 0C01D0Eh  FAR EXT
+__load8n..................................  28 0C020E6h  FAR EXT    __mlf4r...................................  28 0C019E4h  FAR EXT
+__mlf8r...................................  28 0C01AA8h  FAR EXT    __mul.....................................  30 0C02126h  FAR EXT
+__store8n.................................  28 0C020FEh  FAR EXT    _calculateMotorFrequency..................   7 0C00902h  FAR GLB
+_frequency................................   5 000C16Eh  WOR GLB    _generateTable............................   7 0C00852h  FAR GLB
+_index....................................   8 000CAD6h  WOR GLB    _main.....................................   7 0C0062Ah  FAR GLB
+_pi.......................................   5 000C170h  WOR GLB    _rampIndex................................   8 000CAD4h  WOR GLB
+_setPhaseChange...........................   7 0C00950h  FAR GLB    _sin......................................  24 0C0113Ch  FAR EXT
+_table....................................   8 000C174h  WOR GLB    
 
 
 Symbol table   : scs.obj(SCS_C)
 
 Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
 ----------------------------------------------------------------    ----------------------------------------------------------------
- <NO NAME>................................ ... 0000000h  REG LOC    _DisableVcoBypass.........................  12 0C008AEh  FAR GLB
-_EnableVcoBypass..........................  12 0C00896h  FAR GLB    _SCS_CountClocksWithTimer.................  12 0C00964h  FAR GLB
-_SCS_StartXtalOsc.........................  12 0C008D2h  FAR GLB    _SCS_SwitchSystemClock....................  12 0C008F2h  FAR GLB
-_SCS_SwitchToHighPrecBandgap..............  12 0C00956h  FAR GLB    _SetK2....................................  12 0C00870h  FAR GLB
-_WaitForTimer13Stop.......................  12 0C008C6h  FAR GLB    
+ <NO NAME>................................ ... 0000000h  REG LOC    _DisableVcoBypass.........................  12 0C009E4h  FAR GLB
+_EnableVcoBypass..........................  12 0C009CCh  FAR GLB    _SCS_CountClocksWithTimer.................  12 0C00A9Ah  FAR GLB
+_SCS_StartXtalOsc.........................  12 0C00A08h  FAR GLB    _SCS_SwitchSystemClock....................  12 0C00A28h  FAR GLB
+_SCS_SwitchToHighPrecBandgap..............  12 0C00A8Ch  FAR GLB    _SetK2....................................  12 0C009A6h  FAR GLB
+_WaitForTimer13Stop.......................  12 0C009FCh  FAR GLB    
 
 
 Symbol table   : start_master.obj(CSTART)
@@ -156,37 +157,37 @@ Symbol table   : start_master.obj(CSTART)
 Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
 ----------------------------------------------------------------    ----------------------------------------------------------------
 ?BASE_DPP0................................ ABS 0400000h  WOR EXT    ?BASE_DPP1................................ ABS 0404000h  WOR EXT
-?BASE_DPP2................................ ABS 0C00000h  WOR EXT    ?C166_BSS_HEAD............................  11 0C00860h  WOR EXT
-?C166_INIT_HEAD...........................  10 0C00852h  WOR EXT    ?SYSSTACK_BOTTOM.......................... ABS 000FA00h  WOR EXT
+?BASE_DPP2................................ ABS 0C00000h  WOR EXT    ?C166_BSS_HEAD............................  11 0C00996h  WOR EXT
+?C166_INIT_HEAD...........................  10 0C00988h  WOR EXT    ?SYSSTACK_BOTTOM.......................... ABS 000FA00h  WOR EXT
 ?SYSSTACK_TOP............................. ABS 000FC00h  WOR EXT    ?USRSTACK0_BOTTOM.........................  15 000C000h  WOR EXT
 ?USRSTACK0_TOP............................  15 000C000h  WOR EXT    ?USRSTACK1_BOTTOM.........................  16 000C000h  WOR EXT
 ?USRSTACK1_TOP............................  16 000C000h  WOR EXT    ?USRSTACK_BOTTOM..........................   2 000C000h  WOR EXT
-?USRSTACK_TOP.............................   2 000C16Ch  WOR EXT    CSTART_RBANK.............................. ... 000F620h  REG LOC
-__CSTART..................................  14 0C00B46h  FAR GLB    __CSTART_INUM............................. ... 0000000h  INT GLB
-__CSTART_TASK.............................  14 0C00B46h  TSK LOC    __C_INIT..................................  13 0C009D2h  FAR GLB
-__EXIT....................................  14 0C00BFEh  FAR GLB    __IDLE....................................  14 0C00BFEh  FAR GLB
-_main.....................................   7 0C0061Ch  FAR EXT    
+?USRSTACK_TOP.............................   2 000C16Eh  WOR EXT    CSTART_RBANK.............................. ... 000F620h  REG LOC
+__CSTART..................................  14 0C00C7Ch  FAR GLB    __CSTART_INUM............................. ... 0000000h  INT GLB
+__CSTART_TASK.............................  14 0C00C7Ch  TSK LOC    __C_INIT..................................  13 0C00B08h  FAR GLB
+__EXIT....................................  14 0C00D34h  FAR GLB    __IDLE....................................  14 0C00D34h  FAR GLB
+_main.....................................   7 0C0062Ah  FAR EXT    
 
 
 Symbol table   : gpt1.obj(GPT1_C)
 
 Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
 ----------------------------------------------------------------    ----------------------------------------------------------------
- <NO NAME>................................ ... 0000000h  REG LOC    _GPT1_vInit...............................  19 0C00C04h  FAR GLB
+ <NO NAME>................................ ... 0000000h  REG LOC    _GPT1_vInit...............................  19 0C00D3Ah  FAR GLB
 
 
 
 Symbol table   : gpt2.obj(GPT2_C)
-
-TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 27 2021  Time: 18:18:36  Page:   4
+TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 28 2021  Time: 11:18:17  Page:   4
 mps_main
+
 
 Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
 ----------------------------------------------------------------    ----------------------------------------------------------------
 ?BASE_DPP0................................ ABS 0400000h  WOR EXT    ?BASE_DPP2................................ ABS 0C00000h  WOR EXT
 GPT2_INUM................................. ... 0000024h  INT GLB    GPT2_RB................................... ... 000F640h  REG LOC
-GPT2_TASK.................................  20 0C00C76h  TSK LOC    _GPT2_vInit...............................  20 0C00C36h  FAR GLB
-_GPT2_viTmr6..............................  20 0C00C76h  FAR GLB    _rampIndex................................   8 000CAD2h  WOR EXT
+GPT2_TASK.................................  20 0C00DACh  TSK LOC    _GPT2_vInit...............................  20 0C00D6Ch  FAR GLB
+_GPT2_viTmr6..............................  20 0C00DACh  FAR GLB    _rampIndex................................   8 000CAD4h  WOR EXT
 
 
 
@@ -194,7 +195,7 @@ Symbol table   : cc2.obj(CC2_C)
 
 Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
 ----------------------------------------------------------------    ----------------------------------------------------------------
- <NO NAME>................................ ... 0000000h  REG LOC    _CC2_vInit................................  21 0C00CECh  FAR GLB
+ <NO NAME>................................ ... 0000000h  REG LOC    _CC2_vInit................................  21 0C00E22h  FAR GLB
 
 
 
@@ -204,9 +205,10 @@ Symbol                                     No. Value     Type       Symbol      
 ----------------------------------------------------------------    ----------------------------------------------------------------
 ?BASE_DPP0................................ ABS 0400000h  WOR EXT    ?BASE_DPP2................................ ABS 0C00000h  WOR EXT
 CCU62_INUM................................ ... 0000038h  INT GLB    CCU62_RB.................................. ... 000F660h  REG LOC
-CCU62_TASK................................  22 0C00D94h  TSK LOC    _ARRAY_SIZE...............................   6 0C00210h  WOR EXT
-_CCU62_vInit..............................  22 0C00D22h  FAR GLB    _CCU62_viNodeI0...........................  22 0C00D94h  FAR GLB
-_index....................................   8 000CAD4h  WOR EXT    
+CCU62_TASK................................  22 0C00ECAh  TSK LOC    _ARRAY_SIZE...............................   6 0C00210h  WOR EXT
+_CCU62_vInit..............................  22 0C00E58h  FAR GLB    _CCU62_viNodeI0...........................  22 0C00ECAh  FAR GLB
+_index....................................   8 000CAD6h  WOR EXT    _rampIndex................................   8 000CAD4h  WOR EXT
+
 
 
 Symbol table   : adc0.obj(ADC0_C)
@@ -215,8 +217,8 @@ Symbol                                     No. Value     Type       Symbol      
 ----------------------------------------------------------------    ----------------------------------------------------------------
 ?BASE_DPP0................................ ABS 0400000h  WOR EXT    ?BASE_DPP2................................ ABS 0C00000h  WOR EXT
 ADC0_INUM................................. ... 0000028h  INT GLB    ADC0_RB................................... ... 000F680h  REG LOC
-ADC0_TASK.................................  23 0C00F74h  TSK LOC    _ADC0_vInit...............................  23 0C00E32h  FAR GLB
-_ADC0_vStartSeq0ReqChNum..................  23 0C00F1Eh  FAR GLB    _ADC0_viSRN0..............................  23 0C00F74h  FAR GLB
+ADC0_TASK.................................  23 0C010C0h  TSK LOC    _ADC0_vInit...............................  23 0C00F7Eh  FAR GLB
+_ADC0_vStartSeq0ReqChNum..................  23 0C0106Ah  FAR GLB    _ADC0_viSRN0..............................  23 0C010C0h  FAR GLB
 
 
 
@@ -224,8 +226,8 @@ Symbol table   : sin.obj(SIN_C)
 
 Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
 ----------------------------------------------------------------    ----------------------------------------------------------------
- <NO NAME>................................ ... 0000000h  REG LOC    __sinus...................................  25 0C01030h  FAR EXT
-__store8n.................................  28 0C01FB2h  FAR EXT    _sin......................................  24 0C00FF0h  FAR GLB
+ <NO NAME>................................ ... 0000000h  REG LOC    __sinus...................................  25 0C0117Ch  FAR EXT
+__store8n.................................  28 0C020FEh  FAR EXT    _sin......................................  24 0C0113Ch  FAR GLB
 
 
 
@@ -233,25 +235,25 @@ Symbol table   : _sinus.obj(_SINUS_C)
 
 Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
 ----------------------------------------------------------------    ----------------------------------------------------------------
- <NO NAME>................................ ... 0000000h  REG LOC    __adf8r...................................  28 0C01548h  FAR EXT
-__cfi82r..................................  28 0C016ECh  FAR EXT    __cif28r..................................  28 0C01776h  FAR EXT
-__cmf8r...................................  28 0C017DAh  FAR EXT    __dvf8r...................................  28 0C01BC2h  FAR EXT
-__load8n..................................  28 0C01F9Ah  FAR EXT    __mlf8r...................................  28 0C0195Ch  FAR EXT
-__ngf8r...................................  28 0C01D86h  FAR EXT    __sbf8r...................................  28 0C01540h  FAR EXT
-TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 27 2021  Time: 18:18:36  Page:   5
+ <NO NAME>................................ ... 0000000h  REG LOC    __adf8r...................................  28 0C01694h  FAR EXT
+__cfi82r..................................  28 0C01838h  FAR EXT    __cif28r..................................  28 0C018C2h  FAR EXT
+__cmf8r...................................  28 0C01926h  FAR EXT    __dvf8r...................................  28 0C01D0Eh  FAR EXT
+TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 28 2021  Time: 11:18:17  Page:   5
 mps_main
 
-__sinus...................................  25 0C01030h  FAR GLB    __store8n.................................  28 0C01FB2h  FAR EXT
-_modf.....................................  27 0C0138Eh  FAR EXT    
+__load8n..................................  28 0C020E6h  FAR EXT    __mlf8r...................................  28 0C01AA8h  FAR EXT
+__ngf8r...................................  28 0C01ED2h  FAR EXT    __sbf8r...................................  28 0C0168Ch  FAR EXT
+__sinus...................................  25 0C0117Ch  FAR GLB    __store8n.................................  28 0C020FEh  FAR EXT
+_modf.....................................  27 0C014DAh  FAR EXT    
 
 
 Symbol table   : modf.obj(MODF)
 
 Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
 ----------------------------------------------------------------    ----------------------------------------------------------------
- <NO NAME>................................ ... 0000000h  REG LOC    __dzersr..................................  28 0C01EE0h  FAR EXT
-__get1f8r.................................  28 0C01E0Ah  FAR EXT    __get2f8r.................................  28 0C01DC6h  FAR EXT
-__putf8r..................................  28 0C01EA0h  FAR EXT    _modf.....................................  27 0C0138Eh  FAR GLB
+ <NO NAME>................................ ... 0000000h  REG LOC    __dzersr..................................  28 0C0202Ch  FAR EXT
+__get1f8r.................................  28 0C01F56h  FAR EXT    __get2f8r.................................  28 0C01F12h  FAR EXT
+__putf8r..................................  28 0C01FECh  FAR EXT    _modf.....................................  27 0C014DAh  FAR GLB
 
 
 
@@ -259,11 +261,11 @@ Symbol table   : adf8.obj(adf8)
 
 Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
 ----------------------------------------------------------------    ----------------------------------------------------------------
- <NO NAME>................................ ... 0000000h  REG LOC    __adf8r...................................  28 0C01548h  FAR GLB
-__dinfsr..................................  28 0C01F34h  FAR EXT    __dnansr..................................  28 0C01F56h  FAR EXT
-__doprsr..................................  28 0C01E86h  FAR EXT    __dzersr..................................  28 0C01EE0h  FAR EXT
-__get2f8r.................................  28 0C01DC6h  FAR EXT    __putf8r..................................  28 0C01EA0h  FAR EXT
-__sbf8r...................................  28 0C01540h  FAR GLB    __sbf8rr..................................  28 0C01536h  FAR GLB
+ <NO NAME>................................ ... 0000000h  REG LOC    __adf8r...................................  28 0C01694h  FAR GLB
+__dinfsr..................................  28 0C02080h  FAR EXT    __dnansr..................................  28 0C020A2h  FAR EXT
+__doprsr..................................  28 0C01FD2h  FAR EXT    __dzersr..................................  28 0C0202Ch  FAR EXT
+__get2f8r.................................  28 0C01F12h  FAR EXT    __putf8r..................................  28 0C01FECh  FAR EXT
+__sbf8r...................................  28 0C0168Ch  FAR GLB    __sbf8rr..................................  28 0C01682h  FAR GLB
 
 
 
@@ -271,40 +273,40 @@ Symbol table   : cff48.obj(cff48)
 
 Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
 ----------------------------------------------------------------    ----------------------------------------------------------------
- <NO NAME>................................ ... 0000000h  REG LOC    __cff48r..................................  28 0C0167Ch  FAR GLB
-__dinfsr..................................  28 0C01F34h  FAR EXT    __dnansr..................................  28 0C01F56h  FAR EXT
-__dzersr..................................  28 0C01EE0h  FAR EXT    __get1f4r.................................  28 0C01DA0h  FAR EXT
-__putf8r..................................  28 0C01EA0h  FAR EXT    
+ <NO NAME>................................ ... 0000000h  REG LOC    __cff48r..................................  28 0C017C8h  FAR GLB
+__dinfsr..................................  28 0C02080h  FAR EXT    __dnansr..................................  28 0C020A2h  FAR EXT
+__dzersr..................................  28 0C0202Ch  FAR EXT    __get1f4r.................................  28 0C01EECh  FAR EXT
+__putf8r..................................  28 0C01FECh  FAR EXT    
 
 
 Symbol table   : cfi82.obj(cfi82)
 
 Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
 ----------------------------------------------------------------    ----------------------------------------------------------------
- <NO NAME>................................ ... 0000000h  REG LOC    __cfi82r..................................  28 0C016ECh  FAR GLB
-__dcnvnan.................................  28 0C01F8Ah  FAR EXT    __fptrap8.................................  28 0C01FC2h  FAR EXT
-__get1f8r.................................  28 0C01E0Ah  FAR EXT    
+ <NO NAME>................................ ... 0000000h  REG LOC    __cfi82r..................................  28 0C01838h  FAR GLB
+__dcnvnan.................................  28 0C020D6h  FAR EXT    __fptrap8.................................  28 0C0210Eh  FAR EXT
+__get1f8r.................................  28 0C01F56h  FAR EXT    
 
 
 Symbol table   : cfu82.obj(cfu82)
 
 Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
 ----------------------------------------------------------------    ----------------------------------------------------------------
- <NO NAME>................................ ... 0000000h  REG LOC    __cfu82r..................................  28 0C0173Eh  FAR GLB
-__dcnvnan.................................  28 0C01F8Ah  FAR EXT    __fptrap8.................................  28 0C01FC2h  FAR EXT
-__get1f8r.................................  28 0C01E0Ah  FAR EXT    
+ <NO NAME>................................ ... 0000000h  REG LOC    __cfu82r..................................  28 0C0188Ah  FAR GLB
+__dcnvnan.................................  28 0C020D6h  FAR EXT    __fptrap8.................................  28 0C0210Eh  FAR EXT
+__get1f8r.................................  28 0C01F56h  FAR EXT    
 
 
 Symbol table   : cif28.obj(cif28)
-
-Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
-TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 27 2021  Time: 18:18:36  Page:   6
+TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 28 2021  Time: 11:18:17  Page:   6
 mps_main
 
+
+Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
 ----------------------------------------------------------------    ----------------------------------------------------------------
- <NO NAME>................................ ... 0000000h  REG LOC    __cif28r..................................  28 0C01776h  FAR GLB
-__cuf28r..................................  28 0C01790h  FAR GLB    __dzersr..................................  28 0C01EE0h  FAR EXT
-__putf8r..................................  28 0C01EA0h  FAR EXT    cuf28i....................................  28 0C017A2h  FAR GLB
+ <NO NAME>................................ ... 0000000h  REG LOC    __cif28r..................................  28 0C018C2h  FAR GLB
+__cuf28r..................................  28 0C018DCh  FAR GLB    __dzersr..................................  28 0C0202Ch  FAR EXT
+__putf8r..................................  28 0C01FECh  FAR EXT    cuf28i....................................  28 0C018EEh  FAR GLB
 
 
 
@@ -312,7 +314,7 @@ Symbol table   : cmf8.obj(cmf8)
 
 Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
 ----------------------------------------------------------------    ----------------------------------------------------------------
- <NO NAME>................................ ... 0000000h  REG LOC    __cmf8r...................................  28 0C017DAh  FAR GLB
+ <NO NAME>................................ ... 0000000h  REG LOC    __cmf8r...................................  28 0C01926h  FAR GLB
 
 
 
@@ -320,32 +322,32 @@ Symbol table   : mlf4.obj(mlf4)
 
 Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
 ----------------------------------------------------------------    ----------------------------------------------------------------
- <NO NAME>................................ ... 0000000h  REG LOC    __finfsr..................................  28 0C01EF2h  FAR EXT
-__fnansr..................................  28 0C01F08h  FAR EXT    __foprsr..................................  28 0C01E54h  FAR EXT
-__frslsr..................................  28 0C01E5Eh  FAR EXT    __get2f4r.................................  28 0C01D90h  FAR EXT
-__mlf4r...................................  28 0C01898h  FAR GLB    
+ <NO NAME>................................ ... 0000000h  REG LOC    __finfsr..................................  28 0C0203Eh  FAR EXT
+__fnansr..................................  28 0C02054h  FAR EXT    __foprsr..................................  28 0C01FA0h  FAR EXT
+__frslsr..................................  28 0C01FAAh  FAR EXT    __get2f4r.................................  28 0C01EDCh  FAR EXT
+__mlf4r...................................  28 0C019E4h  FAR GLB    
 
 
 Symbol table   : mlf8.obj(mlf8)
 
 Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
 ----------------------------------------------------------------    ----------------------------------------------------------------
- <NO NAME>................................ ... 0000000h  REG LOC    __dinfsr..................................  28 0C01F34h  FAR EXT
-__dmlf8...................................  28 0C019A0h  FAR GLB    __dnansr..................................  28 0C01F56h  FAR EXT
-__doprsr..................................  28 0C01E86h  FAR EXT    __drslsr..................................  28 0C01E96h  FAR EXT
-__dzersr..................................  28 0C01EE0h  FAR EXT    __get2f8r.................................  28 0C01DC6h  FAR EXT
-__mlf8r...................................  28 0C0195Ch  FAR GLB    
+ <NO NAME>................................ ... 0000000h  REG LOC    __dinfsr..................................  28 0C02080h  FAR EXT
+__dmlf8...................................  28 0C01AECh  FAR GLB    __dnansr..................................  28 0C020A2h  FAR EXT
+__doprsr..................................  28 0C01FD2h  FAR EXT    __drslsr..................................  28 0C01FE2h  FAR EXT
+__dzersr..................................  28 0C0202Ch  FAR EXT    __get2f8r.................................  28 0C01F12h  FAR EXT
+__mlf8r...................................  28 0C01AA8h  FAR GLB    
 
 
 Symbol table   : dvf4.obj(dvf4)
 
 Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
 ----------------------------------------------------------------    ----------------------------------------------------------------
- <NO NAME>................................ ... 0000000h  REG LOC    __dvf4r...................................  28 0C01ABEh  FAR GLB
-__fdvisr..................................  28 0C01EEEh  FAR EXT    __fdvnsr..................................  28 0C01F04h  FAR EXT
-__finfsr..................................  28 0C01EF2h  FAR EXT    __fnansr..................................  28 0C01F08h  FAR EXT
-__foprsr..................................  28 0C01E54h  FAR EXT    __frslsr..................................  28 0C01E5Eh  FAR EXT
-__funfsr..................................  28 0C01F16h  FAR EXT    __get2f4r.................................  28 0C01D90h  FAR EXT
+ <NO NAME>................................ ... 0000000h  REG LOC    __dvf4r...................................  28 0C01C0Ah  FAR GLB
+__fdvisr..................................  28 0C0203Ah  FAR EXT    __fdvnsr..................................  28 0C02050h  FAR EXT
+__finfsr..................................  28 0C0203Eh  FAR EXT    __fnansr..................................  28 0C02054h  FAR EXT
+__foprsr..................................  28 0C01FA0h  FAR EXT    __frslsr..................................  28 0C01FAAh  FAR EXT
+__funfsr..................................  28 0C02062h  FAR EXT    __get2f4r.................................  28 0C01EDCh  FAR EXT
 
 
 
@@ -353,23 +355,23 @@ Symbol table   : dvf8.obj(dvf8)
 
 Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
 ----------------------------------------------------------------    ----------------------------------------------------------------
- <NO NAME>................................ ... 0000000h  REG LOC    __ddvisr..................................  28 0C01F2Eh  FAR EXT
-__ddvnsr..................................  28 0C01F50h  FAR EXT    __dinfsr..................................  28 0C01F34h  FAR EXT
-__dmlf8...................................  28 0C019A0h  FAR EXT    __dnansr..................................  28 0C01F56h  FAR EXT
-__doprsr..................................  28 0C01E86h  FAR EXT    __drslsr..................................  28 0C01E96h  FAR EXT
-__dunfsr..................................  28 0C01F74h  FAR EXT    __dvf8r...................................  28 0C01BC2h  FAR GLB
-TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 27 2021  Time: 18:18:36  Page:   7
+ <NO NAME>................................ ... 0000000h  REG LOC    __ddvisr..................................  28 0C0207Ah  FAR EXT
+__ddvnsr..................................  28 0C0209Ch  FAR EXT    __dinfsr..................................  28 0C02080h  FAR EXT
+__dmlf8...................................  28 0C01AECh  FAR EXT    __dnansr..................................  28 0C020A2h  FAR EXT
+TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 28 2021  Time: 11:18:17  Page:   7
 mps_main
 
-__dvf8rr..................................  28 0C01BA0h  FAR GLB    __dzersr..................................  28 0C01EE0h  FAR EXT
-__get2f8r.................................  28 0C01DC6h  FAR EXT    
+__doprsr..................................  28 0C01FD2h  FAR EXT    __drslsr..................................  28 0C01FE2h  FAR EXT
+__dunfsr..................................  28 0C020C0h  FAR EXT    __dvf8r...................................  28 0C01D0Eh  FAR GLB
+__dvf8rr..................................  28 0C01CECh  FAR GLB    __dzersr..................................  28 0C0202Ch  FAR EXT
+__get2f8r.................................  28 0C01F12h  FAR EXT    
 
 
 Symbol table   : ngf8.obj(ngf8)
 
 Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
 ----------------------------------------------------------------    ----------------------------------------------------------------
- <NO NAME>................................ ... 0000000h  REG LOC    __ngf8r...................................  28 0C01D86h  FAR GLB
+ <NO NAME>................................ ... 0000000h  REG LOC    __ngf8r...................................  28 0C01ED2h  FAR GLB
 
 
 
@@ -377,26 +379,26 @@ Symbol table   : get2f4.obj(get2f4)
 
 Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
 ----------------------------------------------------------------    ----------------------------------------------------------------
- <NO NAME>................................ ... 0000000h  REG LOC    __get1f4r.................................  28 0C01DA0h  FAR GLB
-__get2f4r.................................  28 0C01D90h  FAR GLB    
+ <NO NAME>................................ ... 0000000h  REG LOC    __get1f4r.................................  28 0C01EECh  FAR GLB
+__get2f4r.................................  28 0C01EDCh  FAR GLB    
 
 
 Symbol table   : get2f8.obj(get2f8)
 
 Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
 ----------------------------------------------------------------    ----------------------------------------------------------------
- <NO NAME>................................ ... 0000000h  REG LOC    __get1f8r.................................  28 0C01E0Ah  FAR GLB
-__get2f8r.................................  28 0C01DC6h  FAR GLB    
+ <NO NAME>................................ ... 0000000h  REG LOC    __get1f8r.................................  28 0C01F56h  FAR GLB
+__get2f8r.................................  28 0C01F12h  FAR GLB    
 
 
 Symbol table   : putf4.obj(putf4)
 
 Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
 ----------------------------------------------------------------    ----------------------------------------------------------------
- <NO NAME>................................ ... 0000000h  REG LOC    __finfsr..................................  28 0C01EF2h  FAR EXT
-__foprsr..................................  28 0C01E54h  FAR GLB    __frslsr..................................  28 0C01E5Eh  FAR GLB
-__funfsr..................................  28 0C01F16h  FAR EXT    __fzersr..................................  28 0C01E74h  FAR GLB
-__ld0f4r..................................  28 0C01E74h  FAR GLB    __putf4r..................................  28 0C01E68h  FAR GLB
+ <NO NAME>................................ ... 0000000h  REG LOC    __finfsr..................................  28 0C0203Eh  FAR EXT
+__foprsr..................................  28 0C01FA0h  FAR GLB    __frslsr..................................  28 0C01FAAh  FAR GLB
+__funfsr..................................  28 0C02062h  FAR EXT    __fzersr..................................  28 0C01FC0h  FAR GLB
+__ld0f4r..................................  28 0C01FC0h  FAR GLB    __putf4r..................................  28 0C01FB4h  FAR GLB
 
 
 
@@ -404,23 +406,23 @@ Symbol table   : putf8.obj(putf8)
 
 Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
 ----------------------------------------------------------------    ----------------------------------------------------------------
- <NO NAME>................................ ... 0000000h  REG LOC    __dinfsr..................................  28 0C01F34h  FAR EXT
-__doprsr..................................  28 0C01E86h  FAR GLB    __drslsr..................................  28 0C01E96h  FAR GLB
-__dunfsr..................................  28 0C01F74h  FAR EXT    __dzersr..................................  28 0C01EE0h  FAR GLB
-__putf8r..................................  28 0C01EA0h  FAR GLB    
+ <NO NAME>................................ ... 0000000h  REG LOC    __dinfsr..................................  28 0C02080h  FAR EXT
+__doprsr..................................  28 0C01FD2h  FAR GLB    __drslsr..................................  28 0C01FE2h  FAR GLB
+__dunfsr..................................  28 0C020C0h  FAR EXT    __dzersr..................................  28 0C0202Ch  FAR GLB
+__putf8r..................................  28 0C01FECh  FAR GLB    
 
 
 Symbol table   : trpf4.obj(trpf4)
 
 Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
 ----------------------------------------------------------------    ----------------------------------------------------------------
- <NO NAME>................................ ... 0000000h  REG LOC    __fcnvnan.................................  28 0C01F22h  FAR GLB
-__fdvisr..................................  28 0C01EEEh  FAR GLB    __fdvnsr..................................  28 0C01F04h  FAR GLB
-__finfsr..................................  28 0C01EF2h  FAR GLB    __fnansr..................................  28 0C01F08h  FAR GLB
-__fptrap4.................................  28 0C01FC2h  FAR EXT    __funfsr..................................  28 0C01F16h  FAR GLB
-TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 27 2021  Time: 18:18:36  Page:   8
+ <NO NAME>................................ ... 0000000h  REG LOC    __fcnvnan.................................  28 0C0206Eh  FAR GLB
+__fdvisr..................................  28 0C0203Ah  FAR GLB    __fdvnsr..................................  28 0C02050h  FAR GLB
+TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 28 2021  Time: 11:18:17  Page:   8
 mps_main
 
+__finfsr..................................  28 0C0203Eh  FAR GLB    __fnansr..................................  28 0C02054h  FAR GLB
+__fptrap4.................................  28 0C0210Eh  FAR EXT    __funfsr..................................  28 0C02062h  FAR GLB
 
 
 
@@ -428,19 +430,19 @@ Symbol table   : trpf8.obj(trpf8)
 
 Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
 ----------------------------------------------------------------    ----------------------------------------------------------------
- <NO NAME>................................ ... 0000000h  REG LOC    __dcnvnan.................................  28 0C01F8Ah  FAR GLB
-__ddvisr..................................  28 0C01F2Eh  FAR GLB    __ddvnsr..................................  28 0C01F50h  FAR GLB
-__dinfsr..................................  28 0C01F34h  FAR GLB    __dnansr..................................  28 0C01F56h  FAR GLB
-__dunfsr..................................  28 0C01F74h  FAR GLB    __fptrap8.................................  28 0C01FC2h  FAR EXT
-__putf8r..................................  28 0C01EA0h  FAR EXT    
+ <NO NAME>................................ ... 0000000h  REG LOC    __dcnvnan.................................  28 0C020D6h  FAR GLB
+__ddvisr..................................  28 0C0207Ah  FAR GLB    __ddvnsr..................................  28 0C0209Ch  FAR GLB
+__dinfsr..................................  28 0C02080h  FAR GLB    __dnansr..................................  28 0C020A2h  FAR GLB
+__dunfsr..................................  28 0C020C0h  FAR GLB    __fptrap8.................................  28 0C0210Eh  FAR EXT
+__putf8r..................................  28 0C01FECh  FAR EXT    
 
 
 Symbol table   : load8n.obj(load8n)
 
 Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
 ----------------------------------------------------------------    ----------------------------------------------------------------
- <NO NAME>................................ ... 0000000h  REG LOC    __ldnoal8n................................  28 0C01FA0h  FAR GLB
-__load8n..................................  28 0C01F9Ah  FAR GLB    __store8n.................................  28 0C01FB2h  FAR GLB
+ <NO NAME>................................ ... 0000000h  REG LOC    __ldnoal8n................................  28 0C020ECh  FAR GLB
+__load8n..................................  28 0C020E6h  FAR GLB    __store8n.................................  28 0C020FEh  FAR GLB
 
 
 
@@ -448,9 +450,9 @@ Symbol table   : trap.obj(trap)
 
 Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
 ----------------------------------------------------------------    ----------------------------------------------------------------
- <NO NAME>................................ ... 0000000h  REG LOC    __FPTRAPLOOP..............................  28 0C01FD6h  FAR GLB
-__FP_ENV..................................  29 000CAD6h  WOR GLB    __fptrap4.................................  28 0C01FC2h  FAR GLB
-__fptrap8.................................  28 0C01FC2h  FAR GLB    _longjmp..................................  31 0C01FF2h  FAR EXT
+ <NO NAME>................................ ... 0000000h  REG LOC    __FPTRAPLOOP..............................  28 0C02122h  FAR GLB
+__FP_ENV..................................  29 000CADEh  WOR GLB    __fptrap4.................................  28 0C0210Eh  FAR GLB
+__fptrap8.................................  28 0C0210Eh  FAR GLB    _longjmp..................................  31 0C0213Eh  FAR EXT
 
 
 
@@ -458,7 +460,7 @@ Symbol table   : mul.obj(MUL)
 
 Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
 ----------------------------------------------------------------    ----------------------------------------------------------------
- <NO NAME>................................ ... 0000000h  REG LOC    __mul.....................................  30 0C01FDAh  FAR GLB
+ <NO NAME>................................ ... 0000000h  REG LOC    __mul.....................................  30 0C02126h  FAR GLB
 
 
 
@@ -466,7 +468,7 @@ Symbol table   : longjmp.obj(LONGJMP)
 
 Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
 ----------------------------------------------------------------    ----------------------------------------------------------------
- <NO NAME>................................ ... 0000000h  REG LOC    _longjmp..................................  31 0C01FF2h  FAR GLB
+ <NO NAME>................................ ... 0000000h  REG LOC    _longjmp..................................  31 0C0213Eh  FAR GLB
 
 
 
@@ -474,14 +476,14 @@ Interrupt table:
 
 Vector   Intno Start    Intnoname                                              Taskname                                             
 ------------------------------------------------------------------------------------------------------------------------------------
-0C00000h 0000h 0C00B46h __CSTART_INUM......................................... __CSTART_TASK........................................
-0C00090h 0024h 0C00C76h GPT2_INUM............................................. GPT2_TASK............................................
-0C000A0h 0028h 0C00F74h ADC0_INUM............................................. ADC0_TASK............................................
-0C000E0h 0038h 0C00D94h CCU62_INUM............................................ CCU62_TASK...........................................
-TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 27 2021  Time: 18:18:36  Page:   9
+0C00000h 0000h 0C00C7Ch __CSTART_INUM......................................... __CSTART_TASK........................................
+0C00090h 0024h 0C00DACh GPT2_INUM............................................. GPT2_TASK............................................
+TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 28 2021  Time: 11:18:17  Page:   9
 mps_main
 
-0C000F0h 003Ch 0C00358h CCU63_INUM............................................ CCU63_TASK...........................................
+0C000A0h 0028h 0C010C0h ADC0_INUM............................................. ADC0_TASK............................................
+0C000E0h 0038h 0C00ECAh CCU62_INUM............................................ CCU62_TASK...........................................
+0C000F0h 003Ch 0C00354h CCU63_INUM............................................ CCU63_TASK...........................................
 
 Register banks : combination of register definitions
 
@@ -523,82 +525,82 @@ Class        Name          Size  Start
              C166_SYSSTACK 00200h 00FA00h 
        Total class size: 0000400h
 
-CINITIRAM    MAIN_ID_NB    00006h 00C16Ch 
+CINITIRAM    MAIN_ID_NB    00006h 00C16Eh 
        Total class size: 0000006h
 
-CINITROM     C166_BSS      00010h C00860h 
-             C166_INIT     0000Eh C00852h 
-             MAIN_IR_NB    00006h C00510h 
+CINITROM     C166_BSS      00010h C00996h 
+             C166_INIT     0000Eh C00988h 
+             MAIN_IR_NB    00006h C0051Eh 
        Total class size: 0000024h
 
-CNEAR        MAIN_5_NB     00964h 00C172h 
-             __FP_ENV_BUF  00010h 00CAD6h 
-       Total class size: 0000974h
+CNEAR        MAIN_5_NB     0096Ah 00C174h 
+             __FP_ENV_BUF  00010h 00CADEh 
+       Total class size: 000097Ah
 
-CNEARROM     MAIN_3_NC     00006h C00210h 
-       Total class size: 0000006h
-
-TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 27 2021  Time: 18:18:36  Page:  10
+CNEARROM     MAIN_3_NC     00002h C00210h 
+TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 28 2021  Time: 11:18:17  Page:  10
 mps_main
 
-CPROGRAM     ADC0_1_PR     001BEh C00E32h 
-             CC2_1_PR      00036h C00CECh 
-             CCU62_1_PR    00110h C00D22h 
-             CCU63_1_PR    00262h C00296h 
-             GPT1_1_PR     00032h C00C04h 
-             GPT2_1_PR     000B6h C00C36h 
-             IO_1_PR       00018h C004F8h 
-             MAIN_4_PR     0033Ch C00516h 
-             SCS_1_PR      00162h C00870h 
-             __CSTART_PR   000BEh C00B46h 
-             __FPCODE      00ADCh C014FEh 
-       Total class size: 000169Eh
+       Total class size: 0000002h
+
+CPROGRAM     ADC0_1_PR     001BEh C00F7Eh 
+             CC2_1_PR      00036h C00E22h 
+             CCU62_1_PR    00126h C00E58h 
+             CCU63_1_PR    00274h C00292h 
+             GPT1_1_PR     00032h C00D3Ah 
+             GPT2_1_PR     000B6h C00D6Ch 
+             IO_1_PR       00018h C00506h 
+             MAIN_4_PR     00464h C00524h 
+             SCS_1_PR      00162h C009A6h 
+             __CSTART_PR   000BEh C00C7Ch 
+             __FPCODE      00ADCh C0164Ah 
+       Total class size: 00017EEh
 
 CROM         CCU63_2_CO    00010h C00200h 
-             MAIN_6_CO     00010h C00216h 
-             _SINUS_2_CO   00070h C00226h 
+             MAIN_6_CO     00010h C00212h 
+             _SINUS_2_CO   00070h C00222h 
        Total class size: 0000090h
 
-CUSTACK      C166_US       0016Ch 00C000h 
+CUSTACK      C166_US       0016Eh 00C000h 
              C166_US0      00000h 00C000h 
              C166_US1      00000h 00C000h 
              C166_US2      00000h 00C000h 
-       Total class size: 000016Ch
+       Total class size: 000016Eh
 
-CLIBRARY     SIN_1_PR      00040h C00FF0h 
-             _SINUS_1_PR   0035Eh C01030h 
+CLIBRARY     SIN_1_PR      00040h C0113Ch 
+             _SINUS_1_PR   0035Eh C0117Ch 
        Total class size: 000039Eh
 
-C_INIT       __C_INIT_PR   00174h C009D2h 
+C_INIT       __C_INIT_PR   00174h C00B08h 
        Total class size: 0000174h
 
-RTLIBRARY    __LONGJMP     00022h C01FF2h 
-             __MODF        00170h C0138Eh 
+RTLIBRARY    __LONGJMP     00022h C0213Eh 
+             __MODF        00170h C014DAh 
        Total class size: 0000192h
 
-SHAREDRTLIB  __MUL         00018h C01FDAh 
+SHAREDRTLIB  __MUL         00018h C02126h 
        Total class size: 0000018h
 
-Total size:              0002CFAh
+Total size:              0002E4Eh
 
 
-	Number of symbols		: 1545
+	Number of symbols		: 1598
 	Number of sections		: 33
 	Number of groups		: 0
 	Number of classes		: 11
 	Number of modules		: 34
-	Total section size		: 0002CFAh
+	Total section size		: 0002E4Eh
 	Total memory size		: 0344A04h
 		consisting of RAM	: 0284A04h
 		              ROM	: 00C0000h
-	Total RAM filled		: 0000CE6h
-	Total ROM filled		: 0002014h
+	Total RAM filled		: 0000CEEh
+	Total ROM filled		: 0002160h
 	System stack size		: 0000200h
 	Heap size			: 0000000h
-	User stack size			: 000016Ch
-	Time spent			: 00:00:2.20
-
-TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 27 2021  Time: 18:18:36  Page:  11
+	User stack size			: 000016Eh
+TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 28 2021  Time: 11:18:17  Page:  11
 mps_main
+
+	Time spent			: 00:00:2.20
 
 Error report   : total errors: 0, warnings: 0

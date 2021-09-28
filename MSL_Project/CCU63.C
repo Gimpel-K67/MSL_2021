@@ -68,8 +68,9 @@
 	extern const unsigned int ARRAY_SIZE;
 	extern unsigned int table[];
 	extern	unsigned int index;
-	extern const unsigned int OFFSET_L2;
-	extern const unsigned int OFFSET_L3;
+	extern unsigned int OFFSET_L1;
+	extern unsigned int OFFSET_L2;
+	extern unsigned int OFFSET_L3;
 	extern const unsigned int frequency;
 // USER CODE END
 
@@ -394,7 +395,7 @@ _interrupt(CCU63_NodeI0_INT)  void CCU63_viNodeI0(void)
     // Timer T12 one match detection
 
     // USER CODE BEGIN (NodeI0,20)
-		CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_0, table[index + 0]*(0.018*frequency+0.1));
+		CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_0, table[(index + OFFSET_L1)%ARRAY_SIZE]*(0.018*frequency+0.1));
 	   	CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_1, table[(index + OFFSET_L2)%ARRAY_SIZE]*(0.018*frequency+0.1));
   		CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_2, table[(index + OFFSET_L3)%ARRAY_SIZE]*(0.018*frequency+0.1));
 		CCU63_vEnableShadowTransfer(CCU63_TIMER_12);

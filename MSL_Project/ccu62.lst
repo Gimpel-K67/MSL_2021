@@ -1,4 +1,4 @@
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 18:18:35  Page:   1
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 11:14:19  Page:   1
 ccu62
 
  LOC CODE        LINE   SOURCELINE
@@ -58,7 +58,7 @@ ccu62
                     53   ; ccu62.c    21 // USER CODE END
                     54   ; ccu62.c    22 
                     55   ; ccu62.c    23 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 18:18:35  Page:   2
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 11:14:19  Page:   2
 ccu62
 
  LOC CODE        LINE   SOURCELINE
@@ -118,7 +118,7 @@ ccu62
                    108   ; ccu62.c    34 
                    109   ; ccu62.c    35 
                    110   ; ccu62.c    36 //****************************************************************************
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 18:18:35  Page:   3
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 11:14:19  Page:   3
 ccu62
 
  LOC CODE        LINE   SOURCELINE
@@ -156,7 +156,7 @@ ccu62
                    141   ; ccu62.c    67 // USER CODE BEGIN (CCU62_General,6)
                    142   ; ccu62.c    68         extern const unsigned int ARRAY_SIZE;
                    143   ; ccu62.c    69         extern  unsigned int index;
-                   144   ; ccu62.c    70 
+                   144   ; ccu62.c    70         extern volatile unsigned int rampIndex;
                    145   ; ccu62.c    71 // USER CODE END
                    146   ; ccu62.c    72 
                    147   ; ccu62.c    73 
@@ -178,7 +178,7 @@ ccu62
                    163   ; ccu62.c    89 // USER CODE END
                    164   ; ccu62.c    90 
                    165   ; ccu62.c    91 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 18:18:35  Page:   4
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 11:14:19  Page:   4
 ccu62
 
  LOC CODE        LINE   SOURCELINE
@@ -238,7 +238,7 @@ ccu62
                    218   ; ccu62.c   130   ///  -----------------------------------------------------------------------
                    219   ; ccu62.c   131   ///  Configuration of KERNEL REGISTERS :
                    220   ; ccu62.c   132   ///  -----------------------------------------------------------------------
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 18:18:35  Page:   5
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 11:14:19  Page:   5
 ccu62
 
  LOC CODE        LINE   SOURCELINE
@@ -298,7 +298,7 @@ ccu62
                    273   ; ccu62.c   168 
                    274   ; ccu62.c   169 
                    275   ; ccu62.c   170   ///  -----------------------------------------------------------------------
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 18:18:35  Page:   6
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 11:14:19  Page:   6
 ccu62
 
  LOC CODE        LINE   SOURCELINE
@@ -358,7 +358,7 @@ ccu62
                    328   ; ccu62.c   214   ///  - T13 modulation for output CC61 is disabled
                    329   ; ccu62.c   215 
                    330   ; ccu62.c   216   ///  - Generation interrupt on flag ICC61R is disabled
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 18:18:35  Page:   7
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 11:14:19  Page:   7
 ccu62
 
  LOC CODE        LINE   SOURCELINE
@@ -418,7 +418,7 @@ ccu62
                    383   ; ccu62.c   257   ///  - Trap interrupt is disabled
                    384   ; ccu62.c   258 
                    385   ; ccu62.c   259 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 18:18:35  Page:   8
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 11:14:19  Page:   8
 ccu62
 
  LOC CODE        LINE   SOURCELINE
@@ -478,7 +478,7 @@ ccu62
                    438   ; ccu62.c   300   ///  - Enable shadow transfer of T12 and T13
                    439   ; ccu62.c   301   ///  - Timer 12 run bit is reset
                    440   ; ccu62.c   302   ///  - Timer 13 run bit is reset
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 18:18:35  Page:   9
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 11:14:19  Page:   9
 ccu62
 
  LOC CODE        LINE   SOURCELINE
@@ -538,7 +538,7 @@ ccu62
 0072 F6F00000  R   493           MOV     CCU62_RB,R0
 0076 C6080000  R   494           SCXT    CP,#CCU62_RB
 007A C6871000      495           SCXT    MDC,#010h
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 18:18:35  Page:  10
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 11:14:19  Page:  10
 ccu62
 
  LOC CODE        LINE   SOURCELINE
@@ -579,83 +579,106 @@ ccu62
                    529   ; ccu62.c   347   if(CCU62_IS & 0x0080)  // if CCU62_IS_T12PM
                    530           ?LINE   347
 00B2 F2FC50EB      531           MOV     R12,0EB50h
-00B6 9AFC1570      532           JNB     R12.7,_4
+00B6 9AFC2070      532           JNB     R12.7,_10
                    533   ; ccu62.c   348   {
                    534   ; ccu62.c   349     // Timer T12 period match detection
                    535   ; ccu62.c   350 
                    536   ; ccu62.c   351     // USER CODE BEGIN (NodeI0,19)
-                   537   ; ccu62.c   352           index++;
+                   537   ; ccu62.c   352           if(rampIndex < 350 && rampIndex > 300){
                    538           ?LINE   352
-00BA F2FC0000  R   539           MOV     R12,_index
-00BE 08C1          540           ADD     R12,#01h
-00C0 F6FC0000  R   541           MOV     _index,R12
-                   542   ; ccu62.c   353           index = index%ARRAY_SIZE;
-                   543           ?LINE   353
-00C4 F2FC0000  R   544           MOV     R12,_index
-00C8 F2FD0000  R   545           MOV     R13,_ARRAY_SIZE
-00CC F6FC0EFE      546           MOV     MDL,R12
-00D0 5BDD          547           DIVU    R13
-00D2 F2FC0CFE      548           MOV     R12,MDH
-00D6 F6FC0000  R   549           MOV     _index,R12
-                   550   ; ccu62.c   354     // USER CODE END
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 27 2021  Time: 18:18:35  Page:  11
+00BA F2FC0000  R   539           MOV     R12,_rampIndex
+00BE 46FC5E01      540           CMP     R12,#015Eh
+00C2 9D06          541           JMPR    cc_UGE,_7
+00C4 F2FC0000  R   542           MOV     R12,_rampIndex
+00C8 46FC2C01      543           CMP     R12,#012Ch
+00CC FD01          544           JMPR    cc_ULE,_8
+                   545   ; ccu62.c   353           }
+                   546           ?LINE   353
+00CE 0D10          547           JMPR    cc_UC,_9
+00D0               548   _7:
+00D0               549   _8:
+                   550   ; ccu62.c   354           else{
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 11:14:19  Page:  11
 ccu62
 
  LOC CODE        LINE   SOURCELINE
 
-                   551   ; ccu62.c   355 
-                   552   ; ccu62.c   356     CCU62_ISR |= 0x0080;  // clear flag CCU62_IS_T12PM
-                   553           ?LINE   356
-00DA E6FC54EB      554           MOV     R12,#0EB54h
-00DE A8DC          555           MOV     R13,[R12]
-00E0 7FFD          556           BSET    R13.7
-00E2 B8DC          557           MOV     [R12],R13
-                   558   ; ccu62.c   357   }
-                   559           ?LINE   357
-00E4               560   _4:
-                   561   ; ccu62.c   358 
-                   562   ; ccu62.c   359 
-                   563   ; ccu62.c   360 } //  End of function CCU62_viNodeI0
-                   564           ?LINE   360
-00E4 D180          565           EXTR    #01h
-00E6 FC03     1    566           POP     QR1
-00E8 D180          567           EXTR    #01h
-00EA FC02     1    568           POP     QR0
-00EC D180          569           EXTR    #01h
-00EE FC01     1    570           POP     QX1
-00F0 D180          571           EXTR    #01h
-00F2 FC00     1    572           POP     QX0
-00F4 FC85          573           POP     IDX1
-00F6 FC84          574           POP     IDX0
-00F8 FCED          575           POP     MRW
-00FA FCEE          576           POP     MCW
-00FC FC2F          577           POP     MAH
-00FE FC2E          578           POP     MAL
-0100 FCEF          579           POP     MSW
-0102 FC07          580           POP     MDL
-0104 FC06          581           POP     MDH
-0106 FC02          582           POP     DPP2
-0108 FC00          583           POP     DPP0
-010A FC87          584           POP     MDC
-010C FC08          585           POP     CP
-                   586           ?LINE   360
-010E FB88          587           RETI
-                   588   _CCU62_viNodeI0 ENDP
-               R   589           ?SYMB   '',$,17,360
-                   590   ; ccu62.c   361 
-                   591   ; ccu62.c   362 
-                   592   ; ccu62.c   363 
-                   593   ; ccu62.c   364 
-                   594   ; ccu62.c   365 // USER CODE BEGIN (CCU62_General,10)
-                   595   ; ccu62.c   366 
-                   596   ; ccu62.c   367 // USER CODE END
-                   597   ; ccu62.c   368 
-                   598   CCU62_1_PR      ENDS
-                   599   
-                   600           EXTERN  _ARRAY_SIZE:WORD
-                   601           EXTERN  _index:WORD
-                   602   CCU62_RB        REGDEF  R0-R15
-                   603           END
+                   551   ; ccu62.c   355           index++;
+                   552           ?LINE   355
+00D0 F2FC0000  R   553           MOV     R12,_index
+00D4 08C1          554           ADD     R12,#01h
+00D6 F6FC0000  R   555           MOV     _index,R12
+                   556   ; ccu62.c   356           index = index%ARRAY_SIZE;
+                   557           ?LINE   356
+00DA F2FC0000  R   558           MOV     R12,_index
+00DE F2FD0000  R   559           MOV     R13,_ARRAY_SIZE
+00E2 F6FC0EFE      560           MOV     MDL,R12
+00E6 5BDD          561           DIVU    R13
+00E8 F2FC0CFE      562           MOV     R12,MDH
+00EC F6FC0000  R   563           MOV     _index,R12
+                   564   ; ccu62.c   357           }
+                   565           ?LINE   357
+00F0               566   _9:
+                   567   ; ccu62.c   358     // USER CODE END
+                   568   ; ccu62.c   359 
+                   569   ; ccu62.c   360     CCU62_ISR |= 0x0080;  // clear flag CCU62_IS_T12PM
+                   570           ?LINE   360
+00F0 E6FC54EB      571           MOV     R12,#0EB54h
+00F4 A8DC          572           MOV     R13,[R12]
+00F6 7FFD          573           BSET    R13.7
+00F8 B8DC          574           MOV     [R12],R13
+                   575   ; ccu62.c   361   }
+                   576           ?LINE   361
+00FA               577   _10:
+                   578   ; ccu62.c   362 
+                   579   ; ccu62.c   363 
+                   580   ; ccu62.c   364 } //  End of function CCU62_viNodeI0
+                   581           ?LINE   364
+00FA D180          582           EXTR    #01h
+00FC FC03     1    583           POP     QR1
+00FE D180          584           EXTR    #01h
+0100 FC02     1    585           POP     QR0
+0102 D180          586           EXTR    #01h
+0104 FC01     1    587           POP     QX1
+0106 D180          588           EXTR    #01h
+0108 FC00     1    589           POP     QX0
+010A FC85          590           POP     IDX1
+010C FC84          591           POP     IDX0
+010E FCED          592           POP     MRW
+0110 FCEE          593           POP     MCW
+0112 FC2F          594           POP     MAH
+0114 FC2E          595           POP     MAL
+0116 FCEF          596           POP     MSW
+0118 FC07          597           POP     MDL
+011A FC06          598           POP     MDH
+011C FC02          599           POP     DPP2
+011E FC00          600           POP     DPP0
+0120 FC87          601           POP     MDC
+0122 FC08          602           POP     CP
+                   603           ?LINE   364
+0124 FB88          604           RETI
+                   605   _CCU62_viNodeI0 ENDP
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 11:14:19  Page:  12
+ccu62
+
+ LOC CODE        LINE   SOURCELINE
+
+               R   606           ?SYMB   '',$,17,364
+                   607   ; ccu62.c   365 
+                   608   ; ccu62.c   366 
+                   609   ; ccu62.c   367 
+                   610   ; ccu62.c   368 
+                   611   ; ccu62.c   369 // USER CODE BEGIN (CCU62_General,10)
+                   612   ; ccu62.c   370 
+                   613   ; ccu62.c   371 // USER CODE END
+                   614   ; ccu62.c   372 
+                   615   CCU62_1_PR      ENDS
+                   616   
+                   617           EXTERN  _rampIndex:WORD
+                   618           EXTERN  _ARRAY_SIZE:WORD
+                   619           EXTERN  _index:WORD
+                   620   CCU62_RB        REGDEF  R0-R15
+                   621           END
 
 total errors: 0, warnings: 0
 
