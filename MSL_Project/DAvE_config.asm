@@ -9,7 +9,7 @@
 ;                PLEASE DO NOT MODIFY THIS FILE !
 ;
 ;----------------------------------------------------------------------------
-; Date          28.09.2021 15:41:39
+; Date          29.09.2021 09:41:09
 ;
 ;****************************************************************************
 
@@ -14439,7 +14439,7 @@ GPT12E_T6CON_T6UDE	SET	0
 GPT12E_T6IC_GLVL	SET	0
 GPT12E_T6IC_GPX	SET	0
 GPT12E_T6IC_IE	SET	1
-GPT12E_T6IC_ILVL	SET	10
+GPT12E_T6IC_ILVL	SET	14
 GPT12E_T6IC_IR	SET	0
 
 ; Timer 6

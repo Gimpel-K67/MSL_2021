@@ -1,4 +1,4 @@
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 15:42:22  Page:   1
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:   1
 adc0
 
  LOC CODE        LINE   SOURCELINE
@@ -49,7 +49,7 @@ adc0
                     44   ; adc0.c     12 // @Description   This file contains functions that use the ADC0 module.
                     45   ; adc0.c     13 //
                     46   ; adc0.c     14 //----------------------------------------------------------------------------
-                    47   ; adc0.c     15 // @Date          28.09.2021 15:41:39
+                    47   ; adc0.c     15 // @Date          29.09.2021 09:41:09
                     48   ; adc0.c     16 //
                     49   ; adc0.c     17 //****************************************************************************
                     50   ; adc0.c     18 
@@ -58,7 +58,7 @@ adc0
                     53   ; adc0.c     21 // USER CODE END
                     54   ; adc0.c     22 
                     55   ; adc0.c     23 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 15:42:22  Page:   2
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:   2
 adc0
 
  LOC CODE        LINE   SOURCELINE
@@ -118,7 +118,7 @@ adc0
                    108   ; adc0.c     37 // @Macros
                    109   ; adc0.c     38 //****************************************************************************
                    110   ; adc0.c     39 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 15:42:22  Page:   3
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:   3
 adc0
 
  LOC CODE        LINE   SOURCELINE
@@ -178,7 +178,7 @@ adc0
                    163   ; adc0.c     92 //****************************************************************************
                    164   ; adc0.c     93 
                    165   ; adc0.c     94 // USER CODE BEGIN (ADC0_General,9)
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 15:42:22  Page:   4
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:   4
 adc0
 
  LOC CODE        LINE   SOURCELINE
@@ -219,7 +219,7 @@ adc0
                    199   ; adc0.c    128 // @Parameters    None
                    200   ; adc0.c    129 //
                    201   ; adc0.c    130 //----------------------------------------------------------------------------
-                   202   ; adc0.c    131 // @Date          28.09.2021
+                   202   ; adc0.c    131 // @Date          29.09.2021
                    203   ; adc0.c    132 //
                    204   ; adc0.c    133 //****************************************************************************
                    205   ; adc0.c    134 
@@ -238,7 +238,7 @@ adc0
                    218   _ADC0_vInit     PROC    FAR
                    219           ?SYMB   '',00H,95,0
                    220   ; Locals:
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 15:42:22  Page:   5
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:   5
 adc0
 
  LOC CODE        LINE   SOURCELINE
@@ -298,7 +298,7 @@ adc0
                    273   ; adc0.c    178   ///  - Arbitration Slot 2 is disabled
                    274   ; adc0.c    179 
                    275   ; adc0.c    180   ///  - the priority of request source 0 is low
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 15:42:22  Page:   6
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:   6
 adc0
 
  LOC CODE        LINE   SOURCELINE
@@ -358,7 +358,7 @@ adc0
                    328   ; adc0.c    218 
                    329   ; adc0.c    219   ///  -----------------------------------------------------------------------
                    330   ; adc0.c    220   ///  Configuration of Result Control Registers:
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 15:42:22  Page:   7
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:   7
 adc0
 
  LOC CODE        LINE   SOURCELINE
@@ -418,7 +418,7 @@ adc0
                    383   ; adc0.c    261   ///  - the wait-for-read mode is disabled
                    384   ; adc0.c    262 
                    385   ; adc0.c    263   ///  - the FIFO functionality is disabled
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 15:42:22  Page:   8
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:   8
 adc0
 
  LOC CODE        LINE   SOURCELINE
@@ -478,7 +478,7 @@ adc0
                    438   ; adc0.c    301 
                    439   ; adc0.c    302   ADC0_CHINPR4   =  0x0000;      // load channel interrupt node pointer 
                    440           ?LINE   302
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 15:42:22  Page:   9
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:   9
 adc0
 
  LOC CODE        LINE   SOURCELINE
@@ -538,7 +538,7 @@ adc0
                    493   ; adc0.c    338   ADC_0IC        =  0x0064;     
                    494           ?LINE   338
 008A E6FC6400      495           MOV     R12,#064h
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 15:42:22  Page:  10
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:  10
 adc0
 
  LOC CODE        LINE   SOURCELINE
@@ -598,7 +598,7 @@ adc0
                    548   ; adc0.c    375 
                    549   ; adc0.c    376   ADC0_QMR0      =  0x0001;      // load queue mode register
                    550           ?LINE   376
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 15:42:22  Page:  11
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:  11
 adc0
 
  LOC CODE        LINE   SOURCELINE
@@ -658,7 +658,7 @@ adc0
                    603   ; adc0.c    408   // USER CODE BEGIN (ADC0_Init,3)
                    604   ; adc0.c    409 
                    605   ; adc0.c    410   // USER CODE END
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 15:42:22  Page:  12
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:  12
 adc0
 
  LOC CODE        LINE   SOURCELINE
@@ -699,7 +699,7 @@ adc0
                    639   ; adc0.c    440 //                15)- see macros defined in the header file
                    640   ; adc0.c    441 //
                    641   ; adc0.c    442 //----------------------------------------------------------------------------
-                   642   ; adc0.c    443 // @Date          28.09.2021
+                   642   ; adc0.c    443 // @Date          29.09.2021
                    643   ; adc0.c    444 //
                    644   ; adc0.c    445 //****************************************************************************
                    645   ; adc0.c    446 
@@ -718,7 +718,7 @@ adc0
                R   657           ?SYMB   '',$,96,4
 00F0 88D0          658           MOV     [-R0],R13
                R   659           ?SYMB   '',$,96,6
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 15:42:22  Page:  13
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:  13
 adc0
 
  LOC CODE        LINE   SOURCELINE
@@ -778,7 +778,7 @@ adc0
 0112 06FC4000      712           ADD     R12,#040h
 0116 B8C0          713           MOV     [R0],R12
                    714   ; adc0.c    458     }
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 15:42:22  Page:  14
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:  14
 adc0
 
  LOC CODE        LINE   SOURCELINE
@@ -838,14 +838,14 @@ adc0
                    767   ; adc0.c    479 //
                    768   ; adc0.c    480 //----------------------------------------------------------------------------
                    769   ; adc0.c    481 // @Parameters    None
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 15:42:22  Page:  15
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:  15
 adc0
 
  LOC CODE        LINE   SOURCELINE
 
                    770   ; adc0.c    482 //
                    771   ; adc0.c    483 //----------------------------------------------------------------------------
-                   772   ; adc0.c    484 // @Date          28.09.2021
+                   772   ; adc0.c    484 // @Date          29.09.2021
                    773   ; adc0.c    485 //
                    774   ; adc0.c    486 //****************************************************************************
                    775   ; adc0.c    487 
@@ -898,7 +898,7 @@ adc0
 0182 F2FCA0E0      822           MOV     R12,0E0A0h
 0186 9AFC0480      823           JNB     R12.8,_10
                    824   ; adc0.c    496     {
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 15:42:22  Page:  16
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:  16
 adc0
 
  LOC CODE        LINE   SOURCELINE
@@ -958,7 +958,7 @@ adc0
                    877   C166_US ENDS
                    878   
                    879   ADC0_RB REGDEF  R0-R15
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 15:42:22  Page:  17
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:  17
 adc0
 
  LOC CODE        LINE   SOURCELINE

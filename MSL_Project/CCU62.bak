@@ -12,7 +12,7 @@
 // @Description   This file contains functions that use the CCU62 module.
 //
 //----------------------------------------------------------------------------
-// @Date          27.09.2021 18:18:20
+// @Date          28.09.2021 15:41:39
 //
 //****************************************************************************
 
@@ -67,7 +67,7 @@
 // USER CODE BEGIN (CCU62_General,6)
 	extern const unsigned int ARRAY_SIZE;
 	extern	unsigned int index;
-	//extern volatile unsigned int rampIndex;
+	extern volatile unsigned int rampIndex;
 // USER CODE END
 
 
@@ -113,7 +113,7 @@
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          27.09.2021
+// @Date          28.09.2021
 //
 //****************************************************************************
 
@@ -330,7 +330,7 @@ void CCU62_vInit(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          27.09.2021
+// @Date          28.09.2021
 //
 //****************************************************************************
 
@@ -349,8 +349,12 @@ _interrupt(CCU62_NodeI0_INT)  void CCU62_viNodeI0(void)
     // Timer T12 period match detection
 
     // USER CODE BEGIN (NodeI0,19)
+	  if(rampIndex < 350 && rampIndex > 300){
+	  }
+	  else{
 	  index++;
 	  index = index%ARRAY_SIZE;
+	  }
     // USER CODE END
 
     CCU62_ISR |= 0x0080;  // clear flag CCU62_IS_T12PM

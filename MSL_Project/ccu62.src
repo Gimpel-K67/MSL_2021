@@ -44,7 +44,7 @@ $MODEL(SMALL)
 ; ccu62.c    12	// @Description   This file contains functions that use the CCU62 module.
 ; ccu62.c    13	//
 ; ccu62.c    14	//----------------------------------------------------------------------------
-; ccu62.c    15	// @Date          28.09.2021 15:41:39
+; ccu62.c    15	// @Date          29.09.2021 09:41:09
 ; ccu62.c    16	//
 ; ccu62.c    17	//****************************************************************************
 ; ccu62.c    18	
@@ -184,7 +184,7 @@ $MODEL(SMALL)
 ; ccu62.c   113	// @Parameters    None
 ; ccu62.c   114	//
 ; ccu62.c   115	//----------------------------------------------------------------------------
-; ccu62.c   116	// @Date          28.09.2021
+; ccu62.c   116	// @Date          29.09.2021
 ; ccu62.c   117	//
 ; ccu62.c   118	//****************************************************************************
 ; ccu62.c   119	
@@ -472,7 +472,7 @@ _CCU62_vInit	ENDP
 ; ccu62.c   330	// @Parameters    None
 ; ccu62.c   331	//
 ; ccu62.c   332	//----------------------------------------------------------------------------
-; ccu62.c   333	// @Date          28.09.2021
+; ccu62.c   333	// @Date          29.09.2021
 ; ccu62.c   334	//
 ; ccu62.c   335	//****************************************************************************
 ; ccu62.c   336	
@@ -531,13 +531,13 @@ _CCU62_viNodeI0	PROC TASK CCU62_TASK INTNO CCU62_INUM = 038h
 ; ccu62.c   349	    // Timer T12 period match detection
 ; ccu62.c   350	
 ; ccu62.c   351	    // USER CODE BEGIN (NodeI0,19)
-; ccu62.c   352		  if(rampIndex < 350 && rampIndex > 300){
+; ccu62.c   352		  if(rampIndex < 1750 && rampIndex > 1500){
 	?LINE	352
 	MOV	R12,_rampIndex
-	CMP	R12,#015Eh
+	CMP	R12,#06D6h
 	JMPR	cc_UGE,_7
 	MOV	R12,_rampIndex
-	CMP	R12,#012Ch
+	CMP	R12,#05DCh
 	JMPR	cc_ULE,_8
 ; ccu62.c   353		  }
 	?LINE	353

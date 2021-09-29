@@ -8,7 +8,7 @@
 \par \plain\f4\fs22\cf0 Compiler: \tab\tab\b Tasking Classic
 \par \plain\f4\fs22\cf0 Memory Model: \tab\b SMALL
 \par 
-\par \plain\f4\fs22\cf0 Date: \tab\tab\tab\b 28.09.2021 15:41:39
+\par \plain\f4\fs22\cf0 Date: \tab\tab\tab\b 29.09.2021 09:41:09
 \par 
 \par 
 \par \plain\f4\fs22\cf2\b Please read this document carefully and note
@@ -913,9 +913,16 @@
 \par 
 \tab Configuration of the used GPT2 Interrupts:\par 
 \tab timer 6 service request node configuration:\par 
-\tab - timer 6 interrupt priority level (ILVL) = 10\par 
+\tab - timer 6 interrupt priority level (ILVL) = 14\par 
 \tab - timer 6 interrupt group level (GLVL) = 0\par 
 \tab - timer 6 group priority extension (GPX) = 0\par 
+\par 
+\tab Use PEC channel 0 for GPT2 T6 INT:\par 
+\tab - normal interrupt\par 
+\tab - pointers are not modified\par 
+\tab - transfer a word\par 
+\tab - service End of PEC interrrupt by a EOP interrupt node is disabled\par 
+\tab - channel link mode is disabled\par 
 \par 
 
 \par \plain\f4\fs20\cf0

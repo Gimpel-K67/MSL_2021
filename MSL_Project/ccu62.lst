@@ -1,4 +1,4 @@
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 15:42:22  Page:   1
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:   1
 ccu62
 
  LOC CODE        LINE   SOURCELINE
@@ -49,7 +49,7 @@ ccu62
                     44   ; ccu62.c    12 // @Description   This file contains functions that use the CCU62 module.
                     45   ; ccu62.c    13 //
                     46   ; ccu62.c    14 //----------------------------------------------------------------------------
-                    47   ; ccu62.c    15 // @Date          28.09.2021 15:41:39
+                    47   ; ccu62.c    15 // @Date          29.09.2021 09:41:09
                     48   ; ccu62.c    16 //
                     49   ; ccu62.c    17 //****************************************************************************
                     50   ; ccu62.c    18 
@@ -58,7 +58,7 @@ ccu62
                     53   ; ccu62.c    21 // USER CODE END
                     54   ; ccu62.c    22 
                     55   ; ccu62.c    23 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 15:42:22  Page:   2
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:   2
 ccu62
 
  LOC CODE        LINE   SOURCELINE
@@ -118,7 +118,7 @@ ccu62
                    108   ; ccu62.c    37 // @Macros
                    109   ; ccu62.c    38 //****************************************************************************
                    110   ; ccu62.c    39 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 15:42:22  Page:   3
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:   3
 ccu62
 
  LOC CODE        LINE   SOURCELINE
@@ -178,7 +178,7 @@ ccu62
                    163   ; ccu62.c    92 //****************************************************************************
                    164   ; ccu62.c    93 // @Prototypes Of Local Functions
                    165   ; ccu62.c    94 //****************************************************************************
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 15:42:22  Page:   4
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:   4
 ccu62
 
  LOC CODE        LINE   SOURCELINE
@@ -204,7 +204,7 @@ ccu62
                    184   ; ccu62.c   113 // @Parameters    None
                    185   ; ccu62.c   114 //
                    186   ; ccu62.c   115 //----------------------------------------------------------------------------
-                   187   ; ccu62.c   116 // @Date          28.09.2021
+                   187   ; ccu62.c   116 // @Date          29.09.2021
                    188   ; ccu62.c   117 //
                    189   ; ccu62.c   118 //****************************************************************************
                    190   ; ccu62.c   119 
@@ -238,7 +238,7 @@ ccu62
                    218   ; ccu62.c   133   ///  - CCU62 Module is enabled.
                    219   ; ccu62.c   134   ///  - The CCU62 module clock = 65,000 MHz. 
                    220   ; ccu62.c   135   ///  - T12 is enabled.
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 15:42:22  Page:   5
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:   5
 ccu62
 
  LOC CODE        LINE   SOURCELINE
@@ -298,7 +298,7 @@ ccu62
                    273   ; ccu62.c   171   ///  Configuration of CCU62 Timer 13:
                    274   ; ccu62.c   172   ///  -----------------------------------------------------------------------
                    275   ; ccu62.c   173   ///  - Timer 13 Input Clock factor (T13CLK) is 0
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 15:42:22  Page:   6
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:   6
 ccu62
 
  LOC CODE        LINE   SOURCELINE
@@ -358,7 +358,7 @@ ccu62
                    328   ; ccu62.c   217   ///  - Generation interrupt on flag ICC61F is disabled
                    329   ; ccu62.c   218 
                    330   ; ccu62.c   219   CCU62_CC61SR   =  0x0000;      // Load CCU62 capture/compare shadow 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 15:42:22  Page:   7
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:   7
 ccu62
 
  LOC CODE        LINE   SOURCELINE
@@ -418,7 +418,7 @@ ccu62
                    383   ; ccu62.c   260   ///  -----------------------------------------------------------------------
                    384   ; ccu62.c   261   ///  Configuration of CCU62 interrupt control:
                    385   ; ccu62.c   262   ///  -----------------------------------------------------------------------
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 15:42:22  Page:   8
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:   8
 ccu62
 
  LOC CODE        LINE   SOURCELINE
@@ -478,7 +478,7 @@ ccu62
                    438   ; ccu62.c   303   CCU62_TCTR4    =  0x4040;      // load CCU62 timer control register 4
                    439           ?LINE   303
 0068 E6FC4040      440           MOV     R12,#04040h
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 15:42:22  Page:   9
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:   9
 ccu62
 
  LOC CODE        LINE   SOURCELINE
@@ -517,7 +517,7 @@ ccu62
                    472   ; ccu62.c   330 // @Parameters    None
                    473   ; ccu62.c   331 //
                    474   ; ccu62.c   332 //----------------------------------------------------------------------------
-                   475   ; ccu62.c   333 // @Date          28.09.2021
+                   475   ; ccu62.c   333 // @Date          29.09.2021
                    476   ; ccu62.c   334 //
                    477   ; ccu62.c   335 //****************************************************************************
                    478   ; ccu62.c   336 
@@ -538,7 +538,7 @@ ccu62
 007E EC00          493           PUSH    DPP0
 0080 E6000000  R   494           MOV     DPP0,#PAG ?BASE_DPP0
 0084 CC00          495           NOP
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 15:42:22  Page:  10
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:  10
 ccu62
 
  LOC CODE        LINE   SOURCELINE
@@ -581,13 +581,13 @@ ccu62
                    531   ; ccu62.c   349     // Timer T12 period match detection
                    532   ; ccu62.c   350 
                    533   ; ccu62.c   351     // USER CODE BEGIN (NodeI0,19)
-                   534   ; ccu62.c   352           if(rampIndex < 350 && rampIndex > 300){
+                   534   ; ccu62.c   352           if(rampIndex < 1750 && rampIndex > 1500){
                    535           ?LINE   352
 00BA F2FC0000  R   536           MOV     R12,_rampIndex
-00BE 46FC5E01      537           CMP     R12,#015Eh
+00BE 46FCD606      537           CMP     R12,#06D6h
 00C2 9D06          538           JMPR    cc_UGE,_7
 00C4 F2FC0000  R   539           MOV     R12,_rampIndex
-00C8 46FC2C01      540           CMP     R12,#012Ch
+00C8 46FCDC05      540           CMP     R12,#05DCh
 00CC FD01          541           JMPR    cc_ULE,_8
                    542   ; ccu62.c   353           }
                    543           ?LINE   353
@@ -598,7 +598,7 @@ ccu62
                    548   ; ccu62.c   355           index++;
                    549           ?LINE   355
 00D0 F2FC0000  R   550           MOV     R12,_index
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 15:42:22  Page:  11
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:  11
 ccu62
 
  LOC CODE        LINE   SOURCELINE
@@ -658,7 +658,7 @@ ccu62
                R   603           ?SYMB   '',$,17,364
                    604   ; ccu62.c   365 
                    605   ; ccu62.c   366 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 15:42:22  Page:  12
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:  12
 ccu62
 
  LOC CODE        LINE   SOURCELINE

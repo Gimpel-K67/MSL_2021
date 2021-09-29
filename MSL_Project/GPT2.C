@@ -12,7 +12,7 @@
 // @Description   This file contains functions that use the GPT2 module.
 //
 //----------------------------------------------------------------------------
-// @Date          28.09.2021 15:41:39
+// @Date          29.09.2021 09:41:09
 //
 //****************************************************************************
 
@@ -116,7 +116,7 @@
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          28.09.2021
+// @Date          29.09.2021
 //
 //****************************************************************************
 
@@ -198,11 +198,21 @@ void GPT2_vInit(void)
   ///  Configuration of the used GPT2 Interrupts:
   ///  -----------------------------------------------------------------------
   ///  timer 6 service request node configuration:
-  ///  - timer 6 interrupt priority level (ILVL) = 10
+  ///  - timer 6 interrupt priority level (ILVL) = 14
   ///  - timer 6 interrupt group level (GLVL) = 0
   ///  - timer 6 group priority extension (GPX) = 0
 
-  GPT12E_T6IC    =  0x0068;     
+  GPT12E_T6IC    =  0x0078;     
+
+  ///  Use PEC channel 0 for GPT2 T6 INT:
+  ///  - normal interrupt
+  ///  - pointers are not modified
+  ///  - transfer a word
+  ///  - service End of PEC interrrupt by a EOP interrupt node is disabled
+  ///  - channel link mode is disabled
+
+  PECC0          =  0x0000;      // load PECC0 control register
+
 
 
 
@@ -230,7 +240,7 @@ void GPT2_vInit(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          28.09.2021
+// @Date          29.09.2021
 //
 //****************************************************************************
 

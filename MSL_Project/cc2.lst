@@ -1,4 +1,4 @@
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 15:42:21  Page:   1
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:21  Page:   1
 cc2
 
  LOC CODE        LINE   SOURCELINE
@@ -58,7 +58,7 @@ cc2
                     53   ; cc2.c      21 // USER CODE END
                     54   ; cc2.c      22 
                     55   ; cc2.c      23 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 15:42:21  Page:   2
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:21  Page:   2
 cc2
 
  LOC CODE        LINE   SOURCELINE
@@ -118,7 +118,7 @@ cc2
                    108   ; cc2.c      37 // @Macros
                    109   ; cc2.c      38 //****************************************************************************
                    110   ; cc2.c      39 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 15:42:21  Page:   3
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:21  Page:   3
 cc2
 
  LOC CODE        LINE   SOURCELINE
@@ -178,7 +178,7 @@ cc2
                    163   ; cc2.c      92 //****************************************************************************
                    164   ; cc2.c      93 
                    165   ; cc2.c      94 // USER CODE BEGIN (CC2_General,9)
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 15:42:21  Page:   4
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:21  Page:   4
 cc2
 
  LOC CODE        LINE   SOURCELINE
@@ -238,7 +238,7 @@ cc2
                    218           ?SYMB   'bit0',0,23,262
                    219           ?SYMB   'bit1',1,23,263
                    220           ?SYMB   'bit2',2,23,264
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 15:42:21  Page:   5
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:21  Page:   5
 cc2
 
  LOC CODE        LINE   SOURCELINE
@@ -298,7 +298,7 @@ cc2
                    273   ; cc2.c     146   //// - the contents of the port register is not changed by the CAPCOM2 
                    274   ; cc2.c     147   ////   unit. Use the macro CC2_vPortUnlock() for unlock the port.
                    275   ; cc2.c     148 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 15:42:21  Page:   6
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:21  Page:   6
 cc2
 
  LOC CODE        LINE   SOURCELINE
@@ -358,7 +358,7 @@ cc2
                    328   ; cc2.c     189   ///  - channel 16 is disabled
                    329   ; cc2.c     190 
                    330   ; cc2.c     191   ///  -----------------------------------------------------------------------
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 15:42:21  Page:   7
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:21  Page:   7
 cc2
 
  LOC CODE        LINE   SOURCELINE
@@ -418,7 +418,7 @@ cc2
                    383   ; cc2.c     244   ///  - channel 27 is disabled
                    384   ; cc2.c     245 
                    385   ; cc2.c     246   ///  -----------------------------------------------------------------------
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 15:42:21  Page:   8
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:21  Page:   8
 cc2
 
  LOC CODE        LINE   SOURCELINE
@@ -478,7 +478,7 @@ cc2
                    438   ; cc2.c     290 // USER CODE END
                    439   ; cc2.c     291 
                    440   CC2_1_PR        ENDS
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 28 2021  Time: 15:42:21  Page:   9
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:21  Page:   9
 cc2
 
  LOC CODE        LINE   SOURCELINE

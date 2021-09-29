@@ -12,7 +12,7 @@
 // @Description   This file contains the project initialization function.
 //
 //----------------------------------------------------------------------------
-// @Date          28.09.2021 15:41:38
+// @Date          29.09.2021 09:41:08
 //
 //****************************************************************************
 
@@ -125,7 +125,7 @@ void setPhaseChange(int dir);
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          28.09.2021
+// @Date          29.09.2021
 //
 //****************************************************************************
 
@@ -208,7 +208,7 @@ void MAIN_vInit(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          28.09.2021
+// @Date          29.09.2021
 //
 //****************************************************************************
 
@@ -246,7 +246,7 @@ void MAIN_vUnlockProtecReg(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          28.09.2021
+// @Date          29.09.2021
 //
 //****************************************************************************
 
@@ -288,7 +288,7 @@ void MAIN_vLockProtecReg(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          28.09.2021
+// @Date          29.09.2021
 //
 //****************************************************************************
 
@@ -352,7 +352,7 @@ void MAIN_vChangeFreq(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          28.09.2021
+// @Date          29.09.2021
 //
 //****************************************************************************
 
@@ -382,8 +382,8 @@ void main(void)
 
    // USER CODE BEGIN (Main,4)
    
-   
-   if (rampIndex > 0){
+   // one rampIndex step = 8ms, 250 steps = 2s
+   if (rampIndex > 1750){
    		unsigned long raw;
 		raw = ADC0_uwGetResultData(RESULT_REG_0);
 		frequency = ((50*raw)/4096);
@@ -393,56 +393,61 @@ void main(void)
 	if (rampIndex == 0){
 		setPhaseChange(clockwise);
 	}
-	/*
-	if(rampIndex < 50){
-		frequency = rampIndex;
+	// ramp up
+	if(rampIndex < 250){
+		frequency = (rampIndex/5);
 		CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
 		CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
 		IO_vTogglePin(LED_DBG);
 	} 
-	
-	if(rampIndex < 100 && rampIndex > 50){
+	// hold 50 Hz clockwise
+	if(rampIndex < 500 && rampIndex > 250){
 		frequency = 50;
 		CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
 		CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
 	}
-
-	if(rampIndex < 150 && rampIndex > 100){
-		frequency = (150 - rampIndex);
+	// ramp down
+	if(rampIndex < 750 && rampIndex > 500){
+		frequency = (750 - rampIndex)/5;
 		CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
 		CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
 	}
-	if (rampIndex == 151){
+	// phase change
+	if (rampIndex == 750){
 		setPhaseChange(counterclockwise);
 	}
-	if(rampIndex < 200 && rampIndex > 151){
-		frequency = (rampIndex-150);
+
+	// reverse ramp up
+	if(rampIndex < 1000 && rampIndex > 750){
+		frequency = (rampIndex-750)/5;
 		CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
 		CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
 	}
-	if(rampIndex < 250 && rampIndex > 200){
+	// hold 50 hz counterclockwise
+	if(rampIndex < 1250 && rampIndex > 1000){
 		frequency = 50;
 		CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
 		CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
 	}
-	if(rampIndex < 300 && rampIndex > 250){
-		frequency = (300 - rampIndex);
+	// reverse ramp down
+	if(rampIndex < 1500 && rampIndex > 1250){
+		frequency = (1500 - rampIndex)/5;
 		CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
 		CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
 	}
-	if(rampIndex < 350 && rampIndex > 300){
+	// DC break
+	if(rampIndex < 1750 && rampIndex > 1500){
 		frequency = 50;
 		CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
 		CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
 	}
-	if(rampIndex == 350){
+	// set 0 Hz for transition to poti control
+	if(rampIndex == 1750){
 		frequency = 0;
 		CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
 		CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
 	}
 
-
-	*/
    // USER CODE END
 
   }
