@@ -12,7 +12,7 @@
 // @Description   This file contains the project initialization function.
 //
 //----------------------------------------------------------------------------
-// @Date          28.09.2021 15:41:38
+// @Date          29.09.2021 09:41:08
 //
 //****************************************************************************
 
@@ -87,8 +87,9 @@
 	volatile unsigned int rampIndex;
    	volatile float velocity;
 	volatile float rpm;
-	//unsigned int ccu62_pr = 1/(frequency * ARRAY_SIZE*0.000000015);
-
+	int integral_sum;
+	const float K_p = 0.05;
+	const float K_i = 0.01;
 // USER CODE END
 
 
@@ -107,8 +108,9 @@
 
 // USER CODE BEGIN (MAIN_General,9)
 void generateTable();
-unsigned int calculateMotorFrequency (int frequency);
+unsigned int calculateMotorFrequency (unsigned int _frequency);
 void setPhaseChange(int dir);
+unsigned int controller(int input);
 // USER CODE END
 
 
@@ -125,7 +127,7 @@ void setPhaseChange(int dir);
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          28.09.2021
+// @Date          29.09.2021
 //
 //****************************************************************************
 
@@ -208,7 +210,7 @@ void MAIN_vInit(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          28.09.2021
+// @Date          29.09.2021
 //
 //****************************************************************************
 
@@ -246,7 +248,7 @@ void MAIN_vUnlockProtecReg(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          28.09.2021
+// @Date          29.09.2021
 //
 //****************************************************************************
 
@@ -288,7 +290,7 @@ void MAIN_vLockProtecReg(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          28.09.2021
+// @Date          29.09.2021
 //
 //****************************************************************************
 
@@ -352,7 +354,7 @@ void MAIN_vChangeFreq(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          28.09.2021
+// @Date          29.09.2021
 //
 //****************************************************************************
 
@@ -375,7 +377,7 @@ void main(void)
 	CCU63_vStartTmr(CCU63_TIMER_12);
 	CCU62_vStartTmr(CCU62_TIMER_12);
 	GPT2_vStartTmr(GPT2_TIMER_6);
-    // USER CODE END
+  // USER CODE END
 
   while(1)
   {
@@ -386,9 +388,10 @@ void main(void)
    if (rampIndex > 1750){
    		unsigned long raw;
 		raw = ADC0_uwGetResultData(RESULT_REG_0);
-		frequency = ((50*raw)/4096);
-	   	CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
+		frequency = controller((25*raw)/4096);  //4096 ist Auflösung des ADC, links = 0, rechts = 4096
+		CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
 		CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
+
 	}
 	if (rampIndex == 0){
 		setPhaseChange(clockwise);
@@ -413,12 +416,12 @@ void main(void)
 		CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
 	}
 	// phase change
-	if (rampIndex == 751){
+	if (rampIndex == 750){
 		setPhaseChange(counterclockwise);
 	}
 
 	// reverse ramp up
-	if(rampIndex < 1000 && rampIndex > 751){
+	if(rampIndex < 1000 && rampIndex > 750){
 		frequency = (rampIndex-750)/5;
 		CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
 		CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
@@ -435,7 +438,7 @@ void main(void)
 		CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
 		CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
 	}
-	// DC break
+	// DC break !!! adjust CCU62 rampIndex !!!
 	if(rampIndex < 1750 && rampIndex > 1500){
 		frequency = 50;
 		CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
@@ -465,16 +468,20 @@ void generateTable(){
 	}
 }
 
-unsigned int calculateMotorFrequency (int _frequency){
+
+//calculate frequency and set frequency < 2 Hz = 0 Hz
+unsigned int calculateMotorFrequency (unsigned int _frequency){
 	if (_frequency < 2){
 		frequency = 1;
 		return (0xD903);
 	}
 	else {
-		return (1/(_frequency * ARRAY_SIZE*0.000000015));
+		return (1/((float)_frequency * (float)ARRAY_SIZE*0.000000015));
 	}
 }
 
+
+//phase change
 void setPhaseChange(int dir){
 	if(dir == clockwise){
 		OFFSET_L1 = 0;
@@ -488,6 +495,29 @@ void setPhaseChange(int dir){
 	}  
 }
 
+//controller
+unsigned int controller(int input){
+	//Regelabweichung = mech Drehzahldifferenz
+	int controller_error = input - velocity;	// velocity =^ output/ feedback
+	//P-Regler
+	int manipulated_variable = controller_error * K_p;
+	//I-Regler
+	integral_sum = integral_sum + controller_error; //so gehts auch: integral_sum += controller_error
+	//if (integral_sum > windup){
+	} 
+	//P- + I-Regler
+	manipulated_variable = manipulated_variable + K_i * integral_sum;
+	//Vorsteuerung
+	manipulated_variable += input*2;
+	//Stellgrößenbegrenzung
+	if(manipulated_variable > 55){
+		manipulated_variable = 55;
+	}
+	else if(manipulated_variable < 0){
+		manipulated_variable = 1;
+	}
+	return(manipulated_variable);
+}
 
 // USER CODE END
 

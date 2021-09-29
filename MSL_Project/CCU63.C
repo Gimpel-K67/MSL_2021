@@ -395,9 +395,9 @@ _interrupt(CCU63_NodeI0_INT)  void CCU63_viNodeI0(void)
     // Timer T12 one match detection
 
     // USER CODE BEGIN (NodeI0,20)
-		CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_0, table[(index + OFFSET_L1)%ARRAY_SIZE]*(0.014*frequency+0.3));
-	   	CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_1, table[(index + OFFSET_L2)%ARRAY_SIZE]*(0.014*frequency+0.3));
-  		CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_2, table[(index + OFFSET_L3)%ARRAY_SIZE]*(0.014*frequency+0.3));
+		CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_0, table[(index + OFFSET_L1)%ARRAY_SIZE]*(0.013*frequency+0.3));
+	   	CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_1, table[(index + OFFSET_L2)%ARRAY_SIZE]*(0.013*frequency+0.3));
+  		CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_2, table[(index + OFFSET_L3)%ARRAY_SIZE]*(0.013*frequency+0.3));
 		CCU63_vEnableShadowTransfer(CCU63_TIMER_12);
     // USER CODE END
 

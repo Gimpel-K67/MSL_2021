@@ -408,18 +408,27 @@ _GPT2_viTmr6	PROC TASK GPT2_TASK INTNO GPT2_INUM = 024h
 ; CSEs:
 ; 
 ; gpt2.c    253	  // USER CODE BEGIN (Tmr6,2)
-; gpt2.c    254		 rampIndex++;
-	?LINE	254
+; gpt2.c    254		//Index für den Programmablauf, größer 1751 damit der Programmablauf bei Überlauf der Variable RampIndex (16 Bit) nicht erneut von vorn startet 
+; gpt2.c    255		if(rampIndex < 1751){
+	?LINE	255
+	MOV	R12,_rampIndex
+	CMP	R12,#06D7h
+	JMPR	cc_UGE,_8
+; gpt2.c    256			rampIndex++;
+	?LINE	256
 	MOV	R12,_rampIndex
 	ADD	R12,#01h
 	MOV	_rampIndex,R12
-; gpt2.c    255		 
-; gpt2.c    256		 inc = GPT12E_T4;
-	?LINE	256
+; gpt2.c    257		}
+	?LINE	257
+_8:
+; gpt2.c    258		 
+; gpt2.c    259		 inc = GPT12E_T4;
+	?LINE	259
 	MOV	R12,0FE44h
 	MOV	_inc,R12
-; gpt2.c    257		 velocity = (1000 * (float) inc)/(8);
-	?LINE	257
+; gpt2.c    260		 velocity = (1000 * (float) inc)/(8);
+	?LINE	260
 	MOV	R4,_inc
 	CALLS	SEG __cuf24r,__cuf24r
 	MOV	R10,#0447Ah
@@ -430,8 +439,8 @@ _GPT2_viTmr6	PROC TASK GPT2_TASK INTNO GPT2_INUM = 024h
 	CALLS	SEG __dvf4r,__dvf4r
 	MOV	_velocity,R4
 	MOV	(_velocity+2),R5
-; gpt2.c    258		 velocity = velocity/2048;
-	?LINE	258
+; gpt2.c    261		 velocity = velocity/2048;
+	?LINE	261
 	MOV	R4,_velocity
 	MOV	R5,(_velocity+2)
 	MOV	R10,#04500h
@@ -439,8 +448,8 @@ _GPT2_viTmr6	PROC TASK GPT2_TASK INTNO GPT2_INUM = 024h
 	CALLS	SEG __dvf4r,__dvf4r
 	MOV	_velocity,R4
 	MOV	(_velocity+2),R5
-; gpt2.c    259		 rpm = velocity * 60;
-	?LINE	259
+; gpt2.c    262		 rpm = velocity * 60;
+	?LINE	262
 	MOV	R4,_velocity
 	MOV	R5,(_velocity+2)
 	MOV	R10,#04270h
@@ -448,14 +457,14 @@ _GPT2_viTmr6	PROC TASK GPT2_TASK INTNO GPT2_INUM = 024h
 	CALLS	SEG __mlf4r,__mlf4r
 	MOV	_rpm,R4
 	MOV	(_rpm+2),R5
-; gpt2.c    260		 GPT12E_T4 = 0;
-	?LINE	260
+; gpt2.c    263		 GPT12E_T4 = 0;
+	?LINE	263
 	MOV	R12,#00h
 	MOV	0FE44h,R12
-; gpt2.c    261	  // USER CODE END
-; gpt2.c    262	
-; gpt2.c    263	} //  End of function GPT2_viTmr6
-	?LINE	263
+; gpt2.c    264	  // USER CODE END
+; gpt2.c    265	
+; gpt2.c    266	} //  End of function GPT2_viTmr6
+	?LINE	266
 	EXTR	#01h
 	POP	QR1
 	EXTR	#01h
@@ -477,18 +486,18 @@ _GPT2_viTmr6	PROC TASK GPT2_TASK INTNO GPT2_INUM = 024h
 	POP	DPP0
 	POP	MDC
 	POP	CP
-	?LINE	263
+	?LINE	266
 	RETI
 _GPT2_viTmr6	ENDP
-	?SYMB	'',$,17,263
-; gpt2.c    264	
-; gpt2.c    265	
-; gpt2.c    266	
+	?SYMB	'',$,17,266
 ; gpt2.c    267	
-; gpt2.c    268	// USER CODE BEGIN (GPT2_General,10)
+; gpt2.c    268	
 ; gpt2.c    269	
-; gpt2.c    270	// USER CODE END
-; gpt2.c    271	
+; gpt2.c    270	
+; gpt2.c    271	// USER CODE BEGIN (GPT2_General,10)
+; gpt2.c    272	
+; gpt2.c    273	// USER CODE END
+; gpt2.c    274	
 GPT2_1_PR	ENDS
 
 GPT2_2_NB	SECTION	LDAT WORD PUBLIC 'CNEAR'

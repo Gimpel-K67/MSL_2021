@@ -606,7 +606,7 @@ _9:
 ; ccu63.c   395	    // Timer T12 one match detection
 ; ccu63.c   396	
 ; ccu63.c   397	    // USER CODE BEGIN (NodeI0,20)
-; ccu63.c   398			CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_0, table[(index + OFFSET_L1)%ARRAY_SIZE]*(0.014*frequency+0.3));
+; ccu63.c   398			CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_0, table[(index + OFFSET_L1)%ARRAY_SIZE]*(0.013*frequency+0.3));
 	?LINE	398
 	MOV	R12,_index
 	ADD	R12,_OFFSET_L1
@@ -640,7 +640,7 @@ _9:
 	ADD	R0,#020h
 	?SYMB	'',$,96,0
 	MOV	0EBA0h,R4
-; ccu63.c   399		   	CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_1, table[(index + OFFSET_L2)%ARRAY_SIZE]*(0.014*frequency+0.3));
+; ccu63.c   399		   	CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_1, table[(index + OFFSET_L2)%ARRAY_SIZE]*(0.013*frequency+0.3));
 	?LINE	399
 	MOV	R12,_index
 	ADD	R12,_OFFSET_L2
@@ -674,7 +674,7 @@ _9:
 	ADD	R0,#020h
 	?SYMB	'',$,96,0
 	MOV	0EBA2h,R4
-; ccu63.c   400	  		CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_2, table[(index + OFFSET_L3)%ARRAY_SIZE]*(0.014*frequency+0.3));
+; ccu63.c   400	  		CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_2, table[(index + OFFSET_L3)%ARRAY_SIZE]*(0.013*frequency+0.3));
 	?LINE	400
 	MOV	R12,_index
 	ADD	R12,_OFFSET_L3
@@ -785,10 +785,10 @@ _CCU63_viNodeI0	ENDP
 CCU63_1_PR	ENDS
 
 CCU63_2_CO	SECTION	LDAT WORD PUBLIC 'CROM'
+_3	LABEL	WORD
+	DW	03F8Ah,09FBEh,076C8h,0B439h
 _4	LABEL	WORD
 	DW	03FD3h,03333h,03333h,03333h
-_3	LABEL	WORD
-	DW	03F8Ch,0AC08h,03126h,0E979h
 CCU63_2_CO	ENDS
 
 C166_US	SECTION	LDAT WORD GLBUSRSTACK 'CUSTACK'

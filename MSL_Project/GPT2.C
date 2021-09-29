@@ -251,7 +251,10 @@ void GPT2_vInit(void)
 _interrupt(T6INT)  void GPT2_viTmr6(void)
 {
   // USER CODE BEGIN (Tmr6,2)
-	 rampIndex++;
+	//Index für den Programmablauf, größer 1751 damit der Programmablauf bei Überlauf der Variable RampIndex (16 Bit) nicht erneut von vorn startet 
+	if(rampIndex < 1751){
+		rampIndex++;
+	}
 	 
 	 inc = GPT12E_T4;
 	 velocity = (1000 * (float) inc)/(8);
