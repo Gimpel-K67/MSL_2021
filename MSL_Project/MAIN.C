@@ -86,10 +86,10 @@
 	float pi = 3.14159265359;
 	volatile unsigned int rampIndex;
    	volatile float velocity;
-	volatile float rpm;
 	int integral_sum;
 	const float K_p = 0.05;
 	const float K_i = 0.01;
+	const unsigned int HALF_PERIODVALUE = 901;
 // USER CODE END
 
 
@@ -476,7 +476,7 @@ unsigned int calculateMotorFrequency (unsigned int _frequency){
 		return (0xD903);
 	}
 	else {
-		return (1/((float)_frequency * (float)ARRAY_SIZE*0.000000015));
+		return (1/((float)_frequency * (float)ARRAY_SIZE*0.000000015)); //float Operation wird nicht ersetzt da Datentyp größer als long verwendet werden müsste: bräcuhte Wertebereich von >10^22
 	}
 }
 

@@ -1,29 +1,25 @@
 TASKING program builder v8.7r1 Build 088
 Warning: Infinite loop detected; Not building sub-project mps_main.pjt
-Compiling and assembling main.c
+Compiling and assembling ccu63.c
 Trial version.  9 day(s) remaining
-main.c:
-   374:  	generateTable();
-W  91: no prototype for function "generateTable"
-total errors: 0, warnings: 1
 Trial version.  9 day(s) remaining
-Compiling and assembling ccu62.c
+Compiling and assembling gpt2.c
 Trial version.  9 day(s) remaining
 Trial version.  9 day(s) remaining
 Linking and locating to mps_main.out
 Trial version.  9 day(s) remaining
 
-	Number of symbols		: 1686
+	Number of symbols		: 1685
 	Number of sections		: 34
 	Number of groups		: 0
 	Number of classes		: 11
 	Number of modules		: 37
-	Total section size		: 00031B8h
+	Total section size		: 0003190h
 	Total memory size		: 0344A04h
 		consisting of RAM	: 0284A04h
 		              ROM	: 00C0000h
-	Total RAM filled		: 0000D08h
-	Total ROM filled		: 00024B0h
+	Total RAM filled		: 0000D04h
+	Total ROM filled		: 000248Ch
 	System stack size		: 0000200h
 	Heap size			: 0000000h
 	User stack size			: 000017Ch

@@ -189,9 +189,8 @@ _pi	LABEL	WORD
 	?SYMB	'pi',_pi,22,10
 ; main.c     87		volatile unsigned int rampIndex;
 ; main.c     88	   	volatile float velocity;
-; main.c     89		volatile float rpm;
-; main.c     90		int integral_sum;
-; main.c     91		const float K_p = 0.05;
+; main.c     89		int integral_sum;
+; main.c     90		const float K_p = 0.05;
 MAIN_ID_NB	ENDS
 
 MAIN_3_NC	SECTION	LDAT
@@ -199,11 +198,16 @@ _K_p	LABEL	WORD
 	DW	03D4Ch,0CCCDh
 	PUBLIC	_K_p
 	?SYMB	'K_p',_K_p,22,10
-; main.c     92		const float K_i = 0.01;
+; main.c     91		const float K_i = 0.01;
 _K_i	LABEL	WORD
 	DW	03C23h,0D70Ah
 	PUBLIC	_K_i
 	?SYMB	'K_i',_K_i,22,10
+; main.c     92		const unsigned int HALF_PERIODVALUE = 901;
+_HALF_PERIODVALUE	LABEL	WORD
+	DW	0385h
+	PUBLIC	_HALF_PERIODVALUE
+	?SYMB	'HALF_PERIODVALUE',_HALF_PERIODVALUE,22,18
 ; main.c     93	// USER CODE END
 ; main.c     94	
 ; main.c     95	
@@ -1253,7 +1257,7 @@ _calculateMotorFrequency	PROC	FAR
 	?LINE	477
 _62:
 ; main.c    478		else {
-; main.c    479			return (1/((float)_frequency * (float)ARRAY_SIZE*0.000000015));
+; main.c    479			return (1/((float)_frequency * (float)ARRAY_SIZE*0.000000015)); //float Operation wird nicht ersetzt da Datentyp größer als long verwendet werden müsste: bräcuhte Wertebereich von >10^22
 	?LINE	479
 	MOV	R4,[R0]
 	CALLS	SEG __cuf24r,__cuf24r
@@ -1499,10 +1503,6 @@ _integral_sum	LABEL	WORD
 	DS	2
 	PUBLIC	_integral_sum
 	?SYMB	'integral_sum',_integral_sum,22,16
-_rpm	LABEL	WORD
-	DS	4
-	PUBLIC	_rpm
-	?SYMB	'rpm',_rpm,22,10
 _velocity	LABEL	WORD
 	DS	4
 	PUBLIC	_velocity
@@ -1547,7 +1547,7 @@ C166_INIT	SECTION	PDAT WORD GLOBAL 'CINITROM'
 C166_INIT	ENDS
 
 C166_BSS	SECTION	PDAT WORD GLOBAL 'CINITROM'
-	DW	05h,MAIN_5_NB_ENTRY,0974h
+	DW	05h,MAIN_5_NB_ENTRY,0970h
 C166_BSS	ENDS
 
 $FLOAT(ANSI)

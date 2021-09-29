@@ -1,4 +1,4 @@
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 16:19:00  Page:   1
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 17:37:50  Page:   1
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -58,7 +58,7 @@ main
                     53   ; main.c     21 // USER CODE END
                     54   ; main.c     22 
                     55   ; main.c     23 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 16:19:00  Page:   2
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 17:37:50  Page:   2
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -118,7 +118,7 @@ main
                    108   ; main.c     34 
                    109   ; main.c     35 
                    110   ; main.c     36 //****************************************************************************
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 16:19:00  Page:   3
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 17:37:50  Page:   3
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -178,7 +178,7 @@ main
                    163           PUBLIC  _frequency
                R   164           ?SYMB   'frequency',_frequency,22,18
                    165   ; main.c     80         const unsigned int ARRAY_SIZE = 1200;
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 16:19:00  Page:   4
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 17:37:50  Page:   4
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -209,1490 +209,1492 @@ main
                R   189           ?SYMB   'pi',_pi,22,10
                    190   ; main.c     87         volatile unsigned int rampIndex;
                    191   ; main.c     88         volatile float velocity;
-                   192   ; main.c     89         volatile float rpm;
-                   193   ; main.c     90         int integral_sum;
-                   194   ; main.c     91         const float K_p = 0.05;
-                   195   MAIN_ID_NB      ENDS
-                   196   
-                   197   MAIN_3_NC       SECTION LDAT
-0002               198   _K_p    LABEL   WORD
-0002 4C3DCDCC      199           DW      03D4Ch,0CCCDh
-                   200           PUBLIC  _K_p
-               R   201           ?SYMB   'K_p',_K_p,22,10
-                   202   ; main.c     92         const float K_i = 0.01;
-0006               203   _K_i    LABEL   WORD
-0006 233C0AD7      204           DW      03C23h,0D70Ah
-                   205           PUBLIC  _K_i
-               R   206           ?SYMB   'K_i',_K_i,22,10
-                   207   ; main.c     93 // USER CODE END
-                   208   ; main.c     94 
-                   209   ; main.c     95 
-                   210   ; main.c     96 //****************************************************************************
-                   211   ; main.c     97 // @External Prototypes
-                   212   ; main.c     98 //****************************************************************************
-                   213   ; main.c     99 
-                   214   ; main.c    100 // USER CODE BEGIN (MAIN_General,8)
-                   215   ; main.c    101 
-                   216   ; main.c    102 // USER CODE END
-                   217   ; main.c    103 
-                   218   ; main.c    104 
-                   219   ; main.c    105 //****************************************************************************
-                   220   ; main.c    106 // @Prototypes Of Local Functions
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 16:19:00  Page:   5
+                   192   ; main.c     89         int integral_sum;
+                   193   ; main.c     90         const float K_p = 0.05;
+                   194   MAIN_ID_NB      ENDS
+                   195   
+                   196   MAIN_3_NC       SECTION LDAT
+0002               197   _K_p    LABEL   WORD
+0002 4C3DCDCC      198           DW      03D4Ch,0CCCDh
+                   199           PUBLIC  _K_p
+               R   200           ?SYMB   'K_p',_K_p,22,10
+                   201   ; main.c     91         const float K_i = 0.01;
+0006               202   _K_i    LABEL   WORD
+0006 233C0AD7      203           DW      03C23h,0D70Ah
+                   204           PUBLIC  _K_i
+               R   205           ?SYMB   'K_i',_K_i,22,10
+                   206   ; main.c     92         const unsigned int HALF_PERIODVALUE = 901;
+000A               207   _HALF_PERIODVALUE       LABEL   WORD
+000A 8503          208           DW      0385h
+                   209           PUBLIC  _HALF_PERIODVALUE
+               R   210           ?SYMB   'HALF_PERIODVALUE',_HALF_PERIODVALUE,22,18
+                   211   ; main.c     93 // USER CODE END
+                   212   ; main.c     94 
+                   213   ; main.c     95 
+                   214   ; main.c     96 //****************************************************************************
+                   215   ; main.c     97 // @External Prototypes
+                   216   ; main.c     98 //****************************************************************************
+                   217   ; main.c     99 
+                   218   ; main.c    100 // USER CODE BEGIN (MAIN_General,8)
+                   219   ; main.c    101 
+                   220   ; main.c    102 // USER CODE END
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 17:37:50  Page:   5
 main
 
  LOC CODE        LINE   SOURCELINE
 
-                   221   ; main.c    107 //****************************************************************************
-                   222   ; main.c    108 
-                   223   ; main.c    109 // USER CODE BEGIN (MAIN_General,9)
-                   224   ; main.c    110 void generateTable();
-                   225   ; main.c    111 unsigned int calculateMotorFrequency (unsigned int _frequency);
-                   226   ; main.c    112 void setPhaseChange(int dir);
-                   227   ; main.c    113 unsigned int controller(int input);
-                   228   ; main.c    114 // USER CODE END
-                   229   ; main.c    115 
-                   230   ; main.c    116 
-                   231   ; main.c    117 //****************************************************************************
-                   232   ; main.c    118 // @Function      void MAIN_vInit(void) 
-                   233   ; main.c    119 //
-                   234   ; main.c    120 //----------------------------------------------------------------------------
-                   235   ; main.c    121 // @Description   This function initializes the microcontroller.
-                   236   ; main.c    122 //
-                   237   ; main.c    123 //----------------------------------------------------------------------------
-                   238   ; main.c    124 // @Returnvalue   None
-                   239   ; main.c    125 //
-                   240   ; main.c    126 //----------------------------------------------------------------------------
-                   241   ; main.c    127 // @Parameters    None
-                   242   ; main.c    128 //
-                   243   ; main.c    129 //----------------------------------------------------------------------------
-                   244   ; main.c    130 // @Date          29.09.2021
-                   245   ; main.c    131 //
-                   246   ; main.c    132 //****************************************************************************
-                   247   ; main.c    133 
-                   248   ; main.c    134 // USER CODE BEGIN (Init,1)
-                   249   ; main.c    135 
-                   250   ; main.c    136 // USER CODE END
-                   251   ; main.c    137 
-                   252   ; main.c    138 void MAIN_vInit(void)
-                   253   ; main.c    139 {
-                   254   MAIN_3_NC       ENDS
-                   255   
-                   256   MAIN_4_PR       SECTION CODE WORD PUBLIC 'CPROGRAM'
-                   257           ?LINE   139
-                   258           PUBLIC  _MAIN_vInit
-               R   259           ?SYMB   'MAIN_vInit',_MAIN_vInit,37,1
-                   260           ?SYMB   '',139,8,34
-                   261           ?SYMB   '',010000H,7,261
-                   262           ?SYMB   '',010001H,7,262
-                   263           ?SYMB   '',010002H,7,263
-                   264           ?SYMB   '',010003H,7,264
-                   265           ?SYMB   '',010004H,7,265
-                   266           ?SYMB   '',010005H,7,266
-                   267           ?SYMB   '',010006H,7,267
-                   268           ?SYMB   '',010007H,7,268
-                   269           ?SYMB   '',010000H,7,269
-                   270           ?SYMB   '',010001H,7,270
-                   271           ?SYMB   '',010002H,7,271
-                   272           ?SYMB   '',010003H,7,272
-                   273           ?SYMB   '',010004H,7,273
-                   274           ?SYMB   '',010005H,7,274
-                   275           ?SYMB   '',010006H,7,275
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 16:19:00  Page:   6
+                   221   ; main.c    103 
+                   222   ; main.c    104 
+                   223   ; main.c    105 //****************************************************************************
+                   224   ; main.c    106 // @Prototypes Of Local Functions
+                   225   ; main.c    107 //****************************************************************************
+                   226   ; main.c    108 
+                   227   ; main.c    109 // USER CODE BEGIN (MAIN_General,9)
+                   228   ; main.c    110 void generateTable();
+                   229   ; main.c    111 unsigned int calculateMotorFrequency (unsigned int _frequency);
+                   230   ; main.c    112 void setPhaseChange(int dir);
+                   231   ; main.c    113 unsigned int controller(int input);
+                   232   ; main.c    114 // USER CODE END
+                   233   ; main.c    115 
+                   234   ; main.c    116 
+                   235   ; main.c    117 //****************************************************************************
+                   236   ; main.c    118 // @Function      void MAIN_vInit(void) 
+                   237   ; main.c    119 //
+                   238   ; main.c    120 //----------------------------------------------------------------------------
+                   239   ; main.c    121 // @Description   This function initializes the microcontroller.
+                   240   ; main.c    122 //
+                   241   ; main.c    123 //----------------------------------------------------------------------------
+                   242   ; main.c    124 // @Returnvalue   None
+                   243   ; main.c    125 //
+                   244   ; main.c    126 //----------------------------------------------------------------------------
+                   245   ; main.c    127 // @Parameters    None
+                   246   ; main.c    128 //
+                   247   ; main.c    129 //----------------------------------------------------------------------------
+                   248   ; main.c    130 // @Date          29.09.2021
+                   249   ; main.c    131 //
+                   250   ; main.c    132 //****************************************************************************
+                   251   ; main.c    133 
+                   252   ; main.c    134 // USER CODE BEGIN (Init,1)
+                   253   ; main.c    135 
+                   254   ; main.c    136 // USER CODE END
+                   255   ; main.c    137 
+                   256   ; main.c    138 void MAIN_vInit(void)
+                   257   ; main.c    139 {
+                   258   MAIN_3_NC       ENDS
+                   259   
+                   260   MAIN_4_PR       SECTION CODE WORD PUBLIC 'CPROGRAM'
+                   261           ?LINE   139
+                   262           PUBLIC  _MAIN_vInit
+               R   263           ?SYMB   'MAIN_vInit',_MAIN_vInit,37,1
+                   264           ?SYMB   '',139,8,34
+                   265           ?SYMB   '',010000H,7,261
+                   266           ?SYMB   '',010001H,7,262
+                   267           ?SYMB   '',010002H,7,263
+                   268           ?SYMB   '',010003H,7,264
+                   269           ?SYMB   '',010004H,7,265
+                   270           ?SYMB   '',010005H,7,266
+                   271           ?SYMB   '',010006H,7,267
+                   272           ?SYMB   '',010007H,7,268
+                   273           ?SYMB   '',010000H,7,269
+                   274           ?SYMB   '',010001H,7,270
+                   275           ?SYMB   '',010002H,7,271
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 17:37:50  Page:   6
 main
 
  LOC CODE        LINE   SOURCELINE
 
-                   276           ?SYMB   '',010007H,7,276
-                   277           ?SYMB   'T$1',0,40,277
-                   278           ?SYMB   'bit0',0,23,261
-                   279           ?SYMB   'bit1',1,23,262
-                   280           ?SYMB   'bit2',2,23,263
-                   281           ?SYMB   'bit3',3,23,264
-                   282           ?SYMB   'bit4',4,23,265
-                   283           ?SYMB   'bit5',5,23,266
-                   284           ?SYMB   'bit6',6,23,267
-                   285           ?SYMB   'bit7',7,23,268
-                   286           ?SYMB   'bit8',8,23,269
-                   287           ?SYMB   'bit9',9,23,270
-                   288           ?SYMB   'bit10',10,23,271
-                   289           ?SYMB   'bit11',11,23,272
-                   290           ?SYMB   'bit12',12,23,273
-                   291           ?SYMB   'bit13',13,23,274
-                   292           ?SYMB   'bit14',14,23,275
-                   293           ?SYMB   'bit15',15,23,276
-                   294           ?SYMB   '',16,18,0
-                   295           ?SYMB   'T_Reg16',277,13,278
-                   296   _MAIN_vInit     PROC    FAR
-                   297           ?SYMB   '',00H,95,0
-                   298   ; Locals:
-                   299   ; 
-                   300   ; Statics:
-                   301   ; 
-                   302   ; CSEs:
+                   276           ?SYMB   '',010003H,7,272
+                   277           ?SYMB   '',010004H,7,273
+                   278           ?SYMB   '',010005H,7,274
+                   279           ?SYMB   '',010006H,7,275
+                   280           ?SYMB   '',010007H,7,276
+                   281           ?SYMB   'T$1',0,40,277
+                   282           ?SYMB   'bit0',0,23,261
+                   283           ?SYMB   'bit1',1,23,262
+                   284           ?SYMB   'bit2',2,23,263
+                   285           ?SYMB   'bit3',3,23,264
+                   286           ?SYMB   'bit4',4,23,265
+                   287           ?SYMB   'bit5',5,23,266
+                   288           ?SYMB   'bit6',6,23,267
+                   289           ?SYMB   'bit7',7,23,268
+                   290           ?SYMB   'bit8',8,23,269
+                   291           ?SYMB   'bit9',9,23,270
+                   292           ?SYMB   'bit10',10,23,271
+                   293           ?SYMB   'bit11',11,23,272
+                   294           ?SYMB   'bit12',12,23,273
+                   295           ?SYMB   'bit13',13,23,274
+                   296           ?SYMB   'bit14',14,23,275
+                   297           ?SYMB   'bit15',15,23,276
+                   298           ?SYMB   '',16,18,0
+                   299           ?SYMB   'T_Reg16',277,13,278
+                   300   _MAIN_vInit     PROC    FAR
+                   301           ?SYMB   '',00H,95,0
+                   302   ; Locals:
                    303   ; 
-                   304   ; main.c    140   // USER CODE BEGIN (Init,2)
-                   305   ; main.c    141 
-                   306   ; main.c    142   // USER CODE END
-                   307   ; main.c    143 
-                   308   ; main.c    144   //   globally disable interrupts
-                   309   ; main.c    145   PSW_IEN        =  0;          
-                   310           ?LINE   145
-0000 E6FC10FF      311           MOV     R12,#0FF10h
-0004 A8DC          312           MOV     R13,[R12]
-0006 66FDFFF7      313           AND     R13,#0F7FFh
-000A B8DC          314           MOV     [R12],R13
-                   315   ; main.c    146 
-                   316   ; main.c    147 
-                   317   ; main.c    148   ///  -----------------------------------------------------------------------
-                   318   ; main.c    149   ///  Configuration of the System Clock:
-                   319   ; main.c    150   ///  -----------------------------------------------------------------------
-                   320   ; main.c    151   ///  - VCO clock used, input clock is connected
-                   321   ; main.c    152   ///  - input frequency is 10,00 MHz
-                   322   ; main.c    153   ///  - configured system frequency is 66,00 MHz
-                   323   ; main.c    154 
-                   324   ; main.c    155   MAIN_vUnlockProtecReg();     // unlock write security
-                   325           ?LINE   155
-000C DA003E00  R   326           CALLS   SEG _MAIN_vUnlockProtecReg,_MAIN_vUnlockProtecReg
-                   327   ; main.c    156 
-                   328   ; main.c    157   MAIN_vChangeFreq();          // load PLL control register
-                   329           ?LINE   157
-0010 DA00D200  R   330           CALLS   SEG _MAIN_vChangeFreq,_MAIN_vChangeFreq
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 16:19:00  Page:   7
+                   304   ; Statics:
+                   305   ; 
+                   306   ; CSEs:
+                   307   ; 
+                   308   ; main.c    140   // USER CODE BEGIN (Init,2)
+                   309   ; main.c    141 
+                   310   ; main.c    142   // USER CODE END
+                   311   ; main.c    143 
+                   312   ; main.c    144   //   globally disable interrupts
+                   313   ; main.c    145   PSW_IEN        =  0;          
+                   314           ?LINE   145
+0000 E6FC10FF      315           MOV     R12,#0FF10h
+0004 A8DC          316           MOV     R13,[R12]
+0006 66FDFFF7      317           AND     R13,#0F7FFh
+000A B8DC          318           MOV     [R12],R13
+                   319   ; main.c    146 
+                   320   ; main.c    147 
+                   321   ; main.c    148   ///  -----------------------------------------------------------------------
+                   322   ; main.c    149   ///  Configuration of the System Clock:
+                   323   ; main.c    150   ///  -----------------------------------------------------------------------
+                   324   ; main.c    151   ///  - VCO clock used, input clock is connected
+                   325   ; main.c    152   ///  - input frequency is 10,00 MHz
+                   326   ; main.c    153   ///  - configured system frequency is 66,00 MHz
+                   327   ; main.c    154 
+                   328   ; main.c    155   MAIN_vUnlockProtecReg();     // unlock write security
+                   329           ?LINE   155
+000C DA003E00  R   330           CALLS   SEG _MAIN_vUnlockProtecReg,_MAIN_vUnlockProtecReg
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 17:37:50  Page:   7
 main
 
  LOC CODE        LINE   SOURCELINE
 
-                   331   ; main.c    158 
-                   332   ; main.c    159   //   -----------------------------------------------------------------------
-                   333   ; main.c    160   //   Initialization of the Peripherals:
-                   334   ; main.c    161   //   -----------------------------------------------------------------------
-                   335   ; main.c    162 
-                   336   ; main.c    163   //   initializes the Parallel Ports
-                   337   ; main.c    164   IO_vInit();
-                   338           ?LINE   164
-0014 DA000000  R   339           CALLS   SEG _IO_vInit,_IO_vInit
-                   340   ; main.c    165 
-                   341   ; main.c    166   //   initializes the General Purpose Timer Unit (GPT1)
-                   342   ; main.c    167   GPT1_vInit();
-                   343           ?LINE   167
-0018 DA000000  R   344           CALLS   SEG _GPT1_vInit,_GPT1_vInit
-                   345   ; main.c    168 
-                   346   ; main.c    169   //   initializes the General Purpose Timer Unit (GPT2)
-                   347   ; main.c    170   GPT2_vInit();
-                   348           ?LINE   170
-001C DA000000  R   349           CALLS   SEG _GPT2_vInit,_GPT2_vInit
-                   350   ; main.c    171 
-                   351   ; main.c    172   //   initializes the Capture / Compare Unit 62 (CCU62)
-                   352   ; main.c    173   CCU62_vInit();
-                   353           ?LINE   173
-0020 DA000000  R   354           CALLS   SEG _CCU62_vInit,_CCU62_vInit
-                   355   ; main.c    174 
-                   356   ; main.c    175   //   initializes the Capture / Compare Unit 63 (CCU63)
-                   357   ; main.c    176   CCU63_vInit();
-                   358           ?LINE   176
-0024 DA000000  R   359           CALLS   SEG _CCU63_vInit,_CCU63_vInit
-                   360   ; main.c    177 
-                   361   ; main.c    178   //   initializes the Analog / Digital Converter  (ADC0)
-                   362   ; main.c    179   ADC0_vInit();
-                   363           ?LINE   179
-0028 DA000000  R   364           CALLS   SEG _ADC0_vInit,_ADC0_vInit
-                   365   ; main.c    180 
-                   366   ; main.c    181 
-                   367   ; main.c    182   //   -----------------------------------------------------------------------
-                   368   ; main.c    183   //   Initialization of the Bank Select registers:
-                   369   ; main.c    184   //   -----------------------------------------------------------------------
-                   370   ; main.c    185 
-                   371   ; main.c    186 
-                   372   ; main.c    187   // USER CODE BEGIN (Init,3)
-                   373   ; main.c    188 
-                   374   ; main.c    189   // USER CODE END
-                   375   ; main.c    190 
-                   376   ; main.c    191   MAIN_vLockProtecReg();       // lock write security
-                   377           ?LINE   191
-002C DA007800  R   378           CALLS   SEG _MAIN_vLockProtecReg,_MAIN_vLockProtecReg
-                   379   ; main.c    192 
-                   380   ; main.c    193   //   globally enable interrupts
-                   381   ; main.c    194   PSW_IEN        =  1;          
-                   382           ?LINE   194
-0030 E6FC10FF      383           MOV     R12,#0FF10h
-0034 A8DC          384           MOV     R13,[R12]
-0036 1AFD0808      385           BFLDH   R13,#08h,#08h
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 16:19:00  Page:   8
+                   331   ; main.c    156 
+                   332   ; main.c    157   MAIN_vChangeFreq();          // load PLL control register
+                   333           ?LINE   157
+0010 DA00D200  R   334           CALLS   SEG _MAIN_vChangeFreq,_MAIN_vChangeFreq
+                   335   ; main.c    158 
+                   336   ; main.c    159   //   -----------------------------------------------------------------------
+                   337   ; main.c    160   //   Initialization of the Peripherals:
+                   338   ; main.c    161   //   -----------------------------------------------------------------------
+                   339   ; main.c    162 
+                   340   ; main.c    163   //   initializes the Parallel Ports
+                   341   ; main.c    164   IO_vInit();
+                   342           ?LINE   164
+0014 DA000000  R   343           CALLS   SEG _IO_vInit,_IO_vInit
+                   344   ; main.c    165 
+                   345   ; main.c    166   //   initializes the General Purpose Timer Unit (GPT1)
+                   346   ; main.c    167   GPT1_vInit();
+                   347           ?LINE   167
+0018 DA000000  R   348           CALLS   SEG _GPT1_vInit,_GPT1_vInit
+                   349   ; main.c    168 
+                   350   ; main.c    169   //   initializes the General Purpose Timer Unit (GPT2)
+                   351   ; main.c    170   GPT2_vInit();
+                   352           ?LINE   170
+001C DA000000  R   353           CALLS   SEG _GPT2_vInit,_GPT2_vInit
+                   354   ; main.c    171 
+                   355   ; main.c    172   //   initializes the Capture / Compare Unit 62 (CCU62)
+                   356   ; main.c    173   CCU62_vInit();
+                   357           ?LINE   173
+0020 DA000000  R   358           CALLS   SEG _CCU62_vInit,_CCU62_vInit
+                   359   ; main.c    174 
+                   360   ; main.c    175   //   initializes the Capture / Compare Unit 63 (CCU63)
+                   361   ; main.c    176   CCU63_vInit();
+                   362           ?LINE   176
+0024 DA000000  R   363           CALLS   SEG _CCU63_vInit,_CCU63_vInit
+                   364   ; main.c    177 
+                   365   ; main.c    178   //   initializes the Analog / Digital Converter  (ADC0)
+                   366   ; main.c    179   ADC0_vInit();
+                   367           ?LINE   179
+0028 DA000000  R   368           CALLS   SEG _ADC0_vInit,_ADC0_vInit
+                   369   ; main.c    180 
+                   370   ; main.c    181 
+                   371   ; main.c    182   //   -----------------------------------------------------------------------
+                   372   ; main.c    183   //   Initialization of the Bank Select registers:
+                   373   ; main.c    184   //   -----------------------------------------------------------------------
+                   374   ; main.c    185 
+                   375   ; main.c    186 
+                   376   ; main.c    187   // USER CODE BEGIN (Init,3)
+                   377   ; main.c    188 
+                   378   ; main.c    189   // USER CODE END
+                   379   ; main.c    190 
+                   380   ; main.c    191   MAIN_vLockProtecReg();       // lock write security
+                   381           ?LINE   191
+002C DA007800  R   382           CALLS   SEG _MAIN_vLockProtecReg,_MAIN_vLockProtecReg
+                   383   ; main.c    192 
+                   384   ; main.c    193   //   globally enable interrupts
+                   385   ; main.c    194   PSW_IEN        =  1;          
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 17:37:50  Page:   8
 main
 
  LOC CODE        LINE   SOURCELINE
 
-003A B8DC          386           MOV     [R12],R13
-                   387   ; main.c    195 
-                   388   ; main.c    196 } //  End of function MAIN_vInit
-                   389           ?LINE   196
-003C DB00          390           RETS
-                   391   _MAIN_vInit     ENDP
-               R   392           ?SYMB   '',$,17,196
-                   393   ; main.c    197 
-                   394   ; main.c    198 
-                   395   ; main.c    199 //****************************************************************************
-                   396   ; main.c    200 // @Function      void MAIN_vUnlockProtecReg(void) 
-                   397   ; main.c    201 //
-                   398   ; main.c    202 //----------------------------------------------------------------------------
-                   399   ; main.c    203 // @Description   This function makes it possible to write one protected 
-                   400   ; main.c    204 //                register.
-                   401   ; main.c    205 //
-                   402   ; main.c    206 //----------------------------------------------------------------------------
-                   403   ; main.c    207 // @Returnvalue   None
-                   404   ; main.c    208 //
-                   405   ; main.c    209 //----------------------------------------------------------------------------
-                   406   ; main.c    210 // @Parameters    None
-                   407   ; main.c    211 //
-                   408   ; main.c    212 //----------------------------------------------------------------------------
-                   409   ; main.c    213 // @Date          29.09.2021
-                   410   ; main.c    214 //
-                   411   ; main.c    215 //****************************************************************************
-                   412   ; main.c    216 
-                   413   ; main.c    217 // USER CODE BEGIN (UnlockProtecReg,1)
-                   414   ; main.c    218 
-                   415   ; main.c    219 // USER CODE END
-                   416   ; main.c    220 
-                   417   ; main.c    221 void MAIN_vUnlockProtecReg(void)
-                   418   ; main.c    222 {
-                   419           ?LINE   222
-                   420           PUBLIC  _MAIN_vUnlockProtecReg
-               R   421           ?SYMB   'MAIN_vUnlockProtecReg',_MAIN_vUnlockProtecReg,37,1
-                   422           ?SYMB   '',222,8,34
-                   423           ?SYMB   'uword',18,13,280
-                   424   _MAIN_vUnlockProtecReg  PROC    FAR
-                   425           ?SYMB   '',00H,95,0
-003E 2802          426           SUB     R0,#02h
-               R   427           ?SYMB   '',$,96,2
-                   428   ; Locals:
-                   429   ;     uwPASSWORD = offset 0
-                   430   ; 
-                   431   ; Statics:
-                   432   ; 
-                   433   ; CSEs:
+                   386           ?LINE   194
+0030 E6FC10FF      387           MOV     R12,#0FF10h
+0034 A8DC          388           MOV     R13,[R12]
+0036 1AFD0808      389           BFLDH   R13,#08h,#08h
+003A B8DC          390           MOV     [R12],R13
+                   391   ; main.c    195 
+                   392   ; main.c    196 } //  End of function MAIN_vInit
+                   393           ?LINE   196
+003C DB00          394           RETS
+                   395   _MAIN_vInit     ENDP
+               R   396           ?SYMB   '',$,17,196
+                   397   ; main.c    197 
+                   398   ; main.c    198 
+                   399   ; main.c    199 //****************************************************************************
+                   400   ; main.c    200 // @Function      void MAIN_vUnlockProtecReg(void) 
+                   401   ; main.c    201 //
+                   402   ; main.c    202 //----------------------------------------------------------------------------
+                   403   ; main.c    203 // @Description   This function makes it possible to write one protected 
+                   404   ; main.c    204 //                register.
+                   405   ; main.c    205 //
+                   406   ; main.c    206 //----------------------------------------------------------------------------
+                   407   ; main.c    207 // @Returnvalue   None
+                   408   ; main.c    208 //
+                   409   ; main.c    209 //----------------------------------------------------------------------------
+                   410   ; main.c    210 // @Parameters    None
+                   411   ; main.c    211 //
+                   412   ; main.c    212 //----------------------------------------------------------------------------
+                   413   ; main.c    213 // @Date          29.09.2021
+                   414   ; main.c    214 //
+                   415   ; main.c    215 //****************************************************************************
+                   416   ; main.c    216 
+                   417   ; main.c    217 // USER CODE BEGIN (UnlockProtecReg,1)
+                   418   ; main.c    218 
+                   419   ; main.c    219 // USER CODE END
+                   420   ; main.c    220 
+                   421   ; main.c    221 void MAIN_vUnlockProtecReg(void)
+                   422   ; main.c    222 {
+                   423           ?LINE   222
+                   424           PUBLIC  _MAIN_vUnlockProtecReg
+               R   425           ?SYMB   'MAIN_vUnlockProtecReg',_MAIN_vUnlockProtecReg,37,1
+                   426           ?SYMB   '',222,8,34
+                   427           ?SYMB   'uword',18,13,280
+                   428   _MAIN_vUnlockProtecReg  PROC    FAR
+                   429           ?SYMB   '',00H,95,0
+003E 2802          430           SUB     R0,#02h
+               R   431           ?SYMB   '',$,96,2
+                   432   ; Locals:
+                   433   ;     uwPASSWORD = offset 0
                    434   ; 
-                   435   ; main.c    223   uword uwPASSWORD;
-                   436           ?SYMB   'uwPASSWORD',1,98,280
-               R   437           ?SYMB   '-2',$,101,1
-                   438   ; main.c    224 
-                   439   ; main.c    225     SCU_SLC = 0xAAAA;                   // command 0
-                   440           ?LINE   225
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 16:19:00  Page:   9
+                   435   ; Statics:
+                   436   ; 
+                   437   ; CSEs:
+                   438   ; 
+                   439   ; main.c    223   uword uwPASSWORD;
+                   440           ?SYMB   'uwPASSWORD',1,98,280
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 17:37:50  Page:   9
 main
 
  LOC CODE        LINE   SOURCELINE
 
-0040 E6FCAAAA      441           MOV     R12,#0AAAAh
-0044 F6FCC0F0      442           MOV     0F0C0h,R12
-                   443   ; main.c    226     SCU_SLC = 0x5554;                   // command 1
-                   444           ?LINE   226
-0048 E6FC5455      445           MOV     R12,#05554h
-004C F6FCC0F0      446           MOV     0F0C0h,R12
-                   447   ; main.c    227 
-                   448   ; main.c    228     uwPASSWORD = SCU_SLS & 0x00FF;
-                   449           ?LINE   228
-0050 F2FCC2F0      450           MOV     R12,0F0C2h
-0054 66FCFF00      451           AND     R12,#0FFh
-0058 B8C0          452           MOV     [R0],R12
-                   453   ; main.c    229     uwPASSWORD = (~uwPASSWORD) & 0x00FF;
-                   454           ?LINE   229
-005A A8C0          455           MOV     R12,[R0]
-005C 91C0          456           CPL     R12
-005E 66FCFF00      457           AND     R12,#0FFh
-0062 B8C0          458           MOV     [R0],R12
-                   459   ; main.c    230 
-                   460   ; main.c    231     SCU_SLC = 0x9600 | uwPASSWORD;      // command 2
-                   461           ?LINE   231
-0064 A8C0          462           MOV     R12,[R0]
-0066 76FC0096      463           OR      R12,#09600h
-006A F6FCC0F0      464           MOV     0F0C0h,R12
-                   465   ; main.c    232     SCU_SLC = 0x0000;                   // command 3
-                   466           ?LINE   232
-006E E00C          467           MOV     R12,#00h
-0070 F6FCC0F0      468           MOV     0F0C0h,R12
-                   469   ; main.c    233 
-                   470   ; main.c    234 } //  End of function MAIN_vUnlockProtecReg
-               R   471           ?SYMB   '',$,102,1
-                   472           ?LINE   234
-0074 0802          473           ADD     R0,#02h
-               R   474           ?SYMB   '',$,96,0
-0076 DB00          475           RETS
-                   476   _MAIN_vUnlockProtecReg  ENDP
-               R   477           ?SYMB   '',$,17,234
-                   478   ; main.c    235 
-                   479   ; main.c    236 
-                   480   ; main.c    237 //****************************************************************************
-                   481   ; main.c    238 // @Function      void MAIN_vLockProtecReg(void) 
-                   482   ; main.c    239 //
-                   483   ; main.c    240 //----------------------------------------------------------------------------
-                   484   ; main.c    241 // @Description   This function makes it possible to lock one protected 
-                   485   ; main.c    242 //                register.
-                   486   ; main.c    243 //
-                   487   ; main.c    244 //----------------------------------------------------------------------------
-                   488   ; main.c    245 // @Returnvalue   None
-                   489   ; main.c    246 //
-                   490   ; main.c    247 //----------------------------------------------------------------------------
-                   491   ; main.c    248 // @Parameters    None
-                   492   ; main.c    249 //
-                   493   ; main.c    250 //----------------------------------------------------------------------------
-                   494   ; main.c    251 // @Date          29.09.2021
-                   495   ; main.c    252 //
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 16:19:00  Page:  10
+               R   441           ?SYMB   '-2',$,101,1
+                   442   ; main.c    224 
+                   443   ; main.c    225     SCU_SLC = 0xAAAA;                   // command 0
+                   444           ?LINE   225
+0040 E6FCAAAA      445           MOV     R12,#0AAAAh
+0044 F6FCC0F0      446           MOV     0F0C0h,R12
+                   447   ; main.c    226     SCU_SLC = 0x5554;                   // command 1
+                   448           ?LINE   226
+0048 E6FC5455      449           MOV     R12,#05554h
+004C F6FCC0F0      450           MOV     0F0C0h,R12
+                   451   ; main.c    227 
+                   452   ; main.c    228     uwPASSWORD = SCU_SLS & 0x00FF;
+                   453           ?LINE   228
+0050 F2FCC2F0      454           MOV     R12,0F0C2h
+0054 66FCFF00      455           AND     R12,#0FFh
+0058 B8C0          456           MOV     [R0],R12
+                   457   ; main.c    229     uwPASSWORD = (~uwPASSWORD) & 0x00FF;
+                   458           ?LINE   229
+005A A8C0          459           MOV     R12,[R0]
+005C 91C0          460           CPL     R12
+005E 66FCFF00      461           AND     R12,#0FFh
+0062 B8C0          462           MOV     [R0],R12
+                   463   ; main.c    230 
+                   464   ; main.c    231     SCU_SLC = 0x9600 | uwPASSWORD;      // command 2
+                   465           ?LINE   231
+0064 A8C0          466           MOV     R12,[R0]
+0066 76FC0096      467           OR      R12,#09600h
+006A F6FCC0F0      468           MOV     0F0C0h,R12
+                   469   ; main.c    232     SCU_SLC = 0x0000;                   // command 3
+                   470           ?LINE   232
+006E E00C          471           MOV     R12,#00h
+0070 F6FCC0F0      472           MOV     0F0C0h,R12
+                   473   ; main.c    233 
+                   474   ; main.c    234 } //  End of function MAIN_vUnlockProtecReg
+               R   475           ?SYMB   '',$,102,1
+                   476           ?LINE   234
+0074 0802          477           ADD     R0,#02h
+               R   478           ?SYMB   '',$,96,0
+0076 DB00          479           RETS
+                   480   _MAIN_vUnlockProtecReg  ENDP
+               R   481           ?SYMB   '',$,17,234
+                   482   ; main.c    235 
+                   483   ; main.c    236 
+                   484   ; main.c    237 //****************************************************************************
+                   485   ; main.c    238 // @Function      void MAIN_vLockProtecReg(void) 
+                   486   ; main.c    239 //
+                   487   ; main.c    240 //----------------------------------------------------------------------------
+                   488   ; main.c    241 // @Description   This function makes it possible to lock one protected 
+                   489   ; main.c    242 //                register.
+                   490   ; main.c    243 //
+                   491   ; main.c    244 //----------------------------------------------------------------------------
+                   492   ; main.c    245 // @Returnvalue   None
+                   493   ; main.c    246 //
+                   494   ; main.c    247 //----------------------------------------------------------------------------
+                   495   ; main.c    248 // @Parameters    None
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 17:37:50  Page:  10
 main
 
  LOC CODE        LINE   SOURCELINE
 
-                   496   ; main.c    253 //****************************************************************************
-                   497   ; main.c    254 
-                   498   ; main.c    255 // USER CODE BEGIN (LockProtecReg,1)
-                   499   ; main.c    256 
-                   500   ; main.c    257 // USER CODE END
-                   501   ; main.c    258 
-                   502   ; main.c    259 void MAIN_vLockProtecReg(void)
-                   503   ; main.c    260 {
-                   504           ?LINE   260
-                   505           PUBLIC  _MAIN_vLockProtecReg
-               R   506           ?SYMB   'MAIN_vLockProtecReg',_MAIN_vLockProtecReg,37,1
-                   507           ?SYMB   '',260,8,34
-                   508   _MAIN_vLockProtecReg    PROC    FAR
-                   509           ?SYMB   '',00H,95,0
-0078 2802          510           SUB     R0,#02h
-               R   511           ?SYMB   '',$,96,2
-                   512   ; Locals:
-                   513   ;     uwPASSWORD = offset 0
-                   514   ; 
-                   515   ; Statics:
-                   516   ; 
-                   517   ; CSEs:
+                   496   ; main.c    249 //
+                   497   ; main.c    250 //----------------------------------------------------------------------------
+                   498   ; main.c    251 // @Date          29.09.2021
+                   499   ; main.c    252 //
+                   500   ; main.c    253 //****************************************************************************
+                   501   ; main.c    254 
+                   502   ; main.c    255 // USER CODE BEGIN (LockProtecReg,1)
+                   503   ; main.c    256 
+                   504   ; main.c    257 // USER CODE END
+                   505   ; main.c    258 
+                   506   ; main.c    259 void MAIN_vLockProtecReg(void)
+                   507   ; main.c    260 {
+                   508           ?LINE   260
+                   509           PUBLIC  _MAIN_vLockProtecReg
+               R   510           ?SYMB   'MAIN_vLockProtecReg',_MAIN_vLockProtecReg,37,1
+                   511           ?SYMB   '',260,8,34
+                   512   _MAIN_vLockProtecReg    PROC    FAR
+                   513           ?SYMB   '',00H,95,0
+0078 2802          514           SUB     R0,#02h
+               R   515           ?SYMB   '',$,96,2
+                   516   ; Locals:
+                   517   ;     uwPASSWORD = offset 0
                    518   ; 
-                   519   ; main.c    261   uword uwPASSWORD;
-                   520           ?SYMB   'uwPASSWORD',1,98,280
-               R   521           ?SYMB   '-2',$,101,1
-                   522   ; main.c    262 
-                   523   ; main.c    263     SCU_SLC = 0xAAAA;                   // command 0
-                   524           ?LINE   263
-007A E6FCAAAA      525           MOV     R12,#0AAAAh
-007E F6FCC0F0      526           MOV     0F0C0h,R12
-                   527   ; main.c    264     SCU_SLC = 0x5554;                   // command 1
-                   528           ?LINE   264
-0082 E6FC5455      529           MOV     R12,#05554h
-0086 F6FCC0F0      530           MOV     0F0C0h,R12
-                   531   ; main.c    265 
-                   532   ; main.c    266     uwPASSWORD = SCU_SLS & 0x00FF;
-                   533           ?LINE   266
-008A F2FCC2F0      534           MOV     R12,0F0C2h
-008E 66FCFF00      535           AND     R12,#0FFh
-0092 B8C0          536           MOV     [R0],R12
-                   537   ; main.c    267     uwPASSWORD = (~uwPASSWORD) & 0x00FF;
-                   538           ?LINE   267
-0094 A8C0          539           MOV     R12,[R0]
-0096 91C0          540           CPL     R12
-0098 66FCFF00      541           AND     R12,#0FFh
-009C B8C0          542           MOV     [R0],R12
-                   543   ; main.c    268 
-                   544   ; main.c    269     SCU_SLC = 0x9600 | uwPASSWORD;      // command 2
-                   545           ?LINE   269
-009E A8C0          546           MOV     R12,[R0]
-00A0 76FC0096      547           OR      R12,#09600h
-00A4 F6FCC0F0      548           MOV     0F0C0h,R12
-                   549   ; main.c    270     SCU_SLC = 0x1800;                   // command 3; new PASSWOR is 0x00
-                   550           ?LINE   270
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 16:19:00  Page:  11
+                   519   ; Statics:
+                   520   ; 
+                   521   ; CSEs:
+                   522   ; 
+                   523   ; main.c    261   uword uwPASSWORD;
+                   524           ?SYMB   'uwPASSWORD',1,98,280
+               R   525           ?SYMB   '-2',$,101,1
+                   526   ; main.c    262 
+                   527   ; main.c    263     SCU_SLC = 0xAAAA;                   // command 0
+                   528           ?LINE   263
+007A E6FCAAAA      529           MOV     R12,#0AAAAh
+007E F6FCC0F0      530           MOV     0F0C0h,R12
+                   531   ; main.c    264     SCU_SLC = 0x5554;                   // command 1
+                   532           ?LINE   264
+0082 E6FC5455      533           MOV     R12,#05554h
+0086 F6FCC0F0      534           MOV     0F0C0h,R12
+                   535   ; main.c    265 
+                   536   ; main.c    266     uwPASSWORD = SCU_SLS & 0x00FF;
+                   537           ?LINE   266
+008A F2FCC2F0      538           MOV     R12,0F0C2h
+008E 66FCFF00      539           AND     R12,#0FFh
+0092 B8C0          540           MOV     [R0],R12
+                   541   ; main.c    267     uwPASSWORD = (~uwPASSWORD) & 0x00FF;
+                   542           ?LINE   267
+0094 A8C0          543           MOV     R12,[R0]
+0096 91C0          544           CPL     R12
+0098 66FCFF00      545           AND     R12,#0FFh
+009C B8C0          546           MOV     [R0],R12
+                   547   ; main.c    268 
+                   548   ; main.c    269     SCU_SLC = 0x9600 | uwPASSWORD;      // command 2
+                   549           ?LINE   269
+009E A8C0          550           MOV     R12,[R0]
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 17:37:50  Page:  11
 main
 
  LOC CODE        LINE   SOURCELINE
 
-00A8 E6FC0018      551           MOV     R12,#01800h
-00AC F6FCC0F0      552           MOV     0F0C0h,R12
-                   553   ; main.c    271 
-                   554   ; main.c    272     uwPASSWORD = SCU_SLS & 0x00FF;
-                   555           ?LINE   272
-00B0 F2FCC2F0      556           MOV     R12,0F0C2h
-00B4 66FCFF00      557           AND     R12,#0FFh
-00B8 B8C0          558           MOV     [R0],R12
-                   559   ; main.c    273     uwPASSWORD = (~uwPASSWORD) & 0x00FF;
-                   560           ?LINE   273
-00BA A8C0          561           MOV     R12,[R0]
-00BC 91C0          562           CPL     R12
-00BE 66FCFF00      563           AND     R12,#0FFh
-00C2 B8C0          564           MOV     [R0],R12
-                   565   ; main.c    274     SCU_SLC = 0x8E00 | uwPASSWORD;      // command 4
-                   566           ?LINE   274
-00C4 A8C0          567           MOV     R12,[R0]
-00C6 76FC008E      568           OR      R12,#08E00h
-00CA F6FCC0F0      569           MOV     0F0C0h,R12
-                   570   ; main.c    275 
-                   571   ; main.c    276 } //  End of function MAIN_vLockProtecReg
-               R   572           ?SYMB   '',$,102,1
-                   573           ?LINE   276
-00CE 0802          574           ADD     R0,#02h
-               R   575           ?SYMB   '',$,96,0
-00D0 DB00          576           RETS
-                   577   _MAIN_vLockProtecReg    ENDP
-               R   578           ?SYMB   '',$,17,276
-                   579   ; main.c    277 
-                   580   ; main.c    278 
-                   581   ; main.c    279 //****************************************************************************
-                   582   ; main.c    280 // @Function      void MAIN_vChangeFreq(void) 
-                   583   ; main.c    281 //
-                   584   ; main.c    282 //----------------------------------------------------------------------------
-                   585   ; main.c    283 // @Description   This function is used to select the external crystal and
-                   586   ; main.c    284 //                configure the system frequency to 80Mhz/66Mhz.
-                   587   ; main.c    285 //
-                   588   ; main.c    286 //----------------------------------------------------------------------------
-                   589   ; main.c    287 // @Returnvalue   None
-                   590   ; main.c    288 //
-                   591   ; main.c    289 //----------------------------------------------------------------------------
-                   592   ; main.c    290 // @Parameters    None
-                   593   ; main.c    291 //
-                   594   ; main.c    292 //----------------------------------------------------------------------------
-                   595   ; main.c    293 // @Date          29.09.2021
-                   596   ; main.c    294 //
-                   597   ; main.c    295 //****************************************************************************
-                   598   ; main.c    296 
-                   599   ; main.c    297 // USER CODE BEGIN (ChangeFreq,1)
-                   600   ; main.c    298 
-                   601   ; main.c    299 // USER CODE END
-                   602   ; main.c    300 
-                   603   ; main.c    301 void MAIN_vChangeFreq(void)
-                   604   ; main.c    302 {
-                   605           ?LINE   302
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 16:19:00  Page:  12
+00A0 76FC0096      551           OR      R12,#09600h
+00A4 F6FCC0F0      552           MOV     0F0C0h,R12
+                   553   ; main.c    270     SCU_SLC = 0x1800;                   // command 3; new PASSWOR is 0x00
+                   554           ?LINE   270
+00A8 E6FC0018      555           MOV     R12,#01800h
+00AC F6FCC0F0      556           MOV     0F0C0h,R12
+                   557   ; main.c    271 
+                   558   ; main.c    272     uwPASSWORD = SCU_SLS & 0x00FF;
+                   559           ?LINE   272
+00B0 F2FCC2F0      560           MOV     R12,0F0C2h
+00B4 66FCFF00      561           AND     R12,#0FFh
+00B8 B8C0          562           MOV     [R0],R12
+                   563   ; main.c    273     uwPASSWORD = (~uwPASSWORD) & 0x00FF;
+                   564           ?LINE   273
+00BA A8C0          565           MOV     R12,[R0]
+00BC 91C0          566           CPL     R12
+00BE 66FCFF00      567           AND     R12,#0FFh
+00C2 B8C0          568           MOV     [R0],R12
+                   569   ; main.c    274     SCU_SLC = 0x8E00 | uwPASSWORD;      // command 4
+                   570           ?LINE   274
+00C4 A8C0          571           MOV     R12,[R0]
+00C6 76FC008E      572           OR      R12,#08E00h
+00CA F6FCC0F0      573           MOV     0F0C0h,R12
+                   574   ; main.c    275 
+                   575   ; main.c    276 } //  End of function MAIN_vLockProtecReg
+               R   576           ?SYMB   '',$,102,1
+                   577           ?LINE   276
+00CE 0802          578           ADD     R0,#02h
+               R   579           ?SYMB   '',$,96,0
+00D0 DB00          580           RETS
+                   581   _MAIN_vLockProtecReg    ENDP
+               R   582           ?SYMB   '',$,17,276
+                   583   ; main.c    277 
+                   584   ; main.c    278 
+                   585   ; main.c    279 //****************************************************************************
+                   586   ; main.c    280 // @Function      void MAIN_vChangeFreq(void) 
+                   587   ; main.c    281 //
+                   588   ; main.c    282 //----------------------------------------------------------------------------
+                   589   ; main.c    283 // @Description   This function is used to select the external crystal and
+                   590   ; main.c    284 //                configure the system frequency to 80Mhz/66Mhz.
+                   591   ; main.c    285 //
+                   592   ; main.c    286 //----------------------------------------------------------------------------
+                   593   ; main.c    287 // @Returnvalue   None
+                   594   ; main.c    288 //
+                   595   ; main.c    289 //----------------------------------------------------------------------------
+                   596   ; main.c    290 // @Parameters    None
+                   597   ; main.c    291 //
+                   598   ; main.c    292 //----------------------------------------------------------------------------
+                   599   ; main.c    293 // @Date          29.09.2021
+                   600   ; main.c    294 //
+                   601   ; main.c    295 //****************************************************************************
+                   602   ; main.c    296 
+                   603   ; main.c    297 // USER CODE BEGIN (ChangeFreq,1)
+                   604   ; main.c    298 
+                   605   ; main.c    299 // USER CODE END
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 17:37:50  Page:  12
 main
 
  LOC CODE        LINE   SOURCELINE
 
-                   606           PUBLIC  _MAIN_vChangeFreq
-               R   607           ?SYMB   'MAIN_vChangeFreq',_MAIN_vChangeFreq,37,1
-                   608           ?SYMB   '',302,8,34
-                   609   _MAIN_vChangeFreq       PROC    FAR
-                   610           ?SYMB   '',00H,95,0
-                   611   ; Locals:
-                   612   ; 
-                   613   ; Statics:
-                   614   ; 
-                   615   ; CSEs:
+                   606   ; main.c    300 
+                   607   ; main.c    301 void MAIN_vChangeFreq(void)
+                   608   ; main.c    302 {
+                   609           ?LINE   302
+                   610           PUBLIC  _MAIN_vChangeFreq
+               R   611           ?SYMB   'MAIN_vChangeFreq',_MAIN_vChangeFreq,37,1
+                   612           ?SYMB   '',302,8,34
+                   613   _MAIN_vChangeFreq       PROC    FAR
+                   614           ?SYMB   '',00H,95,0
+                   615   ; Locals:
                    616   ; 
-                   617   ; main.c    303   SCS_SwitchToHighPrecBandgap();
-                   618           ?LINE   303
-00D2 DA000000  R   619           CALLS   SEG _SCS_SwitchToHighPrecBandgap,_SCS_SwitchToHighPrecBandgap
-                   620   ; main.c    304 
-                   621   ; main.c    305   //For application and internal application resets, the complete PLL configura
+                   617   ; Statics:
+                   618   ; 
+                   619   ; CSEs:
+                   620   ; 
+                   621   ; main.c    303   SCS_SwitchToHighPrecBandgap();
+                   622           ?LINE   303
+00D2 DA000000  R   623           CALLS   SEG _SCS_SwitchToHighPrecBandgap,_SCS_SwitchToHighPrecBandgap
+                   624   ; main.c    304 
+                   625   ; main.c    305   //For application and internal application resets, the complete PLL configura
                          tion could be avoided
-                   622   ; main.c    306   //The entry from application resets and internal application reset is covered
+                   626   ; main.c    306   //The entry from application resets and internal application reset is covered
                           in the following differentiation
-                   623   ; main.c    307   //in int/ext clock in lock/unlocked state.
-                   624   ; main.c    308 
-                   625   ; main.c    309   if  ((SCU_PLLSTAT & 0x0004) == 0x0004)             // fR derived from Interna
+                   627   ; main.c    307   //in int/ext clock in lock/unlocked state.
+                   628   ; main.c    308 
+                   629   ; main.c    309   if  ((SCU_PLLSTAT & 0x0004) == 0x0004)             // fR derived from Interna
                          l clock
-                   626           ?LINE   309
-00D6 F2FCBCF0      627           MOV     R12,0F0BCh
-00DA 9AFC0720      628           JNB     R12.2,_7
-                   629   ; main.c    310         {
-                   630   ; main.c    311             //Normal startup state during boot and the clock
-                   631   ; main.c    312             //has to be in the next step configured on the external crystal
-                   632   ; main.c    313             //use XTAL/VCO, count XTAL clock
-                   633   ; main.c    314 
-                   634   ; main.c    315             SCS_StartXtalOsc(1);                     // Starts the crystal osci
+                   630           ?LINE   309
+00D6 F2FCBCF0      631           MOV     R12,0F0BCh
+00DA 9AFC0720      632           JNB     R12.2,_7
+                   633   ; main.c    310         {
+                   634   ; main.c    311             //Normal startup state during boot and the clock
+                   635   ; main.c    312             //has to be in the next step configured on the external crystal
+                   636   ; main.c    313             //use XTAL/VCO, count XTAL clock
+                   637   ; main.c    314 
+                   638   ; main.c    315             SCS_StartXtalOsc(1);                     // Starts the crystal osci
                          llator
-                   635           ?LINE   315
-00DE E01C          636           MOV     R12,#01h
-00E0 DA000000  R   637           CALLS   SEG _SCS_StartXtalOsc,_SCS_StartXtalOsc
-                   638   ; main.c    316             SCS_SwitchSystemClock(1);                // System clock is increas
+                   639           ?LINE   315
+00DE E01C          640           MOV     R12,#01h
+00E0 DA000000  R   641           CALLS   SEG _SCS_StartXtalOsc,_SCS_StartXtalOsc
+                   642   ; main.c    316             SCS_SwitchSystemClock(1);                // System clock is increas
                          ed to target speed (80/66 MHz)
-                   639           ?LINE   316
-00E4 E01C          640           MOV     R12,#01h
-00E6 DA000000  R   641           CALLS   SEG _SCS_SwitchSystemClock,_SCS_SwitchSystemClock
-                   642   ; main.c    317 
-                   643   ; main.c    318         }
-                   644           ?LINE   318
-00EA DB00          645           RETS
-00EC               646   _7:
-                   647   ; main.c    319 
-                   648   ; main.c    320   else                                               // fR derived from externa
+                   643           ?LINE   316
+00E4 E01C          644           MOV     R12,#01h
+00E6 DA000000  R   645           CALLS   SEG _SCS_SwitchSystemClock,_SCS_SwitchSystemClock
+                   646   ; main.c    317 
+                   647   ; main.c    318         }
+                   648           ?LINE   318
+00EA DB00          649           RETS
+00EC               650   _7:
+                   651   ; main.c    319 
+                   652   ; main.c    320   else                                               // fR derived from externa
                          l crystal clock
-                   649   ; main.c    321         {
-                   650   ; main.c    322             if ((SCU_PLLSTAT & 0x1009) == 0x1009)    // fR derived from externa
+                   653   ; main.c    321         {
+                   654   ; main.c    322             if ((SCU_PLLSTAT & 0x1009) == 0x1009)    // fR derived from externa
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 17:37:50  Page:  13
+main
+
+ LOC CODE        LINE   SOURCELINE
+
                          l crystal clock + VCO is locked
-                   651           ?LINE   322
-00EC F2FCBCF0      652           MOV     R12,0F0BCh
-00F0 66FC0910      653           AND     R12,#01009h
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 16:19:00  Page:  13
-main
-
- LOC CODE        LINE   SOURCELINE
-
-00F4 46FC0910      654           CMP     R12,#01009h
-00F8 3D02          655           JMPR    cc_NE,_8
-                   656   ; main.c    323             {
-                   657   ; main.c    324                //usually after an application reset where clock need not be con
+                   655           ?LINE   322
+00EC F2FCBCF0      656           MOV     R12,0F0BCh
+00F0 66FC0910      657           AND     R12,#01009h
+00F4 46FC0910      658           CMP     R12,#01009h
+00F8 3D02          659           JMPR    cc_NE,_8
+                   660   ; main.c    323             {
+                   661   ; main.c    324                //usually after an application reset where clock need not be con
                          figured again.
-                   658   ; main.c    325                //check K2/P/N values and decide whether these values have to be
+                   662   ; main.c    325                //check K2/P/N values and decide whether these values have to be
                           adapted based on application needs.
-                   659   ; main.c    326                NOP();
-                   660           ?LINE   326
-00FA CC00          661           NOP
-                   662   ; main.c    327                //usually the PLL losss of Lock TRAP schould be enabled here.
-                   663   ; main.c    328             }
-                   664           ?LINE   328
-00FC 0D01          665           JMPR    cc_UC,_9
-00FE               666   _8:
-                   667   ; main.c    329             else                                     //fR derived from external
+                   663   ; main.c    326                NOP();
+                   664           ?LINE   326
+00FA CC00          665           NOP
+                   666   ; main.c    327                //usually the PLL losss of Lock TRAP schould be enabled here.
+                   667   ; main.c    328             }
+                   668           ?LINE   328
+00FC 0D01          669           JMPR    cc_UC,_9
+00FE               670   _8:
+                   671   ; main.c    329             else                                     //fR derived from external
                           crystal clock + VCO is not locked
-                   668   ; main.c    330 
-                   669   ; main.c    331             {
-                   670   ; main.c    332                //estimate the K1 value and the current frequency
-                   671   ; main.c    333                //reduce K2/P/N values in steps so that the frequency
-                   672   ; main.c    334                //jumps is limited to 20MHz or factor of 5 whichever is minimum
-                   673   ; main.c    335                NOP();
-                   674           ?LINE   335
-00FE CC00          675           NOP
-                   676   ; main.c    336             }
-                   677           ?LINE   336
-0100               678   _9:
-                   679   ; main.c    337 
-                   680   ; main.c    338 
-                   681   ; main.c    339         }
-                   682           ?LINE   339
-0100               683   _10:
-                   684   ; main.c    340 
-                   685   ; main.c    341 } //  End of function MAIN_vChangeFreq
-                   686           ?LINE   341
-0100 DB00          687           RETS
-                   688   _MAIN_vChangeFreq       ENDP
-               R   689           ?SYMB   '',$,17,341
-                   690   ; main.c    342 
-                   691   ; main.c    343 
-                   692   ; main.c    344 //****************************************************************************
-                   693   ; main.c    345 // @Function      void main(void) 
-                   694   ; main.c    346 //
-                   695   ; main.c    347 //----------------------------------------------------------------------------
-                   696   ; main.c    348 // @Description   This is the main function.
-                   697   ; main.c    349 //
-                   698   ; main.c    350 //----------------------------------------------------------------------------
-                   699   ; main.c    351 // @Returnvalue   None
-                   700   ; main.c    352 //
-                   701   ; main.c    353 //----------------------------------------------------------------------------
-                   702   ; main.c    354 // @Parameters    None
-                   703   ; main.c    355 //
-                   704   ; main.c    356 //----------------------------------------------------------------------------
-                   705   ; main.c    357 // @Date          29.09.2021
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 16:19:00  Page:  14
+                   672   ; main.c    330 
+                   673   ; main.c    331             {
+                   674   ; main.c    332                //estimate the K1 value and the current frequency
+                   675   ; main.c    333                //reduce K2/P/N values in steps so that the frequency
+                   676   ; main.c    334                //jumps is limited to 20MHz or factor of 5 whichever is minimum
+                   677   ; main.c    335                NOP();
+                   678           ?LINE   335
+00FE CC00          679           NOP
+                   680   ; main.c    336             }
+                   681           ?LINE   336
+0100               682   _9:
+                   683   ; main.c    337 
+                   684   ; main.c    338 
+                   685   ; main.c    339         }
+                   686           ?LINE   339
+0100               687   _10:
+                   688   ; main.c    340 
+                   689   ; main.c    341 } //  End of function MAIN_vChangeFreq
+                   690           ?LINE   341
+0100 DB00          691           RETS
+                   692   _MAIN_vChangeFreq       ENDP
+               R   693           ?SYMB   '',$,17,341
+                   694   ; main.c    342 
+                   695   ; main.c    343 
+                   696   ; main.c    344 //****************************************************************************
+                   697   ; main.c    345 // @Function      void main(void) 
+                   698   ; main.c    346 //
+                   699   ; main.c    347 //----------------------------------------------------------------------------
+                   700   ; main.c    348 // @Description   This is the main function.
+                   701   ; main.c    349 //
+                   702   ; main.c    350 //----------------------------------------------------------------------------
+                   703   ; main.c    351 // @Returnvalue   None
+                   704   ; main.c    352 //
+                   705   ; main.c    353 //----------------------------------------------------------------------------
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 17:37:50  Page:  14
 main
 
  LOC CODE        LINE   SOURCELINE
 
-                   706   ; main.c    358 //
-                   707   ; main.c    359 //****************************************************************************
-                   708   ; main.c    360 
-                   709   ; main.c    361 // USER CODE BEGIN (Main,1)
-                   710   ; main.c    362 
-                   711   ; main.c    363 // USER CODE END
-                   712   ; main.c    364 
-                   713   ; main.c    365 void main(void)
-                   714   ; main.c    366 {
-                   715           ?LINE   366
-                   716           PUBLIC  _main
-               R   717           ?SYMB   'main',_main,37,1
-                   718           ?SYMB   '',366,8,34
-                   719   _main   PROC    FAR
-                   720           ?SYMB   '',00H,95,0
-0102 2804          721           SUB     R0,#04h
-               R   722           ?SYMB   '',$,96,4
-                   723   ; Locals:
-                   724   ;     raw = offset 0
-                   725   ; 
-                   726   ; Statics:
-                   727   ; 
-                   728   ; CSEs:
+                   706   ; main.c    354 // @Parameters    None
+                   707   ; main.c    355 //
+                   708   ; main.c    356 //----------------------------------------------------------------------------
+                   709   ; main.c    357 // @Date          29.09.2021
+                   710   ; main.c    358 //
+                   711   ; main.c    359 //****************************************************************************
+                   712   ; main.c    360 
+                   713   ; main.c    361 // USER CODE BEGIN (Main,1)
+                   714   ; main.c    362 
+                   715   ; main.c    363 // USER CODE END
+                   716   ; main.c    364 
+                   717   ; main.c    365 void main(void)
+                   718   ; main.c    366 {
+                   719           ?LINE   366
+                   720           PUBLIC  _main
+               R   721           ?SYMB   'main',_main,37,1
+                   722           ?SYMB   '',366,8,34
+                   723   _main   PROC    FAR
+                   724           ?SYMB   '',00H,95,0
+0102 2804          725           SUB     R0,#04h
+               R   726           ?SYMB   '',$,96,4
+                   727   ; Locals:
+                   728   ;     raw = offset 0
                    729   ; 
-                   730   ; main.c    367   // USER CODE BEGIN (Main,2)
-                   731   ; main.c    368 
-                   732   ; main.c    369   // USER CODE END
-                   733   ; main.c    370 
-                   734   ; main.c    371   MAIN_vInit();
-                   735           ?LINE   371
-0104 DA000000  R   736           CALLS   SEG _MAIN_vInit,_MAIN_vInit
-                   737   ; main.c    372 
-                   738   ; main.c    373   // USER CODE BEGIN (Main,3)
-                   739   ; main.c    374         generateTable();
-                   740           ?LINE   374
-0108 DA008403  R   741           CALLS   SEG _generateTable,_generateTable
-                   742   ; main.c    375         ADC0_vInit();
-                   743           ?LINE   375
-010C DA000000  R   744           CALLS   SEG _ADC0_vInit,_ADC0_vInit
-                   745   ; main.c    376         ADC0_vStartSeq0ReqChNum(0,0,1,6);
-                   746           ?LINE   376
-0110 E00C          747           MOV     R12,#00h
-0112 E00D          748           MOV     R13,#00h
-0114 E01E          749           MOV     R14,#01h
-0116 E06F          750           MOV     R15,#06h
-0118 DA000000  R   751           CALLS   SEG _ADC0_vStartSeq0ReqChNum,_ADC0_vStartSeq0ReqChNum
-                   752   ; main.c    377         CCU63_vStartTmr(CCU63_TIMER_12);
-                   753           ?LINE   377
-011C E6FCA6EB      754           MOV     R12,#0EBA6h
-0120 A8DC          755           MOV     R13,[R12]
-0122 1FFD          756           BSET    R13.1
-0124 B8DC          757           MOV     [R12],R13
-                   758   ; main.c    378         CCU62_vStartTmr(CCU62_TIMER_12);
-                   759           ?LINE   378
-0126 E6FC26EB      760           MOV     R12,#0EB26h
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 16:19:00  Page:  15
+                   730   ; Statics:
+                   731   ; 
+                   732   ; CSEs:
+                   733   ; 
+                   734   ; main.c    367   // USER CODE BEGIN (Main,2)
+                   735   ; main.c    368 
+                   736   ; main.c    369   // USER CODE END
+                   737   ; main.c    370 
+                   738   ; main.c    371   MAIN_vInit();
+                   739           ?LINE   371
+0104 DA000000  R   740           CALLS   SEG _MAIN_vInit,_MAIN_vInit
+                   741   ; main.c    372 
+                   742   ; main.c    373   // USER CODE BEGIN (Main,3)
+                   743   ; main.c    374         generateTable();
+                   744           ?LINE   374
+0108 DA008403  R   745           CALLS   SEG _generateTable,_generateTable
+                   746   ; main.c    375         ADC0_vInit();
+                   747           ?LINE   375
+010C DA000000  R   748           CALLS   SEG _ADC0_vInit,_ADC0_vInit
+                   749   ; main.c    376         ADC0_vStartSeq0ReqChNum(0,0,1,6);
+                   750           ?LINE   376
+0110 E00C          751           MOV     R12,#00h
+0112 E00D          752           MOV     R13,#00h
+0114 E01E          753           MOV     R14,#01h
+0116 E06F          754           MOV     R15,#06h
+0118 DA000000  R   755           CALLS   SEG _ADC0_vStartSeq0ReqChNum,_ADC0_vStartSeq0ReqChNum
+                   756   ; main.c    377         CCU63_vStartTmr(CCU63_TIMER_12);
+                   757           ?LINE   377
+011C E6FCA6EB      758           MOV     R12,#0EBA6h
+0120 A8DC          759           MOV     R13,[R12]
+0122 1FFD          760           BSET    R13.1
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 17:37:50  Page:  15
 main
 
  LOC CODE        LINE   SOURCELINE
 
-012A A8DC          761           MOV     R13,[R12]
-012C 1FFD          762           BSET    R13.1
-012E B8DC          763           MOV     [R12],R13
-                   764   ; main.c    379         GPT2_vStartTmr(GPT2_TIMER_6);
-                   765           ?LINE   379
-0130 E6FC48FF      766           MOV     R12,#0FF48h
-0134 A8DC          767           MOV     R13,[R12]
-0136 0AFD4040      768           BFLDL   R13,#040h,#040h
-013A B8DC          769           MOV     [R12],R13
-                   770   ; main.c    380   // USER CODE END
-                   771   ; main.c    381 
-                   772   ; main.c    382   while(1)
-                   773           ?LINE   382
-013C EA007C03  R   774           JMPA+   cc_UC,_48
-0140               775   _30:
-                   776   ; main.c    383   {
-                   777   ; main.c    384 
-                   778   ; main.c    385    // USER CODE BEGIN (Main,4)
-                   779   ; main.c    386    
-                   780   ; main.c    387    // one rampIndex step = 8ms, 250 steps = 2s
-                   781   ; main.c    388    if (rampIndex > 5250){
-                   782           ?LINE   388
-0140 F2FC0000  R   783           MOV     R12,_rampIndex
-0144 46FC8214      784           CMP     R12,#01482h
-0148 FD2D          785           JMPR    cc_ULE,_31
-                   786   ; main.c    389                 unsigned long raw;
-               R   787           ?SYMB   '',$,9,389
-                   788           ?SYMB   'raw',1,98,7
-               R   789           ?SYMB   '-4',$,101,1
-                   790   ; main.c    390                 raw = ADC0_uwGetResultData(RESULT_REG_0);
-                   791           ?LINE   390
-014A F2FCB0E0      792           MOV     R12,0E0B0h
-014E 9AFC07C0      793           JNB     R12.12,_49
-0152 0D00          794           JMPR    cc_UC,_50
-0154               795   _50:
-0154 F2FC50E0      796           MOV     R12,0E050h
-0158 66FCFF3F      797           AND     R12,#03FFFh
-015C 7C2C          798           SHR     R12,#02h
-015E 0D01          799           JMPR    cc_UC,_51
-0160               800   _49:
-0160 E00C          801           MOV     R12,#00h
-0162               802   _51:
-0162 E00D          803           MOV     R13,#00h
-0164 B8C0          804           MOV     [R0],R12
-0166 C4D00200      805           MOV     [R0+#02H],R13
-                   806   ; main.c    391                 frequency = controller((25*raw)/4096);  //4096 ist Auflösung de
+0124 B8DC          761           MOV     [R12],R13
+                   762   ; main.c    378         CCU62_vStartTmr(CCU62_TIMER_12);
+                   763           ?LINE   378
+0126 E6FC26EB      764           MOV     R12,#0EB26h
+012A A8DC          765           MOV     R13,[R12]
+012C 1FFD          766           BSET    R13.1
+012E B8DC          767           MOV     [R12],R13
+                   768   ; main.c    379         GPT2_vStartTmr(GPT2_TIMER_6);
+                   769           ?LINE   379
+0130 E6FC48FF      770           MOV     R12,#0FF48h
+0134 A8DC          771           MOV     R13,[R12]
+0136 0AFD4040      772           BFLDL   R13,#040h,#040h
+013A B8DC          773           MOV     [R12],R13
+                   774   ; main.c    380   // USER CODE END
+                   775   ; main.c    381 
+                   776   ; main.c    382   while(1)
+                   777           ?LINE   382
+013C EA007C03  R   778           JMPA+   cc_UC,_48
+0140               779   _30:
+                   780   ; main.c    383   {
+                   781   ; main.c    384 
+                   782   ; main.c    385    // USER CODE BEGIN (Main,4)
+                   783   ; main.c    386    
+                   784   ; main.c    387    // one rampIndex step = 8ms, 250 steps = 2s
+                   785   ; main.c    388    if (rampIndex > 5250){
+                   786           ?LINE   388
+0140 F2FC0000  R   787           MOV     R12,_rampIndex
+0144 46FC8214      788           CMP     R12,#01482h
+0148 FD2D          789           JMPR    cc_ULE,_31
+                   790   ; main.c    389                 unsigned long raw;
+               R   791           ?SYMB   '',$,9,389
+                   792           ?SYMB   'raw',1,98,7
+               R   793           ?SYMB   '-4',$,101,1
+                   794   ; main.c    390                 raw = ADC0_uwGetResultData(RESULT_REG_0);
+                   795           ?LINE   390
+014A F2FCB0E0      796           MOV     R12,0E0B0h
+014E 9AFC07C0      797           JNB     R12.12,_49
+0152 0D00          798           JMPR    cc_UC,_50
+0154               799   _50:
+0154 F2FC50E0      800           MOV     R12,0E050h
+0158 66FCFF3F      801           AND     R12,#03FFFh
+015C 7C2C          802           SHR     R12,#02h
+015E 0D01          803           JMPR    cc_UC,_51
+0160               804   _49:
+0160 E00C          805           MOV     R12,#00h
+0162               806   _51:
+0162 E00D          807           MOV     R13,#00h
+0164 B8C0          808           MOV     [R0],R12
+0166 C4D00200      809           MOV     [R0+#02H],R13
+                   810   ; main.c    391                 frequency = controller((25*raw)/4096);  //4096 ist Auflösung de
                          s ADC, links = 0, rechts = 4096
-                   807           ?LINE   391
-016A A840          808           MOV     R4,[R0]
-016C D4500200      809           MOV     R5,[R0+#02H]
-0170 E6FA1900      810           MOV     R10,#019h
-0174 E00B          811           MOV     R11,#00h
-0176 DA000000  R   812           CALLS   SEG __mul,__mul
-017A F0C5          813           MOV     R12,R5
-017C 7CC4          814           SHR     R4,#0Ch
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 16:19:00  Page:  16
+                   811           ?LINE   391
+016A A840          812           MOV     R4,[R0]
+016C D4500200      813           MOV     R5,[R0+#02H]
+0170 E6FA1900      814           MOV     R10,#019h
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 17:37:50  Page:  16
 main
 
  LOC CODE        LINE   SOURCELINE
 
-017E 7CC5          815           SHR     R5,#0Ch
-0180 5C4C          816           SHL     R12,#04h
-0182 704C          817           OR      R4,R12
-0184 F0C4          818           MOV     R12,R4
-0186 DA00AA04  R   819           CALLS   SEG _controller,_controller
-018A F6F40000  R   820           MOV     _frequency,R4
-                   821   ; main.c    392                 CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(fre
+0174 E00B          815           MOV     R11,#00h
+0176 DA000000  R   816           CALLS   SEG __mul,__mul
+017A F0C5          817           MOV     R12,R5
+017C 7CC4          818           SHR     R4,#0Ch
+017E 7CC5          819           SHR     R5,#0Ch
+0180 5C4C          820           SHL     R12,#04h
+0182 704C          821           OR      R4,R12
+0184 F0C4          822           MOV     R12,R4
+0186 DA00AA04  R   823           CALLS   SEG _controller,_controller
+018A F6F40000  R   824           MOV     _frequency,R4
+                   825   ; main.c    392                 CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(fre
                          quency));
-                   822           ?LINE   392
-018E F2FC0000  R   823           MOV     R12,_frequency
-0192 DA002204  R   824           CALLS   SEG _calculateMotorFrequency,_calculateMotorFrequency
-0196 F6F412EB      825           MOV     0EB12h,R4
-                   826   ; main.c    393                 CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
-                   827           ?LINE   393
-019A E6FC26EB      828           MOV     R12,#0EB26h
-019E A8DC          829           MOV     R13,[R12]
-01A0 6FFD          830           BSET    R13.6
-01A2 B8DC          831           MOV     [R12],R13
-                   832   ; main.c    394 
-                   833   ; main.c    395         }
-               R   834           ?SYMB   '',$,102,1
-               R   835           ?SYMB   '',$,15,395
-                   836           ?LINE   395
-01A4               837   _31:
-                   838   ; main.c    396         if (rampIndex == 0){
-                   839           ?LINE   396
-01A4 F2FC0000  R   840           MOV     R12,_rampIndex
-01A8 3D03          841           JMPR    cc_NZ,_32
-                   842   ; main.c    397                 setPhaseChange(clockwise);
-                   843           ?LINE   397
-01AA E00C          844           MOV     R12,#00h
-01AC DA007204  R   845           CALLS   SEG _setPhaseChange,_setPhaseChange
-                   846   ; main.c    398         }
-                   847           ?LINE   398
-01B0               848   _32:
-                   849   ; main.c    399         // ramp up
-                   850   ; main.c    400         if(rampIndex < 750){
-                   851           ?LINE   400
-01B0 F2FC0000  R   852           MOV     R12,_rampIndex
-01B4 46FCEE02      853           CMP     R12,#02EEh
-01B8 9D19          854           JMPR    cc_UGE,_33
-                   855   ; main.c    401                 frequency = (rampIndex/15);
-                   856           ?LINE   401
-01BA F2FC0000  R   857           MOV     R12,_rampIndex
-01BE E0FD          858           MOV     R13,#0Fh
-01C0 F6FC0EFE      859           MOV     MDL,R12
-01C4 5BDD          860           DIVU    R13
-01C6 F2FC0EFE      861           MOV     R12,MDL
-01CA F6FC0000  R   862           MOV     _frequency,R12
-                   863   ; main.c    402                 CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(fre
+                   826           ?LINE   392
+018E F2FC0000  R   827           MOV     R12,_frequency
+0192 DA002204  R   828           CALLS   SEG _calculateMotorFrequency,_calculateMotorFrequency
+0196 F6F412EB      829           MOV     0EB12h,R4
+                   830   ; main.c    393                 CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
+                   831           ?LINE   393
+019A E6FC26EB      832           MOV     R12,#0EB26h
+019E A8DC          833           MOV     R13,[R12]
+01A0 6FFD          834           BSET    R13.6
+01A2 B8DC          835           MOV     [R12],R13
+                   836   ; main.c    394 
+                   837   ; main.c    395         }
+               R   838           ?SYMB   '',$,102,1
+               R   839           ?SYMB   '',$,15,395
+                   840           ?LINE   395
+01A4               841   _31:
+                   842   ; main.c    396         if (rampIndex == 0){
+                   843           ?LINE   396
+01A4 F2FC0000  R   844           MOV     R12,_rampIndex
+01A8 3D03          845           JMPR    cc_NZ,_32
+                   846   ; main.c    397                 setPhaseChange(clockwise);
+                   847           ?LINE   397
+01AA E00C          848           MOV     R12,#00h
+01AC DA007204  R   849           CALLS   SEG _setPhaseChange,_setPhaseChange
+                   850   ; main.c    398         }
+                   851           ?LINE   398
+01B0               852   _32:
+                   853   ; main.c    399         // ramp up
+                   854   ; main.c    400         if(rampIndex < 750){
+                   855           ?LINE   400
+01B0 F2FC0000  R   856           MOV     R12,_rampIndex
+01B4 46FCEE02      857           CMP     R12,#02EEh
+01B8 9D19          858           JMPR    cc_UGE,_33
+                   859   ; main.c    401                 frequency = (rampIndex/15);
+                   860           ?LINE   401
+01BA F2FC0000  R   861           MOV     R12,_rampIndex
+01BE E0FD          862           MOV     R13,#0Fh
+01C0 F6FC0EFE      863           MOV     MDL,R12
+01C4 5BDD          864           DIVU    R13
+01C6 F2FC0EFE      865           MOV     R12,MDL
+01CA F6FC0000  R   866           MOV     _frequency,R12
+                   867   ; main.c    402                 CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(fre
                          quency));
-                   864           ?LINE   402
-01CE F2FC0000  R   865           MOV     R12,_frequency
-01D2 DA002204  R   866           CALLS   SEG _calculateMotorFrequency,_calculateMotorFrequency
-01D6 F6F412EB      867           MOV     0EB12h,R4
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 16:19:00  Page:  17
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 17:37:50  Page:  17
 main
 
  LOC CODE        LINE   SOURCELINE
 
-                   868   ; main.c    403                 CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
-                   869           ?LINE   403
-01DA E6FC26EB      870           MOV     R12,#0EB26h
-01DE A8DC          871           MOV     R13,[R12]
-01E0 6FFD          872           BSET    R13.6
-01E2 B8DC          873           MOV     [R12],R13
-                   874   ; main.c    404                 IO_vTogglePin(LED_DBG);
-                   875           ?LINE   404
-01E4 E6FC0101      876           MOV     R12,#0101h
-01E8 F6FCE0E9      877           MOV     0E9E0h,R12
-                   878   ; main.c    405         } 
-                   879           ?LINE   405
-01EC               880   _33:
-                   881   ; main.c    406         // hold 50 Hz clockwise
-                   882   ; main.c    407         if(rampIndex < 1500 && rampIndex > 750){
-                   883           ?LINE   407
-01EC F2FC0000  R   884           MOV     R12,_rampIndex
-01F0 46FCDC05      885           CMP     R12,#05DCh
-01F4 9D14          886           JMPR    cc_UGE,_34
-01F6 F2FC0000  R   887           MOV     R12,_rampIndex
-01FA 46FCEE02      888           CMP     R12,#02EEh
-01FE FD0F          889           JMPR    cc_ULE,_35
-                   890   ; main.c    408                 frequency = 50;
-                   891           ?LINE   408
-0200 E6FC3200      892           MOV     R12,#032h
-0204 F6FC0000  R   893           MOV     _frequency,R12
-                   894   ; main.c    409                 CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(fre
+                   868           ?LINE   402
+01CE F2FC0000  R   869           MOV     R12,_frequency
+01D2 DA002204  R   870           CALLS   SEG _calculateMotorFrequency,_calculateMotorFrequency
+01D6 F6F412EB      871           MOV     0EB12h,R4
+                   872   ; main.c    403                 CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
+                   873           ?LINE   403
+01DA E6FC26EB      874           MOV     R12,#0EB26h
+01DE A8DC          875           MOV     R13,[R12]
+01E0 6FFD          876           BSET    R13.6
+01E2 B8DC          877           MOV     [R12],R13
+                   878   ; main.c    404                 IO_vTogglePin(LED_DBG);
+                   879           ?LINE   404
+01E4 E6FC0101      880           MOV     R12,#0101h
+01E8 F6FCE0E9      881           MOV     0E9E0h,R12
+                   882   ; main.c    405         } 
+                   883           ?LINE   405
+01EC               884   _33:
+                   885   ; main.c    406         // hold 50 Hz clockwise
+                   886   ; main.c    407         if(rampIndex < 1500 && rampIndex > 750){
+                   887           ?LINE   407
+01EC F2FC0000  R   888           MOV     R12,_rampIndex
+01F0 46FCDC05      889           CMP     R12,#05DCh
+01F4 9D14          890           JMPR    cc_UGE,_34
+01F6 F2FC0000  R   891           MOV     R12,_rampIndex
+01FA 46FCEE02      892           CMP     R12,#02EEh
+01FE FD0F          893           JMPR    cc_ULE,_35
+                   894   ; main.c    408                 frequency = 50;
+                   895           ?LINE   408
+0200 E6FC3200      896           MOV     R12,#032h
+0204 F6FC0000  R   897           MOV     _frequency,R12
+                   898   ; main.c    409                 CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(fre
                          quency));
-                   895           ?LINE   409
-0208 F2FC0000  R   896           MOV     R12,_frequency
-020C DA002204  R   897           CALLS   SEG _calculateMotorFrequency,_calculateMotorFrequency
-0210 F6F412EB      898           MOV     0EB12h,R4
-                   899   ; main.c    410                 CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
-                   900           ?LINE   410
-0214 E6FC26EB      901           MOV     R12,#0EB26h
-0218 A8DC          902           MOV     R13,[R12]
-021A 6FFD          903           BSET    R13.6
-021C B8DC          904           MOV     [R12],R13
-                   905   ; main.c    411         }
-                   906           ?LINE   411
-021E               907   _34:
-021E               908   _35:
-                   909   ; main.c    412         // ramp down
-                   910   ; main.c    413         if(rampIndex < 2250 && rampIndex > 1500){
-                   911           ?LINE   413
-021E F2FC0000  R   912           MOV     R12,_rampIndex
-0222 46FCCA08      913           CMP     R12,#08CAh
-0226 9D1C          914           JMPR    cc_UGE,_36
-0228 F2FC0000  R   915           MOV     R12,_rampIndex
-022C 46FCDC05      916           CMP     R12,#05DCh
-0230 FD17          917           JMPR    cc_ULE,_37
-                   918   ; main.c    414                 frequency = (2250 - rampIndex)/15;
-                   919           ?LINE   414
-0232 E6FCCA08      920           MOV     R12,#08CAh
-0236 22FC0000  R   921           SUB     R12,_rampIndex
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 16:19:00  Page:  18
+                   899           ?LINE   409
+0208 F2FC0000  R   900           MOV     R12,_frequency
+020C DA002204  R   901           CALLS   SEG _calculateMotorFrequency,_calculateMotorFrequency
+0210 F6F412EB      902           MOV     0EB12h,R4
+                   903   ; main.c    410                 CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
+                   904           ?LINE   410
+0214 E6FC26EB      905           MOV     R12,#0EB26h
+0218 A8DC          906           MOV     R13,[R12]
+021A 6FFD          907           BSET    R13.6
+021C B8DC          908           MOV     [R12],R13
+                   909   ; main.c    411         }
+                   910           ?LINE   411
+021E               911   _34:
+021E               912   _35:
+                   913   ; main.c    412         // ramp down
+                   914   ; main.c    413         if(rampIndex < 2250 && rampIndex > 1500){
+                   915           ?LINE   413
+021E F2FC0000  R   916           MOV     R12,_rampIndex
+0222 46FCCA08      917           CMP     R12,#08CAh
+0226 9D1C          918           JMPR    cc_UGE,_36
+0228 F2FC0000  R   919           MOV     R12,_rampIndex
+022C 46FCDC05      920           CMP     R12,#05DCh
+0230 FD17          921           JMPR    cc_ULE,_37
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 17:37:50  Page:  18
 main
 
  LOC CODE        LINE   SOURCELINE
 
-023A E0FD          922           MOV     R13,#0Fh
-023C F6FC0EFE      923           MOV     MDL,R12
-0240 5BDD          924           DIVU    R13
-0242 F2FC0EFE      925           MOV     R12,MDL
-0246 F6FC0000  R   926           MOV     _frequency,R12
-                   927   ; main.c    415                 CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(fre
+                   922   ; main.c    414                 frequency = (2250 - rampIndex)/15;
+                   923           ?LINE   414
+0232 E6FCCA08      924           MOV     R12,#08CAh
+0236 22FC0000  R   925           SUB     R12,_rampIndex
+023A E0FD          926           MOV     R13,#0Fh
+023C F6FC0EFE      927           MOV     MDL,R12
+0240 5BDD          928           DIVU    R13
+0242 F2FC0EFE      929           MOV     R12,MDL
+0246 F6FC0000  R   930           MOV     _frequency,R12
+                   931   ; main.c    415                 CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(fre
                          quency));
-                   928           ?LINE   415
-024A F2FC0000  R   929           MOV     R12,_frequency
-024E DA002204  R   930           CALLS   SEG _calculateMotorFrequency,_calculateMotorFrequency
-0252 F6F412EB      931           MOV     0EB12h,R4
-                   932   ; main.c    416                 CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
-                   933           ?LINE   416
-0256 E6FC26EB      934           MOV     R12,#0EB26h
-025A A8DC          935           MOV     R13,[R12]
-025C 6FFD          936           BSET    R13.6
-025E B8DC          937           MOV     [R12],R13
-                   938   ; main.c    417         }
-                   939           ?LINE   417
-0260               940   _36:
-0260               941   _37:
-                   942   ; main.c    418         // phase change
-                   943   ; main.c    419         if (rampIndex == 2250){
-                   944           ?LINE   419
-0260 F2FC0000  R   945           MOV     R12,_rampIndex
-0264 46FCCA08      946           CMP     R12,#08CAh
-0268 3D03          947           JMPR    cc_NE,_38
-                   948   ; main.c    420                 setPhaseChange(counterclockwise);
-                   949           ?LINE   420
-026A E01C          950           MOV     R12,#01h
-026C DA007204  R   951           CALLS   SEG _setPhaseChange,_setPhaseChange
-                   952   ; main.c    421         }
-                   953           ?LINE   421
-0270               954   _38:
-                   955   ; main.c    422 
-                   956   ; main.c    423         // reverse ramp up
-                   957   ; main.c    424         if(rampIndex < 3000 && rampIndex > 2250){
-                   958           ?LINE   424
-0270 F2FC0000  R   959           MOV     R12,_rampIndex
-0274 46FCB80B      960           CMP     R12,#0BB8h
-0278 9D1C          961           JMPR    cc_UGE,_39
-027A F2FC0000  R   962           MOV     R12,_rampIndex
-027E 46FCCA08      963           CMP     R12,#08CAh
-0282 FD17          964           JMPR    cc_ULE,_40
-                   965   ; main.c    425                 frequency = (rampIndex-2250)/15;
-                   966           ?LINE   425
-0284 F2FC0000  R   967           MOV     R12,_rampIndex
-0288 26FCCA08      968           SUB     R12,#08CAh
-028C E0FD          969           MOV     R13,#0Fh
-028E F6FC0EFE      970           MOV     MDL,R12
-0292 5BDD          971           DIVU    R13
-0294 F2FC0EFE      972           MOV     R12,MDL
-0298 F6FC0000  R   973           MOV     _frequency,R12
-                   974   ; main.c    426                 CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(fre
-                         quency));
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 16:19:00  Page:  19
+                   932           ?LINE   415
+024A F2FC0000  R   933           MOV     R12,_frequency
+024E DA002204  R   934           CALLS   SEG _calculateMotorFrequency,_calculateMotorFrequency
+0252 F6F412EB      935           MOV     0EB12h,R4
+                   936   ; main.c    416                 CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
+                   937           ?LINE   416
+0256 E6FC26EB      938           MOV     R12,#0EB26h
+025A A8DC          939           MOV     R13,[R12]
+025C 6FFD          940           BSET    R13.6
+025E B8DC          941           MOV     [R12],R13
+                   942   ; main.c    417         }
+                   943           ?LINE   417
+0260               944   _36:
+0260               945   _37:
+                   946   ; main.c    418         // phase change
+                   947   ; main.c    419         if (rampIndex == 2250){
+                   948           ?LINE   419
+0260 F2FC0000  R   949           MOV     R12,_rampIndex
+0264 46FCCA08      950           CMP     R12,#08CAh
+0268 3D03          951           JMPR    cc_NE,_38
+                   952   ; main.c    420                 setPhaseChange(counterclockwise);
+                   953           ?LINE   420
+026A E01C          954           MOV     R12,#01h
+026C DA007204  R   955           CALLS   SEG _setPhaseChange,_setPhaseChange
+                   956   ; main.c    421         }
+                   957           ?LINE   421
+0270               958   _38:
+                   959   ; main.c    422 
+                   960   ; main.c    423         // reverse ramp up
+                   961   ; main.c    424         if(rampIndex < 3000 && rampIndex > 2250){
+                   962           ?LINE   424
+0270 F2FC0000  R   963           MOV     R12,_rampIndex
+0274 46FCB80B      964           CMP     R12,#0BB8h
+0278 9D1C          965           JMPR    cc_UGE,_39
+027A F2FC0000  R   966           MOV     R12,_rampIndex
+027E 46FCCA08      967           CMP     R12,#08CAh
+0282 FD17          968           JMPR    cc_ULE,_40
+                   969   ; main.c    425                 frequency = (rampIndex-2250)/15;
+                   970           ?LINE   425
+0284 F2FC0000  R   971           MOV     R12,_rampIndex
+0288 26FCCA08      972           SUB     R12,#08CAh
+028C E0FD          973           MOV     R13,#0Fh
+028E F6FC0EFE      974           MOV     MDL,R12
+0292 5BDD          975           DIVU    R13
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 17:37:50  Page:  19
 main
 
  LOC CODE        LINE   SOURCELINE
 
-                   975           ?LINE   426
-029C F2FC0000  R   976           MOV     R12,_frequency
-02A0 DA002204  R   977           CALLS   SEG _calculateMotorFrequency,_calculateMotorFrequency
-02A4 F6F412EB      978           MOV     0EB12h,R4
-                   979   ; main.c    427                 CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
-                   980           ?LINE   427
-02A8 E6FC26EB      981           MOV     R12,#0EB26h
-02AC A8DC          982           MOV     R13,[R12]
-02AE 6FFD          983           BSET    R13.6
-02B0 B8DC          984           MOV     [R12],R13
-                   985   ; main.c    428         }
-                   986           ?LINE   428
-02B2               987   _39:
-02B2               988   _40:
-                   989   ; main.c    429         // hold 50 hz counterclockwise
-                   990   ; main.c    430         if(rampIndex < 3750 && rampIndex > 3000){
-                   991           ?LINE   430
-02B2 F2FC0000  R   992           MOV     R12,_rampIndex
-02B6 46FCA60E      993           CMP     R12,#0EA6h
-02BA 9D14          994           JMPR    cc_UGE,_41
-02BC F2FC0000  R   995           MOV     R12,_rampIndex
-02C0 46FCB80B      996           CMP     R12,#0BB8h
-02C4 FD0F          997           JMPR    cc_ULE,_42
-                   998   ; main.c    431                 frequency = 50;
-                   999           ?LINE   431
-02C6 E6FC3200     1000           MOV     R12,#032h
-02CA F6FC0000  R  1001           MOV     _frequency,R12
-                  1002   ; main.c    432                 CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(fre
+0294 F2FC0EFE      976           MOV     R12,MDL
+0298 F6FC0000  R   977           MOV     _frequency,R12
+                   978   ; main.c    426                 CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(fre
                          quency));
-                  1003           ?LINE   432
-02CE F2FC0000  R  1004           MOV     R12,_frequency
-02D2 DA002204  R  1005           CALLS   SEG _calculateMotorFrequency,_calculateMotorFrequency
-02D6 F6F412EB     1006           MOV     0EB12h,R4
-                  1007   ; main.c    433                 CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
-                  1008           ?LINE   433
-02DA E6FC26EB     1009           MOV     R12,#0EB26h
-02DE A8DC         1010           MOV     R13,[R12]
-02E0 6FFD         1011           BSET    R13.6
-02E2 B8DC         1012           MOV     [R12],R13
-                  1013   ; main.c    434         }
-                  1014           ?LINE   434
-02E4              1015   _41:
-02E4              1016   _42:
-                  1017   ; main.c    435         // reverse ramp down
-                  1018   ; main.c    436         if(rampIndex < 4500 && rampIndex > 3750){
-                  1019           ?LINE   436
-02E4 F2FC0000  R  1020           MOV     R12,_rampIndex
-02E8 46FC9411     1021           CMP     R12,#01194h
-02EC 9D1C         1022           JMPR    cc_UGE,_43
-02EE F2FC0000  R  1023           MOV     R12,_rampIndex
-02F2 46FCA60E     1024           CMP     R12,#0EA6h
-02F6 FD17         1025           JMPR    cc_ULE,_44
-                  1026   ; main.c    437                 frequency = (4500 - rampIndex)/15;
-                  1027           ?LINE   437
-02F8 E6FC9411     1028           MOV     R12,#01194h
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 16:19:00  Page:  20
+                   979           ?LINE   426
+029C F2FC0000  R   980           MOV     R12,_frequency
+02A0 DA002204  R   981           CALLS   SEG _calculateMotorFrequency,_calculateMotorFrequency
+02A4 F6F412EB      982           MOV     0EB12h,R4
+                   983   ; main.c    427                 CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
+                   984           ?LINE   427
+02A8 E6FC26EB      985           MOV     R12,#0EB26h
+02AC A8DC          986           MOV     R13,[R12]
+02AE 6FFD          987           BSET    R13.6
+02B0 B8DC          988           MOV     [R12],R13
+                   989   ; main.c    428         }
+                   990           ?LINE   428
+02B2               991   _39:
+02B2               992   _40:
+                   993   ; main.c    429         // hold 50 hz counterclockwise
+                   994   ; main.c    430         if(rampIndex < 3750 && rampIndex > 3000){
+                   995           ?LINE   430
+02B2 F2FC0000  R   996           MOV     R12,_rampIndex
+02B6 46FCA60E      997           CMP     R12,#0EA6h
+02BA 9D14          998           JMPR    cc_UGE,_41
+02BC F2FC0000  R   999           MOV     R12,_rampIndex
+02C0 46FCB80B     1000           CMP     R12,#0BB8h
+02C4 FD0F         1001           JMPR    cc_ULE,_42
+                  1002   ; main.c    431                 frequency = 50;
+                  1003           ?LINE   431
+02C6 E6FC3200     1004           MOV     R12,#032h
+02CA F6FC0000  R  1005           MOV     _frequency,R12
+                  1006   ; main.c    432                 CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(fre
+                         quency));
+                  1007           ?LINE   432
+02CE F2FC0000  R  1008           MOV     R12,_frequency
+02D2 DA002204  R  1009           CALLS   SEG _calculateMotorFrequency,_calculateMotorFrequency
+02D6 F6F412EB     1010           MOV     0EB12h,R4
+                  1011   ; main.c    433                 CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
+                  1012           ?LINE   433
+02DA E6FC26EB     1013           MOV     R12,#0EB26h
+02DE A8DC         1014           MOV     R13,[R12]
+02E0 6FFD         1015           BSET    R13.6
+02E2 B8DC         1016           MOV     [R12],R13
+                  1017   ; main.c    434         }
+                  1018           ?LINE   434
+02E4              1019   _41:
+02E4              1020   _42:
+                  1021   ; main.c    435         // reverse ramp down
+                  1022   ; main.c    436         if(rampIndex < 4500 && rampIndex > 3750){
+                  1023           ?LINE   436
+02E4 F2FC0000  R  1024           MOV     R12,_rampIndex
+02E8 46FC9411     1025           CMP     R12,#01194h
+02EC 9D1C         1026           JMPR    cc_UGE,_43
+02EE F2FC0000  R  1027           MOV     R12,_rampIndex
+02F2 46FCA60E     1028           CMP     R12,#0EA6h
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 17:37:50  Page:  20
 main
 
  LOC CODE        LINE   SOURCELINE
 
-02FC 22FC0000  R  1029           SUB     R12,_rampIndex
-0300 E0FD         1030           MOV     R13,#0Fh
-0302 F6FC0EFE     1031           MOV     MDL,R12
-0306 5BDD         1032           DIVU    R13
-0308 F2FC0EFE     1033           MOV     R12,MDL
-030C F6FC0000  R  1034           MOV     _frequency,R12
-                  1035   ; main.c    438                 CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(fre
+02F6 FD17         1029           JMPR    cc_ULE,_44
+                  1030   ; main.c    437                 frequency = (4500 - rampIndex)/15;
+                  1031           ?LINE   437
+02F8 E6FC9411     1032           MOV     R12,#01194h
+02FC 22FC0000  R  1033           SUB     R12,_rampIndex
+0300 E0FD         1034           MOV     R13,#0Fh
+0302 F6FC0EFE     1035           MOV     MDL,R12
+0306 5BDD         1036           DIVU    R13
+0308 F2FC0EFE     1037           MOV     R12,MDL
+030C F6FC0000  R  1038           MOV     _frequency,R12
+                  1039   ; main.c    438                 CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(fre
                          quency));
-                  1036           ?LINE   438
-0310 F2FC0000  R  1037           MOV     R12,_frequency
-0314 DA002204  R  1038           CALLS   SEG _calculateMotorFrequency,_calculateMotorFrequency
-0318 F6F412EB     1039           MOV     0EB12h,R4
-                  1040   ; main.c    439                 CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
-                  1041           ?LINE   439
-031C E6FC26EB     1042           MOV     R12,#0EB26h
-0320 A8DC         1043           MOV     R13,[R12]
-0322 6FFD         1044           BSET    R13.6
-0324 B8DC         1045           MOV     [R12],R13
-                  1046   ; main.c    440         }
-                  1047           ?LINE   440
-0326              1048   _43:
-0326              1049   _44:
-                  1050   ; main.c    441         // DC break !!! adjust CCU62 rampIndex !!!
-                  1051   ; main.c    442         if(rampIndex < 5250 && rampIndex > 4500){
-                  1052           ?LINE   442
-0326 F2FC0000  R  1053           MOV     R12,_rampIndex
-032A 46FC8214     1054           CMP     R12,#01482h
-032E 9D14         1055           JMPR    cc_UGE,_45
-0330 F2FC0000  R  1056           MOV     R12,_rampIndex
-0334 46FC9411     1057           CMP     R12,#01194h
-0338 FD0F         1058           JMPR    cc_ULE,_46
-                  1059   ; main.c    443                 frequency = 50;
-                  1060           ?LINE   443
-033A E6FC3200     1061           MOV     R12,#032h
-033E F6FC0000  R  1062           MOV     _frequency,R12
-                  1063   ; main.c    444                 CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(fre
+                  1040           ?LINE   438
+0310 F2FC0000  R  1041           MOV     R12,_frequency
+0314 DA002204  R  1042           CALLS   SEG _calculateMotorFrequency,_calculateMotorFrequency
+0318 F6F412EB     1043           MOV     0EB12h,R4
+                  1044   ; main.c    439                 CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
+                  1045           ?LINE   439
+031C E6FC26EB     1046           MOV     R12,#0EB26h
+0320 A8DC         1047           MOV     R13,[R12]
+0322 6FFD         1048           BSET    R13.6
+0324 B8DC         1049           MOV     [R12],R13
+                  1050   ; main.c    440         }
+                  1051           ?LINE   440
+0326              1052   _43:
+0326              1053   _44:
+                  1054   ; main.c    441         // DC break !!! adjust CCU62 rampIndex !!!
+                  1055   ; main.c    442         if(rampIndex < 5250 && rampIndex > 4500){
+                  1056           ?LINE   442
+0326 F2FC0000  R  1057           MOV     R12,_rampIndex
+032A 46FC8214     1058           CMP     R12,#01482h
+032E 9D14         1059           JMPR    cc_UGE,_45
+0330 F2FC0000  R  1060           MOV     R12,_rampIndex
+0334 46FC9411     1061           CMP     R12,#01194h
+0338 FD0F         1062           JMPR    cc_ULE,_46
+                  1063   ; main.c    443                 frequency = 50;
+                  1064           ?LINE   443
+033A E6FC3200     1065           MOV     R12,#032h
+033E F6FC0000  R  1066           MOV     _frequency,R12
+                  1067   ; main.c    444                 CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(fre
                          quency));
-                  1064           ?LINE   444
-0342 F2FC0000  R  1065           MOV     R12,_frequency
-0346 DA002204  R  1066           CALLS   SEG _calculateMotorFrequency,_calculateMotorFrequency
-034A F6F412EB     1067           MOV     0EB12h,R4
-                  1068   ; main.c    445                 CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
-                  1069           ?LINE   445
-034E E6FC26EB     1070           MOV     R12,#0EB26h
-0352 A8DC         1071           MOV     R13,[R12]
-0354 6FFD         1072           BSET    R13.6
-0356 B8DC         1073           MOV     [R12],R13
-                  1074   ; main.c    446         }
-                  1075           ?LINE   446
-0358              1076   _45:
-0358              1077   _46:
-                  1078   ; main.c    447         // set 0 Hz for transition to poti control
-                  1079   ; main.c    448         if(rampIndex == 5250){
-                  1080           ?LINE   448
-0358 F2FC0000  R  1081           MOV     R12,_rampIndex
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 16:19:00  Page:  21
+                  1068           ?LINE   444
+0342 F2FC0000  R  1069           MOV     R12,_frequency
+0346 DA002204  R  1070           CALLS   SEG _calculateMotorFrequency,_calculateMotorFrequency
+034A F6F412EB     1071           MOV     0EB12h,R4
+                  1072   ; main.c    445                 CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
+                  1073           ?LINE   445
+034E E6FC26EB     1074           MOV     R12,#0EB26h
+0352 A8DC         1075           MOV     R13,[R12]
+0354 6FFD         1076           BSET    R13.6
+0356 B8DC         1077           MOV     [R12],R13
+                  1078   ; main.c    446         }
+                  1079           ?LINE   446
+0358              1080   _45:
+0358              1081   _46:
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 17:37:50  Page:  21
 main
 
  LOC CODE        LINE   SOURCELINE
 
-035C 46FC8214     1082           CMP     R12,#01482h
-0360 3D0D         1083           JMPR    cc_NE,_47
-                  1084   ; main.c    449                 frequency = 0;
-                  1085           ?LINE   449
-0362 F68E0000  R  1086           MOV     _frequency,ZEROS
-                  1087   ; main.c    450                 CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(fre
+                  1082   ; main.c    447         // set 0 Hz for transition to poti control
+                  1083   ; main.c    448         if(rampIndex == 5250){
+                  1084           ?LINE   448
+0358 F2FC0000  R  1085           MOV     R12,_rampIndex
+035C 46FC8214     1086           CMP     R12,#01482h
+0360 3D0D         1087           JMPR    cc_NE,_47
+                  1088   ; main.c    449                 frequency = 0;
+                  1089           ?LINE   449
+0362 F68E0000  R  1090           MOV     _frequency,ZEROS
+                  1091   ; main.c    450                 CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(fre
                          quency));
-                  1088           ?LINE   450
-0366 F2FC0000  R  1089           MOV     R12,_frequency
-036A DA002204  R  1090           CALLS   SEG _calculateMotorFrequency,_calculateMotorFrequency
-036E F6F412EB     1091           MOV     0EB12h,R4
-                  1092   ; main.c    451                 CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
-                  1093           ?LINE   451
-0372 E6FC26EB     1094           MOV     R12,#0EB26h
-0376 A8DC         1095           MOV     R13,[R12]
-0378 6FFD         1096           BSET    R13.6
-037A B8DC         1097           MOV     [R12],R13
-                  1098   ; main.c    452         }
-                  1099           ?LINE   452
-037C              1100   _47:
-                  1101           ?LINE   382
-037C              1102   _48:
-037C EA004001  R  1103           JMPA+   cc_UC,_30
-                  1104   ; main.c    453 
-                  1105   ; main.c    454    // USER CODE END
-                  1106   ; main.c    455 
-                  1107   ; main.c    456   }
-                  1108   ; main.c    457 
-                  1109   ; main.c    458 } //  End of function main
-                  1110           ?LINE   458
-0380 0804         1111           ADD     R0,#04h
-               R  1112           ?SYMB   '',$,96,0
-0382 DB00         1113           RETS
-                  1114   _main   ENDP
-               R  1115           ?SYMB   '',$,17,458
-                  1116   ; main.c    459 
-                  1117   ; main.c    460 
-                  1118   ; main.c    461 
-                  1119   ; main.c    462 // USER CODE BEGIN (MAIN_General,10)
-                  1120   ; main.c    463 void generateTable(){
-                  1121           ?LINE   463
-                  1122           PUBLIC  _generateTable
-               R  1123           ?SYMB   'generateTable',_generateTable,37,1
-                  1124           ?SYMB   '',463,8,34
-                  1125   _generateTable  PROC    FAR
-                  1126           ?SYMB   '',00H,95,0
-0384 26F00A00     1127           SUB     R0,#0Ah
-               R  1128           ?SYMB   '',$,96,10
-                  1129   ; Locals:
-                  1130   ;     i = offset 0
-                  1131   ;     stepSize = offset 2
-                  1132   ; 
-                  1133   ; Statics:
-                  1134   ; 
-                  1135   ; CSEs:
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 16:19:00  Page:  22
+                  1092           ?LINE   450
+0366 F2FC0000  R  1093           MOV     R12,_frequency
+036A DA002204  R  1094           CALLS   SEG _calculateMotorFrequency,_calculateMotorFrequency
+036E F6F412EB     1095           MOV     0EB12h,R4
+                  1096   ; main.c    451                 CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
+                  1097           ?LINE   451
+0372 E6FC26EB     1098           MOV     R12,#0EB26h
+0376 A8DC         1099           MOV     R13,[R12]
+0378 6FFD         1100           BSET    R13.6
+037A B8DC         1101           MOV     [R12],R13
+                  1102   ; main.c    452         }
+                  1103           ?LINE   452
+037C              1104   _47:
+                  1105           ?LINE   382
+037C              1106   _48:
+037C EA004001  R  1107           JMPA+   cc_UC,_30
+                  1108   ; main.c    453 
+                  1109   ; main.c    454    // USER CODE END
+                  1110   ; main.c    455 
+                  1111   ; main.c    456   }
+                  1112   ; main.c    457 
+                  1113   ; main.c    458 } //  End of function main
+                  1114           ?LINE   458
+0380 0804         1115           ADD     R0,#04h
+               R  1116           ?SYMB   '',$,96,0
+0382 DB00         1117           RETS
+                  1118   _main   ENDP
+               R  1119           ?SYMB   '',$,17,458
+                  1120   ; main.c    459 
+                  1121   ; main.c    460 
+                  1122   ; main.c    461 
+                  1123   ; main.c    462 // USER CODE BEGIN (MAIN_General,10)
+                  1124   ; main.c    463 void generateTable(){
+                  1125           ?LINE   463
+                  1126           PUBLIC  _generateTable
+               R  1127           ?SYMB   'generateTable',_generateTable,37,1
+                  1128           ?SYMB   '',463,8,34
+                  1129   _generateTable  PROC    FAR
+                  1130           ?SYMB   '',00H,95,0
+0384 26F00A00     1131           SUB     R0,#0Ah
+               R  1132           ?SYMB   '',$,96,10
+                  1133   ; Locals:
+                  1134   ;     i = offset 0
+                  1135   ;     stepSize = offset 2
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 17:37:50  Page:  22
 main
 
  LOC CODE        LINE   SOURCELINE
 
                   1136   ; 
-                  1137   ; main.c    464         double stepSize = (2*pi)/(ARRAY_SIZE);
-                  1138           ?SYMB   'stepSize',2,98,11
-               R  1139           ?SYMB   '-8',$,101,2
-                  1140           ?LINE   464
-0388 F2F40000  R  1141           MOV     R4,_pi
-038C F2F50000  R  1142           MOV     R5,(_pi+2)
-0390 E6FA0040     1143           MOV     R10,#04000h
-0394 E00B         1144           MOV     R11,#00h
-0396 DA000000  R  1145           CALLS   SEG __mlf4r,__mlf4r
-039A E6FA9644     1146           MOV     R10,#04496h
-039E E00B         1147           MOV     R11,#00h
-03A0 DA000000  R  1148           CALLS   SEG __dvf4r,__dvf4r
-03A4 DA000000  R  1149           CALLS   SEG __cff48r,__cff48r
-               R  1150           ?SYMB   '',$,96,18
-03A8 F040         1151           MOV     R4,R0
-03AA 06F40A00     1152           ADD     R4,#0Ah
-03AE DA000000  R  1153           CALLS   SEG __store8n,__store8n
-03B2 06F00800     1154           ADD     R0,#08h
-               R  1155           ?SYMB   '',$,96,10
-                  1156   ; main.c    465         int i;
-                  1157           ?SYMB   'i',1,98,16
-               R  1158           ?SYMB   '-a',$,101,1
-                  1159   ; main.c    466         for (i = 0; i < ARRAY_SIZE; i++){ 
-                  1160           ?LINE   466
-03B6 E00C         1161           MOV     R12,#00h
-03B8 B8C0         1162           MOV     [R0],R12
-03BA 0D2C         1163           JMPR    cc_UC,_57
-03BC              1164   _56:
-                  1165   ; main.c    467                 table[i] = (int)((double)((CCU63_T12PR - 140)/2)*sin(stepSize *
+                  1137   ; Statics:
+                  1138   ; 
+                  1139   ; CSEs:
+                  1140   ; 
+                  1141   ; main.c    464         double stepSize = (2*pi)/(ARRAY_SIZE);
+                  1142           ?SYMB   'stepSize',2,98,11
+               R  1143           ?SYMB   '-8',$,101,2
+                  1144           ?LINE   464
+0388 F2F40000  R  1145           MOV     R4,_pi
+038C F2F50000  R  1146           MOV     R5,(_pi+2)
+0390 E6FA0040     1147           MOV     R10,#04000h
+0394 E00B         1148           MOV     R11,#00h
+0396 DA000000  R  1149           CALLS   SEG __mlf4r,__mlf4r
+039A E6FA9644     1150           MOV     R10,#04496h
+039E E00B         1151           MOV     R11,#00h
+03A0 DA000000  R  1152           CALLS   SEG __dvf4r,__dvf4r
+03A4 DA000000  R  1153           CALLS   SEG __cff48r,__cff48r
+               R  1154           ?SYMB   '',$,96,18
+03A8 F040         1155           MOV     R4,R0
+03AA 06F40A00     1156           ADD     R4,#0Ah
+03AE DA000000  R  1157           CALLS   SEG __store8n,__store8n
+03B2 06F00800     1158           ADD     R0,#08h
+               R  1159           ?SYMB   '',$,96,10
+                  1160   ; main.c    465         int i;
+                  1161           ?SYMB   'i',1,98,16
+               R  1162           ?SYMB   '-a',$,101,1
+                  1163   ; main.c    466         for (i = 0; i < ARRAY_SIZE; i++){ 
+                  1164           ?LINE   466
+03B6 E00C         1165           MOV     R12,#00h
+03B8 B8C0         1166           MOV     [R0],R12
+03BA 0D2C         1167           JMPR    cc_UC,_57
+03BC              1168   _56:
+                  1169   ; main.c    467                 table[i] = (int)((double)((CCU63_T12PR - 140)/2)*sin(stepSize *
                           i));
-                  1166           ?LINE   467
-03BC 26F00800     1167           SUB     R0,#08h
-               R  1168           ?SYMB   '',$,96,18
-03C0 E0A4         1169           MOV     R4,#0Ah
-03C2 0040         1170           ADD     R4,R0
-03C4 DA000000  R  1171           CALLS   SEG __load8n,__load8n
-               R  1172           ?SYMB   '',$,96,26
-03C8 D4B01000     1173           MOV     R11,[R0+#010H]
-03CC F04B         1174           MOV     R4,R11
-03CE F0CA         1175           MOV     R12,R10
-03D0 DA000000  R  1176           CALLS   SEG __cif28r,__cif28r
-               R  1177           ?SYMB   '',$,96,34
-03D4 F0BA         1178           MOV     R11,R10
-03D6 F0AC         1179           MOV     R10,R12
-03D8 DA000000  R  1180           CALLS   SEG __mlf8r,__mlf8r
-03DC 06F00800     1181           ADD     R0,#08h
-               R  1182           ?SYMB   '',$,96,26
-03E0 DA000000  R  1183           CALLS   SEG _sin,_sin
-03E4 06F00800     1184           ADD     R0,#08h
-               R  1185           ?SYMB   '',$,96,18
-03E8 F0B4         1186           MOV     R11,R4
-03EA F2FA92EB     1187           MOV     R10,0EB92h
-03EE 26FA8C00     1188           SUB     R10,#08Ch
-03F2 7C1A         1189           SHR     R10,#01h
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 16:19:00  Page:  23
+                  1170           ?LINE   467
+03BC 26F00800     1171           SUB     R0,#08h
+               R  1172           ?SYMB   '',$,96,18
+03C0 E0A4         1173           MOV     R4,#0Ah
+03C2 0040         1174           ADD     R4,R0
+03C4 DA000000  R  1175           CALLS   SEG __load8n,__load8n
+               R  1176           ?SYMB   '',$,96,26
+03C8 D4B01000     1177           MOV     R11,[R0+#010H]
+03CC F04B         1178           MOV     R4,R11
+03CE F0CA         1179           MOV     R12,R10
+03D0 DA000000  R  1180           CALLS   SEG __cif28r,__cif28r
+               R  1181           ?SYMB   '',$,96,34
+03D4 F0BA         1182           MOV     R11,R10
+03D6 F0AC         1183           MOV     R10,R12
+03D8 DA000000  R  1184           CALLS   SEG __mlf8r,__mlf8r
+03DC 06F00800     1185           ADD     R0,#08h
+               R  1186           ?SYMB   '',$,96,26
+03E0 DA000000  R  1187           CALLS   SEG _sin,_sin
+03E4 06F00800     1188           ADD     R0,#08h
+               R  1189           ?SYMB   '',$,96,18
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 17:37:50  Page:  23
 main
 
  LOC CODE        LINE   SOURCELINE
 
-03F4 F04A         1190           MOV     R4,R10
-03F6 DA000000  R  1191           CALLS   SEG __cuf28r,__cuf28r
-               R  1192           ?SYMB   '',$,96,26
-03FA DA000000  R  1193           CALLS   SEG __mlf8r,__mlf8r
-03FE DA000000  R  1194           CALLS   SEG __cfi82r,__cfi82r
-0402 06F01000     1195           ADD     R0,#010h
-               R  1196           ?SYMB   '',$,96,10
-0406 A8C0         1197           MOV     R12,[R0]
-0408 5C1C         1198           SHL     R12,#01h
-040A C44C0000  R  1199           MOV     [R12+#_table],R4
-                  1200           ?LINE   466
-040E A8C0         1201           MOV     R12,[R0]
-0410 08C1         1202           ADD     R12,#01h
-0412 B8C0         1203           MOV     [R0],R12
-0414              1204   _57:
-0414 A8C0         1205           MOV     R12,[R0]
-0416 46FCB004     1206           CMP     R12,#04B0h
-041A 8DD0         1207           JMPR    cc_ULT,_56
-                  1208   ; main.c    468         }
-                  1209   ; main.c    469 }
-               R  1210           ?SYMB   '',$,102,1
-               R  1211           ?SYMB   '',$,102,2
-                  1212           ?LINE   469
-041C 06F00A00     1213           ADD     R0,#0Ah
-               R  1214           ?SYMB   '',$,96,0
-0420 DB00         1215           RETS
-                  1216   _generateTable  ENDP
-               R  1217           ?SYMB   '',$,17,469
-                  1218   ; main.c    470 
-                  1219   ; main.c    471 
-                  1220   ; main.c    472 //calculate frequency and set frequency < 2 Hz = 0 Hz
-                  1221   ; main.c    473 unsigned int calculateMotorFrequency (unsigned int _frequency){
-                  1222           ?LINE   473
-                  1223           PUBLIC  _calculateMotorFrequency
-               R  1224           ?SYMB   'calculateMotorFrequency',_calculateMotorFrequency,37,18
-                  1225           ?SYMB   '',473,8,34
-                  1226   _calculateMotorFrequency        PROC    FAR
-                  1227           ?SYMB   '',00H,95,0
-0422 88C0         1228           MOV     [-R0],R12
-               R  1229           ?SYMB   '',$,96,2
-                  1230   ; Locals:
-                  1231   ;     _frequency = offset 0
-                  1232   ; 
-                  1233   ; Statics:
-                  1234   ; 
-                  1235   ; CSEs:
+03E8 F0B4         1190           MOV     R11,R4
+03EA F2FA92EB     1191           MOV     R10,0EB92h
+03EE 26FA8C00     1192           SUB     R10,#08Ch
+03F2 7C1A         1193           SHR     R10,#01h
+03F4 F04A         1194           MOV     R4,R10
+03F6 DA000000  R  1195           CALLS   SEG __cuf28r,__cuf28r
+               R  1196           ?SYMB   '',$,96,26
+03FA DA000000  R  1197           CALLS   SEG __mlf8r,__mlf8r
+03FE DA000000  R  1198           CALLS   SEG __cfi82r,__cfi82r
+0402 06F01000     1199           ADD     R0,#010h
+               R  1200           ?SYMB   '',$,96,10
+0406 A8C0         1201           MOV     R12,[R0]
+0408 5C1C         1202           SHL     R12,#01h
+040A C44C0000  R  1203           MOV     [R12+#_table],R4
+                  1204           ?LINE   466
+040E A8C0         1205           MOV     R12,[R0]
+0410 08C1         1206           ADD     R12,#01h
+0412 B8C0         1207           MOV     [R0],R12
+0414              1208   _57:
+0414 A8C0         1209           MOV     R12,[R0]
+0416 46FCB004     1210           CMP     R12,#04B0h
+041A 8DD0         1211           JMPR    cc_ULT,_56
+                  1212   ; main.c    468         }
+                  1213   ; main.c    469 }
+               R  1214           ?SYMB   '',$,102,1
+               R  1215           ?SYMB   '',$,102,2
+                  1216           ?LINE   469
+041C 06F00A00     1217           ADD     R0,#0Ah
+               R  1218           ?SYMB   '',$,96,0
+0420 DB00         1219           RETS
+                  1220   _generateTable  ENDP
+               R  1221           ?SYMB   '',$,17,469
+                  1222   ; main.c    470 
+                  1223   ; main.c    471 
+                  1224   ; main.c    472 //calculate frequency and set frequency < 2 Hz = 0 Hz
+                  1225   ; main.c    473 unsigned int calculateMotorFrequency (unsigned int _frequency){
+                  1226           ?LINE   473
+                  1227           PUBLIC  _calculateMotorFrequency
+               R  1228           ?SYMB   'calculateMotorFrequency',_calculateMotorFrequency,37,18
+                  1229           ?SYMB   '',473,8,34
+                  1230   _calculateMotorFrequency        PROC    FAR
+                  1231           ?SYMB   '',00H,95,0
+0422 88C0         1232           MOV     [-R0],R12
+               R  1233           ?SYMB   '',$,96,2
+                  1234   ; Locals:
+                  1235   ;     _frequency = offset 0
                   1236   ; 
-                  1237           ?SYMB   '_frequency',1,99,18
-               R  1238           ?SYMB   '-2',$,101,1
-                  1239   ; main.c    474         if (_frequency < 2){
-                  1240           ?LINE   474
-0424 A8C0         1241           MOV     R12,[R0]
-0426 48C2         1242           CMP     R12,#02h
-0428 9D06         1243           JMPR    cc_UGE,_62
-                  1244   ; main.c    475                 frequency = 1;
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 16:19:00  Page:  24
+                  1237   ; Statics:
+                  1238   ; 
+                  1239   ; CSEs:
+                  1240   ; 
+                  1241           ?SYMB   '_frequency',1,99,18
+               R  1242           ?SYMB   '-2',$,101,1
+                  1243   ; main.c    474         if (_frequency < 2){
+                  1244           ?LINE   474
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 17:37:50  Page:  24
 main
 
  LOC CODE        LINE   SOURCELINE
 
-                  1245           ?LINE   475
-042A E01C         1246           MOV     R12,#01h
-042C F6FC0000  R  1247           MOV     _frequency,R12
-                  1248   ; main.c    476                 return (0xD903);
-                  1249           ?LINE   476
-0430 E6F403D9     1250           MOV     R4,#0D903h
-0434 0D1C         1251           JMPR    cc_UC,_63
-                  1252   ; main.c    477         }
-                  1253           ?LINE   477
-0436              1254   _62:
-                  1255   ; main.c    478         else {
-                  1256   ; main.c    479                 return (1/((float)_frequency * (float)ARRAY_SIZE*0.000000015));
-                  1257           ?LINE   479
-0436 A840         1258           MOV     R4,[R0]
-0438 DA000000  R  1259           CALLS   SEG __cuf24r,__cuf24r
-043C E6FA9644     1260           MOV     R10,#04496h
-0440 E00B         1261           MOV     R11,#00h
-0442 DA000000  R  1262           CALLS   SEG __mlf4r,__mlf4r
-0446 DA000000  R  1263           CALLS   SEG __cff48r,__cff48r
-               R  1264           ?SYMB   '',$,96,10
-044A F0BA         1265           MOV     R11,R10
-044C E6F40000  R  1266           MOV     R4,#_58
-0450 DA000000  R  1267           CALLS   SEG __load8n,__load8n
-               R  1268           ?SYMB   '',$,96,18
-0454 DA000000  R  1269           CALLS   SEG __mlf8r,__mlf8r
-0458 F0BA         1270           MOV     R11,R10
-045A E6F40000  R  1271           MOV     R4,#_59
-045E DA000000  R  1272           CALLS   SEG __load8n,__load8n
-               R  1273           ?SYMB   '',$,96,26
-0462 DA000000  R  1274           CALLS   SEG __dvf8r,__dvf8r
-0466 DA000000  R  1275           CALLS   SEG __cfu82r,__cfu82r
-046A 06F01800     1276           ADD     R0,#018h
-               R  1277           ?SYMB   '',$,96,2
-                  1278   ; main.c    480         }
-                  1279   ; main.c    481 }
-                  1280           ?LINE   481
-046E              1281   _63:
-               R  1282           ?SYMB   '',$,102,1
-046E 0802         1283           ADD     R0,#02h
-               R  1284           ?SYMB   '',$,96,0
-0470 DB00         1285           RETS
-                  1286   _calculateMotorFrequency        ENDP
-               R  1287           ?SYMB   '',$,17,481
-                  1288   ; main.c    482 
-                  1289   ; main.c    483 
-                  1290   ; main.c    484 //phase change
-                  1291   ; main.c    485 void setPhaseChange(int dir){
-                  1292           ?LINE   485
-                  1293           PUBLIC  _setPhaseChange
-               R  1294           ?SYMB   'setPhaseChange',_setPhaseChange,37,1
-                  1295           ?SYMB   '',485,8,34
-                  1296   _setPhaseChange PROC    FAR
-                  1297           ?SYMB   '',00H,95,0
-0472 88C0         1298           MOV     [-R0],R12
-               R  1299           ?SYMB   '',$,96,2
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 16:19:00  Page:  25
+0424 A8C0         1245           MOV     R12,[R0]
+0426 48C2         1246           CMP     R12,#02h
+0428 9D06         1247           JMPR    cc_UGE,_62
+                  1248   ; main.c    475                 frequency = 1;
+                  1249           ?LINE   475
+042A E01C         1250           MOV     R12,#01h
+042C F6FC0000  R  1251           MOV     _frequency,R12
+                  1252   ; main.c    476                 return (0xD903);
+                  1253           ?LINE   476
+0430 E6F403D9     1254           MOV     R4,#0D903h
+0434 0D1C         1255           JMPR    cc_UC,_63
+                  1256   ; main.c    477         }
+                  1257           ?LINE   477
+0436              1258   _62:
+                  1259   ; main.c    478         else {
+                  1260   ; main.c    479                 return (1/((float)_frequency * (float)ARRAY_SIZE*0.000000015));
+                          //float Operation wird nicht ersetzt da Datentyp größer als long verwendet werden müsste: bräc
+                         uhte Wertebereich von >10^22
+                  1261           ?LINE   479
+0436 A840         1262           MOV     R4,[R0]
+0438 DA000000  R  1263           CALLS   SEG __cuf24r,__cuf24r
+043C E6FA9644     1264           MOV     R10,#04496h
+0440 E00B         1265           MOV     R11,#00h
+0442 DA000000  R  1266           CALLS   SEG __mlf4r,__mlf4r
+0446 DA000000  R  1267           CALLS   SEG __cff48r,__cff48r
+               R  1268           ?SYMB   '',$,96,10
+044A F0BA         1269           MOV     R11,R10
+044C E6F40000  R  1270           MOV     R4,#_58
+0450 DA000000  R  1271           CALLS   SEG __load8n,__load8n
+               R  1272           ?SYMB   '',$,96,18
+0454 DA000000  R  1273           CALLS   SEG __mlf8r,__mlf8r
+0458 F0BA         1274           MOV     R11,R10
+045A E6F40000  R  1275           MOV     R4,#_59
+045E DA000000  R  1276           CALLS   SEG __load8n,__load8n
+               R  1277           ?SYMB   '',$,96,26
+0462 DA000000  R  1278           CALLS   SEG __dvf8r,__dvf8r
+0466 DA000000  R  1279           CALLS   SEG __cfu82r,__cfu82r
+046A 06F01800     1280           ADD     R0,#018h
+               R  1281           ?SYMB   '',$,96,2
+                  1282   ; main.c    480         }
+                  1283   ; main.c    481 }
+                  1284           ?LINE   481
+046E              1285   _63:
+               R  1286           ?SYMB   '',$,102,1
+046E 0802         1287           ADD     R0,#02h
+               R  1288           ?SYMB   '',$,96,0
+0470 DB00         1289           RETS
+                  1290   _calculateMotorFrequency        ENDP
+               R  1291           ?SYMB   '',$,17,481
+                  1292   ; main.c    482 
+                  1293   ; main.c    483 
+                  1294   ; main.c    484 //phase change
+                  1295   ; main.c    485 void setPhaseChange(int dir){
+                  1296           ?LINE   485
+                  1297           PUBLIC  _setPhaseChange
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 17:37:50  Page:  25
 main
 
  LOC CODE        LINE   SOURCELINE
 
-                  1300   ; Locals:
-                  1301   ;     dir = offset 0
-                  1302   ; 
-                  1303   ; Statics:
-                  1304   ; 
-                  1305   ; CSEs:
+               R  1298           ?SYMB   'setPhaseChange',_setPhaseChange,37,1
+                  1299           ?SYMB   '',485,8,34
+                  1300   _setPhaseChange PROC    FAR
+                  1301           ?SYMB   '',00H,95,0
+0472 88C0         1302           MOV     [-R0],R12
+               R  1303           ?SYMB   '',$,96,2
+                  1304   ; Locals:
+                  1305   ;     dir = offset 0
                   1306   ; 
-                  1307           ?SYMB   'dir',1,99,16
-               R  1308           ?SYMB   '-2',$,101,1
-                  1309   ; main.c    486         if(dir == clockwise){
-                  1310           ?LINE   486
-0474 A8C0         1311           MOV     R12,[R0]
-0476 3D0A         1312           JMPR    cc_NZ,_66
-                  1313   ; main.c    487                 OFFSET_L1 = 0;
-                  1314           ?LINE   487
-0478 F68E0000  R  1315           MOV     _OFFSET_L1,ZEROS
-                  1316   ; main.c    488                 OFFSET_L2 = (2*ARRAY_SIZE)/3;
-                  1317           ?LINE   488
-047C E6FC2003     1318           MOV     R12,#0320h
-0480 F6FC0000  R  1319           MOV     _OFFSET_L2,R12
-                  1320   ; main.c    489                 OFFSET_L3 = ARRAY_SIZE/3;
-                  1321           ?LINE   489
-0484 E6FC9001     1322           MOV     R12,#0190h
-0488 F6FC0000  R  1323           MOV     _OFFSET_L3,R12
-                  1324   ; main.c    490         }
-                  1325           ?LINE   490
-048C              1326   _66:
-                  1327   ; main.c    491         if(dir == counterclockwise){
-                  1328           ?LINE   491
-048C A8C0         1329           MOV     R12,[R0]
-048E 48C1         1330           CMP     R12,#01h
-0490 3D0A         1331           JMPR    cc_NE,_67
-                  1332   ; main.c    492                 OFFSET_L1 = 0;
-                  1333           ?LINE   492
-0492 F68E0000  R  1334           MOV     _OFFSET_L1,ZEROS
-                  1335   ; main.c    493                 OFFSET_L2 = ARRAY_SIZE/3;
-                  1336           ?LINE   493
-0496 E6FC9001     1337           MOV     R12,#0190h
-049A F6FC0000  R  1338           MOV     _OFFSET_L2,R12
-                  1339   ; main.c    494                 OFFSET_L3 = (2*ARRAY_SIZE)/3;
-                  1340           ?LINE   494
-049E E6FC2003     1341           MOV     R12,#0320h
-04A2 F6FC0000  R  1342           MOV     _OFFSET_L3,R12
-                  1343   ; main.c    495         }  
-                  1344           ?LINE   495
-04A6              1345   _67:
-                  1346   ; main.c    496 }
-               R  1347           ?SYMB   '',$,102,1
-                  1348           ?LINE   496
-04A6 0802         1349           ADD     R0,#02h
-               R  1350           ?SYMB   '',$,96,0
-04A8 DB00         1351           RETS
-                  1352   _setPhaseChange ENDP
-               R  1353           ?SYMB   '',$,17,496
-                  1354   ; main.c    497 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 16:19:00  Page:  26
+                  1307   ; Statics:
+                  1308   ; 
+                  1309   ; CSEs:
+                  1310   ; 
+                  1311           ?SYMB   'dir',1,99,16
+               R  1312           ?SYMB   '-2',$,101,1
+                  1313   ; main.c    486         if(dir == clockwise){
+                  1314           ?LINE   486
+0474 A8C0         1315           MOV     R12,[R0]
+0476 3D0A         1316           JMPR    cc_NZ,_66
+                  1317   ; main.c    487                 OFFSET_L1 = 0;
+                  1318           ?LINE   487
+0478 F68E0000  R  1319           MOV     _OFFSET_L1,ZEROS
+                  1320   ; main.c    488                 OFFSET_L2 = (2*ARRAY_SIZE)/3;
+                  1321           ?LINE   488
+047C E6FC2003     1322           MOV     R12,#0320h
+0480 F6FC0000  R  1323           MOV     _OFFSET_L2,R12
+                  1324   ; main.c    489                 OFFSET_L3 = ARRAY_SIZE/3;
+                  1325           ?LINE   489
+0484 E6FC9001     1326           MOV     R12,#0190h
+0488 F6FC0000  R  1327           MOV     _OFFSET_L3,R12
+                  1328   ; main.c    490         }
+                  1329           ?LINE   490
+048C              1330   _66:
+                  1331   ; main.c    491         if(dir == counterclockwise){
+                  1332           ?LINE   491
+048C A8C0         1333           MOV     R12,[R0]
+048E 48C1         1334           CMP     R12,#01h
+0490 3D0A         1335           JMPR    cc_NE,_67
+                  1336   ; main.c    492                 OFFSET_L1 = 0;
+                  1337           ?LINE   492
+0492 F68E0000  R  1338           MOV     _OFFSET_L1,ZEROS
+                  1339   ; main.c    493                 OFFSET_L2 = ARRAY_SIZE/3;
+                  1340           ?LINE   493
+0496 E6FC9001     1341           MOV     R12,#0190h
+049A F6FC0000  R  1342           MOV     _OFFSET_L2,R12
+                  1343   ; main.c    494                 OFFSET_L3 = (2*ARRAY_SIZE)/3;
+                  1344           ?LINE   494
+049E E6FC2003     1345           MOV     R12,#0320h
+04A2 F6FC0000  R  1346           MOV     _OFFSET_L3,R12
+                  1347   ; main.c    495         }  
+                  1348           ?LINE   495
+04A6              1349   _67:
+                  1350   ; main.c    496 }
+               R  1351           ?SYMB   '',$,102,1
+                  1352           ?LINE   496
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 17:37:50  Page:  26
 main
 
  LOC CODE        LINE   SOURCELINE
 
-                  1355   ; main.c    498 //controller
-                  1356   ; main.c    499 unsigned int controller(int input){
-                  1357           ?LINE   499
-                  1358           PUBLIC  _controller
-               R  1359           ?SYMB   'controller',_controller,37,18
-                  1360           ?SYMB   '',499,8,34
-                  1361   _controller     PROC    FAR
-                  1362           ?SYMB   '',00H,95,0
-04AA 88C0         1363           MOV     [-R0],R12
-               R  1364           ?SYMB   '',$,96,2
-04AC 2804         1365           SUB     R0,#04h
-               R  1366           ?SYMB   '',$,96,6
-                  1367   ; Locals:
-                  1368   ;     manipulated_variable = offset 0
-                  1369   ;     controller_error = offset 2
-                  1370   ;     input = offset 4
-                  1371   ; 
-                  1372   ; Statics:
-                  1373   ; 
-                  1374   ; CSEs:
+04A6 0802         1353           ADD     R0,#02h
+               R  1354           ?SYMB   '',$,96,0
+04A8 DB00         1355           RETS
+                  1356   _setPhaseChange ENDP
+               R  1357           ?SYMB   '',$,17,496
+                  1358   ; main.c    497 
+                  1359   ; main.c    498 //controller
+                  1360   ; main.c    499 unsigned int controller(int input){
+                  1361           ?LINE   499
+                  1362           PUBLIC  _controller
+               R  1363           ?SYMB   'controller',_controller,37,18
+                  1364           ?SYMB   '',499,8,34
+                  1365   _controller     PROC    FAR
+                  1366           ?SYMB   '',00H,95,0
+04AA 88C0         1367           MOV     [-R0],R12
+               R  1368           ?SYMB   '',$,96,2
+04AC 2804         1369           SUB     R0,#04h
+               R  1370           ?SYMB   '',$,96,6
+                  1371   ; Locals:
+                  1372   ;     manipulated_variable = offset 0
+                  1373   ;     controller_error = offset 2
+                  1374   ;     input = offset 4
                   1375   ; 
-                  1376           ?SYMB   'input',3,99,16
-               R  1377           ?SYMB   '-2',$,101,3
-                  1378   ; main.c    500         //Regelabweichung = mech Drehzahldifferenz
-                  1379   ; main.c    501         int controller_error = input - velocity;        // velocity =^ output/ 
+                  1376   ; Statics:
+                  1377   ; 
+                  1378   ; CSEs:
+                  1379   ; 
+                  1380           ?SYMB   'input',3,99,16
+               R  1381           ?SYMB   '-2',$,101,3
+                  1382   ; main.c    500         //Regelabweichung = mech Drehzahldifferenz
+                  1383   ; main.c    501         int controller_error = input - velocity;        // velocity =^ output/ 
                          feedback
-                  1380           ?SYMB   'controller_error',2,98,16
-               R  1381           ?SYMB   '-4',$,101,2
-                  1382           ?LINE   501
-04AE F2FA0000  R  1383           MOV     R10,_velocity
-04B2 F2FB0000  R  1384           MOV     R11,(_velocity+2)
-04B6 D4400400     1385           MOV     R4,[R0+#04H]
-04BA DA000000  R  1386           CALLS   SEG __cif24r,__cif24r
-04BE DA000000  R  1387           CALLS   SEG __sbf4r,__sbf4r
-04C2 DA000000  R  1388           CALLS   SEG __cfi42r,__cfi42r
-04C6 C4400200     1389           MOV     [R0+#02H],R4
-                  1390   ; main.c    502         //P-Regler
-                  1391   ; main.c    503         int manipulated_variable = controller_error * K_p;
-                  1392           ?SYMB   'manipulated_variable',1,98,16
-               R  1393           ?SYMB   '-6',$,101,1
-                  1394           ?LINE   503
-04CA F2F40000  R  1395           MOV     R4,_K_p
-04CE F2F50000  R  1396           MOV     R5,(_K_p+2)
-04D2 F0C4         1397           MOV     R12,R4
-04D4 D4400200     1398           MOV     R4,[R0+#02H]
-04D8 F0D5         1399           MOV     R13,R5
-04DA DA000000  R  1400           CALLS   SEG __cif24r,__cif24r
-04DE F0BD         1401           MOV     R11,R13
-04E0 F0AC         1402           MOV     R10,R12
-04E2 DA000000  R  1403           CALLS   SEG __mlf4r,__mlf4r
-04E6 DA000000  R  1404           CALLS   SEG __cfi42r,__cfi42r
-04EA B840         1405           MOV     [R0],R4
-                  1406   ; main.c    504         //I-Regler
-                  1407   ; main.c    505         integral_sum = integral_sum + controller_error; //so gehts auch: integr
+                  1384           ?SYMB   'controller_error',2,98,16
+               R  1385           ?SYMB   '-4',$,101,2
+                  1386           ?LINE   501
+04AE F2FA0000  R  1387           MOV     R10,_velocity
+04B2 F2FB0000  R  1388           MOV     R11,(_velocity+2)
+04B6 D4400400     1389           MOV     R4,[R0+#04H]
+04BA DA000000  R  1390           CALLS   SEG __cif24r,__cif24r
+04BE DA000000  R  1391           CALLS   SEG __sbf4r,__sbf4r
+04C2 DA000000  R  1392           CALLS   SEG __cfi42r,__cfi42r
+04C6 C4400200     1393           MOV     [R0+#02H],R4
+                  1394   ; main.c    502         //P-Regler
+                  1395   ; main.c    503         int manipulated_variable = controller_error * K_p;
+                  1396           ?SYMB   'manipulated_variable',1,98,16
+               R  1397           ?SYMB   '-6',$,101,1
+                  1398           ?LINE   503
+04CA F2F40000  R  1399           MOV     R4,_K_p
+04CE F2F50000  R  1400           MOV     R5,(_K_p+2)
+04D2 F0C4         1401           MOV     R12,R4
+04D4 D4400200     1402           MOV     R4,[R0+#02H]
+04D8 F0D5         1403           MOV     R13,R5
+04DA DA000000  R  1404           CALLS   SEG __cif24r,__cif24r
+04DE F0BD         1405           MOV     R11,R13
+04E0 F0AC         1406           MOV     R10,R12
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 17:37:50  Page:  27
+main
+
+ LOC CODE        LINE   SOURCELINE
+
+04E2 DA000000  R  1407           CALLS   SEG __mlf4r,__mlf4r
+04E6 DA000000  R  1408           CALLS   SEG __cfi42r,__cfi42r
+04EA B840         1409           MOV     [R0],R4
+                  1410   ; main.c    504         //I-Regler
+                  1411   ; main.c    505         integral_sum = integral_sum + controller_error; //so gehts auch: integr
                          al_sum += controller_error
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 16:19:00  Page:  27
+                  1412           ?LINE   505
+04EC D4C00200     1413           MOV     R12,[R0+#02H]
+04F0 02FC0000  R  1414           ADD     R12,_integral_sum
+04F4 F6FC0000  R  1415           MOV     _integral_sum,R12
+                  1416   ; main.c    506         //if (integral_sum > windup){
+                  1417   ; main.c    507         // } 
+                  1418   ; main.c    508         //P- + I-Regler
+                  1419   ; main.c    509         manipulated_variable = manipulated_variable + K_i * integral_sum;
+                  1420           ?LINE   509
+04F8 F2F40000  R  1421           MOV     R4,_K_i
+04FC F2F50000  R  1422           MOV     R5,(_K_i+2)
+0500 F0C4         1423           MOV     R12,R4
+0502 F2F40000  R  1424           MOV     R4,_integral_sum
+0506 F0D5         1425           MOV     R13,R5
+0508 DA000000  R  1426           CALLS   SEG __cif24r,__cif24r
+050C F0BD         1427           MOV     R11,R13
+050E F0AC         1428           MOV     R10,R12
+0510 DA000000  R  1429           CALLS   SEG __mlf4r,__mlf4r
+0514 F0C4         1430           MOV     R12,R4
+0516 A840         1431           MOV     R4,[R0]
+0518 F0D5         1432           MOV     R13,R5
+051A DA000000  R  1433           CALLS   SEG __cif24r,__cif24r
+051E F0BD         1434           MOV     R11,R13
+0520 F0AC         1435           MOV     R10,R12
+0522 DA000000  R  1436           CALLS   SEG __adf4r,__adf4r
+0526 DA000000  R  1437           CALLS   SEG __cfi42r,__cfi42r
+052A B840         1438           MOV     [R0],R4
+                  1439   ; main.c    510         //Vorsteuerung
+                  1440   ; main.c    511         manipulated_variable += input*2;
+                  1441           ?LINE   511
+052C D4C00400     1442           MOV     R12,[R0+#04H]
+0530 5C1C         1443           SHL     R12,#01h
+0532 A8D0         1444           MOV     R13,[R0]
+0534 00DC         1445           ADD     R13,R12
+0536 B8D0         1446           MOV     [R0],R13
+                  1447   ; main.c    512         //Stellgrößenbegrenzung
+                  1448   ; main.c    513         if(manipulated_variable > 55){
+                  1449           ?LINE   513
+0538 A8C0         1450           MOV     R12,[R0]
+053A 46FC3700     1451           CMP     R12,#037h
+053E BD04         1452           JMPR    cc_SLE,_71
+                  1453   ; main.c    514                 manipulated_variable = 55;
+                  1454           ?LINE   514
+0540 E6FC3700     1455           MOV     R12,#037h
+0544 B8C0         1456           MOV     [R0],R12
+                  1457   ; main.c    515         }
+                  1458           ?LINE   515
+0546 0D05         1459           JMPR    cc_UC,_73
+0548              1460   _71:
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 17:37:50  Page:  28
 main
 
  LOC CODE        LINE   SOURCELINE
 
-                  1408           ?LINE   505
-04EC D4C00200     1409           MOV     R12,[R0+#02H]
-04F0 02FC0000  R  1410           ADD     R12,_integral_sum
-04F4 F6FC0000  R  1411           MOV     _integral_sum,R12
-                  1412   ; main.c    506         //if (integral_sum > windup){
-                  1413   ; main.c    507         // } 
-                  1414   ; main.c    508         //P- + I-Regler
-                  1415   ; main.c    509         manipulated_variable = manipulated_variable + K_i * integral_sum;
-                  1416           ?LINE   509
-04F8 F2F40000  R  1417           MOV     R4,_K_i
-04FC F2F50000  R  1418           MOV     R5,(_K_i+2)
-0500 F0C4         1419           MOV     R12,R4
-0502 F2F40000  R  1420           MOV     R4,_integral_sum
-0506 F0D5         1421           MOV     R13,R5
-0508 DA000000  R  1422           CALLS   SEG __cif24r,__cif24r
-050C F0BD         1423           MOV     R11,R13
-050E F0AC         1424           MOV     R10,R12
-0510 DA000000  R  1425           CALLS   SEG __mlf4r,__mlf4r
-0514 F0C4         1426           MOV     R12,R4
-0516 A840         1427           MOV     R4,[R0]
-0518 F0D5         1428           MOV     R13,R5
-051A DA000000  R  1429           CALLS   SEG __cif24r,__cif24r
-051E F0BD         1430           MOV     R11,R13
-0520 F0AC         1431           MOV     R10,R12
-0522 DA000000  R  1432           CALLS   SEG __adf4r,__adf4r
-0526 DA000000  R  1433           CALLS   SEG __cfi42r,__cfi42r
-052A B840         1434           MOV     [R0],R4
-                  1435   ; main.c    510         //Vorsteuerung
-                  1436   ; main.c    511         manipulated_variable += input*2;
-                  1437           ?LINE   511
-052C D4C00400     1438           MOV     R12,[R0+#04H]
-0530 5C1C         1439           SHL     R12,#01h
-0532 A8D0         1440           MOV     R13,[R0]
-0534 00DC         1441           ADD     R13,R12
-0536 B8D0         1442           MOV     [R0],R13
-                  1443   ; main.c    512         //Stellgrößenbegrenzung
-                  1444   ; main.c    513         if(manipulated_variable > 55){
-                  1445           ?LINE   513
-0538 A8C0         1446           MOV     R12,[R0]
-053A 46FC3700     1447           CMP     R12,#037h
-053E BD04         1448           JMPR    cc_SLE,_71
-                  1449   ; main.c    514                 manipulated_variable = 55;
-                  1450           ?LINE   514
-0540 E6FC3700     1451           MOV     R12,#037h
-0544 B8C0         1452           MOV     [R0],R12
-                  1453   ; main.c    515         }
-                  1454           ?LINE   515
-0546 0D05         1455           JMPR    cc_UC,_73
-0548              1456   _71:
-                  1457   ; main.c    516         else if(manipulated_variable < 0){
-                  1458           ?LINE   516
-0548 A8C0         1459           MOV     R12,[R0]
-054A 48C0         1460           CMP     R12,#00h
-054C DD02         1461           JMPR    cc_SGE,_72
-                  1462   ; main.c    517                 manipulated_variable = 1;
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 16:19:00  Page:  28
-main
-
- LOC CODE        LINE   SOURCELINE
-
-                  1463           ?LINE   517
-054E E01C         1464           MOV     R12,#01h
-0550 B8C0         1465           MOV     [R0],R12
-                  1466   ; main.c    518         }
-                  1467           ?LINE   518
-0552              1468   _72:
-                  1469   ; main.c    519         return(manipulated_variable);
-                  1470           ?LINE   519
-0552              1471   _73:
-0552 A840         1472           MOV     R4,[R0]
-                  1473   ; main.c    520 }
-               R  1474           ?SYMB   '',$,102,1
-               R  1475           ?SYMB   '',$,102,2
-               R  1476           ?SYMB   '',$,102,3
-                  1477           ?LINE   520
-0554 0806         1478           ADD     R0,#06h
-               R  1479           ?SYMB   '',$,96,0
-0556 DB00         1480           RETS
-                  1481   _controller     ENDP
-               R  1482           ?SYMB   '',$,17,520
-                  1483   ; main.c    521 
-                  1484   ; main.c    522 // USER CODE END
-                  1485   ; main.c    523 
-                  1486   MAIN_4_PR       ENDS
-                  1487   
-                  1488   MAIN_5_NB       SECTION LDAT WORD PUBLIC 'CNEAR'
-0000              1489   MAIN_5_NB_ENTRY LABEL   BYTE
-0000              1490   _table  LABEL   WORD
-0000              1491           DS      2400
-                  1492           PUBLIC  _table
-                  1493           ?SYMB   '',01210010H,5,288
-                  1494           ?SYMB   '',16,47,289
-                  1495           ?SYMB   '',0,30,0
-                  1496           ?SYMB   '',1199,49,0
-               R  1497           ?SYMB   'table',_table,22,288
-0960              1498   _integral_sum   LABEL   WORD
-0960              1499           DS      2
-                  1500           PUBLIC  _integral_sum
-               R  1501           ?SYMB   'integral_sum',_integral_sum,22,16
-0962              1502   _rpm    LABEL   WORD
-0962              1503           DS      4
-                  1504           PUBLIC  _rpm
-               R  1505           ?SYMB   'rpm',_rpm,22,10
-0966              1506   _velocity       LABEL   WORD
-0966              1507           DS      4
+                  1461   ; main.c    516         else if(manipulated_variable < 0){
+                  1462           ?LINE   516
+0548 A8C0         1463           MOV     R12,[R0]
+054A 48C0         1464           CMP     R12,#00h
+054C DD02         1465           JMPR    cc_SGE,_72
+                  1466   ; main.c    517                 manipulated_variable = 1;
+                  1467           ?LINE   517
+054E E01C         1468           MOV     R12,#01h
+0550 B8C0         1469           MOV     [R0],R12
+                  1470   ; main.c    518         }
+                  1471           ?LINE   518
+0552              1472   _72:
+                  1473   ; main.c    519         return(manipulated_variable);
+                  1474           ?LINE   519
+0552              1475   _73:
+0552 A840         1476           MOV     R4,[R0]
+                  1477   ; main.c    520 }
+               R  1478           ?SYMB   '',$,102,1
+               R  1479           ?SYMB   '',$,102,2
+               R  1480           ?SYMB   '',$,102,3
+                  1481           ?LINE   520
+0554 0806         1482           ADD     R0,#06h
+               R  1483           ?SYMB   '',$,96,0
+0556 DB00         1484           RETS
+                  1485   _controller     ENDP
+               R  1486           ?SYMB   '',$,17,520
+                  1487   ; main.c    521 
+                  1488   ; main.c    522 // USER CODE END
+                  1489   ; main.c    523 
+                  1490   MAIN_4_PR       ENDS
+                  1491   
+                  1492   MAIN_5_NB       SECTION LDAT WORD PUBLIC 'CNEAR'
+0000              1493   MAIN_5_NB_ENTRY LABEL   BYTE
+0000              1494   _table  LABEL   WORD
+0000              1495           DS      2400
+                  1496           PUBLIC  _table
+                  1497           ?SYMB   '',01210010H,5,288
+                  1498           ?SYMB   '',16,47,289
+                  1499           ?SYMB   '',0,30,0
+                  1500           ?SYMB   '',1199,49,0
+               R  1501           ?SYMB   'table',_table,22,288
+0960              1502   _integral_sum   LABEL   WORD
+0960              1503           DS      2
+                  1504           PUBLIC  _integral_sum
+               R  1505           ?SYMB   'integral_sum',_integral_sum,22,16
+0962              1506   _velocity       LABEL   WORD
+0962              1507           DS      4
                   1508           PUBLIC  _velocity
                R  1509           ?SYMB   'velocity',_velocity,22,10
-096A              1510   _rampIndex      LABEL   WORD
-096A              1511           DS      2
+0966              1510   _rampIndex      LABEL   WORD
+0966              1511           DS      2
                   1512           PUBLIC  _rampIndex
                R  1513           ?SYMB   'rampIndex',_rampIndex,22,18
-096C              1514   _index  LABEL   WORD
-096C              1515           DS      2
-                  1516           PUBLIC  _index
-               R  1517           ?SYMB   'index',_index,22,18
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 16:19:00  Page:  29
+0968              1514   _index  LABEL   WORD
+0968              1515           DS      2
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 17:37:50  Page:  29
 main
 
  LOC CODE        LINE   SOURCELINE
 
-096E              1518   _OFFSET_L1      LABEL   WORD
-096E              1519           DS      2
+                  1516           PUBLIC  _index
+               R  1517           ?SYMB   'index',_index,22,18
+096A              1518   _OFFSET_L1      LABEL   WORD
+096A              1519           DS      2
                   1520           PUBLIC  _OFFSET_L1
                R  1521           ?SYMB   'OFFSET_L1',_OFFSET_L1,22,18
-0970              1522   _OFFSET_L3      LABEL   WORD
-0970              1523           DS      2
+096C              1522   _OFFSET_L3      LABEL   WORD
+096C              1523           DS      2
                   1524           PUBLIC  _OFFSET_L3
                R  1525           ?SYMB   'OFFSET_L3',_OFFSET_L3,22,18
-0972              1526   _OFFSET_L2      LABEL   WORD
-0972              1527           DS      2
+096E              1526   _OFFSET_L2      LABEL   WORD
+096E              1527           DS      2
                   1528           PUBLIC  _OFFSET_L2
                R  1529           ?SYMB   'OFFSET_L2',_OFFSET_L2,22,18
                   1530   MAIN_5_NB       ENDS
@@ -1718,8 +1720,8 @@ main
                   1547   C166_INIT       ENDS
                   1548   
                   1549   C166_BSS        SECTION PDAT WORD GLOBAL 'CINITROM'
-0000 05000000  R  1550           DW      05h,MAIN_5_NB_ENTRY,0974h
-0004 7409        
+0000 05000000  R  1550           DW      05h,MAIN_5_NB_ENTRY,0970h
+0004 7009        
                   1551   C166_BSS        ENDS
                   1552   
                   1553   $FLOAT(ANSI)
@@ -1736,13 +1738,13 @@ main
                   1564           EXTERN  _ADC0_vInit:FAR
                   1565           EXTERN  __mul:FAR
                   1566           EXTERN  __mlf4r:FAR
-                  1567           EXTERN  __dvf4r:FAR
-                  1568           EXTERN  __cff48r:FAR
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 16:19:00  Page:  30
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 17:37:50  Page:  30
 main
 
  LOC CODE        LINE   SOURCELINE
 
+                  1567           EXTERN  __dvf4r:FAR
+                  1568           EXTERN  __cff48r:FAR
                   1569           EXTERN  __store8n:FAR
                   1570           EXTERN  __load8n:FAR
                   1571           EXTERN  __cif28r:FAR

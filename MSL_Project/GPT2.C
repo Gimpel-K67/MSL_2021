@@ -68,7 +68,6 @@
 	extern const unsigned int ARRAY_SIZE;
 	extern	unsigned int rampIndex;
 	extern volatile float velocity;
-	extern volatile float rpm;
 	volatile unsigned int inc;
 // USER CODE END
 
@@ -259,7 +258,6 @@ _interrupt(T6INT)  void GPT2_viTmr6(void)
 	 inc = GPT12E_T4;
 	 velocity = (1000 * (float) inc)/(8);
 	 velocity = velocity/2048;
-	 rpm = velocity * 60;
 	 GPT12E_T4 = 0;
   // USER CODE END
 

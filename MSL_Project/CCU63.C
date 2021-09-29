@@ -72,6 +72,7 @@
 	extern unsigned int OFFSET_L2;
 	extern unsigned int OFFSET_L3;
 	extern const unsigned int frequency;
+	extern const unsigned int HALF_PERIODVALUE;
 // USER CODE END
 
 
@@ -80,7 +81,7 @@
 //****************************************************************************
 
 // USER CODE BEGIN (CCU63_General,7)
-
+   
 // USER CODE END
 
 
@@ -395,14 +396,16 @@ _interrupt(CCU63_NodeI0_INT)  void CCU63_viNodeI0(void)
     // Timer T12 one match detection
 
     // USER CODE BEGIN (NodeI0,20)
-		CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_0, table[(index + OFFSET_L1)%ARRAY_SIZE]*(0.013*frequency+0.3) + (CCU63_T12PR/2));
-	   	CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_1, table[(index + OFFSET_L2)%ARRAY_SIZE]*(0.013*frequency+0.3) + (CCU63_T12PR/2));
-  		CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_2, table[(index + OFFSET_L3)%ARRAY_SIZE]*(0.013*frequency+0.3) + (CCU63_T12PR/2));
+		CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_0, table[(index + OFFSET_L1)%ARRAY_SIZE]*(0.0145*frequency+0.2) + (HALF_PERIODVALUE)); // float-Rechnung nicht ersetzt weil 1.keine Rechenzeitprobleme/ Zeit nicht woanders nötig 2.bei Verwendung von long würden durch die Skalierung 2 long-Rechenoperationen und eine float-Rechenoperationen hinzu kommen
+	   	CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_1, table[(index + OFFSET_L2)%ARRAY_SIZE]*(0.0145*frequency+0.2) + (HALF_PERIODVALUE));
+  		CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_2, table[(index + OFFSET_L3)%ARRAY_SIZE]*(0.0145*frequency+0.2) + (HALF_PERIODVALUE));
 		CCU63_vEnableShadowTransfer(CCU63_TIMER_12);
     // USER CODE END
 
+
     CCU63_ISR |= 0x0040;  // clear flag CCU63_IS_T12OM
   }
+  
 
   if(CCU63_IS & 0x0080)  // if CCU63_IS_T12PM
   {
