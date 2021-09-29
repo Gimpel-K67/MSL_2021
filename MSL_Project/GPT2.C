@@ -252,7 +252,7 @@ _interrupt(T6INT)  void GPT2_viTmr6(void)
 {
   // USER CODE BEGIN (Tmr6,2)
 	//Index für den Programmablauf, größer 1751 damit der Programmablauf bei Überlauf der Variable RampIndex (16 Bit) nicht erneut von vorn startet 
-	if(rampIndex < 1751){
+	if(rampIndex < 5251){
 		rampIndex++;
 	}
 	 

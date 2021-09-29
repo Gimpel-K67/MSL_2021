@@ -81,7 +81,7 @@
 	unsigned int OFFSET_L1;
 	unsigned int OFFSET_L2;
 	unsigned int OFFSET_L3;
-	unsigned int table[ARRAY_SIZE];
+	int table[ARRAY_SIZE];
 	unsigned int index;
 	float pi = 3.14159265359;
 	volatile unsigned int rampIndex;
@@ -90,6 +90,9 @@
 	int integral_sum;
 	const float K_p = 0.05;
 	const float K_i = 0.01;
+	const unsigned int TIME = 2;
+	const unsigned int STATE_TIME = (TIME * 1000)/(8);
+
 // USER CODE END
 
 
@@ -464,7 +467,7 @@ void generateTable(){
 	double stepSize = (2*pi)/(ARRAY_SIZE);
 	int i;
 	for (i = 0; i < ARRAY_SIZE; i++){ 
-		table[i] = (unsigned int)((double)((CCU63_T12PR - 140)/2)*sin(stepSize * i) + (CCU63_T12PR/2));
+		table[i] = (int)((double)((CCU63_T12PR - 140)/2)*sin(stepSize * i));
 	}
 }
 
@@ -504,7 +507,7 @@ unsigned int controller(int input){
 	//I-Regler
 	integral_sum = integral_sum + controller_error; //so gehts auch: integral_sum += controller_error
 	//if (integral_sum > windup){
-	} 
+	// } 
 	//P- + I-Regler
 	manipulated_variable = manipulated_variable + K_i * integral_sum;
 	//Vorsteuerung

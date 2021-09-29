@@ -349,7 +349,7 @@ _interrupt(CCU62_NodeI0_INT)  void CCU62_viNodeI0(void)
     // Timer T12 period match detection
 
     // USER CODE BEGIN (NodeI0,19)
-	  if(rampIndex < 1750 && rampIndex > 1500){
+	  if(rampIndex < 5250 && rampIndex > 4500){
 	  }
 	  else{
 	  index++;

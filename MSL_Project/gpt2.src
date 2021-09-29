@@ -409,10 +409,10 @@ _GPT2_viTmr6	PROC TASK GPT2_TASK INTNO GPT2_INUM = 024h
 ; 
 ; gpt2.c    253	  // USER CODE BEGIN (Tmr6,2)
 ; gpt2.c    254		//Index für den Programmablauf, größer 1751 damit der Programmablauf bei Überlauf der Variable RampIndex (16 Bit) nicht erneut von vorn startet 
-; gpt2.c    255		if(rampIndex < 1751){
+; gpt2.c    255		if(rampIndex < 5251){
 	?LINE	255
 	MOV	R12,_rampIndex
-	CMP	R12,#06D7h
+	CMP	R12,#01483h
 	JMPR	cc_UGE,_8
 ; gpt2.c    256			rampIndex++;
 	?LINE	256

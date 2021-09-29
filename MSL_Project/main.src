@@ -173,7 +173,7 @@ _ARRAY_SIZE	LABEL	WORD
 ; main.c     81		unsigned int OFFSET_L1;
 ; main.c     82		unsigned int OFFSET_L2;
 ; main.c     83		unsigned int OFFSET_L3;
-; main.c     84		unsigned int table[ARRAY_SIZE];
+; main.c     84		int table[ARRAY_SIZE];
 ; main.c     85		unsigned int index;
 ; main.c     86		float pi = 3.14159265359;
 MAIN_3_NC	ENDS
@@ -778,10 +778,10 @@ _30:
 ; main.c    385	   // USER CODE BEGIN (Main,4)
 ; main.c    386	   
 ; main.c    387	   // one rampIndex step = 8ms, 250 steps = 2s
-; main.c    388	   if (rampIndex > 1750){
+; main.c    388	   if (rampIndex > 5250){
 	?LINE	388
 	MOV	R12,_rampIndex
-	CMP	R12,#06D6h
+	CMP	R12,#01482h
 	JMPR	cc_ULE,_31
 ; main.c    389	   		unsigned long raw;
 	?SYMB	'',$,9,389
@@ -847,15 +847,15 @@ _31:
 	?LINE	398
 _32:
 ; main.c    399		// ramp up
-; main.c    400		if(rampIndex < 250){
+; main.c    400		if(rampIndex < 750){
 	?LINE	400
 	MOV	R12,_rampIndex
-	CMP	R12,#0FAh
+	CMP	R12,#02EEh
 	JMPR	cc_UGE,_33
-; main.c    401			frequency = (rampIndex/5);
+; main.c    401			frequency = (rampIndex/15);
 	?LINE	401
 	MOV	R12,_rampIndex
-	MOV	R13,#05h
+	MOV	R13,#0Fh
 	MOV	MDL,R12
 	DIVU	R13
 	MOV	R12,MDL
@@ -879,13 +879,13 @@ _32:
 	?LINE	405
 _33:
 ; main.c    406		// hold 50 Hz clockwise
-; main.c    407		if(rampIndex < 500 && rampIndex > 250){
+; main.c    407		if(rampIndex < 1500 && rampIndex > 750){
 	?LINE	407
 	MOV	R12,_rampIndex
-	CMP	R12,#01F4h
+	CMP	R12,#05DCh
 	JMPR	cc_UGE,_34
 	MOV	R12,_rampIndex
-	CMP	R12,#0FAh
+	CMP	R12,#02EEh
 	JMPR	cc_ULE,_35
 ; main.c    408			frequency = 50;
 	?LINE	408
@@ -907,19 +907,19 @@ _33:
 _34:
 _35:
 ; main.c    412		// ramp down
-; main.c    413		if(rampIndex < 750 && rampIndex > 500){
+; main.c    413		if(rampIndex < 2250 && rampIndex > 1500){
 	?LINE	413
 	MOV	R12,_rampIndex
-	CMP	R12,#02EEh
+	CMP	R12,#08CAh
 	JMPR	cc_UGE,_36
 	MOV	R12,_rampIndex
-	CMP	R12,#01F4h
+	CMP	R12,#05DCh
 	JMPR	cc_ULE,_37
-; main.c    414			frequency = (750 - rampIndex)/5;
+; main.c    414			frequency = (2250 - rampIndex)/15;
 	?LINE	414
-	MOV	R12,#02EEh
+	MOV	R12,#08CAh
 	SUB	R12,_rampIndex
-	MOV	R13,#05h
+	MOV	R13,#0Fh
 	MOV	MDL,R12
 	DIVU	R13
 	MOV	R12,MDL
@@ -940,10 +940,10 @@ _35:
 _36:
 _37:
 ; main.c    418		// phase change
-; main.c    419		if (rampIndex == 750){
+; main.c    419		if (rampIndex == 2250){
 	?LINE	419
 	MOV	R12,_rampIndex
-	CMP	R12,#02EEh
+	CMP	R12,#08CAh
 	JMPR	cc_NE,_38
 ; main.c    420			setPhaseChange(counterclockwise);
 	?LINE	420
@@ -954,19 +954,19 @@ _37:
 _38:
 ; main.c    422	
 ; main.c    423		// reverse ramp up
-; main.c    424		if(rampIndex < 1000 && rampIndex > 750){
+; main.c    424		if(rampIndex < 3000 && rampIndex > 2250){
 	?LINE	424
 	MOV	R12,_rampIndex
-	CMP	R12,#03E8h
+	CMP	R12,#0BB8h
 	JMPR	cc_UGE,_39
 	MOV	R12,_rampIndex
-	CMP	R12,#02EEh
+	CMP	R12,#08CAh
 	JMPR	cc_ULE,_40
-; main.c    425			frequency = (rampIndex-750)/5;
+; main.c    425			frequency = (rampIndex-2250)/15;
 	?LINE	425
 	MOV	R12,_rampIndex
-	SUB	R12,#02EEh
-	MOV	R13,#05h
+	SUB	R12,#08CAh
+	MOV	R13,#0Fh
 	MOV	MDL,R12
 	DIVU	R13
 	MOV	R12,MDL
@@ -987,13 +987,13 @@ _38:
 _39:
 _40:
 ; main.c    429		// hold 50 hz counterclockwise
-; main.c    430		if(rampIndex < 1250 && rampIndex > 1000){
+; main.c    430		if(rampIndex < 3750 && rampIndex > 3000){
 	?LINE	430
 	MOV	R12,_rampIndex
-	CMP	R12,#04E2h
+	CMP	R12,#0EA6h
 	JMPR	cc_UGE,_41
 	MOV	R12,_rampIndex
-	CMP	R12,#03E8h
+	CMP	R12,#0BB8h
 	JMPR	cc_ULE,_42
 ; main.c    431			frequency = 50;
 	?LINE	431
@@ -1015,19 +1015,19 @@ _40:
 _41:
 _42:
 ; main.c    435		// reverse ramp down
-; main.c    436		if(rampIndex < 1500 && rampIndex > 1250){
+; main.c    436		if(rampIndex < 4500 && rampIndex > 3750){
 	?LINE	436
 	MOV	R12,_rampIndex
-	CMP	R12,#05DCh
+	CMP	R12,#01194h
 	JMPR	cc_UGE,_43
 	MOV	R12,_rampIndex
-	CMP	R12,#04E2h
+	CMP	R12,#0EA6h
 	JMPR	cc_ULE,_44
-; main.c    437			frequency = (1500 - rampIndex)/5;
+; main.c    437			frequency = (4500 - rampIndex)/15;
 	?LINE	437
-	MOV	R12,#05DCh
+	MOV	R12,#01194h
 	SUB	R12,_rampIndex
-	MOV	R13,#05h
+	MOV	R13,#0Fh
 	MOV	MDL,R12
 	DIVU	R13
 	MOV	R12,MDL
@@ -1048,13 +1048,13 @@ _42:
 _43:
 _44:
 ; main.c    441		// DC break !!! adjust CCU62 rampIndex !!!
-; main.c    442		if(rampIndex < 1750 && rampIndex > 1500){
+; main.c    442		if(rampIndex < 5250 && rampIndex > 4500){
 	?LINE	442
 	MOV	R12,_rampIndex
-	CMP	R12,#06D6h
+	CMP	R12,#01482h
 	JMPR	cc_UGE,_45
 	MOV	R12,_rampIndex
-	CMP	R12,#05DCh
+	CMP	R12,#01194h
 	JMPR	cc_ULE,_46
 ; main.c    443			frequency = 50;
 	?LINE	443
@@ -1076,10 +1076,10 @@ _44:
 _45:
 _46:
 ; main.c    447		// set 0 Hz for transition to poti control
-; main.c    448		if(rampIndex == 1750){
+; main.c    448		if(rampIndex == 5250){
 	?LINE	448
 	MOV	R12,_rampIndex
-	CMP	R12,#06D6h
+	CMP	R12,#01482h
 	JMPR	cc_NE,_47
 ; main.c    449			frequency = 0;
 	?LINE	449
@@ -1162,7 +1162,7 @@ _generateTable	PROC	FAR
 	MOV	[R0],R12
 	JMPR	cc_UC,_57
 _56:
-; main.c    467			table[i] = (unsigned int)((double)((CCU63_T12PR - 140)/2)*sin(stepSize * i) + (CCU63_T12PR/2));
+; main.c    467			table[i] = (int)((double)((CCU63_T12PR - 140)/2)*sin(stepSize * i));
 	?LINE	467
 	SUB	R0,#08h
 	?SYMB	'',$,96,18
@@ -1191,15 +1191,8 @@ _56:
 	CALLS	SEG __cuf28r,__cuf28r
 	?SYMB	'',$,96,26
 	CALLS	SEG __mlf8r,__mlf8r
-	MOV	R11,R10
-	MOV	R10,0EB92h
-	SHR	R10,#01h
-	MOV	R4,R10
-	CALLS	SEG __cuf28r,__cuf28r
-	?SYMB	'',$,96,34
-	CALLS	SEG __adf8r,__adf8r
-	CALLS	SEG __cfu82r,__cfu82r
-	ADD	R0,#018h
+	CALLS	SEG __cfi82r,__cfi82r
+	ADD	R0,#010h
 	?SYMB	'',$,96,10
 	MOV	R12,[R0]
 	SHL	R12,#01h
@@ -1497,7 +1490,7 @@ MAIN_5_NB_ENTRY	LABEL	BYTE
 _table	LABEL	WORD
 	DS	2400
 	PUBLIC	_table
-	?SYMB	'',01210012H,5,288
+	?SYMB	'',01210010H,5,288
 	?SYMB	'',16,47,289
 	?SYMB	'',0,30,0
 	?SYMB	'',1199,49,0
@@ -1578,10 +1571,10 @@ $FLOAT(ANSI)
 	EXTERN	__cif28r:FAR
 	EXTERN	__mlf8r:FAR
 	EXTERN	__cuf28r:FAR
-	EXTERN	__adf8r:FAR
-	EXTERN	__cfu82r:FAR
+	EXTERN	__cfi82r:FAR
 	EXTERN	__cuf24r:FAR
 	EXTERN	__dvf8r:FAR
+	EXTERN	__cfu82r:FAR
 	EXTERN	__cif24r:FAR
 	EXTERN	__sbf4r:FAR
 	EXTERN	__cfi42r:FAR

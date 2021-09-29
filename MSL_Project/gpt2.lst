@@ -1,4 +1,4 @@
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 14:22:47  Page:   1
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 16:18:58  Page:   1
 gpt2
 
  LOC CODE        LINE   SOURCELINE
@@ -58,7 +58,7 @@ gpt2
                     53   ; gpt2.c     21 // USER CODE END
                     54   ; gpt2.c     22 
                     55   ; gpt2.c     23 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 14:22:47  Page:   2
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 16:18:58  Page:   2
 gpt2
 
  LOC CODE        LINE   SOURCELINE
@@ -118,7 +118,7 @@ gpt2
                    108   ; gpt2.c     37 // @Macros
                    109   ; gpt2.c     38 //****************************************************************************
                    110   ; gpt2.c     39 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 14:22:47  Page:   3
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 16:18:58  Page:   3
 gpt2
 
  LOC CODE        LINE   SOURCELINE
@@ -178,7 +178,7 @@ gpt2
                    163   ; gpt2.c     92 
                    164   ; gpt2.c     93 
                    165   ; gpt2.c     94 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 14:22:47  Page:   4
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 16:18:58  Page:   4
 gpt2
 
  LOC CODE        LINE   SOURCELINE
@@ -238,7 +238,7 @@ gpt2
                    218   ; gpt2.c    133   ///  -----------------------------------------------------------------------
                    219   ; gpt2.c    134   ///  Configuration of Timer Block Prescaler 1:
                    220   ; gpt2.c    135   ///  -----------------------------------------------------------------------
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 14:22:47  Page:   5
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 16:18:58  Page:   5
 gpt2
 
  LOC CODE        LINE   SOURCELINE
@@ -298,7 +298,7 @@ gpt2
                    273   ; gpt2.c    175 
                    274   ; gpt2.c    176   GPT12E_T6CON   =  0x0802;      // load timer 6 control register
                    275           ?LINE   176
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 14:22:47  Page:   6
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 16:18:58  Page:   6
 gpt2
 
  LOC CODE        LINE   SOURCELINE
@@ -358,7 +358,7 @@ gpt2
                    328           ?LINE   214
 003E E00C          329           MOV     R12,#00h
 0040 F6FCC0FE      330           MOV     0FEC0h,R12
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 14:22:47  Page:   7
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 16:18:58  Page:   7
 gpt2
 
  LOC CODE        LINE   SOURCELINE
@@ -418,7 +418,7 @@ gpt2
 0058 CC00          383           NOP
 005A EC02          384           PUSH    DPP2
 005C E6020000  R   385           MOV     DPP2,#PAG ?BASE_DPP2
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 14:22:47  Page:   8
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 16:18:58  Page:   8
 gpt2
 
  LOC CODE        LINE   SOURCELINE
@@ -450,10 +450,10 @@ gpt2
                    410   ; gpt2.c    253   // USER CODE BEGIN (Tmr6,2)
                    411   ; gpt2.c    254         //Index für den Programmablauf, größer 1751 damit der Programmablauf be
                          i Überlauf der Variable RampIndex (16 Bit) nicht erneut von vorn startet 
-                   412   ; gpt2.c    255         if(rampIndex < 1751){
+                   412   ; gpt2.c    255         if(rampIndex < 5251){
                    413           ?LINE   255
 0086 F2FC0000  R   414           MOV     R12,_rampIndex
-008A 46FCD706      415           CMP     R12,#06D7h
+008A 46FC8314      415           CMP     R12,#01483h
 008E 9D05          416           JMPR    cc_UGE,_8
                    417   ; gpt2.c    256                 rampIndex++;
                    418           ?LINE   256
@@ -478,7 +478,7 @@ gpt2
 00B4 E6FA0041      437           MOV     R10,#04100h
 00B8 E00B          438           MOV     R11,#00h
 00BA DA000000  R   439           CALLS   SEG __dvf4r,__dvf4r
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 14:22:47  Page:   9
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 16:18:58  Page:   9
 gpt2
 
  LOC CODE        LINE   SOURCELINE
@@ -538,7 +538,7 @@ gpt2
                R   492           ?SYMB   '',$,17,266
                    493   ; gpt2.c    267 
                    494   ; gpt2.c    268 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 14:22:47  Page:  10
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 16:18:58  Page:  10
 gpt2
 
  LOC CODE        LINE   SOURCELINE

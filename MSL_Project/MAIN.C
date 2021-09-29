@@ -81,7 +81,7 @@
 	unsigned int OFFSET_L1;
 	unsigned int OFFSET_L2;
 	unsigned int OFFSET_L3;
-	unsigned int table[ARRAY_SIZE];
+	int table[ARRAY_SIZE];
 	unsigned int index;
 	float pi = 3.14159265359;
 	volatile unsigned int rampIndex;
@@ -385,7 +385,7 @@ void main(void)
    // USER CODE BEGIN (Main,4)
    
    // one rampIndex step = 8ms, 250 steps = 2s
-   if (rampIndex > 1750){
+   if (rampIndex > 5250){
    		unsigned long raw;
 		raw = ADC0_uwGetResultData(RESULT_REG_0);
 		frequency = controller((25*raw)/4096);  //4096 ist Auflösung des ADC, links = 0, rechts = 4096
@@ -397,55 +397,55 @@ void main(void)
 		setPhaseChange(clockwise);
 	}
 	// ramp up
-	if(rampIndex < 250){
-		frequency = (rampIndex/5);
+	if(rampIndex < 750){
+		frequency = (rampIndex/15);
 		CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
 		CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
 		IO_vTogglePin(LED_DBG);
 	} 
 	// hold 50 Hz clockwise
-	if(rampIndex < 500 && rampIndex > 250){
+	if(rampIndex < 1500 && rampIndex > 750){
 		frequency = 50;
 		CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
 		CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
 	}
 	// ramp down
-	if(rampIndex < 750 && rampIndex > 500){
-		frequency = (750 - rampIndex)/5;
+	if(rampIndex < 2250 && rampIndex > 1500){
+		frequency = (2250 - rampIndex)/15;
 		CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
 		CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
 	}
 	// phase change
-	if (rampIndex == 750){
+	if (rampIndex == 2250){
 		setPhaseChange(counterclockwise);
 	}
 
 	// reverse ramp up
-	if(rampIndex < 1000 && rampIndex > 750){
-		frequency = (rampIndex-750)/5;
+	if(rampIndex < 3000 && rampIndex > 2250){
+		frequency = (rampIndex-2250)/15;
 		CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
 		CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
 	}
 	// hold 50 hz counterclockwise
-	if(rampIndex < 1250 && rampIndex > 1000){
+	if(rampIndex < 3750 && rampIndex > 3000){
 		frequency = 50;
 		CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
 		CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
 	}
 	// reverse ramp down
-	if(rampIndex < 1500 && rampIndex > 1250){
-		frequency = (1500 - rampIndex)/5;
+	if(rampIndex < 4500 && rampIndex > 3750){
+		frequency = (4500 - rampIndex)/15;
 		CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
 		CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
 	}
 	// DC break !!! adjust CCU62 rampIndex !!!
-	if(rampIndex < 1750 && rampIndex > 1500){
+	if(rampIndex < 5250 && rampIndex > 4500){
 		frequency = 50;
 		CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
 		CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
 	}
 	// set 0 Hz for transition to poti control
-	if(rampIndex == 1750){
+	if(rampIndex == 5250){
 		frequency = 0;
 		CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
 		CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
@@ -464,7 +464,7 @@ void generateTable(){
 	double stepSize = (2*pi)/(ARRAY_SIZE);
 	int i;
 	for (i = 0; i < ARRAY_SIZE; i++){ 
-		table[i] = (unsigned int)((double)((CCU63_T12PR - 140)/2)*sin(stepSize * i) + (CCU63_T12PR/2));
+		table[i] = (int)((double)((CCU63_T12PR - 140)/2)*sin(stepSize * i));
 	}
 }
 

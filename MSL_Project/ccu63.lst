@@ -1,4 +1,4 @@
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 11:27:43  Page:   1
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 15:01:42  Page:   1
 ccu63
 
  LOC CODE        LINE   SOURCELINE
@@ -58,7 +58,7 @@ ccu63
                     53   ; ccu63.c    21 // USER CODE END
                     54   ; ccu63.c    22 
                     55   ; ccu63.c    23 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 11:27:43  Page:   2
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 15:01:42  Page:   2
 ccu63
 
  LOC CODE        LINE   SOURCELINE
@@ -118,7 +118,7 @@ ccu63
                    108   ; ccu63.c    37 // @Macros
                    109   ; ccu63.c    38 //****************************************************************************
                    110   ; ccu63.c    39 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 11:27:43  Page:   3
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 15:01:42  Page:   3
 ccu63
 
  LOC CODE        LINE   SOURCELINE
@@ -152,7 +152,7 @@ ccu63
                    137   ; ccu63.c    66 
                    138   ; ccu63.c    67 // USER CODE BEGIN (CCU63_General,6)
                    139   ; ccu63.c    68         extern const unsigned int ARRAY_SIZE;
-                   140   ; ccu63.c    69         extern unsigned int table[];
+                   140   ; ccu63.c    69         extern int table[];
                    141   ; ccu63.c    70         extern  unsigned int index;
                    142   ; ccu63.c    71         extern unsigned int OFFSET_L1;
                    143   ; ccu63.c    72         extern unsigned int OFFSET_L2;
@@ -178,7 +178,7 @@ ccu63
                    163   ; ccu63.c    92 
                    164   ; ccu63.c    93 // USER CODE END
                    165   ; ccu63.c    94 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 11:27:43  Page:   4
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 15:01:42  Page:   4
 ccu63
 
  LOC CODE        LINE   SOURCELINE
@@ -238,7 +238,7 @@ ccu63
                    218   ; ccu63.c   133 
                    219   ; ccu63.c   134   ///  -----------------------------------------------------------------------
                    220   ; ccu63.c   135   ///  Configuration of KERNEL REGISTERS :
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 11:27:43  Page:   5
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 15:01:42  Page:   5
 ccu63
 
  LOC CODE        LINE   SOURCELINE
@@ -298,7 +298,7 @@ ccu63
                    273   ; ccu63.c   174   ///  -----------------------------------------------------------------------
                    274   ; ccu63.c   175   ///  - Timer 13 Input Clock factor (T13CLK) is 0
                    275   ; ccu63.c   176   ///  - prescaler factor is 0
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 11:27:43  Page:   6
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 15:01:42  Page:   6
 ccu63
 
  LOC CODE        LINE   SOURCELINE
@@ -358,7 +358,7 @@ ccu63
                    328   ; ccu63.c   217                                  // register for channel 0
                    329   ; ccu63.c   218 
                    330   ; ccu63.c   219   ///  -----------------------------------------------------------------------
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 11:27:43  Page:   7
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 15:01:42  Page:   7
 ccu63
 
  LOC CODE        LINE   SOURCELINE
@@ -418,7 +418,7 @@ ccu63
                    383   ; ccu63.c   266   ///  - T13 output is not inverted
                    384   ; ccu63.c   267 
                    385   ; ccu63.c   268 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 11:27:43  Page:   8
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 15:01:42  Page:   8
 ccu63
 
  LOC CODE        LINE   SOURCELINE
@@ -478,7 +478,7 @@ ccu63
                    438   ; ccu63.c   306   CCU63_INP      =  0x0000;      // Load CCU63 capture/compare interrupt node 
                    439           ?LINE   306
 006A E00C          440           MOV     R12,#00h
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 11:27:43  Page:   9
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 15:01:42  Page:   9
 ccu63
 
  LOC CODE        LINE   SOURCELINE
@@ -538,7 +538,7 @@ ccu63
                    493   ; ccu63.c   334   ///  -----------------------------------------------------------------------
                    494   ; ccu63.c   335   ///  NodeI0 service request node configuration:
                    495   ; ccu63.c   336   ///  - NodeI0 interrupt priority level (ILVL) = 12
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 11:27:43  Page:  10
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 15:01:42  Page:  10
 ccu63
 
  LOC CODE        LINE   SOURCELINE
@@ -598,7 +598,7 @@ ccu63
                    548   ; ccu63.c   379 // @Date          29.09.2021
                    549   ; ccu63.c   380 //
                    550   ; ccu63.c   381 //****************************************************************************
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 11:27:43  Page:  11
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 15:01:42  Page:  11
 ccu63
 
  LOC CODE        LINE   SOURCELINE
@@ -655,10 +655,10 @@ ccu63
                    600           ?LINE   393
 0102 F2FCD0EB      601           MOV     R12,0EBD0h
 0106 8AFC0260      602           JB      R12.6,_9
-010A EA003602  R   603           JMPA+   cc_UC,_7
+010A EA006C02  R   603           JMPA+   cc_UC,_7
 010E               604   _9:
                    605   ; ccu63.c   394   {
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 11:27:43  Page:  12
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 15:01:42  Page:  12
 ccu63
 
  LOC CODE        LINE   SOURCELINE
@@ -667,7 +667,7 @@ ccu63
                    607   ; ccu63.c   396 
                    608   ; ccu63.c   397     // USER CODE BEGIN (NodeI0,20)
                    609   ; ccu63.c   398                 CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_0, table[(index 
-                         + OFFSET_L1)%ARRAY_SIZE]*(0.013*frequency+0.3));
+                         + OFFSET_L1)%ARRAY_SIZE]*(0.013*frequency+0.3) + (CCU63_T12PR/2));
                    610           ?LINE   398
 010E F2FC0000  R   611           MOV     R12,_index
 0112 02FC0000  R   612           ADD     R12,_OFFSET_L1
@@ -678,7 +678,7 @@ ccu63
 0124 5C1C          617           SHL     R12,#01h
 0126 D4BC0000  R   618           MOV     R11,[R12+#_table]
 012A F04B          619           MOV     R4,R11
-012C DA000000  R   620           CALLS   SEG __cuf28r,__cuf28r
+012C DA000000  R   620           CALLS   SEG __cif28r,__cif28r
                R   621           ?SYMB   '',$,96,8
 0130 F0BA          622           MOV     R11,R10
 0132 F2F40000  R   623           MOV     R4,_frequency
@@ -697,200 +697,227 @@ ccu63
 0154 DA000000  R   636           CALLS   SEG __adf8r,__adf8r
 0158 F0BC          637           MOV     R11,R12
 015A DA000000  R   638           CALLS   SEG __mlf8r,__mlf8r
-015E DA000000  R   639           CALLS   SEG __cfu82r,__cfu82r
-0162 06F02000      640           ADD     R0,#020h
-               R   641           ?SYMB   '',$,96,0
-0166 F6F4A0EB      642           MOV     0EBA0h,R4
-                   643   ; ccu63.c   399                 CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_1, table[(index 
-                         + OFFSET_L2)%ARRAY_SIZE]*(0.013*frequency+0.3));
-                   644           ?LINE   399
-016A F2FC0000  R   645           MOV     R12,_index
-016E 02FC0000  R   646           ADD     R12,_OFFSET_L2
-0172 F2FD0000  R   647           MOV     R13,_ARRAY_SIZE
-0176 F6FC0EFE      648           MOV     MDL,R12
-017A 5BDD          649           DIVU    R13
-017C F2FC0CFE      650           MOV     R12,MDH
-0180 5C1C          651           SHL     R12,#01h
-0182 D4BC0000  R   652           MOV     R11,[R12+#_table]
-0186 F04B          653           MOV     R4,R11
-0188 DA000000  R   654           CALLS   SEG __cuf28r,__cuf28r
-               R   655           ?SYMB   '',$,96,8
-018C F0BA          656           MOV     R11,R10
-018E F2F40000  R   657           MOV     R4,_frequency
-0192 DA000000  R   658           CALLS   SEG __cuf28r,__cuf28r
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 11:27:43  Page:  13
+015E F0BA          639           MOV     R11,R10
+0160 F2FA92EB      640           MOV     R10,0EB92h
+0164 7C1A          641           SHR     R10,#01h
+0166 F04A          642           MOV     R4,R10
+0168 DA000000  R   643           CALLS   SEG __cuf28r,__cuf28r
+               R   644           ?SYMB   '',$,96,40
+016C DA000000  R   645           CALLS   SEG __adf8r,__adf8r
+0170 DA000000  R   646           CALLS   SEG __cfu82r,__cfu82r
+0174 06F02800      647           ADD     R0,#028h
+               R   648           ?SYMB   '',$,96,0
+0178 F6F4A0EB      649           MOV     0EBA0h,R4
+                   650   ; ccu63.c   399                 CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_1, table[(index 
+                         + OFFSET_L2)%ARRAY_SIZE]*(0.013*frequency+0.3) + (CCU63_T12PR/2));
+                   651           ?LINE   399
+017C F2FC0000  R   652           MOV     R12,_index
+0180 02FC0000  R   653           ADD     R12,_OFFSET_L2
+0184 F2FD0000  R   654           MOV     R13,_ARRAY_SIZE
+0188 F6FC0EFE      655           MOV     MDL,R12
+018C 5BDD          656           DIVU    R13
+018E F2FC0CFE      657           MOV     R12,MDH
+0192 5C1C          658           SHL     R12,#01h
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 15:01:42  Page:  13
 ccu63
 
  LOC CODE        LINE   SOURCELINE
 
-               R   659           ?SYMB   '',$,96,16
-0196 F0CB          660           MOV     R12,R11
-0198 F0BA          661           MOV     R11,R10
-019A E6F40000  R   662           MOV     R4,#_3
-019E DA000000  R   663           CALLS   SEG __load8n,__load8n
-               R   664           ?SYMB   '',$,96,24
-01A2 DA000000  R   665           CALLS   SEG __mlf8r,__mlf8r
-01A6 F0BA          666           MOV     R11,R10
-01A8 E6F40000  R   667           MOV     R4,#_4
-01AC DA000000  R   668           CALLS   SEG __load8n,__load8n
-               R   669           ?SYMB   '',$,96,32
-01B0 DA000000  R   670           CALLS   SEG __adf8r,__adf8r
-01B4 F0BC          671           MOV     R11,R12
-01B6 DA000000  R   672           CALLS   SEG __mlf8r,__mlf8r
-01BA DA000000  R   673           CALLS   SEG __cfu82r,__cfu82r
-01BE 06F02000      674           ADD     R0,#020h
-               R   675           ?SYMB   '',$,96,0
-01C2 F6F4A2EB      676           MOV     0EBA2h,R4
-                   677   ; ccu63.c   400                 CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_2, table[(index 
-                         + OFFSET_L3)%ARRAY_SIZE]*(0.013*frequency+0.3));
-                   678           ?LINE   400
-01C6 F2FC0000  R   679           MOV     R12,_index
-01CA 02FC0000  R   680           ADD     R12,_OFFSET_L3
-01CE F2FD0000  R   681           MOV     R13,_ARRAY_SIZE
-01D2 F6FC0EFE      682           MOV     MDL,R12
-01D6 5BDD          683           DIVU    R13
-01D8 F2FC0CFE      684           MOV     R12,MDH
-01DC 5C1C          685           SHL     R12,#01h
-01DE D4BC0000  R   686           MOV     R11,[R12+#_table]
-01E2 F04B          687           MOV     R4,R11
-01E4 DA000000  R   688           CALLS   SEG __cuf28r,__cuf28r
-               R   689           ?SYMB   '',$,96,8
-01E8 F0BA          690           MOV     R11,R10
-01EA F2F40000  R   691           MOV     R4,_frequency
-01EE DA000000  R   692           CALLS   SEG __cuf28r,__cuf28r
-               R   693           ?SYMB   '',$,96,16
-01F2 F0CB          694           MOV     R12,R11
-01F4 F0BA          695           MOV     R11,R10
-01F6 E6F40000  R   696           MOV     R4,#_3
-01FA DA000000  R   697           CALLS   SEG __load8n,__load8n
-               R   698           ?SYMB   '',$,96,24
-01FE DA000000  R   699           CALLS   SEG __mlf8r,__mlf8r
-0202 F0BA          700           MOV     R11,R10
-0204 E6F40000  R   701           MOV     R4,#_4
-0208 DA000000  R   702           CALLS   SEG __load8n,__load8n
-               R   703           ?SYMB   '',$,96,32
-020C DA000000  R   704           CALLS   SEG __adf8r,__adf8r
-0210 F0BC          705           MOV     R11,R12
-0212 DA000000  R   706           CALLS   SEG __mlf8r,__mlf8r
-0216 DA000000  R   707           CALLS   SEG __cfu82r,__cfu82r
-021A 06F02000      708           ADD     R0,#020h
-               R   709           ?SYMB   '',$,96,0
-021E F6F4A4EB      710           MOV     0EBA4h,R4
-                   711   ; ccu63.c   401                 CCU63_vEnableShadowTransfer(CCU63_TIMER_12);
-                   712           ?LINE   401
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 11:27:43  Page:  14
+0194 D4BC0000  R   659           MOV     R11,[R12+#_table]
+0198 F04B          660           MOV     R4,R11
+019A DA000000  R   661           CALLS   SEG __cif28r,__cif28r
+               R   662           ?SYMB   '',$,96,8
+019E F0BA          663           MOV     R11,R10
+01A0 F2F40000  R   664           MOV     R4,_frequency
+01A4 DA000000  R   665           CALLS   SEG __cuf28r,__cuf28r
+               R   666           ?SYMB   '',$,96,16
+01A8 F0CB          667           MOV     R12,R11
+01AA F0BA          668           MOV     R11,R10
+01AC E6F40000  R   669           MOV     R4,#_3
+01B0 DA000000  R   670           CALLS   SEG __load8n,__load8n
+               R   671           ?SYMB   '',$,96,24
+01B4 DA000000  R   672           CALLS   SEG __mlf8r,__mlf8r
+01B8 F0BA          673           MOV     R11,R10
+01BA E6F40000  R   674           MOV     R4,#_4
+01BE DA000000  R   675           CALLS   SEG __load8n,__load8n
+               R   676           ?SYMB   '',$,96,32
+01C2 DA000000  R   677           CALLS   SEG __adf8r,__adf8r
+01C6 F0BC          678           MOV     R11,R12
+01C8 DA000000  R   679           CALLS   SEG __mlf8r,__mlf8r
+01CC F0BA          680           MOV     R11,R10
+01CE F2FA92EB      681           MOV     R10,0EB92h
+01D2 7C1A          682           SHR     R10,#01h
+01D4 F04A          683           MOV     R4,R10
+01D6 DA000000  R   684           CALLS   SEG __cuf28r,__cuf28r
+               R   685           ?SYMB   '',$,96,40
+01DA DA000000  R   686           CALLS   SEG __adf8r,__adf8r
+01DE DA000000  R   687           CALLS   SEG __cfu82r,__cfu82r
+01E2 06F02800      688           ADD     R0,#028h
+               R   689           ?SYMB   '',$,96,0
+01E6 F6F4A2EB      690           MOV     0EBA2h,R4
+                   691   ; ccu63.c   400                 CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_2, table[(index 
+                         + OFFSET_L3)%ARRAY_SIZE]*(0.013*frequency+0.3) + (CCU63_T12PR/2));
+                   692           ?LINE   400
+01EA F2FC0000  R   693           MOV     R12,_index
+01EE 02FC0000  R   694           ADD     R12,_OFFSET_L3
+01F2 F2FD0000  R   695           MOV     R13,_ARRAY_SIZE
+01F6 F6FC0EFE      696           MOV     MDL,R12
+01FA 5BDD          697           DIVU    R13
+01FC F2FC0CFE      698           MOV     R12,MDH
+0200 5C1C          699           SHL     R12,#01h
+0202 D4BC0000  R   700           MOV     R11,[R12+#_table]
+0206 F04B          701           MOV     R4,R11
+0208 DA000000  R   702           CALLS   SEG __cif28r,__cif28r
+               R   703           ?SYMB   '',$,96,8
+020C F0BA          704           MOV     R11,R10
+020E F2F40000  R   705           MOV     R4,_frequency
+0212 DA000000  R   706           CALLS   SEG __cuf28r,__cuf28r
+               R   707           ?SYMB   '',$,96,16
+0216 F0CB          708           MOV     R12,R11
+0218 F0BA          709           MOV     R11,R10
+021A E6F40000  R   710           MOV     R4,#_3
+021E DA000000  R   711           CALLS   SEG __load8n,__load8n
+               R   712           ?SYMB   '',$,96,24
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 15:01:42  Page:  14
 ccu63
 
  LOC CODE        LINE   SOURCELINE
 
-0222 E6FCA6EB      713           MOV     R12,#0EBA6h
-0226 A8DC          714           MOV     R13,[R12]
-0228 6FFD          715           BSET    R13.6
-022A B8DC          716           MOV     [R12],R13
-                   717   ; ccu63.c   402     // USER CODE END
-                   718   ; ccu63.c   403 
-                   719   ; ccu63.c   404     CCU63_ISR |= 0x0040;  // clear flag CCU63_IS_T12OM
-                   720           ?LINE   404
-022C E6FCD4EB      721           MOV     R12,#0EBD4h
-0230 A8DC          722           MOV     R13,[R12]
-0232 6FFD          723           BSET    R13.6
-0234 B8DC          724           MOV     [R12],R13
-                   725   ; ccu63.c   405   }
-                   726           ?LINE   405
-0236               727   _7:
-                   728   ; ccu63.c   406 
-                   729   ; ccu63.c   407   if(CCU63_IS & 0x0080)  // if CCU63_IS_T12PM
-                   730           ?LINE   407
-0236 F2FCD0EB      731           MOV     R12,0EBD0h
-023A 9AFC0570      732           JNB     R12.7,_8
-                   733   ; ccu63.c   408   {
-                   734   ; ccu63.c   409     // Timer T12 period match detection
-                   735   ; ccu63.c   410 
-                   736   ; ccu63.c   411     // USER CODE BEGIN (NodeI0,19)
-                   737   ; ccu63.c   412     // USER CODE END
-                   738   ; ccu63.c   413 
-                   739   ; ccu63.c   414     CCU63_ISR |= 0x0080;  // clear flag CCU63_IS_T12PM
-                   740           ?LINE   414
-023E E6FCD4EB      741           MOV     R12,#0EBD4h
-0242 A8DC          742           MOV     R13,[R12]
-0244 7FFD          743           BSET    R13.7
-0246 B8DC          744           MOV     [R12],R13
-                   745   ; ccu63.c   415   }
-                   746           ?LINE   415
-0248               747   _8:
-                   748   ; ccu63.c   416 
-                   749   ; ccu63.c   417 
-                   750   ; ccu63.c   418 } //  End of function CCU63_viNodeI0
-                   751           ?LINE   418
-0248 D180          752           EXTR    #01h
-024A FC03     1    753           POP     QR1
-024C D180          754           EXTR    #01h
-024E FC02     1    755           POP     QR0
-0250 D180          756           EXTR    #01h
-0252 FC01     1    757           POP     QX1
-0254 D180          758           EXTR    #01h
-0256 FC00     1    759           POP     QX0
-0258 FC85          760           POP     IDX1
-025A FC84          761           POP     IDX0
-025C FCED          762           POP     MRW
-025E FCEE          763           POP     MCW
-0260 FC2F          764           POP     MAH
-0262 FC2E          765           POP     MAL
-0264 FCEF          766           POP     MSW
-0266 FC07          767           POP     MDL
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 11:27:43  Page:  15
+0222 DA000000  R   713           CALLS   SEG __mlf8r,__mlf8r
+0226 F0BA          714           MOV     R11,R10
+0228 E6F40000  R   715           MOV     R4,#_4
+022C DA000000  R   716           CALLS   SEG __load8n,__load8n
+               R   717           ?SYMB   '',$,96,32
+0230 DA000000  R   718           CALLS   SEG __adf8r,__adf8r
+0234 F0BC          719           MOV     R11,R12
+0236 DA000000  R   720           CALLS   SEG __mlf8r,__mlf8r
+023A F0BA          721           MOV     R11,R10
+023C F2FA92EB      722           MOV     R10,0EB92h
+0240 7C1A          723           SHR     R10,#01h
+0242 F04A          724           MOV     R4,R10
+0244 DA000000  R   725           CALLS   SEG __cuf28r,__cuf28r
+               R   726           ?SYMB   '',$,96,40
+0248 DA000000  R   727           CALLS   SEG __adf8r,__adf8r
+024C DA000000  R   728           CALLS   SEG __cfu82r,__cfu82r
+0250 06F02800      729           ADD     R0,#028h
+               R   730           ?SYMB   '',$,96,0
+0254 F6F4A4EB      731           MOV     0EBA4h,R4
+                   732   ; ccu63.c   401                 CCU63_vEnableShadowTransfer(CCU63_TIMER_12);
+                   733           ?LINE   401
+0258 E6FCA6EB      734           MOV     R12,#0EBA6h
+025C A8DC          735           MOV     R13,[R12]
+025E 6FFD          736           BSET    R13.6
+0260 B8DC          737           MOV     [R12],R13
+                   738   ; ccu63.c   402     // USER CODE END
+                   739   ; ccu63.c   403 
+                   740   ; ccu63.c   404     CCU63_ISR |= 0x0040;  // clear flag CCU63_IS_T12OM
+                   741           ?LINE   404
+0262 E6FCD4EB      742           MOV     R12,#0EBD4h
+0266 A8DC          743           MOV     R13,[R12]
+0268 6FFD          744           BSET    R13.6
+026A B8DC          745           MOV     [R12],R13
+                   746   ; ccu63.c   405   }
+                   747           ?LINE   405
+026C               748   _7:
+                   749   ; ccu63.c   406 
+                   750   ; ccu63.c   407   if(CCU63_IS & 0x0080)  // if CCU63_IS_T12PM
+                   751           ?LINE   407
+026C F2FCD0EB      752           MOV     R12,0EBD0h
+0270 9AFC0570      753           JNB     R12.7,_8
+                   754   ; ccu63.c   408   {
+                   755   ; ccu63.c   409     // Timer T12 period match detection
+                   756   ; ccu63.c   410 
+                   757   ; ccu63.c   411     // USER CODE BEGIN (NodeI0,19)
+                   758   ; ccu63.c   412     // USER CODE END
+                   759   ; ccu63.c   413 
+                   760   ; ccu63.c   414     CCU63_ISR |= 0x0080;  // clear flag CCU63_IS_T12PM
+                   761           ?LINE   414
+0274 E6FCD4EB      762           MOV     R12,#0EBD4h
+0278 A8DC          763           MOV     R13,[R12]
+027A 7FFD          764           BSET    R13.7
+027C B8DC          765           MOV     [R12],R13
+                   766   ; ccu63.c   415   }
+                   767           ?LINE   415
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 15:01:42  Page:  15
 ccu63
 
  LOC CODE        LINE   SOURCELINE
 
-0268 FC06          768           POP     MDH
-026A FC02          769           POP     DPP2
-026C FC00          770           POP     DPP0
-026E FC87          771           POP     MDC
-0270 FC08          772           POP     CP
-                   773           ?LINE   418
-0272 FB88          774           RETI
-                   775   _CCU63_viNodeI0 ENDP
-               R   776           ?SYMB   '',$,17,418
-                   777   ; ccu63.c   419 
-                   778   ; ccu63.c   420 
-                   779   ; ccu63.c   421 
-                   780   ; ccu63.c   422 
-                   781   ; ccu63.c   423 // USER CODE BEGIN (CCU63_General,10)
-                   782   ; ccu63.c   424 
-                   783   ; ccu63.c   425 // USER CODE END
-                   784   ; ccu63.c   426 
-                   785   CCU63_1_PR      ENDS
-                   786   
-                   787   CCU63_2_CO      SECTION LDAT WORD PUBLIC 'CROM'
-0000               788   _3      LABEL   WORD
-0000 8A3FBE9F      789           DW      03F8Ah,09FBEh,076C8h,0B439h
+027E               768   _8:
+                   769   ; ccu63.c   416 
+                   770   ; ccu63.c   417 
+                   771   ; ccu63.c   418 } //  End of function CCU63_viNodeI0
+                   772           ?LINE   418
+027E D180          773           EXTR    #01h
+0280 FC03     1    774           POP     QR1
+0282 D180          775           EXTR    #01h
+0284 FC02     1    776           POP     QR0
+0286 D180          777           EXTR    #01h
+0288 FC01     1    778           POP     QX1
+028A D180          779           EXTR    #01h
+028C FC00     1    780           POP     QX0
+028E FC85          781           POP     IDX1
+0290 FC84          782           POP     IDX0
+0292 FCED          783           POP     MRW
+0294 FCEE          784           POP     MCW
+0296 FC2F          785           POP     MAH
+0298 FC2E          786           POP     MAL
+029A FCEF          787           POP     MSW
+029C FC07          788           POP     MDL
+029E FC06          789           POP     MDH
+02A0 FC02          790           POP     DPP2
+02A2 FC00          791           POP     DPP0
+02A4 FC87          792           POP     MDC
+02A6 FC08          793           POP     CP
+                   794           ?LINE   418
+02A8 FB88          795           RETI
+                   796   _CCU63_viNodeI0 ENDP
+               R   797           ?SYMB   '',$,17,418
+                   798   ; ccu63.c   419 
+                   799   ; ccu63.c   420 
+                   800   ; ccu63.c   421 
+                   801   ; ccu63.c   422 
+                   802   ; ccu63.c   423 // USER CODE BEGIN (CCU63_General,10)
+                   803   ; ccu63.c   424 
+                   804   ; ccu63.c   425 // USER CODE END
+                   805   ; ccu63.c   426 
+                   806   CCU63_1_PR      ENDS
+                   807   
+                   808   CCU63_2_CO      SECTION LDAT WORD PUBLIC 'CROM'
+0000               809   _3      LABEL   WORD
+0000 8A3FBE9F      810           DW      03F8Ah,09FBEh,076C8h,0B439h
 0004 C87639B4    
-0008               790   _4      LABEL   WORD
-0008 D33F3333      791           DW      03FD3h,03333h,03333h,03333h
+0008               811   _4      LABEL   WORD
+0008 D33F3333      812           DW      03FD3h,03333h,03333h,03333h
 000C 33333333    
-                   792   CCU63_2_CO      ENDS
-                   793   
-                   794   C166_US SECTION LDAT WORD GLBUSRSTACK 'CUSTACK'
-0000               795           DS      32
-                   796   C166_US ENDS
-                   797   
-                   798   $FLOAT(ANSI)
-                   799           EXTERN  _frequency:WORD
-                   800           EXTERN  _table:WORD
-                   801           ?SYMB   '',012H,5,263
-                   802           EXTERN  _ARRAY_SIZE:WORD
-                   803           EXTERN  _index:WORD
-                   804           EXTERN  _OFFSET_L1:WORD
-                   805           EXTERN  _OFFSET_L3:WORD
-                   806           EXTERN  _OFFSET_L2:WORD
-                   807           EXTERN  __cuf28r:FAR
-                   808           EXTERN  __load8n:FAR
-                   809           EXTERN  __mlf8r:FAR
-                   810           EXTERN  __adf8r:FAR
-                   811           EXTERN  __cfu82r:FAR
-                   812   CCU63_RB        REGDEF  R0-R15
-                   813           END
+                   813   CCU63_2_CO      ENDS
+                   814   
+                   815   C166_US SECTION LDAT WORD GLBUSRSTACK 'CUSTACK'
+0000               816           DS      40
+                   817   C166_US ENDS
+                   818   
+                   819   $FLOAT(ANSI)
+                   820           EXTERN  _frequency:WORD
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 15:01:42  Page:  16
+ccu63
+
+ LOC CODE        LINE   SOURCELINE
+
+                   821           EXTERN  _table:WORD
+                   822           ?SYMB   '',010H,5,263
+                   823           EXTERN  _ARRAY_SIZE:WORD
+                   824           EXTERN  _index:WORD
+                   825           EXTERN  _OFFSET_L1:WORD
+                   826           EXTERN  _OFFSET_L3:WORD
+                   827           EXTERN  _OFFSET_L2:WORD
+                   828           EXTERN  __cif28r:FAR
+                   829           EXTERN  __cuf28r:FAR
+                   830           EXTERN  __load8n:FAR
+                   831           EXTERN  __mlf8r:FAR
+                   832           EXTERN  __adf8r:FAR
+                   833           EXTERN  __cfu82r:FAR
+                   834   CCU63_RB        REGDEF  R0-R15
+                   835           END
 
 total errors: 0, warnings: 0
 

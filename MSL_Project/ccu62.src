@@ -531,13 +531,13 @@ _CCU62_viNodeI0	PROC TASK CCU62_TASK INTNO CCU62_INUM = 038h
 ; ccu62.c   349	    // Timer T12 period match detection
 ; ccu62.c   350	
 ; ccu62.c   351	    // USER CODE BEGIN (NodeI0,19)
-; ccu62.c   352		  if(rampIndex < 1750 && rampIndex > 1500){
+; ccu62.c   352		  if(rampIndex < 5250 && rampIndex > 4500){
 	?LINE	352
 	MOV	R12,_rampIndex
-	CMP	R12,#06D6h
+	CMP	R12,#01482h
 	JMPR	cc_UGE,_7
 	MOV	R12,_rampIndex
-	CMP	R12,#05DCh
+	CMP	R12,#01194h
 	JMPR	cc_ULE,_8
 ; ccu62.c   353		  }
 	?LINE	353

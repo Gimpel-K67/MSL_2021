@@ -137,7 +137,7 @@ $MODEL(SMALL)
 ; ccu63.c    66	
 ; ccu63.c    67	// USER CODE BEGIN (CCU63_General,6)
 ; ccu63.c    68		extern const unsigned int ARRAY_SIZE;
-; ccu63.c    69		extern unsigned int table[];
+; ccu63.c    69		extern int table[];
 ; ccu63.c    70		extern	unsigned int index;
 ; ccu63.c    71		extern unsigned int OFFSET_L1;
 ; ccu63.c    72		extern unsigned int OFFSET_L2;
@@ -606,7 +606,7 @@ _9:
 ; ccu63.c   395	    // Timer T12 one match detection
 ; ccu63.c   396	
 ; ccu63.c   397	    // USER CODE BEGIN (NodeI0,20)
-; ccu63.c   398			CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_0, table[(index + OFFSET_L1)%ARRAY_SIZE]*(0.013*frequency+0.3));
+; ccu63.c   398			CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_0, table[(index + OFFSET_L1)%ARRAY_SIZE]*(0.013*frequency+0.3) + (CCU63_T12PR/2));
 	?LINE	398
 	MOV	R12,_index
 	ADD	R12,_OFFSET_L1
@@ -617,7 +617,7 @@ _9:
 	SHL	R12,#01h
 	MOV	R11,[R12+#_table]
 	MOV	R4,R11
-	CALLS	SEG __cuf28r,__cuf28r
+	CALLS	SEG __cif28r,__cif28r
 	?SYMB	'',$,96,8
 	MOV	R11,R10
 	MOV	R4,_frequency
@@ -636,11 +636,18 @@ _9:
 	CALLS	SEG __adf8r,__adf8r
 	MOV	R11,R12
 	CALLS	SEG __mlf8r,__mlf8r
+	MOV	R11,R10
+	MOV	R10,0EB92h
+	SHR	R10,#01h
+	MOV	R4,R10
+	CALLS	SEG __cuf28r,__cuf28r
+	?SYMB	'',$,96,40
+	CALLS	SEG __adf8r,__adf8r
 	CALLS	SEG __cfu82r,__cfu82r
-	ADD	R0,#020h
+	ADD	R0,#028h
 	?SYMB	'',$,96,0
 	MOV	0EBA0h,R4
-; ccu63.c   399		   	CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_1, table[(index + OFFSET_L2)%ARRAY_SIZE]*(0.013*frequency+0.3));
+; ccu63.c   399		   	CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_1, table[(index + OFFSET_L2)%ARRAY_SIZE]*(0.013*frequency+0.3) + (CCU63_T12PR/2));
 	?LINE	399
 	MOV	R12,_index
 	ADD	R12,_OFFSET_L2
@@ -651,7 +658,7 @@ _9:
 	SHL	R12,#01h
 	MOV	R11,[R12+#_table]
 	MOV	R4,R11
-	CALLS	SEG __cuf28r,__cuf28r
+	CALLS	SEG __cif28r,__cif28r
 	?SYMB	'',$,96,8
 	MOV	R11,R10
 	MOV	R4,_frequency
@@ -670,11 +677,18 @@ _9:
 	CALLS	SEG __adf8r,__adf8r
 	MOV	R11,R12
 	CALLS	SEG __mlf8r,__mlf8r
+	MOV	R11,R10
+	MOV	R10,0EB92h
+	SHR	R10,#01h
+	MOV	R4,R10
+	CALLS	SEG __cuf28r,__cuf28r
+	?SYMB	'',$,96,40
+	CALLS	SEG __adf8r,__adf8r
 	CALLS	SEG __cfu82r,__cfu82r
-	ADD	R0,#020h
+	ADD	R0,#028h
 	?SYMB	'',$,96,0
 	MOV	0EBA2h,R4
-; ccu63.c   400	  		CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_2, table[(index + OFFSET_L3)%ARRAY_SIZE]*(0.013*frequency+0.3));
+; ccu63.c   400	  		CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_2, table[(index + OFFSET_L3)%ARRAY_SIZE]*(0.013*frequency+0.3) + (CCU63_T12PR/2));
 	?LINE	400
 	MOV	R12,_index
 	ADD	R12,_OFFSET_L3
@@ -685,7 +699,7 @@ _9:
 	SHL	R12,#01h
 	MOV	R11,[R12+#_table]
 	MOV	R4,R11
-	CALLS	SEG __cuf28r,__cuf28r
+	CALLS	SEG __cif28r,__cif28r
 	?SYMB	'',$,96,8
 	MOV	R11,R10
 	MOV	R4,_frequency
@@ -704,8 +718,15 @@ _9:
 	CALLS	SEG __adf8r,__adf8r
 	MOV	R11,R12
 	CALLS	SEG __mlf8r,__mlf8r
+	MOV	R11,R10
+	MOV	R10,0EB92h
+	SHR	R10,#01h
+	MOV	R4,R10
+	CALLS	SEG __cuf28r,__cuf28r
+	?SYMB	'',$,96,40
+	CALLS	SEG __adf8r,__adf8r
 	CALLS	SEG __cfu82r,__cfu82r
-	ADD	R0,#020h
+	ADD	R0,#028h
 	?SYMB	'',$,96,0
 	MOV	0EBA4h,R4
 ; ccu63.c   401			CCU63_vEnableShadowTransfer(CCU63_TIMER_12);
@@ -792,18 +813,19 @@ _4	LABEL	WORD
 CCU63_2_CO	ENDS
 
 C166_US	SECTION	LDAT WORD GLBUSRSTACK 'CUSTACK'
-	DS	32
+	DS	40
 C166_US	ENDS
 
 $FLOAT(ANSI)
 	EXTERN	_frequency:WORD
 	EXTERN	_table:WORD
-	?SYMB	'',012H,5,263
+	?SYMB	'',010H,5,263
 	EXTERN	_ARRAY_SIZE:WORD
 	EXTERN	_index:WORD
 	EXTERN	_OFFSET_L1:WORD
 	EXTERN	_OFFSET_L3:WORD
 	EXTERN	_OFFSET_L2:WORD
+	EXTERN	__cif28r:FAR
 	EXTERN	__cuf28r:FAR
 	EXTERN	__load8n:FAR
 	EXTERN	__mlf8r:FAR
