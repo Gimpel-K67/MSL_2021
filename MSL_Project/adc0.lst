@@ -1,4 +1,4 @@
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:   1
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:55:26  Page:   1
 adc0
 
  LOC CODE        LINE   SOURCELINE
@@ -49,7 +49,7 @@ adc0
                     44   ; adc0.c     12 // @Description   This file contains functions that use the ADC0 module.
                     45   ; adc0.c     13 //
                     46   ; adc0.c     14 //----------------------------------------------------------------------------
-                    47   ; adc0.c     15 // @Date          29.09.2021 09:41:09
+                    47   ; adc0.c     15 // @Date          30.09.2021 14:42:55
                     48   ; adc0.c     16 //
                     49   ; adc0.c     17 //****************************************************************************
                     50   ; adc0.c     18 
@@ -58,7 +58,7 @@ adc0
                     53   ; adc0.c     21 // USER CODE END
                     54   ; adc0.c     22 
                     55   ; adc0.c     23 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:   2
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:55:26  Page:   2
 adc0
 
  LOC CODE        LINE   SOURCELINE
@@ -118,7 +118,7 @@ adc0
                    108   ; adc0.c     37 // @Macros
                    109   ; adc0.c     38 //****************************************************************************
                    110   ; adc0.c     39 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:   3
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:55:26  Page:   3
 adc0
 
  LOC CODE        LINE   SOURCELINE
@@ -178,7 +178,7 @@ adc0
                    163   ; adc0.c     92 //****************************************************************************
                    164   ; adc0.c     93 
                    165   ; adc0.c     94 // USER CODE BEGIN (ADC0_General,9)
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:   4
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:55:26  Page:   4
 adc0
 
  LOC CODE        LINE   SOURCELINE
@@ -219,7 +219,7 @@ adc0
                    199   ; adc0.c    128 // @Parameters    None
                    200   ; adc0.c    129 //
                    201   ; adc0.c    130 //----------------------------------------------------------------------------
-                   202   ; adc0.c    131 // @Date          29.09.2021
+                   202   ; adc0.c    131 // @Date          30.09.2021
                    203   ; adc0.c    132 //
                    204   ; adc0.c    133 //****************************************************************************
                    205   ; adc0.c    134 
@@ -238,7 +238,7 @@ adc0
                    218   _ADC0_vInit     PROC    FAR
                    219           ?SYMB   '',00H,95,0
                    220   ; Locals:
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:   5
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:55:26  Page:   5
 adc0
 
  LOC CODE        LINE   SOURCELINE
@@ -298,7 +298,7 @@ adc0
                    273   ; adc0.c    178   ///  - Arbitration Slot 2 is disabled
                    274   ; adc0.c    179 
                    275   ; adc0.c    180   ///  - the priority of request source 0 is low
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:   6
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:55:26  Page:   6
 adc0
 
  LOC CODE        LINE   SOURCELINE
@@ -358,7 +358,7 @@ adc0
                    328   ; adc0.c    218 
                    329   ; adc0.c    219   ///  -----------------------------------------------------------------------
                    330   ; adc0.c    220   ///  Configuration of Result Control Registers:
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:   7
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:55:26  Page:   7
 adc0
 
  LOC CODE        LINE   SOURCELINE
@@ -366,14 +366,14 @@ adc0
                    331   ; adc0.c    221   ///  -----------------------------------------------------------------------
                    332   ; adc0.c    222   ///  Configuration of Result Control Register 0
                    333   ; adc0.c    223   ///  - the data reduction filter is enabled
-                   334   ; adc0.c    224   ///  - the event interrupt is enabled
+                   334   ; adc0.c    224   ///  - the event interrupt is disabled
                    335   ; adc0.c    225   ///  - the wait-for-read mode is enabled
                    336   ; adc0.c    226 
                    337   ; adc0.c    227   ///  - the FIFO functionality is disabled
                    338   ; adc0.c    228 
-                   339   ; adc0.c    229   ADC0_RCR0      =  0x0053;      // load result control register 0
+                   339   ; adc0.c    229   ADC0_RCR0      =  0x0043;      // load result control register 0
                    340           ?LINE   229
-002E E6FC5300      341           MOV     R12,#053h
+002E E6FC4300      341           MOV     R12,#043h
 0032 F6FCB0E0      342           MOV     0E0B0h,R12
                    343   ; adc0.c    230 
                    344   ; adc0.c    231   ///  Configuration of Result Control Register 1
@@ -418,7 +418,7 @@ adc0
                    383   ; adc0.c    261   ///  - the wait-for-read mode is disabled
                    384   ; adc0.c    262 
                    385   ; adc0.c    263   ///  - the FIFO functionality is disabled
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:   8
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:55:26  Page:   8
 adc0
 
  LOC CODE        LINE   SOURCELINE
@@ -478,7 +478,7 @@ adc0
                    438   ; adc0.c    301 
                    439   ; adc0.c    302   ADC0_CHINPR4   =  0x0000;      // load channel interrupt node pointer 
                    440           ?LINE   302
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:   9
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:55:26  Page:   9
 adc0
 
  LOC CODE        LINE   SOURCELINE
@@ -514,456 +514,321 @@ adc0
                    469   ; adc0.c    320   ///  Configuration of Event Interrupt Node Pointer Register for Result 
                    470   ; adc0.c    321   ///  Interrupts:
                    471   ; adc0.c    322   ///  -----------------------------------------------------------------------
-                   472   ; adc0.c    323   ///  - the SR 0 line become activated if the event 8 interrupt is generated
-                   473   ; adc0.c    324 
-                   474   ; adc0.c    325   ADC0_EVINPR8   =  0x0000;      // load event interrupt set flag register 
-                   475           ?LINE   325
-007E E00C          476           MOV     R12,#00h
-0080 F6FCACE0      477           MOV     0E0ACh,R12
+                   472   ; adc0.c    323 
+                   473   ; adc0.c    324   ADC0_EVINPR8   =  0x0000;      // load event interrupt set flag register 
+                   474           ?LINE   324
+007E E00C          475           MOV     R12,#00h
+0080 F6FCACE0      476           MOV     0E0ACh,R12
+                   477   ; adc0.c    325 
                    478   ; adc0.c    326 
-                   479   ; adc0.c    327 
-                   480   ; adc0.c    328   ADC0_EVINPR12  =  0x0000;      // load event interrupt set flag register 
-                   481           ?LINE   328
-0084 E00C          482           MOV     R12,#00h
-0086 F6FCAEE0      483           MOV     0E0AEh,R12
-                   484   ; adc0.c    329 
-                   485   ; adc0.c    330   ///  -----------------------------------------------------------------------
-                   486   ; adc0.c    331   ///  Configuration of Service Request Nodes 0 - 3 :
-                   487   ; adc0.c    332   ///  -----------------------------------------------------------------------
-                   488   ; adc0.c    333   ///  SRN0 service request node configuration:
-                   489   ; adc0.c    334   ///  - SRN0 interrupt priority level (ILVL) = 9
-                   490   ; adc0.c    335   ///  - SRN0 interrupt group level (GLVL) = 0
-                   491   ; adc0.c    336   ///  - SRN0 group priority extension (GPX) = 0
-                   492   ; adc0.c    337 
-                   493   ; adc0.c    338   ADC_0IC        =  0x0064;     
-                   494           ?LINE   338
-008A E6FC6400      495           MOV     R12,#064h
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:  10
+                   479   ; adc0.c    327   ADC0_EVINPR12  =  0x0000;      // load event interrupt set flag register 
+                   480           ?LINE   327
+0084 E00C          481           MOV     R12,#00h
+0086 F6FCAEE0      482           MOV     0E0AEh,R12
+                   483   ; adc0.c    328 
+                   484   ; adc0.c    329   ///  -----------------------------------------------------------------------
+                   485   ; adc0.c    330   ///  Configuration of Service Request Nodes 0 - 3 :
+                   486   ; adc0.c    331   ///  -----------------------------------------------------------------------
+                   487   ; adc0.c    332 
+                   488   ; adc0.c    333   ///  -----------------------------------------------------------------------
+                   489   ; adc0.c    334   ///  Configuration of Limit Check Boundary:
+                   490   ; adc0.c    335   ///  -----------------------------------------------------------------------
+                   491   ; adc0.c    336 
+                   492   ; adc0.c    337   ADC0_LCBR0     =  0x0198;      // load limit check boundary register 0
+                   493           ?LINE   337
+008A E6FC9801      494           MOV     R12,#0198h
+008E F6FC84E0      495           MOV     0E084h,R12
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:55:26  Page:  10
 adc0
 
  LOC CODE        LINE   SOURCELINE
 
-008E F6FC70FF      496           MOV     0FF70h,R12
-                   497   ; adc0.c    339 
-                   498   ; adc0.c    340 
-                   499   ; adc0.c    341   ///  -----------------------------------------------------------------------
-                   500   ; adc0.c    342   ///  Configuration of Limit Check Boundary:
-                   501   ; adc0.c    343   ///  -----------------------------------------------------------------------
-                   502   ; adc0.c    344 
-                   503   ; adc0.c    345   ADC0_LCBR0     =  0x0198;      // load limit check boundary register 0
-                   504           ?LINE   345
-0092 E6FC9801      505           MOV     R12,#0198h
-0096 F6FC84E0      506           MOV     0E084h,R12
-                   507   ; adc0.c    346 
-                   508   ; adc0.c    347   ADC0_LCBR1     =  0x0E64;      // load limit check boundary register 1
-                   509           ?LINE   347
-009A E6FC640E      510           MOV     R12,#0E64h
-009E F6FC86E0      511           MOV     0E086h,R12
-                   512   ; adc0.c    348 
-                   513   ; adc0.c    349   ADC0_LCBR2     =  0x0554;      // load limit check boundary register 2
-                   514           ?LINE   349
-00A2 E6FC5405      515           MOV     R12,#0554h
-00A6 F6FC88E0      516           MOV     0E088h,R12
-                   517   ; adc0.c    350 
-                   518   ; adc0.c    351   ADC0_LCBR3     =  0x0AA8;      // load limit check boundary register 3
-                   519           ?LINE   351
-00AA E6FCA80A      520           MOV     R12,#0AA8h
-00AE F6FC8AE0      521           MOV     0E08Ah,R12
-                   522   ; adc0.c    352 
-                   523   ; adc0.c    353   ///  -----------------------------------------------------------------------
-                   524   ; adc0.c    354   ///  Configuration of Gating source and External Trigger Control:
-                   525   ; adc0.c    355   ///  -----------------------------------------------------------------------
-                   526   ; adc0.c    356   ///  - No Gating source selected for Arbitration Source 0
-                   527   ; adc0.c    357 
-                   528   ; adc0.c    358   ///  - the trigger input ETR00 is selected for Source 0
-                   529   ; adc0.c    359 
-                   530   ; adc0.c    360   ///  - No Gating source selected for Arbitration Source 1
+                   496   ; adc0.c    338 
+                   497   ; adc0.c    339   ADC0_LCBR1     =  0x0E64;      // load limit check boundary register 1
+                   498           ?LINE   339
+0092 E6FC640E      499           MOV     R12,#0E64h
+0096 F6FC86E0      500           MOV     0E086h,R12
+                   501   ; adc0.c    340 
+                   502   ; adc0.c    341   ADC0_LCBR2     =  0x0554;      // load limit check boundary register 2
+                   503           ?LINE   341
+009A E6FC5405      504           MOV     R12,#0554h
+009E F6FC88E0      505           MOV     0E088h,R12
+                   506   ; adc0.c    342 
+                   507   ; adc0.c    343   ADC0_LCBR3     =  0x0AA8;      // load limit check boundary register 3
+                   508           ?LINE   343
+00A2 E6FCA80A      509           MOV     R12,#0AA8h
+00A6 F6FC8AE0      510           MOV     0E08Ah,R12
+                   511   ; adc0.c    344 
+                   512   ; adc0.c    345   ///  -----------------------------------------------------------------------
+                   513   ; adc0.c    346   ///  Configuration of Gating source and External Trigger Control:
+                   514   ; adc0.c    347   ///  -----------------------------------------------------------------------
+                   515   ; adc0.c    348   ///  - No Gating source selected for Arbitration Source 0
+                   516   ; adc0.c    349 
+                   517   ; adc0.c    350   ///  - the trigger input ETR00 is selected for Source 0
+                   518   ; adc0.c    351 
+                   519   ; adc0.c    352   ///  - No Gating source selected for Arbitration Source 1
+                   520   ; adc0.c    353 
+                   521   ; adc0.c    354   ///  - the trigger input ETR00 is selected for Source 1
+                   522   ; adc0.c    355 
+                   523   ; adc0.c    356   ///  - No Gating source selected for Arbitration Source 2
+                   524   ; adc0.c    357 
+                   525   ; adc0.c    358   ///  - the trigger input ETR00 is selected for Source 1
+                   526   ; adc0.c    359 
+                   527   ; adc0.c    360   ADC0_PISEL     =  0x0444;      // load external trigger control register
+                   528           ?LINE   360
+00AA E6FC4404      529           MOV     R12,#0444h
+00AE F6FC04E0      530           MOV     0E004h,R12
                    531   ; adc0.c    361 
-                   532   ; adc0.c    362   ///  - the trigger input ETR00 is selected for Source 1
-                   533   ; adc0.c    363 
-                   534   ; adc0.c    364   ///  - No Gating source selected for Arbitration Source 2
-                   535   ; adc0.c    365 
-                   536   ; adc0.c    366   ///  - the trigger input ETR00 is selected for Source 1
+                   532   ; adc0.c    362   ///  -----------------------------------------------------------------------
+                   533   ; adc0.c    363   ///  Configuration of Conversion Queue Mode Register:Sequential Source 0
+                   534   ; adc0.c    364   ///  -----------------------------------------------------------------------
+                   535   ; adc0.c    365   ///  - the gating line is permanently Enabled
+                   536   ; adc0.c    366   ///  - the external trigger is disabled
                    537   ; adc0.c    367 
-                   538   ; adc0.c    368   ADC0_PISEL     =  0x0444;      // load external trigger control register
+                   538   ; adc0.c    368   ADC0_QMR0      =  0x0001;      // load queue mode register
                    539           ?LINE   368
-00B2 E6FC4404      540           MOV     R12,#0444h
-00B6 F6FC04E0      541           MOV     0E004h,R12
+00B2 E01C          540           MOV     R12,#01h
+00B4 F6FCE0E0      541           MOV     0E0E0h,R12
                    542   ; adc0.c    369 
                    543   ; adc0.c    370   ///  -----------------------------------------------------------------------
-                   544   ; adc0.c    371   ///  Configuration of Conversion Queue Mode Register:Sequential Source 0
+                   544   ; adc0.c    371   ///  Configuration of Conversion Queue Mode Register:Sequential Source 2
                    545   ; adc0.c    372   ///  -----------------------------------------------------------------------
-                   546   ; adc0.c    373   ///  - the gating line is permanently Enabled
+                   546   ; adc0.c    373   ///  - the gating line is permanently Disabled
                    547   ; adc0.c    374   ///  - the external trigger is disabled
-                   548   ; adc0.c    375 
-                   549   ; adc0.c    376   ADC0_QMR0      =  0x0001;      // load queue mode register
-                   550           ?LINE   376
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:  11
+                   548   ; adc0.c    375   ///  - the trigger mode 0 is selected
+                   549   ; adc0.c    376 
+                   550   ; adc0.c    377   ADC0_QMR2      =  0x0000;      // load queue mode register
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:55:26  Page:  11
 adc0
 
  LOC CODE        LINE   SOURCELINE
 
-00BA E01C          551           MOV     R12,#01h
-00BC F6FCE0E0      552           MOV     0E0E0h,R12
-                   553   ; adc0.c    377 
-                   554   ; adc0.c    378   ///  -----------------------------------------------------------------------
-                   555   ; adc0.c    379   ///  Configuration of Conversion Queue Mode Register:Sequential Source 2
-                   556   ; adc0.c    380   ///  -----------------------------------------------------------------------
-                   557   ; adc0.c    381   ///  - the gating line is permanently Disabled
-                   558   ; adc0.c    382   ///  - the external trigger is disabled
-                   559   ; adc0.c    383   ///  - the trigger mode 0 is selected
-                   560   ; adc0.c    384 
-                   561   ; adc0.c    385   ADC0_QMR2      =  0x0000;      // load queue mode register
-                   562           ?LINE   385
-00C0 E00C          563           MOV     R12,#00h
-00C2 F6FCF0E0      564           MOV     0E0F0h,R12
-                   565   ; adc0.c    386 
-                   566   ; adc0.c    387   ///  -----------------------------------------------------------------------
-                   567   ; adc0.c    388   ///  Configuration of Conversion Request Mode Registers:Parallel Source 
+                   551           ?LINE   377
+00B8 E00C          552           MOV     R12,#00h
+00BA F6FCF0E0      553           MOV     0E0F0h,R12
+                   554   ; adc0.c    378 
+                   555   ; adc0.c    379   ///  -----------------------------------------------------------------------
+                   556   ; adc0.c    380   ///  Configuration of Conversion Request Mode Registers:Parallel Source 
+                   557   ; adc0.c    381   ///  -----------------------------------------------------------------------
+                   558   ; adc0.c    382   ///  - the gating line is permanently Disabled
+                   559   ; adc0.c    383   ///  - the external trigger is disabled
+                   560   ; adc0.c    384   ///  - the source interrupt is disabled
+                   561   ; adc0.c    385   ///  - the autoscan functionality is disabled
+                   562   ; adc0.c    386 
+                   563   ; adc0.c    387   ADC0_CRMR1     =  0x0000;      // load conversion request mode register 1
+                   564           ?LINE   387
+00BE E00C          565           MOV     R12,#00h
+00C0 F6FCECE0      566           MOV     0E0ECh,R12
+                   567   ; adc0.c    388 
                    568   ; adc0.c    389   ///  -----------------------------------------------------------------------
-                   569   ; adc0.c    390   ///  - the gating line is permanently Disabled
-                   570   ; adc0.c    391   ///  - the external trigger is disabled
-                   571   ; adc0.c    392   ///  - the source interrupt is disabled
-                   572   ; adc0.c    393   ///  - the autoscan functionality is disabled
-                   573   ; adc0.c    394 
-                   574   ; adc0.c    395   ADC0_CRMR1     =  0x0000;      // load conversion request mode register 1
-                   575           ?LINE   395
-00C6 E00C          576           MOV     R12,#00h
-00C8 F6FCECE0      577           MOV     0E0ECh,R12
-                   578   ; adc0.c    396 
-                   579   ; adc0.c    397   ///  -----------------------------------------------------------------------
-                   580   ; adc0.c    398   ///  Configuration of Synchronisation Registers:
-                   581   ; adc0.c    399   ///  -----------------------------------------------------------------------
-                   582   ; adc0.c    400   ///  - ADC0 is master 
-                   583   ; adc0.c    401   ADC0_SYNCTR   |=  0x0010;      // Synchronisation register
-                   584           ?LINE   401
-00CC E6FC1AE0      585           MOV     R12,#0E01Ah
-00D0 A8DC          586           MOV     R13,[R12]
-00D2 4FFD          587           BSET    R13.4
-00D4 B8DC          588           MOV     [R12],R13
-                   589   ; adc0.c    402 
-                   590   ; adc0.c    403   P5_DIDIS       =  0x0040;      // Port 5 Digital input disable register
-                   591           ?LINE   403
-00D6 E6FC4000      592           MOV     R12,#040h
-00DA F6FC8AFE      593           MOV     0FE8Ah,R12
-                   594   ; adc0.c    404 
-                   595   ; adc0.c    405   ADC0_GLOBCTR  |=  0x0300;      // turn on Analog part
-                   596           ?LINE   405
-00DE E6FC10E0      597           MOV     R12,#0E010h
-00E2 A8DC          598           MOV     R13,[R12]
-00E4 76FD0003      599           OR      R13,#0300h
-00E8 B8DC          600           MOV     [R12],R13
-                   601   ; adc0.c    406 
-                   602   ; adc0.c    407 
-                   603   ; adc0.c    408   // USER CODE BEGIN (ADC0_Init,3)
-                   604   ; adc0.c    409 
-                   605   ; adc0.c    410   // USER CODE END
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:  12
+                   569   ; adc0.c    390   ///  Configuration of Synchronisation Registers:
+                   570   ; adc0.c    391   ///  -----------------------------------------------------------------------
+                   571   ; adc0.c    392   ///  - ADC0 is master 
+                   572   ; adc0.c    393   ADC0_SYNCTR   |=  0x0010;      // Synchronisation register
+                   573           ?LINE   393
+00C4 E6FC1AE0      574           MOV     R12,#0E01Ah
+00C8 A8DC          575           MOV     R13,[R12]
+00CA 4FFD          576           BSET    R13.4
+00CC B8DC          577           MOV     [R12],R13
+                   578   ; adc0.c    394 
+                   579   ; adc0.c    395   P5_DIDIS       =  0x0040;      // Port 5 Digital input disable register
+                   580           ?LINE   395
+00CE E6FC4000      581           MOV     R12,#040h
+00D2 F6FC8AFE      582           MOV     0FE8Ah,R12
+                   583   ; adc0.c    396 
+                   584   ; adc0.c    397   ADC0_GLOBCTR  |=  0x0300;      // turn on Analog part
+                   585           ?LINE   397
+00D6 E6FC10E0      586           MOV     R12,#0E010h
+00DA A8DC          587           MOV     R13,[R12]
+00DC 76FD0003      588           OR      R13,#0300h
+00E0 B8DC          589           MOV     [R12],R13
+                   590   ; adc0.c    398 
+                   591   ; adc0.c    399 
+                   592   ; adc0.c    400   // USER CODE BEGIN (ADC0_Init,3)
+                   593   ; adc0.c    401 
+                   594   ; adc0.c    402   // USER CODE END
+                   595   ; adc0.c    403 
+                   596   ; adc0.c    404 } //  End of function ADC0_vInit
+                   597           ?LINE   404
+00E2 DB00          598           RETS
+                   599   _ADC0_vInit     ENDP
+               R   600           ?SYMB   '',$,17,404
+                   601   ; adc0.c    405 
+                   602   ; adc0.c    406 
+                   603   ; adc0.c    407 //****************************************************************************
+                   604   ; adc0.c    408 // @Function      void ADC0_vStartSeq0ReqChNum(ubyte ubExtTrg, ubyte 
+                   605   ; adc0.c    409 //                ubEnIntr, ubyte ubRFill, ubyte ubChannelNum) 
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:55:26  Page:  12
 adc0
 
  LOC CODE        LINE   SOURCELINE
 
-                   606   ; adc0.c    411 
-                   607   ; adc0.c    412 } //  End of function ADC0_vInit
-                   608           ?LINE   412
-00EA DB00          609           RETS
-                   610   _ADC0_vInit     ENDP
-               R   611           ?SYMB   '',$,17,412
-                   612   ; adc0.c    413 
-                   613   ; adc0.c    414 
-                   614   ; adc0.c    415 //****************************************************************************
-                   615   ; adc0.c    416 // @Function      void ADC0_vStartSeq0ReqChNum(ubyte ubExtTrg, ubyte 
-                   616   ; adc0.c    417 //                ubEnIntr, ubyte ubRFill, ubyte ubChannelNum) 
-                   617   ; adc0.c    418 //
-                   618   ; adc0.c    419 //----------------------------------------------------------------------------
-                   619   ; adc0.c    420 // @Description   This function starts the conversion of the requested 
-                   620   ; adc0.c    421 //                channel.
-                   621   ; adc0.c    422 //                NOTE -
-                   622   ; adc0.c    423 //                Before passing ubEnIntr argument as 1,make sure that Seq 0 
-                   623   ; adc0.c    424 //                source interrupt is enabled.
-                   624   ; adc0.c    425 //                External Trigger -> 0,Indicates software trigger 
-                   625   ; adc0.c    426 //                (Conversion starts once this function is executed)
-                   626   ; adc0.c    427 //
-                   627   ; adc0.c    428 //----------------------------------------------------------------------------
-                   628   ; adc0.c    429 // @Returnvalue   None
-                   629   ; adc0.c    430 //
-                   630   ; adc0.c    431 //----------------------------------------------------------------------------
-                   631   ; adc0.c    432 // @Parameters    ubExtTrg: 
-                   632   ; adc0.c    433 //                External Trigger : defines external trigger.
-                   633   ; adc0.c    434 // @Parameters    ubEnIntr: 
-                   634   ; adc0.c    435 //                Enable Source Interrupt : defines source interrupt
-                   635   ; adc0.c    436 // @Parameters    ubRFill: 
-                   636   ; adc0.c    437 //                Refill : defines the refill
-                   637   ; adc0.c    438 // @Parameters    ubChannelNum: 
-                   638   ; adc0.c    439 //                Channel number : Name of the Request Channel Number (0 - 
-                   639   ; adc0.c    440 //                15)- see macros defined in the header file
-                   640   ; adc0.c    441 //
-                   641   ; adc0.c    442 //----------------------------------------------------------------------------
-                   642   ; adc0.c    443 // @Date          29.09.2021
-                   643   ; adc0.c    444 //
-                   644   ; adc0.c    445 //****************************************************************************
-                   645   ; adc0.c    446 
-                   646   ; adc0.c    447 void ADC0_vStartSeq0ReqChNum(ubyte ubExtTrg, ubyte ubEnIntr, ubyte ubRFill, uby
+                   606   ; adc0.c    410 //
+                   607   ; adc0.c    411 //----------------------------------------------------------------------------
+                   608   ; adc0.c    412 // @Description   This function starts the conversion of the requested 
+                   609   ; adc0.c    413 //                channel.
+                   610   ; adc0.c    414 //                NOTE -
+                   611   ; adc0.c    415 //                Before passing ubEnIntr argument as 1,make sure that Seq 0 
+                   612   ; adc0.c    416 //                source interrupt is enabled.
+                   613   ; adc0.c    417 //                External Trigger -> 0,Indicates software trigger 
+                   614   ; adc0.c    418 //                (Conversion starts once this function is executed)
+                   615   ; adc0.c    419 //
+                   616   ; adc0.c    420 //----------------------------------------------------------------------------
+                   617   ; adc0.c    421 // @Returnvalue   None
+                   618   ; adc0.c    422 //
+                   619   ; adc0.c    423 //----------------------------------------------------------------------------
+                   620   ; adc0.c    424 // @Parameters    ubExtTrg: 
+                   621   ; adc0.c    425 //                External Trigger : defines external trigger.
+                   622   ; adc0.c    426 // @Parameters    ubEnIntr: 
+                   623   ; adc0.c    427 //                Enable Source Interrupt : defines source interrupt
+                   624   ; adc0.c    428 // @Parameters    ubRFill: 
+                   625   ; adc0.c    429 //                Refill : defines the refill
+                   626   ; adc0.c    430 // @Parameters    ubChannelNum: 
+                   627   ; adc0.c    431 //                Channel number : Name of the Request Channel Number (0 - 
+                   628   ; adc0.c    432 //                15)- see macros defined in the header file
+                   629   ; adc0.c    433 //
+                   630   ; adc0.c    434 //----------------------------------------------------------------------------
+                   631   ; adc0.c    435 // @Date          30.09.2021
+                   632   ; adc0.c    436 //
+                   633   ; adc0.c    437 //****************************************************************************
+                   634   ; adc0.c    438 
+                   635   ; adc0.c    439 void ADC0_vStartSeq0ReqChNum(ubyte ubExtTrg, ubyte ubEnIntr, ubyte ubRFill, uby
                          te ubChannelNum)
-                   647   ; adc0.c    448 {
-                   648           ?LINE   448
-                   649           PUBLIC  _ADC0_vStartSeq0ReqChNum
-               R   650           ?SYMB   'ADC0_vStartSeq0ReqChNum',_ADC0_vStartSeq0ReqChNum,37,1
-                   651           ?SYMB   '',448,8,34
-                   652   _ADC0_vStartSeq0ReqChNum        PROC    FAR
-                   653           ?SYMB   '',00H,95,0
-00EC 88F0          654           MOV     [-R0],R15
-               R   655           ?SYMB   '',$,96,2
-00EE 88C0          656           MOV     [-R0],R12
-               R   657           ?SYMB   '',$,96,4
-00F0 88D0          658           MOV     [-R0],R13
-               R   659           ?SYMB   '',$,96,6
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:  13
+                   636   ; adc0.c    440 {
+                   637           ?LINE   440
+                   638           PUBLIC  _ADC0_vStartSeq0ReqChNum
+               R   639           ?SYMB   'ADC0_vStartSeq0ReqChNum',_ADC0_vStartSeq0ReqChNum,37,1
+                   640           ?SYMB   '',440,8,34
+                   641   _ADC0_vStartSeq0ReqChNum        PROC    FAR
+                   642           ?SYMB   '',00H,95,0
+00E4 88F0          643           MOV     [-R0],R15
+               R   644           ?SYMB   '',$,96,2
+00E6 88C0          645           MOV     [-R0],R12
+               R   646           ?SYMB   '',$,96,4
+00E8 88D0          647           MOV     [-R0],R13
+               R   648           ?SYMB   '',$,96,6
+00EA 88E0          649           MOV     [-R0],R14
+               R   650           ?SYMB   '',$,96,8
+00EC 2802          651           SUB     R0,#02h
+               R   652           ?SYMB   '',$,96,10
+                   653   ; Locals:
+                   654   ;     uwVal = offset 0
+                   655   ;     ubRFill = offset 2
+                   656   ;     ubEnIntr = offset 4
+                   657   ;     ubExtTrg = offset 6
+                   658   ;     ubChannelNum = offset 8
+                   659   ; 
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:55:26  Page:  13
 adc0
 
  LOC CODE        LINE   SOURCELINE
 
-00F2 88E0          660           MOV     [-R0],R14
-               R   661           ?SYMB   '',$,96,8
-00F4 2802          662           SUB     R0,#02h
-               R   663           ?SYMB   '',$,96,10
-                   664   ; Locals:
-                   665   ;     uwVal = offset 0
-                   666   ;     ubRFill = offset 2
-                   667   ;     ubEnIntr = offset 4
-                   668   ;     ubExtTrg = offset 6
-                   669   ;     ubChannelNum = offset 8
-                   670   ; 
-                   671   ; Statics:
-                   672   ; 
-                   673   ; CSEs:
-                   674   ; 
-                   675           ?SYMB   'ubExtTrg',4,99,259
-               R   676           ?SYMB   '-4',$,101,4
-                   677           ?SYMB   'ubEnIntr',3,99,259
-               R   678           ?SYMB   '-6',$,101,3
-                   679           ?SYMB   'ubRFill',2,99,259
-               R   680           ?SYMB   '-8',$,101,2
-                   681           ?SYMB   'ubChannelNum',5,99,259
-               R   682           ?SYMB   '-2',$,101,5
-                   683   ; adc0.c    449 
-                   684   ; adc0.c    450     uword uwVal = 0;
-                   685           ?SYMB   'uwVal',1,98,261
-               R   686           ?SYMB   '-a',$,101,1
-                   687           ?LINE   450
-00F6 E00C          688           MOV     R12,#00h
-00F8 B8C0          689           MOV     [R0],R12
-                   690   ; adc0.c    451     if (ubExtTrg == 1)
-                   691           ?LINE   451
-00FA F4200600      692           MOVB    RL1,[R0+#06H]
-00FE 4921          693           CMPB    RL1,#01h
-0100 3D03          694           JMPR    cc_NE,_6
-                   695   ; adc0.c    452     {
-                   696   ; adc0.c    453         uwVal = 0x0080;
-                   697           ?LINE   453
-0102 E6FC8000      698           MOV     R12,#080h
-0106 B8C0          699           MOV     [R0],R12
-                   700   ; adc0.c    454     }
-                   701           ?LINE   454
-0108               702   _6:
-                   703   ; adc0.c    455     if (ubEnIntr == 1)
-                   704           ?LINE   455
-0108 F4200400      705           MOVB    RL1,[R0+#04H]
-010C 4921          706           CMPB    RL1,#01h
-010E 3D04          707           JMPR    cc_NE,_7
-                   708   ; adc0.c    456     {
-                   709   ; adc0.c    457         uwVal = uwVal + 0x0040;
-                   710           ?LINE   457
-0110 A8C0          711           MOV     R12,[R0]
-0112 06FC4000      712           ADD     R12,#040h
-0116 B8C0          713           MOV     [R0],R12
-                   714   ; adc0.c    458     }
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:  14
+                   660   ; Statics:
+                   661   ; 
+                   662   ; CSEs:
+                   663   ; 
+                   664           ?SYMB   'ubExtTrg',4,99,259
+               R   665           ?SYMB   '-4',$,101,4
+                   666           ?SYMB   'ubEnIntr',3,99,259
+               R   667           ?SYMB   '-6',$,101,3
+                   668           ?SYMB   'ubRFill',2,99,259
+               R   669           ?SYMB   '-8',$,101,2
+                   670           ?SYMB   'ubChannelNum',5,99,259
+               R   671           ?SYMB   '-2',$,101,5
+                   672   ; adc0.c    441 
+                   673   ; adc0.c    442     uword uwVal = 0;
+                   674           ?SYMB   'uwVal',1,98,261
+               R   675           ?SYMB   '-a',$,101,1
+                   676           ?LINE   442
+00EE E00C          677           MOV     R12,#00h
+00F0 B8C0          678           MOV     [R0],R12
+                   679   ; adc0.c    443     if (ubExtTrg == 1)
+                   680           ?LINE   443
+00F2 F4200600      681           MOVB    RL1,[R0+#06H]
+00F6 4921          682           CMPB    RL1,#01h
+00F8 3D03          683           JMPR    cc_NE,_6
+                   684   ; adc0.c    444     {
+                   685   ; adc0.c    445         uwVal = 0x0080;
+                   686           ?LINE   445
+00FA E6FC8000      687           MOV     R12,#080h
+00FE B8C0          688           MOV     [R0],R12
+                   689   ; adc0.c    446     }
+                   690           ?LINE   446
+0100               691   _6:
+                   692   ; adc0.c    447     if (ubEnIntr == 1)
+                   693           ?LINE   447
+0100 F4200400      694           MOVB    RL1,[R0+#04H]
+0104 4921          695           CMPB    RL1,#01h
+0106 3D04          696           JMPR    cc_NE,_7
+                   697   ; adc0.c    448     {
+                   698   ; adc0.c    449         uwVal = uwVal + 0x0040;
+                   699           ?LINE   449
+0108 A8C0          700           MOV     R12,[R0]
+010A 06FC4000      701           ADD     R12,#040h
+010E B8C0          702           MOV     [R0],R12
+                   703   ; adc0.c    450     }
+                   704           ?LINE   450
+0110               705   _7:
+                   706   ; adc0.c    451     if (ubRFill == 1)
+                   707           ?LINE   451
+0110 F4200200      708           MOVB    RL1,[R0+#02H]
+0114 4921          709           CMPB    RL1,#01h
+0116 3D04          710           JMPR    cc_NE,_8
+                   711   ; adc0.c    452     {
+                   712   ; adc0.c    453         uwVal = uwVal + 0x0020;
+                   713           ?LINE   453
+0118 A8C0          714           MOV     R12,[R0]
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:55:26  Page:  14
 adc0
 
  LOC CODE        LINE   SOURCELINE
 
-                   715           ?LINE   458
-0118               716   _7:
-                   717   ; adc0.c    459     if (ubRFill == 1)
-                   718           ?LINE   459
-0118 F4200200      719           MOVB    RL1,[R0+#02H]
-011C 4921          720           CMPB    RL1,#01h
-011E 3D04          721           JMPR    cc_NE,_8
-                   722   ; adc0.c    460     {
-                   723   ; adc0.c    461         uwVal = uwVal + 0x0020;
-                   724           ?LINE   461
-0120 A8C0          725           MOV     R12,[R0]
-0122 06FC2000      726           ADD     R12,#020h
-0126 B8C0          727           MOV     [R0],R12
-                   728   ; adc0.c    462     }
-                   729           ?LINE   462
-0128               730   _8:
-                   731   ; adc0.c    463     uwVal = uwVal + (ubChannelNum & 0x001f);
-                   732           ?LINE   463
-0128 F4200800      733           MOVB    RL1,[R0+#08H]
-012C 66F11F00      734           AND     R1,#01Fh
-0130 A8C0          735           MOV     R12,[R0]
-0132 00C1          736           ADD     R12,R1
-0134 B8C0          737           MOV     [R0],R12
-                   738   ; adc0.c    464 
-                   739   ; adc0.c    465    ADC0_QINR0 = uwVal; // requested channel 
-                   740           ?LINE   465
-0136 A8C0          741           MOV     R12,[R0]
-0138 F6FCE6E0      742           MOV     0E0E6h,R12
-                   743   ; adc0.c    466 
-                   744   ; adc0.c    467 } //  End of function ADC0_vStartSeq0ReqChNum
-               R   745           ?SYMB   '',$,102,1
-               R   746           ?SYMB   '',$,102,5
-               R   747           ?SYMB   '',$,102,2
-               R   748           ?SYMB   '',$,102,3
-               R   749           ?SYMB   '',$,102,4
-                   750           ?LINE   467
-013C 06F00A00      751           ADD     R0,#0Ah
-               R   752           ?SYMB   '',$,96,0
-0140 DB00          753           RETS
-                   754   _ADC0_vStartSeq0ReqChNum        ENDP
-               R   755           ?SYMB   '',$,17,467
-                   756   ; adc0.c    468 
-                   757   ; adc0.c    469 
-                   758   ; adc0.c    470 //****************************************************************************
-                   759   ; adc0.c    471 // @Function      void ADC0_viSRN0(void) 
-                   760   ; adc0.c    472 //
-                   761   ; adc0.c    473 //----------------------------------------------------------------------------
-                   762   ; adc0.c    474 // @Description   This is the interrupt service routine for the Service 
-                   763   ; adc0.c    475 //                Request Node 0 of the ADC0 module.
-                   764   ; adc0.c    476 //
-                   765   ; adc0.c    477 //----------------------------------------------------------------------------
-                   766   ; adc0.c    478 // @Returnvalue   None
-                   767   ; adc0.c    479 //
-                   768   ; adc0.c    480 //----------------------------------------------------------------------------
-                   769   ; adc0.c    481 // @Parameters    None
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:  15
-adc0
-
- LOC CODE        LINE   SOURCELINE
-
-                   770   ; adc0.c    482 //
-                   771   ; adc0.c    483 //----------------------------------------------------------------------------
-                   772   ; adc0.c    484 // @Date          29.09.2021
-                   773   ; adc0.c    485 //
-                   774   ; adc0.c    486 //****************************************************************************
-                   775   ; adc0.c    487 
-                   776   ; adc0.c    488 // USER CODE BEGIN (ADC0_viSRN0,0)
-                   777   ; adc0.c    489 
-                   778   ; adc0.c    490 // USER CODE END
-                   779   ; adc0.c    491 
-                   780   ; adc0.c    492 _interrupt(ADC0_SRN0INT)  void ADC0_viSRN0(void)
-                   781   ; adc0.c    493 {
-               R   782           ?SYMB   'ADC0_viSRN0',_ADC0_viSRN0,37,1
-                   783           ?SYMB   '',493,8,16
-                   784   _ADC0_viSRN0    PROC TASK ADC0_TASK INTNO ADC0_INUM = 028h
-                   785           ?LINE   493
-                   786           ?SYMB   '',00H,95,0
-0142 F6F00000  R   787           MOV     ADC0_RB,R0
-0146 C6080000  R   788           SCXT    CP,#ADC0_RB
-014A C6871000      789           SCXT    MDC,#010h
-014E EC00          790           PUSH    DPP0
-0150 E6000000  R   791           MOV     DPP0,#PAG ?BASE_DPP0
-0154 CC00          792           NOP
-0156 EC02          793           PUSH    DPP2
-0158 E6020000  R   794           MOV     DPP2,#PAG ?BASE_DPP2
-015C CC00          795           NOP
-015E EC06          796           PUSH    MDH
-0160 EC07          797           PUSH    MDL
-0162 ECEF          798           PUSH    MSW
-0164 EC2E          799           PUSH    MAL
-0166 EC2F          800           PUSH    MAH
-0168 ECEE          801           PUSH    MCW
-016A C6ED0000      802           SCXT    MRW,#00h
-016E EC84          803           PUSH    IDX0
-0170 EC85          804           PUSH    IDX1
-0172 D180          805           EXTR    #01h
-0174 EC00     1    806           PUSH    QX0
-0176 D180          807           EXTR    #01h
-0178 EC01     1    808           PUSH    QX1
-017A D180          809           EXTR    #01h
-017C EC02     1    810           PUSH    QR0
-017E D180          811           EXTR    #01h
-0180 EC03     1    812           PUSH    QR1
-                   813   ; Locals:
-                   814   ; 
-                   815   ; Statics:
-                   816   ; 
-                   817   ; CSEs:
-                   818   ; 
-                   819   ; adc0.c    494 
-                   820   ; adc0.c    495     if((ADC0_EVINFR & 0x0100) == 0x0100)    //Result0 event interrupt 
-                   821           ?LINE   495
-0182 F2FCA0E0      822           MOV     R12,0E0A0h
-0186 9AFC0480      823           JNB     R12.8,_10
-                   824   ; adc0.c    496     {
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:  16
-adc0
-
- LOC CODE        LINE   SOURCELINE
-
-                   825   ; adc0.c    497         ADC0_EVINCR = 0x0100;     // Clear Result0 event interrupt
-                   826           ?LINE   497
-018A E6FC0001      827           MOV     R12,#0100h
-018E F6FCA2E0      828           MOV     0E0A2h,R12
-                   829   ; adc0.c    498 
-                   830   ; adc0.c    499       // USER CODE BEGIN (ADC0_viSRN0,20)
-                   831   ; adc0.c    500 
-                   832   ; adc0.c    501       // USER CODE END
-                   833   ; adc0.c    502 
-                   834   ; adc0.c    503     }
-                   835           ?LINE   503
-0192               836   _10:
-                   837   ; adc0.c    504 
-                   838   ; adc0.c    505 
-                   839   ; adc0.c    506 } //  End of function ADC0_viSRN0
-                   840           ?LINE   506
-0192 D180          841           EXTR    #01h
-0194 FC03     1    842           POP     QR1
-0196 D180          843           EXTR    #01h
-0198 FC02     1    844           POP     QR0
-019A D180          845           EXTR    #01h
-019C FC01     1    846           POP     QX1
-019E D180          847           EXTR    #01h
-01A0 FC00     1    848           POP     QX0
-01A2 FC85          849           POP     IDX1
-01A4 FC84          850           POP     IDX0
-01A6 FCED          851           POP     MRW
-01A8 FCEE          852           POP     MCW
-01AA FC2F          853           POP     MAH
-01AC FC2E          854           POP     MAL
-01AE FCEF          855           POP     MSW
-01B0 FC07          856           POP     MDL
-01B2 FC06          857           POP     MDH
-01B4 FC02          858           POP     DPP2
-01B6 FC00          859           POP     DPP0
-01B8 FC87          860           POP     MDC
-01BA FC08          861           POP     CP
-                   862           ?LINE   506
-01BC FB88          863           RETI
-                   864   _ADC0_viSRN0    ENDP
-               R   865           ?SYMB   '',$,17,506
-                   866   ; adc0.c    507 
-                   867   ; adc0.c    508 
-                   868   ; adc0.c    509 
-                   869   ; adc0.c    510 // USER CODE BEGIN (ADC0_General,10)
-                   870   ; adc0.c    511 
-                   871   ; adc0.c    512 // USER CODE END
-                   872   ; adc0.c    513 
-                   873   ADC0_1_PR       ENDS
-                   874   
-                   875   C166_US SECTION LDAT WORD GLBUSRSTACK 'CUSTACK'
-0000               876           DS      10
-                   877   C166_US ENDS
-                   878   
-                   879   ADC0_RB REGDEF  R0-R15
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 29 2021  Time: 09:41:22  Page:  17
-adc0
-
- LOC CODE        LINE   SOURCELINE
-
-                   880           END
+011A 06FC2000      715           ADD     R12,#020h
+011E B8C0          716           MOV     [R0],R12
+                   717   ; adc0.c    454     }
+                   718           ?LINE   454
+0120               719   _8:
+                   720   ; adc0.c    455     uwVal = uwVal + (ubChannelNum & 0x001f);
+                   721           ?LINE   455
+0120 F4200800      722           MOVB    RL1,[R0+#08H]
+0124 66F11F00      723           AND     R1,#01Fh
+0128 A8C0          724           MOV     R12,[R0]
+012A 00C1          725           ADD     R12,R1
+012C B8C0          726           MOV     [R0],R12
+                   727   ; adc0.c    456 
+                   728   ; adc0.c    457    ADC0_QINR0 = uwVal; // requested channel 
+                   729           ?LINE   457
+012E A8C0          730           MOV     R12,[R0]
+0130 F6FCE6E0      731           MOV     0E0E6h,R12
+                   732   ; adc0.c    458 
+                   733   ; adc0.c    459 } //  End of function ADC0_vStartSeq0ReqChNum
+               R   734           ?SYMB   '',$,102,1
+               R   735           ?SYMB   '',$,102,5
+               R   736           ?SYMB   '',$,102,2
+               R   737           ?SYMB   '',$,102,3
+               R   738           ?SYMB   '',$,102,4
+                   739           ?LINE   459
+0134 06F00A00      740           ADD     R0,#0Ah
+               R   741           ?SYMB   '',$,96,0
+0138 DB00          742           RETS
+                   743   _ADC0_vStartSeq0ReqChNum        ENDP
+               R   744           ?SYMB   '',$,17,459
+                   745   ; adc0.c    460 
+                   746   ; adc0.c    461 
+                   747   ; adc0.c    462 
+                   748   ; adc0.c    463 
+                   749   ; adc0.c    464 // USER CODE BEGIN (ADC0_General,10)
+                   750   ; adc0.c    465 
+                   751   ; adc0.c    466 // USER CODE END
+                   752   ; adc0.c    467 
+                   753   ADC0_1_PR       ENDS
+                   754   
+                   755   C166_US SECTION LDAT WORD GLBUSRSTACK 'CUSTACK'
+0000               756           DS      10
+                   757   C166_US ENDS
+                   758   
+                   759           REGDEF  R0-R15
+                   760           END
 
 total errors: 0, warnings: 0
 

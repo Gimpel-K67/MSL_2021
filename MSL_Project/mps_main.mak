@@ -74,13 +74,6 @@ gpt2.obj : gpt2.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h ccu62.h ccu63.h ad
 	${separate "\n" -o $@ $(OPT_CC) }
 	EOF
 
-cc2.obj : cc2.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h ccu62.h ccu63.h adc0.h <1632830551>
-
-	@echo Compiling and assembling ${*F}.c
-	@"$(PRODDIR)\bin\cc166.exe" -f <<EOF -c cc2.c
-	${separate "\n" -o $@ $(OPT_CC) }
-	EOF
-
 ccu62.obj : ccu62.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h ccu62.h ccu63.h adc0.h <1632830551>
 
 	@echo Compiling and assembling ${*F}.c
@@ -96,7 +89,7 @@ adc0.obj : adc0.c main.h xe16xregs.h scs.h io.h gpt1.h gpt2.h ccu62.h ccu63.h ad
 	EOF
 
 $(PROJ).out : ccu63.obj io.obj main.obj scs.obj start_master.obj gpt1.obj gpt2.obj
-$(PROJ).out : cc2.obj ccu62.obj adc0.obj _mps_main.ilo <1632742349>
+$(PROJ).out : ccu62.obj adc0.obj _mps_main.ilo <1633006508>
 	@echo Linking and locating to ${*F}.out
 	@"$(PRODDIR)\bin\cc166.exe" $(LINKCPP) -o $@ -f <<EOF 
 	${separate "\n" $(match .obj $!) $(match .lno $!) $(match .lib $!) $(OPT_LC)}
@@ -129,9 +122,6 @@ clean :
 	@$(exist gpt2.obj del gpt2.obj)
 	@$(exist gpt2.src del gpt2.src)
 	@$(exist gpt2.lst del gpt2.lst)
-	@$(exist cc2.obj del cc2.obj)
-	@$(exist cc2.src del cc2.src)
-	@$(exist cc2.lst del cc2.lst)
 	@$(exist ccu62.obj del ccu62.obj)
 	@$(exist ccu62.src del ccu62.src)
 	@$(exist ccu62.lst del ccu62.lst)

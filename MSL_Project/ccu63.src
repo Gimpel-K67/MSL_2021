@@ -44,7 +44,7 @@ $MODEL(SMALL)
 ; ccu63.c    12	// @Description   This file contains functions that use the CCU63 module.
 ; ccu63.c    13	//
 ; ccu63.c    14	//----------------------------------------------------------------------------
-; ccu63.c    15	// @Date          29.09.2021 09:41:09
+; ccu63.c    15	// @Date          30.09.2021 14:42:54
 ; ccu63.c    16	//
 ; ccu63.c    17	//****************************************************************************
 ; ccu63.c    18	
@@ -189,7 +189,7 @@ $MODEL(SMALL)
 ; ccu63.c   118	// @Parameters    None
 ; ccu63.c   119	//
 ; ccu63.c   120	//----------------------------------------------------------------------------
-; ccu63.c   121	// @Date          29.09.2021
+; ccu63.c   121	// @Date          30.09.2021
 ; ccu63.c   122	//
 ; ccu63.c   123	//****************************************************************************
 ; ccu63.c   124	
@@ -546,7 +546,7 @@ _CCU63_vInit	ENDP
 ; ccu63.c   377	// @Parameters    None
 ; ccu63.c   378	//
 ; ccu63.c   379	//----------------------------------------------------------------------------
-; ccu63.c   380	// @Date          29.09.2021
+; ccu63.c   380	// @Date          30.09.2021
 ; ccu63.c   381	//
 ; ccu63.c   382	//****************************************************************************
 ; ccu63.c   383	
@@ -732,41 +732,39 @@ _9:
 	MOV	[R12],R13
 ; ccu63.c   403	    // USER CODE END
 ; ccu63.c   404	
-; ccu63.c   405	
-; ccu63.c   406	    CCU63_ISR |= 0x0040;  // clear flag CCU63_IS_T12OM
-	?LINE	406
+; ccu63.c   405	    CCU63_ISR |= 0x0040;  // clear flag CCU63_IS_T12OM
+	?LINE	405
 	MOV	R12,#0EBD4h
 	MOV	R13,[R12]
 	BSET	R13.6
 	MOV	[R12],R13
-; ccu63.c   407	  }
-	?LINE	407
+; ccu63.c   406	  }
+	?LINE	406
 _7:
-; ccu63.c   408	  
-; ccu63.c   409	
-; ccu63.c   410	  if(CCU63_IS & 0x0080)  // if CCU63_IS_T12PM
-	?LINE	410
+; ccu63.c   407	
+; ccu63.c   408	  if(CCU63_IS & 0x0080)  // if CCU63_IS_T12PM
+	?LINE	408
 	MOV	R12,0EBD0h
 	JNB	R12.7,_8
-; ccu63.c   411	  {
-; ccu63.c   412	    // Timer T12 period match detection
-; ccu63.c   413	
-; ccu63.c   414	    // USER CODE BEGIN (NodeI0,19)
-; ccu63.c   415	    // USER CODE END
-; ccu63.c   416	
-; ccu63.c   417	    CCU63_ISR |= 0x0080;  // clear flag CCU63_IS_T12PM
-	?LINE	417
+; ccu63.c   409	  {
+; ccu63.c   410	    // Timer T12 period match detection
+; ccu63.c   411	
+; ccu63.c   412	    // USER CODE BEGIN (NodeI0,19)
+; ccu63.c   413	    // USER CODE END
+; ccu63.c   414	
+; ccu63.c   415	    CCU63_ISR |= 0x0080;  // clear flag CCU63_IS_T12PM
+	?LINE	415
 	MOV	R12,#0EBD4h
 	MOV	R13,[R12]
 	BSET	R13.7
 	MOV	[R12],R13
-; ccu63.c   418	  }
-	?LINE	418
+; ccu63.c   416	  }
+	?LINE	416
 _8:
-; ccu63.c   419	
-; ccu63.c   420	
-; ccu63.c   421	} //  End of function CCU63_viNodeI0
-	?LINE	421
+; ccu63.c   417	
+; ccu63.c   418	
+; ccu63.c   419	} //  End of function CCU63_viNodeI0
+	?LINE	419
 	EXTR	#01h
 	POP	QR1
 	EXTR	#01h
@@ -788,18 +786,18 @@ _8:
 	POP	DPP0
 	POP	MDC
 	POP	CP
-	?LINE	421
+	?LINE	419
 	RETI
 _CCU63_viNodeI0	ENDP
-	?SYMB	'',$,17,421
+	?SYMB	'',$,17,419
+; ccu63.c   420	
+; ccu63.c   421	
 ; ccu63.c   422	
 ; ccu63.c   423	
-; ccu63.c   424	
+; ccu63.c   424	// USER CODE BEGIN (CCU63_General,10)
 ; ccu63.c   425	
-; ccu63.c   426	// USER CODE BEGIN (CCU63_General,10)
+; ccu63.c   426	// USER CODE END
 ; ccu63.c   427	
-; ccu63.c   428	// USER CODE END
-; ccu63.c   429	
 CCU63_1_PR	ENDS
 
 CCU63_2_CO	SECTION	LDAT WORD PUBLIC 'CROM'

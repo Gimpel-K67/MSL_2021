@@ -44,7 +44,7 @@ $MODEL(SMALL)
 ; adc0.c     12	// @Description   This file contains functions that use the ADC0 module.
 ; adc0.c     13	//
 ; adc0.c     14	//----------------------------------------------------------------------------
-; adc0.c     15	// @Date          29.09.2021 09:41:09
+; adc0.c     15	// @Date          30.09.2021 14:42:55
 ; adc0.c     16	//
 ; adc0.c     17	//****************************************************************************
 ; adc0.c     18	
@@ -199,7 +199,7 @@ $MODEL(SMALL)
 ; adc0.c    128	// @Parameters    None
 ; adc0.c    129	//
 ; adc0.c    130	//----------------------------------------------------------------------------
-; adc0.c    131	// @Date          29.09.2021
+; adc0.c    131	// @Date          30.09.2021
 ; adc0.c    132	//
 ; adc0.c    133	//****************************************************************************
 ; adc0.c    134	
@@ -331,14 +331,14 @@ _ADC0_vInit	PROC	FAR
 ; adc0.c    221	  ///  -----------------------------------------------------------------------
 ; adc0.c    222	  ///  Configuration of Result Control Register 0
 ; adc0.c    223	  ///  - the data reduction filter is enabled
-; adc0.c    224	  ///  - the event interrupt is enabled
+; adc0.c    224	  ///  - the event interrupt is disabled
 ; adc0.c    225	  ///  - the wait-for-read mode is enabled
 ; adc0.c    226	
 ; adc0.c    227	  ///  - the FIFO functionality is disabled
 ; adc0.c    228	
-; adc0.c    229	  ADC0_RCR0      =  0x0053;      // load result control register 0
+; adc0.c    229	  ADC0_RCR0      =  0x0043;      // load result control register 0
 	?LINE	229
-	MOV	R12,#053h
+	MOV	R12,#043h
 	MOV	0E0B0h,R12
 ; adc0.c    230	
 ; adc0.c    231	  ///  Configuration of Result Control Register 1
@@ -469,186 +469,175 @@ _ADC0_vInit	PROC	FAR
 ; adc0.c    320	  ///  Configuration of Event Interrupt Node Pointer Register for Result 
 ; adc0.c    321	  ///  Interrupts:
 ; adc0.c    322	  ///  -----------------------------------------------------------------------
-; adc0.c    323	  ///  - the SR 0 line become activated if the event 8 interrupt is generated
-; adc0.c    324	
-; adc0.c    325	  ADC0_EVINPR8   =  0x0000;      // load event interrupt set flag register 
-	?LINE	325
+; adc0.c    323	
+; adc0.c    324	  ADC0_EVINPR8   =  0x0000;      // load event interrupt set flag register 
+	?LINE	324
 	MOV	R12,#00h
 	MOV	0E0ACh,R12
+; adc0.c    325	
 ; adc0.c    326	
-; adc0.c    327	
-; adc0.c    328	  ADC0_EVINPR12  =  0x0000;      // load event interrupt set flag register 
-	?LINE	328
+; adc0.c    327	  ADC0_EVINPR12  =  0x0000;      // load event interrupt set flag register 
+	?LINE	327
 	MOV	R12,#00h
 	MOV	0E0AEh,R12
-; adc0.c    329	
-; adc0.c    330	  ///  -----------------------------------------------------------------------
-; adc0.c    331	  ///  Configuration of Service Request Nodes 0 - 3 :
-; adc0.c    332	  ///  -----------------------------------------------------------------------
-; adc0.c    333	  ///  SRN0 service request node configuration:
-; adc0.c    334	  ///  - SRN0 interrupt priority level (ILVL) = 9
-; adc0.c    335	  ///  - SRN0 interrupt group level (GLVL) = 0
-; adc0.c    336	  ///  - SRN0 group priority extension (GPX) = 0
-; adc0.c    337	
-; adc0.c    338	  ADC_0IC        =  0x0064;     
-	?LINE	338
-	MOV	R12,#064h
-	MOV	0FF70h,R12
-; adc0.c    339	
-; adc0.c    340	
-; adc0.c    341	  ///  -----------------------------------------------------------------------
-; adc0.c    342	  ///  Configuration of Limit Check Boundary:
-; adc0.c    343	  ///  -----------------------------------------------------------------------
-; adc0.c    344	
-; adc0.c    345	  ADC0_LCBR0     =  0x0198;      // load limit check boundary register 0
-	?LINE	345
+; adc0.c    328	
+; adc0.c    329	  ///  -----------------------------------------------------------------------
+; adc0.c    330	  ///  Configuration of Service Request Nodes 0 - 3 :
+; adc0.c    331	  ///  -----------------------------------------------------------------------
+; adc0.c    332	
+; adc0.c    333	  ///  -----------------------------------------------------------------------
+; adc0.c    334	  ///  Configuration of Limit Check Boundary:
+; adc0.c    335	  ///  -----------------------------------------------------------------------
+; adc0.c    336	
+; adc0.c    337	  ADC0_LCBR0     =  0x0198;      // load limit check boundary register 0
+	?LINE	337
 	MOV	R12,#0198h
 	MOV	0E084h,R12
-; adc0.c    346	
-; adc0.c    347	  ADC0_LCBR1     =  0x0E64;      // load limit check boundary register 1
-	?LINE	347
+; adc0.c    338	
+; adc0.c    339	  ADC0_LCBR1     =  0x0E64;      // load limit check boundary register 1
+	?LINE	339
 	MOV	R12,#0E64h
 	MOV	0E086h,R12
-; adc0.c    348	
-; adc0.c    349	  ADC0_LCBR2     =  0x0554;      // load limit check boundary register 2
-	?LINE	349
+; adc0.c    340	
+; adc0.c    341	  ADC0_LCBR2     =  0x0554;      // load limit check boundary register 2
+	?LINE	341
 	MOV	R12,#0554h
 	MOV	0E088h,R12
-; adc0.c    350	
-; adc0.c    351	  ADC0_LCBR3     =  0x0AA8;      // load limit check boundary register 3
-	?LINE	351
+; adc0.c    342	
+; adc0.c    343	  ADC0_LCBR3     =  0x0AA8;      // load limit check boundary register 3
+	?LINE	343
 	MOV	R12,#0AA8h
 	MOV	0E08Ah,R12
-; adc0.c    352	
-; adc0.c    353	  ///  -----------------------------------------------------------------------
-; adc0.c    354	  ///  Configuration of Gating source and External Trigger Control:
-; adc0.c    355	  ///  -----------------------------------------------------------------------
-; adc0.c    356	  ///  - No Gating source selected for Arbitration Source 0
+; adc0.c    344	
+; adc0.c    345	  ///  -----------------------------------------------------------------------
+; adc0.c    346	  ///  Configuration of Gating source and External Trigger Control:
+; adc0.c    347	  ///  -----------------------------------------------------------------------
+; adc0.c    348	  ///  - No Gating source selected for Arbitration Source 0
+; adc0.c    349	
+; adc0.c    350	  ///  - the trigger input ETR00 is selected for Source 0
+; adc0.c    351	
+; adc0.c    352	  ///  - No Gating source selected for Arbitration Source 1
+; adc0.c    353	
+; adc0.c    354	  ///  - the trigger input ETR00 is selected for Source 1
+; adc0.c    355	
+; adc0.c    356	  ///  - No Gating source selected for Arbitration Source 2
 ; adc0.c    357	
-; adc0.c    358	  ///  - the trigger input ETR00 is selected for Source 0
+; adc0.c    358	  ///  - the trigger input ETR00 is selected for Source 1
 ; adc0.c    359	
-; adc0.c    360	  ///  - No Gating source selected for Arbitration Source 1
-; adc0.c    361	
-; adc0.c    362	  ///  - the trigger input ETR00 is selected for Source 1
-; adc0.c    363	
-; adc0.c    364	  ///  - No Gating source selected for Arbitration Source 2
-; adc0.c    365	
-; adc0.c    366	  ///  - the trigger input ETR00 is selected for Source 1
-; adc0.c    367	
-; adc0.c    368	  ADC0_PISEL     =  0x0444;      // load external trigger control register
-	?LINE	368
+; adc0.c    360	  ADC0_PISEL     =  0x0444;      // load external trigger control register
+	?LINE	360
 	MOV	R12,#0444h
 	MOV	0E004h,R12
-; adc0.c    369	
-; adc0.c    370	  ///  -----------------------------------------------------------------------
-; adc0.c    371	  ///  Configuration of Conversion Queue Mode Register:Sequential Source 0
-; adc0.c    372	  ///  -----------------------------------------------------------------------
-; adc0.c    373	  ///  - the gating line is permanently Enabled
-; adc0.c    374	  ///  - the external trigger is disabled
-; adc0.c    375	
-; adc0.c    376	  ADC0_QMR0      =  0x0001;      // load queue mode register
-	?LINE	376
+; adc0.c    361	
+; adc0.c    362	  ///  -----------------------------------------------------------------------
+; adc0.c    363	  ///  Configuration of Conversion Queue Mode Register:Sequential Source 0
+; adc0.c    364	  ///  -----------------------------------------------------------------------
+; adc0.c    365	  ///  - the gating line is permanently Enabled
+; adc0.c    366	  ///  - the external trigger is disabled
+; adc0.c    367	
+; adc0.c    368	  ADC0_QMR0      =  0x0001;      // load queue mode register
+	?LINE	368
 	MOV	R12,#01h
 	MOV	0E0E0h,R12
-; adc0.c    377	
-; adc0.c    378	  ///  -----------------------------------------------------------------------
-; adc0.c    379	  ///  Configuration of Conversion Queue Mode Register:Sequential Source 2
-; adc0.c    380	  ///  -----------------------------------------------------------------------
-; adc0.c    381	  ///  - the gating line is permanently Disabled
-; adc0.c    382	  ///  - the external trigger is disabled
-; adc0.c    383	  ///  - the trigger mode 0 is selected
-; adc0.c    384	
-; adc0.c    385	  ADC0_QMR2      =  0x0000;      // load queue mode register
-	?LINE	385
+; adc0.c    369	
+; adc0.c    370	  ///  -----------------------------------------------------------------------
+; adc0.c    371	  ///  Configuration of Conversion Queue Mode Register:Sequential Source 2
+; adc0.c    372	  ///  -----------------------------------------------------------------------
+; adc0.c    373	  ///  - the gating line is permanently Disabled
+; adc0.c    374	  ///  - the external trigger is disabled
+; adc0.c    375	  ///  - the trigger mode 0 is selected
+; adc0.c    376	
+; adc0.c    377	  ADC0_QMR2      =  0x0000;      // load queue mode register
+	?LINE	377
 	MOV	R12,#00h
 	MOV	0E0F0h,R12
+; adc0.c    378	
+; adc0.c    379	  ///  -----------------------------------------------------------------------
+; adc0.c    380	  ///  Configuration of Conversion Request Mode Registers:Parallel Source 
+; adc0.c    381	  ///  -----------------------------------------------------------------------
+; adc0.c    382	  ///  - the gating line is permanently Disabled
+; adc0.c    383	  ///  - the external trigger is disabled
+; adc0.c    384	  ///  - the source interrupt is disabled
+; adc0.c    385	  ///  - the autoscan functionality is disabled
 ; adc0.c    386	
-; adc0.c    387	  ///  -----------------------------------------------------------------------
-; adc0.c    388	  ///  Configuration of Conversion Request Mode Registers:Parallel Source 
-; adc0.c    389	  ///  -----------------------------------------------------------------------
-; adc0.c    390	  ///  - the gating line is permanently Disabled
-; adc0.c    391	  ///  - the external trigger is disabled
-; adc0.c    392	  ///  - the source interrupt is disabled
-; adc0.c    393	  ///  - the autoscan functionality is disabled
-; adc0.c    394	
-; adc0.c    395	  ADC0_CRMR1     =  0x0000;      // load conversion request mode register 1
-	?LINE	395
+; adc0.c    387	  ADC0_CRMR1     =  0x0000;      // load conversion request mode register 1
+	?LINE	387
 	MOV	R12,#00h
 	MOV	0E0ECh,R12
-; adc0.c    396	
-; adc0.c    397	  ///  -----------------------------------------------------------------------
-; adc0.c    398	  ///  Configuration of Synchronisation Registers:
-; adc0.c    399	  ///  -----------------------------------------------------------------------
-; adc0.c    400	  ///  - ADC0 is master 
-; adc0.c    401	  ADC0_SYNCTR   |=  0x0010;      // Synchronisation register
-	?LINE	401
+; adc0.c    388	
+; adc0.c    389	  ///  -----------------------------------------------------------------------
+; adc0.c    390	  ///  Configuration of Synchronisation Registers:
+; adc0.c    391	  ///  -----------------------------------------------------------------------
+; adc0.c    392	  ///  - ADC0 is master 
+; adc0.c    393	  ADC0_SYNCTR   |=  0x0010;      // Synchronisation register
+	?LINE	393
 	MOV	R12,#0E01Ah
 	MOV	R13,[R12]
 	BSET	R13.4
 	MOV	[R12],R13
-; adc0.c    402	
-; adc0.c    403	  P5_DIDIS       =  0x0040;      // Port 5 Digital input disable register
-	?LINE	403
+; adc0.c    394	
+; adc0.c    395	  P5_DIDIS       =  0x0040;      // Port 5 Digital input disable register
+	?LINE	395
 	MOV	R12,#040h
 	MOV	0FE8Ah,R12
-; adc0.c    404	
-; adc0.c    405	  ADC0_GLOBCTR  |=  0x0300;      // turn on Analog part
-	?LINE	405
+; adc0.c    396	
+; adc0.c    397	  ADC0_GLOBCTR  |=  0x0300;      // turn on Analog part
+	?LINE	397
 	MOV	R12,#0E010h
 	MOV	R13,[R12]
 	OR	R13,#0300h
 	MOV	[R12],R13
-; adc0.c    406	
-; adc0.c    407	
-; adc0.c    408	  // USER CODE BEGIN (ADC0_Init,3)
-; adc0.c    409	
-; adc0.c    410	  // USER CODE END
-; adc0.c    411	
-; adc0.c    412	} //  End of function ADC0_vInit
-	?LINE	412
+; adc0.c    398	
+; adc0.c    399	
+; adc0.c    400	  // USER CODE BEGIN (ADC0_Init,3)
+; adc0.c    401	
+; adc0.c    402	  // USER CODE END
+; adc0.c    403	
+; adc0.c    404	} //  End of function ADC0_vInit
+	?LINE	404
 	RETS
 _ADC0_vInit	ENDP
-	?SYMB	'',$,17,412
-; adc0.c    413	
-; adc0.c    414	
-; adc0.c    415	//****************************************************************************
-; adc0.c    416	// @Function      void ADC0_vStartSeq0ReqChNum(ubyte ubExtTrg, ubyte 
-; adc0.c    417	//                ubEnIntr, ubyte ubRFill, ubyte ubChannelNum) 
-; adc0.c    418	//
-; adc0.c    419	//----------------------------------------------------------------------------
-; adc0.c    420	// @Description   This function starts the conversion of the requested 
-; adc0.c    421	//                channel.
-; adc0.c    422	//                NOTE -
-; adc0.c    423	//                Before passing ubEnIntr argument as 1,make sure that Seq 0 
-; adc0.c    424	//                source interrupt is enabled.
-; adc0.c    425	//                External Trigger -> 0,Indicates software trigger 
-; adc0.c    426	//                (Conversion starts once this function is executed)
-; adc0.c    427	//
-; adc0.c    428	//----------------------------------------------------------------------------
-; adc0.c    429	// @Returnvalue   None
-; adc0.c    430	//
-; adc0.c    431	//----------------------------------------------------------------------------
-; adc0.c    432	// @Parameters    ubExtTrg: 
-; adc0.c    433	//                External Trigger : defines external trigger.
-; adc0.c    434	// @Parameters    ubEnIntr: 
-; adc0.c    435	//                Enable Source Interrupt : defines source interrupt
-; adc0.c    436	// @Parameters    ubRFill: 
-; adc0.c    437	//                Refill : defines the refill
-; adc0.c    438	// @Parameters    ubChannelNum: 
-; adc0.c    439	//                Channel number : Name of the Request Channel Number (0 - 
-; adc0.c    440	//                15)- see macros defined in the header file
-; adc0.c    441	//
-; adc0.c    442	//----------------------------------------------------------------------------
-; adc0.c    443	// @Date          29.09.2021
-; adc0.c    444	//
-; adc0.c    445	//****************************************************************************
-; adc0.c    446	
-; adc0.c    447	void ADC0_vStartSeq0ReqChNum(ubyte ubExtTrg, ubyte ubEnIntr, ubyte ubRFill, ubyte ubChannelNum)
-; adc0.c    448	{
-	?LINE	448
+	?SYMB	'',$,17,404
+; adc0.c    405	
+; adc0.c    406	
+; adc0.c    407	//****************************************************************************
+; adc0.c    408	// @Function      void ADC0_vStartSeq0ReqChNum(ubyte ubExtTrg, ubyte 
+; adc0.c    409	//                ubEnIntr, ubyte ubRFill, ubyte ubChannelNum) 
+; adc0.c    410	//
+; adc0.c    411	//----------------------------------------------------------------------------
+; adc0.c    412	// @Description   This function starts the conversion of the requested 
+; adc0.c    413	//                channel.
+; adc0.c    414	//                NOTE -
+; adc0.c    415	//                Before passing ubEnIntr argument as 1,make sure that Seq 0 
+; adc0.c    416	//                source interrupt is enabled.
+; adc0.c    417	//                External Trigger -> 0,Indicates software trigger 
+; adc0.c    418	//                (Conversion starts once this function is executed)
+; adc0.c    419	//
+; adc0.c    420	//----------------------------------------------------------------------------
+; adc0.c    421	// @Returnvalue   None
+; adc0.c    422	//
+; adc0.c    423	//----------------------------------------------------------------------------
+; adc0.c    424	// @Parameters    ubExtTrg: 
+; adc0.c    425	//                External Trigger : defines external trigger.
+; adc0.c    426	// @Parameters    ubEnIntr: 
+; adc0.c    427	//                Enable Source Interrupt : defines source interrupt
+; adc0.c    428	// @Parameters    ubRFill: 
+; adc0.c    429	//                Refill : defines the refill
+; adc0.c    430	// @Parameters    ubChannelNum: 
+; adc0.c    431	//                Channel number : Name of the Request Channel Number (0 - 
+; adc0.c    432	//                15)- see macros defined in the header file
+; adc0.c    433	//
+; adc0.c    434	//----------------------------------------------------------------------------
+; adc0.c    435	// @Date          30.09.2021
+; adc0.c    436	//
+; adc0.c    437	//****************************************************************************
+; adc0.c    438	
+; adc0.c    439	void ADC0_vStartSeq0ReqChNum(ubyte ubExtTrg, ubyte ubEnIntr, ubyte ubRFill, ubyte ubChannelNum)
+; adc0.c    440	{
+	?LINE	440
 	PUBLIC	_ADC0_vStartSeq0ReqChNum
 	?SYMB	'ADC0_vStartSeq0ReqChNum',_ADC0_vStartSeq0ReqChNum,37,1
-	?SYMB	'',448,8,34
+	?SYMB	'',440,8,34
 _ADC0_vStartSeq0ReqChNum	PROC	FAR
 	?SYMB	'',00H,95,0
 	MOV	[-R0],R15
@@ -680,201 +669,92 @@ _ADC0_vStartSeq0ReqChNum	PROC	FAR
 	?SYMB	'-8',$,101,2
 	?SYMB	'ubChannelNum',5,99,259
 	?SYMB	'-2',$,101,5
-; adc0.c    449	
-; adc0.c    450	    uword uwVal = 0;
+; adc0.c    441	
+; adc0.c    442	    uword uwVal = 0;
 	?SYMB	'uwVal',1,98,261
 	?SYMB	'-a',$,101,1
-	?LINE	450
+	?LINE	442
 	MOV	R12,#00h
 	MOV	[R0],R12
-; adc0.c    451	    if (ubExtTrg == 1)
-	?LINE	451
+; adc0.c    443	    if (ubExtTrg == 1)
+	?LINE	443
 	MOVB	RL1,[R0+#06H]
 	CMPB	RL1,#01h
 	JMPR	cc_NE,_6
-; adc0.c    452	    {
-; adc0.c    453	        uwVal = 0x0080;
-	?LINE	453
+; adc0.c    444	    {
+; adc0.c    445	        uwVal = 0x0080;
+	?LINE	445
 	MOV	R12,#080h
 	MOV	[R0],R12
-; adc0.c    454	    }
-	?LINE	454
+; adc0.c    446	    }
+	?LINE	446
 _6:
-; adc0.c    455	    if (ubEnIntr == 1)
-	?LINE	455
+; adc0.c    447	    if (ubEnIntr == 1)
+	?LINE	447
 	MOVB	RL1,[R0+#04H]
 	CMPB	RL1,#01h
 	JMPR	cc_NE,_7
-; adc0.c    456	    {
-; adc0.c    457	        uwVal = uwVal + 0x0040;
-	?LINE	457
+; adc0.c    448	    {
+; adc0.c    449	        uwVal = uwVal + 0x0040;
+	?LINE	449
 	MOV	R12,[R0]
 	ADD	R12,#040h
 	MOV	[R0],R12
-; adc0.c    458	    }
-	?LINE	458
+; adc0.c    450	    }
+	?LINE	450
 _7:
-; adc0.c    459	    if (ubRFill == 1)
-	?LINE	459
+; adc0.c    451	    if (ubRFill == 1)
+	?LINE	451
 	MOVB	RL1,[R0+#02H]
 	CMPB	RL1,#01h
 	JMPR	cc_NE,_8
-; adc0.c    460	    {
-; adc0.c    461	        uwVal = uwVal + 0x0020;
-	?LINE	461
+; adc0.c    452	    {
+; adc0.c    453	        uwVal = uwVal + 0x0020;
+	?LINE	453
 	MOV	R12,[R0]
 	ADD	R12,#020h
 	MOV	[R0],R12
-; adc0.c    462	    }
-	?LINE	462
+; adc0.c    454	    }
+	?LINE	454
 _8:
-; adc0.c    463	    uwVal = uwVal + (ubChannelNum & 0x001f);
-	?LINE	463
+; adc0.c    455	    uwVal = uwVal + (ubChannelNum & 0x001f);
+	?LINE	455
 	MOVB	RL1,[R0+#08H]
 	AND	R1,#01Fh
 	MOV	R12,[R0]
 	ADD	R12,R1
 	MOV	[R0],R12
-; adc0.c    464	
-; adc0.c    465	   ADC0_QINR0 = uwVal; // requested channel 
-	?LINE	465
+; adc0.c    456	
+; adc0.c    457	   ADC0_QINR0 = uwVal; // requested channel 
+	?LINE	457
 	MOV	R12,[R0]
 	MOV	0E0E6h,R12
-; adc0.c    466	
-; adc0.c    467	} //  End of function ADC0_vStartSeq0ReqChNum
+; adc0.c    458	
+; adc0.c    459	} //  End of function ADC0_vStartSeq0ReqChNum
 	?SYMB	'',$,102,1
 	?SYMB	'',$,102,5
 	?SYMB	'',$,102,2
 	?SYMB	'',$,102,3
 	?SYMB	'',$,102,4
-	?LINE	467
+	?LINE	459
 	ADD	R0,#0Ah
 	?SYMB	'',$,96,0
 	RETS
 _ADC0_vStartSeq0ReqChNum	ENDP
-	?SYMB	'',$,17,467
-; adc0.c    468	
-; adc0.c    469	
-; adc0.c    470	//****************************************************************************
-; adc0.c    471	// @Function      void ADC0_viSRN0(void) 
-; adc0.c    472	//
-; adc0.c    473	//----------------------------------------------------------------------------
-; adc0.c    474	// @Description   This is the interrupt service routine for the Service 
-; adc0.c    475	//                Request Node 0 of the ADC0 module.
-; adc0.c    476	//
-; adc0.c    477	//----------------------------------------------------------------------------
-; adc0.c    478	// @Returnvalue   None
-; adc0.c    479	//
-; adc0.c    480	//----------------------------------------------------------------------------
-; adc0.c    481	// @Parameters    None
-; adc0.c    482	//
-; adc0.c    483	//----------------------------------------------------------------------------
-; adc0.c    484	// @Date          29.09.2021
-; adc0.c    485	//
-; adc0.c    486	//****************************************************************************
-; adc0.c    487	
-; adc0.c    488	// USER CODE BEGIN (ADC0_viSRN0,0)
-; adc0.c    489	
-; adc0.c    490	// USER CODE END
-; adc0.c    491	
-; adc0.c    492	_interrupt(ADC0_SRN0INT)  void ADC0_viSRN0(void)
-; adc0.c    493	{
-	?SYMB	'ADC0_viSRN0',_ADC0_viSRN0,37,1
-	?SYMB	'',493,8,16
-_ADC0_viSRN0	PROC TASK ADC0_TASK INTNO ADC0_INUM = 028h
-	?LINE	493
-	?SYMB	'',00H,95,0
-	MOV	ADC0_RB,R0
-	SCXT	CP,#ADC0_RB
-	SCXT	MDC,#010h
-	PUSH	DPP0
-	MOV	DPP0,#PAG ?BASE_DPP0
-	NOP
-	PUSH	DPP2
-	MOV	DPP2,#PAG ?BASE_DPP2
-	NOP
-	PUSH	MDH
-	PUSH	MDL
-	PUSH	MSW
-	PUSH	MAL
-	PUSH	MAH
-	PUSH	MCW
-	SCXT	MRW,#00h
-	PUSH	IDX0
-	PUSH	IDX1
-	EXTR	#01h
-	PUSH	QX0
-	EXTR	#01h
-	PUSH	QX1
-	EXTR	#01h
-	PUSH	QR0
-	EXTR	#01h
-	PUSH	QR1
-; Locals:
-; 
-; Statics:
-; 
-; CSEs:
-; 
-; adc0.c    494	
-; adc0.c    495	    if((ADC0_EVINFR & 0x0100) == 0x0100)    //Result0 event interrupt 
-	?LINE	495
-	MOV	R12,0E0A0h
-	JNB	R12.8,_10
-; adc0.c    496	    {
-; adc0.c    497	        ADC0_EVINCR = 0x0100;     // Clear Result0 event interrupt
-	?LINE	497
-	MOV	R12,#0100h
-	MOV	0E0A2h,R12
-; adc0.c    498	
-; adc0.c    499	      // USER CODE BEGIN (ADC0_viSRN0,20)
-; adc0.c    500	
-; adc0.c    501	      // USER CODE END
-; adc0.c    502	
-; adc0.c    503	    }
-	?LINE	503
-_10:
-; adc0.c    504	
-; adc0.c    505	
-; adc0.c    506	} //  End of function ADC0_viSRN0
-	?LINE	506
-	EXTR	#01h
-	POP	QR1
-	EXTR	#01h
-	POP	QR0
-	EXTR	#01h
-	POP	QX1
-	EXTR	#01h
-	POP	QX0
-	POP	IDX1
-	POP	IDX0
-	POP	MRW
-	POP	MCW
-	POP	MAH
-	POP	MAL
-	POP	MSW
-	POP	MDL
-	POP	MDH
-	POP	DPP2
-	POP	DPP0
-	POP	MDC
-	POP	CP
-	?LINE	506
-	RETI
-_ADC0_viSRN0	ENDP
-	?SYMB	'',$,17,506
-; adc0.c    507	
-; adc0.c    508	
-; adc0.c    509	
-; adc0.c    510	// USER CODE BEGIN (ADC0_General,10)
-; adc0.c    511	
-; adc0.c    512	// USER CODE END
-; adc0.c    513	
+	?SYMB	'',$,17,459
+; adc0.c    460	
+; adc0.c    461	
+; adc0.c    462	
+; adc0.c    463	
+; adc0.c    464	// USER CODE BEGIN (ADC0_General,10)
+; adc0.c    465	
+; adc0.c    466	// USER CODE END
+; adc0.c    467	
 ADC0_1_PR	ENDS
 
 C166_US	SECTION	LDAT WORD GLBUSRSTACK 'CUSTACK'
 	DS	10
 C166_US	ENDS
 
-ADC0_RB	REGDEF	R0-R15
+	REGDEF	R0-R15
 	END

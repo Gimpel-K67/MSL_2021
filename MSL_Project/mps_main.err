@@ -1,22 +1,28 @@
 TASKING program builder v8.7r1 Build 088
 Warning: Infinite loop detected; Not building sub-project mps_main.pjt
+Compiling and assembling ccu62.c
+Trial version.  8 day(s) remaining
+Trial version.  8 day(s) remaining
+Compiling and assembling adc0.c
+Trial version.  8 day(s) remaining
+Trial version.  8 day(s) remaining
 Linking and locating to mps_main.out
 Trial version.  8 day(s) remaining
 
-	Number of symbols		: 1684
-	Number of sections		: 34
+	Number of symbols		: 1557
+	Number of sections		: 33
 	Number of groups		: 0
 	Number of classes		: 11
-	Number of modules		: 37
-	Total section size		: 0003190h
+	Number of modules		: 36
+	Total section size		: 00030D6h
 	Total memory size		: 0344A04h
 		consisting of RAM	: 0284A04h
 		              ROM	: 00C0000h
 	Total RAM filled		: 0000D04h
-	Total ROM filled		: 000248Ch
+	Total ROM filled		: 00023D2h
 	System stack size		: 0000200h
 	Heap size			: 0000000h
 	User stack size			: 000017Ch
-	Time spent			: 00:00:2.20
+	Time spent			: 00:00:2.21
 Converting mps_main.out to mps_main.abs in IEEE-695 format
 Trial version.  8 day(s) remaining
