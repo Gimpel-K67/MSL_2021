@@ -1,4 +1,4 @@
-TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 30 2021  Time: 14:55:26  Page:   1
+TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 30 2021  Time: 15:34:04  Page:   1
 mps_main
 
 Memory map     : 
@@ -58,7 +58,7 @@ CCU62_1_PR.................  22 C00FB8h    C010DDh    000126h CODE WORD GLOB ROM
 ADC0_1_PR..................  23 C010DEh    C01217h    00013Ah CODE WORD GLOB ROM ................. CPROGRAM......... ADC0_C........
 SIN_1_PR...................  24 C01218h    C01257h    000040h CODE WORD GLOB ROM ................. CLIBRARY......... SIN_C.........
 _SINUS_1_PR................  25 C01258h    C015B5h    00035Eh CODE WORD GLOB ROM ................. CLIBRARY......... _SINUS_C......
-TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 30 2021  Time: 14:55:26  Page:   2
+TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 30 2021  Time: 15:34:04  Page:   2
 mps_main
 
 __MODF.....................  27 C015B6h    C01725h    000170h CODE WORD GLOB ROM ................. RTLIBRARY........ MODF..........
@@ -118,7 +118,7 @@ Symbol table   : main.obj(MAIN_C)
 
 Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
 ----------------------------------------------------------------    ----------------------------------------------------------------
-TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 30 2021  Time: 14:55:26  Page:   3
+TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 30 2021  Time: 15:34:04  Page:   3
 mps_main
 
  <NO NAME>................................ ... 0000000h  REG LOC    _ADC0_vInit...............................  23 0C010DEh  FAR EXT
@@ -178,7 +178,7 @@ __EXIT....................................  14 0C00E62h  FAR GLB    __IDLE......
 _main.....................................   7 0C0065Ah  FAR EXT    
 
 
-TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 30 2021  Time: 14:55:26  Page:   4
+TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 30 2021  Time: 15:34:04  Page:   4
 mps_main
 
 Symbol table   : gpt1.obj(GPT1_C)
@@ -238,7 +238,7 @@ Symbol                                     No. Value     Type       Symbol      
  <NO NAME>................................ ... 0000000h  REG LOC    __adf8r...................................  28 0C01890h  FAR EXT
 __cfi82r..................................  28 0C01A82h  FAR EXT    __cif28r..................................  28 0C01B34h  FAR EXT
 __cmf8r...................................  28 0C01B98h  FAR EXT    __dvf8r...................................  28 0C01F80h  FAR EXT
-TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 30 2021  Time: 14:55:26  Page:   5
+TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 30 2021  Time: 15:34:04  Page:   5
 mps_main
 
 __load8n..................................  28 0C02358h  FAR EXT    __mlf8r...................................  28 0C01D1Ah  FAR EXT
@@ -298,7 +298,7 @@ Symbol                                     No. Value     Type       Symbol      
 __fcnvnan.................................  28 0C022E0h  FAR EXT    __fptrap4.................................  28 0C02380h  FAR EXT
 __get1f4r.................................  28 0C0215Eh  FAR EXT    
 
-TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 30 2021  Time: 14:55:26  Page:   6
+TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 30 2021  Time: 15:34:04  Page:   6
 mps_main
 
 
@@ -358,7 +358,7 @@ __mlf4r...................................  28 0C01C56h  FAR GLB
 
 
 Symbol table   : mlf8.obj(mlf8)
-TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 30 2021  Time: 14:55:26  Page:   7
+TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 30 2021  Time: 15:34:04  Page:   7
 mps_main
 
 
@@ -418,7 +418,7 @@ Symbol                                     No. Value     Type       Symbol      
 ----------------------------------------------------------------    ----------------------------------------------------------------
  <NO NAME>................................ ... 0000000h  REG LOC    __get1f8r.................................  28 0C021C8h  FAR GLB
 __get2f8r.................................  28 0C02184h  FAR GLB    
-TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 30 2021  Time: 14:55:26  Page:   8
+TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 30 2021  Time: 15:34:04  Page:   8
 mps_main
 
 
@@ -478,7 +478,7 @@ __load8n..................................  28 0C02358h  FAR GLB    __store8n...
 Symbol table   : trap.obj(trap)
 
 Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
-TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 30 2021  Time: 14:55:26  Page:   9
+TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 30 2021  Time: 15:34:04  Page:   9
 mps_main
 
 ----------------------------------------------------------------    ----------------------------------------------------------------
@@ -538,7 +538,7 @@ Register banks : combination of register definitions
                  ^               
                  |................. CCU62_RB (CCU62_C) ....................................................................... F660h
 
-TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 30 2021  Time: 14:55:26  Page:  10
+TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 30 2021  Time: 15:34:04  Page:  10
 mps_main
 
 
@@ -598,7 +598,7 @@ C_INIT       __C_INIT_PR   00174h C00C36h
 
 RTLIBRARY    __LONGJMP     00022h C023B0h 
              __MODF        00170h C015B6h 
-TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 30 2021  Time: 14:55:26  Page:  11
+TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 30 2021  Time: 15:34:04  Page:  11
 mps_main
 
        Total class size: 0000192h
@@ -623,6 +623,6 @@ Total size:              00030D6h
 	System stack size		: 0000200h
 	Heap size			: 0000000h
 	User stack size			: 000017Ch
-	Time spent			: 00:00:2.21
+	Time spent			: 00:00:2.20
 
 Error report   : total errors: 0, warnings: 0

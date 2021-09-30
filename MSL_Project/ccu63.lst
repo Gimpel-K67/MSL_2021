@@ -1,4 +1,4 @@
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:54:42  Page:   1
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 15:31:51  Page:   1
 ccu63
 
  LOC CODE        LINE   SOURCELINE
@@ -57,866 +57,881 @@ ccu63
                     52   ; ccu63.c    20 
                     53   ; ccu63.c    21 // USER CODE END
                     54   ; ccu63.c    22 
-                    55   ; ccu63.c    23 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:54:42  Page:   2
+                    55   ; ccu63.c    23 //****************************************************************************
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 15:31:51  Page:   2
 ccu63
 
  LOC CODE        LINE   SOURCELINE
 
-                    56   ; ccu63.c    24 
+                    56   ; ccu63.c    24 // @Project Includes
                     57   ; ccu63.c    25 //****************************************************************************
-                    58   ; ccu63.c    26 // @Project Includes
-                    59   ; ccu63.c    27 //****************************************************************************
-                    60   ; ccu63.c    28 
-                    61   ; ccu63.c    29 #include "MAIN.H"
-                    62           ?SYMB   'MAIN.H',0,29,2
-                    63           ?SYMB   '',0,86,2
-                    64           ?SYMB   'XE16xREGS.H',0,29,3
-                    65           ?SYMB   '',0,86,3
-                    66           ?SYMB   '',0,86,2
-                    67           ?SYMB   'SCS.H',0,29,3
-                    68           ?SYMB   '',0,86,3
-                    69           ?SYMB   'T$2',0,14,257
-                    70           ?SYMB   'SCS_EXTCLK_F_SYS',0,33,257
-                    71           ?SYMB   'SCS_EXTCLK_F_OUT',1,33,257
-                    72           ?SYMB   'SCS_EXTCLK_F_PLL',2,33,257
-                    73           ?SYMB   'SCS_EXTCLK_F_OSC',3,33,257
-                    74           ?SYMB   'SCS_EXTCLK_F_WU',4,33,257
-                    75           ?SYMB   'SCS_EXTCLK_F_TCK',5,33,257
-                    76           ?SYMB   'SCS_EXTCLK_F_OSC_FL',6,33,257
-                    77           ?SYMB   'SCS_EXTCLK_F_RTC',8,33,257
-                    78           ?SYMB   '',16,16,0
-                    79           ?SYMB   'SCS_EXTCLK_Type',257,13,258
-                    80           ?SYMB   '',0,86,2
-                    81           ?SYMB   'IO.H',0,29,3
-                    82           ?SYMB   '',0,86,3
-                    83           ?SYMB   '',0,86,2
-                    84           ?SYMB   'GPT1.H',0,29,3
-                    85           ?SYMB   '',0,86,3
-                    86           ?SYMB   '',0,86,2
-                    87           ?SYMB   'GPT2.H',0,29,3
-                    88           ?SYMB   '',0,86,3
-                    89           ?SYMB   '',0,86,2
-                    90           ?SYMB   'CCU62.H',0,29,3
-                    91           ?SYMB   '',0,86,3
-                    92           ?SYMB   '',0,86,2
-                    93           ?SYMB   'CCU63.H',0,29,3
-                    94           ?SYMB   '',0,86,3
-                    95           ?SYMB   '',0,86,2
-                    96           ?SYMB   'ADC0.H',0,29,3
-                    97           ?SYMB   '',0,86,3
-                    98           ?SYMB   'ubyte',3,13,259
-                    99           ?SYMB   '',0,86,2
-                   100           ?SYMB   '',0,86,1
+                    58   ; ccu63.c    26 
+                    59   ; ccu63.c    27 #include "MAIN.H"
+                    60           ?SYMB   'MAIN.H',0,29,2
+                    61           ?SYMB   '',0,86,2
+                    62           ?SYMB   'XE16xREGS.H',0,29,3
+                    63           ?SYMB   '',0,86,3
+                    64           ?SYMB   '',0,86,2
+                    65           ?SYMB   'SCS.H',0,29,3
+                    66           ?SYMB   '',0,86,3
+                    67           ?SYMB   'T$2',0,14,257
+                    68           ?SYMB   'SCS_EXTCLK_F_SYS',0,33,257
+                    69           ?SYMB   'SCS_EXTCLK_F_OUT',1,33,257
+                    70           ?SYMB   'SCS_EXTCLK_F_PLL',2,33,257
+                    71           ?SYMB   'SCS_EXTCLK_F_OSC',3,33,257
+                    72           ?SYMB   'SCS_EXTCLK_F_WU',4,33,257
+                    73           ?SYMB   'SCS_EXTCLK_F_TCK',5,33,257
+                    74           ?SYMB   'SCS_EXTCLK_F_OSC_FL',6,33,257
+                    75           ?SYMB   'SCS_EXTCLK_F_RTC',8,33,257
+                    76           ?SYMB   '',16,16,0
+                    77           ?SYMB   'SCS_EXTCLK_Type',257,13,258
+                    78           ?SYMB   '',0,86,2
+                    79           ?SYMB   'IO.H',0,29,3
+                    80           ?SYMB   '',0,86,3
+                    81           ?SYMB   '',0,86,2
+                    82           ?SYMB   'GPT1.H',0,29,3
+                    83           ?SYMB   '',0,86,3
+                    84           ?SYMB   '',0,86,2
+                    85           ?SYMB   'GPT2.H',0,29,3
+                    86           ?SYMB   '',0,86,3
+                    87           ?SYMB   '',0,86,2
+                    88           ?SYMB   'CCU62.H',0,29,3
+                    89           ?SYMB   '',0,86,3
+                    90           ?SYMB   '',0,86,2
+                    91           ?SYMB   'CCU63.H',0,29,3
+                    92           ?SYMB   '',0,86,3
+                    93           ?SYMB   '',0,86,2
+                    94           ?SYMB   'ADC0.H',0,29,3
+                    95           ?SYMB   '',0,86,3
+                    96           ?SYMB   'ubyte',3,13,259
+                    97           ?SYMB   '',0,86,2
+                    98           ?SYMB   '',0,86,1
+                    99   ; ccu63.c    28 
+                   100   ; ccu63.c    29 // USER CODE BEGIN (CCU63_General,2)
                    101   ; ccu63.c    30 
-                   102   ; ccu63.c    31 // USER CODE BEGIN (CCU63_General,2)
+                   102   ; ccu63.c    31 // USER CODE END
                    103   ; ccu63.c    32 
-                   104   ; ccu63.c    33 // USER CODE END
-                   105   ; ccu63.c    34 
-                   106   ; ccu63.c    35 
-                   107   ; ccu63.c    36 //****************************************************************************
-                   108   ; ccu63.c    37 // @Macros
-                   109   ; ccu63.c    38 //****************************************************************************
-                   110   ; ccu63.c    39 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:54:42  Page:   3
+                   104   ; ccu63.c    33 //****************************************************************************
+                   105   ; ccu63.c    34 // @Macros
+                   106   ; ccu63.c    35 //****************************************************************************
+                   107   ; ccu63.c    36 
+                   108   ; ccu63.c    37 // USER CODE BEGIN (CCU63_General,3)
+                   109   ; ccu63.c    38 
+                   110   ; ccu63.c    39 // USER CODE END
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 15:31:51  Page:   3
 ccu63
 
  LOC CODE        LINE   SOURCELINE
 
-                   111   ; ccu63.c    40 // USER CODE BEGIN (CCU63_General,3)
-                   112   ; ccu63.c    41 
-                   113   ; ccu63.c    42 // USER CODE END
-                   114   ; ccu63.c    43 
+                   111   ; ccu63.c    40 
+                   112   ; ccu63.c    41 //****************************************************************************
+                   113   ; ccu63.c    42 // @Defines
+                   114   ; ccu63.c    43 //****************************************************************************
                    115   ; ccu63.c    44 
-                   116   ; ccu63.c    45 //****************************************************************************
-                   117   ; ccu63.c    46 // @Defines
-                   118   ; ccu63.c    47 //****************************************************************************
+                   116   ; ccu63.c    45 // USER CODE BEGIN (CCU63_General,4)
+                   117   ; ccu63.c    46 
+                   118   ; ccu63.c    47 // USER CODE END
                    119   ; ccu63.c    48 
-                   120   ; ccu63.c    49 // USER CODE BEGIN (CCU63_General,4)
-                   121   ; ccu63.c    50 
-                   122   ; ccu63.c    51 // USER CODE END
+                   120   ; ccu63.c    49 //****************************************************************************
+                   121   ; ccu63.c    50 // @Typedefs
+                   122   ; ccu63.c    51 //****************************************************************************
                    123   ; ccu63.c    52 
-                   124   ; ccu63.c    53 
-                   125   ; ccu63.c    54 //****************************************************************************
-                   126   ; ccu63.c    55 // @Typedefs
-                   127   ; ccu63.c    56 //****************************************************************************
-                   128   ; ccu63.c    57 
-                   129   ; ccu63.c    58 // USER CODE BEGIN (CCU63_General,5)
-                   130   ; ccu63.c    59 
-                   131   ; ccu63.c    60 // USER CODE END
-                   132   ; ccu63.c    61 
-                   133   ; ccu63.c    62 
-                   134   ; ccu63.c    63 //****************************************************************************
-                   135   ; ccu63.c    64 // @Imported Global Variables
-                   136   ; ccu63.c    65 //****************************************************************************
-                   137   ; ccu63.c    66 
-                   138   ; ccu63.c    67 // USER CODE BEGIN (CCU63_General,6)
-                   139   ; ccu63.c    68         extern const unsigned int ARRAY_SIZE;
-                   140   ; ccu63.c    69         extern int table[];
-                   141   ; ccu63.c    70         extern  unsigned int index;
-                   142   ; ccu63.c    71         extern unsigned int OFFSET_L1;
-                   143   ; ccu63.c    72         extern unsigned int OFFSET_L2;
-                   144   ; ccu63.c    73         extern unsigned int OFFSET_L3;
-                   145   ; ccu63.c    74         extern const unsigned int frequency;
-                   146   ; ccu63.c    75         extern const unsigned int HALF_PERIODVALUE;
-                   147   ; ccu63.c    76 // USER CODE END
+                   124   ; ccu63.c    53 // USER CODE BEGIN (CCU63_General,5)
+                   125   ; ccu63.c    54 
+                   126   ; ccu63.c    55 // USER CODE END
+                   127   ; ccu63.c    56 
+                   128   ; ccu63.c    57 //****************************************************************************
+                   129   ; ccu63.c    58 // @Imported Global Variables
+                   130   ; ccu63.c    59 //****************************************************************************
+                   131   ; ccu63.c    60 
+                   132   ; ccu63.c    61 // USER CODE BEGIN (CCU63_General,6)
+                   133   ; ccu63.c    62 extern const unsigned int ARRAY_SIZE;
+                   134   ; ccu63.c    63 extern int table[];
+                   135   ; ccu63.c    64 extern unsigned int index;
+                   136   ; ccu63.c    65 extern unsigned int OFFSET_L1;
+                   137   ; ccu63.c    66 extern unsigned int OFFSET_L2;
+                   138   ; ccu63.c    67 extern unsigned int OFFSET_L3;
+                   139   ; ccu63.c    68 extern const unsigned int frequency;
+                   140   ; ccu63.c    69 extern const unsigned int HALF_PERIODVALUE;
+                   141   ; ccu63.c    70 // USER CODE END
+                   142   ; ccu63.c    71 
+                   143   ; ccu63.c    72 //****************************************************************************
+                   144   ; ccu63.c    73 // @Global Variables
+                   145   ; ccu63.c    74 //****************************************************************************
+                   146   ; ccu63.c    75 
+                   147   ; ccu63.c    76 // USER CODE BEGIN (CCU63_General,7)
                    148   ; ccu63.c    77 
-                   149   ; ccu63.c    78 
-                   150   ; ccu63.c    79 //****************************************************************************
-                   151   ; ccu63.c    80 // @Global Variables
-                   152   ; ccu63.c    81 //****************************************************************************
-                   153   ; ccu63.c    82 
-                   154   ; ccu63.c    83 // USER CODE BEGIN (CCU63_General,7)
-                   155   ; ccu63.c    84    
-                   156   ; ccu63.c    85 // USER CODE END
-                   157   ; ccu63.c    86 
+                   149   ; ccu63.c    78 // USER CODE END
+                   150   ; ccu63.c    79 
+                   151   ; ccu63.c    80 //****************************************************************************
+                   152   ; ccu63.c    81 // @External Prototypes
+                   153   ; ccu63.c    82 //****************************************************************************
+                   154   ; ccu63.c    83 
+                   155   ; ccu63.c    84 // USER CODE BEGIN (CCU63_General,8)
+                   156   ; ccu63.c    85 
+                   157   ; ccu63.c    86 // USER CODE END
                    158   ; ccu63.c    87 
                    159   ; ccu63.c    88 //****************************************************************************
-                   160   ; ccu63.c    89 // @External Prototypes
+                   160   ; ccu63.c    89 // @Prototypes Of Local Functions
                    161   ; ccu63.c    90 //****************************************************************************
                    162   ; ccu63.c    91 
-                   163   ; ccu63.c    92 // USER CODE BEGIN (CCU63_General,8)
+                   163   ; ccu63.c    92 // USER CODE BEGIN (CCU63_General,9)
                    164   ; ccu63.c    93 
                    165   ; ccu63.c    94 // USER CODE END
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:54:42  Page:   4
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 15:31:51  Page:   4
 ccu63
 
  LOC CODE        LINE   SOURCELINE
 
                    166   ; ccu63.c    95 
-                   167   ; ccu63.c    96 
-                   168   ; ccu63.c    97 //****************************************************************************
-                   169   ; ccu63.c    98 // @Prototypes Of Local Functions
-                   170   ; ccu63.c    99 //****************************************************************************
-                   171   ; ccu63.c   100 
-                   172   ; ccu63.c   101 // USER CODE BEGIN (CCU63_General,9)
-                   173   ; ccu63.c   102 
-                   174   ; ccu63.c   103 // USER CODE END
-                   175   ; ccu63.c   104 
-                   176   ; ccu63.c   105 
-                   177   ; ccu63.c   106 //****************************************************************************
-                   178   ; ccu63.c   107 // @Function      void CCU63_vInit(void) 
-                   179   ; ccu63.c   108 //
-                   180   ; ccu63.c   109 //----------------------------------------------------------------------------
-                   181   ; ccu63.c   110 // @Description   This is the initialization function of the CCU63 function 
-                   182   ; ccu63.c   111 //                library. It is assumed that the SFRs used by this library 
-                   183   ; ccu63.c   112 //                are in reset state. 
-                   184   ; ccu63.c   113 //
-                   185   ; ccu63.c   114 //----------------------------------------------------------------------------
-                   186   ; ccu63.c   115 // @Returnvalue   None
-                   187   ; ccu63.c   116 //
-                   188   ; ccu63.c   117 //----------------------------------------------------------------------------
-                   189   ; ccu63.c   118 // @Parameters    None
-                   190   ; ccu63.c   119 //
-                   191   ; ccu63.c   120 //----------------------------------------------------------------------------
-                   192   ; ccu63.c   121 // @Date          30.09.2021
-                   193   ; ccu63.c   122 //
-                   194   ; ccu63.c   123 //****************************************************************************
-                   195   ; ccu63.c   124 
-                   196   ; ccu63.c   125 // USER CODE BEGIN (Init,1)
-                   197   ; ccu63.c   126 
-                   198   ; ccu63.c   127 // USER CODE END
-                   199   ; ccu63.c   128 
-                   200   ; ccu63.c   129 void CCU63_vInit(void)
-                   201   ; ccu63.c   130 {
-                   202   CCU63_1_PR      SECTION CODE WORD PUBLIC 'CPROGRAM'
-                   203           ?LINE   130
-                   204           PUBLIC  _CCU63_vInit
-               R   205           ?SYMB   'CCU63_vInit',_CCU63_vInit,37,1
-                   206           ?SYMB   '',130,8,34
-                   207           ?SYMB   'uword',18,13,261
-                   208   _CCU63_vInit    PROC    FAR
-                   209           ?SYMB   '',00H,95,0
-                   210   ; Locals:
-                   211   ; 
-                   212   ; Statics:
-                   213   ; 
-                   214   ; CSEs:
-                   215   ; 
-                   216   ; ccu63.c   131   // USER CODE BEGIN (Init,2)
+                   167   ; ccu63.c    96 //****************************************************************************
+                   168   ; ccu63.c    97 // @Function      void CCU63_vInit(void)
+                   169   ; ccu63.c    98 //
+                   170   ; ccu63.c    99 //----------------------------------------------------------------------------
+                   171   ; ccu63.c   100 // @Description   This is the initialization function of the CCU63 function
+                   172   ; ccu63.c   101 //                library. It is assumed that the SFRs used by this library
+                   173   ; ccu63.c   102 //                are in reset state.
+                   174   ; ccu63.c   103 //
+                   175   ; ccu63.c   104 //----------------------------------------------------------------------------
+                   176   ; ccu63.c   105 // @Returnvalue   None
+                   177   ; ccu63.c   106 //
+                   178   ; ccu63.c   107 //----------------------------------------------------------------------------
+                   179   ; ccu63.c   108 // @Parameters    None
+                   180   ; ccu63.c   109 //
+                   181   ; ccu63.c   110 //----------------------------------------------------------------------------
+                   182   ; ccu63.c   111 // @Date          30.09.2021
+                   183   ; ccu63.c   112 //
+                   184   ; ccu63.c   113 //****************************************************************************
+                   185   ; ccu63.c   114 
+                   186   ; ccu63.c   115 // USER CODE BEGIN (Init,1)
+                   187   ; ccu63.c   116 
+                   188   ; ccu63.c   117 // USER CODE END
+                   189   ; ccu63.c   118 
+                   190   ; ccu63.c   119 void CCU63_vInit(void) {
+                   191   CCU63_1_PR      SECTION CODE WORD PUBLIC 'CPROGRAM'
+                   192           ?LINE   119
+                   193           PUBLIC  _CCU63_vInit
+               R   194           ?SYMB   'CCU63_vInit',_CCU63_vInit,37,1
+                   195           ?SYMB   '',119,8,34
+                   196           ?SYMB   'uword',18,13,261
+                   197   _CCU63_vInit    PROC    FAR
+                   198           ?SYMB   '',00H,95,0
+                   199   ; Locals:
+                   200   ; 
+                   201   ; Statics:
+                   202   ; 
+                   203   ; CSEs:
+                   204   ; 
+                   205   ; ccu63.c   120         // USER CODE BEGIN (Init,2)
+                   206   ; ccu63.c   121 
+                   207   ; ccu63.c   122         // USER CODE END
+                   208   ; ccu63.c   123 
+                   209   ; ccu63.c   124         ///  ------------------------------------------------------------------
+                         -----
+                   210   ; ccu63.c   125         ///  Configuration of KERNEL REGISTERS :
+                   211   ; ccu63.c   126         ///  ------------------------------------------------------------------
+                         -----
+                   212   ; ccu63.c   127         ///  - CCU63 Module is enabled.
+                   213   ; ccu63.c   128         ///  - The CCU63 module clock = 65,000 MHz.
+                   214   ; ccu63.c   129         ///  - T12 is enabled.
+                   215   ; ccu63.c   130         ///  - T13 is enabled.
+                   216   ; ccu63.c   131         ///  - MCM is enabled.
                    217   ; ccu63.c   132 
-                   218   ; ccu63.c   133   // USER CODE END
-                   219   ; ccu63.c   134 
-                   220   ; ccu63.c   135   ///  -----------------------------------------------------------------------
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:54:42  Page:   5
+                   218   ; ccu63.c   133         CCU63_KSCFG = 0x0003;  // Kernel State Configuration Register
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 15:31:51  Page:   5
 ccu63
 
  LOC CODE        LINE   SOURCELINE
 
-                   221   ; ccu63.c   136   ///  Configuration of KERNEL REGISTERS :
-                   222   ; ccu63.c   137   ///  -----------------------------------------------------------------------
-                   223   ; ccu63.c   138   ///  - CCU63 Module is enabled.
-                   224   ; ccu63.c   139   ///  - The CCU63 module clock = 65,000 MHz. 
-                   225   ; ccu63.c   140   ///  - T12 is enabled.
-                   226   ; ccu63.c   141   ///  - T13 is enabled.
-                   227   ; ccu63.c   142   ///  - MCM is enabled.
-                   228   ; ccu63.c   143 
-                   229   ; ccu63.c   144   CCU63_KSCFG    =  0x0003;      // Kernel State Configuration Register
-                   230           ?LINE   144
-0000 E03C          231           MOV     R12,#03h
-0002 F6FC80EB      232           MOV     0EB80h,R12
-                   233   ; ccu63.c   145 
-                   234   ; ccu63.c   146 
-                   235   ; ccu63.c   147   _nop();    //No operation function as Delay
-                   236           ?LINE   147
-0006 CC00          237           NOP
-                   238   ; ccu63.c   148   _nop();    //No operation function as Delay
-                   239           ?LINE   148
-0008 CC00          240           NOP
-                   241   ; ccu63.c   149   _nop();    //No operation function as Delay
-                   242           ?LINE   149
-000A CC00          243           NOP
-                   244   ; ccu63.c   150   _nop();    //No operation function as Delay
-                   245           ?LINE   150
-000C CC00          246           NOP
-                   247   ; ccu63.c   151 
-                   248   ; ccu63.c   152   ///  -----------------------------------------------------------------------
-                   249   ; ccu63.c   153   ///  Configuration of CCU63 Timer 12:
-                   250   ; ccu63.c   154   ///  -----------------------------------------------------------------------
-                   251   ; ccu63.c   155   ///  - Timer 12 Input clock factor (T12CLK) is 0
-                   252   ; ccu63.c   156   ///  - prescaler factor is 0
-                   253   ; ccu63.c   157   ///  - Timer 12 run bit is reset
-                   254   ; ccu63.c   158   ///  - Single shot mode is disabled
-                   255   ; ccu63.c   159   ///  - Timer 12 works in center aligned mode
-                   256   ; ccu63.c   160   ///  - Interrupt on period match is enabled
-                   257   ; ccu63.c   161   ///  - Interrupt on one match is enabled
-                   258   ; ccu63.c   162   ///  - No External run selection is selected.
-                   259   ; ccu63.c   163   ///  - Timer mode is selected.
-                   260   ; ccu63.c   164   ///  - 
-                   261   ; ccu63.c   165 
-                   262   ; ccu63.c   166   CCU63_T12PR    =  0x070B;      // load CCU63 T12 period register
-                   263           ?LINE   166
-000E E6FC0B07      264           MOV     R12,#070Bh
-0012 F6FC92EB      265           MOV     0EB92h,R12
-                   266   ; ccu63.c   167 
-                   267   ; ccu63.c   168   ///  -----------------------------------------------------------------------
-                   268   ; ccu63.c   169   ///  Configuration of T13HR Signal:
-                   269   ; ccu63.c   170   ///  -----------------------------------------------------------------------
-                   270   ; ccu63.c   171   ///  - Signal T13HRA is selected as Input
-                   271   ; ccu63.c   172 
-                   272   ; ccu63.c   173   ///  -----------------------------------------------------------------------
-                   273   ; ccu63.c   174   ///  Configuration of CCU63 Timer 13:
-                   274   ; ccu63.c   175   ///  -----------------------------------------------------------------------
-                   275   ; ccu63.c   176   ///  - Timer 13 Input Clock factor (T13CLK) is 0
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:54:42  Page:   6
+                   219           ?LINE   133
+0000 E03C          220           MOV     R12,#03h
+0002 F6FC80EB      221           MOV     0EB80h,R12
+                   222   ; ccu63.c   134 
+                   223   ; ccu63.c   135         _nop();  //No operation function as Delay
+                   224           ?LINE   135
+0006 CC00          225           NOP
+                   226   ; ccu63.c   136         _nop();  //No operation function as Delay
+                   227           ?LINE   136
+0008 CC00          228           NOP
+                   229   ; ccu63.c   137         _nop();  //No operation function as Delay
+                   230           ?LINE   137
+000A CC00          231           NOP
+                   232   ; ccu63.c   138         _nop();  //No operation function as Delay
+                   233           ?LINE   138
+000C CC00          234           NOP
+                   235   ; ccu63.c   139 
+                   236   ; ccu63.c   140         ///  ------------------------------------------------------------------
+                         -----
+                   237   ; ccu63.c   141         ///  Configuration of CCU63 Timer 12:
+                   238   ; ccu63.c   142         ///  ------------------------------------------------------------------
+                         -----
+                   239   ; ccu63.c   143         ///  - Timer 12 Input clock factor (T12CLK) is 0
+                   240   ; ccu63.c   144         ///  - prescaler factor is 0
+                   241   ; ccu63.c   145         ///  - Timer 12 run bit is reset
+                   242   ; ccu63.c   146         ///  - Single shot mode is disabled
+                   243   ; ccu63.c   147         ///  - Timer 12 works in center aligned mode
+                   244   ; ccu63.c   148         ///  - Interrupt on period match is enabled
+                   245   ; ccu63.c   149         ///  - Interrupt on one match is enabled
+                   246   ; ccu63.c   150         ///  - No External run selection is selected.
+                   247   ; ccu63.c   151         ///  - Timer mode is selected.
+                   248   ; ccu63.c   152         ///  -
+                   249   ; ccu63.c   153 
+                   250   ; ccu63.c   154         CCU63_T12PR = 0x070B;  // load CCU63 T12 period register
+                   251           ?LINE   154
+000E E6FC0B07      252           MOV     R12,#070Bh
+0012 F6FC92EB      253           MOV     0EB92h,R12
+                   254   ; ccu63.c   155 
+                   255   ; ccu63.c   156         ///  ------------------------------------------------------------------
+                         -----
+                   256   ; ccu63.c   157         ///  Configuration of T13HR Signal:
+                   257   ; ccu63.c   158         ///  ------------------------------------------------------------------
+                         -----
+                   258   ; ccu63.c   159         ///  - Signal T13HRA is selected as Input
+                   259   ; ccu63.c   160 
+                   260   ; ccu63.c   161         ///  ------------------------------------------------------------------
+                         -----
+                   261   ; ccu63.c   162         ///  Configuration of CCU63 Timer 13:
+                   262   ; ccu63.c   163         ///  ------------------------------------------------------------------
+                         -----
+                   263   ; ccu63.c   164         ///  - Timer 13 Input Clock factor (T13CLK) is 0
+                   264   ; ccu63.c   165         ///  - prescaler factor is 0
+                   265   ; ccu63.c   166         ///  - Timer 13 run bit is reset
+                   266   ; ccu63.c   167         ///  - Trigger control is disabled
+                   267   ; ccu63.c   168         ///  - No External run selection is selected.
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 15:31:51  Page:   6
 ccu63
 
  LOC CODE        LINE   SOURCELINE
 
-                   276   ; ccu63.c   177   ///  - prescaler factor is 0
-                   277   ; ccu63.c   178   ///  - Timer 13 run bit is reset
-                   278   ; ccu63.c   179   ///  - Trigger control is disabled
-                   279   ; ccu63.c   180   ///  - No External run selection is selected.
-                   280   ; ccu63.c   181   ///  - Timer mode is selected.
-                   281   ; ccu63.c   182   ///  - 
-                   282   ; ccu63.c   183   ///  - Single shot mode is disabled
-                   283   ; ccu63.c   184   ///  - Interrupt on period match is disabled
-                   284   ; ccu63.c   185   ///  - Interrupt on compare match is disabled
-                   285   ; ccu63.c   186 
-                   286   ; ccu63.c   187   CCU63_T13PR    =  0x0001;      // load CCU63 T13 period register
-                   287           ?LINE   187
-0016 E01C          288           MOV     R12,#01h
-0018 F6FCB2EB      289           MOV     0EBB2h,R12
-                   290   ; ccu63.c   188 
-                   291   ; ccu63.c   189   CCU63_TCTR0    =  0x0080;      // load CCU63 timer control register 0
-                   292           ?LINE   189
-001C E6FC8000      293           MOV     R12,#080h
-0020 F6FCACEB      294           MOV     0EBACh,R12
-                   295   ; ccu63.c   190   CCU63_TCTR2    =  0x0020;      // load CCU63 timer control register 2
-                   296           ?LINE   190
-0024 E6FC2000      297           MOV     R12,#020h
-0028 F6FCAEEB      298           MOV     0EBAEh,R12
-                   299   ; ccu63.c   191 
-                   300   ; ccu63.c   192   ///  -----------------------------------------------------------------------
-                   301   ; ccu63.c   193   ///  Configuration of Multi Channel Mode:
-                   302   ; ccu63.c   194   ///  -----------------------------------------------------------------------
-                   303   ; ccu63.c   195   ///  - Multi channel mode is disabled
-                   304   ; ccu63.c   196 
-                   305   ; ccu63.c   197 
-                   306   ; ccu63.c   198   ///  -----------------------------------------------------------------------
-                   307   ; ccu63.c   199   ///  Configuration of CCU63 Channel 0:
-                   308   ; ccu63.c   200   ///  -----------------------------------------------------------------------
-                   309   ; ccu63.c   201   ///  - Compare mode 1 is selected
-                   310   ; ccu63.c   202   ///  - T12 modulation for output CC60 is enabled
-                   311   ; ccu63.c   203   ///  - T13 modulation for output CC60 is disabled
-                   312   ; ccu63.c   204   ///  - The trap functionality of the pin CC60 is disabled
-                   313   ; ccu63.c   205   ///  - The compare output CC60 drives passive level while CC60ST is '0'
-                   314   ; ccu63.c   206   ///  - The passive level of the output CC60 is '0'
-                   315   ; ccu63.c   207   ///  - T12 modulation for output COUT60 is enabled
-                   316   ; ccu63.c   208   ///  - T13 modulation for output COUT60 is disabled
-                   317   ; ccu63.c   209   ///  - The trap functionality of the pin COUT60 is disabled
-                   318   ; ccu63.c   210   ///  - The compare output COUT60 drives passive level while CC60ST is '1'
-                   319   ; ccu63.c   211   ///  - The passive level of the output COUT60 is '0'
-                   320   ; ccu63.c   212   ///  - Dead time generation is enabled
-                   321   ; ccu63.c   213 
-                   322   ; ccu63.c   214   ///  - Generation interrupt on flag ICC60R is disabled
-                   323   ; ccu63.c   215   ///  - Generation interrupt on flag ICC60F is disabled
-                   324   ; ccu63.c   216 
-                   325   ; ccu63.c   217   CCU63_CC60SR   =  0x070C;      // Load CCU63 capture/compare shadow 
-                   326           ?LINE   217
-002C E6FC0C07      327           MOV     R12,#070Ch
-0030 F6FCA0EB      328           MOV     0EBA0h,R12
-                   329   ; ccu63.c   218                                  // register for channel 0
-                   330   ; ccu63.c   219 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:54:42  Page:   7
+                   268   ; ccu63.c   169         ///  - Timer mode is selected.
+                   269   ; ccu63.c   170         ///  -
+                   270   ; ccu63.c   171         ///  - Single shot mode is disabled
+                   271   ; ccu63.c   172         ///  - Interrupt on period match is disabled
+                   272   ; ccu63.c   173         ///  - Interrupt on compare match is disabled
+                   273   ; ccu63.c   174 
+                   274   ; ccu63.c   175         CCU63_T13PR = 0x0001;  // load CCU63 T13 period register
+                   275           ?LINE   175
+0016 E01C          276           MOV     R12,#01h
+0018 F6FCB2EB      277           MOV     0EBB2h,R12
+                   278   ; ccu63.c   176 
+                   279   ; ccu63.c   177         CCU63_TCTR0 = 0x0080;  // load CCU63 timer control register 0
+                   280           ?LINE   177
+001C E6FC8000      281           MOV     R12,#080h
+0020 F6FCACEB      282           MOV     0EBACh,R12
+                   283   ; ccu63.c   178         CCU63_TCTR2 = 0x0020;  // load CCU63 timer control register 2
+                   284           ?LINE   178
+0024 E6FC2000      285           MOV     R12,#020h
+0028 F6FCAEEB      286           MOV     0EBAEh,R12
+                   287   ; ccu63.c   179 
+                   288   ; ccu63.c   180         ///  ------------------------------------------------------------------
+                         -----
+                   289   ; ccu63.c   181         ///  Configuration of Multi Channel Mode:
+                   290   ; ccu63.c   182         ///  ------------------------------------------------------------------
+                         -----
+                   291   ; ccu63.c   183         ///  - Multi channel mode is disabled
+                   292   ; ccu63.c   184 
+                   293   ; ccu63.c   185         ///  ------------------------------------------------------------------
+                         -----
+                   294   ; ccu63.c   186         ///  Configuration of CCU63 Channel 0:
+                   295   ; ccu63.c   187         ///  ------------------------------------------------------------------
+                         -----
+                   296   ; ccu63.c   188         ///  - Compare mode 1 is selected
+                   297   ; ccu63.c   189         ///  - T12 modulation for output CC60 is enabled
+                   298   ; ccu63.c   190         ///  - T13 modulation for output CC60 is disabled
+                   299   ; ccu63.c   191         ///  - The trap functionality of the pin CC60 is disabled
+                   300   ; ccu63.c   192         ///  - The compare output CC60 drives passive level while CC60ST is '0'
+                   301   ; ccu63.c   193         ///  - The passive level of the output CC60 is '0'
+                   302   ; ccu63.c   194         ///  - T12 modulation for output COUT60 is enabled
+                   303   ; ccu63.c   195         ///  - T13 modulation for output COUT60 is disabled
+                   304   ; ccu63.c   196         ///  - The trap functionality of the pin COUT60 is disabled
+                   305   ; ccu63.c   197         ///  - The compare output COUT60 drives passive level while CC60ST is '
+                         1'
+                   306   ; ccu63.c   198         ///  - The passive level of the output COUT60 is '0'
+                   307   ; ccu63.c   199         ///  - Dead time generation is enabled
+                   308   ; ccu63.c   200 
+                   309   ; ccu63.c   201         ///  - Generation interrupt on flag ICC60R is disabled
+                   310   ; ccu63.c   202         ///  - Generation interrupt on flag ICC60F is disabled
+                   311   ; ccu63.c   203 
+                   312   ; ccu63.c   204         CCU63_CC60SR = 0x070C;  // Load CCU63 capture/compare shadow
+                   313           ?LINE   204
+002C E6FC0C07      314           MOV     R12,#070Ch
+0030 F6FCA0EB      315           MOV     0EBA0h,R12
+                   316   ; ccu63.c   205                                                         // register for channel
+                          0
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 15:31:51  Page:   7
 ccu63
 
  LOC CODE        LINE   SOURCELINE
 
-                   331   ; ccu63.c   220   ///  -----------------------------------------------------------------------
-                   332   ; ccu63.c   221   ///  Configuration of CCU63 Channel 1:
-                   333   ; ccu63.c   222   ///  -----------------------------------------------------------------------
-                   334   ; ccu63.c   223   ///  - Compare mode 1 is selected
-                   335   ; ccu63.c   224   ///  - T12 modulation for output CC61 is enabled
-                   336   ; ccu63.c   225   ///  - T13 modulation for output CC61 is disabled
-                   337   ; ccu63.c   226   ///  - The trap functionality of the pin CC61 is disabled
-                   338   ; ccu63.c   227   ///  - The compare output CC61 drives passive level while CC61ST is '0'
-                   339   ; ccu63.c   228   ///  - The passive level of the output CC61 is '0'
-                   340   ; ccu63.c   229   ///  - T12 modulation for output COUT61 is enabled
-                   341   ; ccu63.c   230   ///  - T13 modulation for output COUT61 is disabled
-                   342   ; ccu63.c   231   ///  - The trap functionality of the pin COUT61 is disabled
-                   343   ; ccu63.c   232   ///  - The compare output COUT61 drives passive level while CC61ST is '1'
-                   344   ; ccu63.c   233   ///  - The passive level of the output COUT61 is '0'
-                   345   ; ccu63.c   234   ///  - Dead time generation is enabled
-                   346   ; ccu63.c   235 
-                   347   ; ccu63.c   236   ///  - Generation interrupt on flag ICC61R is disabled
-                   348   ; ccu63.c   237   ///  - Generation interrupt on flag ICC61F is disabled
-                   349   ; ccu63.c   238 
-                   350   ; ccu63.c   239   CCU63_CC61SR   =  0x070C;      // Load CCU63 capture/compare shadow 
-                   351           ?LINE   239
-0034 E6FC0C07      352           MOV     R12,#070Ch
-0038 F6FCA2EB      353           MOV     0EBA2h,R12
-                   354   ; ccu63.c   240                                  // register for channel 1
-                   355   ; ccu63.c   241 
-                   356   ; ccu63.c   242   ///  -----------------------------------------------------------------------
-                   357   ; ccu63.c   243   ///  Configuration of CCU63 Channel 2:
-                   358   ; ccu63.c   244   ///  -----------------------------------------------------------------------
-                   359   ; ccu63.c   245   ///  - Compare mode 1 is selected
-                   360   ; ccu63.c   246   ///  - T12 modulation for output CC62 is enabled
-                   361   ; ccu63.c   247   ///  - T13 modulation for output CC62 is disabled
-                   362   ; ccu63.c   248   ///  - The trap functionality of the pin CC62 is disabled
-                   363   ; ccu63.c   249   ///  - The compare output CC62 drives passive level while CC62ST is '0'
-                   364   ; ccu63.c   250   ///  - The passive level of the output CC62 is '0'
-                   365   ; ccu63.c   251   ///  - T12 modulation for output COUT62 is enabled
-                   366   ; ccu63.c   252   ///  - T13 modulation for output COUT62 is disabled
-                   367   ; ccu63.c   253   ///  - The trap functionality of the pin COUT62 is disabled
-                   368   ; ccu63.c   254   ///  - The compare output COUT62 drives passive level while CC62ST is '1'
-                   369   ; ccu63.c   255   ///  - The passive level of the output COUT62 is '0'
-                   370   ; ccu63.c   256   ///  - Dead time generation is enabled
-                   371   ; ccu63.c   257 
-                   372   ; ccu63.c   258   ///  - Generation interrupt on flag ICC62R is disabled
-                   373   ; ccu63.c   259   ///  - Generation interrupt on flag ICC62F is disabled
-                   374   ; ccu63.c   260 
-                   375   ; ccu63.c   261   CCU63_CC62SR   =  0x070C;      // Load CCU63 capture/compare shadow 
-                   376           ?LINE   261
-003C E6FC0C07      377           MOV     R12,#070Ch
-0040 F6FCA4EB      378           MOV     0EBA4h,R12
-                   379   ; ccu63.c   262                                  // register for channel 2
-                   380   ; ccu63.c   263 
-                   381   ; ccu63.c   264   ///  -----------------------------------------------------------------------
-                   382   ; ccu63.c   265   ///  Configuration of CCU63 Channel 3:
-                   383   ; ccu63.c   266   ///  -----------------------------------------------------------------------
-                   384   ; ccu63.c   267   ///  - T13 output is not inverted
-                   385   ; ccu63.c   268 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:54:42  Page:   8
+                   317   ; ccu63.c   206 
+                   318   ; ccu63.c   207         ///  ------------------------------------------------------------------
+                         -----
+                   319   ; ccu63.c   208         ///  Configuration of CCU63 Channel 1:
+                   320   ; ccu63.c   209         ///  ------------------------------------------------------------------
+                         -----
+                   321   ; ccu63.c   210         ///  - Compare mode 1 is selected
+                   322   ; ccu63.c   211         ///  - T12 modulation for output CC61 is enabled
+                   323   ; ccu63.c   212         ///  - T13 modulation for output CC61 is disabled
+                   324   ; ccu63.c   213         ///  - The trap functionality of the pin CC61 is disabled
+                   325   ; ccu63.c   214         ///  - The compare output CC61 drives passive level while CC61ST is '0'
+                   326   ; ccu63.c   215         ///  - The passive level of the output CC61 is '0'
+                   327   ; ccu63.c   216         ///  - T12 modulation for output COUT61 is enabled
+                   328   ; ccu63.c   217         ///  - T13 modulation for output COUT61 is disabled
+                   329   ; ccu63.c   218         ///  - The trap functionality of the pin COUT61 is disabled
+                   330   ; ccu63.c   219         ///  - The compare output COUT61 drives passive level while CC61ST is '
+                         1'
+                   331   ; ccu63.c   220         ///  - The passive level of the output COUT61 is '0'
+                   332   ; ccu63.c   221         ///  - Dead time generation is enabled
+                   333   ; ccu63.c   222 
+                   334   ; ccu63.c   223         ///  - Generation interrupt on flag ICC61R is disabled
+                   335   ; ccu63.c   224         ///  - Generation interrupt on flag ICC61F is disabled
+                   336   ; ccu63.c   225 
+                   337   ; ccu63.c   226         CCU63_CC61SR = 0x070C;  // Load CCU63 capture/compare shadow
+                   338           ?LINE   226
+0034 E6FC0C07      339           MOV     R12,#070Ch
+0038 F6FCA2EB      340           MOV     0EBA2h,R12
+                   341   ; ccu63.c   227                                                         // register for channel
+                          1
+                   342   ; ccu63.c   228 
+                   343   ; ccu63.c   229         ///  ------------------------------------------------------------------
+                         -----
+                   344   ; ccu63.c   230         ///  Configuration of CCU63 Channel 2:
+                   345   ; ccu63.c   231         ///  ------------------------------------------------------------------
+                         -----
+                   346   ; ccu63.c   232         ///  - Compare mode 1 is selected
+                   347   ; ccu63.c   233         ///  - T12 modulation for output CC62 is enabled
+                   348   ; ccu63.c   234         ///  - T13 modulation for output CC62 is disabled
+                   349   ; ccu63.c   235         ///  - The trap functionality of the pin CC62 is disabled
+                   350   ; ccu63.c   236         ///  - The compare output CC62 drives passive level while CC62ST is '0'
+                   351   ; ccu63.c   237         ///  - The passive level of the output CC62 is '0'
+                   352   ; ccu63.c   238         ///  - T12 modulation for output COUT62 is enabled
+                   353   ; ccu63.c   239         ///  - T13 modulation for output COUT62 is disabled
+                   354   ; ccu63.c   240         ///  - The trap functionality of the pin COUT62 is disabled
+                   355   ; ccu63.c   241         ///  - The compare output COUT62 drives passive level while CC62ST is '
+                         1'
+                   356   ; ccu63.c   242         ///  - The passive level of the output COUT62 is '0'
+                   357   ; ccu63.c   243         ///  - Dead time generation is enabled
+                   358   ; ccu63.c   244 
+                   359   ; ccu63.c   245         ///  - Generation interrupt on flag ICC62R is disabled
+                   360   ; ccu63.c   246         ///  - Generation interrupt on flag ICC62F is disabled
+                   361   ; ccu63.c   247 
+                   362   ; ccu63.c   248         CCU63_CC62SR = 0x070C;  // Load CCU63 capture/compare shadow
+                   363           ?LINE   248
+003C E6FC0C07      364           MOV     R12,#070Ch
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 15:31:51  Page:   8
 ccu63
 
  LOC CODE        LINE   SOURCELINE
 
-                   386   ; ccu63.c   269 
-                   387   ; ccu63.c   270   CCU63_CC63SR   =  0x0000;      // load CCU63 capture/compare shadow 
-                   388           ?LINE   270
-0044 E00C          389           MOV     R12,#00h
-0046 F6FCB6EB      390           MOV     0EBB6h,R12
-                   391   ; ccu63.c   271                                  // register for channel 3
-                   392   ; ccu63.c   272 
-                   393   ; ccu63.c   273 
-                   394   ; ccu63.c   274   CCU63_T12DTC   =  0x0741;      // load CCU63 dead time control register for 
-                   395           ?LINE   274
-004A E6FC4107      396           MOV     R12,#0741h
-004E F6FC94EB      397           MOV     0EB94h,R12
-                   398   ; ccu63.c   275                                  // timer T12
-                   399   ; ccu63.c   276 
-                   400   ; ccu63.c   277   CCU63_T12MSEL  =  0x0111;      // load CCU63 T12 campture/compare mode 
-                   401           ?LINE   277
-0052 E6FC1101      402           MOV     R12,#0111h
-0056 F6FCC6EB      403           MOV     0EBC6h,R12
-                   404   ; ccu63.c   278                                  // select register
-                   405   ; ccu63.c   279 
-                   406   ; ccu63.c   280   CCU63_CMPSTAT  =  0x2A00;      // load CCU63 compare status register
-                   407           ?LINE   280
-005A E6FC002A      408           MOV     R12,#02A00h
-005E F6FCA8EB      409           MOV     0EBA8h,R12
-                   410   ; ccu63.c   281 
-                   411   ; ccu63.c   282   CCU63_MODCTR   =  0x003F;      // load CCU63 modulation control register
-                   412           ?LINE   282
-0062 E6FC3F00      413           MOV     R12,#03Fh
-0066 F6FCC0EB      414           MOV     0EBC0h,R12
-                   415   ; ccu63.c   283 
-                   416   ; ccu63.c   284   ///  -----------------------------------------------------------------------
-                   417   ; ccu63.c   285   ///  Configuration of CCU63 trap control:
-                   418   ; ccu63.c   286   ///  -----------------------------------------------------------------------
-                   419   ; ccu63.c   287   ///  - Trap can only be generated by SW by setting the bit TRPF
-                   420   ; ccu63.c   288   ///  - The trap state is left when a zero-match of T12 (while counting up) 
-                   421   ; ccu63.c   289   ///    is detected (synchronization to T12)
-                   422   ; ccu63.c   290   ///  - Bit TRPF is automatically cleared by HW (according to TRPPEN, TRPM0 
-                   423   ; ccu63.c   291   ///    and TRPM1)
-                   424   ; ccu63.c   292   ///  - Trap interrupt is disabled
-                   425   ; ccu63.c   293 
-                   426   ; ccu63.c   294 
-                   427   ; ccu63.c   295   ///  -----------------------------------------------------------------------
-                   428   ; ccu63.c   296   ///  Configuration of CCU63 interrupt control:
-                   429   ; ccu63.c   297   ///  -----------------------------------------------------------------------
-                   430   ; ccu63.c   298   ///  - For channel 0 interrupts is node I0 selected
-                   431   ; ccu63.c   299   ///  - For channel 1 interrupts is node I0 selected
-                   432   ; ccu63.c   300   ///  - For channel 2 interrupts is node I0 selected
-                   433   ; ccu63.c   301   ///  - For correct hall event interrupt is node I0 selected
-                   434   ; ccu63.c   302   ///  - For error interrupts is node I0 selected
-                   435   ; ccu63.c   303   ///  - For T12 interrupts is node I0 selected
-                   436   ; ccu63.c   304   ///  - For T13 interrupts is node I0 selected
-                   437   ; ccu63.c   305 
-                   438   ; ccu63.c   306 
-                   439   ; ccu63.c   307   CCU63_INP      =  0x0000;      // Load CCU63 capture/compare interrupt node 
-                   440           ?LINE   307
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:54:42  Page:   9
+0040 F6FCA4EB      365           MOV     0EBA4h,R12
+                   366   ; ccu63.c   249                                                         // register for channel
+                          2
+                   367   ; ccu63.c   250 
+                   368   ; ccu63.c   251         ///  ------------------------------------------------------------------
+                         -----
+                   369   ; ccu63.c   252         ///  Configuration of CCU63 Channel 3:
+                   370   ; ccu63.c   253         ///  ------------------------------------------------------------------
+                         -----
+                   371   ; ccu63.c   254         ///  - T13 output is not inverted
+                   372   ; ccu63.c   255 
+                   373   ; ccu63.c   256         CCU63_CC63SR = 0x0000;  // load CCU63 capture/compare shadow
+                   374           ?LINE   256
+0044 E00C          375           MOV     R12,#00h
+0046 F6FCB6EB      376           MOV     0EBB6h,R12
+                   377   ; ccu63.c   257                                                         // register for channel
+                          3
+                   378   ; ccu63.c   258 
+                   379   ; ccu63.c   259         CCU63_T12DTC = 0x0741;  // load CCU63 dead time control register for
+                   380           ?LINE   259
+004A E6FC4107      381           MOV     R12,#0741h
+004E F6FC94EB      382           MOV     0EB94h,R12
+                   383   ; ccu63.c   260                                                         // timer T12
+                   384   ; ccu63.c   261 
+                   385   ; ccu63.c   262         CCU63_T12MSEL = 0x0111;  // load CCU63 T12 campture/compare mode
+                   386           ?LINE   262
+0052 E6FC1101      387           MOV     R12,#0111h
+0056 F6FCC6EB      388           MOV     0EBC6h,R12
+                   389   ; ccu63.c   263                                                          // select register
+                   390   ; ccu63.c   264 
+                   391   ; ccu63.c   265         CCU63_CMPSTAT = 0x2A00;  // load CCU63 compare status register
+                   392           ?LINE   265
+005A E6FC002A      393           MOV     R12,#02A00h
+005E F6FCA8EB      394           MOV     0EBA8h,R12
+                   395   ; ccu63.c   266 
+                   396   ; ccu63.c   267         CCU63_MODCTR = 0x003F;  // load CCU63 modulation control register
+                   397           ?LINE   267
+0062 E6FC3F00      398           MOV     R12,#03Fh
+0066 F6FCC0EB      399           MOV     0EBC0h,R12
+                   400   ; ccu63.c   268 
+                   401   ; ccu63.c   269         ///  ------------------------------------------------------------------
+                         -----
+                   402   ; ccu63.c   270         ///  Configuration of CCU63 trap control:
+                   403   ; ccu63.c   271         ///  ------------------------------------------------------------------
+                         -----
+                   404   ; ccu63.c   272         ///  - Trap can only be generated by SW by setting the bit TRPF
+                   405   ; ccu63.c   273         ///  - The trap state is left when a zero-match of T12 (while counting 
+                         up)
+                   406   ; ccu63.c   274         ///    is detected (synchronization to T12)
+                   407   ; ccu63.c   275         ///  - Bit TRPF is automatically cleared by HW (according to TRPPEN, TR
+                         PM0
+                   408   ; ccu63.c   276         ///    and TRPM1)
+                   409   ; ccu63.c   277         ///  - Trap interrupt is disabled
+                   410   ; ccu63.c   278 
+                   411   ; ccu63.c   279         ///  ------------------------------------------------------------------
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 15:31:51  Page:   9
 ccu63
 
  LOC CODE        LINE   SOURCELINE
 
-006A E00C          441           MOV     R12,#00h
-006C F6FCD6EB      442           MOV     0EBD6h,R12
-                   443   ; ccu63.c   308                                  // pointer register
-                   444   ; ccu63.c   309 
-                   445   ; ccu63.c   310   CCU63_IEN      =  0x00C0;      // Load CCU63 capture/compare interrupt 
-                   446           ?LINE   310
-0070 E6FCC000      447           MOV     R12,#0C0h
-0074 F6FCD8EB      448           MOV     0EBD8h,R12
-                   449   ; ccu63.c   311                                  // enable register
-                   450   ; ccu63.c   312 
-                   451   ; ccu63.c   313 
-                   452   ; ccu63.c   314   ///  -----------------------------------------------------------------------
-                   453   ; ccu63.c   315   ///  Configuration of the used CCU63 Channel Port Pins:
-                   454   ; ccu63.c   316   ///  -----------------------------------------------------------------------
-                   455   ; ccu63.c   317   ///  - P9.0 is used for CCU63 output(CC60)
-                   456   ; ccu63.c   318   ///  - P9.1 is used for CCU63 output(CC61)
-                   457   ; ccu63.c   319   ///  - P9.2 is used for CCU63 output(CC62)
-                   458   ; ccu63.c   320   ///  - P9.3 is used for CCU63 output(COUT60)
-                   459   ; ccu63.c   321   ///  - P9.4 is used for CCU63 output(COUT61)
-                   460   ; ccu63.c   322   ///  - P9.5 is used for CCU63 output(COUT62)
-                   461   ; ccu63.c   323 
-                   462   ; ccu63.c   324   P9_IOCR00 = 0x0090;    //set direction register
-                   463           ?LINE   324
-0078 E6FC9000      464           MOV     R12,#090h
-007C F6FC20E9      465           MOV     0E920h,R12
-                   466   ; ccu63.c   325   P9_IOCR01 = 0x0090;    //set direction register
-                   467           ?LINE   325
-0080 E6FC9000      468           MOV     R12,#090h
-0084 F6FC22E9      469           MOV     0E922h,R12
-                   470   ; ccu63.c   326   P9_IOCR02 = 0x0090;    //set direction register
-                   471           ?LINE   326
-0088 E6FC9000      472           MOV     R12,#090h
-008C F6FC24E9      473           MOV     0E924h,R12
-                   474   ; ccu63.c   327   P9_IOCR03 = 0x0090;    //set direction register
-                   475           ?LINE   327
-0090 E6FC9000      476           MOV     R12,#090h
-0094 F6FC26E9      477           MOV     0E926h,R12
-                   478   ; ccu63.c   328   P9_IOCR04 = 0x0090;    //set direction register
-                   479           ?LINE   328
-0098 E6FC9000      480           MOV     R12,#090h
-009C F6FC28E9      481           MOV     0E928h,R12
-                   482   ; ccu63.c   329   P9_IOCR05 = 0x0090;    //set direction register
-                   483           ?LINE   329
-00A0 E6FC9000      484           MOV     R12,#090h
-00A4 F6FC2AE9      485           MOV     0E92Ah,R12
-                   486   ; ccu63.c   330 
-                   487   ; ccu63.c   331   CCU63_PISELL   =  0x3FEA;      // Load CCU63 Port Input Selection register
-                   488           ?LINE   331
-00A8 E6FCEA3F      489           MOV     R12,#03FEAh
-00AC F6FC84EB      490           MOV     0EB84h,R12
-                   491   ; ccu63.c   332 
-                   492   ; ccu63.c   333   ///  -----------------------------------------------------------------------
-                   493   ; ccu63.c   334   ///  Configuration of the used CCU63 Channels Interrupts:
-                   494   ; ccu63.c   335   ///  -----------------------------------------------------------------------
-                   495   ; ccu63.c   336   ///  NodeI0 service request node configuration:
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:54:42  Page:  10
+                         -----
+                   412   ; ccu63.c   280         ///  Configuration of CCU63 interrupt control:
+                   413   ; ccu63.c   281         ///  ------------------------------------------------------------------
+                         -----
+                   414   ; ccu63.c   282         ///  - For channel 0 interrupts is node I0 selected
+                   415   ; ccu63.c   283         ///  - For channel 1 interrupts is node I0 selected
+                   416   ; ccu63.c   284         ///  - For channel 2 interrupts is node I0 selected
+                   417   ; ccu63.c   285         ///  - For correct hall event interrupt is node I0 selected
+                   418   ; ccu63.c   286         ///  - For error interrupts is node I0 selected
+                   419   ; ccu63.c   287         ///  - For T12 interrupts is node I0 selected
+                   420   ; ccu63.c   288         ///  - For T13 interrupts is node I0 selected
+                   421   ; ccu63.c   289 
+                   422   ; ccu63.c   290         CCU63_INP = 0x0000;      // Load CCU63 capture/compare interrupt node
+                   423           ?LINE   290
+006A E00C          424           MOV     R12,#00h
+006C F6FCD6EB      425           MOV     0EBD6h,R12
+                   426   ; ccu63.c   291                                                  // pointer register
+                   427   ; ccu63.c   292 
+                   428   ; ccu63.c   293         CCU63_IEN = 0x00C0;      // Load CCU63 capture/compare interrupt
+                   429           ?LINE   293
+0070 E6FCC000      430           MOV     R12,#0C0h
+0074 F6FCD8EB      431           MOV     0EBD8h,R12
+                   432   ; ccu63.c   294                                                  // enable register
+                   433   ; ccu63.c   295 
+                   434   ; ccu63.c   296         ///  ------------------------------------------------------------------
+                         -----
+                   435   ; ccu63.c   297         ///  Configuration of the used CCU63 Channel Port Pins:
+                   436   ; ccu63.c   298         ///  ------------------------------------------------------------------
+                         -----
+                   437   ; ccu63.c   299         ///  - P9.0 is used for CCU63 output(CC60)
+                   438   ; ccu63.c   300         ///  - P9.1 is used for CCU63 output(CC61)
+                   439   ; ccu63.c   301         ///  - P9.2 is used for CCU63 output(CC62)
+                   440   ; ccu63.c   302         ///  - P9.3 is used for CCU63 output(COUT60)
+                   441   ; ccu63.c   303         ///  - P9.4 is used for CCU63 output(COUT61)
+                   442   ; ccu63.c   304         ///  - P9.5 is used for CCU63 output(COUT62)
+                   443   ; ccu63.c   305 
+                   444   ; ccu63.c   306         P9_IOCR00 = 0x0090;      //set direction register
+                   445           ?LINE   306
+0078 E6FC9000      446           MOV     R12,#090h
+007C F6FC20E9      447           MOV     0E920h,R12
+                   448   ; ccu63.c   307         P9_IOCR01 = 0x0090;      //set direction register
+                   449           ?LINE   307
+0080 E6FC9000      450           MOV     R12,#090h
+0084 F6FC22E9      451           MOV     0E922h,R12
+                   452   ; ccu63.c   308         P9_IOCR02 = 0x0090;      //set direction register
+                   453           ?LINE   308
+0088 E6FC9000      454           MOV     R12,#090h
+008C F6FC24E9      455           MOV     0E924h,R12
+                   456   ; ccu63.c   309         P9_IOCR03 = 0x0090;      //set direction register
+                   457           ?LINE   309
+0090 E6FC9000      458           MOV     R12,#090h
+0094 F6FC26E9      459           MOV     0E926h,R12
+                   460   ; ccu63.c   310         P9_IOCR04 = 0x0090;      //set direction register
+                   461           ?LINE   310
+0098 E6FC9000      462           MOV     R12,#090h
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 15:31:51  Page:  10
 ccu63
 
  LOC CODE        LINE   SOURCELINE
 
-                   496   ; ccu63.c   337   ///  - NodeI0 interrupt priority level (ILVL) = 12
-                   497   ; ccu63.c   338   ///  - NodeI0 interrupt group level (GLVL) = 0
-                   498   ; ccu63.c   339   ///  - NodeI0 group priority extension (GPX) = 0
-                   499   ; ccu63.c   340 
-                   500   ; ccu63.c   341   CCU63_0IC      =  0x0070;     
-                   501           ?LINE   341
-00B0 E6FC7000      502           MOV     R12,#070h
-00B4 F6FC78F1      503           MOV     0F178h,R12
-                   504   ; ccu63.c   342 
-                   505   ; ccu63.c   343 
-                   506   ; ccu63.c   344   ///  -----------------------------------------------------------------------
-                   507   ; ccu63.c   345   ///  Configuration of T12, T13 ---- CCU63_TCTR4 Register:
-                   508   ; ccu63.c   346   ///  -----------------------------------------------------------------------
-                   509   ; ccu63.c   347   ///  - Enable shadow transfer of T12 and T13
-                   510   ; ccu63.c   348   ///  - Timer 12 run bit is reset
-                   511   ; ccu63.c   349   ///  - Timer 13 run bit is reset
-                   512   ; ccu63.c   350   CCU63_TCTR4    =  0x4040;      // load CCU63 timer control register 4
-                   513           ?LINE   350
-00B8 E6FC4040      514           MOV     R12,#04040h
-00BC F6FCA6EB      515           MOV     0EBA6h,R12
-                   516   ; ccu63.c   351 
-                   517   ; ccu63.c   352 
-                   518   ; ccu63.c   353   // USER CODE BEGIN (NodeI3,3)
-                   519   ; ccu63.c   354 
-                   520   ; ccu63.c   355   // USER CODE END
-                   521   ; ccu63.c   356 
-                   522   ; ccu63.c   357 } //  End of function CCU63_vInit
-                   523           ?LINE   357
-00C0 DB00          524           RETS
-                   525   _CCU63_vInit    ENDP
-               R   526           ?SYMB   '',$,17,357
-                   527   ; ccu63.c   358 
-                   528   ; ccu63.c   359 
-                   529   ; ccu63.c   360 //****************************************************************************
-                   530   ; ccu63.c   361 // @Function      void CCU63_viNodeI0(void) 
-                   531   ; ccu63.c   362 //
-                   532   ; ccu63.c   363 //----------------------------------------------------------------------------
-                   533   ; ccu63.c   364 // @Description   This is the interrupt service routine for the CCU63 node 
-                   534   ; ccu63.c   365 //                I0. If the content of the corresponding compare timer 
-                   535   ; ccu63.c   366 //                (configurable) equals the content of the capture/compare 
-                   536   ; ccu63.c   367 //                register or if a capture event occurs at the associated 
-                   537   ; ccu63.c   368 //                port pin, the interrupt request flag is set and an 
-                   538   ; ccu63.c   369 //                interrupt is triggered (only if enabled).
-                   539   ; ccu63.c   370 //                Please note that you have to add application specific code 
-                   540   ; ccu63.c   371 //                to this function.
-                   541   ; ccu63.c   372 //
-                   542   ; ccu63.c   373 //----------------------------------------------------------------------------
-                   543   ; ccu63.c   374 // @Returnvalue   None
-                   544   ; ccu63.c   375 //
-                   545   ; ccu63.c   376 //----------------------------------------------------------------------------
-                   546   ; ccu63.c   377 // @Parameters    None
-                   547   ; ccu63.c   378 //
-                   548   ; ccu63.c   379 //----------------------------------------------------------------------------
-                   549   ; ccu63.c   380 // @Date          30.09.2021
-                   550   ; ccu63.c   381 //
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:54:42  Page:  11
+009C F6FC28E9      463           MOV     0E928h,R12
+                   464   ; ccu63.c   311         P9_IOCR05 = 0x0090;      //set direction register
+                   465           ?LINE   311
+00A0 E6FC9000      466           MOV     R12,#090h
+00A4 F6FC2AE9      467           MOV     0E92Ah,R12
+                   468   ; ccu63.c   312 
+                   469   ; ccu63.c   313         CCU63_PISELL = 0x3FEA;  // Load CCU63 Port Input Selection register
+                   470           ?LINE   313
+00A8 E6FCEA3F      471           MOV     R12,#03FEAh
+00AC F6FC84EB      472           MOV     0EB84h,R12
+                   473   ; ccu63.c   314 
+                   474   ; ccu63.c   315         ///  ------------------------------------------------------------------
+                         -----
+                   475   ; ccu63.c   316         ///  Configuration of the used CCU63 Channels Interrupts:
+                   476   ; ccu63.c   317         ///  ------------------------------------------------------------------
+                         -----
+                   477   ; ccu63.c   318         ///  NodeI0 service request node configuration:
+                   478   ; ccu63.c   319         ///  - NodeI0 interrupt priority level (ILVL) = 12
+                   479   ; ccu63.c   320         ///  - NodeI0 interrupt group level (GLVL) = 0
+                   480   ; ccu63.c   321         ///  - NodeI0 group priority extension (GPX) = 0
+                   481   ; ccu63.c   322 
+                   482   ; ccu63.c   323         CCU63_0IC = 0x0070;
+                   483           ?LINE   323
+00B0 E6FC7000      484           MOV     R12,#070h
+00B4 F6FC78F1      485           MOV     0F178h,R12
+                   486   ; ccu63.c   324 
+                   487   ; ccu63.c   325         ///  ------------------------------------------------------------------
+                         -----
+                   488   ; ccu63.c   326         ///  Configuration of T12, T13 ---- CCU63_TCTR4 Register:
+                   489   ; ccu63.c   327         ///  ------------------------------------------------------------------
+                         -----
+                   490   ; ccu63.c   328         ///  - Enable shadow transfer of T12 and T13
+                   491   ; ccu63.c   329         ///  - Timer 12 run bit is reset
+                   492   ; ccu63.c   330         ///  - Timer 13 run bit is reset
+                   493   ; ccu63.c   331         CCU63_TCTR4 = 0x4040;  // load CCU63 timer control register 4
+                   494           ?LINE   331
+00B8 E6FC4040      495           MOV     R12,#04040h
+00BC F6FCA6EB      496           MOV     0EBA6h,R12
+                   497   ; ccu63.c   332 
+                   498   ; ccu63.c   333         // USER CODE BEGIN (NodeI3,3)
+                   499   ; ccu63.c   334 
+                   500   ; ccu63.c   335         // USER CODE END
+                   501   ; ccu63.c   336 
+                   502   ; ccu63.c   337 }  //  End of function CCU63_vInit
+                   503           ?LINE   337
+00C0 DB00          504           RETS
+                   505   _CCU63_vInit    ENDP
+               R   506           ?SYMB   '',$,17,337
+                   507   ; ccu63.c   338 
+                   508   ; ccu63.c   339 //****************************************************************************
+                   509   ; ccu63.c   340 // @Function      void CCU63_viNodeI0(void)
+                   510   ; ccu63.c   341 //
+                   511   ; ccu63.c   342 //----------------------------------------------------------------------------
+                   512   ; ccu63.c   343 // @Description   This is the interrupt service routine for the CCU63 node
+                   513   ; ccu63.c   344 //                I0. If the content of the corresponding compare timer
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 15:31:51  Page:  11
 ccu63
 
  LOC CODE        LINE   SOURCELINE
 
-                   551   ; ccu63.c   382 //****************************************************************************
-                   552   ; ccu63.c   383 
-                   553   ; ccu63.c   384 // USER CODE BEGIN (NodeI0,1)
-                   554   ; ccu63.c   385 
-                   555   ; ccu63.c   386 // USER CODE END
-                   556   ; ccu63.c   387 
-                   557   ; ccu63.c   388 _interrupt(CCU63_NodeI0_INT)  void CCU63_viNodeI0(void)
-                   558   ; ccu63.c   389 {
-               R   559           ?SYMB   'CCU63_viNodeI0',_CCU63_viNodeI0,37,1
-                   560           ?SYMB   '',389,8,16
-                   561   _CCU63_viNodeI0 PROC TASK CCU63_TASK INTNO CCU63_INUM = 03Ch
-                   562           ?LINE   389
-                   563           ?SYMB   '',00H,95,0
-00C2 F6F00000  R   564           MOV     CCU63_RB,R0
-00C6 C6080000  R   565           SCXT    CP,#CCU63_RB
-00CA C6871000      566           SCXT    MDC,#010h
-00CE EC00          567           PUSH    DPP0
-00D0 E6000000  R   568           MOV     DPP0,#PAG ?BASE_DPP0
-00D4 CC00          569           NOP
-00D6 EC02          570           PUSH    DPP2
-00D8 E6020000  R   571           MOV     DPP2,#PAG ?BASE_DPP2
-00DC CC00          572           NOP
-00DE EC06          573           PUSH    MDH
-00E0 EC07          574           PUSH    MDL
-00E2 ECEF          575           PUSH    MSW
-00E4 EC2E          576           PUSH    MAL
-00E6 EC2F          577           PUSH    MAH
-00E8 ECEE          578           PUSH    MCW
-00EA C6ED0000      579           SCXT    MRW,#00h
-00EE EC84          580           PUSH    IDX0
-00F0 EC85          581           PUSH    IDX1
-00F2 D180          582           EXTR    #01h
-00F4 EC00     1    583           PUSH    QX0
-00F6 D180          584           EXTR    #01h
-00F8 EC01     1    585           PUSH    QX1
-00FA D180          586           EXTR    #01h
-00FC EC02     1    587           PUSH    QR0
-00FE D180          588           EXTR    #01h
-0100 EC03     1    589           PUSH    QR1
-                   590   ; Locals:
-                   591   ; 
-                   592   ; Statics:
-                   593   ; 
-                   594   ; CSEs:
-                   595   ; 
-                   596   ; ccu63.c   390   // USER CODE BEGIN (NodeI0,2)
-                   597   ; ccu63.c   391 
-                   598   ; ccu63.c   392   // USER CODE END
-                   599   ; ccu63.c   393 
-                   600   ; ccu63.c   394   if(CCU63_IS & 0x0040)  // if CCU63_IS_T12OM
-                   601           ?LINE   394
-0102 F2FCD0EB      602           MOV     R12,0EBD0h
-0106 8AFC0260      603           JB      R12.6,_9
-010A EA006002  R   604           JMPA+   cc_UC,_7
-010E               605   _9:
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:54:42  Page:  12
+                   514   ; ccu63.c   345 //                (configurable) equals the content of the capture/compare
+                   515   ; ccu63.c   346 //                register or if a capture event occurs at the associated
+                   516   ; ccu63.c   347 //                port pin, the interrupt request flag is set and an
+                   517   ; ccu63.c   348 //                interrupt is triggered (only if enabled).
+                   518   ; ccu63.c   349 //                Please note that you have to add application specific code
+                   519   ; ccu63.c   350 //                to this function.
+                   520   ; ccu63.c   351 //
+                   521   ; ccu63.c   352 //----------------------------------------------------------------------------
+                   522   ; ccu63.c   353 // @Returnvalue   None
+                   523   ; ccu63.c   354 //
+                   524   ; ccu63.c   355 //----------------------------------------------------------------------------
+                   525   ; ccu63.c   356 // @Parameters    None
+                   526   ; ccu63.c   357 //
+                   527   ; ccu63.c   358 //----------------------------------------------------------------------------
+                   528   ; ccu63.c   359 // @Date          30.09.2021
+                   529   ; ccu63.c   360 //
+                   530   ; ccu63.c   361 //****************************************************************************
+                   531   ; ccu63.c   362 
+                   532   ; ccu63.c   363 // USER CODE BEGIN (NodeI0,1)
+                   533   ; ccu63.c   364 
+                   534   ; ccu63.c   365 // USER CODE END
+                   535   ; ccu63.c   366 
+                   536   ; ccu63.c   367 _interrupt(CCU63_NodeI0_INT) void CCU63_viNodeI0(void) {
+               R   537           ?SYMB   'CCU63_viNodeI0',_CCU63_viNodeI0,37,1
+                   538           ?SYMB   '',367,8,16
+                   539   _CCU63_viNodeI0 PROC TASK CCU63_TASK INTNO CCU63_INUM = 03Ch
+                   540           ?LINE   367
+                   541           ?SYMB   '',00H,95,0
+00C2 F6F00000  R   542           MOV     CCU63_RB,R0
+00C6 C6080000  R   543           SCXT    CP,#CCU63_RB
+00CA C6871000      544           SCXT    MDC,#010h
+00CE EC00          545           PUSH    DPP0
+00D0 E6000000  R   546           MOV     DPP0,#PAG ?BASE_DPP0
+00D4 CC00          547           NOP
+00D6 EC02          548           PUSH    DPP2
+00D8 E6020000  R   549           MOV     DPP2,#PAG ?BASE_DPP2
+00DC CC00          550           NOP
+00DE EC06          551           PUSH    MDH
+00E0 EC07          552           PUSH    MDL
+00E2 ECEF          553           PUSH    MSW
+00E4 EC2E          554           PUSH    MAL
+00E6 EC2F          555           PUSH    MAH
+00E8 ECEE          556           PUSH    MCW
+00EA C6ED0000      557           SCXT    MRW,#00h
+00EE EC84          558           PUSH    IDX0
+00F0 EC85          559           PUSH    IDX1
+00F2 D180          560           EXTR    #01h
+00F4 EC00     1    561           PUSH    QX0
+00F6 D180          562           EXTR    #01h
+00F8 EC01     1    563           PUSH    QX1
+00FA D180          564           EXTR    #01h
+00FC EC02     1    565           PUSH    QR0
+00FE D180          566           EXTR    #01h
+0100 EC03     1    567           PUSH    QR1
+                   568   ; Locals:
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 15:31:51  Page:  12
 ccu63
 
  LOC CODE        LINE   SOURCELINE
 
-                   606   ; ccu63.c   395   {
-                   607   ; ccu63.c   396     // Timer T12 one match detection
-                   608   ; ccu63.c   397 
-                   609   ; ccu63.c   398     // USER CODE BEGIN (NodeI0,20)
-                   610   ; ccu63.c   399                 CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_0, table[(index 
-                         + OFFSET_L1)%ARRAY_SIZE]*(0.0145*frequency+0.2) + (HALF_PERIODVALUE)); // float-Rechnung nicht 
-                         ersetzt weil 1.keine Rechenzeitprobleme/ Zeit nicht woanders nötig 2.bei Verwendung von long wü
-                         rden durch die Skalierung 2 long-Rechenoperationen und eine float-Rechenoperationen hinzu komme
-                         n
-                   611           ?LINE   399
-010E F2FC0000  R   612           MOV     R12,_index
-0112 02FC0000  R   613           ADD     R12,_OFFSET_L1
-0116 F2FD0000  R   614           MOV     R13,_ARRAY_SIZE
-011A F6FC0EFE      615           MOV     MDL,R12
-011E 5BDD          616           DIVU    R13
-0120 F2FC0CFE      617           MOV     R12,MDH
-0124 5C1C          618           SHL     R12,#01h
-0126 D4BC0000  R   619           MOV     R11,[R12+#_table]
-012A F04B          620           MOV     R4,R11
-012C DA000000  R   621           CALLS   SEG __cif28r,__cif28r
-               R   622           ?SYMB   '',$,96,8
-0130 F0BA          623           MOV     R11,R10
-0132 F2F40000  R   624           MOV     R4,_frequency
-0136 DA000000  R   625           CALLS   SEG __cuf28r,__cuf28r
-               R   626           ?SYMB   '',$,96,16
-013A F0CB          627           MOV     R12,R11
-013C F0BA          628           MOV     R11,R10
-013E E6F40000  R   629           MOV     R4,#_3
-0142 DA000000  R   630           CALLS   SEG __load8n,__load8n
-               R   631           ?SYMB   '',$,96,24
-0146 DA000000  R   632           CALLS   SEG __mlf8r,__mlf8r
-014A F0BA          633           MOV     R11,R10
-014C E6F40000  R   634           MOV     R4,#_4
-0150 DA000000  R   635           CALLS   SEG __load8n,__load8n
-               R   636           ?SYMB   '',$,96,32
-0154 DA000000  R   637           CALLS   SEG __adf8r,__adf8r
-0158 F0BC          638           MOV     R11,R12
-015A DA000000  R   639           CALLS   SEG __mlf8r,__mlf8r
-015E F0BA          640           MOV     R11,R10
-0160 F2F40000  R   641           MOV     R4,_HALF_PERIODVALUE
-0164 DA000000  R   642           CALLS   SEG __cuf28r,__cuf28r
-               R   643           ?SYMB   '',$,96,40
-0168 DA000000  R   644           CALLS   SEG __adf8r,__adf8r
-016C DA000000  R   645           CALLS   SEG __cfu82r,__cfu82r
-0170 06F02800      646           ADD     R0,#028h
-               R   647           ?SYMB   '',$,96,0
-0174 F6F4A0EB      648           MOV     0EBA0h,R4
-                   649   ; ccu63.c   400                 CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_1, table[(index 
-                         + OFFSET_L2)%ARRAY_SIZE]*(0.0145*frequency+0.2) + (HALF_PERIODVALUE));
-                   650           ?LINE   400
-0178 F2FC0000  R   651           MOV     R12,_index
-017C 02FC0000  R   652           ADD     R12,_OFFSET_L2
-0180 F2FD0000  R   653           MOV     R13,_ARRAY_SIZE
-0184 F6FC0EFE      654           MOV     MDL,R12
-0188 5BDD          655           DIVU    R13
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:54:42  Page:  13
+                   569   ; 
+                   570   ; Statics:
+                   571   ; 
+                   572   ; CSEs:
+                   573   ; 
+                   574   ; ccu63.c   368         // USER CODE BEGIN (NodeI0,2)
+                   575   ; ccu63.c   369 
+                   576   ; ccu63.c   370         // USER CODE END
+                   577   ; ccu63.c   371 
+                   578   ; ccu63.c   372         if (CCU63_IS & 0x0040)  // if CCU63_IS_T12OM
+                   579           ?LINE   372
+0102 F2FCD0EB      580           MOV     R12,0EBD0h
+0106 8AFC0260      581           JB      R12.6,_9
+010A EA006002  R   582           JMPA+   cc_UC,_7
+010E               583   _9:
+                   584   ; ccu63.c   373         {
+                   585   ; ccu63.c   374                 // Timer T12 one match detection
+                   586   ; ccu63.c   375 
+                   587   ; ccu63.c   376                 // USER CODE BEGIN (NodeI0,20)
+                   588   ; ccu63.c   377                 // laden der Schattenregister mit den nächsten Werten der Sinus
+                          Wertetabelle
+                   589   ; ccu63.c   378                 // U/f Steuerung mit Spannungsboost skaliert Amplitude
+                   590   ; ccu63.c   379                 // konstante Verschiebung des Gleichanteils um HALF_Periodvalue
+                   591   ; ccu63.c   380                 // float-Rechnung nicht ersetzt weil 1.keine Rechenzeitprobleme
+                         / Zeit nicht woanders nötig
+                   592   ; ccu63.c   381                 // 2.bei Verwendung von long würden durch die Skalierung 2 long
+                         -Rechenoperationen und eine float-Rechenoperationen hinzu kommen
+                   593   ; ccu63.c   382                 CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_0, table[(index 
+                         + OFFSET_L1) % ARRAY_SIZE] * (0.0145 * frequency + 0.2) + (HALF_PERIODVALUE));
+                   594           ?LINE   382
+010E F2FC0000  R   595           MOV     R12,_index
+0112 02FC0000  R   596           ADD     R12,_OFFSET_L1
+0116 F2FD0000  R   597           MOV     R13,_ARRAY_SIZE
+011A F6FC0EFE      598           MOV     MDL,R12
+011E 5BDD          599           DIVU    R13
+0120 F2FC0CFE      600           MOV     R12,MDH
+0124 5C1C          601           SHL     R12,#01h
+0126 D4BC0000  R   602           MOV     R11,[R12+#_table]
+012A F04B          603           MOV     R4,R11
+012C DA000000  R   604           CALLS   SEG __cif28r,__cif28r
+               R   605           ?SYMB   '',$,96,8
+0130 F0BA          606           MOV     R11,R10
+0132 F2F40000  R   607           MOV     R4,_frequency
+0136 DA000000  R   608           CALLS   SEG __cuf28r,__cuf28r
+               R   609           ?SYMB   '',$,96,16
+013A F0CB          610           MOV     R12,R11
+013C F0BA          611           MOV     R11,R10
+013E E6F40000  R   612           MOV     R4,#_3
+0142 DA000000  R   613           CALLS   SEG __load8n,__load8n
+               R   614           ?SYMB   '',$,96,24
+0146 DA000000  R   615           CALLS   SEG __mlf8r,__mlf8r
+014A F0BA          616           MOV     R11,R10
+014C E6F40000  R   617           MOV     R4,#_4
+0150 DA000000  R   618           CALLS   SEG __load8n,__load8n
+               R   619           ?SYMB   '',$,96,32
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 15:31:51  Page:  13
 ccu63
 
  LOC CODE        LINE   SOURCELINE
 
-018A F2FC0CFE      656           MOV     R12,MDH
-018E 5C1C          657           SHL     R12,#01h
-0190 D4BC0000  R   658           MOV     R11,[R12+#_table]
-0194 F04B          659           MOV     R4,R11
-0196 DA000000  R   660           CALLS   SEG __cif28r,__cif28r
-               R   661           ?SYMB   '',$,96,8
-019A F0BA          662           MOV     R11,R10
-019C F2F40000  R   663           MOV     R4,_frequency
-01A0 DA000000  R   664           CALLS   SEG __cuf28r,__cuf28r
-               R   665           ?SYMB   '',$,96,16
-01A4 F0CB          666           MOV     R12,R11
-01A6 F0BA          667           MOV     R11,R10
-01A8 E6F40000  R   668           MOV     R4,#_3
-01AC DA000000  R   669           CALLS   SEG __load8n,__load8n
-               R   670           ?SYMB   '',$,96,24
-01B0 DA000000  R   671           CALLS   SEG __mlf8r,__mlf8r
-01B4 F0BA          672           MOV     R11,R10
-01B6 E6F40000  R   673           MOV     R4,#_4
-01BA DA000000  R   674           CALLS   SEG __load8n,__load8n
-               R   675           ?SYMB   '',$,96,32
-01BE DA000000  R   676           CALLS   SEG __adf8r,__adf8r
-01C2 F0BC          677           MOV     R11,R12
-01C4 DA000000  R   678           CALLS   SEG __mlf8r,__mlf8r
-01C8 F0BA          679           MOV     R11,R10
-01CA F2F40000  R   680           MOV     R4,_HALF_PERIODVALUE
-01CE DA000000  R   681           CALLS   SEG __cuf28r,__cuf28r
-               R   682           ?SYMB   '',$,96,40
-01D2 DA000000  R   683           CALLS   SEG __adf8r,__adf8r
-01D6 DA000000  R   684           CALLS   SEG __cfu82r,__cfu82r
-01DA 06F02800      685           ADD     R0,#028h
-               R   686           ?SYMB   '',$,96,0
-01DE F6F4A2EB      687           MOV     0EBA2h,R4
-                   688   ; ccu63.c   401                 CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_2, table[(index 
-                         + OFFSET_L3)%ARRAY_SIZE]*(0.0145*frequency+0.2) + (HALF_PERIODVALUE));
-                   689           ?LINE   401
-01E2 F2FC0000  R   690           MOV     R12,_index
-01E6 02FC0000  R   691           ADD     R12,_OFFSET_L3
-01EA F2FD0000  R   692           MOV     R13,_ARRAY_SIZE
-01EE F6FC0EFE      693           MOV     MDL,R12
-01F2 5BDD          694           DIVU    R13
-01F4 F2FC0CFE      695           MOV     R12,MDH
-01F8 5C1C          696           SHL     R12,#01h
-01FA D4BC0000  R   697           MOV     R11,[R12+#_table]
-01FE F04B          698           MOV     R4,R11
-0200 DA000000  R   699           CALLS   SEG __cif28r,__cif28r
-               R   700           ?SYMB   '',$,96,8
-0204 F0BA          701           MOV     R11,R10
-0206 F2F40000  R   702           MOV     R4,_frequency
-020A DA000000  R   703           CALLS   SEG __cuf28r,__cuf28r
-               R   704           ?SYMB   '',$,96,16
-020E F0CB          705           MOV     R12,R11
-0210 F0BA          706           MOV     R11,R10
-0212 E6F40000  R   707           MOV     R4,#_3
-0216 DA000000  R   708           CALLS   SEG __load8n,__load8n
-               R   709           ?SYMB   '',$,96,24
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:54:42  Page:  14
+0154 DA000000  R   620           CALLS   SEG __adf8r,__adf8r
+0158 F0BC          621           MOV     R11,R12
+015A DA000000  R   622           CALLS   SEG __mlf8r,__mlf8r
+015E F0BA          623           MOV     R11,R10
+0160 F2F40000  R   624           MOV     R4,_HALF_PERIODVALUE
+0164 DA000000  R   625           CALLS   SEG __cuf28r,__cuf28r
+               R   626           ?SYMB   '',$,96,40
+0168 DA000000  R   627           CALLS   SEG __adf8r,__adf8r
+016C DA000000  R   628           CALLS   SEG __cfu82r,__cfu82r
+0170 06F02800      629           ADD     R0,#028h
+               R   630           ?SYMB   '',$,96,0
+0174 F6F4A0EB      631           MOV     0EBA0h,R4
+                   632   ; ccu63.c   383                 CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_1, table[(index 
+                         + OFFSET_L2) % ARRAY_SIZE] * (0.0145 * frequency + 0.2) + (HALF_PERIODVALUE));
+                   633           ?LINE   383
+0178 F2FC0000  R   634           MOV     R12,_index
+017C 02FC0000  R   635           ADD     R12,_OFFSET_L2
+0180 F2FD0000  R   636           MOV     R13,_ARRAY_SIZE
+0184 F6FC0EFE      637           MOV     MDL,R12
+0188 5BDD          638           DIVU    R13
+018A F2FC0CFE      639           MOV     R12,MDH
+018E 5C1C          640           SHL     R12,#01h
+0190 D4BC0000  R   641           MOV     R11,[R12+#_table]
+0194 F04B          642           MOV     R4,R11
+0196 DA000000  R   643           CALLS   SEG __cif28r,__cif28r
+               R   644           ?SYMB   '',$,96,8
+019A F0BA          645           MOV     R11,R10
+019C F2F40000  R   646           MOV     R4,_frequency
+01A0 DA000000  R   647           CALLS   SEG __cuf28r,__cuf28r
+               R   648           ?SYMB   '',$,96,16
+01A4 F0CB          649           MOV     R12,R11
+01A6 F0BA          650           MOV     R11,R10
+01A8 E6F40000  R   651           MOV     R4,#_3
+01AC DA000000  R   652           CALLS   SEG __load8n,__load8n
+               R   653           ?SYMB   '',$,96,24
+01B0 DA000000  R   654           CALLS   SEG __mlf8r,__mlf8r
+01B4 F0BA          655           MOV     R11,R10
+01B6 E6F40000  R   656           MOV     R4,#_4
+01BA DA000000  R   657           CALLS   SEG __load8n,__load8n
+               R   658           ?SYMB   '',$,96,32
+01BE DA000000  R   659           CALLS   SEG __adf8r,__adf8r
+01C2 F0BC          660           MOV     R11,R12
+01C4 DA000000  R   661           CALLS   SEG __mlf8r,__mlf8r
+01C8 F0BA          662           MOV     R11,R10
+01CA F2F40000  R   663           MOV     R4,_HALF_PERIODVALUE
+01CE DA000000  R   664           CALLS   SEG __cuf28r,__cuf28r
+               R   665           ?SYMB   '',$,96,40
+01D2 DA000000  R   666           CALLS   SEG __adf8r,__adf8r
+01D6 DA000000  R   667           CALLS   SEG __cfu82r,__cfu82r
+01DA 06F02800      668           ADD     R0,#028h
+               R   669           ?SYMB   '',$,96,0
+01DE F6F4A2EB      670           MOV     0EBA2h,R4
+                   671   ; ccu63.c   384                 CCU63_vLoadChannelShadowRegister(CCU63_CHANNEL_2, table[(index 
+                         + OFFSET_L3) % ARRAY_SIZE] * (0.0145 * frequency + 0.2) + (HALF_PERIODVALUE));
+                   672           ?LINE   384
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 15:31:51  Page:  14
 ccu63
 
  LOC CODE        LINE   SOURCELINE
 
-021A DA000000  R   710           CALLS   SEG __mlf8r,__mlf8r
-021E F0BA          711           MOV     R11,R10
-0220 E6F40000  R   712           MOV     R4,#_4
-0224 DA000000  R   713           CALLS   SEG __load8n,__load8n
-               R   714           ?SYMB   '',$,96,32
-0228 DA000000  R   715           CALLS   SEG __adf8r,__adf8r
-022C F0BC          716           MOV     R11,R12
-022E DA000000  R   717           CALLS   SEG __mlf8r,__mlf8r
-0232 F0BA          718           MOV     R11,R10
-0234 F2F40000  R   719           MOV     R4,_HALF_PERIODVALUE
-0238 DA000000  R   720           CALLS   SEG __cuf28r,__cuf28r
-               R   721           ?SYMB   '',$,96,40
-023C DA000000  R   722           CALLS   SEG __adf8r,__adf8r
-0240 DA000000  R   723           CALLS   SEG __cfu82r,__cfu82r
-0244 06F02800      724           ADD     R0,#028h
-               R   725           ?SYMB   '',$,96,0
-0248 F6F4A4EB      726           MOV     0EBA4h,R4
-                   727   ; ccu63.c   402                 CCU63_vEnableShadowTransfer(CCU63_TIMER_12);
-                   728           ?LINE   402
-024C E6FCA6EB      729           MOV     R12,#0EBA6h
-0250 A8DC          730           MOV     R13,[R12]
-0252 6FFD          731           BSET    R13.6
-0254 B8DC          732           MOV     [R12],R13
-                   733   ; ccu63.c   403     // USER CODE END
-                   734   ; ccu63.c   404 
-                   735   ; ccu63.c   405     CCU63_ISR |= 0x0040;  // clear flag CCU63_IS_T12OM
-                   736           ?LINE   405
-0256 E6FCD4EB      737           MOV     R12,#0EBD4h
-025A A8DC          738           MOV     R13,[R12]
-025C 6FFD          739           BSET    R13.6
-025E B8DC          740           MOV     [R12],R13
-                   741   ; ccu63.c   406   }
-                   742           ?LINE   406
-0260               743   _7:
-                   744   ; ccu63.c   407 
-                   745   ; ccu63.c   408   if(CCU63_IS & 0x0080)  // if CCU63_IS_T12PM
-                   746           ?LINE   408
-0260 F2FCD0EB      747           MOV     R12,0EBD0h
-0264 9AFC0570      748           JNB     R12.7,_8
-                   749   ; ccu63.c   409   {
-                   750   ; ccu63.c   410     // Timer T12 period match detection
-                   751   ; ccu63.c   411 
-                   752   ; ccu63.c   412     // USER CODE BEGIN (NodeI0,19)
-                   753   ; ccu63.c   413     // USER CODE END
-                   754   ; ccu63.c   414 
-                   755   ; ccu63.c   415     CCU63_ISR |= 0x0080;  // clear flag CCU63_IS_T12PM
-                   756           ?LINE   415
-0268 E6FCD4EB      757           MOV     R12,#0EBD4h
-026C A8DC          758           MOV     R13,[R12]
-026E 7FFD          759           BSET    R13.7
-0270 B8DC          760           MOV     [R12],R13
-                   761   ; ccu63.c   416   }
-                   762           ?LINE   416
-0272               763   _8:
-                   764   ; ccu63.c   417 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:54:42  Page:  15
+01E2 F2FC0000  R   673           MOV     R12,_index
+01E6 02FC0000  R   674           ADD     R12,_OFFSET_L3
+01EA F2FD0000  R   675           MOV     R13,_ARRAY_SIZE
+01EE F6FC0EFE      676           MOV     MDL,R12
+01F2 5BDD          677           DIVU    R13
+01F4 F2FC0CFE      678           MOV     R12,MDH
+01F8 5C1C          679           SHL     R12,#01h
+01FA D4BC0000  R   680           MOV     R11,[R12+#_table]
+01FE F04B          681           MOV     R4,R11
+0200 DA000000  R   682           CALLS   SEG __cif28r,__cif28r
+               R   683           ?SYMB   '',$,96,8
+0204 F0BA          684           MOV     R11,R10
+0206 F2F40000  R   685           MOV     R4,_frequency
+020A DA000000  R   686           CALLS   SEG __cuf28r,__cuf28r
+               R   687           ?SYMB   '',$,96,16
+020E F0CB          688           MOV     R12,R11
+0210 F0BA          689           MOV     R11,R10
+0212 E6F40000  R   690           MOV     R4,#_3
+0216 DA000000  R   691           CALLS   SEG __load8n,__load8n
+               R   692           ?SYMB   '',$,96,24
+021A DA000000  R   693           CALLS   SEG __mlf8r,__mlf8r
+021E F0BA          694           MOV     R11,R10
+0220 E6F40000  R   695           MOV     R4,#_4
+0224 DA000000  R   696           CALLS   SEG __load8n,__load8n
+               R   697           ?SYMB   '',$,96,32
+0228 DA000000  R   698           CALLS   SEG __adf8r,__adf8r
+022C F0BC          699           MOV     R11,R12
+022E DA000000  R   700           CALLS   SEG __mlf8r,__mlf8r
+0232 F0BA          701           MOV     R11,R10
+0234 F2F40000  R   702           MOV     R4,_HALF_PERIODVALUE
+0238 DA000000  R   703           CALLS   SEG __cuf28r,__cuf28r
+               R   704           ?SYMB   '',$,96,40
+023C DA000000  R   705           CALLS   SEG __adf8r,__adf8r
+0240 DA000000  R   706           CALLS   SEG __cfu82r,__cfu82r
+0244 06F02800      707           ADD     R0,#028h
+               R   708           ?SYMB   '',$,96,0
+0248 F6F4A4EB      709           MOV     0EBA4h,R4
+                   710   ; ccu63.c   385                 CCU63_vEnableShadowTransfer(CCU63_TIMER_12);
+                   711           ?LINE   385
+024C E6FCA6EB      712           MOV     R12,#0EBA6h
+0250 A8DC          713           MOV     R13,[R12]
+0252 6FFD          714           BSET    R13.6
+0254 B8DC          715           MOV     [R12],R13
+                   716   ; ccu63.c   386                 // USER CODE END
+                   717   ; ccu63.c   387 
+                   718   ; ccu63.c   388                 CCU63_ISR |= 0x0040;  // clear flag CCU63_IS_T12OM
+                   719           ?LINE   388
+0256 E6FCD4EB      720           MOV     R12,#0EBD4h
+025A A8DC          721           MOV     R13,[R12]
+025C 6FFD          722           BSET    R13.6
+025E B8DC          723           MOV     [R12],R13
+                   724   ; ccu63.c   389         }
+                   725           ?LINE   389
+0260               726   _7:
+                   727   ; ccu63.c   390 
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 15:31:51  Page:  15
 ccu63
 
  LOC CODE        LINE   SOURCELINE
 
-                   765   ; ccu63.c   418 
-                   766   ; ccu63.c   419 } //  End of function CCU63_viNodeI0
-                   767           ?LINE   419
-0272 D180          768           EXTR    #01h
-0274 FC03     1    769           POP     QR1
-0276 D180          770           EXTR    #01h
-0278 FC02     1    771           POP     QR0
-027A D180          772           EXTR    #01h
-027C FC01     1    773           POP     QX1
-027E D180          774           EXTR    #01h
-0280 FC00     1    775           POP     QX0
-0282 FC85          776           POP     IDX1
-0284 FC84          777           POP     IDX0
-0286 FCED          778           POP     MRW
-0288 FCEE          779           POP     MCW
-028A FC2F          780           POP     MAH
-028C FC2E          781           POP     MAL
-028E FCEF          782           POP     MSW
-0290 FC07          783           POP     MDL
-0292 FC06          784           POP     MDH
-0294 FC02          785           POP     DPP2
-0296 FC00          786           POP     DPP0
-0298 FC87          787           POP     MDC
-029A FC08          788           POP     CP
-                   789           ?LINE   419
-029C FB88          790           RETI
-                   791   _CCU63_viNodeI0 ENDP
-               R   792           ?SYMB   '',$,17,419
-                   793   ; ccu63.c   420 
-                   794   ; ccu63.c   421 
-                   795   ; ccu63.c   422 
-                   796   ; ccu63.c   423 
-                   797   ; ccu63.c   424 // USER CODE BEGIN (CCU63_General,10)
-                   798   ; ccu63.c   425 
-                   799   ; ccu63.c   426 // USER CODE END
-                   800   ; ccu63.c   427 
-                   801   CCU63_1_PR      ENDS
-                   802   
-                   803   CCU63_2_CO      SECTION LDAT WORD PUBLIC 'CROM'
-0000               804   _4      LABEL   WORD
-0000 C93F9999      805           DW      03FC9h,09999h,09999h,0999Ah
+                   728   ; ccu63.c   391         if (CCU63_IS & 0x0080)  // if CCU63_IS_T12PM
+                   729           ?LINE   391
+0260 F2FCD0EB      730           MOV     R12,0EBD0h
+0264 9AFC0570      731           JNB     R12.7,_8
+                   732   ; ccu63.c   392         {
+                   733   ; ccu63.c   393                 // Timer T12 period match detection
+                   734   ; ccu63.c   394 
+                   735   ; ccu63.c   395                 // USER CODE BEGIN (NodeI0,19)
+                   736   ; ccu63.c   396                 // USER CODE END
+                   737   ; ccu63.c   397 
+                   738   ; ccu63.c   398                 CCU63_ISR |= 0x0080;  // clear flag CCU63_IS_T12PM
+                   739           ?LINE   398
+0268 E6FCD4EB      740           MOV     R12,#0EBD4h
+026C A8DC          741           MOV     R13,[R12]
+026E 7FFD          742           BSET    R13.7
+0270 B8DC          743           MOV     [R12],R13
+                   744   ; ccu63.c   399         }
+                   745           ?LINE   399
+0272               746   _8:
+                   747   ; ccu63.c   400 
+                   748   ; ccu63.c   401 }  //  End of function CCU63_viNodeI0
+                   749           ?LINE   401
+0272 D180          750           EXTR    #01h
+0274 FC03     1    751           POP     QR1
+0276 D180          752           EXTR    #01h
+0278 FC02     1    753           POP     QR0
+027A D180          754           EXTR    #01h
+027C FC01     1    755           POP     QX1
+027E D180          756           EXTR    #01h
+0280 FC00     1    757           POP     QX0
+0282 FC85          758           POP     IDX1
+0284 FC84          759           POP     IDX0
+0286 FCED          760           POP     MRW
+0288 FCEE          761           POP     MCW
+028A FC2F          762           POP     MAH
+028C FC2E          763           POP     MAL
+028E FCEF          764           POP     MSW
+0290 FC07          765           POP     MDL
+0292 FC06          766           POP     MDH
+0294 FC02          767           POP     DPP2
+0296 FC00          768           POP     DPP0
+0298 FC87          769           POP     MDC
+029A FC08          770           POP     CP
+                   771           ?LINE   401
+029C FB88          772           RETI
+                   773   _CCU63_viNodeI0 ENDP
+               R   774           ?SYMB   '',$,17,401
+                   775   ; ccu63.c   402 
+                   776   ; ccu63.c   403 // USER CODE BEGIN (CCU63_General,10)
+                   777   ; ccu63.c   404 
+                   778   ; ccu63.c   405 // USER CODE END
+                   779   CCU63_1_PR      ENDS
+                   780   
+                   781   CCU63_2_CO      SECTION LDAT WORD PUBLIC 'CROM'
+0000               782   _4      LABEL   WORD
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 15:31:51  Page:  16
+ccu63
+
+ LOC CODE        LINE   SOURCELINE
+
+0000 C93F9999      783           DW      03FC9h,09999h,09999h,0999Ah
 0004 99999A99    
-0008               806   _3      LABEL   WORD
-0008 8D3F2DB2      807           DW      03F8Dh,0B22Dh,0E56h,0419h
+0008               784   _3      LABEL   WORD
+0008 8D3F2DB2      785           DW      03F8Dh,0B22Dh,0E56h,0419h
 000C 560E1904    
-                   808   CCU63_2_CO      ENDS
-                   809   
-                   810   C166_US SECTION LDAT WORD GLBUSRSTACK 'CUSTACK'
-0000               811           DS      40
-                   812   C166_US ENDS
-                   813   
-                   814   $FLOAT(ANSI)
-                   815           EXTERN  _HALF_PERIODVALUE:WORD
-                   816           EXTERN  _frequency:WORD
-                   817           EXTERN  _table:WORD
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:54:42  Page:  16
-ccu63
-
- LOC CODE        LINE   SOURCELINE
-
-                   818           ?SYMB   '',010H,5,263
-                   819           EXTERN  _ARRAY_SIZE:WORD
-                   820           EXTERN  _index:WORD
-                   821           EXTERN  _OFFSET_L1:WORD
-                   822           EXTERN  _OFFSET_L3:WORD
-                   823           EXTERN  _OFFSET_L2:WORD
-                   824           EXTERN  __cif28r:FAR
-                   825           EXTERN  __cuf28r:FAR
-                   826           EXTERN  __load8n:FAR
-                   827           EXTERN  __mlf8r:FAR
-                   828           EXTERN  __adf8r:FAR
-                   829           EXTERN  __cfu82r:FAR
-                   830   CCU63_RB        REGDEF  R0-R15
-                   831           END
+                   786   CCU63_2_CO      ENDS
+                   787   
+                   788   C166_US SECTION LDAT WORD GLBUSRSTACK 'CUSTACK'
+0000               789           DS      40
+                   790   C166_US ENDS
+                   791   
+                   792   $FLOAT(ANSI)
+                   793           EXTERN  _HALF_PERIODVALUE:WORD
+                   794           EXTERN  _frequency:WORD
+                   795           EXTERN  _table:WORD
+                   796           ?SYMB   '',010H,5,263
+                   797           EXTERN  _ARRAY_SIZE:WORD
+                   798           EXTERN  _index:WORD
+                   799           EXTERN  _OFFSET_L1:WORD
+                   800           EXTERN  _OFFSET_L3:WORD
+                   801           EXTERN  _OFFSET_L2:WORD
+                   802           EXTERN  __cif28r:FAR
+                   803           EXTERN  __cuf28r:FAR
+                   804           EXTERN  __load8n:FAR
+                   805           EXTERN  __mlf8r:FAR
+                   806           EXTERN  __adf8r:FAR
+                   807           EXTERN  __cfu82r:FAR
+                   808   CCU63_RB        REGDEF  R0-R15
+                   809           END
 
 total errors: 0, warnings: 0
 

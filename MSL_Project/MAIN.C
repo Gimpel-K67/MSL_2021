@@ -493,13 +493,13 @@ unsigned int calculateMotorFrequency(unsigned int _frequency) {
 void setPhaseChange(int dir) {
 	if (dir == clockwise) {
 		OFFSET_L1 = 0;
-		OFFSET_L2 = (2 * ARRAY_SIZE) / 3;
-		OFFSET_L3 = ARRAY_SIZE / 3;
+		OFFSET_L2 = ARRAY_SIZE / 3;
+		OFFSET_L3 = (2 * ARRAY_SIZE) / 3;
 	}
 	if (dir == counterclockwise) {
 		OFFSET_L1 = 0;
-		OFFSET_L2 = ARRAY_SIZE / 3;
-		OFFSET_L3 = (2 * ARRAY_SIZE) / 3;
+		OFFSET_L2 = (2 * ARRAY_SIZE) / 3;
+		OFFSET_L3 = ARRAY_SIZE / 3;
 	}
 }
 
