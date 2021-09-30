@@ -12,15 +12,13 @@
 // @Description   This file contains the project initialization function.
 //
 //----------------------------------------------------------------------------
-// @Date          30.09.2021 14:42:53
+// @Date          29.09.2021 09:41:08
 //
 //****************************************************************************
 
 // USER CODE BEGIN (MAIN_General,1)
 
 // USER CODE END
-
-
 
 //****************************************************************************
 // @Project Includes
@@ -32,7 +30,6 @@
 #include <math.h>
 // USER CODE END
 
-
 //****************************************************************************
 // @Macros
 //****************************************************************************
@@ -40,7 +37,6 @@
 // USER CODE BEGIN (MAIN_General,3)
 
 // USER CODE END
-
 
 //****************************************************************************
 // @Defines
@@ -52,7 +48,6 @@
 #define counterclockwise (1)
 // USER CODE END
 
-
 //****************************************************************************
 // @Typedefs
 //****************************************************************************
@@ -61,7 +56,6 @@
 
 // USER CODE END
 
-
 //****************************************************************************
 // @Imported Global Variables
 //****************************************************************************
@@ -69,7 +63,6 @@
 // USER CODE BEGIN (MAIN_General,6)
 
 // USER CODE END
-
 
 //****************************************************************************
 // @Global Variables
@@ -104,7 +97,6 @@ const float K_i = 0.01;
 const unsigned int HALF_PERIODVALUE = 901;
 // USER CODE END
 
-
 //****************************************************************************
 // @External Prototypes
 //****************************************************************************
@@ -112,7 +104,6 @@ const unsigned int HALF_PERIODVALUE = 901;
 // USER CODE BEGIN (MAIN_General,8)
 
 // USER CODE END
-
 
 //****************************************************************************
 // @Prototypes Of Local Functions
@@ -129,9 +120,8 @@ void setPhaseChange(int dir);
 unsigned int controller(int input);
 // USER CODE END
 
-
 //****************************************************************************
-// @Function      void MAIN_vInit(void) 
+// @Function      void MAIN_vInit(void)
 //
 //----------------------------------------------------------------------------
 // @Description   This function initializes the microcontroller.
@@ -143,7 +133,7 @@ unsigned int controller(int input);
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          30.09.2021
+// @Date          29.09.2021
 //
 //****************************************************************************
 
@@ -151,70 +141,67 @@ unsigned int controller(int input);
 
 // USER CODE END
 
-void MAIN_vInit(void)
-{
-  // USER CODE BEGIN (Init,2)
-  // USER CODE END
+void MAIN_vInit(void) {
+	// USER CODE BEGIN (Init,2)
 
-  //   globally disable interrupts
-  PSW_IEN        =  0;          
+	// USER CODE END
 
+	//   globally disable interrupts
+	PSW_IEN = 0;
 
-  ///  -----------------------------------------------------------------------
-  ///  Configuration of the System Clock:
-  ///  -----------------------------------------------------------------------
-  ///  - VCO clock used, input clock is connected
-  ///  - input frequency is 10,00 MHz
-  ///  - configured system frequency is 66,00 MHz
+	///  -----------------------------------------------------------------------
+	///  Configuration of the System Clock:
+	///  -----------------------------------------------------------------------
+	///  - VCO clock used, input clock is connected
+	///  - input frequency is 10,00 MHz
+	///  - configured system frequency is 66,00 MHz
 
-  MAIN_vUnlockProtecReg();     // unlock write security
+	MAIN_vUnlockProtecReg();  // unlock write security
 
-  MAIN_vChangeFreq();          // load PLL control register
+	MAIN_vChangeFreq();	 // load PLL control register
 
-  //   -----------------------------------------------------------------------
-  //   Initialization of the Peripherals:
-  //   -----------------------------------------------------------------------
+	//   -----------------------------------------------------------------------
+	//   Initialization of the Peripherals:
+	//   -----------------------------------------------------------------------
 
-  //   initializes the Parallel Ports
-  IO_vInit();
+	//   initializes the Parallel Ports
+	IO_vInit();
 
-  //   initializes the General Purpose Timer Unit (GPT1)
-  GPT1_vInit();
+	//   initializes the General Purpose Timer Unit (GPT1)
+	GPT1_vInit();
 
-  //   initializes the General Purpose Timer Unit (GPT2)
-  GPT2_vInit();
+	//   initializes the General Purpose Timer Unit (GPT2)
+	GPT2_vInit();
 
-  //   initializes the Capture / Compare Unit 62 (CCU62)
-  CCU62_vInit();
+	//   initializes the Capture / Compare Unit 62 (CCU62)
+	CCU62_vInit();
 
-  //   initializes the Capture / Compare Unit 63 (CCU63)
-  CCU63_vInit();
+	//   initializes the Capture / Compare Unit 63 (CCU63)
+	CCU63_vInit();
 
-  //   initializes the Analog / Digital Converter  (ADC0)
-  ADC0_vInit();
+	//   initializes the Analog / Digital Converter  (ADC0)
+	ADC0_vInit();
 
+	//   -----------------------------------------------------------------------
+	//   Initialization of the Bank Select registers:
+	//   -----------------------------------------------------------------------
 
-  //   -----------------------------------------------------------------------
-  //   Initialization of the Bank Select registers:
-  //   -----------------------------------------------------------------------
+	// USER CODE BEGIN (Init,3)
 
+	// USER CODE END
 
-  // USER CODE BEGIN (Init,3)
-  // USER CODE END
+	MAIN_vLockProtecReg();	// lock write security
 
-  MAIN_vLockProtecReg();       // lock write security
+	//   globally enable interrupts
+	PSW_IEN = 1;
 
-  //   globally enable interrupts
-  PSW_IEN        =  1;          
-
-} //  End of function MAIN_vInit
-
+}  //  End of function MAIN_vInit
 
 //****************************************************************************
-// @Function      void MAIN_vUnlockProtecReg(void) 
+// @Function      void MAIN_vUnlockProtecReg(void)
 //
 //----------------------------------------------------------------------------
-// @Description   This function makes it possible to write one protected 
+// @Description   This function makes it possible to write one protected
 //                register.
 //
 //----------------------------------------------------------------------------
@@ -224,7 +211,7 @@ void MAIN_vInit(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          30.09.2021
+// @Date          29.09.2021
 //
 //****************************************************************************
 
@@ -232,27 +219,25 @@ void MAIN_vInit(void)
 
 // USER CODE END
 
-void MAIN_vUnlockProtecReg(void)
-{
-  uword uwPASSWORD;
+void MAIN_vUnlockProtecReg(void) {
+	uword uwPASSWORD;
 
-    SCU_SLC = 0xAAAA;                   // command 0
-    SCU_SLC = 0x5554;                   // command 1
+	SCU_SLC = 0xAAAA;  // command 0
+	SCU_SLC = 0x5554;  // command 1
 
-    uwPASSWORD = SCU_SLS & 0x00FF;
-    uwPASSWORD = (~uwPASSWORD) & 0x00FF;
+	uwPASSWORD = SCU_SLS & 0x00FF;
+	uwPASSWORD = (~uwPASSWORD) & 0x00FF;
 
-    SCU_SLC = 0x9600 | uwPASSWORD;      // command 2
-    SCU_SLC = 0x0000;                   // command 3
+	SCU_SLC = 0x9600 | uwPASSWORD;	// command 2
+	SCU_SLC = 0x0000;				// command 3
 
-} //  End of function MAIN_vUnlockProtecReg
-
+}  //  End of function MAIN_vUnlockProtecReg
 
 //****************************************************************************
-// @Function      void MAIN_vLockProtecReg(void) 
+// @Function      void MAIN_vLockProtecReg(void)
 //
 //----------------------------------------------------------------------------
-// @Description   This function makes it possible to lock one protected 
+// @Description   This function makes it possible to lock one protected
 //                register.
 //
 //----------------------------------------------------------------------------
@@ -262,7 +247,7 @@ void MAIN_vUnlockProtecReg(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          30.09.2021
+// @Date          29.09.2021
 //
 //****************************************************************************
 
@@ -270,28 +255,26 @@ void MAIN_vUnlockProtecReg(void)
 
 // USER CODE END
 
-void MAIN_vLockProtecReg(void)
-{
-  uword uwPASSWORD;
+void MAIN_vLockProtecReg(void) {
+	uword uwPASSWORD;
 
-    SCU_SLC = 0xAAAA;                   // command 0
-    SCU_SLC = 0x5554;                   // command 1
+	SCU_SLC = 0xAAAA;  // command 0
+	SCU_SLC = 0x5554;  // command 1
 
-    uwPASSWORD = SCU_SLS & 0x00FF;
-    uwPASSWORD = (~uwPASSWORD) & 0x00FF;
+	uwPASSWORD = SCU_SLS & 0x00FF;
+	uwPASSWORD = (~uwPASSWORD) & 0x00FF;
 
-    SCU_SLC = 0x9600 | uwPASSWORD;      // command 2
-    SCU_SLC = 0x1800;                   // command 3; new PASSWOR is 0x00
+	SCU_SLC = 0x9600 | uwPASSWORD;	// command 2
+	SCU_SLC = 0x1800;				// command 3; new PASSWOR is 0x00
 
-    uwPASSWORD = SCU_SLS & 0x00FF;
-    uwPASSWORD = (~uwPASSWORD) & 0x00FF;
-    SCU_SLC = 0x8E00 | uwPASSWORD;      // command 4
+	uwPASSWORD = SCU_SLS & 0x00FF;
+	uwPASSWORD = (~uwPASSWORD) & 0x00FF;
+	SCU_SLC = 0x8E00 | uwPASSWORD;	// command 4
 
-} //  End of function MAIN_vLockProtecReg
-
+}  //  End of function MAIN_vLockProtecReg
 
 //****************************************************************************
-// @Function      void MAIN_vChangeFreq(void) 
+// @Function      void MAIN_vChangeFreq(void)
 //
 //----------------------------------------------------------------------------
 // @Description   This function is used to select the external crystal and
@@ -304,7 +287,7 @@ void MAIN_vLockProtecReg(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          30.09.2021
+// @Date          29.09.2021
 //
 //****************************************************************************
 
@@ -312,51 +295,46 @@ void MAIN_vLockProtecReg(void)
 
 // USER CODE END
 
-void MAIN_vChangeFreq(void)
-{
-  SCS_SwitchToHighPrecBandgap();
+void MAIN_vChangeFreq(void) {
+	SCS_SwitchToHighPrecBandgap();
 
-  //For application and internal application resets, the complete PLL configuration could be avoided
-  //The entry from application resets and internal application reset is covered in the following differentiation
-  //in int/ext clock in lock/unlocked state.
+	//For application and internal application resets, the complete PLL configuration could be avoided
+	//The entry from application resets and internal application reset is covered in the following differentiation
+	//in int/ext clock in lock/unlocked state.
 
-  if  ((SCU_PLLSTAT & 0x0004) == 0x0004)             // fR derived from Internal clock
-        {
-            //Normal startup state during boot and the clock
-            //has to be in the next step configured on the external crystal
-            //use XTAL/VCO, count XTAL clock
+	if ((SCU_PLLSTAT & 0x0004) == 0x0004)  // fR derived from Internal clock
+	{
+		//Normal startup state during boot and the clock
+		//has to be in the next step configured on the external crystal
+		//use XTAL/VCO, count XTAL clock
 
-            SCS_StartXtalOsc(1);                     // Starts the crystal oscillator
-            SCS_SwitchSystemClock(1);                // System clock is increased to target speed (80/66 MHz)
+		SCS_StartXtalOsc(1);	   // Starts the crystal oscillator
+		SCS_SwitchSystemClock(1);  // System clock is increased to target speed (80/66 MHz)
 
-        }
+	}
 
-  else                                               // fR derived from external crystal clock
-        {
-            if ((SCU_PLLSTAT & 0x1009) == 0x1009)    // fR derived from external crystal clock + VCO is locked
-            {
-               //usually after an application reset where clock need not be configured again.
-               //check K2/P/N values and decide whether these values have to be adapted based on application needs.
-               NOP();
-               //usually the PLL losss of Lock TRAP schould be enabled here.
-            }
-            else                                     //fR derived from external crystal clock + VCO is not locked
+	else  // fR derived from external crystal clock
+	{
+		if ((SCU_PLLSTAT & 0x1009) == 0x1009)  // fR derived from external crystal clock + VCO is locked
+		{
+			//usually after an application reset where clock need not be configured again.
+			//check K2/P/N values and decide whether these values have to be adapted based on application needs.
+			NOP();
+			//usually the PLL losss of Lock TRAP schould be enabled here.
+		} else	//fR derived from external crystal clock + VCO is not locked
 
-            {
-               //estimate the K1 value and the current frequency
-               //reduce K2/P/N values in steps so that the frequency
-               //jumps is limited to 20MHz or factor of 5 whichever is minimum
-               NOP();
-            }
+		{
+			//estimate the K1 value and the current frequency
+			//reduce K2/P/N values in steps so that the frequency
+			//jumps is limited to 20MHz or factor of 5 whichever is minimum
+			NOP();
+		}
+	}
 
-
-        }
-
-} //  End of function MAIN_vChangeFreq
-
+}  //  End of function MAIN_vChangeFreq
 
 //****************************************************************************
-// @Function      void main(void) 
+// @Function      void main(void)
 //
 //----------------------------------------------------------------------------
 // @Description   This is the main function.
@@ -368,7 +346,7 @@ void MAIN_vChangeFreq(void)
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          30.09.2021
+// @Date          29.09.2021
 //
 //****************************************************************************
 
@@ -376,14 +354,14 @@ void MAIN_vChangeFreq(void)
 
 // USER CODE END
 
-void main(void)
-{
-  // USER CODE BEGIN (Main,2)
-  // USER CODE END
+void main(void) {
+	// USER CODE BEGIN (Main,2)
 
-  MAIN_vInit();
+	// USER CODE END
 
-  // USER CODE BEGIN (Main,3)
+	MAIN_vInit();
+
+	// USER CODE BEGIN (Main,3)
 	// einmalige Funktionen zum herstellen des Betriebszustandes
 	// generierung der Tabelle vor dem Starten der Timer
 	generateTable();
@@ -396,18 +374,18 @@ void main(void)
 	// Timer 12 von CCU62 starten
 	CCU62_vStartTmr(CCU62_TIMER_12);
 	// Timer 6 von GPT2 starten
-	GPT2_vStartTmr(GPT2_TIMER_6);  // USER CODE END
+	GPT2_vStartTmr(GPT2_TIMER_6);
+	// USER CODE END
 
-  while(1)
-  {
-
-   // USER CODE BEGIN (Main,4)
+	while (1) {
+		// USER CODE BEGIN (Main,4)
 
 		// one rampIndex step = 8ms, 250 steps = 2s
 		// Rechtslauf zu Beginn festlegen
 		if (rampIndex == 0) {
 			setPhaseChange(clockwise);
 		}
+		
 		// Drehzahlregelung mit Potentiometer
 		if (rampIndex > 5250) {
 			// lokale Variable für den ADC Messwert
@@ -422,6 +400,7 @@ void main(void)
 			// Übernahme des Schattenregisters erlauben
 			CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
 		}
+
 		// steigende Rampe Rechtslauf
 		if (rampIndex < 750) {
 			frequency = (rampIndex / 15);
@@ -429,18 +408,21 @@ void main(void)
 			CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
 			IO_vTogglePin(LED_DBG);
 		}
+
 		// Geschwindigkeit halten
 		if (rampIndex < 1500 && rampIndex > 750) {
 			frequency = 50;
 			CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
 			CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
 		}
+
 		// fallende Rampe Rechtslauf
 		if (rampIndex < 2250 && rampIndex > 1500) {
 			frequency = (2250 - rampIndex) / 15;
 			CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
 			CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
 		}
+
 		// Phasen tauschen um Drehrichtung zu ändern
 		if (rampIndex == 2250) {
 			setPhaseChange(counterclockwise);
@@ -452,37 +434,39 @@ void main(void)
 			CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
 			CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
 		}
+
 		// Geschwindigkeit halten Linkslauf
 		if (rampIndex < 3750 && rampIndex > 3000) {
 			frequency = 50;
 			CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
 			CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
 		}
+
 		// Fallende Rampe linkslauf
 		if (rampIndex < 4500 && rampIndex > 3750) {
 			frequency = (4500 - rampIndex) / 15;
 			CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
 			CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
 		}
+
 		// Gleichstrombremsen !!! anpassen des CCU62 rampIndex nicht vergessen !!!
 		if (rampIndex < 5250 && rampIndex > 4500) {
 			frequency = 50;
 			CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
 			CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
 		}
+
 		// Frequenz vor der Drehzzahlregelung auf 0 setzen
 		if (rampIndex == 5250) {
 			frequency = 0;
 			CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
 			CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
 		}
-   // USER CODE END
 
-  }
+		// USER CODE END
+	}
 
-} //  End of function main
-
-
+}  //  End of function main
 
 // USER CODE BEGIN (MAIN_General,10)
 // Funktion zur Generierung der Wertetabelle
@@ -500,7 +484,8 @@ unsigned int calculateMotorFrequency(unsigned int _frequency) {
 		frequency = 1;
 		return (0xD903);
 	} else {
-		return (1 / ((float)_frequency * (float)ARRAY_SIZE * 0.000000015));	 //float Operation wird nicht ersetzt da Datentyp grer als long verwendet werden msste: brcuhte Wertebereich von >10^22
+		//float Operation wird nicht ersetzt da Datentyp größer als long verwendet werden müsste: benötigter Wertebereich von >10^22
+		return (1 / ((float)_frequency * (float)ARRAY_SIZE * 0.000000015));	 
 	}
 }
 
@@ -526,8 +511,7 @@ unsigned int controller(int input) {
 	int manipulated_variable = controller_error * K_p;
 	//I-Regler
 	integral_sum = integral_sum + controller_error;	 //so gehts auch: integral_sum += controller_error
-	//if (integral_sum > windup){
-	// }
+	
 	//P- + I-Regler
 	manipulated_variable = manipulated_variable + K_i * integral_sum;
 	//Vorsteuerung
@@ -542,4 +526,3 @@ unsigned int controller(int input) {
 }
 
 // USER CODE END
-
