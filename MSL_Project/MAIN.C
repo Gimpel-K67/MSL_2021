@@ -43,7 +43,7 @@
 //****************************************************************************
 
 // USER CODE BEGIN (MAIN_General,4)
-// clockwise=rechtslauf, counterclockwise=linkslauf definition einer PrÃ¤prozessorvariable
+// clockwise=rechtslauf, counterclockwise=linkslauf definition einer Präprozessorvariable
 #define clockwise (0)
 #define counterclockwise (1)
 // USER CODE END
@@ -71,7 +71,7 @@
 // USER CODE BEGIN (MAIN_General,7)
 // Frequenz des Drehfeldes in Hz
 unsigned int frequency = 0;
-// GrÃ¶ÃŸe der Sinus Wertetabelle
+// Größe der Sinus Wertetabelle
 const unsigned int ARRAY_SIZE = 1200;
 // Phasenverschiebung
 unsigned int OFFSET_L1;
@@ -83,7 +83,7 @@ int table[ARRAY_SIZE];
 unsigned int index;
 
 float pi = 3.14159265359;
-// Index fÃ¼r die Rampensteuerung ErhÃ¶hung alle 8 ms
+// Index für die Rampensteuerung Erhöhung alle 8 ms
 volatile unsigned int rampIndex;
 // mechanische Geschwindigkeit des Motors in Hz
 volatile float velocity;
@@ -112,11 +112,11 @@ const unsigned int HALF_PERIODVALUE = 901;
 // USER CODE BEGIN (MAIN_General,9)
 // Funktion zur Generierung der Sinus Wertetabelle
 void generateTable();
-// Funktion zur Berechnung des CCU62 Period Value Registers in AbhÃ¤ngigkeit der Frequenz
+// Funktion zur Berechnung des CCU62 Period Value Registers in Abhängigkeit der Frequenz
 unsigned int calculateMotorFrequency(unsigned int _frequency);
-// Setzen der Phasenverschiebung fÃ¼r Links- und Rechtslauf, 0 = Rechtslauf 1 = Linkslauf
+// Setzen der Phasenverschiebung für Links- und Rechtslauf, 0 = Rechtslauf 1 = Linkslauf
 void setPhaseChange(int dir);
-// Funktion fÃ¼r den PI-Regler, errechnet StellgrÃ¶ÃŸe in abhÃ¤ngigkeit der gemessenen Geschwindigkeit
+// Funktion für den PI-Regler, errechnet Stellgröße in abhängigkeit der gemessenen Geschwindigkeit
 unsigned int controller(int input);
 // USER CODE END
 
@@ -387,16 +387,16 @@ void main(void) {
 		}
 		// Drehzahlregelung mit Potentiometer
 		if (rampIndex > 5250) {
-			// lokale Variable fÃ¼r den ADC Messwert
+			// lokale Variable für den ADC Messwert
 			unsigned long raw;
 			// lesen des ADC Werts
 			raw = ADC0_uwGetResultData(RESULT_REG_0);
-			// 4096 ist AuflÃ¶sung des ADC, links = 0, rechts = 4096
+			// 4096 ist Auflösung des ADC, links = 0, rechts = 4096
 			// Normierung des ADC Messwerts auf 25 Hz mechanisch
 			frequency = controller((25 * raw) / 4096);
 			// schreiben des CCU62 Schattenregisters
 			CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
-			// Ãœbernahme des Schattenregisters erlauben
+			// Übernahme des Schattenregisters erlauben
 			CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
 		}
 		// steigende Rampe Rechtslauf
@@ -418,7 +418,7 @@ void main(void) {
 			CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequency(frequency));
 			CCU62_vEnableShadowTransfer(CCU62_TIMER_12);
 		}
-		// Phasen tauschen um Drehrichtung zu Ã¤ndern
+		// Phasen tauschen um Drehrichtung zu ändern
 		if (rampIndex == 2250) {
 			setPhaseChange(counterclockwise);
 		}
@@ -469,17 +469,17 @@ void generateTable() {
 	}
 }
 
-// berechnet den Period Value in AbhÃ¤ngigkeit der Frequenz, Frequenzen < 2 Hz = 1Hz
+// berechnet den Period Value in Abhängigkeit der Frequenz, Frequenzen < 2 Hz = 1Hz
 unsigned int calculateMotorFrequency(unsigned int _frequency) {
 	if (_frequency < 2) {
 		frequency = 1;
 		return (0xD903);
 	} else {
-		return (1 / ((float)_frequency * (float)ARRAY_SIZE * 0.000000015));	 //float Operation wird nicht ersetzt da Datentyp grï¿½ï¿½er als long verwendet werden mï¿½sste: brï¿½cuhte Wertebereich von >10^22
+		return (1 / ((float)_frequency * (float)ARRAY_SIZE * 0.000000015));	 //float Operation wird nicht ersetzt da Datentyp grer als long verwendet werden msste: brcuhte Wertebereich von >10^22
 	}
 }
 
-// Funktion fÃ¼r die Phasendrehung
+// Funktion für die Phasendrehung
 void setPhaseChange(int dir) {
 	if (dir == clockwise) {
 		OFFSET_L1 = 0;
@@ -507,7 +507,7 @@ unsigned int controller(int input) {
 	manipulated_variable = manipulated_variable + K_i * integral_sum;
 	//Vorsteuerung
 	manipulated_variable += input * 2;
-	//StellgrÃ¶ÃŸenbegrenzung
+	//Stellgrößenbegrenzung
 	if (manipulated_variable > 55) {
 		manipulated_variable = 55;
 	} else if (manipulated_variable < 0) {
