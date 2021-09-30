@@ -18,3 +18,5 @@
 *.CDX
 *.FPT
 *.map
+MSL_Project/.vscode/settings.json
+MSL.code-workspace

@@ -116,7 +116,7 @@ void generateTable();
 unsigned int calculateMotorFrequency(unsigned int _frequency);
 // Setzen der Phasenverschiebung für Links- und Rechtslauf, 0 = Rechtslauf 1 = Linkslauf
 void setPhaseChange(int dir);
-// Funktion für den PI-Regler, errechnet Stellgröße in abhängigkeit der gemessenen Geschwindigkeit
+// Funktion für den PI-Regler, errechnet Stellgröße in Abhängigkeit der gemessenen Geschwindigkeit
 unsigned int controller(int input);
 // USER CODE END
 
@@ -385,7 +385,7 @@ void main(void) {
 		if (rampIndex == 0) {
 			setPhaseChange(clockwise);
 		}
-		
+
 		// Drehzahlregelung mit Potentiometer
 		if (rampIndex > 5250) {
 			// lokale Variable für den ADC Messwert
