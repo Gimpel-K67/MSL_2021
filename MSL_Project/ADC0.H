@@ -13,7 +13,7 @@
 //                the ADC0 module.
 //
 //----------------------------------------------------------------------------
-// @Date          29.09.2021 09:41:09
+// @Date          30.09.2021 14:42:55
 //
 //****************************************************************************
 
@@ -178,7 +178,7 @@ void ADC0_vStartSeq0ReqChNum(ubyte ubExtTrg, ubyte ubEnIntr, ubyte ubRFill, ubyt
 //                RegNum: defines the result register number
 //
 //----------------------------------------------------------------------------
-// @Date          29.09.2021
+// @Date          30.09.2021
 //
 //****************************************************************************
 
@@ -196,7 +196,6 @@ void ADC0_vStartSeq0ReqChNum(ubyte ubExtTrg, ubyte ubEnIntr, ubyte ubRFill, ubyt
 // @Interrupt Vectors
 //****************************************************************************
 
-#define ADC0_SRN0INT    0x28
 
 // USER CODE BEGIN (ADC0_Header,9)
 

@@ -12,7 +12,7 @@
 // @Description   This file contains functions that use the ADC0 module.
 //
 //----------------------------------------------------------------------------
-// @Date          29.09.2021 09:41:09
+// @Date          30.09.2021 14:42:55
 //
 //****************************************************************************
 
@@ -128,7 +128,7 @@
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Date          29.09.2021
+// @Date          30.09.2021
 //
 //****************************************************************************
 
@@ -221,12 +221,12 @@ void ADC0_vInit(void)
   ///  -----------------------------------------------------------------------
   ///  Configuration of Result Control Register 0
   ///  - the data reduction filter is enabled
-  ///  - the event interrupt is enabled
+  ///  - the event interrupt is disabled
   ///  - the wait-for-read mode is enabled
 
   ///  - the FIFO functionality is disabled
 
-  ADC0_RCR0      =  0x0053;      // load result control register 0
+  ADC0_RCR0      =  0x0043;      // load result control register 0
 
   ///  Configuration of Result Control Register 1
   ///  - the data reduction filter is disabled
@@ -320,7 +320,6 @@ void ADC0_vInit(void)
   ///  Configuration of Event Interrupt Node Pointer Register for Result 
   ///  Interrupts:
   ///  -----------------------------------------------------------------------
-  ///  - the SR 0 line become activated if the event 8 interrupt is generated
 
   ADC0_EVINPR8   =  0x0000;      // load event interrupt set flag register 
 
@@ -330,13 +329,6 @@ void ADC0_vInit(void)
   ///  -----------------------------------------------------------------------
   ///  Configuration of Service Request Nodes 0 - 3 :
   ///  -----------------------------------------------------------------------
-  ///  SRN0 service request node configuration:
-  ///  - SRN0 interrupt priority level (ILVL) = 9
-  ///  - SRN0 interrupt group level (GLVL) = 0
-  ///  - SRN0 group priority extension (GPX) = 0
-
-  ADC_0IC        =  0x0064;     
-
 
   ///  -----------------------------------------------------------------------
   ///  Configuration of Limit Check Boundary:
@@ -440,7 +432,7 @@ void ADC0_vInit(void)
 //                15)- see macros defined in the header file
 //
 //----------------------------------------------------------------------------
-// @Date          29.09.2021
+// @Date          30.09.2021
 //
 //****************************************************************************
 
@@ -466,44 +458,6 @@ void ADC0_vStartSeq0ReqChNum(ubyte ubExtTrg, ubyte ubEnIntr, ubyte ubRFill, ubyt
 
 } //  End of function ADC0_vStartSeq0ReqChNum
 
-
-//****************************************************************************
-// @Function      void ADC0_viSRN0(void) 
-//
-//----------------------------------------------------------------------------
-// @Description   This is the interrupt service routine for the Service 
-//                Request Node 0 of the ADC0 module.
-//
-//----------------------------------------------------------------------------
-// @Returnvalue   None
-//
-//----------------------------------------------------------------------------
-// @Parameters    None
-//
-//----------------------------------------------------------------------------
-// @Date          29.09.2021
-//
-//****************************************************************************
-
-// USER CODE BEGIN (ADC0_viSRN0,0)
-
-// USER CODE END
-
-_interrupt(ADC0_SRN0INT)  void ADC0_viSRN0(void)
-{
-
-    if((ADC0_EVINFR & 0x0100) == 0x0100)    //Result0 event interrupt 
-    {
-        ADC0_EVINCR = 0x0100;     // Clear Result0 event interrupt
-
-      // USER CODE BEGIN (ADC0_viSRN0,20)
-
-      // USER CODE END
-
-    }
-
-
-} //  End of function ADC0_viSRN0
 
 
 

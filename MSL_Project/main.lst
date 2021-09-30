@@ -1,4 +1,4 @@
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:32:10  Page:   1
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:38:33  Page:   1
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -58,7 +58,7 @@ main
                     53   ; main.c     21 // USER CODE END
                     54   ; main.c     22 
                     55   ; main.c     23 //****************************************************************************
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:32:10  Page:   2
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:38:33  Page:   2
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -118,7 +118,7 @@ main
                    108   ; main.c     34 // @Macros
                    109   ; main.c     35 //****************************************************************************
                    110   ; main.c     36 
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:32:10  Page:   3
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:38:33  Page:   3
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -178,7 +178,7 @@ main
                    162   
                    163   MAIN_3_NC       SECTION LDAT WORD PUBLIC 'CNEARROM'
 0000               164   _ARRAY_SIZE     LABEL   WORD
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:32:10  Page:   4
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:38:33  Page:   4
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -238,7 +238,7 @@ main
                    217   ; main.c     99 
                    218   ; main.c    100 //****************************************************************************
                    219   ; main.c    101 // @External Prototypes
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:32:10  Page:   5
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:38:33  Page:   5
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -298,7 +298,7 @@ main
                    269           ?SYMB   '',144,8,34
                    270           ?SYMB   '',010000H,7,261
                    271           ?SYMB   '',010001H,7,262
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:32:10  Page:   6
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:38:33  Page:   6
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -358,7 +358,7 @@ main
                    324   ; main.c    151 
                    325   ; main.c    152         ///  ------------------------------------------------------------------
                          -----
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:32:10  Page:   7
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:38:33  Page:   7
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -418,7 +418,7 @@ main
                          -----
                    375   ; main.c    186         //   Initialization of the Bank Select registers:
                    376   ; main.c    187         //   ------------------------------------------------------------------
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:32:10  Page:   8
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:38:33  Page:   8
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -478,7 +478,7 @@ main
                    428   _MAIN_vUnlockProtecReg  PROC    FAR
                    429           ?SYMB   '',00H,95,0
 003E 2802          430           SUB     R0,#02h
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:32:10  Page:   9
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:38:33  Page:   9
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -538,7 +538,7 @@ main
                    483   ; main.c    236 //****************************************************************************
                    484   ; main.c    237 // @Function      void MAIN_vLockProtecReg(void)
                    485   ; main.c    238 //
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:32:10  Page:  10
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:38:33  Page:  10
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -598,7 +598,7 @@ main
 0092 B8C0          538           MOV     [R0],R12
                    539   ; main.c    265         uwPASSWORD = (~uwPASSWORD) & 0x00FF;
                    540           ?LINE   265
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:32:10  Page:  11
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:38:33  Page:  11
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -658,7 +658,7 @@ main
                    592   ; main.c    286 //----------------------------------------------------------------------------
                    593   ; main.c    287 // @Parameters    None
                    594   ; main.c    288 //
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:32:10  Page:  12
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:38:33  Page:  12
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -718,7 +718,7 @@ main
                    643   ; main.c    314         }
                    644           ?LINE   314
 00EA DB00          645           RETS
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:32:10  Page:  13
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:38:33  Page:  13
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -778,7 +778,7 @@ main
                    692   ; main.c    340 // @Description   This is the main function.
                    693   ; main.c    341 //
                    694   ; main.c    342 //----------------------------------------------------------------------------
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:32:10  Page:  14
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:38:33  Page:  14
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -838,7 +838,7 @@ main
 0110 E00C          746           MOV     R12,#00h
 0112 E00D          747           MOV     R13,#00h
 0114 E01E          748           MOV     R14,#01h
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:32:10  Page:  15
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:38:33  Page:  15
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -898,7 +898,7 @@ main
                R   801           ?SYMB   '',$,9,391
                    802           ?SYMB   'raw',1,98,7
                R   803           ?SYMB   '-4',$,101,1
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:32:10  Page:  16
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:38:33  Page:  16
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -958,7 +958,7 @@ main
 01B0               855   _32:
                    856   ; main.c    402                 // steigende Rampe Rechtslauf
                    857   ; main.c    403                 if (rampIndex < 750) {
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:32:10  Page:  17
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:38:33  Page:  17
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -1018,7 +1018,7 @@ main
 0214 E6FC26EB      908           MOV     R12,#0EB26h
 0218 A8DC          909           MOV     R13,[R12]
 021A 6FFD          910           BSET    R13.6
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:32:10  Page:  18
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:38:33  Page:  18
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -1078,7 +1078,7 @@ main
                    962   ; main.c    425 
                    963   ; main.c    426                 // steigende Rampe Linkslauf
                    964   ; main.c    427                 if (rampIndex < 3000 && rampIndex > 2250) {
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:32:10  Page:  19
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:38:33  Page:  19
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -1138,7 +1138,7 @@ main
                   1015           ?LINE   436
 02DA E6FC26EB     1016           MOV     R12,#0EB26h
 02DE A8DC         1017           MOV     R13,[R12]
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:32:10  Page:  20
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:38:33  Page:  20
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -1198,7 +1198,7 @@ main
 033A E6FC3200     1068           MOV     R12,#032h
 033E F6FC0000  R  1069           MOV     _frequency,R12
                   1070   ; main.c    447                         CCU62_vSetTmrPeriod(CCU62_TIMER_12, calculateMotorFrequ
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:32:10  Page:  21
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:38:33  Page:  21
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -1258,7 +1258,7 @@ main
                R  1121           ?SYMB   '',$,17,460
                   1122   ; main.c    461 
                   1123   ; main.c    462 // USER CODE BEGIN (MAIN_General,10)
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:32:10  Page:  22
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:38:33  Page:  22
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -1318,7 +1318,7 @@ main
 03C2 0040         1175           ADD     R4,R0
 03C4 DA000000  R  1176           CALLS   SEG __load8n,__load8n
                R  1177           ?SYMB   '',$,96,26
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:32:10  Page:  23
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:38:33  Page:  23
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -1378,7 +1378,7 @@ main
                   1229           ?SYMB   '',473,8,34
                   1230   _calculateMotorFrequency        PROC    FAR
                   1231           ?SYMB   '',00H,95,0
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:32:10  Page:  24
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:38:33  Page:  24
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -1438,7 +1438,7 @@ main
                   1282   ; main.c    480 }
                   1283           ?LINE   480
 046E              1284   _63:
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:32:10  Page:  25
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:38:33  Page:  25
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -1498,7 +1498,7 @@ main
                   1337   ; main.c    491                 OFFSET_L2 = ARRAY_SIZE / 3;
                   1338           ?LINE   491
 0496 E6FC9001     1339           MOV     R12,#0190h
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:32:10  Page:  26
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:38:33  Page:  26
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -1558,7 +1558,7 @@ main
 04C6 C4400200     1391           MOV     [R0+#02H],R4
                   1392   ; main.c    500         //P-Regler
                   1393   ; main.c    501         int manipulated_variable = controller_error * K_p;
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:32:10  Page:  27
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:38:33  Page:  27
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -1618,7 +1618,7 @@ main
                   1445   ; main.c    510         //Stellgrößenbegrenzung
                   1446   ; main.c    511         if (manipulated_variable > 55) {
                   1447           ?LINE   511
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:32:10  Page:  28
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:38:33  Page:  28
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -1678,7 +1678,7 @@ main
                R  1500           ?SYMB   'integral_sum',_integral_sum,22,16
 0962              1501   _velocity       LABEL   WORD
 0962              1502           DS      4
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:32:10  Page:  29
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:38:33  Page:  29
 main
 
  LOC CODE        LINE   SOURCELINE
@@ -1738,7 +1738,7 @@ main
                   1551           EXTERN  _CCU63_vInit:FAR
                   1552           EXTERN  _sin:FAR
                   1553           EXTERN  _SCS_SwitchToHighPrecBandgap:FAR
-TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:32:10  Page:  30
+TASKING C166/ST10 assembler v8.7r1 Build 306                                Date: Sep 30 2021  Time: 14:38:33  Page:  30
 main
 
  LOC CODE        LINE   SOURCELINE

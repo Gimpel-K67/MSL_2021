@@ -9,7 +9,7 @@
 ;                PLEASE DO NOT MODIFY THIS FILE !
 ;
 ;----------------------------------------------------------------------------
-; Date          29.09.2021 09:41:09
+; Date          30.09.2021 14:42:55
 ;
 ;****************************************************************************
 
@@ -459,7 +459,7 @@ ADC0_QSR2_REQGT	SET	0
 ADC0_RCR0_DRC	SET	0
 ADC0_RCR0_DRCTR	SET	3
 ADC0_RCR0_FEN	SET	0
-ADC0_RCR0_IEN	SET	1
+ADC0_RCR0_IEN	SET	0
 ADC0_RCR0_VF	SET	0
 ADC0_RCR0_WFR	SET	1
 
@@ -1297,8 +1297,8 @@ ADC1_VFR_VF7	SET	0
 ; ADC Interrupt Control Reg. 0
 ADC_0IC_GLVL	SET	0
 ADC_0IC_GPX	SET	0
-ADC_0IC_IE	SET	1
-ADC_0IC_ILVL	SET	9
+ADC_0IC_IE	SET	0
+ADC_0IC_ILVL	SET	0
 ADC_0IC_IR	SET	0
 
 ; ADC Interrupt Control Reg. 1
