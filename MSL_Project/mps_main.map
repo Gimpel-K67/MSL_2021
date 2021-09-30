@@ -1,4 +1,4 @@
-TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 29 2021  Time: 17:37:54  Page:   1
+TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 30 2021  Time: 14:32:13  Page:   1
 mps_main
 
 Memory map     : 
@@ -58,7 +58,7 @@ GPT2_1_PR..................  20 C00EA6h    C00FB7h    000112h CODE WORD GLOB ROM
 CC2_1_PR...................  22 C00FB8h    C00FEDh    000036h CODE WORD GLOB ROM ................. CPROGRAM......... CC2_C.........
 CCU62_1_PR.................  23 C00FEEh    C01113h    000126h CODE WORD GLOB ROM ................. CPROGRAM......... CCU62_C.......
 ADC0_1_PR..................  24 C01114h    C012D1h    0001BEh CODE WORD GLOB ROM ................. CPROGRAM......... ADC0_C........
-TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 29 2021  Time: 17:37:54  Page:   2
+TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 30 2021  Time: 14:32:13  Page:   2
 mps_main
 
 SIN_1_PR...................  25 C012D2h    C01311h    000040h CODE WORD GLOB ROM ................. CLIBRARY......... SIN_C.........
@@ -118,7 +118,7 @@ Symbol                                     No. Value     Type       Symbol      
 
 Symbol table   : main.obj(MAIN_C)
 
-TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 29 2021  Time: 17:37:54  Page:   3
+TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 30 2021  Time: 14:32:13  Page:   3
 mps_main
 
 Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
@@ -178,7 +178,7 @@ __CSTART..................................  14 0C00DAAh  FAR GLB    __CSTART_INU
 __CSTART_TASK.............................  14 0C00DAAh  TSK LOC    __C_INIT..................................  13 0C00C36h  FAR GLB
 __EXIT....................................  14 0C00E62h  FAR GLB    __IDLE....................................  14 0C00E62h  FAR GLB
 _main.....................................   7 0C0065Ah  FAR EXT    
-TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 29 2021  Time: 17:37:54  Page:   4
+TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 30 2021  Time: 14:32:13  Page:   4
 mps_main
 
 
@@ -238,7 +238,7 @@ _ADC0_vStartSeq0ReqChNum..................  24 0C01200h  FAR GLB    _ADC0_viSRN0
 Symbol table   : sin.obj(SIN_C)
 
 Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
-TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 29 2021  Time: 17:37:54  Page:   5
+TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 30 2021  Time: 14:32:13  Page:   5
 mps_main
 
 ----------------------------------------------------------------    ----------------------------------------------------------------
@@ -298,7 +298,7 @@ Symbol table   : cff48.obj(cff48)
 Symbol                                     No. Value     Type       Symbol                                     No. Value     Type   
 ----------------------------------------------------------------    ----------------------------------------------------------------
  <NO NAME>................................ ... 0000000h  REG LOC    __cff48r..................................  29 0C01A7Eh  FAR GLB
-TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 29 2021  Time: 17:37:54  Page:   6
+TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 30 2021  Time: 14:32:13  Page:   6
 mps_main
 
 __dinfsr..................................  29 0C023ACh  FAR EXT    __dnansr..................................  29 0C023CEh  FAR EXT
@@ -358,7 +358,7 @@ Symbol                                     No. Value     Type       Symbol      
 ----------------------------------------------------------------    ----------------------------------------------------------------
  <NO NAME>................................ ... 0000000h  REG LOC    __cmf8r...................................  29 0C01C52h  FAR GLB
 
-TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 29 2021  Time: 17:37:54  Page:   7
+TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 30 2021  Time: 14:32:13  Page:   7
 mps_main
 
 
@@ -418,7 +418,7 @@ Symbol                                     No. Value     Type       Symbol      
 
 
 Symbol table   : get2f4.obj(get2f4)
-TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 29 2021  Time: 17:37:54  Page:   8
+TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 30 2021  Time: 14:32:13  Page:   8
 mps_main
 
 
@@ -478,7 +478,7 @@ __dinfsr..................................  29 0C023ACh  FAR GLB    __dnansr....
 __dunfsr..................................  29 0C023ECh  FAR GLB    __fptrap8.................................  29 0C0243Ah  FAR EXT
 __putf8r..................................  29 0C02318h  FAR EXT    
 
-TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 29 2021  Time: 17:37:54  Page:   9
+TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 30 2021  Time: 14:32:13  Page:   9
 mps_main
 
 
@@ -538,7 +538,7 @@ Register banks : combination of register definitions
                  Reg. bank 1
                  0123456789ABCDEF
                  ^               
-TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 29 2021  Time: 17:37:54  Page:  10
+TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 30 2021  Time: 14:32:13  Page:  10
 mps_main
 
                  |................. CSTART_RBANK (CSTART) .................................................................... F620h
@@ -598,7 +598,7 @@ CPROGRAM     ADC0_1_PR     001BEh C01114h
              __CSTART_PR   000BEh C00DAAh 
              __FPCODE      00C72h C017E0h 
        Total class size: 0001B0Ah
-TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 29 2021  Time: 17:37:54  Page:  11
+TASKING C166/ST10 linker/locator v8.7r1 Build 268           Date: Sep 30 2021  Time: 14:32:13  Page:  11
 mps_main
 
 
@@ -630,7 +630,7 @@ SHAREDRTLIB  __MUL         00018h C02452h
 Total size:              0003190h
 
 
-	Number of symbols		: 1685
+	Number of symbols		: 1684
 	Number of sections		: 34
 	Number of groups		: 0
 	Number of classes		: 11

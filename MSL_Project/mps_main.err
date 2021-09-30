@@ -1,15 +1,9 @@
 TASKING program builder v8.7r1 Build 088
 Warning: Infinite loop detected; Not building sub-project mps_main.pjt
-Compiling and assembling ccu63.c
-Trial version.  9 day(s) remaining
-Trial version.  9 day(s) remaining
-Compiling and assembling gpt2.c
-Trial version.  9 day(s) remaining
-Trial version.  9 day(s) remaining
 Linking and locating to mps_main.out
-Trial version.  9 day(s) remaining
+Trial version.  8 day(s) remaining
 
-	Number of symbols		: 1685
+	Number of symbols		: 1684
 	Number of sections		: 34
 	Number of groups		: 0
 	Number of classes		: 11
@@ -25,4 +19,4 @@ Trial version.  9 day(s) remaining
 	User stack size			: 000017Ch
 	Time spent			: 00:00:2.20
 Converting mps_main.out to mps_main.abs in IEEE-695 format
-Trial version.  9 day(s) remaining
+Trial version.  8 day(s) remaining
